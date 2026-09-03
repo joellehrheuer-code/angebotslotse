@@ -1,0 +1,15 @@
+{
+  "siteName": "Angebotslotse",
+  "locale": "de-DE",
+  "currency": "EUR",
+  "marketCountry": "DE",
+  "maxOffers": 500,
+  "staleAfterHours": 36,
+  "categories": {
+    "elektronik": ["elektronik", "computer", "mobile", "audio", "tv"],
+    "haushalt": ["haushalt", "home", "küche", "garden"],
+    "mode": ["mode", "fashion", "schuhe", "clothing"],
+    "freizeit": ["freizeit", "sport", "reise", "travel"],
+    "sonstiges": []
+  }
+}

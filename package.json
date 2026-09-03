@@ -1,0 +1,14 @@
+{
+  "name": "angebotslotse",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "update": "node scripts/update.mjs",
+    "build": "node scripts/build.mjs",
+    "check": "node scripts/integrity.mjs",
+    "report": "node scripts/report.mjs",
+    "test": "node --test"
+  },
+  "engines": { "node": ">=20" }
+}

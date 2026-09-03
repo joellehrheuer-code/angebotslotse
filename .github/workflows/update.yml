@@ -1,0 +1,42 @@
+name: Angebote aktualisieren
+on:
+  schedule:
+    - cron: "17 4,12,20 * * *"
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 20 }
+      - run: npm test
+      - run: npm run update
+        env:
+          AWIN_PUBLISHER_ID: ${{ secrets.AWIN_PUBLISHER_ID }}
+          AWIN_API_TOKEN: ${{ secrets.AWIN_API_TOKEN }}
+      - run: npm run check && npm run build
+        env:
+          SITE_URL: ${{ vars.SITE_URL }}
+          CONTACT_EMAIL: ${{ vars.CONTACT_EMAIL }}
+          LEGAL_NAME: ${{ vars.LEGAL_NAME }}
+          LEGAL_ADDRESS: ${{ vars.LEGAL_ADDRESS }}
+      - uses: actions/upload-pages-artifact@v3
+        with: { path: dist }
+      - uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore(data): Angebote automatisch aktualisieren"
+          file_pattern: "data/offers.json data/status.json"
+  deploy:
+    needs: update
+    permissions: { pages: write, id-token: write }
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
