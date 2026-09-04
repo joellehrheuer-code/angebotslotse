@@ -1,9 +1,9 @@
 {
   "state": "ok",
-  "lastSuccessfulUpdate": "2026-09-04T14:00:54.693Z",
-  "activeOffers": 22,
+  "lastSuccessfulUpdate": "2026-09-04T14:09:26.290Z",
+  "activeOffers": 5,
   "added": 0,
-  "removed": 1,
+  "removed": 17,
   "invalidLinks": 0,
   "apiErrors": 0,
   "sources": {
@@ -19,7 +19,7 @@
     },
     "impact": {
       "state": "ok",
-      "count": 55,
+      "count": 0,
       "error": null
     }
   },
