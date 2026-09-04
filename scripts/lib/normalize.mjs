@@ -5,6 +5,7 @@ const safeHttpUrl = value => {
   try { const url = new URL(value); return ["http:", "https:"].includes(url.protocol) ? url.href : null; } catch { return null; }
 };
 const amount = value => {
+  if (value === null || value === undefined || String(value).trim() === "") return null;
   const number = Number(String(value ?? "").replace(",", "."));
   return Number.isFinite(number) && number >= 0 ? number : null;
 };
