@@ -2,13 +2,13 @@
   "enabled": true,
   "title": "Mehr von Joel",
   "entries": [
-    { "name": "Twitch", "description": "Livestreams und Community-Inhalte.", "url": null },
-    { "name": "YouTube", "description": "Videos und neue Projekte.", "url": null },
-    { "name": "Spotify", "description": "Musik und Audio-Inhalte.", "url": null },
-    { "name": "Instagram", "description": "Neuigkeiten und Einblicke.", "url": null },
-    { "name": "Snapchat", "description": "Kurzform-Inhalte und Updates.", "url": null },
-    { "name": "Discord", "description": "Austausch mit der Community.", "url": null },
-    { "name": "Buch", "description": "Das Buchprojekt von Joel.", "url": null },
-    { "name": "Merch-Shop", "description": "Merchandise zum Projekt.", "url": null }
+    { "name": "Twitch", "description": "Livestreams und Community-Inhalte.", "url": "https://www.twitch.tv/joel271997" },
+    { "name": "YouTube", "description": "Videos und neue Projekte.", "url": "https://www.youtube.com/@J0joel1997" },
+    { "name": "Spotify", "description": "Musik und Audio-Inhalte.", "url": "https://open.spotify.com/intl-de/artist/7EplJXc5zqhyFuOJbqT8Xl" },
+    { "name": "Instagram", "description": "Neuigkeiten und Einblicke.", "url": "https://www.instagram.com/joel27.1997" },
+    { "name": "Snapchat", "description": "Kurzform-Inhalte und Updates.", "url": "https://www.snapchat.com/add/joel271997xxx" },
+    { "name": "Discord", "description": "Austausch mit der Community.", "url": "https://discord.gg/fAahCKxMfR" },
+    { "name": "Buch", "description": "Das Buchprojekt von Joel.", "url": "https://www.amazon.de/Von-Liebe-bis-tiefsten-Trauer/dp/B0H6SZ6WCD" },
+    { "name": "Merch-Shop", "description": "Merchandise zum Projekt.", "url": "https://joel271997.myspreadshop.de/" }
   ]
 }
