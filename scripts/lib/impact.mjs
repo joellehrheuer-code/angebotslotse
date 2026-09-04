@@ -32,7 +32,25 @@ function client(accountSid, authToken, fetchImpl) {
     }
     return rows;
   };
-  return { pages };
+  return { request, pages };
+}
+
+const validTrackingUrl = value => {
+  try { return new URL(value).protocol === "https:"; } catch { return false; }
+};
+
+async function resolveAdTrackingLink(ad, api, policy) {
+  const sourceId = `ad-${ad.Id}`;
+  const blocked = new Set(policy.blockedTrackingUrls ?? []);
+  const current = ad.TrackingLink;
+  if (!(policy.reviewSourceIds ?? []).includes(sourceId)) return validTrackingUrl(current) && !blocked.has(current) ? current : null;
+  try {
+    const payload = await api.request(`/Mediapartners/${policy.account}/Ads/${encodeURIComponent(ad.Id)}/TrackingLink`);
+    const alternate = payload.TrackingLink ?? payload.TrackingURL;
+    return validTrackingUrl(alternate) && !blocked.has(alternate) && alternate !== current ? alternate : null;
+  } catch {
+    return null;
+  }
 }
 
 const common = (program, row = {}) => ({
@@ -42,10 +60,11 @@ const common = (program, row = {}) => ({
   source: "impact"
 });
 
-export async function fetchImpactOffers({ accountSid, authToken, fetchImpl = fetch }) {
+export async function fetchImpactOffers({ accountSid, authToken, fetchImpl = fetch, linkPolicy = {} }) {
   if (!accountSid || !authToken) return [];
   const api = client(accountSid, authToken, fetchImpl);
   const account = encodeURIComponent(accountSid);
+  const policy = { ...linkPolicy, account };
   const programs = (await api.pages(`/Mediapartners/${account}/Campaigns`, ["Campaigns", "Programs"])).filter(activeForGermany);
   const byCampaign = new Map(programs.map(row => [String(row.CampaignId), row]));
   const byAdvertiser = new Map(programs.map(row => [String(row.AdvertiserId), row]));
@@ -62,9 +81,11 @@ export async function fetchImpactOffers({ accountSid, authToken, fetchImpl = fet
   const ads = await api.pages(`/Mediapartners/${account}/Ads`, ["Ads"]);
   for (const ad of ads) {
     const program = byCampaign.get(String(ad.CampaignId));
-    if (!program || !ad.TrackingLink || !ad.Name) continue;
+    if (!program || !ad.Name) continue;
+    const trackingUrl = await resolveAdTrackingLink(ad, api, policy);
+    if (!trackingUrl) continue;
     rows.push({ ...common(program, ad), id: `ad-${ad.Id}`, title: ad.Name, description: ad.Description,
-      url: ad.LandingPageUrl || program.AdvertiserUrl || ad.TrackingLink, urlTracking: ad.TrackingLink,
+      url: ad.LandingPageUrl || program.AdvertiserUrl || trackingUrl, urlTracking: trackingUrl,
       type: String(ad.Type).toUpperCase() === "COUPON" ? "voucher" : "promotion",
       voucher: ad.DealDefaultPromoCode ? { code: ad.DealDefaultPromoCode } : undefined });
   }

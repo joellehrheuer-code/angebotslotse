@@ -28,3 +28,36 @@ test("Impact nutzt Media-Partner-API und Basic Auth", async () => {
   assert.ok(calls.every(call => call.options.headers["IR-Version"] === IMPACT_API_VERSION));
   assert.equal(rows.length, 2);
 });
+
+test("Impact veröffentlicht quarantänisierte Ads nicht ohne abweichenden offiziellen Trackinglink", async () => {
+  const fetchImpl = async url => {
+    const pathname = new URL(url).pathname;
+    let payload = {"@numpages":1};
+    if (pathname.endsWith("/Campaigns")) payload.Campaigns=[{CampaignId:"42",CampaignName:"Gaming",AdvertiserId:"7",AdvertiserName:"Shop",AdvertiserUrl:"https://shop.example",ContractStatus:"Active",ShippingRegions:["GERMANY"],TrackingLink:"https://track.example/program"}];
+    else if (pathname.endsWith("/Ads")) payload.Ads=[{Id:"3227040",Name:"GearUP for League of Legends",CampaignId:"42",AdvertiserId:"7",TrackingLink:"https://gearup.sjv.io/c/7662895/3227040/40222",LandingPageUrl:"https://www.gearupbooster.com/camp/lol/"}];
+    else if (pathname.endsWith("/TrackingLink")) payload.TrackingLink="https://gearup.sjv.io/c/7662895/3227040/40222";
+    else if (pathname.endsWith("/Promotions")) payload.Promotions=[];
+    else if (pathname.endsWith("/Deals")) payload.Deals=[];
+    else payload.Items=[];
+    return {ok:true,json:async()=>payload};
+  };
+  const rows = await fetchImpactOffers({accountSid:"SID",authToken:"TOKEN",fetchImpl,linkPolicy:{reviewSourceIds:["ad-3227040"],blockedTrackingUrls:["https://gearup.sjv.io/c/7662895/3227040/40222"]}});
+  assert.equal(rows.some(row => row.id === "ad-3227040"), false);
+});
+
+test("Impact akzeptiert für eine geprüfte Ad nur eine abweichende offizielle Alternative", async () => {
+  const alternate="https://gearup.sjv.io/c/7662895/alternate/40222";
+  const fetchImpl = async url => {
+    const pathname = new URL(url).pathname;
+    let payload = {"@numpages":1};
+    if (pathname.endsWith("/Campaigns")) payload.Campaigns=[{CampaignId:"42",CampaignName:"Gaming",AdvertiserId:"7",AdvertiserName:"Shop",AdvertiserUrl:"https://shop.example",ContractStatus:"Active",ShippingRegions:["GERMANY"],TrackingLink:"https://track.example/program"}];
+    else if (pathname.endsWith("/Ads")) payload.Ads=[{Id:"3227040",Name:"GearUP for League of Legends",CampaignId:"42",AdvertiserId:"7",TrackingLink:"https://gearup.sjv.io/c/7662895/3227040/40222",LandingPageUrl:"https://www.gearupbooster.com/camp/lol/"}];
+    else if (pathname.endsWith("/TrackingLink")) payload.TrackingURL=alternate;
+    else if (pathname.endsWith("/Promotions")) payload.Promotions=[];
+    else if (pathname.endsWith("/Deals")) payload.Deals=[];
+    else payload.Items=[];
+    return {ok:true,json:async()=>payload};
+  };
+  const rows = await fetchImpactOffers({accountSid:"SID",authToken:"TOKEN",fetchImpl,linkPolicy:{reviewSourceIds:["ad-3227040"],blockedTrackingUrls:["https://gearup.sjv.io/c/7662895/3227040/40222"]}});
+  assert.equal(rows.find(row => row.id === "ad-3227040")?.urlTracking, alternate);
+});
