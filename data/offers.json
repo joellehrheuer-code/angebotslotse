@@ -17,7 +17,7 @@
     "endDate": "2026-09-06T21:59:00.000Z",
     "category": "technik",
     "dateAdded": "2026-07-14T09:46:20.000Z",
-    "updatedAt": "2026-09-04T11:08:55.985Z"
+    "updatedAt": "2026-09-04T11:36:48.817Z"
   },
   {
     "id": "584ca267849648b4",
@@ -37,7 +37,7 @@
     "endDate": null,
     "category": "audio-musik",
     "dateAdded": null,
-    "updatedAt": "2026-09-04T11:08:55.985Z"
+    "updatedAt": "2026-09-04T11:36:48.817Z"
   },
   {
     "id": "9deaebd1a9f0ee00",
@@ -57,7 +57,7 @@
     "endDate": null,
     "category": "audio-musik",
     "dateAdded": null,
-    "updatedAt": "2026-09-04T11:08:55.985Z"
+    "updatedAt": "2026-09-04T11:36:48.817Z"
   },
   {
     "id": "218792e10e51ba64",
@@ -77,6 +77,6 @@
     "endDate": null,
     "category": "audio-musik",
     "dateAdded": null,
-    "updatedAt": "2026-09-04T11:08:55.985Z"
+    "updatedAt": "2026-09-04T11:36:48.817Z"
   }
 ]
