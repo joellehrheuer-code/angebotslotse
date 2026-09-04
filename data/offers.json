@@ -17,7 +17,7 @@
     "endDate": "2026-09-06T21:59:00.000Z",
     "category": "technik",
     "dateAdded": "2026-07-14T09:46:20.000Z",
-    "updatedAt": "2026-09-04T13:53:03.339Z"
+    "updatedAt": "2026-09-04T14:00:54.682Z"
   },
   {
     "id": "584ca267849648b4",
@@ -37,7 +37,7 @@
     "endDate": null,
     "category": "audio-musik",
     "dateAdded": null,
-    "updatedAt": "2026-09-04T13:53:03.339Z"
+    "updatedAt": "2026-09-04T14:00:54.682Z"
   },
   {
     "id": "9deaebd1a9f0ee00",
@@ -57,7 +57,7 @@
     "endDate": null,
     "category": "audio-musik",
     "dateAdded": null,
-    "updatedAt": "2026-09-04T13:53:03.339Z"
+    "updatedAt": "2026-09-04T14:00:54.682Z"
   },
   {
     "id": "218792e10e51ba64",
@@ -77,7 +77,7 @@
     "endDate": null,
     "category": "audio-musik",
     "dateAdded": null,
-    "updatedAt": "2026-09-04T13:53:03.339Z"
+    "updatedAt": "2026-09-04T14:00:54.682Z"
   },
   {
     "id": "d5c88ce7a30ddc2f",
@@ -97,7 +97,7 @@
     "endDate": null,
     "category": "gaming",
     "dateAdded": null,
-    "updatedAt": "2026-09-04T13:53:03.339Z"
+    "updatedAt": "2026-09-04T14:00:54.682Z"
   },
   {
     "id": "0956b9d9bdd00691",
@@ -117,7 +117,7 @@
     "endDate": null,
     "category": "sonstiges",
     "dateAdded": null,
-    "updatedAt": "2026-09-04T13:53:03.339Z"
+    "updatedAt": "2026-09-04T14:00:54.682Z"
   },
   {
     "id": "d813d4975ce8e14e",
@@ -137,7 +137,7 @@
     "endDate": null,
     "category": "sonstiges",
     "dateAdded": null,
-    "updatedAt": "2026-09-04T13:53:03.339Z"
+    "updatedAt": "2026-09-04T14:00:54.682Z"
   },
   {
     "id": "9efb88c305ad68b7",
@@ -157,7 +157,7 @@
     "endDate": null,
     "category": "sonstiges",
     "dateAdded": null,
-    "updatedAt": "2026-09-04T13:53:03.339Z"
+    "updatedAt": "2026-09-04T14:00:54.682Z"
   },
   {
     "id": "b9872b3379171c6f",
@@ -177,7 +177,7 @@
     "endDate": null,
     "category": "sonstiges",
     "dateAdded": null,
-    "updatedAt": "2026-09-04T13:53:03.339Z"
+    "updatedAt": "2026-09-04T14:00:54.682Z"
   },
   {
     "id": "7da80ec8441cc7ec",
@@ -197,27 +197,7 @@
     "endDate": null,
     "category": "sonstiges",
     "dateAdded": null,
-    "updatedAt": "2026-09-04T13:53:03.339Z"
-  },
-  {
-    "id": "6543857812ad6397",
-    "slug": "gearup-for-league-of-legends-65438578",
-    "source": "impact",
-    "sourceId": "ad-3227040",
-    "title": "GearUP for League of Legends",
-    "description": "",
-    "terms": "",
-    "advertiser": "GearUP Portal Pte Ltd",
-    "advertiserId": 6117213,
-    "type": "promotion",
-    "voucherCode": null,
-    "trackingUrl": "https://gearup.sjv.io/c/7662895/3227040/40222",
-    "destinationUrl": "https://www.gearupbooster.com/camp/lol/",
-    "startDate": null,
-    "endDate": null,
-    "category": "sonstiges",
-    "dateAdded": null,
-    "updatedAt": "2026-09-04T13:53:03.339Z"
+    "updatedAt": "2026-09-04T14:00:54.682Z"
   },
   {
     "id": "6dfa0f30aebc4181",
@@ -237,7 +217,7 @@
     "endDate": null,
     "category": "sonstiges",
     "dateAdded": null,
-    "updatedAt": "2026-09-04T13:53:03.339Z"
+    "updatedAt": "2026-09-04T14:00:54.682Z"
   },
   {
     "id": "0bf7d50db33d5944",
@@ -257,7 +237,7 @@
     "endDate": null,
     "category": "sonstiges",
     "dateAdded": null,
-    "updatedAt": "2026-09-04T13:53:03.339Z"
+    "updatedAt": "2026-09-04T14:00:54.682Z"
   },
   {
     "id": "5b06b17c2569da13",
@@ -277,7 +257,7 @@
     "endDate": null,
     "category": "sonstiges",
     "dateAdded": null,
-    "updatedAt": "2026-09-04T13:53:03.339Z"
+    "updatedAt": "2026-09-04T14:00:54.682Z"
   },
   {
     "id": "66d2f7a70373bd0f",
@@ -297,7 +277,7 @@
     "endDate": null,
     "category": "sonstiges",
     "dateAdded": null,
-    "updatedAt": "2026-09-04T13:53:03.339Z"
+    "updatedAt": "2026-09-04T14:00:54.682Z"
   },
   {
     "id": "050e8439cf4dbe0c",
@@ -317,7 +297,7 @@
     "endDate": null,
     "category": "sonstiges",
     "dateAdded": null,
-    "updatedAt": "2026-09-04T13:53:03.339Z"
+    "updatedAt": "2026-09-04T14:00:54.682Z"
   },
   {
     "id": "9dd02e0e1b5bc574",
@@ -337,7 +317,7 @@
     "endDate": null,
     "category": "sonstiges",
     "dateAdded": null,
-    "updatedAt": "2026-09-04T13:53:03.339Z"
+    "updatedAt": "2026-09-04T14:00:54.682Z"
   },
   {
     "id": "5ca2687df916a8bd",
@@ -357,7 +337,7 @@
     "endDate": null,
     "category": "sonstiges",
     "dateAdded": null,
-    "updatedAt": "2026-09-04T13:53:03.339Z"
+    "updatedAt": "2026-09-04T14:00:54.682Z"
   },
   {
     "id": "81498f2ba17aa39f",
@@ -377,7 +357,7 @@
     "endDate": null,
     "category": "sonstiges",
     "dateAdded": null,
-    "updatedAt": "2026-09-04T13:53:03.339Z"
+    "updatedAt": "2026-09-04T14:00:54.682Z"
   },
   {
     "id": "084c42479571f3a8",
@@ -397,7 +377,7 @@
     "endDate": null,
     "category": "sonstiges",
     "dateAdded": null,
-    "updatedAt": "2026-09-04T13:53:03.339Z"
+    "updatedAt": "2026-09-04T14:00:54.682Z"
   },
   {
     "id": "82ab13c5e14368bd",
@@ -417,7 +397,7 @@
     "endDate": null,
     "category": "sonstiges",
     "dateAdded": null,
-    "updatedAt": "2026-09-04T13:53:03.339Z"
+    "updatedAt": "2026-09-04T14:00:54.682Z"
   },
   {
     "id": "15595925179f8a91",
@@ -437,7 +417,7 @@
     "endDate": null,
     "category": "sonstiges",
     "dateAdded": null,
-    "updatedAt": "2026-09-04T13:53:03.339Z"
+    "updatedAt": "2026-09-04T14:00:54.682Z"
   },
   {
     "id": "0f2a32ad1b2d9a63",
@@ -457,6 +437,6 @@
     "endDate": null,
     "category": "computer",
     "dateAdded": null,
-    "updatedAt": "2026-09-04T13:53:03.339Z"
+    "updatedAt": "2026-09-04T14:00:54.682Z"
   }
 ]
