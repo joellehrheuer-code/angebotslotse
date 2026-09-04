@@ -1,10 +1,27 @@
 {
   "state": "ok",
-  "lastSuccessfulUpdate": "2026-09-04T10:56:16.163Z",
-  "activeOffers": 1,
-  "added": 0,
+  "lastSuccessfulUpdate": "2026-09-04T11:08:56.000Z",
+  "activeOffers": 4,
+  "added": 3,
   "removed": 0,
   "invalidLinks": 0,
   "apiErrors": 0,
+  "sources": {
+    "awin": {
+      "state": "ok",
+      "count": 1,
+      "error": null
+    },
+    "direct": {
+      "state": "ok",
+      "count": 3,
+      "error": null
+    },
+    "impact": {
+      "state": "disabled",
+      "count": 0,
+      "error": null
+    }
+  },
   "message": "Aktualisierung erfolgreich."
 }

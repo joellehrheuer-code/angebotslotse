@@ -12,6 +12,10 @@ jobs:
         with: { node-version: 20 }
       - run: npm test
       - run: npm run check
+      - run: npm run build && npm run validate && npm run security
+        env:
+          SITE_URL: https://joellehrheuer-code.github.io/angebotslotse
+          AWIN_API_TOKEN: ${{ secrets.AWIN_API_TOKEN }}
       - run: npm run report
         env:
           AWIN_PUBLISHER_ID: ${{ vars.AWIN_PUBLISHER_ID }}

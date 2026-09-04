@@ -6,8 +6,13 @@
   "maxOffers": 500,
   "staleAfterHours": 36,
   "categories": {
-    "elektronik": ["elektronik", "computer", "mobile", "audio", "tv"],
+    "technik": ["elektronik", "technik", "mobile", "smartphone", "tv"],
+    "gaming": ["gaming", "konsole", "playstation", "xbox", "nintendo"],
+    "audio-musik": ["audio", "musik", "mikrofon", "gitarre", "plugin", "studio", "rode", "waves", "thomann"],
+    "computer": ["computer", "laptop", "notebook", "pc", "monitor"],
+    "zubehoer": ["zubehör", "zubehoer", "kabel", "adapter", "case"],
     "haushalt": ["haushalt", "home", "küche", "garden"],
+    "werkzeug": ["werkzeug", "tools", "bohrer", "maschine"],
     "mode": ["mode", "fashion", "schuhe", "clothing"],
     "freizeit": ["freizeit", "sport", "reise", "travel"],
     "sonstiges": []

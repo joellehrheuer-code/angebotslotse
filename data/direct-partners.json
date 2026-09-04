@@ -1,0 +1,32 @@
+[
+  {
+    "id": "waves",
+    "name": "Waves",
+    "title": "Waves Specials",
+    "description": "Aktuelle Aktionen für Audio-Plugins und Musikproduktion direkt bei Waves.",
+    "category": "audio-musik",
+    "trackingUrl": "https://www.waves.com/specials?irclickid=QAI3NoWCZxyZU9-3nYVDO10MUkr20jSY2V1s0w0&irgwc=1&afsrc=1&utm_medium=7662895&utm_campaign=Online%20Tracking%20Link&utm_source=ir&sharedid=",
+    "destinationUrl": "https://www.waves.com/specials",
+    "enabled": true
+  },
+  {
+    "id": "thomann",
+    "name": "Thomann",
+    "title": "Musik- und Studioequipment bei Thomann",
+    "description": "Zum Sortiment für Instrumente, Recording, Beschallung und Zubehör bei Thomann.",
+    "category": "audio-musik",
+    "trackingUrl": "https://www.thomann.de/de/index.html?offid=1&affid=6598",
+    "destinationUrl": "https://www.thomann.de/de/index.html",
+    "enabled": true
+  },
+  {
+    "id": "rode-brand-store",
+    "name": "RØDE Brand Store",
+    "title": "RØDE Mikrofone und Creator-Zubehör",
+    "description": "Zum offiziellen RØDE Brand Store für Mikrofone, Audio- und Creator-Zubehör.",
+    "category": "audio-musik",
+    "trackingUrl": "https://brandstore.rode.com/de-eu?sca_ref=12032030.y9HLLpH5pD",
+    "destinationUrl": "https://brandstore.rode.com/de-eu",
+    "enabled": true
+  }
+]

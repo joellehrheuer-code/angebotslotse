@@ -1,5 +1,5 @@
 import fs from "node:fs/promises";
-import { fetchAwinOffers } from "./lib/awin.mjs";
+import { collectSources } from "./lib/source-manager.mjs";
 import { normalizeAndDedupe } from "./lib/normalize.mjs";
 
 const config = JSON.parse(await fs.readFile("config.json", "utf8"));
@@ -8,12 +8,16 @@ const oldStatus = JSON.parse(await fs.readFile("data/status.json", "utf8").catch
 const oldIds = new Set(oldOffers.map(o => o.id));
 let status;
 try {
-  const raw = await fetchAwinOffers({ publisherId: process.env.AWIN_PUBLISHER_ID, token: process.env.AWIN_API_TOKEN });
-  const offers = normalizeAndDedupe(raw, config);
+  const sources = await collectSources();
+  const failed = new Set(sources.filter(s => s.state === "error").map(s => s.name));
+  const fresh = sources.flatMap(s => s.rows);
+  const fallback = oldOffers.filter(o => failed.has(o.source));
+  const offers = normalizeAndDedupe([...fresh, ...fallback], config);
   const newIds = new Set(offers.map(o => o.id));
   status = { state: "ok", lastSuccessfulUpdate: new Date().toISOString(), activeOffers: offers.length,
     added: offers.filter(o => !oldIds.has(o.id)).length, removed: oldOffers.filter(o => !newIds.has(o.id)).length,
-    invalidLinks: 0, apiErrors: 0, message: "Aktualisierung erfolgreich." };
+    invalidLinks: 0, apiErrors: failed.size, sources: Object.fromEntries(sources.map(s => [s.name, { state: s.state, count: s.rows.length, error: s.error ?? null }])),
+    message: failed.size ? "Aktualisierung mit zwischengespeicherten Quelldaten abgeschlossen." : "Aktualisierung erfolgreich." };
   await fs.writeFile("data/offers.json", `${JSON.stringify(offers, null, 2)}\n`);
 } catch (error) {
   status = { state: "error", lastSuccessfulUpdate: oldStatus.lastSuccessfulUpdate ?? null, activeOffers: oldOffers.length, added: 0, removed: 0,

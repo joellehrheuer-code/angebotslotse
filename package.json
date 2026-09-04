@@ -6,6 +6,8 @@
   "scripts": {
     "update": "node scripts/update.mjs",
     "build": "node scripts/build.mjs",
+    "validate": "node scripts/validate-build.mjs",
+    "security": "node scripts/security-check.mjs",
     "check": "node scripts/integrity.mjs",
     "report": "node scripts/report.mjs",
     "test": "node --test"

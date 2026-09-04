@@ -25,15 +25,16 @@ export function normalizeOffer(raw, config, now = new Date()) {
   if (regions.length && !regions.includes("ALL") && !regions.includes(config.marketCountry)) return null;
   const advertiser = text(raw.advertiser?.name ?? raw.advertiserName, 120);
   const sourceId = text(raw.promotionId ?? raw.id, 120);
-  const id = crypto.createHash("sha256").update(`awin:${sourceId}:${trackingUrl}`).digest("hex").slice(0, 16);
+  const source = text(raw.source || "awin", 30).toLowerCase();
+  const id = crypto.createHash("sha256").update(`${source}:${sourceId}:${trackingUrl}`).digest("hex").slice(0, 16);
   return {
-    id, slug: `${slugify(title) || "angebot"}-${id.slice(0, 8)}`, source: "awin", sourceId, title,
+    id, slug: `${slugify(title) || "angebot"}-${id.slice(0, 8)}`, source, sourceId, title,
     description: text(raw.description, 600), terms: text(raw.terms, 1200), advertiser,
     advertiserId: Number(raw.advertiser?.id ?? raw.advertiserId) || null,
     type: raw.type === "voucher" ? "voucher" : "promotion",
     voucherCode: raw.voucher?.code ? text(raw.voucher.code, 100) : null,
     trackingUrl, destinationUrl, startDate: startDate?.toISOString() ?? null,
-    endDate: endDate?.toISOString() ?? null, category: categoryFor(`${raw.title} ${raw.description}`, config.categories),
+    endDate: endDate?.toISOString() ?? null, category: raw.category && config.categories[raw.category] ? raw.category : categoryFor(`${raw.title} ${raw.description}`, config.categories),
     dateAdded: raw.dateAdded ? new Date(raw.dateAdded).toISOString() : null,
     updatedAt: now.toISOString()
   };
@@ -44,7 +45,7 @@ export function normalizeAndDedupe(rows, config, now = new Date()) {
   for (const raw of rows) {
     const offer = normalizeOffer(raw, config, now);
     if (!offer) continue;
-    const key = `${offer.advertiserId}:${offer.sourceId || offer.destinationUrl}`;
+    const key = offer.destinationUrl.replace(/[?#].*$/, "").toLowerCase() || `${offer.source}:${offer.sourceId}`;
     if (!byKey.has(key) || (offer.description.length > byKey.get(key).description.length)) byKey.set(key, offer);
   }
   return [...byKey.values()].sort((a, b) => (a.endDate ?? "9999").localeCompare(b.endDate ?? "9999")).slice(0, config.maxOffers);
