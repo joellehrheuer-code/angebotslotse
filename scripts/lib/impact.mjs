@@ -35,19 +35,28 @@ function client(accountSid, authToken, fetchImpl) {
   return { request, pages };
 }
 
-const validTrackingUrl = value => {
-  try { return new URL(value).protocol === "https:"; } catch { return false; }
+const trackingUrlAllowed = (value, policy, rule = null) => {
+  try {
+    const url = new URL(value);
+    if (url.protocol !== "https:" || (policy.blockedTrackingUrls ?? []).includes(url.href)) return false;
+    return !(rule?.blockedTrackingHosts ?? []).some(host => url.hostname === host || url.hostname.endsWith(`.${host}`));
+  } catch { return false; }
 };
 
-async function resolveAdTrackingLink(ad, api, policy) {
+const quarantineFor = (program, policy) => (policy.quarantinedAdvertisers ?? []).find(rule =>
+  (rule.advertiserId && String(rule.advertiserId) === String(program.AdvertiserId)) ||
+  (rule.advertiserName && String(rule.advertiserName).toLowerCase() === String(program.AdvertiserName).toLowerCase()));
+
+async function resolveAdTrackingLink(ad, program, api, policy) {
   const sourceId = `ad-${ad.Id}`;
-  const blocked = new Set(policy.blockedTrackingUrls ?? []);
+  const rule = quarantineFor(program, policy);
   const current = ad.TrackingLink;
-  if (!(policy.reviewSourceIds ?? []).includes(sourceId)) return validTrackingUrl(current) && !blocked.has(current) ? current : null;
+  const requiresDedicatedCheck = (policy.reviewSourceIds ?? []).includes(sourceId) || rule?.requireDedicatedAdLink;
+  if (!requiresDedicatedCheck) return trackingUrlAllowed(current, policy, rule) ? current : null;
   try {
     const payload = await api.request(`/Mediapartners/${policy.account}/Ads/${encodeURIComponent(ad.Id)}/TrackingLink`);
     const alternate = payload.TrackingLink ?? payload.TrackingURL;
-    return validTrackingUrl(alternate) && !blocked.has(alternate) && alternate !== current ? alternate : null;
+    return alternate !== current && trackingUrlAllowed(alternate, policy, rule) ? alternate : null;
   } catch {
     return null;
   }
@@ -71,7 +80,8 @@ export async function fetchImpactOffers({ accountSid, authToken, fetchImpl = fet
   const rows = [];
 
   for (const program of programs) {
-    if (!program.TrackingLink) continue;
+    const rule = quarantineFor(program, policy);
+    if (!trackingUrlAllowed(program.TrackingLink, policy, rule)) continue;
     rows.push({ ...common(program), id: `program-${program.CampaignId}`, title: program.CampaignName,
       description: program.CampaignDescription || `Partnerprogramm von ${program.AdvertiserName}.`,
       url: program.AdvertiserUrl || program.CampaignUrl || program.TrackingLink, urlTracking: program.TrackingLink,
@@ -82,7 +92,7 @@ export async function fetchImpactOffers({ accountSid, authToken, fetchImpl = fet
   for (const ad of ads) {
     const program = byCampaign.get(String(ad.CampaignId));
     if (!program || !ad.Name) continue;
-    const trackingUrl = await resolveAdTrackingLink(ad, api, policy);
+    const trackingUrl = await resolveAdTrackingLink(ad, program, api, policy);
     if (!trackingUrl) continue;
     rows.push({ ...common(program, ad), id: `ad-${ad.Id}`, title: ad.Name, description: ad.Description,
       url: ad.LandingPageUrl || program.AdvertiserUrl || trackingUrl, urlTracking: trackingUrl,
@@ -94,7 +104,7 @@ export async function fetchImpactOffers({ accountSid, authToken, fetchImpl = fet
   for (const promotion of promotions) {
     const program = byAdvertiser.get(String(promotion.AdvertiserId));
     const trackingUrl = promotion.TrackingLink || program?.TrackingLink;
-    if (!program || !trackingUrl || !promotion.PromotionTitle) continue;
+    if (!program || !promotion.PromotionTitle || !trackingUrlAllowed(trackingUrl, policy, quarantineFor(program, policy))) continue;
     const [startDate, endDate] = String(promotion.PromotionEffectiveDates ?? "").split("/");
     rows.push({ ...common(program, promotion), id: `promotion-${promotion.PromotionIds}`, title: promotion.PromotionTitle,
       description: promotion.PromotionDescription, terms: promotion.Terms,
@@ -104,7 +114,7 @@ export async function fetchImpactOffers({ accountSid, authToken, fetchImpl = fet
   }
 
   for (const program of programs) {
-    if (!program.TrackingLink) continue;
+    if (!trackingUrlAllowed(program.TrackingLink, policy, quarantineFor(program, policy))) continue;
     const deals = await api.pages(`/Mediapartners/${account}/Campaigns/${encodeURIComponent(program.CampaignId)}/Deals`, ["Deals"], { State: "ACTIVE" });
     for (const deal of deals) {
       if (String(deal.State).toUpperCase() !== "ACTIVE" || !deal.Name) continue;
@@ -119,7 +129,7 @@ export async function fetchImpactOffers({ accountSid, authToken, fetchImpl = fet
   for (const product of products) {
     const program = byCampaign.get(String(product.CampaignId));
     const trackingUrl = product.TrackingLink || product.UrlTracking;
-    if (!program || !trackingUrl || !product.Name || String(product.StockAvailability).toLowerCase() === "outofstock") continue;
+    if (!program || !trackingUrlAllowed(trackingUrl, policy, quarantineFor(program, policy)) || !product.Name || String(product.StockAvailability).toLowerCase() === "outofstock") continue;
     rows.push({ ...common(program), id: `product-${product.CatalogId}-${product.CatalogItemId}`, title: product.Name,
       description: product.Description, url: product.Url || trackingUrl, urlTracking: trackingUrl, type: "promotion" });
   }

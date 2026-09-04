@@ -61,3 +61,29 @@ test("Impact akzeptiert für eine geprüfte Ad nur eine abweichende offizielle A
   const rows = await fetchImpactOffers({accountSid:"SID",authToken:"TOKEN",fetchImpl,linkPolicy:{reviewSourceIds:["ad-3227040"],blockedTrackingUrls:["https://gearup.sjv.io/c/7662895/3227040/40222"]}});
   assert.equal(rows.find(row => row.id === "ad-3227040")?.urlTracking, alternate);
 });
+
+test("Impact quarantänisiert einen problematischen Advertiser vollständig und lässt andere unverändert", async () => {
+  const dedicatedChecks=[];
+  const fetchImpl = async url => {
+    const pathname = new URL(url).pathname;
+    let payload = {"@numpages":1};
+    if (pathname.endsWith("/Campaigns")) payload.Campaigns=[
+      {CampaignId:"40222",CampaignName:"GearUP",AdvertiserId:"6117213",AdvertiserName:"GearUP Portal Pte Ltd",AdvertiserUrl:"https://gearup.example",ContractStatus:"Active",ShippingRegions:["GERMANY"],TrackingLink:"https://gearup.sjv.io/c/program"},
+      {CampaignId:"88",CampaignName:"Other",AdvertiserId:"8",AdvertiserName:"Other Shop",AdvertiserUrl:"https://other.example",ContractStatus:"Active",ShippingRegions:["GERMANY"],TrackingLink:"https://other.sjv.io/c/program"}
+    ];
+    else if (pathname.endsWith("/Ads")) payload.Ads=[
+      {Id:"1",Name:"Gear One",CampaignId:"40222",AdvertiserId:"6117213",TrackingLink:"https://gearup.sjv.io/c/one",LandingPageUrl:"https://gearup.example/one"},
+      {Id:"2",Name:"Gear Two",CampaignId:"40222",AdvertiserId:"6117213",TrackingLink:"https://gearup.sjv.io/c/two",LandingPageUrl:"https://gearup.example/two"},
+      {Id:"3",Name:"Other Ad",CampaignId:"88",AdvertiserId:"8",TrackingLink:"https://other.sjv.io/c/ad",LandingPageUrl:"https://other.example/ad"}
+    ];
+    else if (pathname.endsWith("/TrackingLink")) { dedicatedChecks.push(pathname); payload.TrackingURL=`https://gearup.sjv.io/c/alternate-${pathname.split("/").at(-2)}`; }
+    else if (pathname.endsWith("/Promotions")) payload.Promotions=[];
+    else if (pathname.endsWith("/Deals")) payload.Deals=[];
+    else payload.Items=[];
+    return {ok:true,json:async()=>payload};
+  };
+  const rows = await fetchImpactOffers({accountSid:"SID",authToken:"TOKEN",fetchImpl,linkPolicy:{quarantinedAdvertisers:[{advertiserId:"6117213",blockedTrackingHosts:["gearup.sjv.io"],requireDedicatedAdLink:true}]}});
+  assert.equal(dedicatedChecks.length, 2);
+  assert.equal(rows.some(row => row.advertiserId === "6117213" || row.advertiserName === "GearUP Portal Pte Ltd"), false);
+  assert.deepEqual(rows.filter(row => row.advertiserId === "8").map(row => row.id), ["program-88","ad-3"]);
+});
