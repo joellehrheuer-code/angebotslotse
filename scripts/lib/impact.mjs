@@ -131,7 +131,12 @@ export async function fetchImpactOffers({ accountSid, authToken, fetchImpl = fet
     const trackingUrl = product.TrackingLink || product.UrlTracking;
     if (!program || !trackingUrlAllowed(trackingUrl, policy, quarantineFor(program, policy)) || !product.Name || String(product.StockAvailability).toLowerCase() === "outofstock") continue;
     rows.push({ ...common(program), id: `product-${product.CatalogId}-${product.CatalogItemId}`, title: product.Name,
-      description: product.Description, url: product.Url || trackingUrl, urlTracking: trackingUrl, type: "promotion" });
+      description: product.Description, url: product.Url || trackingUrl, urlTracking: trackingUrl, type: "promotion",
+      imageUrl: product.ImageUrl || product.ImageURL || product.ImageUri,
+      currentPrice: product.CurrentPrice ?? product.Price ?? product.SalePrice,
+      previousPrice: product.OriginalPrice ?? product.RetailPrice ?? product.MSRP,
+      currency: product.Currency || product.CurrencyCode,
+      productId: product.Gtin ?? product.GTIN ?? product.Ean ?? product.EAN ?? product.Mpn ?? product.CatalogItemId });
   }
 
   return rows;

@@ -4,6 +4,10 @@ const text = (value, max = 2000) => String(value ?? "").replace(/<[^>]*>/g, " ")
 const safeHttpUrl = value => {
   try { const url = new URL(value); return ["http:", "https:"].includes(url.protocol) ? url.href : null; } catch { return null; }
 };
+const amount = value => {
+  const number = Number(String(value ?? "").replace(",", "."));
+  return Number.isFinite(number) && number >= 0 ? number : null;
+};
 const slugify = value => text(value, 120).toLowerCase().normalize("NFKD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 
 export function categoryFor(value, categories) {
@@ -26,6 +30,8 @@ export function normalizeOffer(raw, config, now = new Date()) {
   const advertiser = text(raw.advertiser?.name ?? raw.advertiserName, 120);
   const sourceId = text(raw.promotionId ?? raw.id, 120);
   const source = text(raw.source || "awin", 30).toLowerCase();
+  const currentPrice = amount(raw.currentPrice ?? raw.price ?? raw.salePrice);
+  const previousPrice = amount(raw.previousPrice ?? raw.originalPrice ?? raw.retailPrice);
   const id = crypto.createHash("sha256").update(`${source}:${sourceId}:${trackingUrl}`).digest("hex").slice(0, 16);
   return {
     id, slug: `${slugify(title) || "angebot"}-${id.slice(0, 8)}`, source, sourceId, title,
@@ -36,7 +42,13 @@ export function normalizeOffer(raw, config, now = new Date()) {
     trackingUrl, destinationUrl, startDate: startDate?.toISOString() ?? null,
     endDate: endDate?.toISOString() ?? null, category: raw.category && config.categories[raw.category] ? raw.category : categoryFor(`${raw.title} ${raw.description}`, config.categories),
     dateAdded: raw.dateAdded ? new Date(raw.dateAdded).toISOString() : null,
-    updatedAt: now.toISOString()
+    updatedAt: now.toISOString(),
+    imageUrl: safeHttpUrl(raw.imageUrl ?? raw.image ?? raw.imageUri),
+    currentPrice,
+    previousPrice: previousPrice !== null && currentPrice !== null && previousPrice > currentPrice ? previousPrice : null,
+    currency: text(raw.currency || config.currency, 3).toUpperCase(),
+    platform: text(raw.platform, 80) || null,
+    productId: text(raw.productId ?? raw.ean ?? raw.gtin ?? raw.mpn, 120) || null
   };
 }
 

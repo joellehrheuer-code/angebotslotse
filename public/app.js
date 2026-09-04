@@ -16,6 +16,33 @@ mainNav?.addEventListener("click", event => {
   if (event.target.closest("a")) { menuButton?.setAttribute("aria-expanded", "false"); mainNav.classList.remove("open"); }
 });
 
+document.addEventListener("keydown", event => {
+  if (event.key === "Escape" && mainNav?.classList.contains("open")) {
+    menuButton?.setAttribute("aria-expanded", "false");
+    mainNav.classList.remove("open");
+    menuButton?.focus();
+  }
+});
+
+const countdowns = [...document.querySelectorAll("[data-countdown]")];
+function updateCountdowns() {
+  const now = Date.now();
+  for (const element of countdowns) {
+    const remaining = new Date(element.dataset.countdown).getTime() - now;
+    if (!Number.isFinite(remaining) || remaining <= 0) {
+      element.textContent = "Angebot abgelaufen";
+      element.closest(".deal-card")?.remove();
+      continue;
+    }
+    const days = Math.floor(remaining / 86400000);
+    const hours = Math.floor((remaining % 86400000) / 3600000);
+    const minutes = Math.floor((remaining % 3600000) / 60000);
+    element.textContent = `Endet in ${days ? `${days} T. ` : ""}${hours} Std. ${minutes} Min.`;
+  }
+}
+updateCountdowns();
+if (countdowns.length) setInterval(updateCountdowns, 60000);
+
 const promo = document.querySelector("[data-promo-popup]");
 try { if (localStorage.getItem("angebotslotse-promo-closed") === "1") promo?.remove(); } catch {}
 document.querySelector("[data-promo-close]")?.addEventListener("click", () => {

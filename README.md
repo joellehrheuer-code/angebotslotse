@@ -1,5 +1,17 @@
 # Angebotslotse
 
+## Angebotslotse V2
+
+Die statische Website rendert echte Aktionen und Partnerangebote als visuelle Deal-Karten. Offizielle Bild-, Preis-, Vergleichspreis-, Produktkennungs- und Laufzeitdaten werden übernommen, sofern eine angeschlossene Quelle sie liefert. Fehlende Angaben werden nicht erfunden: Ohne freigegebenes Bild erscheint ein neutraler Platzhalter, ohne Preis kein Rabatt und ohne Enddatum kein Countdown.
+
+Aktuelle Deals und Dauerangebote werden getrennt. Ein Preisvergleich erscheint nur, wenn mehrere Quellen dieselbe eindeutige Produktkennung (EAN/GTIN/MPN oder Feed-ID) und dieselbe Währung liefern. GearUP bleibt per `data/impact-link-policy.json` quarantänisiert; Razer bleibt deaktiviert.
+
+## Datenschutzfreundliche Statistik und Search Console
+
+Cloudflare Web Analytics ist optional vorbereitet und standardmäßig deaktiviert. Der öffentliche Site-Token wird als GitHub-Actions-Variable `CLOUDFLARE_WEB_ANALYTICS_TOKEN` hinterlegt, niemals als Quellcodewert. Google Search Console kann über die ebenfalls öffentliche Repository-Variable `GOOGLE_SITE_VERIFICATION` verifiziert werden. Die Sitemap liegt nach dem Deployment unter `https://joellehrheuer-code.github.io/angebotslotse/sitemap.xml`.
+
+Beide Werte sind technische öffentliche Kennungen, keine API-Secrets. Awin- und Impact-Zugangsdaten bleiben ausschließlich GitHub-Secrets beziehungsweise lokale, ignorierte `.env.local`-Werte.
+
 Produktionsfähige, statische Affiliate-Angebotsseite für Deutschland. Sie vereinheitlicht Awin, direkte Partner und optional Impact.com, filtert ungültige oder abgelaufene Datensätze, dedupliziert Angebote und veröffentlicht automatisch über GitHub Pages.
 
 ## Architektur

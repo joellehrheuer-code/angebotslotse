@@ -2,6 +2,8 @@ import fs from "node:fs/promises";
 const offers = JSON.parse(await fs.readFile("data/offers.json","utf8"));
 const status = JSON.parse(await fs.readFile("data/status.json","utf8"));
 const config = JSON.parse(await fs.readFile("config.json","utf8"));
+const policy = JSON.parse(await fs.readFile("data/impact-link-policy.json","utf8").catch(()=>"{}"));
+const quarantined = offer => (policy.quarantinedAdvertisers ?? []).some(rule => (rule.advertiserId && String(rule.advertiserId) === String(offer.advertiserId)) || (rule.advertiserName && String(rule.advertiserName).toLowerCase() === String(offer.advertiser).toLowerCase()));
 const seen = new Set(); const errors = [];
 if (!status.lastSuccessfulUpdate || Date.now() - new Date(status.lastSuccessfulUpdate).getTime() > config.staleAfterHours * 3600000) errors.push("Angebotsdaten sind veraltet.");
 for (const o of offers) {
@@ -11,4 +13,5 @@ for (const o of offers) {
   if (o.endDate && new Date(o.endDate) < new Date()) errors.push(`Abgelaufen: ${o.id}`);
 }
 if (errors.length) { console.error(errors.join("\n")); process.exit(1); }
-console.log(`Integritätscheck bestanden: ${offers.length} aktive Angebote.`);
+const publishable = offers.filter(offer => !quarantined(offer));
+console.log(`Integritätscheck bestanden: ${publishable.length} veröffentlichbare Angebote; ${offers.length-publishable.length} quarantänisiert.`);
