@@ -46,7 +46,7 @@ Die Site lädt keine externen Fonts, setzt keine eigenen Cookies und enthält st
 ## JOEL MUSS NUR NOCH DIESE PUNKTE MACHEN
 
 1. Neues GitHub-Repository anlegen, diesen Ordner hochladen und unter **Settings → Pages → Source** einmal **GitHub Actions** wählen.
-2. In **Settings → Secrets and variables → Actions** die Secrets `AWIN_PUBLISHER_ID` und `AWIN_API_TOKEN` hinterlegen.
+2. In **Settings → Secrets and variables → Actions** das Secret `AWIN_API_TOKEN` und die Variable `AWIN_PUBLISHER_ID` mit dem Wert `3045061` hinterlegen.
 3. Dort als Variables `SITE_URL`, `CONTACT_EMAIL`, `LEGAL_NAME` und `LEGAL_ADDRESS` mit echten Angaben hinterlegen; Impressum und Datenschutz vor der Veröffentlichung rechtlich prüfen.
 4. Den Workflow **Angebote aktualisieren** einmal manuell starten und kontrollieren, dass deine freigeschalteten Awin-Programme Angebote liefern.
 
