@@ -1,7 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 
-const secret = process.env.AWIN_API_TOKEN;
+const secrets = [process.env.AWIN_API_TOKEN, process.env.IMPACT_AUTH_TOKEN].filter(value => value?.length >= 12);
 const errors = [];
 function walk(dir) {
   if (!fs.existsSync(dir)) return;
@@ -11,7 +11,7 @@ function walk(dir) {
     if(entry.isDirectory()) walk(p);
     else {
       const content=fs.readFileSync(p);
-      if(secret && secret.length >= 12 && content.includes(Buffer.from(secret))) errors.push(`Secretwert gefunden: ${p}`);
+      if(secrets.some(secret => content.includes(Buffer.from(secret)))) errors.push(`Secretwert gefunden: ${p}`);
       if((p.startsWith(`dist${path.sep}`)||p.startsWith(`public${path.sep}`)) && /AWIN_API_TOKEN|IMPACT_AUTH_TOKEN/.test(content.toString("utf8"))) errors.push(`Secretname im öffentlichen Build: ${p}`);
     }
   }

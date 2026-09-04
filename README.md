@@ -7,8 +7,8 @@ Produktionsfähige, statische Affiliate-Angebotsseite für Deutschland. Sie vere
 - `scripts/update.mjs`: quellenisolierte Aktualisierung mit Fallback auf zuletzt gültige Daten
 - `scripts/lib/source-manager.mjs`: zentraler Affiliate Source Manager
 - `scripts/lib/awin.mjs`: offizielle Awin Publisher Offers API
-- `scripts/lib/impact.mjs`: vorbereitete offizielle Impact Media-Partner Promotions API
-- `scripts/lib/direct.mjs` und `data/direct-partners.json`: Waves, Thomann und RØDE
+- `scripts/lib/impact.mjs`: Impact Partner API v16 für Programme, Ads, Promotions, Deals und Produktkataloge
+- `scripts/lib/direct.mjs` und `data/direct-partners.json`: Waves, Thomann, RØDE und Instant Gaming; Razer bleibt deaktiviert
 - `scripts/lib/normalize.mjs`: Validierung, Deutschland-Filter, Kategorien, Dubletten
 - `scripts/build.mjs`: statische Seiten, Detailseiten, Sitemap, Robots und Statusseite
 - `scripts/integrity.mjs`: täglicher Daten- und HTTPS-Linkcheck
@@ -48,7 +48,7 @@ Hinweis: Awin kann das genaue Request-Schema der Offers-API weiterentwickeln. Be
 
 ## Impact.com
 
-Der Adapter verwendet die offizielle Media-Partner-Struktur `GET /Mediapartners/{AccountSID}/Promotions` mit HTTP Basic Auth aus AccountSID und AuthToken. Ohne beide Werte meldet die Quelle `disabled` und beeinträchtigt weder Awin noch direkte Partner. Für die Aktivierung werden `IMPACT_ACCOUNT_SID` als GitHub Variable und `IMPACT_AUTH_TOKEN` als GitHub Secret benötigt. Nur Promotionen mit einem von Impact gelieferten Tracking-/Ziel-Link werden veröffentlicht; es werden keine Links konstruiert oder erfunden.
+Der Adapter verwendet die offizielle Partner API v16 mit HTTP Basic Auth aus AccountSID und AuthToken. Er berücksichtigt ausschließlich beigetretene Programme mit aktivem Vertrag und Deutschland als Zielmarkt. Abgerufen werden Programme, verfügbare Werbemittel, Promotions, aktive Deals und Produktkatalogeinträge. Veröffentlicht werden nur Datensätze mit einem von Impact bereitgestellten Trackinglink; Links, Preise und Rabatte werden nicht konstruiert oder erfunden. Ohne beide Zugangswerte meldet die Quelle `disabled` und beeinträchtigt weder Awin noch direkte Partner.
 
 ## Neue Affiliate-Quelle ergänzen
 
@@ -62,7 +62,7 @@ Scraping, erfundene Trackinglinks und künstliche Klicktests sind ausgeschlossen
 
 ## Creator-Modul
 
-`data/creators.json` ist bewusst vom Affiliate-System getrennt und standardmäßig deaktiviert. Einträge dürfen erst mit geklärten Nutzungsrechten und sachlicher Beschreibung aktiviert werden. Fremde Creator werden nicht als Partner bezeichnet, sofern keine Partnerschaft besteht.
+`data/creators.json` ist bewusst vom Affiliate-System getrennt. Twitch, YouTube, Spotify, Instagram, Snapchat, Discord, Buch und Merch-Shop sind als eigene Projekte vorbereitet. Solange kein eindeutig verifizierter Ziel-Link hinterlegt ist, zeigt die Seite keinen anklickbaren Link. Fremde Creator werden nicht als Partner bezeichnet, sofern keine Partnerschaft besteht.
 
 ## Datenschutz und Recht
 
@@ -70,7 +70,7 @@ Die Site lädt keine externen Fonts, setzt keine eigenen Cookies und enthält ke
 
 ## JOEL MUSS NUR NOCH DIESE PUNKTE MACHEN
 
-1. Optional für Impact: in **Settings → Secrets and variables → Actions** `IMPACT_AUTH_TOKEN` als Secret und `IMPACT_ACCOUNT_SID` als Variable hinterlegen; niemals im Chat oder Quellcode.
+1. Die acht verifizierten öffentlichen URLs für Twitch, YouTube, Spotify, Instagram, Snapchat, Discord, Buch und Merch-Shop in `data/creators.json` ergänzen. Bis dahin bleiben die Einträge absichtlich nicht anklickbar.
 2. Impressum und Datenschutzerklärung trotz technischer Anpassung einmal individuell rechtlich prüfen lassen.
 
 ## Monitoring und Fehler
@@ -86,3 +86,7 @@ GitHub benachrichtigt standardmäßig bei fehlgeschlagenen Workflow-Läufen. Die
 - Impact Partner API: https://integrations.impact.com/impact-publisher
 - Impact Promotions: https://integrations.impact.com/impact-publisher/reference/promotions-overview
 - Impact Pagination: https://integrations.impact.com/impact-publisher/reference/pagination
+- Impact Programs: https://integrations.impact.com/impact-publisher/reference/list-campaigns
+- Impact Ads: https://integrations.impact.com/impact-publisher/reference/list-ads
+- Impact Deals: https://integrations.impact.com/impact-publisher/reference/list-deals
+- Impact Catalog Search: https://integrations.impact.com/impact-publisher/reference/search-catalog-items

@@ -17,7 +17,7 @@
     "endDate": "2026-09-06T21:59:00.000Z",
     "category": "technik",
     "dateAdded": "2026-07-14T09:46:20.000Z",
-    "updatedAt": "2026-09-04T11:36:48.817Z"
+    "updatedAt": "2026-09-04T13:32:56.859Z"
   },
   {
     "id": "584ca267849648b4",
@@ -37,7 +37,7 @@
     "endDate": null,
     "category": "audio-musik",
     "dateAdded": null,
-    "updatedAt": "2026-09-04T11:36:48.817Z"
+    "updatedAt": "2026-09-04T13:32:56.859Z"
   },
   {
     "id": "9deaebd1a9f0ee00",
@@ -57,7 +57,7 @@
     "endDate": null,
     "category": "audio-musik",
     "dateAdded": null,
-    "updatedAt": "2026-09-04T11:36:48.817Z"
+    "updatedAt": "2026-09-04T13:32:56.859Z"
   },
   {
     "id": "218792e10e51ba64",
@@ -77,6 +77,26 @@
     "endDate": null,
     "category": "audio-musik",
     "dateAdded": null,
-    "updatedAt": "2026-09-04T11:36:48.817Z"
+    "updatedAt": "2026-09-04T13:32:56.859Z"
+  },
+  {
+    "id": "d5c88ce7a30ddc2f",
+    "slug": "gaming-angebote-bei-instant-gaming-d5c88ce7",
+    "source": "direct",
+    "sourceId": "instant-gaming",
+    "title": "Gaming-Angebote bei Instant Gaming",
+    "description": "Zum aktuellen Spiele-Sortiment und den auf der Zielseite veröffentlichten Angeboten bei Instant Gaming.",
+    "terms": "Preise, Verfügbarkeit und Bedingungen bitte beim Anbieter prüfen.",
+    "advertiser": "Instant Gaming",
+    "advertiserId": null,
+    "type": "promotion",
+    "voucherCode": null,
+    "trackingUrl": "https://www.instant-gaming.com/?igr=angebotslotse",
+    "destinationUrl": "https://www.instant-gaming.com/",
+    "startDate": null,
+    "endDate": null,
+    "category": "gaming",
+    "dateAdded": null,
+    "updatedAt": "2026-09-04T13:32:56.859Z"
   }
 ]

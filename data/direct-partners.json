@@ -28,5 +28,25 @@
     "trackingUrl": "https://brandstore.rode.com/de-eu?sca_ref=12032030.y9HLLpH5pD",
     "destinationUrl": "https://brandstore.rode.com/de-eu",
     "enabled": true
+  },
+  {
+    "id": "instant-gaming",
+    "name": "Instant Gaming",
+    "title": "Gaming-Angebote bei Instant Gaming",
+    "description": "Zum aktuellen Spiele-Sortiment und den auf der Zielseite veröffentlichten Angeboten bei Instant Gaming.",
+    "category": "gaming",
+    "trackingUrl": "https://www.instant-gaming.com/?igr=angebotslotse",
+    "destinationUrl": "https://www.instant-gaming.com/",
+    "enabled": true
+  },
+  {
+    "id": "razer",
+    "name": "Razer",
+    "title": "Razer",
+    "description": "Reservierter Partnereintrag; bleibt bis zur bestätigten Affiliate-Freigabe deaktiviert.",
+    "category": "gaming",
+    "trackingUrl": null,
+    "destinationUrl": null,
+    "enabled": false
   }
 ]

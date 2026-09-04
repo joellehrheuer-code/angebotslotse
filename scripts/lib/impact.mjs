@@ -1,29 +1,109 @@
 const API = "https://api.impact.com";
+const VERSION = "16";
+const PAGE_SIZE = 100;
+
+const list = value => Array.isArray(value) ? value : value == null ? [] : [value];
+const first = (payload, keys) => keys.map(key => payload?.[key]).find(Array.isArray) ?? [];
+const cleanDate = value => value && Number.isFinite(new Date(value).valueOf()) ? value : undefined;
+const activeForGermany = program => {
+  if (String(program.ContractStatus ?? "Active").toLowerCase() !== "active") return false;
+  const raw = program.ShippingRegions?.ShippingRegion ?? program.ShippingRegions;
+  const regions = list(raw).map(value => String(value).toUpperCase());
+  return !regions.length || regions.includes("GERMANY") || regions.includes("ALL");
+};
+
+function client(accountSid, authToken, fetchImpl) {
+  const auth = Buffer.from(`${accountSid}:${authToken}`).toString("base64");
+  const headers = { Authorization: `Basic ${auth}`, Accept: "application/json", "IR-Version": VERSION };
+  const request = async (pathname, params = {}) => {
+    const url = new URL(`${API}${pathname}`);
+    for (const [key, value] of Object.entries(params)) if (value !== undefined) url.searchParams.set(key, String(value));
+    const response = await fetchImpl(url, { headers });
+    if (!response.ok) throw new Error(`Impact API ${pathname}: HTTP ${response.status}`);
+    return response.json();
+  };
+  const pages = async (pathname, keys, params = {}) => {
+    const rows = [];
+    for (let page = 1; page <= 20; page += 1) {
+      const payload = await request(pathname, { ...params, Page: page, PageSize: PAGE_SIZE });
+      rows.push(...first(payload, keys));
+      const total = Number(payload?.["@numpages"] ?? payload?.TotalPages ?? 1);
+      if (page >= total) break;
+    }
+    return rows;
+  };
+  return { pages };
+}
+
+const common = (program, row = {}) => ({
+  advertiserName: row.AdvertiserName ?? program.AdvertiserName ?? program.CampaignName,
+  advertiserId: row.AdvertiserId ?? program.AdvertiserId,
+  regions: { list: [{ countryCode: "DE" }] },
+  source: "impact"
+});
 
 export async function fetchImpactOffers({ accountSid, authToken, fetchImpl = fetch }) {
   if (!accountSid || !authToken) return [];
-  const auth = Buffer.from(`${accountSid}:${authToken}`).toString("base64");
-  const collected = [];
-  let page = 1;
-  for (;;) {
-    const url = `${API}/Mediapartners/${encodeURIComponent(accountSid)}/Promotions?Page=${page}&PageSize=1000`;
-    const response = await fetchImpl(url, { headers: { Authorization: `Basic ${auth}`, Accept: "application/json" } });
-    if (!response.ok) throw new Error(`Impact Promotions API: HTTP ${response.status}`);
-    const payload = await response.json();
-    const rows = payload.Promotions ?? payload.Records ?? [];
-    for (const row of rows) {
-      const [startDate, endDate] = String(row.PromotionEffectiveDates ?? "").split("/");
-      const trackingUrl = row.TrackingLink ?? row.TrackingUrl ?? row.Url;
-      if (!trackingUrl) continue;
-      collected.push({ id: row.PromotionId ?? row.PromotionIds, title: row.PromotionTitle, description: row.PromotionDescription,
-        terms: row.Terms, url: row.LandingPageUrl ?? row.Url ?? trackingUrl, urlTracking: trackingUrl,
-        advertiserName: row.AdvertiserName, advertiserId: row.AdvertiserId, type: row.GenericRedemptionCode ? "voucher" : "promotion",
-        voucher: row.GenericRedemptionCode ? { code: row.GenericRedemptionCode } : undefined,
-        startDate, endDate, regions: { all: true }, source: "impact" });
-    }
-    const pages = Number(payload["@numpages"] ?? 1);
-    if (page >= pages) break;
-    page += 1;
+  const api = client(accountSid, authToken, fetchImpl);
+  const account = encodeURIComponent(accountSid);
+  const programs = (await api.pages(`/Mediapartners/${account}/Campaigns`, ["Campaigns", "Programs"])).filter(activeForGermany);
+  const byCampaign = new Map(programs.map(row => [String(row.CampaignId), row]));
+  const byAdvertiser = new Map(programs.map(row => [String(row.AdvertiserId), row]));
+  const rows = [];
+
+  for (const program of programs) {
+    if (!program.TrackingLink) continue;
+    rows.push({ ...common(program), id: `program-${program.CampaignId}`, title: program.CampaignName,
+      description: program.CampaignDescription || `Partnerprogramm von ${program.AdvertiserName}.`,
+      url: program.AdvertiserUrl || program.CampaignUrl || program.TrackingLink, urlTracking: program.TrackingLink,
+      category: "sonstiges", type: "promotion" });
   }
-  return collected;
+
+  const ads = await api.pages(`/Mediapartners/${account}/Ads`, ["Ads"]);
+  for (const ad of ads) {
+    const program = byCampaign.get(String(ad.CampaignId));
+    if (!program || !ad.TrackingLink || !ad.Name) continue;
+    rows.push({ ...common(program, ad), id: `ad-${ad.Id}`, title: ad.Name, description: ad.Description,
+      url: ad.LandingPageUrl || program.AdvertiserUrl || ad.TrackingLink, urlTracking: ad.TrackingLink,
+      type: String(ad.Type).toUpperCase() === "COUPON" ? "voucher" : "promotion",
+      voucher: ad.DealDefaultPromoCode ? { code: ad.DealDefaultPromoCode } : undefined });
+  }
+
+  const promotions = await api.pages(`/Mediapartners/${account}/Promotions`, ["Promotions"]);
+  for (const promotion of promotions) {
+    const program = byAdvertiser.get(String(promotion.AdvertiserId));
+    const trackingUrl = promotion.TrackingLink || program?.TrackingLink;
+    if (!program || !trackingUrl || !promotion.PromotionTitle) continue;
+    const [startDate, endDate] = String(promotion.PromotionEffectiveDates ?? "").split("/");
+    rows.push({ ...common(program, promotion), id: `promotion-${promotion.PromotionIds}`, title: promotion.PromotionTitle,
+      description: promotion.PromotionDescription, terms: promotion.Terms,
+      url: promotion.LandingPageUrl || program.AdvertiserUrl || trackingUrl, urlTracking: trackingUrl,
+      startDate: cleanDate(startDate), endDate: cleanDate(endDate), type: promotion.GenericRedemptionCode ? "voucher" : "promotion",
+      voucher: promotion.GenericRedemptionCode ? { code: promotion.GenericRedemptionCode } : undefined });
+  }
+
+  for (const program of programs) {
+    if (!program.TrackingLink) continue;
+    const deals = await api.pages(`/Mediapartners/${account}/Campaigns/${encodeURIComponent(program.CampaignId)}/Deals`, ["Deals"], { State: "ACTIVE" });
+    for (const deal of deals) {
+      if (String(deal.State).toUpperCase() !== "ACTIVE" || !deal.Name) continue;
+      rows.push({ ...common(program), id: `deal-${program.CampaignId}-${deal.Id}`, title: deal.Name, description: deal.Description,
+        terms: deal.OfferInstructions, url: program.AdvertiserUrl || program.TrackingLink, urlTracking: program.TrackingLink,
+        startDate: cleanDate(deal.StartDate), endDate: cleanDate(deal.EndDate), type: deal.DefaultPromoCode ? "voucher" : "promotion",
+        voucher: deal.DefaultPromoCode ? { code: deal.DefaultPromoCode } : undefined });
+    }
+  }
+
+  const products = await api.pages(`/Mediapartners/${account}/Catalogs/ItemSearch`, ["Items", "CatalogItems", "Records"]);
+  for (const product of products) {
+    const program = byCampaign.get(String(product.CampaignId));
+    const trackingUrl = product.TrackingLink || product.UrlTracking;
+    if (!program || !trackingUrl || !product.Name || String(product.StockAvailability).toLowerCase() === "outofstock") continue;
+    rows.push({ ...common(program), id: `product-${product.CatalogId}-${product.CatalogItemId}`, title: product.Name,
+      description: product.Description, url: product.Url || trackingUrl, urlTracking: trackingUrl, type: "promotion" });
+  }
+
+  return rows;
 }
+
+export { VERSION as IMPACT_API_VERSION };

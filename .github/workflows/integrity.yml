@@ -16,6 +16,7 @@ jobs:
         env:
           SITE_URL: https://joellehrheuer-code.github.io/angebotslotse
           AWIN_API_TOKEN: ${{ secrets.AWIN_API_TOKEN }}
+          IMPACT_AUTH_TOKEN: ${{ secrets.IMPACT_AUTH_TOKEN }}
       - run: npm run report
         env:
           AWIN_PUBLISHER_ID: ${{ vars.AWIN_PUBLISHER_ID }}

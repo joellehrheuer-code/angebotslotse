@@ -1,8 +1,8 @@
 {
   "state": "ok",
-  "lastSuccessfulUpdate": "2026-09-04T11:36:48.826Z",
-  "activeOffers": 4,
-  "added": 0,
+  "lastSuccessfulUpdate": "2026-09-04T13:32:56.875Z",
+  "activeOffers": 5,
+  "added": 1,
   "removed": 0,
   "invalidLinks": 0,
   "apiErrors": 0,
@@ -14,7 +14,7 @@
     },
     "direct": {
       "state": "ok",
-      "count": 3,
+      "count": 4,
       "error": null
     },
     "impact": {
