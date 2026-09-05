@@ -33,6 +33,7 @@ export function normalizeOffer(raw, config, now = new Date()) {
   const source = text(raw.source || "awin", 30).toLowerCase();
   const currentPrice = amount(raw.currentPrice ?? raw.price ?? raw.salePrice);
   const previousPrice = amount(raw.previousPrice ?? raw.originalPrice ?? raw.retailPrice);
+  const gtin = text(raw.gtin, 32) || null, ean = text(raw.ean, 32) || null, mpn = text(raw.mpn, 80) || null, sku = text(raw.sku, 80) || null;
   const id = crypto.createHash("sha256").update(`${source}:${sourceId}:${trackingUrl}`).digest("hex").slice(0, 16);
   return {
     id, slug: `${slugify(title) || "angebot"}-${id.slice(0, 8)}`, source, sourceId, title,
@@ -45,11 +46,35 @@ export function normalizeOffer(raw, config, now = new Date()) {
     dateAdded: raw.dateAdded ? new Date(raw.dateAdded).toISOString() : null,
     updatedAt: now.toISOString(),
     imageUrl: safeHttpUrl(raw.imageUrl ?? raw.image ?? raw.imageUri),
+    imageAlt: text(raw.imageAlt, 220) || null,
+    imageSource: text(raw.imageSource, 120) || null,
+    mediaType: raw.mediaType === "video" ? "video" : "image",
+    videoUrl: safeHttpUrl(raw.videoUrl),
+    videoPoster: safeHttpUrl(raw.videoPoster),
+    videoProvider: text(raw.videoProvider, 80) || null,
+    videoTitle: text(raw.videoTitle, 220) || null,
+    videoEmbedType: ["html5","youtube","vimeo"].includes(raw.videoEmbedType) ? raw.videoEmbedType : null,
     currentPrice,
     previousPrice: previousPrice !== null && currentPrice !== null && previousPrice > currentPrice ? previousPrice : null,
     currency: text(raw.currency || config.currency, 3).toUpperCase(),
     platform: text(raw.platform, 80) || null,
-    productId: text(raw.productId ?? raw.ean ?? raw.gtin ?? raw.mpn, 120) || null
+    productId: text(raw.productId ?? ean ?? gtin ?? mpn ?? sku, 120) || null,
+    merchantId: Number(raw.advertiser?.id ?? raw.advertiserId) || null,
+    merchantName: advertiser,
+    brand: text(raw.brand ?? raw.manufacturer, 120) || null,
+    gtin, ean, mpn, sku,
+    productUrl: destinationUrl,
+    affiliateUrl: trackingUrl,
+    originalPrice: previousPrice !== null && currentPrice !== null && previousPrice > currentPrice ? previousPrice : null,
+    discountPercent: previousPrice !== null && currentPrice !== null && previousPrice > currentPrice ? Math.round((1-currentPrice/previousPrice)*100) : null,
+    couponCode: raw.voucher?.code ? text(raw.voucher.code, 100) : null,
+    validFrom: startDate?.toISOString() ?? null,
+    validUntil: endDate?.toISOString() ?? null,
+    firstSeen: raw.firstSeen ?? raw.dateAdded ? new Date(raw.firstSeen ?? raw.dateAdded).toISOString() : now.toISOString(),
+    lastSeen: now.toISOString(),
+    lastPriceChange: raw.lastPriceChange ? new Date(raw.lastPriceChange).toISOString() : null,
+    availability: text(raw.availability ?? raw.stockAvailability, 40) || null,
+    isPermanentOffer: !endDate && source === "direct"
   };
 }
 

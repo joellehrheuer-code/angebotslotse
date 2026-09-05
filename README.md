@@ -1,5 +1,19 @@
 # Angebotslotse
 
+## Angebotslotse V3
+
+V3 ist als wachsendes Deal-, Preis- und Discovery-Portal aufgebaut. Der Build erzeugt kompakte visuelle Übersichten, echte Kategorie- und Discovery-Landingpages sowie – erst bei ausreichenden Quelldaten – Produktseiten, sichere Preisvergleiche und 30-Tage-Preisverläufe. `data/price-history.json` speichert ausschließlich positive Preise mit eindeutiger Produkt-ID; `data/coupons.json` enthält ausschließlich von Quellen gelieferte, noch gültige Codes. Beide Dateien werden im bestehenden GitHub-Actions-Lauf aktualisiert.
+
+Offizielle Medien werden mit Quelle und Alt-Text im Datenmodell geführt. Ohne freigegebenes Produktbild zeigt V3 lokale, eindeutig nicht fotografische Kategorie-Platzhalter. Videos werden nur bei vorhandener erlaubter URL, ohne Autoplay und mit `preload="none"` eingebunden. Social-Sharing verändert keine Affiliate-Ziel- oder Trackinglinks.
+
+Cloudflare Web Analytics bleibt nur aktiv, wenn die öffentliche Repository-Variable `CLOUDFLARE_WEB_ANALYTICS_TOKEN` gesetzt ist. Ohne sie werden weder Besucher noch Affiliate-Klicks als messbar ausgegeben. Eine first-party Klickstatistik benötigt später einen datenschutzrechtlich geprüften Erfassungsendpunkt; V3 erzeugt keine Fake-Zahlen.
+
+### Einmalige Search-Console-Schritte
+
+1. URL-Präfix-Property `https://joellehrheuer-code.github.io/angebotslotse/` in Google Search Console anlegen und den Meta-Tag-Wert als Repository-Variable `GOOGLE_SITE_VERIFICATION` speichern.
+2. Nach dem erfolgreichen Deployment `https://joellehrheuer-code.github.io/angebotslotse/sitemap.xml` einreichen.
+3. Die Startseite einmal über die URL-Prüfung zur Indexierung anstoßen.
+
 ## Angebotslotse V2
 
 Die statische Website rendert echte Aktionen und Partnerangebote als visuelle Deal-Karten. Offizielle Bild-, Preis-, Vergleichspreis-, Produktkennungs- und Laufzeitdaten werden übernommen, sofern eine angeschlossene Quelle sie liefert. Fehlende Angaben werden nicht erfunden: Ohne freigegebenes Bild erscheint ein neutraler Platzhalter, ohne Preis kein Rabatt und ohne Enddatum kein Countdown.

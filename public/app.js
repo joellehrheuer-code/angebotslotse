@@ -5,6 +5,24 @@ const params = new URLSearchParams(location.search); const category = params.get
 function filter() { const q = (input?.value || "").trim().toLowerCase(); let visible=0; for (const card of cards) { const ok=card.dataset.search.includes(q) && (!category || card.dataset.search.includes(category)); card.hidden=!ok; if(ok) visible++; } if(noResults) noResults.hidden=visible>0; }
 input?.addEventListener("input",filter); filter();
 
+const categorySearch = document.querySelector("[data-offer-search]");
+const categorySort = document.querySelector("[data-offer-sort]");
+const sortGrid = document.querySelector("[data-sort-grid]");
+const filterEmpty = document.querySelector("[data-no-filter-results]");
+function updateCategoryListing() {
+  if (!sortGrid) return;
+  const query = (categorySearch?.value || "").trim().toLowerCase();
+  const rows = [...sortGrid.querySelectorAll(".deal-card")];
+  const mode = categorySort?.value || "current";
+  rows.sort((a,b) => mode === "ending" ? (a.dataset.end || "9999").localeCompare(b.dataset.end || "9999") : mode === "discount" ? Number(b.dataset.discount)-Number(a.dataset.discount) : mode === "price" ? (Number(a.dataset.price || Infinity)-Number(b.dataset.price || Infinity)) : (b.dataset.updated || "").localeCompare(a.dataset.updated || ""));
+  let visible = 0;
+  for (const row of rows) { row.hidden = !row.dataset.search.includes(query); if (!row.hidden) visible += 1; sortGrid.append(row); }
+  if (filterEmpty) filterEmpty.hidden = visible > 0;
+}
+categorySearch?.addEventListener("input", updateCategoryListing);
+categorySort?.addEventListener("change", updateCategoryListing);
+updateCategoryListing();
+
 const menuButton = document.querySelector(".menu-toggle");
 const mainNav = document.querySelector("#main-nav");
 menuButton?.addEventListener("click", () => {
@@ -42,6 +60,19 @@ function updateCountdowns() {
 }
 updateCountdowns();
 if (countdowns.length) setInterval(updateCountdowns, 60000);
+
+const detail = document.querySelector(".detail");
+if (detail) {
+  const share = document.createElement("section");
+  share.className = "share-tools";
+  const pageUrl = location.href, title = document.title;
+  share.innerHTML = `<h2>Angebot teilen</h2><div><button type="button" data-copy-link>Link kopieren</button><a href="https://wa.me/?text=${encodeURIComponent(`${title} ${pageUrl}`)}" rel="noopener">WhatsApp</a><a href="https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(pageUrl)}" rel="noopener">Facebook</a><a href="https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(pageUrl)}" rel="noopener">X</a></div><p data-copy-status aria-live="polite"></p>`;
+  detail.append(share);
+  share.querySelector("[data-copy-link]")?.addEventListener("click", async () => {
+    try { await navigator.clipboard.writeText(pageUrl); share.querySelector("[data-copy-status]").textContent = "Link kopiert."; }
+    catch { share.querySelector("[data-copy-status]").textContent = "Kopieren war nicht möglich."; }
+  });
+}
 
 const promo = document.querySelector("[data-promo-popup]");
 try { if (localStorage.getItem("angebotslotse-promo-closed") === "1") promo?.remove(); } catch {}

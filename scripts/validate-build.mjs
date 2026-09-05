@@ -1,7 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 
-const required = ["index.html","impressum.html","datenschutz.html","affiliate.html","status.html","sitemap.xml","robots.txt","styles.css","app.js","og.png"];
+const required = ["index.html","impressum.html","datenschutz.html","affiliate.html","status.html","kategorien.html","neu.html","endet-bald.html","top-rabatte.html","rabattcodes.html","preis-gefallen.html","sitemap.xml","robots.txt","styles.css","app.js","og.png"];
 const errors = [];
 for (const file of required) if (!fs.existsSync(path.join("dist",file))) errors.push(`Fehlt: ${file}`);
 const htmlFiles = [];
@@ -39,5 +39,11 @@ for (const match of sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)) if (!match[1].star
 const index = fs.readFileSync(path.join("dist","index.html"),"utf8");
 if (!index.includes('id="aktuelle-deals"') || !index.includes('id="dauerangebote"') || !index.includes('id="newsletter"')) errors.push("V2-Startseitenbereiche fehlen");
 if (/GearUP/i.test(index)) errors.push("Quarantänisierter Advertiser ist auf der Startseite sichtbar");
+if ((index.match(/class="deal-card"/g) || []).length > 14) errors.push("V2.1-Startseite enthält zu viele Angebotskarten");
+if (/0,00\s*(?:€|&nbsp;€)/.test(index)) errors.push("Nullpreis auf Startseite sichtbar");
+for (const category of ["gaming","technik","computer","audio-musik","zubehoer","haushalt","werkzeug","mode","freizeit"]) {
+  if (!fs.existsSync(path.join("dist",`${category}.html`))) errors.push(`Kategorie-Seite fehlt: ${category}`);
+  if (!fs.existsSync(path.join("dist","placeholders",`${category}.svg`))) errors.push(`Kategorie-Platzhalter fehlt: ${category}`);
+}
 if (errors.length) { console.error(errors.join("\n")); process.exit(1); }
 console.log(`Build validiert: ${htmlFiles.length} HTML-Seiten und alle Pflichtseiten vorhanden.`);

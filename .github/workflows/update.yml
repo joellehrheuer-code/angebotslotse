@@ -39,7 +39,7 @@ jobs:
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "chore(data): Angebote automatisch aktualisieren"
-          file_pattern: "data/offers.json data/status.json"
+          file_pattern: "data/offers.json data/status.json data/price-history.json data/coupons.json"
   deploy:
     needs: update
     permissions: { pages: write, id-token: write }
