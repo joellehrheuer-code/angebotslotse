@@ -1,5 +1,7 @@
 const API = "https://api.awin.com";
 
+export const formatAwinDateTime = value => new Date(value).toISOString().slice(0, 19);
+
 export async function fetchAwinOffers({ publisherId, token, fetchImpl = fetch }) {
   if (!publisherId || !token) throw new Error("AWIN_PUBLISHER_ID und AWIN_API_TOKEN sind erforderlich.");
   const collected = [];

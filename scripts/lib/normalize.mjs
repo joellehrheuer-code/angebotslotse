@@ -48,6 +48,7 @@ export function normalizeOffer(raw, config, now = new Date()) {
     imageUrl: safeHttpUrl(raw.imageUrl ?? raw.image ?? raw.imageUri),
     imageAlt: text(raw.imageAlt, 220) || null,
     imageSource: text(raw.imageSource, 120) || null,
+    imageRightsNote: text(raw.imageRightsNote, 300) || null,
     mediaType: raw.mediaType === "video" ? "video" : "image",
     videoUrl: safeHttpUrl(raw.videoUrl),
     videoPoster: safeHttpUrl(raw.videoPoster),

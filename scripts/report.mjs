@@ -1,8 +1,7 @@
 import fs from "node:fs/promises";
-import { fetchAwinTransactions } from "./lib/awin.mjs";
+import { fetchAwinTransactions, formatAwinDateTime } from "./lib/awin.mjs";
 const end = new Date(); const start = new Date(end); start.setDate(start.getDate()-30);
-const iso = d => d.toISOString().slice(0,10);
-const payload = await fetchAwinTransactions({publisherId:process.env.AWIN_PUBLISHER_ID,token:process.env.AWIN_API_TOKEN,startDate:iso(start),endDate:iso(end)});
+const payload = await fetchAwinTransactions({publisherId:process.env.AWIN_PUBLISHER_ID,token:process.env.AWIN_API_TOKEN,startDate:formatAwinDateTime(start),endDate:formatAwinDateTime(end)});
 const rows = Array.isArray(payload) ? payload : payload.transactions ?? [];
 const commission = rows.reduce((sum,r)=>sum+Number(r.commissionAmount?.amount ?? r.commissionAmount ?? 0),0);
 await fs.mkdir("data/private",{recursive:true});

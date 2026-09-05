@@ -1,0 +1,31 @@
+{
+  "generatedAt": "2026-09-06T00:00:00.000Z",
+  "scope": "Nur gegen den aktuell erreichbaren Publisher-Datenbestand verifizierte Programme; keine ungeprüften Marketplace-Marken.",
+  "programs": [
+    {
+      "brand": "Coolblue DE",
+      "network": "Awin",
+      "category": "Technik & Computer",
+      "productFeed": "Mit separatem Awin-Datafeed-Key zu prüfen",
+      "images": "In der aktuellen Promotion nicht enthalten",
+      "prices": "In der aktuellen Promotion nicht enthalten",
+      "coupons": "Kein Code in der aktuellen Promotion",
+      "benefit": "Hohe Relevanz für deutsche Technik-Angebote",
+      "applicationRequired": false,
+      "status": "joined",
+      "advertiserId": 85171
+    },
+    { "brand": "beyerdynamic DE", "network": "Awin", "category": "Audio & Musik", "productFeed": "Mit Datafeed-Key zu prüfen", "images": "Programm-Logo vorhanden; Produktbilder ungeprüft", "prices": "Ungeprüft", "coupons": "Ungeprüft", "benefit": "Sehr passend für Kopfhörer und Audio", "applicationRequired": true, "status": "pending", "advertiserId": 15402 },
+    { "brand": "adidas Affiliate Creators Program", "network": "Awin", "category": "Mode & Sport", "productFeed": "Mit Datafeed-Key zu prüfen", "images": "Programm-Logo vorhanden; Produktbilder ungeprüft", "prices": "Ungeprüft", "coupons": "Ungeprüft", "benefit": "Passend für Mode, Sneaker und Creator-Reichweite", "applicationRequired": true, "status": "pending", "advertiserId": 128789 },
+    { "brand": "Dyson DE", "network": "Awin", "category": "Technik & Haushalt", "productFeed": "Mit Datafeed-Key zu prüfen", "images": "Programm-Logo vorhanden; Produktbilder ungeprüft", "prices": "Ungeprüft", "coupons": "Ungeprüft", "benefit": "Hochwertige Technik- und Haushaltsprodukte", "applicationRequired": true, "status": "notjoined", "advertiserId": 12802 },
+    { "brand": "Lidl DE", "network": "Awin", "category": "Haushalt & Alltag", "productFeed": "Mit Datafeed-Key zu prüfen", "images": "Programm-Logo vorhanden; Produktbilder ungeprüft", "prices": "Ungeprüft", "coupons": "Ungeprüft", "benefit": "Breites Sortiment für Alltagsangebote", "applicationRequired": true, "status": "notjoined", "advertiserId": 13936 },
+    { "brand": "DECATHLON DE", "network": "Awin", "category": "Sport & Freizeit", "productFeed": "Mit Datafeed-Key zu prüfen", "images": "Programm-Logo vorhanden; Produktbilder ungeprüft", "prices": "Ungeprüft", "coupons": "Ungeprüft", "benefit": "Breites Sport- und Freizeitangebot", "applicationRequired": true, "status": "notjoined", "advertiserId": 14353 },
+    { "brand": "Samsung Shop DE", "network": "Awin", "category": "Technik & Computer", "productFeed": "Mit Datafeed-Key zu prüfen", "images": "Programm-Logo vorhanden; Produktbilder ungeprüft", "prices": "Ungeprüft", "coupons": "Ungeprüft", "benefit": "Starke Technikmarke mit hoher Produktrelevanz", "applicationRequired": true, "status": "notjoined", "advertiserId": 14815 },
+    { "brand": "adidas DE", "network": "Awin", "category": "Mode & Sport", "productFeed": "Mit Datafeed-Key zu prüfen", "images": "Programm-Logo vorhanden; Produktbilder ungeprüft", "prices": "Ungeprüft", "coupons": "Ungeprüft", "benefit": "Passend für Mode und Sneaker", "applicationRequired": true, "status": "notjoined", "advertiserId": 77004 }
+  ],
+  "impact": {
+    "status": "connected-in-github-actions",
+    "lastPublishableRecords": 0,
+    "note": "Die lokal nicht verfügbaren GitHub-Secrets werden nicht exportiert. Der letzte Cloud-Lauf lieferte null veröffentlichbare Datensätze; deshalb werden keine Impact-Marketplace-Marken behauptet."
+  }
+}

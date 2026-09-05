@@ -1,5 +1,13 @@
 # Angebotslotse
 
+## V4 – Premium Deal Engine
+
+Die Startseite nutzt eine prominente Produktsuche, einen kompakten Drei-Slide-Hero und horizontale Deal-Rails mit fünf sichtbaren Karten auf großen Desktop-Ansichten. Maus-Drag, Touch-Swipe, Pfeile, Tastatursteuerung, Scroll-Snap, Lazy Loading, Skeletons und `prefers-reduced-motion` sind ohne schwere UI-Bibliothek umgesetzt.
+
+Echte Produktdaten können über Impact-Kataloge und die offizielle Awin-Produktfeed-Liste einlaufen. Für Awin ist dazu zusätzlich zum normalen API-Token der separate GitHub-Actions-Secret `AWIN_DATAFEED_API_KEY` erforderlich. Die Herkunft und Rechtehinweise offizieller Bilder werden als `imageSource` und `imageRightsNote` gespeichert. Fehlen verifizierte Preise oder Medien, zeigt die Seite ausdrücklich einen Prüfhinweis beziehungsweise ein neutrales Kategorievisual.
+
+Die dokumentierte Bestandsaufnahme steht unter `docs/media-and-program-research.md`; die nicht automatisch versendete Bewerbungsgrundlage unter `docs/program-application-template.md`.
+
 ## Angebotslotse V3
 
 V3 ist als wachsendes Deal-, Preis- und Discovery-Portal aufgebaut. Der Build erzeugt kompakte visuelle Übersichten, echte Kategorie- und Discovery-Landingpages sowie – erst bei ausreichenden Quelldaten – Produktseiten, sichere Preisvergleiche und 30-Tage-Preisverläufe. `data/price-history.json` speichert ausschließlich positive Preise mit eindeutiger Produkt-ID; `data/coupons.json` enthält ausschließlich von Quellen gelieferte, noch gültige Codes. Beide Dateien werden im bestehenden GitHub-Actions-Lauf aktualisiert.

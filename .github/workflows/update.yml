@@ -22,6 +22,7 @@ jobs:
         env:
           AWIN_PUBLISHER_ID: ${{ vars.AWIN_PUBLISHER_ID }}
           AWIN_API_TOKEN: ${{ secrets.AWIN_API_TOKEN }}
+          AWIN_DATAFEED_API_KEY: ${{ secrets.AWIN_DATAFEED_API_KEY }}
           IMPACT_ACCOUNT_SID: ${{ vars.IMPACT_ACCOUNT_SID }}
           IMPACT_AUTH_TOKEN: ${{ secrets.IMPACT_AUTH_TOKEN }}
       - run: npm run check && npm run build && npm run validate && npm run security
