@@ -1,6 +1,6 @@
 {
   "state": "ok",
-  "lastSuccessfulUpdate": "2026-09-05T22:04:03.988Z",
+  "lastSuccessfulUpdate": "2026-09-06T01:24:55.404Z",
   "activeOffers": 5,
   "added": 0,
   "removed": 0,
@@ -10,6 +10,11 @@
     "awin": {
       "state": "ok",
       "count": 1,
+      "error": null
+    },
+    "awin-product-feeds": {
+      "state": "disabled",
+      "count": 0,
       "error": null
     },
     "direct": {
