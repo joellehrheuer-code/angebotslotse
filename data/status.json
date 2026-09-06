@@ -1,15 +1,15 @@
 {
   "state": "ok",
-  "lastSuccessfulUpdate": "2026-09-06T15:28:48.064Z",
-  "activeOffers": 19,
+  "lastSuccessfulUpdate": "2026-09-06T22:07:59.101Z",
+  "activeOffers": 18,
   "added": 0,
-  "removed": 0,
+  "removed": 1,
   "invalidLinks": 0,
   "apiErrors": 0,
   "sources": {
     "awin": {
       "state": "ok",
-      "count": 1,
+      "count": 0,
       "error": null
     },
     "awin-product-feeds": {
