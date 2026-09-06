@@ -2,6 +2,13 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { fetchDirectOffers } from "../scripts/lib/direct.mjs";
 import { fetchImpactOffers, IMPACT_API_VERSION } from "../scripts/lib/impact.mjs";
+import { fetchAwinPrograms } from "../scripts/lib/awin.mjs";
+
+test("Awin-Programminventar trennt alle offiziellen Beziehungszustände",async()=>{
+  const calls=[];const fetchImpl=async url=>{calls.push(String(url));return{ok:true,json:async()=>[{id:1,name:"Programm"}]};};
+  const result=await fetchAwinPrograms({publisherId:"3045061",token:"secret",fetchImpl});
+  assert.deepEqual(Object.keys(result),["joined","pending","suspended","rejected","notjoined"]);assert.equal(calls.length,5);assert.ok(calls.every(url=>url.includes("countryCode=DE")));
+});
 
 test("direkte Partner liefern nur aktivierte HTTPS-Angebote", async () => {
   const rows = await fetchDirectOffers();

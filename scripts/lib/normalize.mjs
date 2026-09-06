@@ -19,7 +19,7 @@ export function categoryFor(value, categories) {
 export function normalizeOffer(raw, config, now = new Date()) {
   const title = text(raw.title, 180);
   const trackingUrl = safeHttpUrl(raw.urlTracking ?? raw.trackingUrl);
-  const destinationUrl = safeHttpUrl(raw.url);
+  const destinationUrl = safeHttpUrl(raw.url ?? raw.destinationUrl ?? raw.productUrl);
   const endDate = raw.endDate ? new Date(raw.endDate) : null;
   const startDate = raw.startDate ? new Date(raw.startDate) : null;
   const regions = raw.regions?.all ? ["ALL"] : (raw.regions?.list ?? []).map(r => text(r.countryCode, 2).toUpperCase());
@@ -46,6 +46,7 @@ export function normalizeOffer(raw, config, now = new Date()) {
     dateAdded: raw.dateAdded ? new Date(raw.dateAdded).toISOString() : null,
     updatedAt: now.toISOString(),
     imageUrl: safeHttpUrl(raw.imageUrl ?? raw.image ?? raw.imageUri),
+    additionalImageUrls: (Array.isArray(raw.additionalImageUrls) ? raw.additionalImageUrls : []).map(safeHttpUrl).filter(Boolean).slice(0, 10),
     imageAlt: text(raw.imageAlt, 220) || null,
     imageSource: text(raw.imageSource, 120) || null,
     imageRightsNote: text(raw.imageRightsNote, 300) || null,
@@ -53,6 +54,7 @@ export function normalizeOffer(raw, config, now = new Date()) {
     videoUrl: safeHttpUrl(raw.videoUrl),
     videoPoster: safeHttpUrl(raw.videoPoster),
     videoProvider: text(raw.videoProvider, 80) || null,
+    videoSource: text(raw.videoSource, 200) || null,
     videoTitle: text(raw.videoTitle, 220) || null,
     videoEmbedType: ["html5","youtube","vimeo"].includes(raw.videoEmbedType) ? raw.videoEmbedType : null,
     currentPrice,

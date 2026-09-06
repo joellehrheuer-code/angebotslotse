@@ -1,6 +1,7 @@
 import { gunzipSync } from "node:zlib";
 
 const FEED_LIST = "https://productdata.awin.com/datafeed/list/apikey";
+const API = "https://api.awin.com";
 
 export function parseCsv(source, delimiter = ",") {
   const rows=[]; let row=[],field="",quoted=false;
@@ -33,4 +34,35 @@ export async function fetchAwinProductFeeds({ apiKey, fetchImpl=fetch, maxFeeds=
     }
   }
   return products;
+}
+
+const numberWithCurrency=value=>{const match=String(value??"").match(/([0-9]+(?:[.,][0-9]+)?)\s*([A-Z]{3})?/i);return match?{amount:match[1].replace(",","."),currency:(match[2]||"EUR").toUpperCase()}:{amount:null,currency:"EUR"};};
+const enhancedProduct=(row,advertiser)=>{
+  const sections=Object.values(row).filter(value=>value&&typeof value==="object"&&!Array.isArray(value));
+  const product=Object.assign({},row,...sections); const current=numberWithCurrency(product.sale_price??product.price); const original=numberWithCurrency(product.price);
+  const tracking=product.aw_deep_link??product.tracking_link??product.link_tracking;
+  return {source:"awin",id:`enhanced-${advertiser.id}-${product.id}`,title:product.title,description:product.description,url:product.link,urlTracking:tracking,
+    advertiserName:advertiser.name,advertiserId:advertiser.id,regions:{list:[{countryCode:"DE"}]},type:"promotion",
+    imageUrl:Array.isArray(product.image_link)?product.image_link[0]:product.image_link,additionalImageUrls:product.additional_image_link,imageAlt:product.title,imageSource:"Awin Enhanced Product Feed",
+    imageRightsNote:"Vom freigegebenen Advertiser im offiziellen Awin-Produktfeed bereitgestellt.",currentPrice:current.amount,
+    previousPrice:product.sale_price?original.amount:null,currency:current.currency,brand:product.brand,productId:product.gtin??product.mpn??product.id,
+    gtin:product.gtin,ean:product.gtin,mpn:product.mpn,availability:product.availability};
+};
+
+export async function fetchAwinEnhancedFeeds({ publisherId, token, advertisers=[], fetchImpl=fetch, maxProducts=500 }) {
+  if(!publisherId||!token||!advertisers.length)return {products:[],feeds:[]};
+  const products=[]; const feeds=[];
+  for(const advertiser of advertisers.slice(0,2)){
+    for(const locale of ["de_DE","en_DE"]){
+      const endpoint=`${API}/publishers/${encodeURIComponent(publisherId)}/awinfeeds/download/${encodeURIComponent(advertiser.id)}-retail-${locale}.jsonl`;
+      const response=await fetchImpl(endpoint,{headers:{Authorization:`Bearer ${token}`}});
+      if(response.status===404){feeds.push({advertiserId:advertiser.id,advertiserName:advertiser.name,locale,state:"not-found"});continue;}
+      if(!response.ok){feeds.push({advertiserId:advertiser.id,advertiserName:advertiser.name,locale,state:`http-${response.status}`});continue;}
+      const lines=(await response.text()).split(/\r?\n/).filter(Boolean); let imported=0;
+      for(const line of lines){if(products.length>=maxProducts)break;let row;try{row=JSON.parse(line);}catch{continue;}if(row.error)break;const product=enhancedProduct(row,advertiser);if(product.title&&product.url&&product.urlTracking){products.push(product);imported+=1;}}
+      feeds.push({advertiserId:advertiser.id,advertiserName:advertiser.name,locale,state:"available",products:imported});
+      if(imported)break;
+    }
+  }
+  return {products,feeds};
 }

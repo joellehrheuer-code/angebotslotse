@@ -1,13 +1,18 @@
 {
   "state": "ok",
-  "lastSuccessfulUpdate": "2026-09-07T09:21:20.121Z",
-  "activeOffers": 18,
+  "lastSuccessfulUpdate": "2026-09-06T20:02:03.055Z",
+  "activeOffers": 5,
   "added": 0,
   "removed": 0,
   "invalidLinks": 0,
   "apiErrors": 0,
   "sources": {
     "awin": {
+      "state": "ok",
+      "count": 1,
+      "error": null
+    },
+    "awin-enhanced-feeds": {
       "state": "ok",
       "count": 0,
       "error": null
@@ -23,8 +28,8 @@
       "error": null
     },
     "impact": {
-      "state": "ok",
-      "count": 34,
+      "state": "disabled",
+      "count": 0,
       "error": null
     }
   },

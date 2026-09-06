@@ -25,6 +25,22 @@ export async function fetchAwinOffers({ publisherId, token, fetchImpl = fetch })
   return collected;
 }
 
+export async function fetchAwinPrograms({ publisherId, token, fetchImpl = fetch, countryCode = "DE" }) {
+  if (!publisherId || !token) throw new Error("AWIN_PUBLISHER_ID und AWIN_API_TOKEN sind erforderlich.");
+  const relationships = ["joined", "pending", "suspended", "rejected", "notjoined"];
+  const inventory = {};
+  for (const relationship of relationships) {
+    const query = new URLSearchParams({ accessToken: token, relationship, countryCode });
+    const response = await fetchImpl(`${API}/publishers/${encodeURIComponent(publisherId)}/programmes?${query}`, {
+      headers: { Authorization: `Bearer ${token}` }
+    });
+    if (!response.ok) throw new Error(`Awin Programs API (${relationship}): HTTP ${response.status}`);
+    const payload = await response.json();
+    inventory[relationship] = Array.isArray(payload) ? payload : (payload.programmes ?? payload.data ?? []);
+  }
+  return inventory;
+}
+
 export async function fetchAwinTransactions({ publisherId, token, startDate, endDate, fetchImpl = fetch }) {
   const query = new URLSearchParams({ accessToken: token, startDate, endDate, timezone: "Europe/Berlin" });
   const response = await fetchImpl(`${API}/publishers/${encodeURIComponent(publisherId)}/transactions/?${query}`, { headers: { Authorization: `Bearer ${token}` } });
