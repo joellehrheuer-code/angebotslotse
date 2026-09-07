@@ -104,6 +104,8 @@ Die Site lädt keine externen Fonts, setzt keine eigenen Cookies und enthält ke
 
 ## JOEL MUSS NUR NOCH DIESE PUNKTE MACHEN
 
+Die automatische Aktualisierung läuft alle sechs Stunden. Ohne die folgenden externen Freigaben bleibt die Plattform absichtlich bei belegbaren, bereits erlaubten Daten:
+
 1. Den separaten Awin-Datafeed-Key als `AWIN_DATAFEED_API_KEY` in `.env.local` und als gleichnamiges GitHub Actions Secret hinterlegen. Der normale Awin-API-Token ersetzt diesen Feed-Key nicht.
 2. Nur die in `report/manual-actions.json` aufgeführten Programmbedingungen prüfen und geeignete Bewerbungen im jeweiligen Dashboard bestätigen. Es werden keine Vertragsbedingungen automatisch akzeptiert und keine Doppel- oder Massenbewerbungen versendet.
 3. Falls Awin oder Impact eine zusätzliche Identitäts-, Vertrags- oder API-Freigabe verlangt, diese einmalig im jeweiligen Dashboard bestätigen.

@@ -126,3 +126,8 @@ for (const card of document.querySelectorAll(".deal-card")) {
   card.addEventListener("click", event => { if (!event.target.closest("a,button,input,select")) location.href = target.href; });
   card.addEventListener("keydown", event => { if (event.key === "Enter") target.click(); });
 }
+
+document.querySelectorAll("[data-copy-code]").forEach(link => link.addEventListener("click", async () => {
+  try { await navigator.clipboard.writeText(link.dataset.copyCode); }
+  catch { /* The affiliate destination still opens when clipboard access is unavailable. */ }
+}));

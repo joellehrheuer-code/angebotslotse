@@ -6,7 +6,7 @@ on:
       - "data/offers.json"
       - "data/status.json"
   schedule:
-    - cron: "17 4,12,20 * * *"
+    - cron: "17 */6 * * *"
   workflow_dispatch:
 permissions:
   contents: write
