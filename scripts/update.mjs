@@ -1,12 +1,13 @@
 import fs from "node:fs/promises";
 import { collectSources } from "./lib/source-manager.mjs";
-import { normalizeAndDedupe, isConcreteOffer } from "./lib/normalize.mjs";
+import { normalizeAndDedupe, isConcreteOffer, isPublicationReady } from "./lib/normalize.mjs";
 import { updatePriceHistory } from "./lib/price-history.mjs";
 
 const config = JSON.parse(await fs.readFile("config.json", "utf8"));
 const oldOffers = JSON.parse(await fs.readFile("data/offers.json", "utf8").catch(() => "[]"));
 const oldStatus = JSON.parse(await fs.readFile("data/status.json", "utf8").catch(() => "{}"));
 const oldHistory = JSON.parse(await fs.readFile("data/price-history.json", "utf8").catch(() => "[]"));
+const oldProgramInventory = JSON.parse(await fs.readFile("report/program-inventory.json", "utf8").catch(() => '{"programs":[]}'));
 const oldIds = new Set(oldOffers.map(o => o.id));
 let status;
 try {
@@ -33,13 +34,30 @@ try {
   for(const row of programmeRows.filter(row=>row.relationship==="notjoined")) row.applicationDraft=`Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten ${row.name} redaktionell passend im Bereich ${row.primarySector||"Angebote"} einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung.`;
   const impact=sources.find(source=>source.name==="impact");
   const feedSources=sources.filter(source=>source.name.includes("feed"));
-  const publicOffers=offers.filter(isConcreteOffer);
+  const concreteOffers=offers.filter(isConcreteOffer), publicOffers=offers.filter(isPublicationReady);
+  const feedAdvertisers=new Set(feedSources.flatMap(source=>(source.audit?.feeds??[]).filter(feed=>feed.state==="available").map(feed=>String(feed.advertiserId))));
+  const checkedAt=new Date().toISOString();
+  const programInventory=programmeRows.map(row=>({name:row.name,platform:"Awin",status:row.relationship,country:"DE",categories:row.primarySector?[row.primarySector]:[],commission:null,cookieDuration:null,
+    productFeed:feedAdvertisers.has(String(row.advertiserId)),images:null,prices:null,coupons:null,deeplinks:null,dealShoppingAllowed:null,
+    applicationPossible:row.relationship==="notjoined",applicationSent:row.relationship==="pending",lastChecked:checkedAt,advertiserId:row.advertiserId,applicationDraft:row.applicationDraft??null}));
+  const impactInventory=(impact?.audit?.programInventory??[]).map(row=>({name:row.name,platform:"Impact",status:row.status,country:row.countries,categories:[],commission:null,cookieDuration:null,
+    productFeed:(impact?.audit?.catalogs??0)>0,images:(impact?.audit?.products??0)>0,prices:(impact?.audit?.products??0)>0,coupons:(impact?.audit?.promotions??0)>0,deeplinks:row.deeplinks,
+    dealShoppingAllowed:null,applicationPossible:false,applicationSent:false,lastChecked:checkedAt,advertiserId:row.advertiserId,campaignId:row.campaignId}));
   const growth={generatedAt:new Date().toISOString(),market:"DE",publisherId:Number(process.env.AWIN_PUBLISHER_ID)||null,
     awin:{counts:Object.fromEntries(Object.entries(collected.awinPrograms??{}).map(([key,rows])=>[key,rows.length])),programs:programmeRows,feeds:feedSources.map(source=>({source:source.name,state:source.state,count:source.rows.length,audit:source.audit??null}))},
     impact:{state:impact?.state??"disabled",publishableOffers:impact?.rows.length??0,inventory:impact?.audit??null},
-    publication:{offers:publicOffers.length,partnerEntries:offers.length-publicOffers.length,merchants:new Set(publicOffers.map(offer=>offer.advertiser)).size,products:publicOffers.filter(offer=>offer.productId).length,images:publicOffers.filter(offer=>offer.imageUrl).length,prices:publicOffers.filter(offer=>offer.currentPrice!=null).length,coupons:publicOffers.filter(offer=>offer.voucherCode).length},
+    publication:{offers:publicOffers.length,concreteAwaitingMedia:concreteOffers.filter(offer=>!isPublicationReady(offer)).length,partnerEntries:offers.length-concreteOffers.length,merchants:new Set(publicOffers.map(offer=>offer.advertiser)).size,products:publicOffers.filter(offer=>offer.productId).length,images:publicOffers.filter(offer=>offer.imageUrl).length,videos:publicOffers.filter(offer=>offer.videoUrl).length,prices:publicOffers.filter(offer=>offer.currentPrice!=null).length,discounts:publicOffers.filter(offer=>offer.discountPercent).length,coupons:publicOffers.filter(offer=>offer.voucherCode).length},
     safeguards:{unjoinedProgramsPublished:false,applicationSubmission:"manual-only",credentialsPersisted:false}};
   await fs.writeFile("data/affiliate-growth.json",`${JSON.stringify(growth,null,2)}\n`);
+  await fs.mkdir("report",{recursive:true});
+  await fs.writeFile("report/program-inventory.json",`${JSON.stringify({generatedAt:checkedAt,programs:[...programInventory,...impactInventory]},null,2)}\n`);
+  const manualActions=[];
+  if(!process.env.AWIN_DATAFEED_API_KEY)manualActions.push({id:"awin-datafeed-key",platform:"Awin",action:"AWIN_DATAFEED_API_KEY als lokales .env.local-Secret und GitHub Actions Secret hinterlegen.",reason:"Die offizielle Legacy-Produktfeed-Liste benötigt einen separaten Datafeed-Key."});
+  for(const program of programInventory.filter(program=>program.applicationPossible&&priority.test(program.name)).slice(0,8))manualActions.push({id:`awin-apply-${program.advertiserId}`,platform:"Awin",action:`Bedingungen für ${program.name} prüfen und Bewerbung im Awin-Dashboard bestätigen.`,reason:"Die offizielle Publisher-API dokumentiert keinen Bewerbungs-Endpunkt; keine automatische Zustimmung zu Vertragsbedingungen.",applicationDraft:program.applicationDraft});
+  await fs.writeFile("report/manual-actions.json",`${JSON.stringify({generatedAt:checkedAt,actions:manualActions},null,2)}\n`);
+  const oldProgramKeys=new Set((oldProgramInventory.programs??[]).map(program=>`${program.platform}:${program.advertiserId}:${program.campaignId??""}`));
+  const report={generatedAt:checkedAt,newAwinPrograms:programInventory.filter(program=>!oldProgramKeys.has(`Awin:${program.advertiserId}:`)).length,newImpactPrograms:impactInventory.filter(program=>!oldProgramKeys.has(`Impact:${program.advertiserId}:${program.campaignId??""}`)).length,applicationsSent:0,pendingApplications:programInventory.filter(program=>program.status==="pending").length,manualApplications:manualActions.filter(action=>action.id.startsWith("awin-apply-")).length,newMerchants:new Set(publicOffers.filter(offer=>!oldIds.has(offer.id)).map(offer=>offer.advertiser)).size,newProducts:publicOffers.filter(offer=>!oldIds.has(offer.id)&&offer.productId).length,productsWithImage:publicOffers.filter(offer=>offer.imageUrl).length,productsWithVideo:publicOffers.filter(offer=>offer.videoUrl).length,productsWithPrice:publicOffers.filter(offer=>offer.currentPrice!=null).length,productsWithDiscount:publicOffers.filter(offer=>offer.discountPercent).length,coupons:publicOffers.filter(offer=>offer.voucherCode).length,priceChanges:publicOffers.filter(offer=>offer.lastPriceChange).length,expiredOffers:oldOffers.filter(offer=>offer.endDate&&new Date(offer.endDate)<=new Date()).length,apiErrors:failed.size,affiliateLinkErrors:0};
+  await fs.writeFile("report/update-report.json",`${JSON.stringify(report,null,2)}\n`);
 } catch (error) {
   status = { state: "error", lastSuccessfulUpdate: oldStatus.lastSuccessfulUpdate ?? null, activeOffers: oldOffers.length, added: 0, removed: 0,
     invalidLinks: 0, apiErrors: 1, message: String(error.message).slice(0, 250) };

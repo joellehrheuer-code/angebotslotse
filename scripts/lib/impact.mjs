@@ -78,7 +78,8 @@ export async function fetchImpactOffers({ accountSid, authToken, fetchImpl = fet
   const byCampaign = new Map(programs.map(row => [String(row.CampaignId), row]));
   const byAdvertiser = new Map(programs.map(row => [String(row.AdvertiserId), row]));
   const rows = [];
-  const audit = {apiVersion:VERSION,programs:programs.length,ads:0,promotions:0,deals:0,products:0,catalogs:null,stores:null,quarantinedAdvertisers:(policy.quarantinedAdvertisers??[]).length};
+  const audit = {apiVersion:VERSION,programs:programs.length,ads:0,promotions:0,deals:0,products:0,catalogs:null,stores:null,quarantinedAdvertisers:(policy.quarantinedAdvertisers??[]).length,
+    programInventory:programs.map(program=>({name:program.CampaignName,advertiserName:program.AdvertiserName,advertiserId:program.AdvertiserId,campaignId:program.CampaignId,status:program.ContractStatus,countries:list(program.ShippingRegions?.ShippingRegion??program.ShippingRegions),deeplinks:Boolean(program.AllowsDeeplinking),trackingLinkAvailable:Boolean(program.TrackingLink),logoAvailable:Boolean(program.CampaignLogoUri),publicTermsAvailable:Boolean(program.PublicTermsUri)}))};
 
   for (const program of programs) {
     const rule = quarantineFor(program, policy);

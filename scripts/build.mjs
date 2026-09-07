@@ -1,7 +1,7 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import { historyFor } from "./lib/price-history.mjs";
-import { isConcreteOffer } from "./lib/normalize.mjs";
+import { isPublicationReady } from "./lib/normalize.mjs";
 
 const readJson = async (file, fallback = "[]") => JSON.parse(await fs.readFile(file, "utf8").catch(() => fallback));
 const config = await readJson("config.json", "{}");
@@ -27,7 +27,7 @@ const isQuarantined = offer => (linkPolicy.quarantinedAdvertisers ?? []).some(ru
   (rule.advertiserId && String(rule.advertiserId) === String(offer.advertiserId)) ||
   (rule.advertiserName && String(rule.advertiserName).toLowerCase() === String(offer.advertiser).toLowerCase()));
 const now = new Date();
-const offers = storedOffers.filter(o => !isQuarantined(o) && (!o.endDate || new Date(o.endDate) > now) && isConcreteOffer(o)).map(o => Number.isFinite(o.currentPrice) && o.currentPrice > 0 ? o : {...o,currentPrice:null,previousPrice:null});
+const offers = storedOffers.filter(o => !isQuarantined(o) && (!o.endDate || new Date(o.endDate) > now) && isPublicationReady(o)).map(o => Number.isFinite(o.currentPrice) && o.currentPrice > 0 ? o : {...o,currentPrice:null,previousPrice:null});
 const hasPrice = o => Number.isFinite(o.currentPrice) && o.currentPrice > 0;
 const isDeal = o => Boolean(o.endDate || o.voucherCode || (hasPrice(o) && o.previousPrice > o.currentPrice) || o.source !== "direct");
 const currentDeals = offers.filter(isDeal);

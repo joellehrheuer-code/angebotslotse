@@ -12,6 +12,7 @@ const amount = value => {
 const slugify = value => text(value, 120).toLowerCase().normalize("NFKD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 
 export const isConcreteOffer = offer => offer.source !== "direct" && Boolean(offer.productId || offer.voucherCode || offer.endDate || (Number.isFinite(offer.currentPrice) && offer.currentPrice > 0));
+export const isPublicationReady = offer => isConcreteOffer(offer) && Boolean(offer.imageUrl || offer.videoUrl);
 
 export function categoryFor(value, categories) {
   const source = text(value).toLowerCase();

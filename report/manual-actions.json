@@ -1,0 +1,46 @@
+{
+  "generatedAt": "2026-09-07T12:32:36.536Z",
+  "actions": [
+    {
+      "id": "awin-datafeed-key",
+      "platform": "Awin",
+      "action": "AWIN_DATAFEED_API_KEY als lokales .env.local-Secret und GitHub Actions Secret hinterlegen.",
+      "reason": "Die offizielle Legacy-Produktfeed-Liste benötigt einen separaten Datafeed-Key."
+    },
+    {
+      "id": "awin-apply-77004",
+      "platform": "Awin",
+      "action": "Bedingungen für adidas DE prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "reason": "Die offizielle Publisher-API dokumentiert keinen Bewerbungs-Endpunkt; keine automatische Zustimmung zu Vertragsbedingungen.",
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten adidas DE redaktionell passend im Bereich Sportswear einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+    },
+    {
+      "id": "awin-apply-14353",
+      "platform": "Awin",
+      "action": "Bedingungen für DECATHLON DE prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "reason": "Die offizielle Publisher-API dokumentiert keinen Bewerbungs-Endpunkt; keine automatische Zustimmung zu Vertragsbedingungen.",
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten DECATHLON DE redaktionell passend im Bereich Sports Equipment einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+    },
+    {
+      "id": "awin-apply-12802",
+      "platform": "Awin",
+      "action": "Bedingungen für Dyson DE prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "reason": "Die offizielle Publisher-API dokumentiert keinen Bewerbungs-Endpunkt; keine automatische Zustimmung zu Vertragsbedingungen.",
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Dyson DE redaktionell passend im Bereich Electronic Superstore einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+    },
+    {
+      "id": "awin-apply-13936",
+      "platform": "Awin",
+      "action": "Bedingungen für Lidl DE prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "reason": "Die offizielle Publisher-API dokumentiert keinen Bewerbungs-Endpunkt; keine automatische Zustimmung zu Vertragsbedingungen.",
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Lidl DE redaktionell passend im Bereich Department Stores einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+    },
+    {
+      "id": "awin-apply-14815",
+      "platform": "Awin",
+      "action": "Bedingungen für Samsung Shop DE prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "reason": "Die offizielle Publisher-API dokumentiert keinen Bewerbungs-Endpunkt; keine automatische Zustimmung zu Vertragsbedingungen.",
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Samsung Shop DE redaktionell passend im Bereich Electronic Superstore einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+    }
+  ]
+}

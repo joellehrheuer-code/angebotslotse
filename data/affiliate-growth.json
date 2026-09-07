@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-07T17:45:18.482Z",
+  "generatedAt": "2026-09-07T12:32:36.536Z",
   "market": "DE",
   "publisherId": 3045061,
   "awin": {
@@ -8,7 +8,7 @@
       "pending": 2,
       "suspended": 0,
       "rejected": 0,
-      "notjoined": 2597
+      "notjoined": 2600
     },
     "programs": [
       {
@@ -1842,27 +1842,20 @@
     ]
   },
   "impact": {
-    "state": "ok",
-    "publishableOffers": 58,
-    "inventory": {
-      "apiVersion": "16",
-      "programs": 3,
-      "ads": 267,
-      "promotions": 0,
-      "deals": 1,
-      "products": 962,
-      "catalogs": 2,
-      "stores": "unavailable",
-      "quarantinedAdvertisers": 1
-    }
+    "state": "disabled",
+    "publishableOffers": 0,
+    "inventory": null
   },
   "publication": {
     "offers": 0,
-    "partnerEntries": 21,
+    "concreteAwaitingMedia": 0,
+    "partnerEntries": 4,
     "merchants": 0,
     "products": 0,
     "images": 0,
+    "videos": 0,
     "prices": 0,
+    "discounts": 0,
     "coupons": 0
   },
   "safeguards": {

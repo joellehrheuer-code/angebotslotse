@@ -104,8 +104,12 @@ Die Site lädt keine externen Fonts, setzt keine eigenen Cookies und enthält ke
 
 ## JOEL MUSS NUR NOCH DIESE PUNKTE MACHEN
 
-1. Die acht verifizierten öffentlichen URLs für Twitch, YouTube, Spotify, Instagram, Snapchat, Discord, Buch und Merch-Shop in `data/creators.json` ergänzen. Bis dahin bleiben die Einträge absichtlich nicht anklickbar.
-2. Impressum und Datenschutzerklärung trotz technischer Anpassung einmal individuell rechtlich prüfen lassen.
+1. Den separaten Awin-Datafeed-Key als `AWIN_DATAFEED_API_KEY` in `.env.local` und als gleichnamiges GitHub Actions Secret hinterlegen. Der normale Awin-API-Token ersetzt diesen Feed-Key nicht.
+2. Nur die in `report/manual-actions.json` aufgeführten Programmbedingungen prüfen und geeignete Bewerbungen im jeweiligen Dashboard bestätigen. Es werden keine Vertragsbedingungen automatisch akzeptiert und keine Doppel- oder Massenbewerbungen versendet.
+3. Falls Awin oder Impact eine zusätzliche Identitäts-, Vertrags- oder API-Freigabe verlangt, diese einmalig im jeweiligen Dashboard bestätigen.
+4. Impressum und Datenschutzerklärung trotz technischer Anpassung einmal individuell rechtlich prüfen lassen.
+
+Die Dateien `report/program-inventory.json`, `report/update-report.json` und `report/manual-actions.json` werden bei jedem Update neu erzeugt. Sie enthalten nur unsensible Bestands- und Statusdaten, niemals Tokens oder Zugangsdaten.
 
 ## Monitoring und Fehler
 
