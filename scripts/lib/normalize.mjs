@@ -11,6 +11,8 @@ const amount = value => {
 };
 const slugify = value => text(value, 120).toLowerCase().normalize("NFKD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 
+export const isConcreteOffer = offer => offer.source !== "direct" && Boolean(offer.productId || offer.voucherCode || offer.endDate || (Number.isFinite(offer.currentPrice) && offer.currentPrice > 0));
+
 export function categoryFor(value, categories) {
   const source = text(value).toLowerCase();
   return Object.entries(categories).find(([key, words]) => key !== "sonstiges" && words.some(word => source.includes(word)))?.[0] ?? "sonstiges";

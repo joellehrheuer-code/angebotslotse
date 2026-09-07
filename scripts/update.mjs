@@ -1,6 +1,6 @@
 import fs from "node:fs/promises";
 import { collectSources } from "./lib/source-manager.mjs";
-import { normalizeAndDedupe } from "./lib/normalize.mjs";
+import { normalizeAndDedupe, isConcreteOffer } from "./lib/normalize.mjs";
 import { updatePriceHistory } from "./lib/price-history.mjs";
 
 const config = JSON.parse(await fs.readFile("config.json", "utf8"));
@@ -33,10 +33,11 @@ try {
   for(const row of programmeRows.filter(row=>row.relationship==="notjoined")) row.applicationDraft=`Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten ${row.name} redaktionell passend im Bereich ${row.primarySector||"Angebote"} einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung.`;
   const impact=sources.find(source=>source.name==="impact");
   const feedSources=sources.filter(source=>source.name.includes("feed"));
+  const publicOffers=offers.filter(isConcreteOffer);
   const growth={generatedAt:new Date().toISOString(),market:"DE",publisherId:Number(process.env.AWIN_PUBLISHER_ID)||null,
     awin:{counts:Object.fromEntries(Object.entries(collected.awinPrograms??{}).map(([key,rows])=>[key,rows.length])),programs:programmeRows,feeds:feedSources.map(source=>({source:source.name,state:source.state,count:source.rows.length,audit:source.audit??null}))},
     impact:{state:impact?.state??"disabled",publishableOffers:impact?.rows.length??0,inventory:impact?.audit??null},
-    publication:{offers:offers.length,merchants:new Set(offers.map(offer=>offer.advertiser)).size,products:offers.filter(offer=>offer.productId).length,images:offers.filter(offer=>offer.imageUrl).length,prices:offers.filter(offer=>offer.currentPrice!=null).length,coupons:coupons.length},
+    publication:{offers:publicOffers.length,partnerEntries:offers.length-publicOffers.length,merchants:new Set(publicOffers.map(offer=>offer.advertiser)).size,products:publicOffers.filter(offer=>offer.productId).length,images:publicOffers.filter(offer=>offer.imageUrl).length,prices:publicOffers.filter(offer=>offer.currentPrice!=null).length,coupons:publicOffers.filter(offer=>offer.voucherCode).length},
     safeguards:{unjoinedProgramsPublished:false,applicationSubmission:"manual-only",credentialsPersisted:false}};
   await fs.writeFile("data/affiliate-growth.json",`${JSON.stringify(growth,null,2)}\n`);
 } catch (error) {

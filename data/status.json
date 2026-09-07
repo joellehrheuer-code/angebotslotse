@@ -1,7 +1,7 @@
 {
   "state": "ok",
-  "lastSuccessfulUpdate": "2026-09-06T20:02:03.055Z",
-  "activeOffers": 5,
+  "lastSuccessfulUpdate": "2026-09-07T12:10:17.009Z",
+  "activeOffers": 4,
   "added": 0,
   "removed": 0,
   "invalidLinks": 0,
@@ -9,7 +9,7 @@
   "sources": {
     "awin": {
       "state": "ok",
-      "count": 1,
+      "count": 0,
       "error": null
     },
     "awin-enhanced-feeds": {

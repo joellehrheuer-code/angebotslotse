@@ -116,3 +116,13 @@ document.querySelector("[data-promo-close]")?.addEventListener("click", () => {
   promo?.remove();
   try { localStorage.setItem("angebotslotse-promo-closed", "1"); } catch {}
 });
+
+for (const card of document.querySelectorAll(".deal-card")) {
+  const target = card.querySelector(".card-cta");
+  if (!target) continue;
+  card.tabIndex = 0;
+  card.setAttribute("role", "link");
+  card.setAttribute("aria-label", target.getAttribute("aria-label") || "Zum Angebot");
+  card.addEventListener("click", event => { if (!event.target.closest("a,button,input,select")) location.href = target.href; });
+  card.addEventListener("keydown", event => { if (event.key === "Enter") target.click(); });
+}
