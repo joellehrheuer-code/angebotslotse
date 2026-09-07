@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-07T12:10:17.022Z",
+  "generatedAt": "2026-09-07T12:24:29.660Z",
   "market": "DE",
   "publisherId": 3045061,
   "awin": {
@@ -1842,13 +1842,23 @@
     ]
   },
   "impact": {
-    "state": "disabled",
-    "publishableOffers": 0,
-    "inventory": null
+    "state": "ok",
+    "publishableOffers": 34,
+    "inventory": {
+      "apiVersion": "16",
+      "programs": 2,
+      "ads": 267,
+      "promotions": 0,
+      "deals": 1,
+      "products": 962,
+      "catalogs": 2,
+      "stores": "unavailable",
+      "quarantinedAdvertisers": 1
+    }
   },
   "publication": {
     "offers": 0,
-    "partnerEntries": 4,
+    "partnerEntries": 18,
     "merchants": 0,
     "products": 0,
     "images": 0,
