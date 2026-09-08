@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-08T04:35:31.659Z",
+  "generatedAt": "2026-09-08T11:19:11.516Z",
   "market": "DE",
   "publisherId": 3045061,
   "awin": {
@@ -8,7 +8,7 @@
       "pending": 2,
       "suspended": 0,
       "rejected": 0,
-      "notjoined": 2597
+      "notjoined": 2599
     },
     "programs": [
       {
@@ -1850,7 +1850,7 @@
       "ads": 267,
       "promotions": 0,
       "deals": 1,
-      "products": 962,
+      "products": 963,
       "catalogs": 2,
       "stores": "unavailable",
       "quarantinedAdvertisers": 1,
