@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-08T11:19:11.516Z",
+  "generatedAt": "2026-09-08T16:38:36.888Z",
   "market": "DE",
   "publisherId": 3045061,
   "awin": {
@@ -8,7 +8,7 @@
       "pending": 2,
       "suspended": 0,
       "rejected": 0,
-      "notjoined": 2599
+      "notjoined": 2598
     },
     "programs": [
       {
@@ -811,18 +811,6 @@
           "countryCode": "DE"
         },
         "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Bast Sauna DE redaktionell passend im Bereich Home & Garden einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
-      },
-      {
-        "network": "Awin",
-        "relationship": "notjoined",
-        "advertiserId": 101143,
-        "name": "Batterie24 DE",
-        "primarySector": "Electronic Accessories",
-        "primaryRegion": {
-          "name": "Germany",
-          "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Batterie24 DE redaktionell passend im Bereich Electronic Accessories einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
       },
       {
         "network": "Awin",
@@ -1807,6 +1795,18 @@
           "countryCode": "DE"
         },
         "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Deluxehomeartshop DE redaktionell passend im Bereich Home & Garden einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+      },
+      {
+        "network": "Awin",
+        "relationship": "notjoined",
+        "advertiserId": 76930,
+        "name": "Deporvillage DE",
+        "primarySector": "Sportswear",
+        "primaryRegion": {
+          "name": "Germany",
+          "countryCode": "DE"
+        },
+        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Deporvillage DE redaktionell passend im Bereich Sportswear einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
       }
     ],
     "feeds": [
