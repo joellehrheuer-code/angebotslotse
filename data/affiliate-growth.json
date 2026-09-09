@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-09T04:42:15.191Z",
+  "generatedAt": "2026-09-09T11:22:58.828Z",
   "market": "DE",
   "publisherId": 3045061,
   "awin": {
@@ -8,7 +8,7 @@
       "pending": 2,
       "suspended": 0,
       "rejected": 0,
-      "notjoined": 2598
+      "notjoined": 2599
     },
     "programs": [
       {
