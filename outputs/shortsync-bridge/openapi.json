@@ -1,0 +1,806 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "ShortSync Bridge",
+    "version": "1.1.0",
+    "description": "Private Multipart REST-API; keine fertig konfigurierte ChatGPT Action."
+  },
+  "servers": [
+    {
+      "url": "http://127.0.0.1:3000",
+      "description": "Nur lokal; öffentlich HTTPS verwenden."
+    }
+  ],
+  "security": [
+    {
+      "bridgeBearer": []
+    }
+  ],
+  "paths": {
+    "/health": {
+      "get": {
+        "operationId": "health",
+        "responses": {
+          "200": {
+            "description": "Health ohne Secrets.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Authentifizierung erforderlich.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "502": {
+            "description": "Upstream-Fehler.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Konfiguration fehlt.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      }
+    },
+    "/shortsync/status": {
+      "get": {
+        "operationId": "shortsyncStatus",
+        "responses": {
+          "200": {
+            "description": "Plan, quota.requests, quota.resets_at, sichere Scopes.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Authentifizierung erforderlich.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "502": {
+            "description": "Upstream-Fehler.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Konfiguration fehlt.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/shortsync/connections": {
+      "get": {
+        "operationId": "shortsyncConnections",
+        "responses": {
+          "200": {
+            "description": "data[] mit platform, display_name, status.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Authentifizierung erforderlich.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "502": {
+            "description": "Upstream-Fehler.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Konfiguration fehlt.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/shortsync/posts/{post_id}": {
+      "get": {
+        "operationId": "shortsyncPostStatus",
+        "responses": {
+          "200": {
+            "description": "platform, post_id, status, error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Authentifizierung erforderlich.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "502": {
+            "description": "Upstream-Fehler.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Konfiguration fehlt.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "in": "path",
+            "name": "post_id",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9_-]{1,128}$"
+            }
+          }
+        ]
+      }
+    },
+    "/publish": {
+      "post": {
+        "operationId": "publishVideo",
+        "x-openai-isConsequential": true,
+        "description": "DRY_RUN defaults true and returns a simulation. Live requires DRY_RUN=false and LIVE_PUBLISH_ENABLED=true. Reuse the same idempotency key and identical content on retries.",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Idempotency-Key",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9_-]{16,128}$"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "video",
+                  "platforms"
+                ],
+                "properties": {
+                  "video": {
+                    "type": "string",
+                    "format": "binary"
+                  },
+                  "platforms": {
+                    "type": "array",
+                    "minItems": 1,
+                    "maxItems": 4,
+                    "uniqueItems": true,
+                    "items": {
+                      "type": "string",
+                      "enum": [
+                        "instagram",
+                        "tiktok",
+                        "youtube",
+                        "snapchat"
+                      ]
+                    }
+                  },
+                  "publish_mode": {
+                    "type": "string",
+                    "enum": [
+                      "immediate",
+                      "scheduled",
+                      "draft"
+                    ],
+                    "default": "immediate"
+                  },
+                  "scheduled_for": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "instagram_caption": {
+                    "type": "string",
+                    "maxLength": 2200
+                  },
+                  "tiktok_caption": {
+                    "type": "string",
+                    "maxLength": 2200
+                  },
+                  "youtube_title": {
+                    "type": "string",
+                    "maxLength": 100
+                  },
+                  "youtube_description": {
+                    "type": "string",
+                    "maxLength": 5000
+                  },
+                  "snapchat_caption": {
+                    "type": "string",
+                    "maxLength": 160
+                  },
+                  "first_comment": {
+                    "type": "string",
+                    "maxLength": 2200
+                  },
+                  "youtube_notify_subscribers": {
+                    "type": "string",
+                    "enum": [
+                      "true",
+                      "false"
+                    ],
+                    "default": "false"
+                  },
+                  "tiktok_disable_comment": {
+                    "type": "string",
+                    "enum": [
+                      "true",
+                      "false"
+                    ],
+                    "default": "false"
+                  },
+                  "tiktok_disable_duet": {
+                    "type": "string",
+                    "enum": [
+                      "true",
+                      "false"
+                    ],
+                    "default": "false"
+                  },
+                  "tiktok_disable_stitch": {
+                    "type": "string",
+                    "enum": [
+                      "true",
+                      "false"
+                    ],
+                    "default": "false"
+                  },
+                  "tiktok_is_branded_content": {
+                    "type": "string",
+                    "enum": [
+                      "true",
+                      "false"
+                    ],
+                    "default": "false"
+                  },
+                  "tiktok_is_your_brand": {
+                    "type": "string",
+                    "enum": [
+                      "true",
+                      "false"
+                    ],
+                    "default": "false"
+                  },
+                  "tiktok_is_aigc": {
+                    "type": "string",
+                    "enum": [
+                      "true",
+                      "false"
+                    ],
+                    "default": "false"
+                  },
+                  "tiktok_privacy_level": {
+                    "type": "string",
+                    "enum": [
+                      "SELF_ONLY",
+                      "PUBLIC_TO_EVERYONE",
+                      "MUTUAL_FOLLOW_FRIENDS",
+                      "FOLLOWER_OF_CREATOR"
+                    ],
+                    "default": "SELF_ONLY"
+                  },
+                  "tiktok_post_mode": {
+                    "type": "string",
+                    "enum": [
+                      "direct",
+                      "draft"
+                    ],
+                    "default": "direct"
+                  }
+                }
+              },
+              "encoding": {
+                "platforms": {
+                  "contentType": "application/json"
+                }
+              }
+            },
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "upload_token",
+                  "platforms"
+                ],
+                "properties": {
+                  "platforms": {
+                    "type": "array",
+                    "minItems": 1,
+                    "maxItems": 4,
+                    "uniqueItems": true,
+                    "items": {
+                      "type": "string",
+                      "enum": [
+                        "instagram",
+                        "tiktok",
+                        "youtube",
+                        "snapchat"
+                      ]
+                    }
+                  },
+                  "publish_mode": {
+                    "type": "string",
+                    "enum": [
+                      "immediate",
+                      "scheduled",
+                      "draft"
+                    ],
+                    "default": "immediate"
+                  },
+                  "scheduled_for": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "instagram_caption": {
+                    "type": "string",
+                    "maxLength": 2200
+                  },
+                  "tiktok_caption": {
+                    "type": "string",
+                    "maxLength": 2200
+                  },
+                  "youtube_title": {
+                    "type": "string",
+                    "maxLength": 100
+                  },
+                  "youtube_description": {
+                    "type": "string",
+                    "maxLength": 5000
+                  },
+                  "snapchat_caption": {
+                    "type": "string",
+                    "maxLength": 160
+                  },
+                  "first_comment": {
+                    "type": "string",
+                    "maxLength": 2200
+                  },
+                  "youtube_notify_subscribers": {
+                    "type": "string",
+                    "enum": [
+                      "true",
+                      "false"
+                    ],
+                    "default": "false"
+                  },
+                  "tiktok_disable_comment": {
+                    "type": "string",
+                    "enum": [
+                      "true",
+                      "false"
+                    ],
+                    "default": "false"
+                  },
+                  "tiktok_disable_duet": {
+                    "type": "string",
+                    "enum": [
+                      "true",
+                      "false"
+                    ],
+                    "default": "false"
+                  },
+                  "tiktok_disable_stitch": {
+                    "type": "string",
+                    "enum": [
+                      "true",
+                      "false"
+                    ],
+                    "default": "false"
+                  },
+                  "tiktok_is_branded_content": {
+                    "type": "string",
+                    "enum": [
+                      "true",
+                      "false"
+                    ],
+                    "default": "false"
+                  },
+                  "tiktok_is_your_brand": {
+                    "type": "string",
+                    "enum": [
+                      "true",
+                      "false"
+                    ],
+                    "default": "false"
+                  },
+                  "tiktok_is_aigc": {
+                    "type": "string",
+                    "enum": [
+                      "true",
+                      "false"
+                    ],
+                    "default": "false"
+                  },
+                  "tiktok_privacy_level": {
+                    "type": "string",
+                    "enum": [
+                      "SELF_ONLY",
+                      "PUBLIC_TO_EVERYONE",
+                      "MUTUAL_FOLLOW_FRIENDS",
+                      "FOLLOWER_OF_CREATOR"
+                    ],
+                    "default": "SELF_ONLY"
+                  },
+                  "tiktok_post_mode": {
+                    "type": "string",
+                    "enum": [
+                      "direct",
+                      "draft"
+                    ],
+                    "default": "direct"
+                  },
+                  "upload_token": {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{64}$",
+                    "description": "Token returned by POST /uploads, not a ShortSync token."
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Dry-run simulation (dry_run=true, all_published=false), or all live targets published. Always inspect flags.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "202": {
+            "description": "Angenommen/geplant/in Verarbeitung, nicht veröffentlicht.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "207": {
+            "description": "Teilfehler oder unklarer Ausgang; results einzeln prüfen.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Validierungsfehler.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Nicht authentifiziert.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Live gesperrt oder CORS abgelehnt.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Idempotenzkonflikt oder manuelle Klärung nötig.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Größe überschritten.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "Datei-/Inhaltstyp ungültig.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Rate-Limit oder Upload belegt.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "502": {
+            "description": "Upstream-Fehler.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Konfiguration fehlt.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/healthz": {
+      "get": {
+        "operationId": "healthz",
+        "responses": {
+          "200": {
+            "description": "Health ohne Secrets.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Authentifizierung erforderlich.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "502": {
+            "description": "Upstream-Fehler.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Konfiguration fehlt.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      }
+    },
+    "/bridge/status": {
+      "get": {
+        "operationId": "bridgeStatus",
+        "responses": {
+          "200": {
+            "description": "dry_run, live_enabled, max_video_bytes",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/uploads": {
+      "post": {
+        "operationId": "stageVideo",
+        "description": "Authenticated staging. Dry-run never contacts ShortSync. Live mode uploads but does not publish.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "video"
+                ],
+                "properties": {
+                  "video": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "upload_token, dry_run, expires_at; token expires in 24 hours",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/requests/{idempotency_key}": {
+      "get": {
+        "operationId": "requestResult",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "idempotency_key",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9_-]{16,128}$"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Saved live result or unknown_or_processing; dry-run previews are not stored.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Unknown key.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "bridgeBearer": {
+        "type": "http",
+        "scheme": "bearer",
+        "description": "Separater AUTH_TOKEN, niemals SHORTSYNC_API_KEY."
+      }
+    }
+  }
+}

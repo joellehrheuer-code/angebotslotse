@@ -1,0 +1,10 @@
+# For self-hosting with an existing public hostname and ports 80/443 reachable.
+# Copy outside the repository as Caddyfile and replace the hostname.
+bridge.example.com {
+    request_body {
+        max_size 26MB
+    }
+    reverse_proxy 127.0.0.1:3000
+    header Strict-Transport-Security "max-age=31536000"
+    # No access logging: do not add request headers/bodies to logs.
+}

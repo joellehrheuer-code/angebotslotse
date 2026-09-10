@@ -1,0 +1,23 @@
+services:
+  bridge:
+    build: .
+    env_file: .env
+    environment:
+      HOST: 0.0.0.0
+      DATA_DIR: /app/data
+    ports:
+      - "127.0.0.1:3000:3000"
+    volumes:
+      - bridge-data:/app/data
+    restart: unless-stopped
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    mem_limit: 512m
+    logging:
+      driver: local
+      options:
+        max-size: "1m"
+        max-file: "2"
+volumes:
+  bridge-data:

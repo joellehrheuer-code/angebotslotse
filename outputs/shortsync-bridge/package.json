@@ -1,0 +1,12 @@
+{
+  "name": "shortsync-bridge",
+  "version": "1.1.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=24.0.0 <25" },
+  "scripts": {
+    "start": "node src/server.mjs",
+    "test": "node --test",
+    "check": "node --check src/server.mjs && node --check src/app.mjs && node --check src/shortsync.mjs && node --check src/config.mjs && node --check src/publisher.mjs && node --check src/journal.mjs && node --check src/upstash.mjs && node --check src/validation.mjs"
+  }
+}
