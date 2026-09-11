@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-11T04:40:36.627Z",
+  "generatedAt": "2026-09-11T11:20:56.923Z",
   "market": "DE",
   "publisherId": 3045061,
   "awin": {
@@ -1843,11 +1843,11 @@
   },
   "impact": {
     "state": "ok",
-    "publishableOffers": 58,
+    "publishableOffers": 61,
     "inventory": {
       "apiVersion": "16",
       "programs": 3,
-      "ads": 267,
+      "ads": 270,
       "promotions": 0,
       "deals": 1,
       "products": 963,
@@ -2377,7 +2377,7 @@
   "publication": {
     "offers": 0,
     "concreteAwaitingMedia": 0,
-    "partnerEntries": 21,
+    "partnerEntries": 22,
     "merchants": 0,
     "products": 0,
     "images": 0,
