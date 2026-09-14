@@ -1,14 +1,14 @@
 {
-  "generatedAt": "2026-09-14T04:56:21.385Z",
+  "generatedAt": "2026-09-14T21:49:56.039Z",
   "market": "DE",
   "publisherId": 3045061,
   "awin": {
     "counts": {
-      "joined": 1,
+      "joined": 3,
       "pending": 2,
       "suspended": 0,
       "rejected": 0,
-      "notjoined": 2603
+      "notjoined": 2602
     },
     "programs": [
       {
@@ -98,6 +98,28 @@
         "relationship": "pending",
         "advertiserId": 15402,
         "name": "beyerdynamic DE",
+        "primarySector": "Electronic Accessories",
+        "primaryRegion": {
+          "name": "Germany",
+          "countryCode": "DE"
+        }
+      },
+      {
+        "network": "Awin",
+        "relationship": "joined",
+        "advertiserId": 128051,
+        "name": "Hollyland DE",
+        "primarySector": "Audio Visual",
+        "primaryRegion": {
+          "name": "Germany",
+          "countryCode": "DE"
+        }
+      },
+      {
+        "network": "Awin",
+        "relationship": "joined",
+        "advertiserId": 127821,
+        "name": "Outin Germany",
         "primarySector": "Electronic Accessories",
         "primaryRegion": {
           "name": "Germany",
@@ -1783,37 +1805,13 @@
           "countryCode": "DE"
         },
         "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten delta-bike DE redaktionell passend im Bereich Sports Equipment einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
-      },
-      {
-        "network": "Awin",
-        "relationship": "notjoined",
-        "advertiserId": 120411,
-        "name": "Deluxehomeartshop DE",
-        "primarySector": "Home & Garden",
-        "primaryRegion": {
-          "name": "Germany",
-          "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Deluxehomeartshop DE redaktionell passend im Bereich Home & Garden einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
-      },
-      {
-        "network": "Awin",
-        "relationship": "notjoined",
-        "advertiserId": 76930,
-        "name": "Deporvillage DE",
-        "primarySector": "Sportswear",
-        "primaryRegion": {
-          "name": "Germany",
-          "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Deporvillage DE redaktionell passend im Bereich Sportswear einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
       }
     ],
     "feeds": [
       {
         "source": "awin-enhanced-feeds",
         "state": "ok",
-        "count": 0,
+        "count": 50,
         "audit": {
           "feeds": [
             {
@@ -1827,6 +1825,13 @@
               "advertiserName": "Coolblue DE",
               "locale": "en_DE",
               "state": "not-found"
+            },
+            {
+              "advertiserId": 127821,
+              "advertiserName": "Outin Germany",
+              "locale": "de_DE",
+              "state": "available",
+              "products": 50
             }
           ]
         }
@@ -1843,15 +1848,15 @@
   },
   "impact": {
     "state": "ok",
-    "publishableOffers": 61,
+    "publishableOffers": 1327,
     "inventory": {
       "apiVersion": "16",
-      "programs": 3,
-      "ads": 270,
+      "programs": 4,
+      "ads": 1529,
       "promotions": 0,
-      "deals": 1,
-      "products": 963,
-      "catalogs": 2,
+      "deals": 7,
+      "products": 2000,
+      "catalogs": 13,
       "stores": "unavailable",
       "quarantinedAdvertisers": 1,
       "programInventory": [
@@ -1863,6 +1868,57 @@
           "status": "Active",
           "countries": [
             "GERMANY"
+          ],
+          "deeplinks": true,
+          "trackingLinkAvailable": true,
+          "logoAvailable": true,
+          "publicTermsAvailable": true
+        },
+        {
+          "name": "Razer Affiliate Program",
+          "advertiserName": "Razer (Asia Pacific) Pte Ltd",
+          "advertiserId": "1723018",
+          "campaignId": "10229",
+          "status": "Active",
+          "countries": [
+            "CANADA",
+            "TAIWAN",
+            "SLOVAKIA",
+            "SLOVENIA",
+            "BELGIUM",
+            "FRANCE",
+            "LUXEMBOURG",
+            "AUSTRIA",
+            "PHILIPPINES",
+            "GERMANY",
+            "UK",
+            "JAPAN",
+            "HONGKONG",
+            "ROMANIA",
+            "NEWZEALAND",
+            "US",
+            "SPAIN",
+            "SWEDEN",
+            "PORTUGAL",
+            "GREECE",
+            "FINLAND",
+            "AUSTRALIA",
+            "IRELAND",
+            "LATVIA",
+            "MALAYSIA",
+            "NORWAY",
+            "ITALY",
+            "ESTONIA",
+            "SINGAPORE",
+            "POLAND",
+            "CROATIA",
+            "DENMARK",
+            "THAILAND",
+            "CZECHREPUBLIC",
+            "CYPRUS",
+            "HUNGARY",
+            "NETHERLANDS",
+            "MALTA"
           ],
           "deeplinks": true,
           "trackingLinkAvailable": true,
@@ -2375,14 +2431,14 @@
     }
   },
   "publication": {
-    "offers": 0,
-    "concreteAwaitingMedia": 0,
-    "partnerEntries": 22,
-    "merchants": 0,
-    "products": 0,
-    "images": 0,
+    "offers": 37,
+    "concreteAwaitingMedia": 1,
+    "partnerEntries": 462,
+    "merchants": 1,
+    "products": 37,
+    "images": 37,
     "videos": 0,
-    "prices": 0,
+    "prices": 37,
     "discounts": 0,
     "coupons": 0
   },

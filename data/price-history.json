@@ -1,1 +1,261 @@
-[]
+[
+  {
+    "productId": "1240000016406",
+    "merchant": "Outin Germany",
+    "timestamp": "2026-09-14T21:49:56.016Z",
+    "price": 149.99,
+    "currency": "EUR"
+  },
+  {
+    "productId": "1240000016413",
+    "merchant": "Outin Germany",
+    "timestamp": "2026-09-14T21:49:56.016Z",
+    "price": 149.99,
+    "currency": "EUR"
+  },
+  {
+    "productId": "1240000016420",
+    "merchant": "Outin Germany",
+    "timestamp": "2026-09-14T21:49:56.016Z",
+    "price": 149.99,
+    "currency": "EUR"
+  },
+  {
+    "productId": "1240000016437",
+    "merchant": "Outin Germany",
+    "timestamp": "2026-09-14T21:49:56.016Z",
+    "price": 149.99,
+    "currency": "EUR"
+  },
+  {
+    "productId": "OTEM-01-Cup",
+    "merchant": "Outin Germany",
+    "timestamp": "2026-09-14T21:49:56.016Z",
+    "price": 16.99,
+    "currency": "EUR"
+  },
+  {
+    "productId": "1240000016499",
+    "merchant": "Outin Germany",
+    "timestamp": "2026-09-14T21:49:56.016Z",
+    "price": 39.99,
+    "currency": "EUR"
+  },
+  {
+    "productId": "1240000018714",
+    "merchant": "Outin Germany",
+    "timestamp": "2026-09-14T21:49:56.016Z",
+    "price": 189.99,
+    "currency": "EUR"
+  },
+  {
+    "productId": "1240000018707",
+    "merchant": "Outin Germany",
+    "timestamp": "2026-09-14T21:49:56.016Z",
+    "price": 189.99,
+    "currency": "EUR"
+  },
+  {
+    "productId": "acc-01",
+    "merchant": "Outin Germany",
+    "timestamp": "2026-09-14T21:49:56.016Z",
+    "price": 3.99,
+    "currency": "EUR"
+  },
+  {
+    "productId": "TOTE-01",
+    "merchant": "Outin Germany",
+    "timestamp": "2026-09-14T21:49:56.016Z",
+    "price": 29.99,
+    "currency": "EUR"
+  },
+  {
+    "productId": "1240000018752",
+    "merchant": "Outin Germany",
+    "timestamp": "2026-09-14T21:49:56.016Z",
+    "price": 179.99,
+    "currency": "EUR"
+  },
+  {
+    "productId": "OT-STD-02-CP",
+    "merchant": "Outin Germany",
+    "timestamp": "2026-09-14T21:49:56.016Z",
+    "price": 39.99,
+    "currency": "EUR"
+  },
+  {
+    "productId": "OT-SCL-01",
+    "merchant": "Outin Germany",
+    "timestamp": "2026-09-14T21:49:56.016Z",
+    "price": 49.99,
+    "currency": "EUR"
+  },
+  {
+    "productId": "PIN-NANO",
+    "merchant": "Outin Germany",
+    "timestamp": "2026-09-14T21:49:56.016Z",
+    "price": 3.99,
+    "currency": "EUR"
+  },
+  {
+    "productId": "PATCH-NORWAY",
+    "merchant": "Outin Germany",
+    "timestamp": "2026-09-14T21:49:56.016Z",
+    "price": 3.99,
+    "currency": "EUR"
+  },
+  {
+    "productId": "OT-MAT-01",
+    "merchant": "Outin Germany",
+    "timestamp": "2026-09-14T21:49:56.016Z",
+    "price": 19.99,
+    "currency": "EUR"
+  },
+  {
+    "productId": "OT-SPN-01",
+    "merchant": "Outin Germany",
+    "timestamp": "2026-09-14T21:49:56.016Z",
+    "price": 9.9,
+    "currency": "EUR"
+  },
+  {
+    "productId": "OT-CUP-01",
+    "merchant": "Outin Germany",
+    "timestamp": "2026-09-14T21:49:56.016Z",
+    "price": 14.99,
+    "currency": "EUR"
+  },
+  {
+    "productId": "OT-TRAY-01",
+    "merchant": "Outin Germany",
+    "timestamp": "2026-09-14T21:49:56.016Z",
+    "price": 14.99,
+    "currency": "EUR"
+  },
+  {
+    "productId": "OTEM-MO-01-AA-TB",
+    "merchant": "Outin Germany",
+    "timestamp": "2026-09-14T21:49:56.016Z",
+    "price": 189.99,
+    "currency": "EUR"
+  },
+  {
+    "productId": "OT-TUM-01-TB",
+    "merchant": "Outin Germany",
+    "timestamp": "2026-09-14T21:49:56.016Z",
+    "price": 39.99,
+    "currency": "EUR"
+  },
+  {
+    "productId": "OT-PKT-01-CG",
+    "merchant": "Outin Germany",
+    "timestamp": "2026-09-14T21:49:56.016Z",
+    "price": 29.99,
+    "currency": "EUR"
+  },
+  {
+    "productId": "OT-FCS-01",
+    "merchant": "Outin Germany",
+    "timestamp": "2026-09-14T21:49:56.016Z",
+    "price": 49.99,
+    "currency": "EUR"
+  },
+  {
+    "productId": "OT-TOW-01",
+    "merchant": "Outin Germany",
+    "timestamp": "2026-09-14T21:49:56.016Z",
+    "price": 9.99,
+    "currency": "EUR"
+  },
+  {
+    "productId": "OT-EVA-02-MB",
+    "merchant": "Outin Germany",
+    "timestamp": "2026-09-14T21:49:56.016Z",
+    "price": 39.99,
+    "currency": "EUR"
+  },
+  {
+    "productId": "OT-FM-01-AB",
+    "merchant": "Outin Germany",
+    "timestamp": "2026-09-14T21:49:56.016Z",
+    "price": 99.99,
+    "currency": "EUR"
+  },
+  {
+    "productId": "OT-GP-01-AB",
+    "merchant": "Outin Germany",
+    "timestamp": "2026-09-14T21:49:56.016Z",
+    "price": 29.99,
+    "currency": "EUR"
+  },
+  {
+    "productId": "OTMF-LG-01-TB",
+    "merchant": "Outin Germany",
+    "timestamp": "2026-09-14T21:49:56.016Z",
+    "price": 49.99,
+    "currency": "EUR"
+  },
+  {
+    "productId": "OTST-KRUVE-BG",
+    "merchant": "Outin Germany",
+    "timestamp": "2026-09-14T21:49:56.016Z",
+    "price": 199.99,
+    "currency": "EUR"
+  },
+  {
+    "productId": "OT-ES-01",
+    "merchant": "Outin Germany",
+    "timestamp": "2026-09-14T21:49:56.016Z",
+    "price": 34.99,
+    "currency": "EUR"
+  },
+  {
+    "productId": "OT-TICUP-01",
+    "merchant": "Outin Germany",
+    "timestamp": "2026-09-14T21:49:56.016Z",
+    "price": 49.99,
+    "currency": "EUR"
+  },
+  {
+    "productId": "OTST-LOTUS-JB",
+    "merchant": "Outin Germany",
+    "timestamp": "2026-09-14T21:49:56.016Z",
+    "price": 199.99,
+    "currency": "EUR"
+  },
+  {
+    "productId": "OT-EVA-02-PLUS-MB",
+    "merchant": "Outin Germany",
+    "timestamp": "2026-09-14T21:49:56.016Z",
+    "price": 64.99,
+    "currency": "EUR"
+  },
+  {
+    "productId": "OTST-MO-01-TB",
+    "merchant": "Outin Germany",
+    "timestamp": "2026-09-14T21:49:56.016Z",
+    "price": 249.99,
+    "currency": "EUR"
+  },
+  {
+    "productId": "850069973582",
+    "merchant": "Outin Germany",
+    "timestamp": "2026-09-14T21:49:56.016Z",
+    "price": 12.99,
+    "currency": "EUR"
+  },
+  {
+    "productId": "OT-MO-01-AK",
+    "merchant": "Outin Germany",
+    "timestamp": "2026-09-14T21:49:56.016Z",
+    "price": 19.99,
+    "currency": "EUR"
+  },
+  {
+    "productId": "OT-MO-01-FBK",
+    "merchant": "Outin Germany",
+    "timestamp": "2026-09-14T21:49:56.016Z",
+    "price": 29.99,
+    "currency": "EUR"
+  }
+]

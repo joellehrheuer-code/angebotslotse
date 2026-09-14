@@ -1,1 +1,16 @@
-[]
+[
+  {
+    "code": "Hland10",
+    "discountText": "Reusable",
+    "discountPercent": null,
+    "validFrom": "2026-07-09T03:29:00.000Z",
+    "validUntil": "2027-07-09T03:21:00.000Z",
+    "merchant": "Hollyland DE",
+    "landingUrl": "https://www.awin1.com/cread.php?awinmid=128051&awinaffid=3045061&ued=https%3A%2F%2Feu.hollyland.com%2F",
+    "terms": "Reusable",
+    "source": "awin",
+    "isCommunityExclusive": false,
+    "creatorCode": null,
+    "creatorBenefit": null
+  }
+]

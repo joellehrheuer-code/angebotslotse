@@ -1,20 +1,20 @@
 {
   "state": "ok",
-  "lastSuccessfulUpdate": "2026-09-14T04:56:21.358Z",
-  "activeOffers": 22,
-  "added": 0,
-  "removed": 0,
+  "lastSuccessfulUpdate": "2026-09-14T21:49:56.009Z",
+  "activeOffers": 500,
+  "added": 492,
+  "removed": 14,
   "invalidLinks": 0,
   "apiErrors": 0,
   "sources": {
     "awin": {
       "state": "ok",
-      "count": 0,
+      "count": 1,
       "error": null
     },
     "awin-enhanced-feeds": {
       "state": "ok",
-      "count": 0,
+      "count": 50,
       "error": null
     },
     "awin-product-feeds": {
@@ -29,7 +29,7 @@
     },
     "impact": {
       "state": "ok",
-      "count": 61,
+      "count": 1327,
       "error": null
     }
   },
