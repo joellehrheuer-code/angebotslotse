@@ -17,7 +17,18 @@ for (const file of htmlFiles) {
   if (!html.includes('<meta property="og:title"') || !html.includes('<meta name="twitter:title"')) errors.push(`Social-Metadaten fehlen: ${file}`);
   if (!html.includes('<meta property="og:site_name"') || !html.includes('<meta property="og:locale"') || !html.includes('<meta name="twitter:description"')) errors.push(`Erweiterte Social-Metadaten fehlen: ${file}`);
   const isOfferDetail = file.includes(`${path.sep}angebote${path.sep}`);
-  if (isOfferDetail && (html.includes('<meta property="og:image"') || html.includes('<meta name="twitter:image"'))) errors.push(`Unpassendes allgemeines Social-Bild: ${file}`);
+  if (isOfferDetail) {
+    const fallback = new URL(`${siteUrl.href.replace(/\/$/, "")}/og.png`);
+    const pageUrl = new URL(path.relative("dist", file).split(path.sep).join("/"), `${siteUrl.href.replace(/\/$/, "")}/`);
+    for (const [tag] of html.matchAll(/<meta\b[^>]*>/gi)) {
+      const attributes = Object.fromEntries([...tag.matchAll(/([\w:-]+)\s*=\s*(["'])(.*?)\2/g)].map(([, name, , value]) => [name.toLowerCase(), value]));
+      if (!["og:image", "twitter:image"].includes(attributes.property || attributes.name)) continue;
+      try {
+        const image = new URL((attributes.content || "").replace(/&amp;/g, "&"), pageUrl);
+        if (image.origin === fallback.origin && image.pathname === fallback.pathname) errors.push(`Unpassendes allgemeines Social-Bild: ${file}`);
+      } catch { errors.push(`Ungültiges Social-Bild: ${file}`); }
+    }
+  }
   if (/\[(?:E-MAIL|VOLLSTÄNDIG|JOEL:)/i.test(html)) errors.push(`Rechts-Platzhalter: ${file}`);
   for (const match of html.matchAll(/href="([^"]+)"/g)) {
     const href = match[1];
