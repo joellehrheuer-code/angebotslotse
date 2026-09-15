@@ -16,7 +16,7 @@ for (const file of htmlFiles) {
   if (file.endsWith("404.html") && !html.includes('content="noindex,follow"')) errors.push("404 muss noindex sein");
   if (!html.includes('<meta property="og:title"') || !html.includes('<meta name="twitter:title"')) errors.push(`Social-Metadaten fehlen: ${file}`);
   if (!html.includes('<meta property="og:site_name"') || !html.includes('<meta property="og:locale"') || !html.includes('<meta name="twitter:description"')) errors.push(`Erweiterte Social-Metadaten fehlen: ${file}`);
-  const isOfferDetail = file.includes(`${path.sep}angebote${path.sep}`);
+  const isOfferDetail = ["angebote", "produkt"].some(directory => file.includes(`${path.sep}${directory}${path.sep}`));
   if (isOfferDetail) {
     const fallback = new URL(`${siteUrl.href.replace(/\/$/, "")}/og.png`);
     const pageUrl = new URL(path.relative("dist", file).split(path.sep).join("/"), `${siteUrl.href.replace(/\/$/, "")}/`);
