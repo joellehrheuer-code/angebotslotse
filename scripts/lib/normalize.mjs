@@ -1,6 +1,7 @@
 import crypto from "node:crypto";
 
 const text = (value, max = 2000) => String(value ?? "").replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim().slice(0, max);
+const identityText = value => text(value, 180).toLowerCase().normalize("NFKD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, " ").trim();
 const safeHttpUrl = value => {
   try { const url = new URL(value); return ["http:", "https:"].includes(url.protocol) ? url.href : null; } catch { return null; }
 };
@@ -49,7 +50,7 @@ export function normalizeOffer(raw, config, now = new Date()) {
     dateAdded: raw.dateAdded ? new Date(raw.dateAdded).toISOString() : null,
     updatedAt: now.toISOString(),
     imageUrl: safeHttpUrl(raw.imageUrl ?? raw.image ?? raw.imageUri),
-    additionalImageUrls: (Array.isArray(raw.additionalImageUrls) ? raw.additionalImageUrls : []).map(safeHttpUrl).filter(Boolean).slice(0, 10),
+    additionalImageUrls: [...new Set((Array.isArray(raw.additionalImageUrls) ? raw.additionalImageUrls : []).map(safeHttpUrl).filter(Boolean))].slice(0, 10),
     imageAlt: text(raw.imageAlt, 220) || null,
     imageSource: text(raw.imageSource, 120) || null,
     imageRightsNote: text(raw.imageRightsNote, 300) || null,
@@ -89,8 +90,19 @@ export function normalizeAndDedupe(rows, config, now = new Date()) {
   for (const raw of rows) {
     const offer = normalizeOffer(raw, config, now);
     if (!offer) continue;
-    const key = offer.destinationUrl.replace(/[?#].*$/, "").toLowerCase() || `${offer.source}:${offer.sourceId}`;
-    if (!byKey.has(key) || (offer.description.length > byKey.get(key).description.length)) byKey.set(key, offer);
+    const gtin = identityText(offer.gtin || offer.ean);
+    const mpnBrand = `${identityText(offer.mpn)}|${identityText(offer.brand)}`;
+    const sourceProduct = `${offer.source}|${identityText(offer.sourceId)}`;
+    const fallback = `${identityText(offer.title)}|${identityText(offer.brand)}|${identityText(offer.advertiser)}`;
+    const key = gtin ? `gtin:${gtin}` : offer.mpn && offer.brand ? `mpn:${mpnBrand}` : sourceProduct !== `${offer.source}|` ? `source:${sourceProduct}` : `name:${fallback}`;
+    const current = byKey.get(key);
+    if (!current) {
+      byKey.set(key, offer);
+      continue;
+    }
+    const images = [...new Set([current.imageUrl, ...(current.additionalImageUrls || []), offer.imageUrl, ...(offer.additionalImageUrls || [])].filter(Boolean))];
+    const richer = [current, offer].sort((a, b) => Number(Boolean(b.imageUrl)) + Number(Boolean(b.currentPrice)) + b.description.length - (Number(Boolean(a.imageUrl)) + Number(Boolean(a.currentPrice)) + a.description.length))[0];
+    byKey.set(key, { ...richer, imageUrl: images[0] || null, additionalImageUrls: images.slice(1, 11), alternateTrackingUrls: [...new Set([...(current.alternateTrackingUrls || []), ...(offer.alternateTrackingUrls || []), current.trackingUrl, offer.trackingUrl])].filter(Boolean).slice(0, 10) });
   }
   return [...byKey.values()].sort((a, b) => (a.endDate ?? "9999").localeCompare(b.endDate ?? "9999")).slice(0, config.maxOffers);
 }
