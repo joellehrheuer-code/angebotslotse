@@ -1,6 +1,7 @@
 const API = "https://api.impact.com";
 const VERSION = "16";
 const PAGE_SIZE = 100;
+const MAX_RETRIES = 3;
 
 const list = value => Array.isArray(value) ? value : value == null ? [] : [value];
 const first = (payload, keys) => keys.map(key => payload?.[key]).find(Array.isArray) ?? [];
@@ -18,9 +19,15 @@ function client(accountSid, authToken, fetchImpl) {
   const request = async (pathname, params = {}) => {
     const url = new URL(`${API}${pathname}`);
     for (const [key, value] of Object.entries(params)) if (value !== undefined) url.searchParams.set(key, String(value));
-    const response = await fetchImpl(url, { headers });
-    if (!response.ok) throw new Error(`Impact API ${pathname}: HTTP ${response.status}`);
-    return response.json();
+    for (let attempt = 0; attempt <= MAX_RETRIES; attempt += 1) {
+      const response = await fetchImpl(url, { headers });
+      if (response.ok) return response.json();
+      if (response.status !== 429 || attempt === MAX_RETRIES) throw new Error(`Impact API ${pathname}: HTTP ${response.status}`);
+      const retryAfter = response.headers?.get?.("retry-after") ?? response.headers?.["retry-after"];
+      const parsed = Number(retryAfter);
+      const waitMs = Number.isFinite(parsed) && parsed >= 0 ? Math.min(parsed * 1000, 30_000) : Math.min(1000 * (2 ** attempt), 30_000);
+      await new Promise(resolve => setTimeout(resolve, waitMs));
+    }
   };
   const pages = async (pathname, keys, params = {}) => {
     const rows = [];

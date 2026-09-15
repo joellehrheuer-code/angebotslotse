@@ -62,9 +62,10 @@ export async function fetchAwinEnhancedFeeds({ publisherId, token, advertisers=[
       const response=await fetchImpl(endpoint,{headers:{Authorization:`Bearer ${token}`}});
       if(response.status===404){feeds.push({advertiserId:advertiser.id,advertiserName:advertiser.name,locale,state:"not-found"});continue;}
       if(!response.ok){feeds.push({advertiserId:advertiser.id,advertiserName:advertiser.name,locale,state:`http-${response.status}`});continue;}
-      const lines=(await response.text()).split(/\r?\n/).filter(Boolean); let imported=0;
-      for(const line of lines){if(products.length>=maxProducts||advertiserImported>=perAdvertiserLimit)break;let row;try{row=JSON.parse(line);}catch{continue;}if(row.error)break;const product=enhancedProduct(row,advertiser);if(product.title&&product.url&&product.urlTracking){products.push(product);imported+=1;advertiserImported+=1;}}
-      feeds.push({advertiserId:advertiser.id,advertiserName:advertiser.name,locale,state:"available",products:imported});
+      const lines=(await response.text()).split(/\r?\n/).filter(Boolean); let imported=0; const audit={rawProducts:lines.length,validProducts:0,withPrice:0,withImage:0,withTracking:0,rejected:0,rejectionReasons:{}};
+      const reject=(reason)=>{audit.rejected+=1;audit.rejectionReasons[reason]=(audit.rejectionReasons[reason]||0)+1;};
+      for(const line of lines){if(products.length>=maxProducts||advertiserImported>=perAdvertiserLimit)break;let row;try{row=JSON.parse(line);}catch{reject("invalid-json");continue;}if(row.error){reject("feed-error-row");break;}const product=enhancedProduct(row,advertiser);if(Number(product.currentPrice)>0)audit.withPrice+=1;if(product.imageUrl)audit.withImage+=1;if(product.urlTracking)audit.withTracking+=1;const reasons=[];if(!product.title||!product.productId)reasons.push("missing-product-identity");if(!product.url||!product.urlTracking)reasons.push("missing-affiliate-link");if(reasons.length){reasons.forEach(reject);continue;}audit.validProducts+=1;products.push(product);imported+=1;advertiserImported+=1;}
+      feeds.push({advertiserId:advertiser.id,advertiserName:advertiser.name,locale,state:"available",products:imported,...audit});
       if(imported)break;
     }
   }

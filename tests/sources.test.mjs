@@ -94,3 +94,17 @@ test("Impact quarantänisiert einen problematischen Advertiser vollständig und 
   assert.equal(rows.some(row => row.advertiserId === "6117213" || row.advertiserName === "GearUP Portal Pte Ltd"), false);
   assert.deepEqual(rows.filter(row => row.advertiserId === "8").map(row => row.id), ["program-88","ad-3"]);
 });
+
+test("Impact respektiert Retry-After bei HTTP 429 und versucht begrenzt erneut", async () => {
+  let calls = 0;
+  const fetchImpl = async (url, options) => {
+    calls += 1;
+    if (calls === 1) return { ok: false, status: 429, headers: { get: name => name === "retry-after" ? "0" : null } };
+    const pathname = new URL(url).pathname;
+    const payload = pathname.endsWith("/Campaigns") ? { Campaigns: [] } : pathname.endsWith("/Ads") ? { Ads: [] } : pathname.endsWith("/Promotions") ? { Promotions: [] } : pathname.endsWith("/Deals") ? { Deals: [] } : { Items: [] };
+    return { ok: true, json: async () => ({ ...payload, "@numpages": 1 }) };
+  };
+  const rows = await fetchImpactOffers({ accountSid: "SID", authToken: "TOKEN", fetchImpl });
+  assert.deepEqual(rows, []);
+  assert.ok(calls > 1);
+});
