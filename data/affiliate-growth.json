@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-15T18:30:47.148Z",
+  "generatedAt": "2026-09-15T18:41:05.566Z",
   "market": "DE",
   "publisherId": 3045061,
   "awin": {
@@ -1809,7 +1809,7 @@
       {
         "source": "awin-enhanced-feeds",
         "state": "ok",
-        "count": 250,
+        "count": 451,
         "audit": {
           "feeds": [
             {
@@ -1829,12 +1829,12 @@
               "advertiserName": "ANTHBOT DE",
               "locale": "de_DE",
               "state": "available",
-              "products": 100,
+              "products": 161,
               "rawProducts": 161,
-              "validProducts": 100,
-              "withPrice": 100,
-              "withImage": 100,
-              "withTracking": 100,
+              "validProducts": 161,
+              "withPrice": 161,
+              "withImage": 161,
+              "withTracking": 161,
               "rejected": 0,
               "rejectionReasons": {}
             },
@@ -1875,12 +1875,12 @@
               "advertiserName": "Hollyland DE",
               "locale": "en_DE",
               "state": "available",
-              "products": 100,
+              "products": 240,
               "rawProducts": 362,
-              "validProducts": 100,
-              "withPrice": 100,
-              "withImage": 100,
-              "withTracking": 100,
+              "validProducts": 240,
+              "withPrice": 240,
+              "withImage": 240,
+              "withTracking": 240,
               "rejected": 0,
               "rejectionReasons": {}
             }
@@ -1903,14 +1903,14 @@
     "inventory": null
   },
   "publication": {
-    "offers": 34,
+    "offers": 244,
     "concreteAwaitingMedia": 2,
-    "partnerEntries": 464,
-    "merchants": 1,
-    "products": 34,
-    "images": 34,
+    "partnerEntries": 480,
+    "merchants": 3,
+    "products": 244,
+    "images": 244,
     "videos": 0,
-    "prices": 34,
+    "prices": 244,
     "discounts": 0,
     "coupons": 0
   },

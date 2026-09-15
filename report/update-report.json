@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-15T18:30:47.148Z",
+  "generatedAt": "2026-09-15T18:41:05.566Z",
   "newAwinPrograms": 0,
   "newImpactPrograms": 0,
   "activeAwinPrograms": 5,
@@ -7,11 +7,11 @@
   "applicationsSent": 0,
   "pendingApplications": 2,
   "manualApplications": 5,
-  "newMerchants": 0,
-  "newProducts": 0,
-  "productsWithImage": 34,
+  "newMerchants": 3,
+  "newProducts": 210,
+  "productsWithImage": 244,
   "productsWithVideo": 0,
-  "productsWithPrice": 34,
+  "productsWithPrice": 244,
   "productsWithOldPrice": 0,
   "productsWithDiscount": 0,
   "newCoupons": 0,
@@ -19,19 +19,24 @@
   "priceChanges": 0,
   "expiredOffers": 0,
   "expiredCoupons": 0,
-  "totalProducts": 34,
+  "totalProducts": 244,
   "productsBySource": {
-    "Awin": 34
+    "Awin": 244
   },
   "productsByMerchant": {
-    "ANTHBOT DE": 34
+    "Hollyland DE": 136,
+    "ANTHBOT DE": 59,
+    "Outin Germany": 49
   },
   "productsByCategory": {
-    "sonstiges": 11,
-    "technik": 10,
-    "zubehoer": 8,
-    "mode": 4,
-    "werkzeug": 1
+    "sonstiges": 102,
+    "zubehoer": 47,
+    "technik": 27,
+    "audio-musik": 26,
+    "werkzeug": 20,
+    "computer": 11,
+    "mode": 6,
+    "freizeit": 5
   },
   "awinEnhancedFeeds": [
     {
@@ -51,12 +56,12 @@
       "advertiserName": "ANTHBOT DE",
       "locale": "de_DE",
       "state": "available",
-      "products": 100,
+      "products": 161,
       "rawProducts": 161,
-      "validProducts": 100,
-      "withPrice": 100,
-      "withImage": 100,
-      "withTracking": 100,
+      "validProducts": 161,
+      "withPrice": 161,
+      "withImage": 161,
+      "withTracking": 161,
       "rejected": 0,
       "rejectionReasons": {}
     },
@@ -97,38 +102,38 @@
       "advertiserName": "Hollyland DE",
       "locale": "en_DE",
       "state": "available",
-      "products": 100,
+      "products": 240,
       "rawProducts": 362,
-      "validProducts": 100,
-      "withPrice": 100,
-      "withImage": 100,
-      "withTracking": 100,
+      "validProducts": 240,
+      "withPrice": 240,
+      "withImage": 240,
+      "withTracking": 240,
       "rejected": 0,
       "rejectionReasons": {}
     }
   ],
   "quarantinedRecords": 460,
-  "dailyDeal": "18bba7164660807b",
+  "dailyDeal": "45e4639b809948bd",
   "dailyHighlights": [
-    "18bba7164660807b",
-    "4cb215da8531f50b",
-    "a700e7aa7ff3a5f0",
-    "f6f0841d0306f09b",
-    "2dee7b8de709db66"
+    "45e4639b809948bd",
+    "9a06b91746bbd3f5",
+    "7f0c40919ee85abe",
+    "db362cbed6e0ecb3",
+    "e6e28e5b2dc779d9"
   ],
   "weekDeals": [
-    "18bba7164660807b",
-    "4cb215da8531f50b",
-    "a700e7aa7ff3a5f0",
-    "f6f0841d0306f09b",
-    "2dee7b8de709db66"
+    "45e4639b809948bd",
+    "9a06b91746bbd3f5",
+    "7f0c40919ee85abe",
+    "db362cbed6e0ecb3",
+    "e6e28e5b2dc779d9"
   ],
   "monthHighlights": [
-    "18bba7164660807b",
-    "4cb215da8531f50b",
-    "a700e7aa7ff3a5f0",
-    "f6f0841d0306f09b",
-    "2dee7b8de709db66"
+    "45e4639b809948bd",
+    "9a06b91746bbd3f5",
+    "7f0c40919ee85abe",
+    "db362cbed6e0ecb3",
+    "e6e28e5b2dc779d9"
   ],
   "apiErrors": 1,
   "affiliateLinkErrors": 0
