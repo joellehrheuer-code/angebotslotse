@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-15T18:15:18.331Z",
+  "generatedAt": "2026-09-15T18:30:47.148Z",
   "newAwinPrograms": 0,
   "newImpactPrograms": 0,
   "activeAwinPrograms": 5,
@@ -33,6 +33,80 @@
     "mode": 4,
     "werkzeug": 1
   },
+  "awinEnhancedFeeds": [
+    {
+      "advertiserId": 85171,
+      "advertiserName": "Coolblue DE",
+      "locale": "de_DE",
+      "state": "not-found"
+    },
+    {
+      "advertiserId": 85171,
+      "advertiserName": "Coolblue DE",
+      "locale": "en_DE",
+      "state": "not-found"
+    },
+    {
+      "advertiserId": 125144,
+      "advertiserName": "ANTHBOT DE",
+      "locale": "de_DE",
+      "state": "available",
+      "products": 100,
+      "rawProducts": 161,
+      "validProducts": 100,
+      "withPrice": 100,
+      "withImage": 100,
+      "withTracking": 100,
+      "rejected": 0,
+      "rejectionReasons": {}
+    },
+    {
+      "advertiserId": 125816,
+      "advertiserName": "Imou DE",
+      "locale": "de_DE",
+      "state": "not-found"
+    },
+    {
+      "advertiserId": 125816,
+      "advertiserName": "Imou DE",
+      "locale": "en_DE",
+      "state": "not-found"
+    },
+    {
+      "advertiserId": 127821,
+      "advertiserName": "Outin Germany",
+      "locale": "de_DE",
+      "state": "available",
+      "products": 50,
+      "rawProducts": 50,
+      "validProducts": 50,
+      "withPrice": 50,
+      "withImage": 50,
+      "withTracking": 50,
+      "rejected": 0,
+      "rejectionReasons": {}
+    },
+    {
+      "advertiserId": 128051,
+      "advertiserName": "Hollyland DE",
+      "locale": "de_DE",
+      "state": "not-found"
+    },
+    {
+      "advertiserId": 128051,
+      "advertiserName": "Hollyland DE",
+      "locale": "en_DE",
+      "state": "available",
+      "products": 100,
+      "rawProducts": 362,
+      "validProducts": 100,
+      "withPrice": 100,
+      "withImage": 100,
+      "withTracking": 100,
+      "rejected": 0,
+      "rejectionReasons": {}
+    }
+  ],
   "quarantinedRecords": 460,
   "dailyDeal": "18bba7164660807b",
   "dailyHighlights": [

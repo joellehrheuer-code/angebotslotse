@@ -1,6 +1,6 @@
 {
   "state": "ok",
-  "lastSuccessfulUpdate": "2026-09-15T18:15:18.297Z",
+  "lastSuccessfulUpdate": "2026-09-15T18:30:47.116Z",
   "activeOffers": 500,
   "added": 0,
   "removed": 0,
@@ -36,7 +36,14 @@
             "advertiserName": "ANTHBOT DE",
             "locale": "de_DE",
             "state": "available",
-            "products": 100
+            "products": 100,
+            "rawProducts": 161,
+            "validProducts": 100,
+            "withPrice": 100,
+            "withImage": 100,
+            "withTracking": 100,
+            "rejected": 0,
+            "rejectionReasons": {}
           },
           {
             "advertiserId": 125816,
@@ -55,7 +62,14 @@
             "advertiserName": "Outin Germany",
             "locale": "de_DE",
             "state": "available",
-            "products": 50
+            "products": 50,
+            "rawProducts": 50,
+            "validProducts": 50,
+            "withPrice": 50,
+            "withImage": 50,
+            "withTracking": 50,
+            "rejected": 0,
+            "rejectionReasons": {}
           },
           {
             "advertiserId": 128051,
@@ -68,7 +82,14 @@
             "advertiserName": "Hollyland DE",
             "locale": "en_DE",
             "state": "available",
-            "products": 100
+            "products": 100,
+            "rawProducts": 362,
+            "validProducts": 100,
+            "withPrice": 100,
+            "withImage": 100,
+            "withTracking": 100,
+            "rejected": 0,
+            "rejectionReasons": {}
           }
         ]
       }
