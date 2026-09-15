@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-15T18:10:31.696Z",
+  "generatedAt": "2026-09-15T18:15:18.331Z",
   "market": "DE",
   "publisherId": 3045061,
   "awin": {
@@ -1871,7 +1871,7 @@
         "state": "disabled",
         "count": 0,
         "audit": {
-          "reason": "AWIN_DATAFEED_API_KEY fehlt"
+          "reason": "AWIN_DATAFEED_API_KEY missing – Awin Product Feed sync skipped"
         }
       }
     ]

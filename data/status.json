@@ -1,6 +1,6 @@
 {
   "state": "ok",
-  "lastSuccessfulUpdate": "2026-09-15T18:10:31.663Z",
+  "lastSuccessfulUpdate": "2026-09-15T18:15:18.297Z",
   "activeOffers": 500,
   "added": 0,
   "removed": 0,
@@ -78,7 +78,7 @@
       "count": 0,
       "error": null,
       "audit": {
-        "reason": "AWIN_DATAFEED_API_KEY fehlt"
+        "reason": "AWIN_DATAFEED_API_KEY missing – Awin Product Feed sync skipped"
       }
     },
     "direct": {
@@ -90,7 +90,7 @@
     "impact": {
       "state": "error",
       "count": 0,
-      "error": "Impact API /Mediapartners/IRY64XT2ENN77662895nd4JzxxVYTNUzJ1/Campaigns/3770/Deals: HTTP 429",
+      "error": "Impact API /Mediapartners/IRY64XT2ENN77662895nd4JzxxVYTNUzJ1/Campaigns: HTTP 429",
       "audit": null
     }
   },
