@@ -1,37 +1,99 @@
 {
   "state": "ok",
-  "lastSuccessfulUpdate": "2026-09-15T08:29:57.147Z",
+  "lastSuccessfulUpdate": "2026-09-15T17:53:57.625Z",
   "activeOffers": 500,
-  "added": 37,
-  "removed": 37,
+  "added": 10,
+  "removed": 10,
   "invalidLinks": 0,
-  "apiErrors": 0,
+  "apiErrors": 1,
   "sources": {
     "awin": {
       "state": "ok",
       "count": 2,
-      "error": null
+      "error": null,
+      "audit": null
     },
     "awin-enhanced-feeds": {
       "state": "ok",
-      "count": 161,
-      "error": null
+      "count": 250,
+      "error": null,
+      "audit": {
+        "feeds": [
+          {
+            "advertiserId": 85171,
+            "advertiserName": "Coolblue DE",
+            "locale": "de_DE",
+            "state": "not-found"
+          },
+          {
+            "advertiserId": 85171,
+            "advertiserName": "Coolblue DE",
+            "locale": "en_DE",
+            "state": "not-found"
+          },
+          {
+            "advertiserId": 125144,
+            "advertiserName": "ANTHBOT DE",
+            "locale": "de_DE",
+            "state": "available",
+            "products": 100
+          },
+          {
+            "advertiserId": 125816,
+            "advertiserName": "Imou DE",
+            "locale": "de_DE",
+            "state": "not-found"
+          },
+          {
+            "advertiserId": 125816,
+            "advertiserName": "Imou DE",
+            "locale": "en_DE",
+            "state": "not-found"
+          },
+          {
+            "advertiserId": 127821,
+            "advertiserName": "Outin Germany",
+            "locale": "de_DE",
+            "state": "available",
+            "products": 50
+          },
+          {
+            "advertiserId": 128051,
+            "advertiserName": "Hollyland DE",
+            "locale": "de_DE",
+            "state": "not-found"
+          },
+          {
+            "advertiserId": 128051,
+            "advertiserName": "Hollyland DE",
+            "locale": "en_DE",
+            "state": "available",
+            "products": 100
+          }
+        ]
+      }
     },
     "awin-product-feeds": {
       "state": "disabled",
       "count": 0,
-      "error": null
+      "error": null,
+      "audit": {
+        "reason": "AWIN_DATAFEED_API_KEY fehlt"
+      }
     },
     "direct": {
       "state": "ok",
-      "count": 4,
-      "error": null
+      "count": 16,
+      "error": null,
+      "audit": null
     },
     "impact": {
-      "state": "ok",
-      "count": 1328,
-      "error": null
+      "state": "error",
+      "count": 0,
+      "error": "Impact API /Mediapartners/IRY64XT2ENN77662895nd4JzxxVYTNUzJ1/Campaigns: HTTP 429",
+      "audit": null
     }
   },
-  "message": "Aktualisierung erfolgreich."
+  "stale": 481,
+  "message": "Aktualisierung mit geschützten Bestandsdaten abgeschlossen."
 }
