@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-15T17:59:17.501Z",
+  "generatedAt": "2026-09-15T18:10:31.696Z",
   "newAwinPrograms": 0,
   "newImpactPrograms": 0,
   "activeAwinPrograms": 5,
@@ -12,12 +12,28 @@
   "productsWithImage": 34,
   "productsWithVideo": 0,
   "productsWithPrice": 34,
+  "productsWithOldPrice": 0,
   "productsWithDiscount": 0,
   "newCoupons": 0,
   "coupons": 0,
   "priceChanges": 0,
   "expiredOffers": 0,
   "expiredCoupons": 0,
+  "totalProducts": 34,
+  "productsBySource": {
+    "Awin": 34
+  },
+  "productsByMerchant": {
+    "ANTHBOT DE": 34
+  },
+  "productsByCategory": {
+    "sonstiges": 11,
+    "technik": 10,
+    "zubehoer": 8,
+    "mode": 4,
+    "werkzeug": 1
+  },
+  "quarantinedRecords": 460,
   "dailyDeal": "18bba7164660807b",
   "dailyHighlights": [
     "18bba7164660807b",

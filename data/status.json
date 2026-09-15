@@ -1,6 +1,6 @@
 {
   "state": "ok",
-  "lastSuccessfulUpdate": "2026-09-15T17:59:17.464Z",
+  "lastSuccessfulUpdate": "2026-09-15T18:10:31.663Z",
   "activeOffers": 500,
   "added": 0,
   "removed": 0,
@@ -90,7 +90,7 @@
     "impact": {
       "state": "error",
       "count": 0,
-      "error": "Impact API /Mediapartners/IRY64XT2ENN77662895nd4JzxxVYTNUzJ1/Campaigns: HTTP 429",
+      "error": "Impact API /Mediapartners/IRY64XT2ENN77662895nd4JzxxVYTNUzJ1/Campaigns/3770/Deals: HTTP 429",
       "audit": null
     }
   },
