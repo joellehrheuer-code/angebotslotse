@@ -1,0 +1,31 @@
+{
+  "generatedAt": "2026-09-15T18:42:00+02:00",
+  "source": "user-provided CSV facts in referenced task",
+  "filesProvidedToRuntime": false,
+  "files": {
+    "Ads(3).csv": {
+      "rows": 75,
+      "columns": 60,
+      "programs": {
+        "56905": { "name": "ProtoArc", "ads": 36 },
+        "40222": { "name": "GearUP", "ads": 24 },
+        "53368": { "name": "GearUP for Mobile", "ads": 8 },
+        "10229": { "name": "Razer Affiliate Program", "ads": 7 }
+      },
+      "mediaPolicy": "Multiple creatives for one product must be retained as media variants, not fabricated as separate products."
+    },
+    "Campaigns W.csv": {
+      "rows": 7,
+      "activePrograms": [
+        { "name": "Belkin DE", "programId": "3770", "deepLinking": true, "payout": "Belkin Germany Purchase 4%" },
+        { "name": "GearUP", "programId": "40222", "deepLinking": true, "payout": "Paid Subscription 70%" },
+        { "name": "GearUP for Mobile", "programId": "53368", "deepLinking": true, "payout": "Android/iOS 50%" },
+        { "name": "Martinic Audio", "programId": "4482", "deepLinking": true, "payout": "Sale 30%" },
+        { "name": "ProtoArc", "programId": "56905", "deepLinking": true, "payout": "Online Sale 12%" },
+        { "name": "Razer Affiliate Program", "programId": "10229", "deepLinking": true, "payout": "Online Sale 2.5%-5%" },
+        { "name": "Waves Audio Affiliate Program", "programId": "4512", "deepLinking": true, "payout": "5%-20% sale / recurring ranges" }
+      ]
+    }
+  },
+  "publicationRule": "This manifest does not create offers. Raw CSV rows must be supplied to the runtime before product-level publication; unverified Razer creatives remain quarantined."
+}

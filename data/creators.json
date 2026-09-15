@@ -8,7 +8,9 @@
     { "name": "Instagram", "description": "Neuigkeiten und Einblicke.", "url": "https://www.instagram.com/joel27.1997" },
     { "name": "Snapchat", "description": "Kurzform-Inhalte und Updates.", "url": "https://www.snapchat.com/add/joel271997xxx" },
     { "name": "Discord", "description": "Austausch mit der Community.", "url": "https://discord.gg/fAahCKxMfR" },
-    { "name": "Buch", "description": "Das Buchprojekt von Joel.", "url": "https://www.amazon.de/Von-Liebe-bis-tiefsten-Trauer/dp/B0H6SZ6WCD" },
+    { "name": "Bücher", "description": "Joels Bücher direkt bei Amazon – keine automatisch ermittelten Preise oder Deals.", "url": "https://www.amazon.de/stores/joel-lehrheuer/author/B0HJ7K51R1?ref=ap_rdr&shoppingPortalEnabled=true" },
+    { "name": "Von Liebe bis zur tiefsten Trauer", "description": "Buch von Joel, ASIN B0H6SZ6WCD. Keine automatisch ermittelten Preise.", "url": "https://www.amazon.de/Von-Liebe-bis-tiefsten-Trauer/dp/B0H6SZ6WCD/" },
+    { "name": "Dinge über Beziehungen", "description": "Buch von Joel, ASIN B0HJ5LGHM5. Keine automatisch ermittelten Preise.", "url": "https://www.amazon.de/Dinge-%C3%BCber-Beziehungen-wissen-musst/dp/B0HJ5LGHM5/" },
     { "name": "Merch-Shop", "description": "Merchandise zum Projekt.", "url": "https://joel271997.myspreadshop.de/" }
   ]
 }

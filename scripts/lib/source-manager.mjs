@@ -17,7 +17,8 @@ export async function collectSources(env = process.env) {
     ["impact", () => fetchImpactOffers({ accountSid: env.IMPACT_ACCOUNT_SID, authToken: env.IMPACT_AUTH_TOKEN, linkPolicy: impactLinkPolicy })]
   ];
   const results = await Promise.all(definitions.map(async ([name, run]) => {
-    if (name === "impact" && (!env.IMPACT_ACCOUNT_SID || !env.IMPACT_AUTH_TOKEN)) return { name, state: "disabled", rows: [] };
+    if (name === "awin" && (!env.AWIN_PUBLISHER_ID || !env.AWIN_API_TOKEN)) return { name, state: "disabled", rows: [], audit:{reason:"AWIN_PUBLISHER_ID und/oder AWIN_API_TOKEN fehlen"} };
+    if (name === "impact" && (!env.IMPACT_ACCOUNT_SID || !env.IMPACT_AUTH_TOKEN)) return { name, state: "disabled", rows: [], audit:{reason:"IMPACT_ACCOUNT_SID und/oder IMPACT_AUTH_TOKEN fehlen"} };
     if (name === "awin-product-feeds" && !env.AWIN_DATAFEED_API_KEY) return { name, state: "disabled", rows: [], audit:{reason:"AWIN_DATAFEED_API_KEY fehlt"} };
     if (name === "awin-enhanced-feeds" && (!env.AWIN_API_TOKEN||!joined.length)) return {name,state:"disabled",rows:[],audit:{reason:"Keine Awin-Zugangsdaten oder beigetretenen Programme"}};
     try { const rows=await run(); return { name, state: "ok", rows, audit:rows.audit??null }; }

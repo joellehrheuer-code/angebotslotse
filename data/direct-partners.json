@@ -40,6 +40,66 @@
     "enabled": true
   },
   {
+    "id": "protoarc-impact",
+    "name": "ProtoArc",
+    "title": "ProtoArc – offizieller Partner-Einstieg",
+    "description": "Zum bestätigten ProtoArc-Partnerlink. Preise und Verfügbarkeit werden beim Anbieter geprüft.",
+    "category": "computer",
+    "trackingUrl": "https://protoarc.sjv.io/VOjAD6",
+    "destinationUrl": "https://protoarc.sjv.io/VOjAD6",
+    "enabled": true
+  },
+  {
+    "id": "razer-impact",
+    "name": "Razer",
+    "title": "Razer – offizieller Partner-Einstieg",
+    "description": "Zum bestätigten Razer-Partnerlink. Preise und Verfügbarkeit werden beim Anbieter geprüft.",
+    "category": "gaming",
+    "trackingUrl": "https://razer.a9yw.net/GbkYQm",
+    "destinationUrl": "https://razer.a9yw.net/GbkYQm",
+    "enabled": true
+  },
+  {
+    "id": "gearup-mobile-impact",
+    "name": "GearUP for Mobile",
+    "title": "GearUP for Mobile – offizieller Partner-Einstieg",
+    "description": "Zum bestätigten GearUP-for-Mobile-Partnerlink. Preise und Bedingungen werden beim Anbieter geprüft.",
+    "category": "gaming",
+    "trackingUrl": "https://gearupapp.pxf.io/6k1Kxr",
+    "destinationUrl": "https://gearupapp.pxf.io/6k1Kxr",
+    "enabled": true
+  },
+  {
+    "id": "gearup-impact",
+    "name": "GearUP",
+    "title": "GearUP – offizieller Partner-Einstieg",
+    "description": "Zum bestätigten GearUP-Partnerlink. Preise und Bedingungen werden beim Anbieter geprüft.",
+    "category": "gaming",
+    "trackingUrl": "https://gearup.sjv.io/2Re3gO",
+    "destinationUrl": "https://gearup.sjv.io/2Re3gO",
+    "enabled": true
+  },
+  {
+    "id": "belkin-impact",
+    "name": "Belkin DE",
+    "title": "Belkin DE – offizieller Partner-Einstieg",
+    "description": "Zum bestätigten Belkin-Partnerlink. Preise und Verfügbarkeit werden beim Anbieter geprüft.",
+    "category": "technik",
+    "trackingUrl": "https://belkinde.evyy.net/3ka3RB",
+    "destinationUrl": "https://belkinde.evyy.net/3ka3RB",
+    "enabled": true
+  },
+  {
+    "id": "waves-impact",
+    "name": "Waves",
+    "title": "Waves – offizieller Partner-Einstieg",
+    "description": "Zum bestätigten Waves-Partnerlink. Preise und Verfügbarkeit werden beim Anbieter geprüft.",
+    "category": "audio-musik",
+    "trackingUrl": "https://waves.pxf.io/n4e0gA",
+    "destinationUrl": "https://waves.pxf.io/n4e0gA",
+    "enabled": true
+  },
+  {
     "id": "razer",
     "name": "Razer",
     "title": "Razer",

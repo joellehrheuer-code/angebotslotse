@@ -12,7 +12,7 @@ test("Awin-Programminventar trennt alle offiziellen Beziehungszustände",async()
 
 test("direkte Partner liefern nur aktivierte HTTPS-Angebote", async () => {
   const rows = await fetchDirectOffers();
-  assert.equal(rows.length, 4);
+  assert.equal(rows.length, 10);
   assert.ok(rows.every(r => r.source === "direct" && r.urlTracking.startsWith("https://")));
 });
 test("Impact bleibt ohne Zugangsdaten deaktiviert", async () => assert.deepEqual(await fetchImpactOffers({}), []));

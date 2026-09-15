@@ -9,6 +9,13 @@
       "advertiserName": "GearUP Portal Pte Ltd",
       "blockedTrackingHosts": ["gearup.sjv.io"],
       "requireDedicatedAdLink": true
+    },
+    {
+      "advertiserId": "1723018",
+      "advertiserName": "Razer (Asia Pacific) Pte Ltd",
+      "blockedTrackingHosts": ["razer.a9yw.net"],
+      "requireDedicatedAdLink": true,
+      "reason": "Razer-Creatives müssen vor Veröffentlichung anhand des bereitgestellten Ads-Exports verifiziert werden."
     }
   ]
 }

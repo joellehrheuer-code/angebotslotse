@@ -28,7 +28,7 @@ try {
   const newIds = new Set(offers.map(o => o.id));
   status = { state: "ok", lastSuccessfulUpdate: new Date().toISOString(), activeOffers: offers.length,
     added: offers.filter(o => !oldIds.has(o.id)).length, removed: oldOffers.filter(o => !newIds.has(o.id)).length,
-    invalidLinks: 0, apiErrors: failed.size, sources: Object.fromEntries(sources.map(s => [s.name, { state: s.state, count: s.rows.length, error: s.error ?? null }])),
+    invalidLinks: 0, apiErrors: failed.size, sources: Object.fromEntries(sources.map(s => [s.name, { state: s.state, count: s.rows.length, error: s.error ?? null, audit: s.audit ?? null }])),
     stale: offers.filter(o => o.isStale).length,
     message: failed.size || sources.some(s => s.state === "disabled") ? "Aktualisierung mit geschützten Bestandsdaten abgeschlossen." : "Aktualisierung erfolgreich." };
   await fs.writeFile("data/offers.json", `${JSON.stringify(offers, null, 2)}\n`);
@@ -59,7 +59,9 @@ try {
   await fs.mkdir("report",{recursive:true});
   await fs.writeFile("report/program-inventory.json",`${JSON.stringify({generatedAt:checkedAt,programs:[...programInventory,...impactInventory]},null,2)}\n`);
   const manualActions=[];
+  if(!process.env.AWIN_PUBLISHER_ID||!process.env.AWIN_API_TOKEN)manualActions.push({id:"awin-api-credentials",platform:"Awin",action:"AWIN_PUBLISHER_ID und AWIN_API_TOKEN als sichere Runtime-/GitHub-Secrets konfigurieren.",reason:"Ohne Publisher-ID und API-Token können aktive Awin-Programme und Enhanced Feeds nicht aktualisiert werden."});
   if(!process.env.AWIN_DATAFEED_API_KEY)manualActions.push({id:"awin-datafeed-key",platform:"Awin",action:"AWIN_DATAFEED_API_KEY als lokales .env.local-Secret und GitHub Actions Secret hinterlegen.",reason:"Die offizielle Legacy-Produktfeed-Liste benötigt einen separaten Datafeed-Key."});
+  if(!process.env.IMPACT_ACCOUNT_SID||!process.env.IMPACT_AUTH_TOKEN)manualActions.push({id:"impact-api-credentials",platform:"Impact",action:"IMPACT_ACCOUNT_SID und IMPACT_AUTH_TOKEN als sichere Runtime-/GitHub-Secrets konfigurieren.",reason:"Ohne beide Impact-Zugangswerte können Kampagnen, Ads und Katalogdaten nicht synchronisiert werden."});
   for(const program of programInventory.filter(program=>program.applicationPossible&&priority.test(program.name)).slice(0,8))manualActions.push({id:`awin-apply-${program.advertiserId}`,platform:"Awin",action:`Bedingungen für ${program.name} prüfen und Bewerbung im Awin-Dashboard bestätigen.`,reason:"Die offizielle Publisher-API dokumentiert keinen Bewerbungs-Endpunkt; keine automatische Zustimmung zu Vertragsbedingungen.",applicationDraft:program.applicationDraft});
   await fs.writeFile("report/manual-actions.json",`${JSON.stringify({generatedAt:checkedAt,actions:manualActions},null,2)}\n`);
   const oldProgramKeys=new Set((oldProgramInventory.programs??[]).map(program=>`${program.platform}:${program.advertiserId}:${program.campaignId??""}`));
