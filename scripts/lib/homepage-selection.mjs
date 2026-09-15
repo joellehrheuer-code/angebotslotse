@@ -12,22 +12,33 @@ const stableDailyValue = (id, day) => {
   return hash >>> 0;
 };
 
+const diversify = (rows, limit) => {
+  const selected = [], usedMerchants = new Set(), usedCategories = new Set();
+  for (const row of rows) {
+    if (selected.length >= limit) break;
+    const merchant = String(row.advertiser || "").toLowerCase();
+    const category = String(row.category || "").toLowerCase();
+    if (!usedMerchants.has(merchant) || !usedCategories.has(category)) {
+      selected.push(row); usedMerchants.add(merchant); usedCategories.add(category);
+    }
+  }
+  for (const row of rows) if (selected.length < limit && !selected.includes(row)) selected.push(row);
+  return selected;
+};
+
 export function selectHomepageOffers(offers, { now = new Date(), score = () => 0 } = {}) {
   const day = now.toISOString().slice(0, 10);
   const ranked = [...offers].sort((a, b) =>
-    score(b) - score(a) ||
-    stableDailyValue(b.id || b.slug, day) - stableDailyValue(a.id || a.slug, day) ||
-    timestamp(b) - timestamp(a)
+    score(b) - score(a) || stableDailyValue(b.id || b.slug, day) - stableDailyValue(a.id || a.slug, day) || timestamp(b) - timestamp(a)
   );
   const age = offer => now.getTime() - timestamp(offer);
   const recent = days => ranked.filter(offer => timestamp(offer) && age(offer) >= 0 && age(offer) <= days * 86400000);
   const newest = [...offers].sort((a, b) => timestamp(b) - timestamp(a));
-
   return {
     dailyDeal: ranked[0] || null,
-    dailyHighlights: ranked.slice(0, 5),
-    weekDeals: recent(7).slice(0, 5),
-    monthHighlights: recent(30).slice(0, 5),
-    newest: newest.slice(0, 10)
+    dailyHighlights: diversify(ranked, 5),
+    weekDeals: diversify(recent(7), 5),
+    monthHighlights: diversify(recent(30), 5),
+    newest: diversify(newest, 10)
   };
 }
