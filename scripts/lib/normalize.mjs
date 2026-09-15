@@ -8,7 +8,7 @@ const safeHttpUrl = value => {
 const amount = value => {
   if (value === null || value === undefined || String(value).trim() === "") return null;
   const number = Number(String(value ?? "").replace(",", "."));
-  return Number.isFinite(number) && number >= 0 ? number : null;
+  return Number.isFinite(number) && number > 0 ? number : null;
 };
 const slugify = value => text(value, 120).toLowerCase().normalize("NFKD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 
