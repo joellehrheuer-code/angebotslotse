@@ -1,14 +1,14 @@
 {
-  "generatedAt": "2026-09-14T21:49:56.039Z",
-  "newAwinPrograms": 2,
-  "newImpactPrograms": 1,
+  "generatedAt": "2026-09-15T04:55:00.443Z",
+  "newAwinPrograms": 0,
+  "newImpactPrograms": 0,
   "activeAwinPrograms": 3,
   "activeImpactPrograms": 4,
   "applicationsSent": 0,
   "pendingApplications": 2,
   "manualApplications": 5,
-  "newMerchants": 1,
-  "newProducts": 37,
+  "newMerchants": 0,
+  "newProducts": 0,
   "productsWithImage": 37,
   "productsWithVideo": 0,
   "productsWithPrice": 37,
@@ -18,27 +18,27 @@
   "priceChanges": 0,
   "expiredOffers": 0,
   "expiredCoupons": 0,
-  "dailyDeal": "052fe5582f93e7a5",
+  "dailyDeal": "9a06b91746bbd3f5",
   "dailyHighlights": [
-    "052fe5582f93e7a5",
-    "b04bdaef95d3428b",
-    "29d2a178b5b502ba",
-    "d61ad58aeb5b289f",
-    "81e09df183098978"
+    "9a06b91746bbd3f5",
+    "98b1b2a12da0fa18",
+    "815c39bb3fad1936",
+    "35908a4673299cbf",
+    "cea7d070becda3cc"
   ],
   "weekDeals": [
-    "052fe5582f93e7a5",
-    "b04bdaef95d3428b",
-    "29d2a178b5b502ba",
-    "d61ad58aeb5b289f",
-    "81e09df183098978"
+    "9a06b91746bbd3f5",
+    "98b1b2a12da0fa18",
+    "815c39bb3fad1936",
+    "35908a4673299cbf",
+    "cea7d070becda3cc"
   ],
   "monthHighlights": [
-    "052fe5582f93e7a5",
-    "b04bdaef95d3428b",
-    "29d2a178b5b502ba",
-    "d61ad58aeb5b289f",
-    "81e09df183098978"
+    "9a06b91746bbd3f5",
+    "98b1b2a12da0fa18",
+    "815c39bb3fad1936",
+    "35908a4673299cbf",
+    "cea7d070becda3cc"
   ],
   "apiErrors": 0,
   "affiliateLinkErrors": 0
