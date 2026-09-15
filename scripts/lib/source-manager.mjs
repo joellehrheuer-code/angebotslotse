@@ -3,7 +3,6 @@ import { fetchAwinProductFeeds, fetchAwinEnhancedFeeds } from "./awin-product-fe
 import { fetchImpactOffers } from "./impact.mjs";
 import { fetchDirectOffers } from "./direct.mjs";
 import fs from "node:fs/promises";
-
 export async function collectSources(env = process.env) {
   const impactLinkPolicy = JSON.parse(await fs.readFile("data/impact-link-policy.json", "utf8").catch(() => "{}"));
   let awinPrograms=null;
@@ -17,10 +16,10 @@ export async function collectSources(env = process.env) {
     ["impact", () => fetchImpactOffers({ accountSid: env.IMPACT_ACCOUNT_SID, authToken: env.IMPACT_AUTH_TOKEN, linkPolicy: impactLinkPolicy })]
   ];
   const results = await Promise.all(definitions.map(async ([name, run]) => {
-    if (name === "awin" && (!env.AWIN_PUBLISHER_ID || !env.AWIN_API_TOKEN)) return { name, state: "disabled", rows: [], audit:{reason:"AWIN_PUBLISHER_ID und/oder AWIN_API_TOKEN fehlen"} };
-    if (name === "impact" && (!env.IMPACT_ACCOUNT_SID || !env.IMPACT_AUTH_TOKEN)) return { name, state: "disabled", rows: [], audit:{reason:"IMPACT_ACCOUNT_SID und/oder IMPACT_AUTH_TOKEN fehlen"} };
-    if (name === "awin-product-feeds" && !env.AWIN_DATAFEED_API_KEY) return { name, state: "disabled", rows: [], audit:{reason:"AWIN_DATAFEED_API_KEY fehlt"} };
-    if (name === "awin-enhanced-feeds" && (!env.AWIN_API_TOKEN||!joined.length)) return {name,state:"disabled",rows:[],audit:{reason:"Keine Awin-Zugangsdaten oder beigetretenen Programme"}};
+    if (name === "awin" && (!env.AWIN_PUBLISHER_ID || !env.AWIN_API_TOKEN)) { const names = [!env.AWIN_PUBLISHER_ID && "AWIN_PUBLISHER_ID", !env.AWIN_API_TOKEN && "AWIN_API_TOKEN"].filter(Boolean); return { name, state: "disabled", rows: [], audit:{reason:`${names.join(", ")} missing – Awin API sync skipped`} }; }
+    if (name === "impact" && (!env.IMPACT_ACCOUNT_SID || !env.IMPACT_AUTH_TOKEN)) { const names = [!env.IMPACT_ACCOUNT_SID && "IMPACT_ACCOUNT_SID", !env.IMPACT_AUTH_TOKEN && "IMPACT_AUTH_TOKEN"].filter(Boolean); return { name, state: "disabled", rows: [], audit:{reason:`${names.join(", ")} missing – Impact API sync skipped`} }; }
+    if (name === "awin-product-feeds" && !env.AWIN_DATAFEED_API_KEY) return { name, state: "disabled", rows: [], audit:{reason:"AWIN_DATAFEED_API_KEY missing – Awin Product Feed sync skipped"} };
+    if (name === "awin-enhanced-feeds" && (!env.AWIN_API_TOKEN||!joined.length)) return {name,state:"disabled",rows:[],audit:{reason:!env.AWIN_API_TOKEN?"AWIN_API_TOKEN missing – Awin Enhanced Feed sync skipped":"No joined Awin programmes – Enhanced Feed sync skipped"}};
     try { const rows=await run(); return { name, state: "ok", rows, audit:rows.audit??null }; }
     catch (error) { return { name, state: "error", rows: [], error: String(error.message).slice(0, 160) }; }
   }));
