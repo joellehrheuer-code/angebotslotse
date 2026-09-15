@@ -54,3 +54,20 @@ html{background:#070913}body{background:radial-gradient(circle at 10% 0%,rgba(84
 
 .partner-section .partner-creative{display:block;width:100%;max-height:180px;aspect-ratio:16/9;object-fit:contain;object-position:center;border-radius:10px;background:#0b1022;margin:-4px 0 12px}.partner-section>div a:has(.partner-creative){overflow:hidden}
 .partner-creative-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.partner-creative-card{display:grid;grid-template-columns:minmax(180px,.8fr) minmax(0,1.2fr);gap:18px;align-items:stretch;padding:14px;border:1px solid #30385a;border-radius:22px;background:#11162a;box-shadow:0 12px 32px rgba(0,0,0,.22)}.partner-creative-media{min-height:180px;display:flex;align-items:center;justify-content:center;border-radius:14px;overflow:hidden;background:#0b1022}.partner-creative-media .partner-creative{width:100%;height:100%;max-height:240px;aspect-ratio:1.35/1;object-fit:contain;object-position:center}.partner-creative-placeholder{font-weight:800;color:#dbe5ff;text-align:center;padding:20px}.partner-creative-copy{display:flex;flex-direction:column;justify-content:center}.partner-creative-copy h3{margin:8px 0;font-size:clamp(19px,2vw,27px);color:#fff}.partner-creative-copy p{margin:0 0 14px;color:#bfc9e4}.partner-creative-copy .card-cta{align-self:flex-start;width:auto;padding-inline:18px}.partner-creative-section .section-head p{color:#bfc9e4}@media(max-width:760px){.partner-creative-grid{grid-template-columns:1fr}.partner-creative-card{grid-template-columns:1fr}.partner-creative-media{min-height:150px}}
+
+/* Refined product cards: calm commerce hierarchy and contained price history. */
+.deal-card{min-height:100%;display:flex;flex-direction:column;overflow:hidden}
+.deal-card .media-wrap{flex:0 0 auto}
+.deal-card .product-image{height:220px;aspect-ratio:auto;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.deal-card .product-image img{width:100%;height:100%;object-fit:contain;object-position:center}
+.deal-card .deal-content{min-height:340px}
+.deal-card h3{min-height:3.8em;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.deal-card .merchant{min-height:1.2em}
+.deal-card .price-block{min-height:72px}
+.deal-card .sparkline{height:34px;min-height:34px;margin:10px 0 8px;display:flex;align-items:center;gap:8px;overflow:hidden}
+.deal-card .sparkline svg{display:block;flex:1 1 auto;width:100%;height:24px;min-width:0;overflow:hidden}
+.deal-card .sparkline span{flex:0 0 auto;font-size:10px;white-space:nowrap}
+.deal-card .empty-spark{justify-content:flex-start}
+.deal-card .card-cta{margin-top:auto;width:100%;text-align:center}
+.deal-card .ad-label{font-size:10px;line-height:1.2}
+@media(max-width:620px){.deal-card .product-image{height:190px}.deal-card .deal-content{min-height:0}.deal-card h3{min-height:0}.deal-card .price-block{min-height:0}.deal-card .sparkline{max-width:100%}}
