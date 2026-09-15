@@ -35,7 +35,7 @@ const currentDeals = offers.filter(isDeal);
 const evergreen = offers.filter(o => !isDeal(o));
 const creatorByName = new Map(creators.entries.map(item => [item.name.toLowerCase(), item]));
 const url = suffix => `${base}${suffix}`;
-const money = (value, currency = "EUR") => Number.isFinite(value) && value > 0 ? new Intl.NumberFormat("de-DE", {style:"currency",currency:currency || "EUR"}).format(value) : "Preis beim Anbieter prüfen";
+const money = (value, currency = "EUR") => { const numeric = Number(value); return Number.isFinite(numeric) && numeric > 0 ? new Intl.NumberFormat("de-DE", {style:"currency",currency:currency || "EUR"}).format(numeric) : "Preis beim Anbieter prüfen"; };
 const discount = o => hasPrice(o) && o.previousPrice > o.currentPrice ? Math.round((1-o.currentPrice/o.previousPrice)*100) : null;
 const comparisonGroups = new Map();
 for (const offer of offers) if (offer.productId && hasPrice(offer)) {
