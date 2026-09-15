@@ -11,6 +11,19 @@ const amount = value => {
   return Number.isFinite(number) && number > 0 ? number : null;
 };
 const slugify = value => text(value, 120).toLowerCase().normalize("NFKD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+const merchantIdentity = offer => identityText(offer.advertiserId || offer.advertiser) || "unknown-merchant";
+
+export function dedupeKeyForOffer(offer) {
+  const merchant = merchantIdentity(offer);
+  const gtin = identityText(offer.gtin || offer.ean);
+  const mpnBrand = `${identityText(offer.mpn)}|${identityText(offer.brand)}`;
+  const sourceProduct = `${offer.source}|${merchant}|${identityText(offer.sourceId)}`;
+  const fallback = `${identityText(offer.title)}|${identityText(offer.brand)}`;
+  if (gtin && !["unknown", "undefined", "null"].includes(gtin)) return `gtin:${merchant}:${gtin}`;
+  if (offer.mpn && offer.brand) return `mpn:${merchant}:${mpnBrand}`;
+  if (identityText(offer.sourceId)) return `source:${sourceProduct}`;
+  return `name:${offer.source}:${merchant}:${fallback}`;
+}
 
 export const isConcreteOffer = offer => offer.source !== "direct" && Boolean(offer.productId || offer.voucherCode || offer.endDate || (Number.isFinite(offer.currentPrice) && offer.currentPrice > 0));
 export const isPublicationReady = offer => isConcreteOffer(offer) && Boolean(offer.imageUrl || offer.videoUrl);
@@ -96,11 +109,7 @@ export function normalizeAndDedupe(rows, config, now = new Date()) {
   for (const raw of rows) {
     const offer = normalizeOffer(raw, config, now);
     if (!offer) continue;
-    const gtin = identityText(offer.gtin || offer.ean);
-    const mpnBrand = `${identityText(offer.mpn)}|${identityText(offer.brand)}`;
-    const sourceProduct = `${offer.source}|${identityText(offer.sourceId)}`;
-    const fallback = `${identityText(offer.title)}|${identityText(offer.brand)}|${identityText(offer.advertiser)}`;
-    const key = gtin ? `gtin:${gtin}` : offer.mpn && offer.brand ? `mpn:${mpnBrand}` : sourceProduct !== `${offer.source}|` ? `source:${sourceProduct}` : `name:${fallback}`;
+    const key = dedupeKeyForOffer(offer);
     const current = byKey.get(key);
     if (!current) {
       byKey.set(key, offer);

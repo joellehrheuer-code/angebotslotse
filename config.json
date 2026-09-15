@@ -3,7 +3,7 @@
   "locale": "de-DE",
   "currency": "EUR",
   "marketCountry": "DE",
-  "maxOffers": 500,
+  "maxOffers": 1000,
   "staleAfterHours": 36,
   "categories": {
     "technik": ["elektronik", "technik", "mobile", "smartphone", "tv"],
