@@ -6,6 +6,7 @@ export async function fetchDirectOffers(file = "data/direct-partners.json") {
     id: p.id, title: p.title, description: p.description, terms: "Preise, Verfügbarkeit und Bedingungen bitte beim Anbieter prüfen.",
     url: p.destinationUrl, urlTracking: p.trackingUrl, advertiserName: p.name, type: "promotion",
     category: p.category, regions: { list: [{ countryCode: "DE" }] }, source: "direct",
+    contentType: p.contentType || "partner-entry", creativeUrl: p.creativeUrl || null,
     imageUrl:p.imageUrl,imageAlt:p.imageAlt,imageSource:p.imageSource,imageRightsNote:p.imageRightsNote,
     videoUrl:p.videoUrl,videoPoster:p.videoPoster,videoProvider:p.videoProvider,videoSource:p.videoSource,videoTitle:p.videoTitle,videoEmbedType:p.videoEmbedType
   }));

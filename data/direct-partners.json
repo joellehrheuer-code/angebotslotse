@@ -100,6 +100,76 @@
     "enabled": true
   },
   {
+    "id": "awin-outin-kruve-creative",
+    "name": "OutIn",
+    "title": "OutIn Schlussverkauf – Kruve Barista Geschenkset",
+    "description": "Offizielles Awin-Werbemittel von OutIn. Produktpreis und Verfügbarkeit bitte beim Anbieter prüfen.",
+    "category": "audio-musik",
+    "contentType": "partner-creative",
+    "trackingUrl": "https://www.awin1.com/awclick.php?gid=609021&mid=127821&awinaffid=3045061&linkid=4891199&clickref=",
+    "destinationUrl": "https://www.awin1.com/awclick.php?gid=609021&mid=127821&awinaffid=3045061&linkid=4891199&clickref=",
+    "enabled": true
+  },
+  {
+    "id": "awin-outin-nano-traveler-creative",
+    "name": "OutIn",
+    "title": "OutIn Schlussverkauf – Nano Traveler Space Grau",
+    "description": "Offizielles Awin-Werbemittel von OutIn. Produktpreis und Verfügbarkeit bitte beim Anbieter prüfen.",
+    "category": "haushalt",
+    "contentType": "partner-creative",
+    "trackingUrl": "https://www.awin1.com/awclick.php?gid=609021&mid=127821&awinaffid=3045061&linkid=4891195&clickref=",
+    "destinationUrl": "https://www.awin1.com/awclick.php?gid=609021&mid=127821&awinaffid=3045061&linkid=4891195&clickref=",
+    "enabled": true
+  },
+  {
+    "id": "awin-imou-creative",
+    "name": "Imou DE",
+    "title": "Imou DE – offizielles Awin-Werbemittel",
+    "description": "Offizielles Awin-Werbemittel. Keine Produktpreis- oder Rabattangabe ohne verifizierten Feed.",
+    "category": "technik",
+    "contentType": "partner-creative",
+    "trackingUrl": "https://www.awin1.com/cread.php?s=4781686&v=125816&q=603036&r=3045061",
+    "creativeUrl": "https://www.awin1.com/cshow.php?s=4781686&v=125816&q=603036&r=3045061",
+    "destinationUrl": "https://www.awin1.com/cread.php?s=4781686&v=125816&q=603036&r=3045061",
+    "enabled": true
+  },
+  {
+    "id": "awin-anthbot-creative",
+    "name": "ANTHBOT DE",
+    "title": "ANTHBOT DE – offizielles Awin-Werbemittel",
+    "description": "Offizielles Awin-Werbemittel. Keine Produktpreis- oder Rabattangabe ohne verifizierten Feed.",
+    "category": "werkzeug",
+    "contentType": "partner-creative",
+    "trackingUrl": "https://www.awin1.com/cread.php?s=4846650&v=125144&q=599789&r=3045061",
+    "creativeUrl": "https://www.awin1.com/cshow.php?s=4846650&v=125144&q=599789&r=3045061",
+    "destinationUrl": "https://www.awin1.com/cread.php?s=4846650&v=125144&q=599789&r=3045061",
+    "enabled": true
+  },
+  {
+    "id": "awin-coolblue-creative",
+    "name": "Coolblue DE",
+    "title": "Coolblue DE – offizielles Awin-Werbemittel",
+    "description": "Offizielles Awin-Werbemittel. Keine Produktpreis- oder Rabattangabe ohne verifizierten Feed.",
+    "category": "technik",
+    "contentType": "partner-creative",
+    "trackingUrl": "https://www.awin1.com/cread.php?s=4859203&v=85171&q=567243&r=3045061",
+    "creativeUrl": "https://www.awin1.com/cshow.php?s=4859203&v=85171&q=567243&r=3045061",
+    "destinationUrl": "https://www.awin1.com/cread.php?s=4859203&v=85171&q=567243&r=3045061",
+    "enabled": true
+  },
+  {
+    "id": "awin-hollyland-creative",
+    "name": "Hollyland DE",
+    "title": "Hollyland DE – offizielles Awin-Werbemittel",
+    "description": "Offizielles Awin-Werbemittel. Keine Produktpreis- oder Rabattangabe ohne verifizierten Feed.",
+    "category": "audio-musik",
+    "contentType": "partner-creative",
+    "trackingUrl": "https://www.awin1.com/cread.php?s=4892296&v=128051&q=608963&r=3045061",
+    "creativeUrl": "https://www.awin1.com/cshow.php?s=4892296&v=128051&q=608963&r=3045061",
+    "destinationUrl": "https://www.awin1.com/cread.php?s=4892296&v=128051&q=608963&r=3045061",
+    "enabled": true
+  },
+  {
     "id": "razer",
     "name": "Razer",
     "title": "Razer",
