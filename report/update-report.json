@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-09-15T18:55:25.879Z",
+  "generatedAt": "2026-09-15T20:01:08.164Z",
   "newAwinPrograms": 0,
-  "newImpactPrograms": 0,
+  "newImpactPrograms": 6,
   "activeAwinPrograms": 5,
-  "activeImpactPrograms": 0,
+  "activeImpactPrograms": 6,
   "applicationsSent": 0,
   "pendingApplications": 2,
   "manualApplications": 5,
@@ -119,22 +119,22 @@
     "9a06b91746bbd3f5",
     "7f0c40919ee85abe",
     "db362cbed6e0ecb3",
-    "e6e28e5b2dc779d9"
+    "98b1b2a12da0fa18"
   ],
   "weekDeals": [
     "45e4639b809948bd",
     "9a06b91746bbd3f5",
     "7f0c40919ee85abe",
     "db362cbed6e0ecb3",
-    "e6e28e5b2dc779d9"
+    "98b1b2a12da0fa18"
   ],
   "monthHighlights": [
     "45e4639b809948bd",
     "9a06b91746bbd3f5",
     "7f0c40919ee85abe",
     "db362cbed6e0ecb3",
-    "e6e28e5b2dc779d9"
+    "98b1b2a12da0fa18"
   ],
-  "apiErrors": 1,
+  "apiErrors": 0,
   "affiliateLinkErrors": 0
 }
