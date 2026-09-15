@@ -18,3 +18,11 @@ test("importiert Enhanced-Feed-Produkte nur mit offiziellem Deep Link",async()=>
   const result=await fetchAwinEnhancedFeeds({publisherId:"3045061",token:"secret",advertisers:[{id:7,name:"Shop"}],fetchImpl});
   assert.equal(result.products.length,1);assert.equal(result.products[0].currentPrice,"79.00");assert.equal(result.products[0].previousPrice,"99.00");assert.equal(result.products[0].imageSource,"Awin Enhanced Product Feed");
 });
+
+test("importiert Enhanced-Feeds fair von allen Advertisern",async()=>{
+  const advertisers=[1,2,3].map(id=>({id,name:`Shop ${id}`}));
+  const fetchImpl=async url=>({ok:true,status:200,text:async()=>Array.from({length:4},(_,index)=>JSON.stringify({product_basic:{id:`${url}-${index}`,title:`Produkt ${url}-${index}`,link:"https://shop.example/p",image_link:"https://img.example/p.jpg",aw_deep_link:"https://track.example/p"}})).join("\n")});
+  const result=await fetchAwinEnhancedFeeds({publisherId:"3045061",token:"secret",advertisers,fetchImpl,maxProducts:6});
+  assert.equal(result.products.length,6);
+  assert.deepEqual([...new Set(result.products.map(product=>product.advertiserId))].sort(),[1,2,3]);
+});

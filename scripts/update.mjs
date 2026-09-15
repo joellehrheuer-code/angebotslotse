@@ -3,6 +3,7 @@ import { collectSources } from "./lib/source-manager.mjs";
 import { normalizeAndDedupe, isConcreteOffer, isPublicationReady } from "./lib/normalize.mjs";
 import { updatePriceHistory } from "./lib/price-history.mjs";
 import { selectHomepageOffers } from "./lib/homepage-selection.mjs";
+import { mergeOfferInventory } from "./lib/offer-merge.mjs";
 
 const config = JSON.parse(await fs.readFile("config.json", "utf8"));
 const oldOffers = JSON.parse(await fs.readFile("data/offers.json", "utf8").catch(() => "[]"));
@@ -16,15 +17,20 @@ try {
   const sources = collected.sources;
   const failed = new Set(sources.filter(s => s.state === "error").map(s => s.name));
   const fresh = sources.flatMap(s => s.rows);
-  const fallback = oldOffers.filter(o => failed.has(o.source));
-  const offers = normalizeAndDedupe([...fresh, ...fallback], config);
-  const previousById=new Map(oldOffers.map(offer=>[offer.id,offer]));
-  for(const offer of offers){const previous=previousById.get(offer.id);if(previous){offer.firstSeen=previous.firstSeen??offer.firstSeen;offer.dateAdded=previous.dateAdded??offer.dateAdded;}}
+  const normalizedFresh = normalizeAndDedupe(fresh, config);
+  const offers = mergeOfferInventory({
+    freshOffers: normalizedFresh,
+    oldOffers,
+    sources,
+    maxOffers: config.maxOffers,
+    circuitBreakerRatio: Number(config.inventoryCircuitBreakerRatio) || 0.5
+  });
   const newIds = new Set(offers.map(o => o.id));
   status = { state: "ok", lastSuccessfulUpdate: new Date().toISOString(), activeOffers: offers.length,
     added: offers.filter(o => !oldIds.has(o.id)).length, removed: oldOffers.filter(o => !newIds.has(o.id)).length,
     invalidLinks: 0, apiErrors: failed.size, sources: Object.fromEntries(sources.map(s => [s.name, { state: s.state, count: s.rows.length, error: s.error ?? null }])),
-    message: failed.size ? "Aktualisierung mit zwischengespeicherten Quelldaten abgeschlossen." : "Aktualisierung erfolgreich." };
+    stale: offers.filter(o => o.isStale).length,
+    message: failed.size || sources.some(s => s.state === "disabled") ? "Aktualisierung mit geschützten Bestandsdaten abgeschlossen." : "Aktualisierung erfolgreich." };
   await fs.writeFile("data/offers.json", `${JSON.stringify(offers, null, 2)}\n`);
   await fs.writeFile("data/price-history.json", `${JSON.stringify(updatePriceHistory(oldHistory, offers), null, 2)}\n`);
   const coupons = offers.filter(offer => offer.voucherCode && (!offer.endDate || new Date(offer.endDate) > new Date())).map(offer => ({code:offer.voucherCode,discountText:offer.description || null,discountPercent:null,validFrom:offer.startDate,validUntil:offer.endDate,merchant:offer.advertiser,landingUrl:offer.trackingUrl,terms:offer.terms || null,source:offer.source,isCommunityExclusive:false,creatorCode:null,creatorBenefit:null}));

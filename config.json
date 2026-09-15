@@ -16,5 +16,6 @@
     "mode": ["mode", "fashion", "schuhe", "clothing"],
     "freizeit": ["freizeit", "sport", "reise", "travel"],
     "sonstiges": []
-  }
+  },
+  "inventoryCircuitBreakerRatio": 0.5
 }

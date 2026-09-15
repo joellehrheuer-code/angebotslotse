@@ -52,14 +52,18 @@ const enhancedProduct=(row,advertiser)=>{
 export async function fetchAwinEnhancedFeeds({ publisherId, token, advertisers=[], fetchImpl=fetch, maxProducts=500 }) {
   if(!publisherId||!token||!advertisers.length)return {products:[],feeds:[]};
   const products=[]; const feeds=[];
-  for(const advertiser of advertisers.slice(0,2)){
+  // Give every joined advertiser a fair share instead of starving advertisers
+  // that happen to sort after the first two or after a large catalog.
+  const perAdvertiserLimit=Math.max(1,Math.ceil(maxProducts/advertisers.length));
+  for(const advertiser of advertisers){
+    let advertiserImported=0;
     for(const locale of ["de_DE","en_DE"]){
       const endpoint=`${API}/publishers/${encodeURIComponent(publisherId)}/awinfeeds/download/${encodeURIComponent(advertiser.id)}-retail-${locale}.jsonl`;
       const response=await fetchImpl(endpoint,{headers:{Authorization:`Bearer ${token}`}});
       if(response.status===404){feeds.push({advertiserId:advertiser.id,advertiserName:advertiser.name,locale,state:"not-found"});continue;}
       if(!response.ok){feeds.push({advertiserId:advertiser.id,advertiserName:advertiser.name,locale,state:`http-${response.status}`});continue;}
       const lines=(await response.text()).split(/\r?\n/).filter(Boolean); let imported=0;
-      for(const line of lines){if(products.length>=maxProducts)break;let row;try{row=JSON.parse(line);}catch{continue;}if(row.error)break;const product=enhancedProduct(row,advertiser);if(product.title&&product.url&&product.urlTracking){products.push(product);imported+=1;}}
+      for(const line of lines){if(products.length>=maxProducts||advertiserImported>=perAdvertiserLimit)break;let row;try{row=JSON.parse(line);}catch{continue;}if(row.error)break;const product=enhancedProduct(row,advertiser);if(product.title&&product.url&&product.urlTracking){products.push(product);imported+=1;advertiserImported+=1;}}
       feeds.push({advertiserId:advertiser.id,advertiserName:advertiser.name,locale,state:"available",products:imported});
       if(imported)break;
     }
