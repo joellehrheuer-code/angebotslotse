@@ -10,7 +10,7 @@
     "security": "node scripts/security-check.mjs",
     "check": "node scripts/integrity.mjs",
     "report": "node scripts/report.mjs",
-    "test": "node --test"
+    "test": "node --test --test-concurrency=1"
   },
   "engines": { "node": ">=20" }
 }
