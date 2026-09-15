@@ -1,5 +1,19 @@
 [
   {
+    "code": "IMOUAFF5",
+    "discountText": "only use it once",
+    "discountPercent": null,
+    "validFrom": "2026-05-27T10:48:00.000Z",
+    "validUntil": "2026-12-31T16:00:00.000Z",
+    "merchant": "Imou DE",
+    "landingUrl": "https://www.awin1.com/cread.php?awinmid=125816&awinaffid=3045061&ued=https%3A%2F%2Fstore.imou.com%2Fde-de",
+    "terms": "Site-wide 5% Off，Limited to one use per person.",
+    "source": "awin",
+    "isCommunityExclusive": false,
+    "creatorCode": null,
+    "creatorBenefit": null
+  },
+  {
     "code": "Hland10",
     "discountText": "Reusable",
     "discountPercent": null,

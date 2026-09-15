@@ -516,5 +516,215 @@
     "timestamp": "2026-09-15T04:55:00.424Z",
     "price": 29.99,
     "currency": "EUR"
+  },
+  {
+    "productId": "105010037",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-09-15T08:29:57.164Z",
+    "price": 699,
+    "currency": "EUR"
+  },
+  {
+    "productId": "210020004",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-09-15T08:29:57.164Z",
+    "price": 239,
+    "currency": "EUR"
+  },
+  {
+    "productId": "210010113",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-09-15T08:29:57.164Z",
+    "price": 19,
+    "currency": "EUR"
+  },
+  {
+    "productId": "105010074",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-09-15T08:29:57.164Z",
+    "price": 699,
+    "currency": "EUR"
+  },
+  {
+    "productId": "105010074",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-09-15T08:29:57.164Z",
+    "price": 1099,
+    "currency": "EUR"
+  },
+  {
+    "productId": "210010250",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-09-15T08:29:57.164Z",
+    "price": 99,
+    "currency": "EUR"
+  },
+  {
+    "productId": "210010141",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-09-15T08:29:57.164Z",
+    "price": 19,
+    "currency": "EUR"
+  },
+  {
+    "productId": "210010147",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-09-15T08:29:57.164Z",
+    "price": 169,
+    "currency": "EUR"
+  },
+  {
+    "productId": "210010111",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-09-15T08:29:57.164Z",
+    "price": 49,
+    "currency": "EUR"
+  },
+  {
+    "productId": "210010150",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-09-15T08:29:57.164Z",
+    "price": 69,
+    "currency": "EUR"
+  },
+  {
+    "productId": "210010246",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-09-15T08:29:57.164Z",
+    "price": 39,
+    "currency": "EUR"
+  },
+  {
+    "productId": "210010097",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-09-15T08:29:57.164Z",
+    "price": 79,
+    "currency": "EUR"
+  },
+  {
+    "productId": "501990010",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-09-15T08:29:57.164Z",
+    "price": 50,
+    "currency": "EUR"
+  },
+  {
+    "productId": "XMHPACELSKU",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-09-15T08:29:57.164Z",
+    "price": 0.93,
+    "currency": "EUR"
+  },
+  {
+    "productId": "210010155",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-09-15T08:29:57.164Z",
+    "price": 139,
+    "currency": "EUR"
+  },
+  {
+    "productId": "210010101",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-09-15T08:29:57.164Z",
+    "price": 149,
+    "currency": "EUR"
+  },
+  {
+    "productId": "303010221",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-09-15T08:29:57.164Z",
+    "price": 99,
+    "currency": "EUR"
+  },
+  {
+    "productId": "GR600-EU",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-09-15T08:29:57.164Z",
+    "price": 899,
+    "currency": "EUR"
+  },
+  {
+    "productId": "51296699023673",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-09-15T08:29:57.164Z",
+    "price": 1299,
+    "currency": "EUR"
+  },
+  {
+    "productId": "8885022190012",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-09-15T08:29:57.164Z",
+    "price": 499,
+    "currency": "EUR"
+  },
+  {
+    "productId": "103020003",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-09-15T08:29:57.164Z",
+    "price": 39.99,
+    "currency": "EUR"
+  },
+  {
+    "productId": "105010095",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-09-15T08:29:57.164Z",
+    "price": 1599,
+    "currency": "EUR"
+  },
+  {
+    "productId": "105010097",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-09-15T08:29:57.164Z",
+    "price": 1299,
+    "currency": "EUR"
+  },
+  {
+    "productId": "105010079",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-09-15T08:29:57.164Z",
+    "price": 869,
+    "currency": "EUR"
+  },
+  {
+    "productId": "105010078",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-09-15T08:29:57.164Z",
+    "price": 599,
+    "currency": "EUR"
+  },
+  {
+    "productId": "105010080",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-09-15T08:29:57.164Z",
+    "price": 649,
+    "currency": "EUR"
+  },
+  {
+    "productId": "210010318",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-09-15T08:29:57.164Z",
+    "price": 169,
+    "currency": "EUR"
+  },
+  {
+    "productId": "M9EU-Ultimate-Bundle",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-09-15T08:29:57.164Z",
+    "price": 1116,
+    "currency": "EUR"
+  },
+  {
+    "productId": "M5PRO-MGV04-EU",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-09-15T08:29:57.164Z",
+    "price": 999,
+    "currency": "EUR"
+  },
+  {
+    "productId": "M9PRO-MGV04-EU",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-09-15T08:29:57.164Z",
+    "price": 1299,
+    "currency": "EUR"
   }
 ]
