@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-18T05:00:29.127Z",
+  "generatedAt": "2026-09-18T12:00:57.503Z",
   "market": "DE",
   "publisherId": 3045061,
   "awin": {
@@ -1809,7 +1809,7 @@
       {
         "source": "awin-enhanced-feeds",
         "state": "ok",
-        "count": 451,
+        "count": 455,
         "audit": {
           "feeds": [
             {
@@ -1855,12 +1855,12 @@
               "advertiserName": "Outin Germany",
               "locale": "de_DE",
               "state": "available",
-              "products": 50,
-              "rawProducts": 50,
-              "validProducts": 50,
-              "withPrice": 50,
-              "withImage": 50,
-              "withTracking": 50,
+              "products": 54,
+              "rawProducts": 54,
+              "validProducts": 54,
+              "withPrice": 54,
+              "withImage": 54,
+              "withTracking": 54,
               "rejected": 0,
               "rejectionReasons": {}
             },
@@ -2983,14 +2983,14 @@
     }
   },
   "publication": {
-    "offers": 244,
+    "offers": 248,
     "concreteAwaitingMedia": 2,
     "partnerEntries": 551,
     "merchants": 3,
-    "products": 244,
-    "images": 244,
+    "products": 248,
+    "images": 248,
     "videos": 0,
-    "prices": 244,
+    "prices": 248,
     "discounts": 0,
     "coupons": 0
   },

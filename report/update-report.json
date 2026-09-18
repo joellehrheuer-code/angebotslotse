@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-18T05:00:29.127Z",
+  "generatedAt": "2026-09-18T12:00:57.503Z",
   "newAwinPrograms": 0,
   "newImpactPrograms": 0,
   "activeAwinPrograms": 5,
@@ -7,11 +7,11 @@
   "applicationsSent": 0,
   "pendingApplications": 2,
   "manualApplications": 5,
-  "newMerchants": 0,
-  "newProducts": 0,
-  "productsWithImage": 244,
+  "newMerchants": 1,
+  "newProducts": 4,
+  "productsWithImage": 248,
   "productsWithVideo": 0,
-  "productsWithPrice": 244,
+  "productsWithPrice": 248,
   "productsWithOldPrice": 0,
   "productsWithDiscount": 0,
   "newCoupons": 0,
@@ -19,19 +19,19 @@
   "priceChanges": 0,
   "expiredOffers": 0,
   "expiredCoupons": 0,
-  "totalProducts": 244,
+  "totalProducts": 248,
   "productsBySource": {
-    "Awin": 244
+    "Awin": 248
   },
   "productsByMerchant": {
     "Hollyland DE": 136,
     "ANTHBOT DE": 59,
-    "Outin Germany": 49
+    "Outin Germany": 53
   },
   "productsByCategory": {
     "sonstiges": 102,
     "zubehoer": 47,
-    "technik": 27,
+    "technik": 31,
     "audio-musik": 26,
     "werkzeug": 20,
     "computer": 11,
@@ -82,12 +82,12 @@
       "advertiserName": "Outin Germany",
       "locale": "de_DE",
       "state": "available",
-      "products": 50,
-      "rawProducts": 50,
-      "validProducts": 50,
-      "withPrice": 50,
-      "withImage": 50,
-      "withTracking": 50,
+      "products": 54,
+      "rawProducts": 54,
+      "validProducts": 54,
+      "withPrice": 54,
+      "withImage": 54,
+      "withTracking": 54,
       "rejected": 0,
       "rejectionReasons": {}
     },

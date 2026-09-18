@@ -7544,5 +7544,61 @@
     "timestamp": "2026-09-18T05:00:29.096Z",
     "price": 99,
     "currency": "EUR"
+  },
+  {
+    "productId": "105010074",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-09-18T12:00:57.474Z",
+    "price": 1099,
+    "currency": "EUR"
+  },
+  {
+    "productId": "8885022190012",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-09-18T12:00:57.474Z",
+    "price": 499,
+    "currency": "EUR"
+  },
+  {
+    "productId": "105010074",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-09-18T12:00:57.474Z",
+    "price": 699,
+    "currency": "EUR"
+  },
+  {
+    "productId": "8885022190012",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-09-18T12:00:57.474Z",
+    "price": 999,
+    "currency": "EUR"
+  },
+  {
+    "productId": "OTEM-NO-02-CG",
+    "merchant": "Outin Germany",
+    "timestamp": "2026-09-18T12:00:57.474Z",
+    "price": 159.99,
+    "currency": "EUR"
+  },
+  {
+    "productId": "OTEM-NO-02-SG",
+    "merchant": "Outin Germany",
+    "timestamp": "2026-09-18T12:00:57.474Z",
+    "price": 159.99,
+    "currency": "EUR"
+  },
+  {
+    "productId": "OTEM-NO-02-FG",
+    "merchant": "Outin Germany",
+    "timestamp": "2026-09-18T12:00:57.474Z",
+    "price": 159.99,
+    "currency": "EUR"
+  },
+  {
+    "productId": "OTEM-NO-02-PW",
+    "merchant": "Outin Germany",
+    "timestamp": "2026-09-18T12:00:57.474Z",
+    "price": 159.99,
+    "currency": "EUR"
   }
 ]
