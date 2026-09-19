@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-09-19T11:02:45.135Z",
+  "generatedAt": "2026-09-19T16:00:37.673Z",
   "newAwinPrograms": 0,
   "newImpactPrograms": 0,
   "activeAwinPrograms": 5,
-  "activeImpactPrograms": 6,
+  "activeImpactPrograms": 0,
   "applicationsSent": 0,
   "pendingApplications": 2,
   "manualApplications": 5,
@@ -135,6 +135,6 @@
     "134153f06aa7013c",
     "bb383ad82ab96f2b"
   ],
-  "apiErrors": 0,
+  "apiErrors": 1,
   "affiliateLinkErrors": 0
 }
