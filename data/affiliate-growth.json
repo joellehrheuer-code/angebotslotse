@@ -1,14 +1,14 @@
 {
-  "generatedAt": "2026-09-21T05:01:10.309Z",
+  "generatedAt": "2026-09-21T13:00:56.922Z",
   "market": "DE",
   "publisherId": 3045061,
   "awin": {
     "counts": {
       "joined": 5,
-      "pending": 2,
+      "pending": 1,
       "suspended": 0,
-      "rejected": 0,
-      "notjoined": 2606
+      "rejected": 1,
+      "notjoined": 2610
     },
     "programs": [
       {
@@ -95,7 +95,7 @@
       },
       {
         "network": "Awin",
-        "relationship": "pending",
+        "relationship": "rejected",
         "advertiserId": 15402,
         "name": "beyerdynamic DE",
         "primarySector": "Electronic Accessories",
@@ -1315,6 +1315,18 @@
       {
         "network": "Awin",
         "relationship": "notjoined",
+        "advertiserId": 121694,
+        "name": "BRITA DE",
+        "primarySector": "Home & Garden",
+        "primaryRegion": {
+          "name": "Germany",
+          "countryCode": "DE"
+        },
+        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten BRITA DE redaktionell passend im Bereich Home & Garden einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+      },
+      {
+        "network": "Awin",
+        "relationship": "notjoined",
         "advertiserId": 108998,
         "name": "BURNHARD DE",
         "primarySector": "Home & Garden",
@@ -1791,18 +1803,6 @@
           "countryCode": "DE"
         },
         "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Dein Sportsfreund DE redaktionell passend im Bereich Sportswear einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
-      },
-      {
-        "network": "Awin",
-        "relationship": "notjoined",
-        "advertiserId": 22915,
-        "name": "Delonghi DE",
-        "primarySector": "Home & Garden",
-        "primaryRegion": {
-          "name": "Germany",
-          "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Delonghi DE redaktionell passend im Bereich Home & Garden einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
       }
     ],
     "feeds": [
