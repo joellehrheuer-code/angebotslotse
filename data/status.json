@@ -1,15 +1,15 @@
 {
   "state": "ok",
-  "lastSuccessfulUpdate": "2026-09-20T21:00:40.697Z",
-  "activeOffers": 801,
-  "added": 0,
+  "lastSuccessfulUpdate": "2026-09-21T05:01:10.259Z",
+  "activeOffers": 802,
+  "added": 1,
   "removed": 0,
   "invalidLinks": 0,
   "apiErrors": 0,
   "sources": {
     "awin": {
       "state": "ok",
-      "count": 2,
+      "count": 3,
       "error": null,
       "audit": null
     },
@@ -110,12 +110,12 @@
     },
     "impact": {
       "state": "ok",
-      "count": 76,
+      "count": 74,
       "error": null,
       "audit": {
         "apiVersion": "16",
         "programs": 6,
-        "ads": 1533,
+        "ads": 1531,
         "promotions": 0,
         "deals": 2,
         "products": 2000,
@@ -1195,6 +1195,6 @@
       }
     }
   },
-  "stale": 461,
+  "stale": 463,
   "message": "Aktualisierung mit geschützten Bestandsdaten abgeschlossen."
 }
