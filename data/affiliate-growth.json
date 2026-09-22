@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-21T22:00:50.170Z",
+  "generatedAt": "2026-09-22T05:01:00.495Z",
   "market": "DE",
   "publisherId": 3045061,
   "awin": {
@@ -8,7 +8,7 @@
       "pending": 1,
       "suspended": 0,
       "rejected": 1,
-      "notjoined": 2608
+      "notjoined": 2609
     },
     "programs": [
       {
@@ -759,6 +759,18 @@
           "countryCode": "DE"
         },
         "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten AsVIVA DE redaktionell passend im Bereich Sports Equipment einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+      },
+      {
+        "network": "Awin",
+        "relationship": "notjoined",
+        "advertiserId": 130755,
+        "name": "Ava & May DE",
+        "primarySector": "Home & Garden",
+        "primaryRegion": {
+          "name": "Germany",
+          "countryCode": "DE"
+        },
+        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Ava & May DE redaktionell passend im Bereich Home & Garden einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
       },
       {
         "network": "Awin",
@@ -1791,18 +1803,6 @@
           "countryCode": "DE"
         },
         "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten DECORAMI DE redaktionell passend im Bereich Home & Garden einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
-      },
-      {
-        "network": "Awin",
-        "relationship": "notjoined",
-        "advertiserId": 119207,
-        "name": "Dein Sportsfreund DE",
-        "primarySector": "Sportswear",
-        "primaryRegion": {
-          "name": "Germany",
-          "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Dein Sportsfreund DE redaktionell passend im Bereich Sportswear einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
       }
     ],
     "feeds": [
