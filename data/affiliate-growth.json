@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-23T12:00:55.699Z",
+  "generatedAt": "2026-09-23T17:01:42.986Z",
   "market": "DE",
   "publisherId": 3045061,
   "awin": {
@@ -8,7 +8,7 @@
       "pending": 1,
       "suspended": 0,
       "rejected": 1,
-      "notjoined": 2607
+      "notjoined": 2608
     },
     "programs": [
       {
@@ -1519,6 +1519,18 @@
       {
         "network": "Awin",
         "relationship": "notjoined",
+        "advertiserId": 129955,
+        "name": "Chipstore DE",
+        "primarySector": "Electronic Superstore",
+        "primaryRegion": {
+          "name": "Germany",
+          "countryCode": "DE"
+        },
+        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Chipstore DE redaktionell passend im Bereich Electronic Superstore einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+      },
+      {
+        "network": "Awin",
+        "relationship": "notjoined",
         "advertiserId": 19539,
         "name": "Chiptuning DE",
         "primarySector": "Electronic Accessories",
@@ -1791,18 +1803,6 @@
           "countryCode": "DE"
         },
         "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten DATOUBOSS (DE) redaktionell passend im Bereich Electronic Accessories einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
-      },
-      {
-        "network": "Awin",
-        "relationship": "notjoined",
-        "advertiserId": 24827,
-        "name": "DECORAMI DE",
-        "primarySector": "Home & Garden",
-        "primaryRegion": {
-          "name": "Germany",
-          "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten DECORAMI DE redaktionell passend im Bereich Home & Garden einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
       }
     ],
     "feeds": [
