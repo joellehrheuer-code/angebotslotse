@@ -1,5 +1,33 @@
 [
   {
+    "code": "Nano20",
+    "discountText": "Sichern Sie sich sofort 20 $ Rabatt auf den Nano 1.",
+    "discountPercent": null,
+    "validFrom": "2026-09-24T07:23:00.000Z",
+    "validUntil": "2026-10-08T15:59:00.000Z",
+    "merchant": "Outin Germany",
+    "landingUrl": "https://www.awin1.com/cread.php?awinmid=127821&awinaffid=3045061&ued=https%3A%2F%2Fde.outin.com%2Fproducts%2Fnano-portable-espresso-machine-space-grey%3F_pos%3D1%26_sid%3Dadc948a1f%26_ss%3Dr",
+    "terms": "N/A",
+    "source": "awin",
+    "isCommunityExclusive": false,
+    "creatorCode": null,
+    "creatorBenefit": null
+  },
+  {
+    "code": "CLEAR20",
+    "discountText": "Profitieren Sie von 20 % Rabatt beim Kauf des Kruve-Geschenksets oder des Nano-Traveler-Geschenksets.",
+    "discountPercent": null,
+    "validFrom": "2026-09-24T07:22:00.000Z",
+    "validUntil": "2026-10-08T15:59:00.000Z",
+    "merchant": "Outin Germany",
+    "landingUrl": "https://www.awin1.com/cread.php?awinmid=127821&awinaffid=3045061&ued=https%3A%2F%2Fde.outin.com%2Fproducts%2Foutin-x-kruve-barista-gift-set%3F_pos%3D1%26_sid%3D3382ba58a%26_ss%3Dr",
+    "terms": "N/A",
+    "source": "awin",
+    "isCommunityExclusive": false,
+    "creatorCode": null,
+    "creatorBenefit": null
+  },
+  {
     "code": "IMOUAFF5",
     "discountText": "only use it once",
     "discountPercent": null,

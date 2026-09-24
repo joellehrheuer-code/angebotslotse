@@ -1,15 +1,15 @@
 {
   "state": "ok",
-  "lastSuccessfulUpdate": "2026-09-24T05:01:34.743Z",
-  "activeOffers": 802,
-  "added": 0,
+  "lastSuccessfulUpdate": "2026-09-24T12:01:16.109Z",
+  "activeOffers": 809,
+  "added": 7,
   "removed": 0,
   "invalidLinks": 0,
   "apiErrors": 0,
   "sources": {
     "awin": {
       "state": "ok",
-      "count": 3,
+      "count": 10,
       "error": null,
       "audit": null
     },

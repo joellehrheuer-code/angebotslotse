@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-24T05:01:34.791Z",
+  "generatedAt": "2026-09-24T12:01:16.158Z",
   "market": "DE",
   "publisherId": 3045061,
   "awin": {
@@ -8,7 +8,7 @@
       "pending": 1,
       "suspended": 0,
       "rejected": 1,
-      "notjoined": 2608
+      "notjoined": 2607
     },
     "programs": [
       {
@@ -2984,7 +2984,7 @@
   },
   "publication": {
     "offers": 248,
-    "concreteAwaitingMedia": 3,
+    "concreteAwaitingMedia": 10,
     "partnerEntries": 551,
     "merchants": 3,
     "products": 248,
