@@ -18562,5 +18562,1741 @@
     "timestamp": "2026-09-24T22:00:45.214Z",
     "price": 999,
     "currency": "EUR"
+  },
+  {
+    "productId": "105010074",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 1099,
+    "currency": "EUR"
+  },
+  {
+    "productId": "8885022190012",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 499,
+    "currency": "EUR"
+  },
+  {
+    "productId": "105010037",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 699,
+    "currency": "EUR"
+  },
+  {
+    "productId": "210020004",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 239,
+    "currency": "EUR"
+  },
+  {
+    "productId": "210010113",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 19,
+    "currency": "EUR"
+  },
+  {
+    "productId": "105010074",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 699,
+    "currency": "EUR"
+  },
+  {
+    "productId": "105010036",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 799,
+    "currency": "EUR"
+  },
+  {
+    "productId": "105010053REF",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 499,
+    "currency": "EUR"
+  },
+  {
+    "productId": "105010041REF",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 999,
+    "currency": "EUR"
+  },
+  {
+    "productId": "8885022190043",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 1299,
+    "currency": "EUR"
+  },
+  {
+    "productId": "8885022190012",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 999,
+    "currency": "EUR"
+  },
+  {
+    "productId": "105010061",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 999,
+    "currency": "EUR"
+  },
+  {
+    "productId": "8885022190074",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 1699,
+    "currency": "EUR"
+  },
+  {
+    "productId": "210010250",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 99,
+    "currency": "EUR"
+  },
+  {
+    "productId": "210010251",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 179,
+    "currency": "EUR"
+  },
+  {
+    "productId": "210010103",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 329,
+    "currency": "EUR"
+  },
+  {
+    "productId": "210010141",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 19,
+    "currency": "EUR"
+  },
+  {
+    "productId": "210010147",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 169,
+    "currency": "EUR"
+  },
+  {
+    "productId": "210010148",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 179,
+    "currency": "EUR"
+  },
+  {
+    "productId": "210010149",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 199,
+    "currency": "EUR"
+  },
+  {
+    "productId": "210010111",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 49,
+    "currency": "EUR"
+  },
+  {
+    "productId": "210010236",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 49,
+    "currency": "EUR"
+  },
+  {
+    "productId": "210010150",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 69,
+    "currency": "EUR"
+  },
+  {
+    "productId": "210010104",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 69,
+    "currency": "EUR"
+  },
+  {
+    "productId": "210010232",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 99,
+    "currency": "EUR"
+  },
+  {
+    "productId": "210010246",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 39,
+    "currency": "EUR"
+  },
+  {
+    "productId": "210010097",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 79,
+    "currency": "EUR"
+  },
+  {
+    "productId": "501990010",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 50,
+    "currency": "EUR"
+  },
+  {
+    "productId": "XMHPACELSKU",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 0.93,
+    "currency": "EUR"
+  },
+  {
+    "productId": "210010155",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 139,
+    "currency": "EUR"
+  },
+  {
+    "productId": "210010157",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 39,
+    "currency": "EUR"
+  },
+  {
+    "productId": "210010158",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 29,
+    "currency": "EUR"
+  },
+  {
+    "productId": "210010101",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 149,
+    "currency": "EUR"
+  },
+  {
+    "productId": "303010221",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 99,
+    "currency": "EUR"
+  },
+  {
+    "productId": "GR600-EU",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 899,
+    "currency": "EUR"
+  },
+  {
+    "productId": "EU-SUPER600",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 949,
+    "currency": "EUR"
+  },
+  {
+    "productId": "GR1000-EU",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 1399,
+    "currency": "EUR"
+  },
+  {
+    "productId": "EU-SUPER1000",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 1459,
+    "currency": "EUR"
+  },
+  {
+    "productId": "GR3000-EU",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 1499,
+    "currency": "EUR"
+  },
+  {
+    "productId": "EU-SUPER3000",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 1549,
+    "currency": "EUR"
+  },
+  {
+    "productId": "51296699023673",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 1299,
+    "currency": "EUR"
+  },
+  {
+    "productId": "51296699056441",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 699,
+    "currency": "EUR"
+  },
+  {
+    "productId": "51440656974137",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 380,
+    "currency": "EUR"
+  },
+  {
+    "productId": "103020003",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 39.99,
+    "currency": "EUR"
+  },
+  {
+    "productId": "105010095",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 1599,
+    "currency": "EUR"
+  },
+  {
+    "productId": "105010097",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 1299,
+    "currency": "EUR"
+  },
+  {
+    "productId": "105010079",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 869,
+    "currency": "EUR"
+  },
+  {
+    "productId": "105010078",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 599,
+    "currency": "EUR"
+  },
+  {
+    "productId": "M5EU-MGV04-BUNDLE",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 629,
+    "currency": "EUR"
+  },
+  {
+    "productId": "M5EU-ACC-BUNDLE",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 629,
+    "currency": "EUR"
+  },
+  {
+    "productId": "105010080",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 649,
+    "currency": "EUR"
+  },
+  {
+    "productId": "M9EU-MGV04-BUNDLE",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 719,
+    "currency": "EUR"
+  },
+  {
+    "productId": "M9EU-ACC-BUNDLE",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 719,
+    "currency": "EUR"
+  },
+  {
+    "productId": "210010318",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 169,
+    "currency": "EUR"
+  },
+  {
+    "productId": "M9EU-Ultimate-Bundle",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 1116,
+    "currency": "EUR"
+  },
+  {
+    "productId": "M5PRO-MGV04-EU",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 999,
+    "currency": "EUR"
+  },
+  {
+    "productId": "105010113",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 999,
+    "currency": "EUR"
+  },
+  {
+    "productId": "M9PRO-MGV04-EU",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 1299,
+    "currency": "EUR"
+  },
+  {
+    "productId": "105010108",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 1299,
+    "currency": "EUR"
+  },
+  {
+    "productId": "1240000016406",
+    "merchant": "Outin Germany",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 149.99,
+    "currency": "EUR"
+  },
+  {
+    "productId": "1240000016413",
+    "merchant": "Outin Germany",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 149.99,
+    "currency": "EUR"
+  },
+  {
+    "productId": "1240000016420",
+    "merchant": "Outin Germany",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 149.99,
+    "currency": "EUR"
+  },
+  {
+    "productId": "1240000016437",
+    "merchant": "Outin Germany",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 149.99,
+    "currency": "EUR"
+  },
+  {
+    "productId": "OTEM-01-Cup",
+    "merchant": "Outin Germany",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 16.99,
+    "currency": "EUR"
+  },
+  {
+    "productId": "1240000016499",
+    "merchant": "Outin Germany",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 39.99,
+    "currency": "EUR"
+  },
+  {
+    "productId": "1240000018714",
+    "merchant": "Outin Germany",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 189.99,
+    "currency": "EUR"
+  },
+  {
+    "productId": "1240000018707",
+    "merchant": "Outin Germany",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 189.99,
+    "currency": "EUR"
+  },
+  {
+    "productId": "acc-01",
+    "merchant": "Outin Germany",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 3.99,
+    "currency": "EUR"
+  },
+  {
+    "productId": "TOTE-01",
+    "merchant": "Outin Germany",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 29.99,
+    "currency": "EUR"
+  },
+  {
+    "productId": "1240000018752",
+    "merchant": "Outin Germany",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 179.99,
+    "currency": "EUR"
+  },
+  {
+    "productId": "OT-STD-02-CP",
+    "merchant": "Outin Germany",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 39.99,
+    "currency": "EUR"
+  },
+  {
+    "productId": "OT-SCL-01",
+    "merchant": "Outin Germany",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 49.99,
+    "currency": "EUR"
+  },
+  {
+    "productId": "PIN-NANO",
+    "merchant": "Outin Germany",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 3.99,
+    "currency": "EUR"
+  },
+  {
+    "productId": "PATCH-NORWAY",
+    "merchant": "Outin Germany",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 3.99,
+    "currency": "EUR"
+  },
+  {
+    "productId": "PATCH-MOROCCO",
+    "merchant": "Outin Germany",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 3.99,
+    "currency": "EUR"
+  },
+  {
+    "productId": "PATCH-ICELAND",
+    "merchant": "Outin Germany",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 3.99,
+    "currency": "EUR"
+  },
+  {
+    "productId": "PATCH-COLORADO",
+    "merchant": "Outin Germany",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 3.99,
+    "currency": "EUR"
+  },
+  {
+    "productId": "PATCH-BANFF",
+    "merchant": "Outin Germany",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 3.99,
+    "currency": "EUR"
+  },
+  {
+    "productId": "OT-MAT-01",
+    "merchant": "Outin Germany",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 19.99,
+    "currency": "EUR"
+  },
+  {
+    "productId": "OT-SPN-01",
+    "merchant": "Outin Germany",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 9.9,
+    "currency": "EUR"
+  },
+  {
+    "productId": "OT-CUP-01",
+    "merchant": "Outin Germany",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 14.99,
+    "currency": "EUR"
+  },
+  {
+    "productId": "OT-TRAY-01",
+    "merchant": "Outin Germany",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 14.99,
+    "currency": "EUR"
+  },
+  {
+    "productId": "OTEM-MO-01-AA-TB",
+    "merchant": "Outin Germany",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 189.99,
+    "currency": "EUR"
+  },
+  {
+    "productId": "OTEM-MO-01-AA-MG",
+    "merchant": "Outin Germany",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 189.99,
+    "currency": "EUR"
+  },
+  {
+    "productId": "OTEM-MO-01-AA-SW",
+    "merchant": "Outin Germany",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 189.99,
+    "currency": "EUR"
+  },
+  {
+    "productId": "OTEM-MO-01-AA-RC",
+    "merchant": "Outin Germany",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 189.99,
+    "currency": "EUR"
+  },
+  {
+    "productId": "OT-TUM-01-TB",
+    "merchant": "Outin Germany",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 39.99,
+    "currency": "EUR"
+  },
+  {
+    "productId": "OT-TUM-01-SW",
+    "merchant": "Outin Germany",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 39.99,
+    "currency": "EUR"
+  },
+  {
+    "productId": "OT-PKT-01-CG",
+    "merchant": "Outin Germany",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 29.99,
+    "currency": "EUR"
+  },
+  {
+    "productId": "OT-FCS-01",
+    "merchant": "Outin Germany",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 49.99,
+    "currency": "EUR"
+  },
+  {
+    "productId": "OT-TOW-01",
+    "merchant": "Outin Germany",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 9.99,
+    "currency": "EUR"
+  },
+  {
+    "productId": "OT-EVA-02-MB",
+    "merchant": "Outin Germany",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 39.99,
+    "currency": "EUR"
+  },
+  {
+    "productId": "OT-EVA-02-SB",
+    "merchant": "Outin Germany",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 39.99,
+    "currency": "EUR"
+  },
+  {
+    "productId": "OT-FM-01-AB",
+    "merchant": "Outin Germany",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 99.99,
+    "currency": "EUR"
+  },
+  {
+    "productId": "OT-FM-01-CG",
+    "merchant": "Outin Germany",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 99.99,
+    "currency": "EUR"
+  },
+  {
+    "productId": "OT-GP-01-AB",
+    "merchant": "Outin Germany",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 29.99,
+    "currency": "EUR"
+  },
+  {
+    "productId": "OTMF-LG-01-TB",
+    "merchant": "Outin Germany",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 49.99,
+    "currency": "EUR"
+  },
+  {
+    "productId": "OTMF-LG-01-SS",
+    "merchant": "Outin Germany",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 49.99,
+    "currency": "EUR"
+  },
+  {
+    "productId": "OTST-KRUVE-BG",
+    "merchant": "Outin Germany",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 199.99,
+    "currency": "EUR"
+  },
+  {
+    "productId": "OT-ES-01",
+    "merchant": "Outin Germany",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 34.99,
+    "currency": "EUR"
+  },
+  {
+    "productId": "OT-TICUP-01",
+    "merchant": "Outin Germany",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 49.99,
+    "currency": "EUR"
+  },
+  {
+    "productId": "OTST-LOTUS-JB",
+    "merchant": "Outin Germany",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 199.99,
+    "currency": "EUR"
+  },
+  {
+    "productId": "OT-EVA-02-PLUS-MB",
+    "merchant": "Outin Germany",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 64.99,
+    "currency": "EUR"
+  },
+  {
+    "productId": "OT-EVA-02-PLUS-SB",
+    "merchant": "Outin Germany",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 64.99,
+    "currency": "EUR"
+  },
+  {
+    "productId": "OTST-MO-01-TB",
+    "merchant": "Outin Germany",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 249.99,
+    "currency": "EUR"
+  },
+  {
+    "productId": "850069973582",
+    "merchant": "Outin Germany",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 12.99,
+    "currency": "EUR"
+  },
+  {
+    "productId": "OT-MO-01-AK",
+    "merchant": "Outin Germany",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 19.99,
+    "currency": "EUR"
+  },
+  {
+    "productId": "OT-MO-01-FBK",
+    "merchant": "Outin Germany",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 29.99,
+    "currency": "EUR"
+  },
+  {
+    "productId": "OTEM-NO-02-CG",
+    "merchant": "Outin Germany",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 159.99,
+    "currency": "EUR"
+  },
+  {
+    "productId": "OTEM-NO-02-SG",
+    "merchant": "Outin Germany",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 159.99,
+    "currency": "EUR"
+  },
+  {
+    "productId": "OTEM-NO-02-FG",
+    "merchant": "Outin Germany",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 159.99,
+    "currency": "EUR"
+  },
+  {
+    "productId": "OTEM-NO-02-PW",
+    "merchant": "Outin Germany",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 159.99,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460006098",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 549,
+    "currency": "EUR"
+  },
+  {
+    "productId": "1102010725",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 969,
+    "currency": "EUR"
+  },
+  {
+    "productId": "1102010721",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 929,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460001727",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 79,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460001482",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 135,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460002908",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 189,
+    "currency": "EUR"
+  },
+  {
+    "productId": "SEEL-BP17",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 0.98,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460005299",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 9.9,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460003639",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 90,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460003615",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 108.18,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460003486",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 9,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460003394",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 26.36,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460005886",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 99,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460005879",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 9,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460005770",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 9.9,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460003431",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 17.27,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460005817",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 18.09,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460005831",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 18.09,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460005848",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 18.09,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460005855",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 18.09,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460005862",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 18.09,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460005909",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 18.09,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460006005",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 18.09,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460005930",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 36.27,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460005947",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 36.27,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460005893",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 18.09,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460005756",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 269,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460005763",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 99,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460004131",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 27.18,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460004049",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 969,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460001420",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 26.36,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460001321",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 9.09,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460005367",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 21.8,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460003899",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 45.45,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460001413",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 35.45,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460001437",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 17.27,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460001215",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 9.09,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460001208",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 9.09,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460001130",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 15.45,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460001123",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 15.45,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460000560",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 30,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460006838",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 10.9,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460004421",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 33,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460004407",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 33,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460004414",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 24,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460004452",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 33,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460004445",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 24,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460005114",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 9.9,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460005121",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 9.9,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460005138",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 11.72,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460005190",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 9.9,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460005183",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 9,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460006852",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 4.55,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460006845",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 9.08,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460004438",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 33,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460006081",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 419,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460006715",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 229,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460006722",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 229,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460005664",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 590,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460005657",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 908.18,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460006012",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 339,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460006036",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 179,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460006043",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 179,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460005145",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 9.9,
+    "currency": "EUR"
+  },
+  {
+    "productId": "1102010545",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 9.9,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460005381",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 9.9,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460005466",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 9.9,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460005688",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 389,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460191466",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 369,
+    "currency": "EUR"
+  },
+  {
+    "productId": "1002040019",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 143,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460003318",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 133,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460003356",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 97,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460004360",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 92,
+    "currency": "EUR"
+  },
+  {
+    "productId": "1002050093",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 81,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460004285",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 81,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460004278",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 79,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460005336",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 70,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460004384",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 79,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460004377",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 70,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460003714",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 398,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460004230",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 878,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460001963",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 21.82,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460001512",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 21.82,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460001970",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 21.82,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460001529",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 21.82,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460004469",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 14.05,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460002922",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 29.99,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460004179",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 29.9,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460004186",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 9.9,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460002892",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 9,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460002885",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 35.85,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460004193",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 9.9,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460004148",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 49,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460003417",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 45.36,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460003165",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 1635,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460003158",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 129,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460003134",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 326.36,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460003141",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 339,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460003387",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 9.9,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460001444",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 17.27,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460003127",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 4089,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460004988",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 2999,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460003110",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 2319,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460003103",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 1775,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460003097",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 1179,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460003073",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 589,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460003080",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 889,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460005695",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 1299,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460000690",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 12.04,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460000713",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 9.09,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460000706",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 9.9,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460000461",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 4.55,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460000737",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 26.36,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460003509",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 9,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460002687",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 17.27,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460003424",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 144.55,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460003400",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 35.45,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460000584",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 21.8,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460001390",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 3908,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460000331",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 5453,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460002021",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 49,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460002342",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 9,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460002649",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 9,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460003479",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 9.9,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460003462",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 9,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460003448",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 62.73,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460002335",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 16.27,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460001857",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 10.91,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460001864",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 10.91,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460001772",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 13.64,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460001789",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 17.27,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460002823",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 56,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460003059",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 46,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460002946",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 47,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460002830",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 35,
+    "currency": "EUR"
+  },
+  {
+    "productId": "191460002601",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-09-25T05:03:00.483Z",
+    "price": 99,
+    "currency": "EUR"
   }
 ]
