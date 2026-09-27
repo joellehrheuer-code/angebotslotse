@@ -1,11 +1,17 @@
 {
-  "generatedAt": "2026-09-27T01:41:02.073Z",
+  "generatedAt": "2026-09-27T01:52:10.523Z",
   "actions": [
     {
       "id": "awin-datafeed-key",
       "platform": "Awin",
       "action": "AWIN_DATAFEED_API_KEY als lokales .env.local-Secret und GitHub Actions Secret hinterlegen.",
       "reason": "Die offizielle Legacy-Produktfeed-Liste benötigt einen separaten Datafeed-Key."
+    },
+    {
+      "id": "amazon-creators-api",
+      "platform": "Amazon",
+      "action": "Amazon PartnerNet vollständig freischalten, Creators-API-Credentials und deutschen Partner-Tag als GitHub Secrets hinterlegen.",
+      "reason": "Ohne finale Amazon-Associates-Freigabe, Credential ID, Secret und Partner-Tag werden keine Amazon-Preise oder Produktbilder automatisiert übernommen."
     },
     {
       "id": "impact-marketplace-review",

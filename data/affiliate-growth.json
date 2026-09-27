@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-27T01:41:02.076Z",
+  "generatedAt": "2026-09-27T01:52:10.526Z",
   "market": "DE",
   "publisherId": 3045061,
   "awin": {
@@ -2823,7 +2823,7 @@
   },
   "safeguards": {
     "unjoinedProgramsPublished": false,
-    "applicationSubmission": "manual-only",
+    "applicationSubmission": "review-required",
     "credentialsPersisted": false
   }
 }

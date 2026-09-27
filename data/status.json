@@ -1,6 +1,6 @@
 {
   "state": "ok",
-  "lastSuccessfulUpdate": "2026-09-27T01:41:02.023Z",
+  "lastSuccessfulUpdate": "2026-09-27T01:52:10.474Z",
   "activeOffers": 809,
   "added": 0,
   "removed": 0,
@@ -107,6 +107,14 @@
       "count": 16,
       "error": null,
       "audit": null
+    },
+    "amazon": {
+      "state": "disabled",
+      "count": 0,
+      "error": null,
+      "audit": {
+        "reason": "AMAZON_CREATORS_CREDENTIAL_ID, AMAZON_CREATORS_CREDENTIAL_SECRET, AMAZON_PARTNER_TAG missing – Amazon Creators API sync skipped"
+      }
     },
     "impact": {
       "state": "error",
