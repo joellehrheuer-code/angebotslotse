@@ -8,6 +8,12 @@ input?.addEventListener("input",filter); filter();
 
 const categorySearch = document.querySelector("[data-offer-search]");
 const categorySort = document.querySelector("[data-offer-sort]");
+const brandFilter = document.querySelector("[data-filter-brand]");
+const merchantFilter = document.querySelector("[data-filter-merchant]");
+const maxPriceFilter = document.querySelector("[data-filter-max-price]");
+const discountFilter = document.querySelector("[data-filter-discount]");
+const resetFilters = document.querySelector("[data-filter-reset]");
+const filterCount = document.querySelector("[data-filter-count]");
 const sortGrid = document.querySelector("[data-sort-grid]");
 const filterEmpty = document.querySelector("[data-no-filter-results]");
 const forwardedSearch = params.get("suche");
@@ -15,15 +21,41 @@ if (forwardedSearch && categorySearch) categorySearch.value = forwardedSearch;
 function updateCategoryListing() {
   if (!sortGrid) return;
   const query = (categorySearch?.value || "").trim().toLowerCase();
+  const brand = (brandFilter?.value || "").trim().toLowerCase();
+  const merchant = (merchantFilter?.value || "").trim().toLowerCase();
+  const maxPriceValue = Number(maxPriceFilter?.value);
+  const hasMaxPrice = Number.isFinite(maxPriceValue) && maxPriceValue > 0;
+  const discountOnly = Boolean(discountFilter?.checked);
   const rows = [...sortGrid.querySelectorAll(".deal-card")];
   const mode = categorySort?.value || "current";
   rows.sort((a,b) => mode === "ending" ? (a.dataset.end || "9999").localeCompare(b.dataset.end || "9999") : mode === "discount" ? Number(b.dataset.discount)-Number(a.dataset.discount) : mode === "price" ? (Number(a.dataset.price || Infinity)-Number(b.dataset.price || Infinity)) : (b.dataset.updated || "").localeCompare(a.dataset.updated || ""));
   let visible = 0;
-  for (const row of rows) { row.hidden = !row.dataset.search.includes(query); if (!row.hidden) visible += 1; sortGrid.append(row); }
+  for (const row of rows) {
+    const price = Number(row.dataset.price);
+    const matches = row.dataset.search.includes(query)
+      && (!brand || row.dataset.brand === brand)
+      && (!merchant || row.dataset.merchant === merchant)
+      && (!hasMaxPrice || (Number.isFinite(price) && price > 0 && price <= maxPriceValue))
+      && (!discountOnly || Number(row.dataset.discount) > 0);
+    row.hidden = !matches;
+    if (matches) visible += 1;
+    sortGrid.append(row);
+  }
+  if (filterCount) filterCount.textContent = String(visible) + " Treffer";
   if (filterEmpty) filterEmpty.hidden = visible > 0;
 }
-categorySearch?.addEventListener("input", updateCategoryListing);
-categorySort?.addEventListener("change", updateCategoryListing);
+for (const element of [categorySearch,maxPriceFilter]) element?.addEventListener("input", updateCategoryListing);
+for (const element of [categorySort,brandFilter,merchantFilter,discountFilter]) element?.addEventListener("change", updateCategoryListing);
+resetFilters?.addEventListener("click", () => {
+  if (categorySearch) categorySearch.value = "";
+  if (categorySort) categorySort.value = "current";
+  if (brandFilter) brandFilter.value = "";
+  if (merchantFilter) merchantFilter.value = "";
+  if (maxPriceFilter) maxPriceFilter.value = "";
+  if (discountFilter) discountFilter.checked = false;
+  updateCategoryListing();
+  categorySearch?.focus();
+});
 updateCategoryListing();
 
 document.querySelectorAll("[data-slider]").forEach(slider => {
