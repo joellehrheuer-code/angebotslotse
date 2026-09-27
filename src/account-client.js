@@ -40,6 +40,13 @@ if (!root || !config.url || !config.publishableKey) {
   const accountDataStatus = root.querySelector("[data-account-data-status]");
   const exportAccountButton = root.querySelector("[data-export-account]");
   const deleteAccountButton = root.querySelector("[data-delete-account]");
+  const pushCard = root.querySelector("[data-account-push-card]");
+  const pushEnableButton = root.querySelector("[data-push-enable]");
+  const pushDisableButton = root.querySelector("[data-push-disable]");
+  const pushPreferences = root.querySelector("[data-push-preferences]");
+  const pushPrice = root.querySelector("[data-push-price]");
+  const pushMatches = root.querySelector("[data-push-matches]");
+  const pushStatus = root.querySelector("[data-push-status]");
   let notificationChannel = null;
 
   const setStatus = (text, kind = "") => {
@@ -311,6 +318,67 @@ if (!root || !config.url || !config.publishableKey) {
       .subscribe();
   }
 
+  const vapidToBytes = value => {
+    const padding = "=".repeat((4 - value.length % 4) % 4);
+    const base64 = (value + padding).replace(/-/g, "+").replace(/_/g, "/");
+    const raw = atob(base64);
+    return Uint8Array.from([...raw].map(char => char.charCodeAt(0)));
+  };
+
+  const pushSupported = () => Boolean(
+    config.webPushVapidPublicKey &&
+    "serviceWorker" in navigator &&
+    "PushManager" in window &&
+    "Notification" in window
+  );
+
+  async function loadPushState(userId) {
+    if (!pushCard) return null;
+    if (!pushSupported()) {
+      if (pushEnableButton) pushEnableButton.disabled = true;
+      if (pushDisableButton) pushDisableButton.hidden = true;
+      if (pushPreferences) pushPreferences.hidden = true;
+      if (pushStatus) pushStatus.textContent = "Dieser Browser unterstützt Web-Push hier nicht.";
+      return null;
+    }
+
+    const { data: prefs, error: prefError } = await supabase
+      .from("notification_preferences")
+      .select("push_price_alerts,push_new_matches")
+      .eq("user_id", userId)
+      .maybeSingle();
+    if (prefError) throw prefError;
+
+    const registration = await navigator.serviceWorker.ready;
+    const subscription = await registration.pushManager.getSubscription();
+    if (pushPrice) pushPrice.checked = Boolean(prefs?.push_price_alerts);
+    if (pushMatches) pushMatches.checked = Boolean(prefs?.push_new_matches);
+    if (pushEnableButton) {
+      pushEnableButton.hidden = Boolean(subscription);
+      pushEnableButton.disabled = Notification.permission === "denied";
+    }
+    if (pushDisableButton) pushDisableButton.hidden = !subscription;
+    if (pushPreferences) pushPreferences.hidden = !subscription;
+    if (pushStatus) {
+      pushStatus.textContent = Notification.permission === "denied"
+        ? "Push ist im Browser blockiert. Du kannst die Berechtigung in den Website-Einstellungen wieder erlauben."
+        : subscription
+          ? "Push ist auf diesem Gerät aktiv."
+          : "Push ist auf diesem Gerät noch nicht aktiviert.";
+    }
+    return subscription;
+  }
+
+  async function savePushPreferences(userId) {
+    const { error } = await supabase.from("notification_preferences").upsert({
+      user_id: userId,
+      push_price_alerts: Boolean(pushPrice?.checked),
+      push_new_matches: Boolean(pushMatches?.checked)
+    }, { onConflict: "user_id" });
+    if (error) throw error;
+    if (pushStatus) pushStatus.textContent = "Push-Einstellungen gespeichert.";
+  }
+
   async function renderSession(session) {
     const user = session?.user || null;
     signedOut.hidden = Boolean(user);
@@ -318,6 +386,7 @@ if (!root || !config.url || !config.publishableKey) {
     if (alertsCard) alertsCard.hidden = !user;
     if (matchesCard) matchesCard.hidden = !user;
     if (notificationsCard) notificationsCard.hidden = !user;
+    if (pushCard) pushCard.hidden = !user;
     if (accountDataActions) accountDataActions.hidden = !user;
     if (!user) {
       if (userEmail) userEmail.textContent = "";
@@ -325,6 +394,10 @@ if (!root || !config.url || !config.publishableKey) {
       if (alertList) alertList.replaceChildren();
       if (matchesNode) matchesNode.replaceChildren();
       if (notificationList) notificationList.replaceChildren();
+      if (pushPreferences) pushPreferences.hidden = true;
+      if (pushDisableButton) pushDisableButton.hidden = true;
+      if (pushEnableButton) pushEnableButton.hidden = false;
+      if (pushStatus) pushStatus.textContent = "";
       if (notificationChannel) {
         await supabase.removeChannel(notificationChannel);
         notificationChannel = null;
@@ -336,7 +409,8 @@ if (!root || !config.url || !config.publishableKey) {
       const [rows] = await Promise.all([
         loadCloudWatchlist(user.id),
         loadAlerts(user.id),
-        loadNotifications(user.id)
+        loadNotifications(user.id),
+        loadPushState(user.id)
       ]);
       writeLocalWatchlist({ ...readLocalWatchlist(), ...cloudRowsToLocal(rows) });
       await subscribeNotifications(user.id);
@@ -477,6 +551,85 @@ if (!root || !config.url || !config.publishableKey) {
     if (notificationStatus) notificationStatus.textContent = error ? error.message : "Alle Meldungen als gelesen markiert.";
     if (!error) await loadNotifications(user.id);
   });
+
+  pushEnableButton?.addEventListener("click", async () => {
+    if (!pushSupported()) {
+      if (pushStatus) pushStatus.textContent = "Web-Push wird von diesem Browser nicht unterstützt.";
+      return;
+    }
+    pushEnableButton.disabled = true;
+    if (pushStatus) pushStatus.textContent = "Browser-Berechtigung wird angefragt …";
+    try {
+      const { data } = await supabase.auth.getSession();
+      const user = data.session?.user;
+      if (!user) throw new Error("Bitte zuerst anmelden.");
+
+      const permission = await Notification.requestPermission();
+      if (permission !== "granted") throw new Error("Push-Benachrichtigungen wurden nicht erlaubt.");
+
+      const registration = await navigator.serviceWorker.ready;
+      let subscription = await registration.pushManager.getSubscription();
+      if (!subscription) {
+        subscription = await registration.pushManager.subscribe({
+          userVisibleOnly: true,
+          applicationServerKey: vapidToBytes(config.webPushVapidPublicKey)
+        });
+      }
+
+      const { error } = await supabase.functions.invoke("push-subscription", {
+        body: { action: "subscribe", subscription: subscription.toJSON() }
+      });
+      if (error) throw error;
+
+      if (pushPrice) pushPrice.checked = true;
+      if (pushMatches) pushMatches.checked = true;
+      await savePushPreferences(user.id);
+      await loadPushState(user.id);
+      if (pushStatus) pushStatus.textContent = "Push ist auf diesem Gerät aktiviert.";
+    } catch (error) {
+      if (pushStatus) pushStatus.textContent = error.message || "Push konnte nicht aktiviert werden.";
+    } finally {
+      pushEnableButton.disabled = Notification.permission === "denied";
+    }
+  });
+
+  pushDisableButton?.addEventListener("click", async () => {
+    pushDisableButton.disabled = true;
+    if (pushStatus) pushStatus.textContent = "Push wird auf diesem Gerät deaktiviert …";
+    try {
+      const { data } = await supabase.auth.getSession();
+      const user = data.session?.user;
+      if (!user) throw new Error("Bitte zuerst anmelden.");
+      const registration = await navigator.serviceWorker.ready;
+      const subscription = await registration.pushManager.getSubscription();
+      if (subscription) {
+        const { error } = await supabase.functions.invoke("push-subscription", {
+          body: { action: "unsubscribe", subscription: subscription.toJSON() }
+        });
+        if (error) throw error;
+        await subscription.unsubscribe();
+      }
+      await loadPushState(user.id);
+      if (pushStatus) pushStatus.textContent = "Push ist auf diesem Gerät deaktiviert.";
+    } catch (error) {
+      if (pushStatus) pushStatus.textContent = error.message || "Push konnte nicht deaktiviert werden.";
+    } finally {
+      pushDisableButton.disabled = false;
+    }
+  });
+
+  for (const checkbox of [pushPrice, pushMatches]) {
+    checkbox?.addEventListener("change", async () => {
+      try {
+        const { data } = await supabase.auth.getSession();
+        const user = data.session?.user;
+        if (!user) throw new Error("Bitte zuerst anmelden.");
+        await savePushPreferences(user.id);
+      } catch (error) {
+        if (pushStatus) pushStatus.textContent = error.message || "Push-Einstellungen konnten nicht gespeichert werden.";
+      }
+    });
+  }
 
   exportAccountButton?.addEventListener("click", async () => {
     exportAccountButton.disabled = true;

@@ -88,3 +88,26 @@ test("produktive Edge Functions liegen versioniert im Repository", () => {
     assert.doesNotMatch(source, /sb_secret_|service_role\s*[:=]\s*["'][A-Za-z0-9._-]+/);
   }
 });
+
+
+test("Web-Push-Runtime bleibt Vault-geschützt und serverseitig", () => {
+  const migration = fs.readFileSync("supabase/migrations/20260927_web_push_runtime.sql", "utf8");
+  const subscribe = fs.readFileSync("supabase/functions/push-subscription/index.ts", "utf8");
+  const sender = fs.readFileSync("supabase/functions/send-push/index.ts", "utf8");
+
+  assert.match(migration, /push_subscription_crypto_key/);
+  assert.match(migration, /web_push_vapid_private/);
+  assert.match(migration, /verify_push_cron_token/);
+  assert.match(migration, /user_notifications_queue_push/);
+  assert.match(migration, /send-angebotslotse-push/);
+  assert.match(migration, /\*\/5 \* \* \* \*/);
+  assert.match(migration, /grant execute on function public\.push_store_subscription/);
+  assert.doesNotMatch(migration, /BEGIN PRIVATE KEY|sb_secret_|service_role\s*[:=]\s*["'][A-Za-z0-9._-]+/);
+
+  assert.match(subscribe, /auth\.getUser/);
+  assert.match(subscribe, /push_store_subscription/);
+  assert.match(sender, /verify_push_cron_token/);
+  assert.match(sender, /webpush\.sendNotification/);
+  assert.match(sender, /push_finish_outbox/);
+  assert.doesNotMatch(subscribe + sender, /BEGIN PRIVATE KEY|sb_secret_/);
+});

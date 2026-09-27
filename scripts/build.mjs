@@ -183,7 +183,8 @@ await fs.writeFile(path.join(out,"merkliste.html"),page({title:"Merkliste & Wuns
 const authPublicConfig={
   url:config.supabase?.url||"",
   publishableKey:config.supabase?.publishableKey||"",
-  googleAuthEnabled:Boolean(config.supabase?.googleAuthEnabled)
+  googleAuthEnabled:Boolean(config.supabase?.googleAuthEnabled),
+  webPushVapidPublicKey:config.supabase?.webPushVapidPublicKey||""
 };
 const accountBody=`<section class="listing account-page" data-account-root>
   <span class="eyebrow">Angebotslotse Konto</span>
@@ -242,7 +243,7 @@ const accountBody=`<section class="listing account-page" data-account-root>
     <section class="account-card account-matches-card" data-account-matches-card hidden>
       <span class="eyebrow">Aktuelle Treffer</span>
       <h2>Passende Angebote zu deinen Alarmen</h2>
-      <p>Diese Treffer werden direkt aus den aktuell veröffentlichten Angeboten berechnet. E-Mail- oder Push-Versand kommt später optional dazu.</p>
+      <p>Diese Treffer werden direkt aus den aktuell veröffentlichten Angeboten berechnet. Browser-Push kann im Konto kostenlos aktiviert werden; E-Mail-Versand bleibt optional für später.</p>
       <div class="account-match-list" data-alert-matches></div>
     </section>
     <section class="account-card account-notifications-card" data-account-notifications-card hidden>
@@ -254,6 +255,20 @@ const accountBody=`<section class="listing account-page" data-account-root>
       </div>
       <p class="account-sync-status" data-notification-status aria-live="polite"></p>
       <div class="account-notification-list" data-notification-list></div>
+    </section>
+    <section class="account-card account-push-card" data-account-push-card hidden>
+      <span class="eyebrow">Kostenlose Browser-Pushs</span>
+      <h2>Preisalarme direkt als Benachrichtigung</h2>
+      <p>Optional für Browser und installierte PWA. Dein Gerät wird erst nach deiner Browser-Freigabe registriert.</p>
+      <div class="account-push-actions">
+        <button class="button primary" type="button" data-push-enable>Push aktivieren</button>
+        <button class="button" type="button" data-push-disable hidden>Push auf diesem Gerät deaktivieren</button>
+      </div>
+      <div class="account-push-preferences" data-push-preferences hidden>
+        <label><input type="checkbox" data-push-price> Wunschpreis, Preissturz & Wiederverfügbarkeit</label>
+        <label><input type="checkbox" data-push-matches> Neue Treffer aus persönlichen Alarmregeln</label>
+      </div>
+      <p class="account-sync-status" data-push-status aria-live="polite"></p>
     </section>
     <section class="account-card account-security-card">
       <span class="eyebrow">Datenschutz & Kontrolle</span>

@@ -14,6 +14,7 @@ test("Konto-Seite wird mit lokal gebündeltem Supabase-Client gebaut", () => {
   const privacy = fs.readFileSync("dist/datenschutz.html", "utf8");
   const feed = JSON.parse(fs.readFileSync("dist/alerts-feed.json", "utf8"));
   const bundle = fs.readFileSync("dist/account-client.js", "utf8");
+  const sw = fs.readFileSync("dist/sw.js", "utf8");
 
   assert.match(html, /Konto &amp; Preisalarme/);
   assert.match(html, /data-email-login/);
@@ -34,6 +35,15 @@ test("Konto-Seite wird mit lokal gebündeltem Supabase-Client gebaut", () => {
   assert.match(html, /data-notification-list/);
   assert.match(html, /data-export-account/);
   assert.match(html, /data-delete-account/);
+  assert.match(html, /data-account-push-card/);
+  assert.match(html, /data-push-enable/);
+  assert.match(html, /data-push-price/);
+  assert.match(html, /data-push-matches/);
+  assert.match(html, /webPushVapidPublicKey/);
+  assert.match(bundle, /push-subscription/);
+  assert.match(bundle, /pushManager\.subscribe/);
+  assert.match(sw, /addEventListener\("push"/);
+  assert.match(sw, /addEventListener\("notificationclick"/);
   assert.match(bundle, /user_notifications/);
   assert.match(bundle, /postgres_changes/);
   assert.match(bundle, /export-account/);

@@ -8,7 +8,8 @@
   "supabase": {
     "url": "https://asrklnfcwtgihvyfjiww.supabase.co",
     "publishableKey": "sb_publishable_Zi5LWY0YvHbDFIL6sZOkzQ_vwFYVY0m",
-    "googleAuthEnabled": false
+    "googleAuthEnabled": false,
+    "webPushVapidPublicKey": "BKqtqxwHo2pSbCh2S7eVfusa7vOJbijVvoN03AxxEuZaIxbUTQRz9x8dT2KrJbQWjEkWvoYD8VfxTflq6MPiZDM"
   },
   "categories": {
     "technik": ["elektronik", "technik", "mobile", "smartphone", "tv"],

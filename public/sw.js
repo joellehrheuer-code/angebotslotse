@@ -57,3 +57,38 @@ self.addEventListener("fetch", event => {
     );
   }
 });
+
+
+self.addEventListener("push", event => {
+  let payload = {};
+  try { payload = event.data?.json?.() || {}; } catch {
+    payload = { body: event.data?.text?.() || "" };
+  }
+  const title = String(payload.title || "Angebotslotse");
+  const target = new URL(String(payload.url || "konto.html"), scope).href;
+  const options = {
+    body: String(payload.body || "Es gibt eine neue Meldung zu deinen Angeboten."),
+    icon: local("favicon.svg"),
+    badge: local("favicon.svg"),
+    tag: String(payload.tag || "angebotslotse-alert"),
+    renotify: false,
+    data: { url: target }
+  };
+  event.waitUntil(self.registration.showNotification(title, options));
+});
+
+self.addEventListener("notificationclick", event => {
+  event.notification.close();
+  const target = event.notification?.data?.url || local("konto.html");
+  event.waitUntil(
+    clients.matchAll({ type: "window", includeUncontrolled: true }).then(async windows => {
+      for (const client of windows) {
+        try {
+          if ("navigate" in client) await client.navigate(target);
+          return client.focus();
+        } catch {}
+      }
+      return clients.openWindow(target);
+    })
+  );
+});
