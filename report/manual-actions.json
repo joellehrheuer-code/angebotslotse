@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-27T15:48:47.996Z",
+  "generatedAt": "2026-09-27T16:04:35.432Z",
   "actions": [
     {
       "id": "awin-datafeed-key",
@@ -17,7 +17,7 @@
       "id": "impact-marketplace-review",
       "platform": "Impact",
       "action": "Impact Marketplace zuerst nach passenden Brands für Technik & Computer durchsuchen (electronics, computer, hardware, mobile, smart home).",
-      "reason": "Automatisch erkannte Abdeckungslücke: 89 Angebotslotse-Angebote stehen 0 zugeordneten Impact-Programmen gegenüber. Vertragsbedingungen vor Bewerbung prüfen."
+      "reason": "Automatisch erkannte Abdeckungslücke: 122 Angebotslotse-Angebote stehen 0 zugeordneten Impact-Programmen gegenüber. Vertragsbedingungen vor Bewerbung prüfen."
     },
     {
       "id": "awin-apply-102205",
@@ -79,13 +79,13 @@
       "id": "daisycon-connect",
       "platform": "Daisycon",
       "action": "Kostenlosen Daisycon-Publisherzugang/API-Zugang freischalten und DAISYCON_PUBLISHER_ID + DAISYCON_ACCESS_TOKEN sicher hinterlegen.",
-      "reason": "Danach zuerst Programme für Technik & Computer priorisieren (electronics, computer, hardware, mobile, smart home), weil dort aktuell 89 veröffentlichte Angebotslotse-Angebote liegen."
+      "reason": "Danach zuerst Programme für Technik & Computer priorisieren (electronics, computer, hardware, mobile, smart home), weil dort aktuell 122 veröffentlichte Angebotslotse-Angebote liegen."
     },
     {
       "id": "tradedoubler-connect",
       "platform": "Tradedoubler",
       "action": "Kostenlosen Tradedoubler-Publisherzugang freischalten und entweder TRADEDOUBLER_PRODUCTS_TOKEN oder einen offiziellen Produktfeed als TRADEDOUBLER_FEED_URLS hinterlegen.",
-      "reason": "Danach zuerst Programme für Technik & Computer priorisieren (electronics, computer, hardware, mobile, smart home), weil dort aktuell 89 Angebotslotse-Angebote liegen."
+      "reason": "Danach zuerst Programme für Technik & Computer priorisieren (electronics, computer, hardware, mobile, smart home), weil dort aktuell 122 Angebotslotse-Angebote liegen."
     },
     {
       "id": "tradedoubler-vouchers-connect",
@@ -97,7 +97,7 @@
       "id": "webgains-connect",
       "platform": "Webgains",
       "action": "Kostenlosen Webgains-Publisherzugang freischalten und anschließend den offiziellen Produktfeed/API-Zugang als WEBGAINS_FEED_URLS hinterlegen.",
-      "reason": "Danach zuerst Programme für Technik & Computer priorisieren (electronics, computer, hardware, mobile, smart home), weil dort aktuell 89 Angebotslotse-Angebote liegen."
+      "reason": "Danach zuerst Programme für Technik & Computer priorisieren (electronics, computer, hardware, mobile, smart home), weil dort aktuell 122 Angebotslotse-Angebote liegen."
     }
   ]
 }

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-27T15:48:47.996Z",
+  "generatedAt": "2026-09-27T16:04:35.432Z",
   "status": "disabled",
   "joinedPrograms": 0,
   "automation": {
@@ -12,9 +12,9 @@
   "marketplaceSearches": [
     {
       "category": "Technik & Computer",
-      "siteOffers": 89,
+      "siteOffers": 122,
       "joinedPrograms": 0,
-      "gapScore": 89,
+      "gapScore": 122,
       "searchTerms": [
         "electronics",
         "computer",
@@ -26,9 +26,9 @@
     },
     {
       "category": "Audio & Musik",
-      "siteOffers": 26,
+      "siteOffers": 76,
       "joinedPrograms": 0,
-      "gapScore": 26,
+      "gapScore": 76,
       "searchTerms": [
         "audio",
         "music",
@@ -40,9 +40,9 @@
     },
     {
       "category": "Haushalt & Alltag",
-      "siteOffers": 20,
+      "siteOffers": 53,
       "joinedPrograms": 0,
-      "gapScore": 20,
+      "gapScore": 53,
       "searchTerms": [
         "home",
         "appliances",
@@ -53,23 +53,10 @@
       "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
     },
     {
-      "category": "Mode & Sport",
-      "siteOffers": 6,
-      "joinedPrograms": 0,
-      "gapScore": 6,
-      "searchTerms": [
-        "fashion",
-        "sportswear",
-        "fitness",
-        "shoes"
-      ],
-      "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
-    },
-    {
       "category": "Freizeit",
-      "siteOffers": 6,
+      "siteOffers": 1,
       "joinedPrograms": 0,
-      "gapScore": 6,
+      "gapScore": 1,
       "searchTerms": [
         "travel",
         "outdoor",

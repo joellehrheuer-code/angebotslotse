@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-27T15:48:47.996Z",
+  "generatedAt": "2026-09-27T16:04:35.432Z",
   "newAwinPrograms": 0,
   "newImpactPrograms": 0,
   "newDaisyconPrograms": 0,
@@ -23,6 +23,7 @@
   "priceChanges": 0,
   "expiredOffers": 0,
   "expiredCoupons": 0,
+  "filteredForeignLocale": 330,
   "totalProducts": 252,
   "productsBySource": {
     "Awin": 252
@@ -34,14 +35,13 @@
     "Imou DE": 1
   },
   "productsByCategory": {
-    "sonstiges": 105,
-    "zubehoer": 47,
-    "technik": 31,
-    "audio-musik": 26,
-    "werkzeug": 20,
-    "computer": 11,
-    "freizeit": 6,
-    "mode": 6
+    "audio-musik": 76,
+    "zubehoer": 69,
+    "technik": 43,
+    "werkzeug": 27,
+    "haushalt": 26,
+    "computer": 10,
+    "freizeit": 1
   },
   "awinEnhancedFeeds": [
     {
@@ -122,8 +122,8 @@
   "dailyHighlights": [
     "12f05c88bb4138a2",
     "0f1e515e7e72fe69",
-    "0736f74b20773bba",
     "134153f06aa7013c",
+    "0f5ae8ec0dfce134",
     "0a16e63f96d3c7c3"
   ],
   "weekDeals": [
@@ -133,9 +133,9 @@
   "monthHighlights": [
     "10bb463f70696c2e",
     "0055caa27aa9a32c",
-    "039a1ca39383f7b6",
     "04b0eab2f2c77729",
-    "127502cb89a74114"
+    "0f5ae8ec0dfce134",
+    "2120ca7e652cd83f"
   ],
   "apiErrors": 0,
   "affiliateLinkErrors": 0

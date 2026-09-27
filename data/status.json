@@ -1,11 +1,12 @@
 {
   "state": "ok",
-  "lastSuccessfulUpdate": "2026-09-27T15:48:47.957Z",
-  "activeOffers": 809,
+  "lastSuccessfulUpdate": "2026-09-27T16:04:35.404Z",
+  "activeOffers": 479,
   "added": 0,
-  "removed": 0,
-  "archivedThisRun": 0,
-  "archivedTotal": 0,
+  "removed": 330,
+  "archivedThisRun": 330,
+  "archivedTotal": 330,
+  "filteredForeignLocale": 330,
   "invalidLinks": 0,
   "apiErrors": 0,
   "sources": {
@@ -165,6 +166,6 @@
     "count": 0,
     "error": null
   },
-  "stale": 537,
+  "stale": 207,
   "message": "Aktualisierung mit geschützten Bestandsdaten abgeschlossen."
 }

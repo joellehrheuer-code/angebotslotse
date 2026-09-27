@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-09-27T15:48:47.996Z",
-  "total": 65,
-  "highPriority": 5,
+  "generatedAt": "2026-09-27T16:04:35.432Z",
+  "total": 62,
+  "highPriority": 11,
   "byNetwork": {
-    "Daisycon": 5,
-    "Tradedoubler": 5,
-    "Webgains": 5,
+    "Daisycon": 4,
+    "Tradedoubler": 4,
+    "Webgains": 4,
     "Awin": 50
   },
   "reviewQueue": [
@@ -15,7 +15,7 @@
       "brand": "Daisycon Marketplace",
       "category": "Technik & Computer",
       "priority": "hoch",
-      "score": 119,
+      "score": 152,
       "kind": "marketplace-search",
       "status": "connection-required",
       "actionType": "connection-required",
@@ -28,7 +28,7 @@
       "brand": "Tradedoubler Marketplace",
       "category": "Technik & Computer",
       "priority": "hoch",
-      "score": 119,
+      "score": 152,
       "kind": "marketplace-search",
       "status": "connection-required",
       "actionType": "connection-required",
@@ -41,7 +41,7 @@
       "brand": "Webgains Marketplace",
       "category": "Technik & Computer",
       "priority": "hoch",
-      "score": 119,
+      "score": 152,
       "kind": "marketplace-search",
       "status": "connection-required",
       "actionType": "connection-required",
@@ -50,6 +50,45 @@
     },
     {
       "rank": 4,
+      "network": "Daisycon",
+      "brand": "Daisycon Marketplace",
+      "category": "Audio & Musik",
+      "priority": "hoch",
+      "score": 106,
+      "kind": "marketplace-search",
+      "status": "connection-required",
+      "actionType": "connection-required",
+      "nextAction": "Daisycon-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Audio & Musik priorisieren.",
+      "applicationDraft": null
+    },
+    {
+      "rank": 5,
+      "network": "Tradedoubler",
+      "brand": "Tradedoubler Marketplace",
+      "category": "Audio & Musik",
+      "priority": "hoch",
+      "score": 106,
+      "kind": "marketplace-search",
+      "status": "connection-required",
+      "actionType": "connection-required",
+      "nextAction": "Tradedoubler-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Audio & Musik priorisieren.",
+      "applicationDraft": null
+    },
+    {
+      "rank": 6,
+      "network": "Webgains",
+      "brand": "Webgains Marketplace",
+      "category": "Audio & Musik",
+      "priority": "hoch",
+      "score": 106,
+      "kind": "marketplace-search",
+      "status": "connection-required",
+      "actionType": "connection-required",
+      "nextAction": "Webgains-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Audio & Musik priorisieren.",
+      "applicationDraft": null
+    },
+    {
+      "rank": 7,
       "network": "Awin",
       "brand": "Bosch Hausgeräte DE",
       "category": "Technik & Computer",
@@ -62,7 +101,46 @@
       "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Bosch Hausgeräte DE redaktionell passend im Bereich Technik & Computer einbinden. Bei Awin sind aktuell 5 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung."
     },
     {
-      "rank": 5,
+      "rank": 8,
+      "network": "Daisycon",
+      "brand": "Daisycon Marketplace",
+      "category": "Haushalt & Alltag",
+      "priority": "hoch",
+      "score": 83,
+      "kind": "marketplace-search",
+      "status": "connection-required",
+      "actionType": "connection-required",
+      "nextAction": "Daisycon-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Haushalt & Alltag priorisieren.",
+      "applicationDraft": null
+    },
+    {
+      "rank": 9,
+      "network": "Tradedoubler",
+      "brand": "Tradedoubler Marketplace",
+      "category": "Haushalt & Alltag",
+      "priority": "hoch",
+      "score": 83,
+      "kind": "marketplace-search",
+      "status": "connection-required",
+      "actionType": "connection-required",
+      "nextAction": "Tradedoubler-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Haushalt & Alltag priorisieren.",
+      "applicationDraft": null
+    },
+    {
+      "rank": 10,
+      "network": "Webgains",
+      "brand": "Webgains Marketplace",
+      "category": "Haushalt & Alltag",
+      "priority": "hoch",
+      "score": 83,
+      "kind": "marketplace-search",
+      "status": "connection-required",
+      "actionType": "connection-required",
+      "nextAction": "Webgains-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Haushalt & Alltag priorisieren.",
+      "applicationDraft": null
+    },
+    {
+      "rank": 11,
       "network": "Awin",
       "brand": "DECATHLON DE",
       "category": "Mode & Sport",
@@ -75,7 +153,7 @@
       "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten DECATHLON DE redaktionell passend im Bereich Mode & Sport einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung."
     },
     {
-      "rank": 6,
+      "rank": 12,
       "network": "Awin",
       "brand": "adidas DE",
       "category": "Mode & Sport",
@@ -88,7 +166,7 @@
       "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten adidas DE redaktionell passend im Bereich Mode & Sport einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung."
     },
     {
-      "rank": 7,
+      "rank": 13,
       "network": "Awin",
       "brand": "bosch Tiernahrung DE",
       "category": "Weitere",
@@ -101,46 +179,7 @@
       "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten bosch Tiernahrung DE redaktionell passend im Bereich Weitere einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung."
     },
     {
-      "rank": 8,
-      "network": "Daisycon",
-      "brand": "Daisycon Marketplace",
-      "category": "Audio & Musik",
-      "priority": "mittel",
-      "score": 46,
-      "kind": "marketplace-search",
-      "status": "connection-required",
-      "actionType": "connection-required",
-      "nextAction": "Daisycon-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Audio & Musik priorisieren.",
-      "applicationDraft": null
-    },
-    {
-      "rank": 9,
-      "network": "Tradedoubler",
-      "brand": "Tradedoubler Marketplace",
-      "category": "Audio & Musik",
-      "priority": "mittel",
-      "score": 46,
-      "kind": "marketplace-search",
-      "status": "connection-required",
-      "actionType": "connection-required",
-      "nextAction": "Tradedoubler-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Audio & Musik priorisieren.",
-      "applicationDraft": null
-    },
-    {
-      "rank": 10,
-      "network": "Webgains",
-      "brand": "Webgains Marketplace",
-      "category": "Audio & Musik",
-      "priority": "mittel",
-      "score": 46,
-      "kind": "marketplace-search",
-      "status": "connection-required",
-      "actionType": "connection-required",
-      "nextAction": "Webgains-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Audio & Musik priorisieren.",
-      "applicationDraft": null
-    },
-    {
-      "rank": 11,
+      "rank": 14,
       "network": "Awin",
       "brand": "Dyson DE",
       "category": "Technik & Computer",
@@ -153,7 +192,7 @@
       "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Dyson DE redaktionell passend im Bereich Technik & Computer einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung."
     },
     {
-      "rank": 12,
+      "rank": 15,
       "network": "Awin",
       "brand": "Lidl DE",
       "category": "Haushalt & Alltag",
@@ -166,7 +205,7 @@
       "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Lidl DE redaktionell passend im Bereich Haushalt & Alltag einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung."
     },
     {
-      "rank": 13,
+      "rank": 16,
       "network": "Awin",
       "brand": "MSI DE",
       "category": "Technik & Computer",
@@ -179,7 +218,7 @@
       "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten MSI DE redaktionell passend im Bereich Technik & Computer einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung."
     },
     {
-      "rank": 14,
+      "rank": 17,
       "network": "Awin",
       "brand": "PremiumSIM DE",
       "category": "Technik & Computer",
@@ -192,7 +231,7 @@
       "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten PremiumSIM DE redaktionell passend im Bereich Technik & Computer einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung."
     },
     {
-      "rank": 15,
+      "rank": 18,
       "network": "Awin",
       "brand": "Samsung Shop DE",
       "category": "Technik & Computer",
@@ -205,7 +244,7 @@
       "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Samsung Shop DE redaktionell passend im Bereich Technik & Computer einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung."
     },
     {
-      "rank": 16,
+      "rank": 19,
       "network": "Awin",
       "brand": "Sony DE",
       "category": "Technik & Computer",
@@ -216,45 +255,6 @@
       "actionType": "application-review",
       "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
       "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Sony DE redaktionell passend im Bereich Technik & Computer einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung."
-    },
-    {
-      "rank": 17,
-      "network": "Daisycon",
-      "brand": "Daisycon Marketplace",
-      "category": "Haushalt & Alltag",
-      "priority": "mittel",
-      "score": 40,
-      "kind": "marketplace-search",
-      "status": "connection-required",
-      "actionType": "connection-required",
-      "nextAction": "Daisycon-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Haushalt & Alltag priorisieren.",
-      "applicationDraft": null
-    },
-    {
-      "rank": 18,
-      "network": "Tradedoubler",
-      "brand": "Tradedoubler Marketplace",
-      "category": "Haushalt & Alltag",
-      "priority": "mittel",
-      "score": 40,
-      "kind": "marketplace-search",
-      "status": "connection-required",
-      "actionType": "connection-required",
-      "nextAction": "Tradedoubler-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Haushalt & Alltag priorisieren.",
-      "applicationDraft": null
-    },
-    {
-      "rank": 19,
-      "network": "Webgains",
-      "brand": "Webgains Marketplace",
-      "category": "Haushalt & Alltag",
-      "priority": "mittel",
-      "score": 40,
-      "kind": "marketplace-search",
-      "status": "connection-required",
-      "actionType": "connection-required",
-      "nextAction": "Webgains-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Haushalt & Alltag priorisieren.",
-      "applicationDraft": null
     },
     {
       "rank": 20,
@@ -283,12 +283,12 @@
       "brand": "Daisycon Marketplace",
       "category": "Technik & Computer",
       "priority": "hoch",
-      "score": 119,
+      "score": 152,
       "status": "connection-required",
       "kind": "marketplace-search",
       "nextAction": "Daisycon-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Technik & Computer priorisieren.",
       "applicationDraft": null,
-      "reason": "89 veröffentlichte Angebotslotse-Angebote in dieser Kategorie.",
+      "reason": "122 veröffentlichte Angebotslotse-Angebote in dieser Kategorie.",
       "reference": "electronics, computer, hardware, mobile, smart home"
     },
     {
@@ -296,12 +296,12 @@
       "brand": "Tradedoubler Marketplace",
       "category": "Technik & Computer",
       "priority": "hoch",
-      "score": 119,
+      "score": 152,
       "status": "connection-required",
       "kind": "marketplace-search",
       "nextAction": "Tradedoubler-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Technik & Computer priorisieren.",
       "applicationDraft": null,
-      "reason": "89 veröffentlichte Angebotslotse-Angebote in dieser Kategorie.",
+      "reason": "122 veröffentlichte Angebotslotse-Angebote in dieser Kategorie.",
       "reference": "electronics, computer, hardware, mobile, smart home"
     },
     {
@@ -309,13 +309,52 @@
       "brand": "Webgains Marketplace",
       "category": "Technik & Computer",
       "priority": "hoch",
-      "score": 119,
+      "score": 152,
       "status": "connection-required",
       "kind": "marketplace-search",
       "nextAction": "Webgains-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Technik & Computer priorisieren.",
       "applicationDraft": null,
-      "reason": "89 veröffentlichte Angebotslotse-Angebote in dieser Kategorie.",
+      "reason": "122 veröffentlichte Angebotslotse-Angebote in dieser Kategorie.",
       "reference": "electronics, computer, hardware, mobile, smart home"
+    },
+    {
+      "network": "Daisycon",
+      "brand": "Daisycon Marketplace",
+      "category": "Audio & Musik",
+      "priority": "hoch",
+      "score": 106,
+      "status": "connection-required",
+      "kind": "marketplace-search",
+      "nextAction": "Daisycon-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Audio & Musik priorisieren.",
+      "applicationDraft": null,
+      "reason": "76 veröffentlichte Angebotslotse-Angebote in dieser Kategorie.",
+      "reference": "audio, music, headphones, microphone, recording"
+    },
+    {
+      "network": "Tradedoubler",
+      "brand": "Tradedoubler Marketplace",
+      "category": "Audio & Musik",
+      "priority": "hoch",
+      "score": 106,
+      "status": "connection-required",
+      "kind": "marketplace-search",
+      "nextAction": "Tradedoubler-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Audio & Musik priorisieren.",
+      "applicationDraft": null,
+      "reason": "76 veröffentlichte Angebotslotse-Angebote in dieser Kategorie.",
+      "reference": "audio, music, headphones, microphone, recording"
+    },
+    {
+      "network": "Webgains",
+      "brand": "Webgains Marketplace",
+      "category": "Audio & Musik",
+      "priority": "hoch",
+      "score": 106,
+      "status": "connection-required",
+      "kind": "marketplace-search",
+      "nextAction": "Webgains-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Audio & Musik priorisieren.",
+      "applicationDraft": null,
+      "reason": "76 veröffentlichte Angebotslotse-Angebote in dieser Kategorie.",
+      "reference": "audio, music, headphones, microphone, recording"
     },
     {
       "network": "Awin",
@@ -329,6 +368,45 @@
       "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Bosch Hausgeräte DE redaktionell passend im Bereich Technik & Computer einbinden. Bei Awin sind aktuell 5 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
       "reason": "passt zu Technik & Computer, strategisch relevante Marke, 5 aktive DE-Aktionen, Awin Index 50.2, Approval 98.79%, EPC 0.26",
       "reference": 102205
+    },
+    {
+      "network": "Daisycon",
+      "brand": "Daisycon Marketplace",
+      "category": "Haushalt & Alltag",
+      "priority": "hoch",
+      "score": 83,
+      "status": "connection-required",
+      "kind": "marketplace-search",
+      "nextAction": "Daisycon-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Haushalt & Alltag priorisieren.",
+      "applicationDraft": null,
+      "reason": "53 veröffentlichte Angebotslotse-Angebote in dieser Kategorie.",
+      "reference": "home, appliances, kitchen, garden, DIY"
+    },
+    {
+      "network": "Tradedoubler",
+      "brand": "Tradedoubler Marketplace",
+      "category": "Haushalt & Alltag",
+      "priority": "hoch",
+      "score": 83,
+      "status": "connection-required",
+      "kind": "marketplace-search",
+      "nextAction": "Tradedoubler-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Haushalt & Alltag priorisieren.",
+      "applicationDraft": null,
+      "reason": "53 veröffentlichte Angebotslotse-Angebote in dieser Kategorie.",
+      "reference": "home, appliances, kitchen, garden, DIY"
+    },
+    {
+      "network": "Webgains",
+      "brand": "Webgains Marketplace",
+      "category": "Haushalt & Alltag",
+      "priority": "hoch",
+      "score": 83,
+      "status": "connection-required",
+      "kind": "marketplace-search",
+      "nextAction": "Webgains-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Haushalt & Alltag priorisieren.",
+      "applicationDraft": null,
+      "reason": "53 veröffentlichte Angebotslotse-Angebote in dieser Kategorie.",
+      "reference": "home, appliances, kitchen, garden, DIY"
     },
     {
       "network": "Awin",
@@ -368,45 +446,6 @@
       "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten bosch Tiernahrung DE redaktionell passend im Bereich Weitere einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
       "reason": "strategisch relevante Marke, Awin Index 92.12, Approval 100%, EPC 1.04",
       "reference": 84955
-    },
-    {
-      "network": "Daisycon",
-      "brand": "Daisycon Marketplace",
-      "category": "Audio & Musik",
-      "priority": "mittel",
-      "score": 46,
-      "status": "connection-required",
-      "kind": "marketplace-search",
-      "nextAction": "Daisycon-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Audio & Musik priorisieren.",
-      "applicationDraft": null,
-      "reason": "26 veröffentlichte Angebotslotse-Angebote in dieser Kategorie.",
-      "reference": "audio, music, headphones, microphone, recording"
-    },
-    {
-      "network": "Tradedoubler",
-      "brand": "Tradedoubler Marketplace",
-      "category": "Audio & Musik",
-      "priority": "mittel",
-      "score": 46,
-      "status": "connection-required",
-      "kind": "marketplace-search",
-      "nextAction": "Tradedoubler-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Audio & Musik priorisieren.",
-      "applicationDraft": null,
-      "reason": "26 veröffentlichte Angebotslotse-Angebote in dieser Kategorie.",
-      "reference": "audio, music, headphones, microphone, recording"
-    },
-    {
-      "network": "Webgains",
-      "brand": "Webgains Marketplace",
-      "category": "Audio & Musik",
-      "priority": "mittel",
-      "score": 46,
-      "status": "connection-required",
-      "kind": "marketplace-search",
-      "nextAction": "Webgains-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Audio & Musik priorisieren.",
-      "applicationDraft": null,
-      "reason": "26 veröffentlichte Angebotslotse-Angebote in dieser Kategorie.",
-      "reference": "audio, music, headphones, microphone, recording"
     },
     {
       "network": "Awin",
@@ -485,45 +524,6 @@
       "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Sony DE redaktionell passend im Bereich Technik & Computer einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
       "reason": "passt zu Technik & Computer, strategisch relevante Marke",
       "reference": 34015
-    },
-    {
-      "network": "Daisycon",
-      "brand": "Daisycon Marketplace",
-      "category": "Haushalt & Alltag",
-      "priority": "mittel",
-      "score": 40,
-      "status": "connection-required",
-      "kind": "marketplace-search",
-      "nextAction": "Daisycon-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Haushalt & Alltag priorisieren.",
-      "applicationDraft": null,
-      "reason": "20 veröffentlichte Angebotslotse-Angebote in dieser Kategorie.",
-      "reference": "home, appliances, kitchen, garden, DIY"
-    },
-    {
-      "network": "Tradedoubler",
-      "brand": "Tradedoubler Marketplace",
-      "category": "Haushalt & Alltag",
-      "priority": "mittel",
-      "score": 40,
-      "status": "connection-required",
-      "kind": "marketplace-search",
-      "nextAction": "Tradedoubler-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Haushalt & Alltag priorisieren.",
-      "applicationDraft": null,
-      "reason": "20 veröffentlichte Angebotslotse-Angebote in dieser Kategorie.",
-      "reference": "home, appliances, kitchen, garden, DIY"
-    },
-    {
-      "network": "Webgains",
-      "brand": "Webgains Marketplace",
-      "category": "Haushalt & Alltag",
-      "priority": "mittel",
-      "score": 40,
-      "status": "connection-required",
-      "kind": "marketplace-search",
-      "nextAction": "Webgains-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Haushalt & Alltag priorisieren.",
-      "applicationDraft": null,
-      "reason": "20 veröffentlichte Angebotslotse-Angebote in dieser Kategorie.",
-      "reference": "home, appliances, kitchen, garden, DIY"
     },
     {
       "network": "Awin",
@@ -1050,78 +1050,39 @@
       "brand": "Daisycon Marketplace",
       "category": "Freizeit",
       "priority": "niedrig",
-      "score": 16,
+      "score": 11,
       "status": "connection-required",
       "kind": "marketplace-search",
       "nextAction": "Daisycon-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Freizeit priorisieren.",
       "applicationDraft": null,
-      "reason": "6 veröffentlichte Angebotslotse-Angebote in dieser Kategorie.",
+      "reason": "1 veröffentlichte Angebotslotse-Angebote in dieser Kategorie.",
       "reference": "travel, outdoor, hobby, tickets"
-    },
-    {
-      "network": "Daisycon",
-      "brand": "Daisycon Marketplace",
-      "category": "Mode & Sport",
-      "priority": "niedrig",
-      "score": 16,
-      "status": "connection-required",
-      "kind": "marketplace-search",
-      "nextAction": "Daisycon-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Mode & Sport priorisieren.",
-      "applicationDraft": null,
-      "reason": "6 veröffentlichte Angebotslotse-Angebote in dieser Kategorie.",
-      "reference": "fashion, sportswear, fitness, shoes"
     },
     {
       "network": "Tradedoubler",
       "brand": "Tradedoubler Marketplace",
       "category": "Freizeit",
       "priority": "niedrig",
-      "score": 16,
+      "score": 11,
       "status": "connection-required",
       "kind": "marketplace-search",
       "nextAction": "Tradedoubler-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Freizeit priorisieren.",
       "applicationDraft": null,
-      "reason": "6 veröffentlichte Angebotslotse-Angebote in dieser Kategorie.",
+      "reason": "1 veröffentlichte Angebotslotse-Angebote in dieser Kategorie.",
       "reference": "travel, outdoor, hobby, tickets"
-    },
-    {
-      "network": "Tradedoubler",
-      "brand": "Tradedoubler Marketplace",
-      "category": "Mode & Sport",
-      "priority": "niedrig",
-      "score": 16,
-      "status": "connection-required",
-      "kind": "marketplace-search",
-      "nextAction": "Tradedoubler-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Mode & Sport priorisieren.",
-      "applicationDraft": null,
-      "reason": "6 veröffentlichte Angebotslotse-Angebote in dieser Kategorie.",
-      "reference": "fashion, sportswear, fitness, shoes"
     },
     {
       "network": "Webgains",
       "brand": "Webgains Marketplace",
       "category": "Freizeit",
       "priority": "niedrig",
-      "score": 16,
+      "score": 11,
       "status": "connection-required",
       "kind": "marketplace-search",
       "nextAction": "Webgains-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Freizeit priorisieren.",
       "applicationDraft": null,
-      "reason": "6 veröffentlichte Angebotslotse-Angebote in dieser Kategorie.",
+      "reason": "1 veröffentlichte Angebotslotse-Angebote in dieser Kategorie.",
       "reference": "travel, outdoor, hobby, tickets"
-    },
-    {
-      "network": "Webgains",
-      "brand": "Webgains Marketplace",
-      "category": "Mode & Sport",
-      "priority": "niedrig",
-      "score": 16,
-      "status": "connection-required",
-      "kind": "marketplace-search",
-      "nextAction": "Webgains-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Mode & Sport priorisieren.",
-      "applicationDraft": null,
-      "reason": "6 veröffentlichte Angebotslotse-Angebote in dieser Kategorie.",
-      "reference": "fashion, sportswear, fitness, shoes"
     }
   ]
 }
