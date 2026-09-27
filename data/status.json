@@ -1,12 +1,12 @@
 {
   "state": "ok",
-  "lastSuccessfulUpdate": "2026-09-27T16:04:35.404Z",
+  "lastSuccessfulUpdate": "2026-09-27T16:16:41.990Z",
   "activeOffers": 479,
   "added": 0,
-  "removed": 330,
-  "archivedThisRun": 330,
+  "removed": 0,
+  "archivedThisRun": 0,
   "archivedTotal": 330,
-  "filteredForeignLocale": 330,
+  "filteredForeignLocale": 0,
   "invalidLinks": 0,
   "apiErrors": 0,
   "sources": {

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-27T16:04:35.432Z",
+  "generatedAt": "2026-09-27T16:16:42.034Z",
   "newAwinPrograms": 0,
   "newImpactPrograms": 0,
   "newDaisyconPrograms": 0,
@@ -23,7 +23,7 @@
   "priceChanges": 0,
   "expiredOffers": 0,
   "expiredCoupons": 0,
-  "filteredForeignLocale": 330,
+  "filteredForeignLocale": 0,
   "totalProducts": 252,
   "productsBySource": {
     "Awin": 252
@@ -117,7 +117,7 @@
       "rejectionReasons": {}
     }
   ],
-  "quarantinedRecords": 460,
+  "quarantinedRecords": 130,
   "dailyDeal": "12f05c88bb4138a2",
   "dailyHighlights": [
     "12f05c88bb4138a2",
