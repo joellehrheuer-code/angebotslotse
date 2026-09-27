@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-27T14:28:53.749Z",
+  "generatedAt": "2026-09-27T14:36:50.373Z",
   "scope": "Automatisch aus Programminventar, DE-Angebotsabdeckung und verfügbaren Netzwerk-/Feed-Signalen erzeugt.",
   "automation": {
     "discovery": "automatic",
@@ -1777,7 +1777,8 @@
         "action": "Tradedoubler-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Freizeit priorisieren."
       }
     ],
-    "applicationApi": "supported-review-required"
+    "applicationApi": "not-verified",
+    "marketplaceSubmission": "dashboard-review-required"
   },
   "webgains": {
     "status": "disabled",
@@ -1856,6 +1857,8 @@
         "action": "Webgains-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Freizeit priorisieren."
       }
     ],
-    "membershipApi": "supported-review-required"
+    "membershipApi": "documented",
+    "marketplaceSubmission": "human-review-required",
+    "applicationTermsRequireApproval": true
   }
 }

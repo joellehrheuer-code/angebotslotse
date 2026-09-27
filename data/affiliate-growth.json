@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-27T14:28:53.750Z",
+  "generatedAt": "2026-09-27T14:36:50.375Z",
   "market": "DE",
   "publisherId": 3045061,
   "awin": {
@@ -3324,7 +3324,8 @@
         "action": "Tradedoubler-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Freizeit priorisieren."
       }
     ],
-    "publisherApiApplication": "supported-by-network-review-required"
+    "programJoinAutomation": "not-verified",
+    "nextStep": "Programmsuche/Beitritt bis zu einem dokumentierten Join-Endpunkt im Publisher-Dashboard prüfen."
   },
   "webgains": {
     "state": "disabled",
@@ -3403,7 +3404,9 @@
         "action": "Webgains-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Freizeit priorisieren."
       }
     ],
-    "programMembershipApi": "supported-by-network-review-required"
+    "programMembershipApi": "documented",
+    "applicationSubmission": "review-required",
+    "reason": "Webgains dokumentiert Program-Mitgliedschaften per API; beim Beitritt müssen programmspezifische Bedingungen akzeptiert werden."
   },
   "publication": {
     "offers": 248,
