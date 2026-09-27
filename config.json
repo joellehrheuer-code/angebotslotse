@@ -5,6 +5,11 @@
   "marketCountry": "DE",
   "maxOffers": 1000,
   "staleAfterHours": 36,
+  "supabase": {
+    "url": "https://asrklnfcwtgihvyfjiww.supabase.co",
+    "publishableKey": "sb_publishable_Zi5LWY0YvHbDFIL6sZOkzQ_vwFYVY0m",
+    "googleAuthEnabled": false
+  },
   "categories": {
     "technik": ["elektronik", "technik", "mobile", "smartphone", "tv"],
     "gaming": ["gaming", "konsole", "playstation", "xbox", "nintendo"],

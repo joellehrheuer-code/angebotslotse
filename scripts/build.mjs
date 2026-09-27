@@ -62,13 +62,13 @@ const shopPageByName=new Map(shopGroups.map(([name])=>[name,shopSlug(name)]));
 
 const navGroups = [
   ["Angebote", [["Tages-Highlights","/#tages-highlights"],["Neu","/neu.html"],["Endet bald","/endet-bald.html"],["Top Rabatte","/top-rabatte.html"],["Rabattcodes","/rabattcodes/"],["Weitere Kategorien","/kategorien.html"]]],
-  ["Entdecken", [["Dauerangebote","/#dauerangebote"],["Shops","/shops.html"],["Merkliste","/merkliste.html"],["Partner","/#partner"],["Newsletter","/#newsletter"]]],
+  ["Entdecken", [["Dauerangebote","/#dauerangebote"],["Shops","/shops.html"],["Merkliste","/merkliste.html"],["Konto","/konto.html"],["Partner","/#partner"],["Newsletter","/#newsletter"]]],
   ["Joel / Community", [["Social Media","/#projekte"],["Discord",creatorByName.get("discord")?.url||"/#projekte",true],["Bücher","/buecher.html"],["Merch","/merch.html"]]],
   ["Service & Rechtliches", [["Feedback / Kontakt","/kontakt.html"],["Über Angebotslotse","/ueber.html"],["Status","/status.html"],["Affiliate-Hinweis","/affiliate.html"],["Datenschutz","/datenschutz.html"],["Impressum","/impressum.html"]]]
 ];
 const socialHeaderEntries=creators.entries.filter(c=>["instagram","tiktok","youtube","twitch","spotify"].includes(c.name.toLowerCase()));
 
-const nav = `<header class="site-header"><div class="header-row"><a class="brand" href="${url("/")}"><img class="brand-logo" src="${url("/favicon.svg")}" alt=""><b>Angebotslotse</b></a><form class="global-search" action="${url("/suche.html")}" role="search"><label class="sr-only" for="global-search">Produkt, Marke, Spiel oder Shop suchen</label><input id="global-search" name="suche" type="search" placeholder="Produkt, Marke, Spiel oder Shop suchen …" autocomplete="off"><button type="submit" aria-label="Suchen">⌕</button></form><div class="header-links"><a href="${url("/#aktuelle-deals")}">Deals</a><a href="${url("/kategorien.html")}">Kategorien</a><a href="${url("/shops.html")}">Shops</a><a href="${url("/merkliste.html")}">Merkliste <span data-watch-count hidden></span></a><a href="${url("/#projekte")}">Creator</a><a href="${url("/gaming.html")}">Gaming</a><a href="${url("/top-rabatte.html")}">% Angebote</a></div><div class="header-social" aria-label="Joels echte Kanäle">${socialHeaderEntries.map(c=>`<a href="${esc(c.url)}" rel="me noopener" title="${esc(c.name)}">${esc(c.name.slice(0,2))}</a>`).join("")}</div><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav"><span></span><span></span><span></span><i class="sr-only">Menü öffnen</i></button></div><nav id="main-nav" aria-label="Hauptnavigation"><div class="nav-panel">${navGroups.map(([title,links])=>`<section><strong>${title}</strong>${links.map(([name,href,external])=>`<a href="${external?esc(href):url(href)}"${external?' rel="me noopener"':""}>${esc(name)}</a>`).join("")}</section>`).join("")}</div></nav></header>`;
+const nav = `<header class="site-header"><div class="header-row"><a class="brand" href="${url("/")}"><img class="brand-logo" src="${url("/favicon.svg")}" alt=""><b>Angebotslotse</b></a><form class="global-search" action="${url("/suche.html")}" role="search"><label class="sr-only" for="global-search">Produkt, Marke, Spiel oder Shop suchen</label><input id="global-search" name="suche" type="search" placeholder="Produkt, Marke, Spiel oder Shop suchen …" autocomplete="off"><button type="submit" aria-label="Suchen">⌕</button></form><div class="header-links"><a href="${url("/#aktuelle-deals")}">Deals</a><a href="${url("/kategorien.html")}">Kategorien</a><a href="${url("/shops.html")}">Shops</a><a href="${url("/merkliste.html")}">Merkliste <span data-watch-count hidden></span></a><a href="${url("/konto.html")}">Konto</a><a href="${url("/#projekte")}">Creator</a><a href="${url("/gaming.html")}">Gaming</a><a href="${url("/top-rabatte.html")}">% Angebote</a></div><div class="header-social" aria-label="Joels echte Kanäle">${socialHeaderEntries.map(c=>`<a href="${esc(c.url)}" rel="me noopener" title="${esc(c.name)}">${esc(c.name.slice(0,2))}</a>`).join("")}</div><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav"><span></span><span></span><span></span><i class="sr-only">Menü öffnen</i></button></div><nav id="main-nav" aria-label="Hauptnavigation"><div class="nav-panel">${navGroups.map(([title,links])=>`<section><strong>${title}</strong>${links.map(([name,href,external])=>`<a href="${external?esc(href):url(href)}"${external?' rel="me noopener"':""}>${esc(name)}</a>`).join("")}</section>`).join("")}</div></nav></header>`;
 const footer = `<footer><div><a class="brand footer-brand" href="${url("/")}"><img class="brand-logo" src="${url("/favicon.svg")}" alt=""><b>Angebotslotse</b></a><p>Echte Angebote aus erlaubten Quellen. Transparent als Werbung gekennzeichnet.</p></div><nav aria-label="Rechtliches"><a href="${url("/affiliate.html")}">Affiliate-Hinweis</a><a href="${url("/datenschutz.html")}">Datenschutz</a><a href="${url("/impressum.html")}">Impressum</a><a href="${url("/kontakt.html")}">Kontakt</a><a href="${url("/status.html")}">Status</a></nav></footer>`;
 function page({title,description,body,canonical="/",schema=null,socialImage=true,socialImageUrl=url("/og.png"),socialImageAlt="Angebotslotse – echte Deals klar eingeordnet",indexable=true}) {
   const clipText=(value,max)=>{const clean=String(value||"").replace(/\s+/g," ").trim();if(clean.length<=max)return clean;const slice=clean.slice(0,max-1);const boundary=slice.lastIndexOf(" ");const clipped=(boundary>=Math.floor(max*.68)?slice.slice(0,boundary):slice).replace(/[\s,;:.-]+$/,"");return clipped+"…";};
@@ -171,6 +171,55 @@ await fs.writeFile(path.join(out,"suche.html"),page({title:"Angebote durchsuchen
 
 const watchlistBody='<section class="listing watchlist-page"><span class="eyebrow">Nur auf diesem Gerät gespeichert</span><h1>Merkliste & Wunschpreise</h1><p class="category-intro">Gemerkte Angebote und Wunschpreise werden ausschließlich im lokalen Browser gespeichert. Beim Öffnen dieser Seite werden sie mit dem aktuell eingebauten Angebotsstand verglichen.</p><div class="watchlist-summary" data-watch-summary></div><div class="watchlist-grid" data-watchlist></div><div class="empty" data-watch-empty><h2>Noch nichts gemerkt</h2><p>Öffne ein Angebot und speichere es mit oder ohne Wunschpreis.</p><a class="button primary" href="'+url("/suche.html")+'">Angebote durchsuchen</a></div><script type="application/json" id="watch-catalog">'+json(watchCatalog)+'</script></section>';
 await fs.writeFile(path.join(out,"merkliste.html"),page({title:"Merkliste & Wunschpreise",description:"Lokale Merkliste mit Wunschpreisen für Angebotslotse-Angebote.",canonical:"/merkliste.html",indexable:false,body:watchlistBody}));
+
+const authPublicConfig={
+  url:config.supabase?.url||"",
+  publishableKey:config.supabase?.publishableKey||"",
+  googleAuthEnabled:Boolean(config.supabase?.googleAuthEnabled)
+};
+const accountBody=`<section class="listing account-page" data-account-root>
+  <span class="eyebrow">Angebotslotse Konto</span>
+  <h1>Merkliste, Wunschpreise & Alarme überall dabei</h1>
+  <p class="category-intro">Ein Konto ist optional. Ohne Anmeldung bleibt deine lokale Merkliste erhalten. Mit Anmeldung kannst du sie sicher in deine persönliche Cloud-Merkliste übernehmen und später Preis- sowie Produktalarme nutzen.</p>
+  <div class="account-status" data-account-status aria-live="polite"></div>
+  <div class="account-grid">
+    <section class="account-card" data-account-signed-out>
+      <span class="eyebrow">Anmelden</span>
+      <h2>Login per E-Mail-Link</h2>
+      <p>Du bekommst einen einmaligen Anmeldelink. Angebotslotse speichert kein eigenes Passwort.</p>
+      <form data-email-login class="account-login-form">
+        <label>E-Mail-Adresse<input type="email" data-email-input autocomplete="email" required placeholder="name@beispiel.de"></label>
+        <button class="button primary" type="submit">Anmeldelink senden</button>
+      </form>
+      <button class="button account-google" type="button" data-google-login${authPublicConfig.googleAuthEnabled?"":" aria-disabled=\"true\""}>Mit Google anmelden</button>
+      <small>${authPublicConfig.googleAuthEnabled?"Google-Login ist aktiv.":"Google-Login ist technisch vorbereitet und wird nach Einrichtung des Google-OAuth-Clients freigeschaltet."}</small>
+    </section>
+    <section class="account-card" data-account-signed-in hidden>
+      <span class="eyebrow">Angemeldet</span>
+      <h2 data-user-email></h2>
+      <p><strong data-cloud-count>0</strong> Einträge liegen aktuell in deiner Cloud-Merkliste.</p>
+      <div class="account-actions">
+        <button class="button primary" type="button" data-sync-watchlist>Lokale Merkliste synchronisieren</button>
+        <a class="button" href="${url("/merkliste.html")}">Merkliste öffnen</a>
+        <button class="button" type="button" data-logout>Abmelden</button>
+      </div>
+      <p class="account-sync-status" data-sync-status aria-live="polite"></p>
+    </section>
+    <section class="account-card account-security-card">
+      <span class="eyebrow">Datenschutz</span>
+      <h2>Was im Konto gespeichert wird</h2>
+      <ul>
+        <li>gemerkte Angebots-IDs und Wunschpreise</li>
+        <li>deine selbst gewählten Alarmregeln</li>
+        <li>Benachrichtigungseinstellungen</li>
+      </ul>
+      <p>Käufe, Zahlungsdaten und Händlerkonten bleiben vollständig beim jeweiligen Anbieter. Angebotslotse ist nur Vermittler.</p>
+    </section>
+  </div>
+  <script>globalThis.ANGEBOTSLOTSE_AUTH_CONFIG=${json(authPublicConfig)};<\/script>
+  <script src="${url("/account-client.js")}" defer><\/script>
+</section>`;
+await fs.writeFile(path.join(out,"konto.html"),page({title:"Konto & Preisalarme",description:"Optionales Angebotslotse-Konto für Cloud-Merkliste, Wunschpreise und zukünftige Produktalarme.",canonical:"/konto.html",indexable:false,body:accountBody}));
 
 const shopIndexCards=shopGroups.map(([name,rows])=>{const slug=shopPageByName.get(name);const categoriesForShop=[...new Set(rows.map(row=>labels[row.category]||row.category))].slice(0,4);return `<a class="shop-card" href="${url(`/shops/${slug}.html`)}"><span class="eyebrow">Shop</span><strong>${esc(name)}</strong><b>${rows.length} aktive Angebote</b><small>${esc(categoriesForShop.join(" · "))}</small></a>`;}).join("");
 await fs.writeFile(path.join(out,"shops.html"),page({title:"Shops und Händler",description:"Händler mit mehreren aktuell veröffentlichten Angeboten im Angebotslotsen.",canonical:"/shops.html",body:`<section class="listing shops-page"><span class="eyebrow">${shopGroups.length} Händler mit eigener Übersicht</span><h1>Shops & Händler</h1><p class="category-intro">Eigene Shopseiten entstehen erst ab mindestens drei veröffentlichungsfähigen Angeboten. So vermeiden wir leere oder dünne Händlerseiten.</p><div class="shop-grid">${shopIndexCards}</div></section>`,schema:{"@context":"https://schema.org","@type":"ItemList",numberOfItems:shopGroups.length,itemListElement:shopGroups.map(([name],index)=>({"@type":"ListItem",position:index+1,name,url:`${base}/shops/${shopPageByName.get(name)}.html`}))}}));

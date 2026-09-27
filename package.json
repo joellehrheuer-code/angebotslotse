@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "update": "node scripts/update.mjs",
-    "build": "node scripts/build.mjs",
+    "build:client": "node scripts/build-account-client.mjs",
+    "build": "node scripts/build-account-client.mjs && node scripts/build.mjs",
     "validate": "node scripts/validate-build.mjs",
     "security": "node scripts/security-check.mjs",
     "seo": "node scripts/seo-audit.mjs",
@@ -13,5 +14,13 @@
     "report": "node scripts/report.mjs",
     "test": "node --test --test-concurrency=1"
   },
-  "engines": { "node": ">=20" }
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "2.117.2"
+  },
+  "devDependencies": {
+    "esbuild": "0.25.10"
+  }
 }
