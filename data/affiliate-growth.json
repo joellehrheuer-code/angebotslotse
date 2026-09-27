@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-27T01:56:31.766Z",
+  "generatedAt": "2026-09-27T02:08:46.434Z",
   "market": "DE",
   "publisherId": 3045061,
   "awin": {
@@ -2214,6 +2214,7 @@
     ],
     "discoveryOffers": 200,
     "discoveryError": null,
+    "detailsEnriched": 5,
     "opportunities": [
       {
         "brand": "Bosch Hausgeräte DE",
@@ -2221,7 +2222,7 @@
         "advertiserId": 102205,
         "status": "notjoined",
         "category": "Technik & Computer",
-        "score": 75,
+        "score": 98,
         "priority": "hoch",
         "activeDiscoveryOffers": 5,
         "offerExamples": [
@@ -2230,33 +2231,27 @@
           "Bosch Hausgeräte DE | MyUnlimited: Bis zu 30 % Sofortrabatt* sichern."
         ],
         "productFeed": false,
+        "metrics": {
+          "awinIndex": 50.2,
+          "epc": 0.26,
+          "conversionRate": 2.39,
+          "approvalPercentage": 98.79,
+          "validationDays": 55,
+          "averagePaymentTime": "76",
+          "commissionMin": null,
+          "commissionMax": null,
+          "commissionTypes": []
+        },
         "reasons": [
           "passt zu Technik & Computer",
           "strategisch relevante Marke",
-          "5 aktive DE-Aktionen"
+          "5 aktive DE-Aktionen",
+          "Awin Index 50.2",
+          "Approval 98.79%",
+          "EPC 0.26"
         ],
         "applicationRequired": true,
         "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Bosch Hausgeräte DE redaktionell passend im Bereich Technik & Computer einbinden. Bei Awin sind aktuell 5 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-        "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-        "automationState": "ready-for-review"
-      },
-      {
-        "brand": "adidas DE",
-        "network": "Awin",
-        "advertiserId": 77004,
-        "status": "notjoined",
-        "category": "Mode & Sport",
-        "score": 45,
-        "priority": "mittel",
-        "activeDiscoveryOffers": 0,
-        "offerExamples": [],
-        "productFeed": false,
-        "reasons": [
-          "passt zu Mode & Sport",
-          "strategisch relevante Marke"
-        ],
-        "applicationRequired": true,
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten adidas DE redaktionell passend im Bereich Mode & Sport einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
         "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
         "automationState": "ready-for-review"
       },
@@ -2266,17 +2261,98 @@
         "advertiserId": 14353,
         "status": "notjoined",
         "category": "Mode & Sport",
-        "score": 45,
+        "score": 70,
+        "priority": "hoch",
+        "activeDiscoveryOffers": 0,
+        "offerExamples": [],
+        "productFeed": false,
+        "metrics": {
+          "awinIndex": 59.65,
+          "epc": 0.11,
+          "conversionRate": 1.2,
+          "approvalPercentage": 91.35,
+          "validationDays": 34,
+          "averagePaymentTime": "59",
+          "commissionMin": null,
+          "commissionMax": null,
+          "commissionTypes": []
+        },
+        "reasons": [
+          "passt zu Mode & Sport",
+          "strategisch relevante Marke",
+          "Awin Index 59.65",
+          "Approval 91.35%",
+          "EPC 0.11"
+        ],
+        "applicationRequired": true,
+        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten DECATHLON DE redaktionell passend im Bereich Mode & Sport einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+        "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+        "automationState": "ready-for-review"
+      },
+      {
+        "brand": "adidas DE",
+        "network": "Awin",
+        "advertiserId": 77004,
+        "status": "notjoined",
+        "category": "Mode & Sport",
+        "score": 66,
         "priority": "mittel",
         "activeDiscoveryOffers": 0,
         "offerExamples": [],
         "productFeed": false,
+        "metrics": {
+          "awinIndex": 54.7,
+          "epc": 0.27,
+          "conversionRate": 2.75,
+          "approvalPercentage": 85.74,
+          "validationDays": 40,
+          "averagePaymentTime": "62",
+          "commissionMin": null,
+          "commissionMax": null,
+          "commissionTypes": []
+        },
         "reasons": [
           "passt zu Mode & Sport",
-          "strategisch relevante Marke"
+          "strategisch relevante Marke",
+          "Awin Index 54.7",
+          "Approval 85.74%",
+          "EPC 0.27"
         ],
         "applicationRequired": true,
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten DECATHLON DE redaktionell passend im Bereich Mode & Sport einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten adidas DE redaktionell passend im Bereich Mode & Sport einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+        "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+        "automationState": "ready-for-review"
+      },
+      {
+        "brand": "bosch Tiernahrung DE",
+        "network": "Awin",
+        "advertiserId": 84955,
+        "status": "notjoined",
+        "category": "Weitere",
+        "score": 56,
+        "priority": "mittel",
+        "activeDiscoveryOffers": 0,
+        "offerExamples": [],
+        "productFeed": false,
+        "metrics": {
+          "awinIndex": 92.12,
+          "epc": 1.04,
+          "conversionRate": 9.68,
+          "approvalPercentage": 100,
+          "validationDays": 4,
+          "averagePaymentTime": "27",
+          "commissionMin": null,
+          "commissionMax": null,
+          "commissionTypes": []
+        },
+        "reasons": [
+          "strategisch relevante Marke",
+          "Awin Index 92.12",
+          "Approval 100%",
+          "EPC 1.04"
+        ],
+        "applicationRequired": true,
+        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten bosch Tiernahrung DE redaktionell passend im Bereich Weitere einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
         "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
         "automationState": "ready-for-review"
       },
@@ -2291,6 +2367,17 @@
         "activeDiscoveryOffers": 0,
         "offerExamples": [],
         "productFeed": false,
+        "metrics": {
+          "awinIndex": null,
+          "epc": null,
+          "conversionRate": null,
+          "approvalPercentage": null,
+          "validationDays": null,
+          "averagePaymentTime": null,
+          "commissionMin": null,
+          "commissionMax": null,
+          "commissionTypes": []
+        },
         "reasons": [
           "passt zu Technik & Computer",
           "strategisch relevante Marke"
@@ -2311,6 +2398,17 @@
         "activeDiscoveryOffers": 0,
         "offerExamples": [],
         "productFeed": false,
+        "metrics": {
+          "awinIndex": null,
+          "epc": null,
+          "conversionRate": null,
+          "approvalPercentage": null,
+          "validationDays": null,
+          "averagePaymentTime": null,
+          "commissionMin": null,
+          "commissionMax": null,
+          "commissionTypes": []
+        },
         "reasons": [
           "passt zu Haushalt & Alltag",
           "strategisch relevante Marke"
@@ -2331,6 +2429,17 @@
         "activeDiscoveryOffers": 0,
         "offerExamples": [],
         "productFeed": false,
+        "metrics": {
+          "awinIndex": null,
+          "epc": null,
+          "conversionRate": null,
+          "approvalPercentage": null,
+          "validationDays": null,
+          "averagePaymentTime": null,
+          "commissionMin": null,
+          "commissionMax": null,
+          "commissionTypes": []
+        },
         "reasons": [
           "passt zu Technik & Computer",
           "strategisch relevante Marke"
@@ -2351,6 +2460,17 @@
         "activeDiscoveryOffers": 0,
         "offerExamples": [],
         "productFeed": false,
+        "metrics": {
+          "awinIndex": null,
+          "epc": null,
+          "conversionRate": null,
+          "approvalPercentage": null,
+          "validationDays": null,
+          "averagePaymentTime": null,
+          "commissionMin": null,
+          "commissionMax": null,
+          "commissionTypes": []
+        },
         "reasons": [
           "passt zu Technik & Computer",
           "strategisch relevante Marke"
@@ -2371,6 +2491,17 @@
         "activeDiscoveryOffers": 0,
         "offerExamples": [],
         "productFeed": false,
+        "metrics": {
+          "awinIndex": null,
+          "epc": null,
+          "conversionRate": null,
+          "approvalPercentage": null,
+          "validationDays": null,
+          "averagePaymentTime": null,
+          "commissionMin": null,
+          "commissionMax": null,
+          "commissionTypes": []
+        },
         "reasons": [
           "passt zu Technik & Computer",
           "strategisch relevante Marke"
@@ -2391,6 +2522,17 @@
         "activeDiscoveryOffers": 0,
         "offerExamples": [],
         "productFeed": false,
+        "metrics": {
+          "awinIndex": null,
+          "epc": null,
+          "conversionRate": null,
+          "approvalPercentage": null,
+          "validationDays": null,
+          "averagePaymentTime": null,
+          "commissionMin": null,
+          "commissionMax": null,
+          "commissionTypes": []
+        },
         "reasons": [
           "passt zu Technik & Computer",
           "strategisch relevante Marke"
@@ -2407,12 +2549,23 @@
         "status": "notjoined",
         "category": "Mode & Sport",
         "score": 36,
-        "priority": "mittel",
+        "priority": "niedrig",
         "activeDiscoveryOffers": 1,
         "offerExamples": [
           "Up to 50% off Outlet"
         ],
         "productFeed": false,
+        "metrics": {
+          "awinIndex": null,
+          "epc": null,
+          "conversionRate": null,
+          "approvalPercentage": null,
+          "validationDays": null,
+          "averagePaymentTime": null,
+          "commissionMin": null,
+          "commissionMax": null,
+          "commissionTypes": []
+        },
         "reasons": [
           "passt zu Mode & Sport",
           "1 aktive DE-Aktion"
@@ -2429,12 +2582,23 @@
         "status": "notjoined",
         "category": "Haushalt & Alltag",
         "score": 36,
-        "priority": "mittel",
+        "priority": "niedrig",
         "activeDiscoveryOffers": 1,
         "offerExamples": [
           "Flash-Sale-Angebote"
         ],
         "productFeed": false,
+        "metrics": {
+          "awinIndex": null,
+          "epc": null,
+          "conversionRate": null,
+          "approvalPercentage": null,
+          "validationDays": null,
+          "averagePaymentTime": null,
+          "commissionMin": null,
+          "commissionMax": null,
+          "commissionTypes": []
+        },
         "reasons": [
           "passt zu Haushalt & Alltag",
           "1 aktive DE-Aktion"
@@ -2451,10 +2615,21 @@
         "status": "pending",
         "category": "Mode & Sport",
         "score": 35,
-        "priority": "mittel",
+        "priority": "niedrig",
         "activeDiscoveryOffers": 0,
         "offerExamples": [],
         "productFeed": false,
+        "metrics": {
+          "awinIndex": null,
+          "epc": null,
+          "conversionRate": null,
+          "approvalPercentage": null,
+          "validationDays": null,
+          "averagePaymentTime": null,
+          "commissionMin": null,
+          "commissionMax": null,
+          "commissionTypes": []
+        },
         "reasons": [
           "passt zu Mode & Sport",
           "strategisch relevante Marke"
@@ -2475,6 +2650,17 @@
         "activeDiscoveryOffers": 0,
         "offerExamples": [],
         "productFeed": false,
+        "metrics": {
+          "awinIndex": null,
+          "epc": null,
+          "conversionRate": null,
+          "approvalPercentage": null,
+          "validationDays": null,
+          "averagePaymentTime": null,
+          "commissionMin": null,
+          "commissionMax": null,
+          "commissionTypes": []
+        },
         "reasons": [
           "passt zu Haushalt & Alltag"
         ],
@@ -2494,6 +2680,17 @@
         "activeDiscoveryOffers": 0,
         "offerExamples": [],
         "productFeed": false,
+        "metrics": {
+          "awinIndex": null,
+          "epc": null,
+          "conversionRate": null,
+          "approvalPercentage": null,
+          "validationDays": null,
+          "averagePaymentTime": null,
+          "commissionMin": null,
+          "commissionMax": null,
+          "commissionTypes": []
+        },
         "reasons": [
           "passt zu Mode & Sport"
         ],
@@ -2513,6 +2710,17 @@
         "activeDiscoveryOffers": 0,
         "offerExamples": [],
         "productFeed": false,
+        "metrics": {
+          "awinIndex": null,
+          "epc": null,
+          "conversionRate": null,
+          "approvalPercentage": null,
+          "validationDays": null,
+          "averagePaymentTime": null,
+          "commissionMin": null,
+          "commissionMax": null,
+          "commissionTypes": []
+        },
         "reasons": [
           "passt zu Mode & Sport"
         ],
@@ -2532,6 +2740,17 @@
         "activeDiscoveryOffers": 0,
         "offerExamples": [],
         "productFeed": false,
+        "metrics": {
+          "awinIndex": null,
+          "epc": null,
+          "conversionRate": null,
+          "approvalPercentage": null,
+          "validationDays": null,
+          "averagePaymentTime": null,
+          "commissionMin": null,
+          "commissionMax": null,
+          "commissionTypes": []
+        },
         "reasons": [
           "passt zu Freizeit"
         ],
@@ -2551,6 +2770,17 @@
         "activeDiscoveryOffers": 0,
         "offerExamples": [],
         "productFeed": false,
+        "metrics": {
+          "awinIndex": null,
+          "epc": null,
+          "conversionRate": null,
+          "approvalPercentage": null,
+          "validationDays": null,
+          "averagePaymentTime": null,
+          "commissionMin": null,
+          "commissionMax": null,
+          "commissionTypes": []
+        },
         "reasons": [
           "passt zu Mode & Sport"
         ],
@@ -2570,6 +2800,17 @@
         "activeDiscoveryOffers": 0,
         "offerExamples": [],
         "productFeed": false,
+        "metrics": {
+          "awinIndex": null,
+          "epc": null,
+          "conversionRate": null,
+          "approvalPercentage": null,
+          "validationDays": null,
+          "averagePaymentTime": null,
+          "commissionMin": null,
+          "commissionMax": null,
+          "commissionTypes": []
+        },
         "reasons": [
           "passt zu Mode & Sport"
         ],
@@ -2589,6 +2830,17 @@
         "activeDiscoveryOffers": 0,
         "offerExamples": [],
         "productFeed": false,
+        "metrics": {
+          "awinIndex": null,
+          "epc": null,
+          "conversionRate": null,
+          "approvalPercentage": null,
+          "validationDays": null,
+          "averagePaymentTime": null,
+          "commissionMin": null,
+          "commissionMax": null,
+          "commissionTypes": []
+        },
         "reasons": [
           "passt zu Technik & Computer"
         ],
@@ -2608,6 +2860,17 @@
         "activeDiscoveryOffers": 0,
         "offerExamples": [],
         "productFeed": false,
+        "metrics": {
+          "awinIndex": null,
+          "epc": null,
+          "conversionRate": null,
+          "approvalPercentage": null,
+          "validationDays": null,
+          "averagePaymentTime": null,
+          "commissionMin": null,
+          "commissionMax": null,
+          "commissionTypes": []
+        },
         "reasons": [
           "passt zu Technik & Computer"
         ],
@@ -2627,6 +2890,17 @@
         "activeDiscoveryOffers": 0,
         "offerExamples": [],
         "productFeed": false,
+        "metrics": {
+          "awinIndex": null,
+          "epc": null,
+          "conversionRate": null,
+          "approvalPercentage": null,
+          "validationDays": null,
+          "averagePaymentTime": null,
+          "commissionMin": null,
+          "commissionMax": null,
+          "commissionTypes": []
+        },
         "reasons": [
           "passt zu Haushalt & Alltag"
         ],
@@ -2646,6 +2920,17 @@
         "activeDiscoveryOffers": 0,
         "offerExamples": [],
         "productFeed": false,
+        "metrics": {
+          "awinIndex": null,
+          "epc": null,
+          "conversionRate": null,
+          "approvalPercentage": null,
+          "validationDays": null,
+          "averagePaymentTime": null,
+          "commissionMin": null,
+          "commissionMax": null,
+          "commissionTypes": []
+        },
         "reasons": [
           "passt zu Technik & Computer"
         ],
@@ -2665,6 +2950,17 @@
         "activeDiscoveryOffers": 0,
         "offerExamples": [],
         "productFeed": false,
+        "metrics": {
+          "awinIndex": null,
+          "epc": null,
+          "conversionRate": null,
+          "approvalPercentage": null,
+          "validationDays": null,
+          "averagePaymentTime": null,
+          "commissionMin": null,
+          "commissionMax": null,
+          "commissionTypes": []
+        },
         "reasons": [
           "passt zu Mode & Sport"
         ],
@@ -2684,30 +2980,22 @@
         "activeDiscoveryOffers": 0,
         "offerExamples": [],
         "productFeed": false,
+        "metrics": {
+          "awinIndex": null,
+          "epc": null,
+          "conversionRate": null,
+          "approvalPercentage": null,
+          "validationDays": null,
+          "averagePaymentTime": null,
+          "commissionMin": null,
+          "commissionMax": null,
+          "commissionTypes": []
+        },
         "reasons": [
           "passt zu Technik & Computer"
         ],
         "applicationRequired": true,
         "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten 7even DE redaktionell passend im Bereich Technik & Computer einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-        "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-        "automationState": "ready-for-review"
-      },
-      {
-        "brand": "A&M Angelsport DE",
-        "network": "Awin",
-        "advertiserId": 82131,
-        "status": "notjoined",
-        "category": "Mode & Sport",
-        "score": 30,
-        "priority": "niedrig",
-        "activeDiscoveryOffers": 0,
-        "offerExamples": [],
-        "productFeed": false,
-        "reasons": [
-          "passt zu Mode & Sport"
-        ],
-        "applicationRequired": true,
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten A&M Angelsport DE redaktionell passend im Bereich Mode & Sport einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
         "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
         "automationState": "ready-for-review"
       }

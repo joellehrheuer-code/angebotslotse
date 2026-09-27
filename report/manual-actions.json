@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-27T01:56:31.763Z",
+  "generatedAt": "2026-09-27T02:08:46.432Z",
   "actions": [
     {
       "id": "awin-datafeed-key",
@@ -23,22 +23,29 @@
       "id": "awin-apply-102205",
       "platform": "Awin",
       "action": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "reason": "Automatisch priorisiert (75 Punkte): passt zu Technik & Computer, strategisch relevante Marke, 5 aktive DE-Aktionen. Keine automatische Zustimmung zu Vertragsbedingungen.",
+      "reason": "Automatisch priorisiert (98 Punkte): passt zu Technik & Computer, strategisch relevante Marke, 5 aktive DE-Aktionen, Awin Index 50.2, Approval 98.79%, EPC 0.26. Keine automatische Zustimmung zu Vertragsbedingungen.",
       "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Bosch Hausgeräte DE redaktionell passend im Bereich Technik & Computer einbinden. Bei Awin sind aktuell 5 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung."
-    },
-    {
-      "id": "awin-apply-77004",
-      "platform": "Awin",
-      "action": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "reason": "Automatisch priorisiert (45 Punkte): passt zu Mode & Sport, strategisch relevante Marke. Keine automatische Zustimmung zu Vertragsbedingungen.",
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten adidas DE redaktionell passend im Bereich Mode & Sport einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung."
     },
     {
       "id": "awin-apply-14353",
       "platform": "Awin",
       "action": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "reason": "Automatisch priorisiert (45 Punkte): passt zu Mode & Sport, strategisch relevante Marke. Keine automatische Zustimmung zu Vertragsbedingungen.",
+      "reason": "Automatisch priorisiert (70 Punkte): passt zu Mode & Sport, strategisch relevante Marke, Awin Index 59.65, Approval 91.35%, EPC 0.11. Keine automatische Zustimmung zu Vertragsbedingungen.",
       "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten DECATHLON DE redaktionell passend im Bereich Mode & Sport einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung."
+    },
+    {
+      "id": "awin-apply-77004",
+      "platform": "Awin",
+      "action": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "reason": "Automatisch priorisiert (66 Punkte): passt zu Mode & Sport, strategisch relevante Marke, Awin Index 54.7, Approval 85.74%, EPC 0.27. Keine automatische Zustimmung zu Vertragsbedingungen.",
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten adidas DE redaktionell passend im Bereich Mode & Sport einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung."
+    },
+    {
+      "id": "awin-apply-84955",
+      "platform": "Awin",
+      "action": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "reason": "Automatisch priorisiert (56 Punkte): strategisch relevante Marke, Awin Index 92.12, Approval 100%, EPC 1.04. Keine automatische Zustimmung zu Vertragsbedingungen.",
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten bosch Tiernahrung DE redaktionell passend im Bereich Weitere einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung."
     },
     {
       "id": "awin-apply-12802",
@@ -67,13 +74,6 @@
       "action": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
       "reason": "Automatisch priorisiert (45 Punkte): passt zu Technik & Computer, strategisch relevante Marke. Keine automatische Zustimmung zu Vertragsbedingungen.",
       "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten PremiumSIM DE redaktionell passend im Bereich Technik & Computer einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung."
-    },
-    {
-      "id": "awin-apply-14815",
-      "platform": "Awin",
-      "action": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "reason": "Automatisch priorisiert (45 Punkte): passt zu Technik & Computer, strategisch relevante Marke. Keine automatische Zustimmung zu Vertragsbedingungen.",
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Samsung Shop DE redaktionell passend im Bereich Technik & Computer einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung."
     }
   ]
 }
