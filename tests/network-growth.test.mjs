@@ -61,3 +61,20 @@ test("Daisycon-Review erzwingt manuelle Prüfung bei Terms oder Fragebogen", () 
   assert.equal(joined.applicationPossible,false);
   assert.ok(rows.every(row=>row.automaticSubmissionAllowed===false));
 });
+
+
+test("Daisycon-KPIs und Provisionen erhöhen die Priorität ohne Auto-Beitritt", () => {
+  const rows=rankDaisyconPrograms([
+    {id:10,name:"Gaming Demo",status:"available",category:"electronics"},
+    {id:11,name:"Gaming Demo 2",status:"available",category:"electronics"}
+  ],{
+    "10":{relationship:"not-subscribed",score:{score:70},commissions:3,accessRulesPresent:true,agreementTermsPresent:false,questionnaires:0},
+    "11":{relationship:"not-subscribed",score:null,commissions:0,accessRulesPresent:false,agreementTermsPresent:false,questionnaires:0}
+  });
+  const enriched=rows.find(row=>row.programId===10);
+  const plain=rows.find(row=>row.programId===11);
+  assert.ok(enriched.score>plain.score);
+  assert.equal(enriched.metrics.networkScore,70);
+  assert.equal(enriched.metrics.commissionEntries,3);
+  assert.equal(enriched.automaticSubmissionAllowed,false);
+});

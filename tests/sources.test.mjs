@@ -196,6 +196,9 @@ test("Daisycon-Review prüft Subscription, Agreement Terms und Fragebogen ohne A
     if(href.includes("/subscriptions")) return {ok:true,status:200,json:async()=>({results:[{media_id:9,status:"not-subscribed"}]})};
     if(href.includes("/agreementterms")) return {ok:true,status:200,json:async()=>({id:11,title:"Terms"})};
     if(href.includes("/questionnaires")) return {ok:true,status:200,json:async()=>({results:[{id:22,program_id:77}]})};
+    if(href.includes("/score")) return {ok:true,status:200,json:async()=>({score:72})};
+    if(href.includes("/commissions")) return {ok:true,status:200,json:async()=>({results:[{id:1},{id:2}]})};
+    if(href.includes("/access-rules")) return {ok:true,status:200,json:async()=>({media_types:["website"]})};
     throw new Error("unexpected URL "+href);
   };
   const review=await fetchDaisyconProgramReview({
@@ -206,5 +209,11 @@ test("Daisycon-Review prüft Subscription, Agreement Terms und Fragebogen ohne A
   assert.equal(review.questionnaires,1);
   assert.equal(review.reviewRequired,true);
   assert.equal(review.automaticSubmissionAllowed,false);
-  assert.equal(calls.length,3);
+  assert.equal(review.score.score,72);
+  assert.equal(review.commissions,2);
+  assert.equal(review.accessRulesPresent,true);
+  assert.equal(calls.length,6);
+  assert.ok(calls.some(url=>url.includes("/score")));
+  assert.ok(calls.some(url=>url.includes("/commissions")));
+  assert.ok(calls.some(url=>url.includes("/access-rules")));
 });

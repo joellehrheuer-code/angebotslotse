@@ -145,11 +145,18 @@ export async function fetchDaisyconProgramReview({
   subscriptionsUrl.searchParams.set("page", "1");
   subscriptionsUrl.searchParams.set("per", "100");
   const termsUrl = new URL(base + "/agreementterms");
-  const [subscriptionsPayload, agreementTerms] = await Promise.all([
+  const scoreUrl = new URL(base + "/score");
+  const commissionsUrl = new URL(base + "/commissions");
+  const accessRulesUrl = new URL(base + "/access-rules");
+  const [subscriptionsPayload, agreementTerms, score, commissionsPayload, accessRules] = await Promise.all([
     requestPayload(subscriptionsUrl, accessToken, fetchImpl, "program subscriptions"),
-    requestPayload(termsUrl, accessToken, fetchImpl, "program agreement terms")
+    requestPayload(termsUrl, accessToken, fetchImpl, "program agreement terms"),
+    requestPayload(scoreUrl, accessToken, fetchImpl, "program score").catch(() => null),
+    requestPayload(commissionsUrl, accessToken, fetchImpl, "program commissions").catch(() => []),
+    requestPayload(accessRulesUrl, accessToken, fetchImpl, "program access rules").catch(() => null)
   ]);
   const subscriptions = rowsOf(subscriptionsPayload);
+  const commissions = rowsOf(commissionsPayload);
   let questionnaires = [];
   if (mediaId) {
     const questionnairesUrl = new URL(API + "/publishers/" + encodeURIComponent(publisherId) + "/media/" + encodeURIComponent(mediaId) + "/questionnaires");
@@ -182,6 +189,9 @@ export async function fetchDaisyconProgramReview({
     subscriptions: subscriptions.length,
     agreementTermsPresent,
     questionnaires: questionnaires.length,
+    score: score ?? null,
+    commissions: commissions.length,
+    accessRulesPresent: Boolean(accessRules && (Array.isArray(accessRules) ? accessRules.length : Object.keys(accessRules).length)),
     reviewRequired: agreementTermsPresent || questionnaires.length > 0,
     automaticSubmissionAllowed: false
   };

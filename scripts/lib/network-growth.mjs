@@ -37,12 +37,18 @@ export function rankDaisyconPrograms(programs = [], reviews = {}) {
       const agreementTermsPresent = Boolean(review?.agreementTermsPresent);
       const questionnaires = Number(review?.questionnaires) || 0;
       const reviewRequired = Boolean(review?.reviewRequired || agreementTermsPresent || questionnaires > 0);
+      const networkScore = Number(review?.score?.score ?? review?.score?.overall ?? review?.score);
+      const commissions = Number(review?.commissions) || 0;
+      const accessRulesPresent = Boolean(review?.accessRulesPresent);
       let score = 0;
       const reasons = [];
       if (category !== "Weitere") { score += 25; reasons.push(`passt zu ${category}`); }
       if (isStrategicProgram({ name })) { score += 20; reasons.push("strategisch relevante Marke"); }
       if (joined) { score += 20; reasons.push("aktive Beziehung"); }
       if (open) { score += 10; reasons.push("potenziell bewerbbar"); }
+      if (Number.isFinite(networkScore)) { score += Math.min(15, Math.max(0, Math.round(networkScore / 7))); reasons.push("Daisycon-Score vorhanden"); }
+      if (commissions > 0) { score += 10; reasons.push("Provisionsdaten vorhanden"); }
+      if (accessRulesPresent) reasons.push("Zugangsregeln vorhanden");
       if (agreementTermsPresent) reasons.push("Agreement Terms müssen geprüft werden");
       if (questionnaires > 0) reasons.push(`${questionnaires} Fragebogen/Fragebögen erforderlich`);
       const priority = score >= 45 ? "hoch" : score >= 25 ? "mittel" : "niedrig";
@@ -72,6 +78,7 @@ export function rankDaisyconPrograms(programs = [], reviews = {}) {
         agreementTermsPresent,
         questionnaires,
         reviewRequired,
+        metrics: { networkScore: Number.isFinite(networkScore) ? networkScore : null, commissionEntries: commissions, accessRulesPresent },
         automaticSubmissionAllowed: false,
         automationState,
         nextAction
