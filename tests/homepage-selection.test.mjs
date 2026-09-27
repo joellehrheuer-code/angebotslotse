@@ -2,21 +2,25 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { selectHomepageOffers } from "../scripts/lib/homepage-selection.mjs";
 
-test("homepage selection is deterministic and never fabricates rows", () => {
-  const now = new Date("2026-09-07T12:00:00Z");
-  const offers = [
-    { id: "old", firstSeen: "2026-07-01T00:00:00Z", quality: 9 },
-    { id: "week", firstSeen: "2026-09-03T00:00:00Z", quality: 7 },
-    { id: "today", firstSeen: "2026-09-07T08:00:00Z", quality: 8 }
-  ];
-  const first = selectHomepageOffers(offers, { now, score: offer => offer.quality });
-  const second = selectHomepageOffers(offers, { now, score: offer => offer.quality });
-  assert.equal(first.dailyDeal.id, "old");
-  assert.deepEqual(first, second);
-  assert.deepEqual(first.weekDeals.map(item => item.id).sort(), ["today", "week"]);
-  assert.equal(first.monthHighlights.length, 2);
-  assert.equal(first.dailyHighlights.length, 3);
-  assert.equal(first.newest[0].id, "today");
+test("homepage selection is deterministic, quality-bounded and rotates by day", () => {
+  const offers = Array.from({length: 16}, (_, index) => ({
+    id: "offer-" + index,
+    advertiser: "merchant-" + (index % 5),
+    category: "cat-" + (index % 4),
+    firstSeen: new Date(Date.UTC(2026, 8, 7 - Math.min(index, 6), 8)).toISOString(),
+    quality: 100 - index
+  }));
+  const dayOne = new Date("2026-09-07T12:00:00Z");
+  const dayTwo = new Date("2026-09-08T12:00:00Z");
+  const first = selectHomepageOffers(offers, { now: dayOne, score: offer => offer.quality });
+  const repeated = selectHomepageOffers(offers, { now: dayOne, score: offer => offer.quality });
+  const nextDay = selectHomepageOffers(offers, { now: dayTwo, score: offer => offer.quality });
+  assert.deepEqual(first, repeated);
+  assert.ok(offers.slice(0, 12).some(row => row.id === first.dailyDeal.id));
+  assert.notEqual(first.dailyDeal.id, nextDay.dailyDeal.id);
+  assert.equal(first.dailyHighlights.length, 5);
+  assert.equal(first.newest.length, 10);
+  assert.ok(first.weekDeals.length > 0);
 });
 
 test("empty inventory produces no homepage claims", () => {

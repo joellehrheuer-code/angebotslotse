@@ -29,14 +29,22 @@ const diversify = (rows, limit) => {
 export function selectHomepageOffers(offers, { now = new Date(), score = () => 0 } = {}) {
   const day = now.toISOString().slice(0, 10);
   const ranked = [...offers].sort((a, b) =>
-    score(b) - score(a) || stableDailyValue(b.id || b.slug, day) - stableDailyValue(a.id || a.slug, day) || timestamp(b) - timestamp(a)
+    score(b) - score(a) || timestamp(b) - timestamp(a) || String(a.id || a.slug).localeCompare(String(b.id || b.slug))
   );
   const age = offer => now.getTime() - timestamp(offer);
   const recent = days => ranked.filter(offer => timestamp(offer) && age(offer) >= 0 && age(offer) <= days * 86400000);
   const newest = [...offers].sort((a, b) => timestamp(b) - timestamp(a));
+  const dailyPool = ranked.slice(0, Math.min(12, ranked.length));
+  const dailyDeal = dailyPool.length ? dailyPool[stableDailyValue("daily-deal", day) % dailyPool.length] : null;
+  const highlightPool = ranked.slice(0, Math.min(40, ranked.length))
+    .sort((a, b) => stableDailyValue(b.id || b.slug, day) - stableDailyValue(a.id || a.slug, day));
+  const dailyHighlights = diversify([
+    ...(dailyDeal ? [dailyDeal] : []),
+    ...highlightPool.filter(row => row !== dailyDeal)
+  ], 5);
   return {
-    dailyDeal: ranked[0] || null,
-    dailyHighlights: diversify(ranked, 5),
+    dailyDeal,
+    dailyHighlights,
     weekDeals: diversify(recent(7), 5),
     monthHighlights: diversify(recent(30), 5),
     newest: diversify(newest, 10)

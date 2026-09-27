@@ -6,11 +6,13 @@ import { selectHomepageOffers } from "./lib/homepage-selection.mjs";
 import { mergeOfferInventory } from "./lib/offer-merge.mjs";
 import { rankAwinOpportunities } from "./lib/program-growth.mjs";
 import { rankImpactPrograms, buildImpactMarketplaceSearches } from "./lib/impact-growth.mjs";
+import { archiveRemovedOffers } from "./lib/offer-archive.mjs";
 
 const config = JSON.parse(await fs.readFile("config.json", "utf8"));
 const oldOffers = JSON.parse(await fs.readFile("data/offers.json", "utf8").catch(() => "[]"));
 const oldStatus = JSON.parse(await fs.readFile("data/status.json", "utf8").catch(() => "{}"));
 const oldHistory = JSON.parse(await fs.readFile("data/price-history.json", "utf8").catch(() => "[]"));
+const oldArchive = JSON.parse(await fs.readFile("data/offer-archive.json", "utf8").catch(() => '{"items":[]}'));
 const oldProgramInventory = JSON.parse(await fs.readFile("report/program-inventory.json", "utf8").catch(() => '{"programs":[]}'));
 const impactLinkPolicy = JSON.parse(await fs.readFile("data/impact-link-policy.json", "utf8").catch(() => "{}"));
 const oldIds = new Set(oldOffers.map(o => o.id));
@@ -29,12 +31,17 @@ try {
     circuitBreakerRatio: Number(config.inventoryCircuitBreakerRatio) || 0.5
   });
   const newIds = new Set(offers.map(o => o.id));
-  status = { state: "ok", lastSuccessfulUpdate: new Date().toISOString(), activeOffers: offers.length,
-    added: offers.filter(o => !oldIds.has(o.id)).length, removed: oldOffers.filter(o => !newIds.has(o.id)).length,
+  const updateAt = new Date().toISOString();
+  const removedOffers = oldOffers.filter(o => !newIds.has(o.id));
+  const archive = archiveRemovedOffers(oldArchive, removedOffers, updateAt);
+  status = { state: "ok", lastSuccessfulUpdate: updateAt, activeOffers: offers.length,
+    added: offers.filter(o => !oldIds.has(o.id)).length, removed: removedOffers.length,
+    archivedThisRun: removedOffers.length, archivedTotal: archive.items.length,
     invalidLinks: 0, apiErrors: failed.size, sources: Object.fromEntries(sources.map(s => [s.name, { state: s.state, count: s.rows.length, error: s.error ?? null, audit: s.audit ?? null }])),
     stale: offers.filter(o => o.isStale).length,
     message: failed.size || sources.some(s => s.state === "disabled") ? "Aktualisierung mit geschützten Bestandsdaten abgeschlossen." : "Aktualisierung erfolgreich." };
   await fs.writeFile("data/offers.json", `${JSON.stringify(offers, null, 2)}\n`);
+  await fs.writeFile("data/offer-archive.json", `${JSON.stringify(archive, null, 2)}\n`);
   await fs.writeFile("data/price-history.json", `${JSON.stringify(updatePriceHistory(oldHistory, offers), null, 2)}\n`);
   const coupons = offers.filter(offer => offer.voucherCode && (!offer.endDate || new Date(offer.endDate) > new Date())).map(offer => ({code:offer.voucherCode,discountText:offer.description || null,discountPercent:null,validFrom:offer.startDate,validUntil:offer.endDate,merchant:offer.advertiser,landingUrl:offer.trackingUrl,terms:offer.terms || null,source:offer.source,isCommunityExclusive:false,creatorCode:null,creatorBenefit:null}));
   await fs.writeFile("data/coupons.json", `${JSON.stringify(coupons, null, 2)}\n`);
