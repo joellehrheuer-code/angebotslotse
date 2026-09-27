@@ -42,6 +42,9 @@ Produktionsfähige, statische Affiliate-Angebotsseite für Deutschland. Sie vere
 - `scripts/lib/source-manager.mjs`: zentraler Affiliate Source Manager
 - `scripts/lib/awin.mjs`: offizielle Awin Publisher Offers API
 - `scripts/lib/impact.mjs`: Impact Partner API v16 für Programme, Ads, Promotions, Deals und Produktkataloge
+- `scripts/lib/daisycon.mjs`: offizielle Daisycon Publisher API für Produktfeeds
+- `scripts/lib/tradedoubler.mjs`: offizielle Tradedoubler JSON-Produktfeeds aus dem Publisherkonto
+- `scripts/lib/webgains.mjs`: offizielle Webgains CSV/TSV/JSON-Produktfeeds
 - `scripts/lib/direct.mjs` und `data/direct-partners.json`: Waves, Thomann, RØDE und Instant Gaming; Razer bleibt deaktiviert
 - `scripts/lib/normalize.mjs`: Validierung, Deutschland-Filter, Kategorien, Dubletten
 - `scripts/build.mjs`: statische Seiten, Detailseiten, Sitemap, Robots und Statusseite
@@ -56,7 +59,7 @@ Der gewählte Rhythmus bleibt weit unter Awins dokumentiertem allgemeinen Limit 
 
 ## Lokal ausführen
 
-Node.js 20 oder neuer genügt; es gibt keine npm-Abhängigkeiten.
+Node.js 20 oder neuer genügt. Die wenigen Build-Abhängigkeiten werden reproduzierbar über `npm ci` installiert; für die öffentliche Website entstehen dadurch keine laufenden Kosten.
 
 ```bash
 npm test
@@ -86,6 +89,12 @@ Hinweis: Awin kann das genaue Request-Schema der Offers-API weiterentwickeln. Be
 
 Der Adapter verwendet die offizielle Partner API v16 mit HTTP Basic Auth aus AccountSID und AuthToken. Er berücksichtigt ausschließlich beigetretene Programme mit aktivem Vertrag und Deutschland als Zielmarkt. Abgerufen werden Programme, verfügbare Werbemittel, Promotions, aktive Deals und Produktkatalogeinträge. Veröffentlicht werden nur Datensätze mit einem von Impact bereitgestellten Trackinglink; Links, Preise und Rabatte werden nicht konstruiert oder erfunden. Ohne beide Zugangswerte meldet die Quelle `disabled` und beeinträchtigt weder Awin noch direkte Partner.
 
+## Daisycon, Tradedoubler und Webgains
+
+Die drei zusätzlichen Netzwerke sind technisch vorbereitet und standardmäßig deaktiviert. Daisycon nutzt die offizielle Publisher-API unter `services.daisycon.com` und benötigt `DAISYCON_PUBLISHER_ID` sowie `DAISYCON_ACCESS_TOKEN`. Tradedoubler wird über die im Publisher-Dashboard erzeugten offiziellen JSON-Produktfeed-URLs angebunden; diese werden als `TRADEDOUBLER_FEED_URLS` ausschließlich als Secret hinterlegt. Webgains verwendet die offiziellen CSV/TSV/JSON-Produktfeed-Exporte über `WEBGAINS_FEED_URLS`. Feed-URLs können Zugangstoken enthalten und gehören deshalb niemals in den Quellcode.
+
+Ohne diese Werte melden die Quellen nur `disabled` und beeinflussen bestehende Awin-, Impact-, Amazon- oder Direktpartnerdaten nicht. Automatische Vertragsannahmen sind nicht Teil des Feed-Imports. Bewerbungen und Programmbedingungen werden nur über dokumentierte Netzwerkfunktionen verarbeitet.
+
 ## Neue Affiliate-Quelle ergänzen
 
 1. Einen Adapter unter `scripts/lib/<quelle>.mjs` anlegen, der strukturierte Quelldaten zurückgibt.
@@ -102,7 +111,7 @@ Scraping, erfundene Trackinglinks und künstliche Klicktests sind ausgeschlossen
 
 ## Datenschutz und Recht
 
-Die Site lädt keine externen Fonts und setzt selbst keine Marketing-Cookies. Die Merkliste und optionale Wunschpreise werden ausschließlich im lokalen Browser-Speicher (`localStorage`) des jeweiligen Geräts abgelegt und nicht an Angebotslotse übertragen. Externe Partnerinhalte werden klar abgegrenzt; der eingebettete Spreadshop wird erst nach einem ausdrücklichen Klick geladen. Affiliate-Links tragen `rel="sponsored noopener"`. Cloudflare Web Analytics bleibt optional und nur bei gesetzter Repository-Variable aktiv. Impressum und Datenschutz bilden die eingesetzte statische GitHub-Pages-Technik, die lokale Merkliste und die nachgeladene Merch-Integration ab; eine individuelle Rechtsprüfung bleibt empfehlenswert.
+Die Site lädt keine externen Fonts und setzt selbst keine Marketing-Cookies. Ohne Konto bleibt die Merkliste lokal im Browser. Bei freiwilliger Kontoanmeldung können Merkliste, Wunschpreise, Alarmregeln und persönliche Benachrichtigungen zusätzlich in Supabase gespeichert und zwischen Geräten synchronisiert werden; RLS beschränkt Nutzerzeilen auf das jeweilige Konto. Externe Partnerinhalte werden klar abgegrenzt; der eingebettete Spreadshop wird erst nach einem ausdrücklichen Klick geladen. Affiliate-Links tragen `rel="sponsored noopener"`. Cloudflare Web Analytics bleibt optional und nur bei gesetzter Repository-Variable aktiv. Kontoexport und vollständige Kontolöschung sind serverseitig vorbereitet; eine individuelle Rechtsprüfung bleibt empfehlenswert.
 
 ## JOEL MUSS NUR NOCH DIESE PUNKTE MACHEN
 
@@ -112,7 +121,8 @@ Die automatische Aktualisierung läuft alle sechs Stunden. Ohne die folgenden ex
 2. Nur die in `report/manual-actions.json` aufgeführten Programmbedingungen prüfen und geeignete Bewerbungen im jeweiligen Dashboard bestätigen. Es werden keine Vertragsbedingungen automatisch akzeptiert und keine Doppel- oder Massenbewerbungen versendet.
 3. Für Amazon: PartnerNet final freischalten, unter **Tools → Creators API** eine Anwendung/Credentials erzeugen und `AMAZON_CREATORS_CREDENTIAL_ID`, `AMAZON_CREATORS_CREDENTIAL_SECRET` sowie den deutschen `AMAZON_PARTNER_TAG` als GitHub Secrets hinterlegen. Bis dahin bleiben Amazon-Preise und -Produktbilder bewusst deaktiviert.
 4. Falls Awin oder Impact eine zusätzliche Identitäts-, Vertrags- oder API-Freigabe verlangt, diese einmalig im jeweiligen Dashboard bestätigen.
-5. Impressum und Datenschutzerklärung trotz technischer Anpassung einmal individuell rechtlich prüfen lassen.
+5. Optional für weitere kostenlose Affiliate-Quellen: Daisycon-Publisherzugang freischalten und `DAISYCON_PUBLISHER_ID` + `DAISYCON_ACCESS_TOKEN` hinterlegen; bei Tradedoubler bzw. Webgains nach Programmfreigabe die offiziellen Produktfeed-URLs als `TRADEDOUBLER_FEED_URLS` bzw. `WEBGAINS_FEED_URLS` speichern. Keine kostenpflichtige Zusatzsoftware ist dafür vorgesehen.
+6. Impressum und Datenschutzerklärung trotz technischer Anpassung einmal individuell rechtlich prüfen lassen.
 
 Die Dateien `report/program-inventory.json`, `report/update-report.json`, `report/manual-actions.json` und `report/seo-report.json` werden bei jedem Update neu erzeugt. Sie enthalten nur unsensible Bestands-, SEO- und Statusdaten, niemals Tokens oder Zugangsdaten.
 

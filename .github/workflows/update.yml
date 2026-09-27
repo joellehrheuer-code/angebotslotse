@@ -31,6 +31,10 @@ jobs:
           AMAZON_CREATORS_CREDENTIAL_ID: ${{ secrets.AMAZON_CREATORS_CREDENTIAL_ID }}
           AMAZON_CREATORS_CREDENTIAL_SECRET: ${{ secrets.AMAZON_CREATORS_CREDENTIAL_SECRET }}
           AMAZON_PARTNER_TAG: ${{ secrets.AMAZON_PARTNER_TAG }}
+          DAISYCON_PUBLISHER_ID: ${{ secrets.DAISYCON_PUBLISHER_ID || vars.DAISYCON_PUBLISHER_ID }}
+          DAISYCON_ACCESS_TOKEN: ${{ secrets.DAISYCON_ACCESS_TOKEN }}
+          TRADEDOUBLER_FEED_URLS: ${{ secrets.TRADEDOUBLER_FEED_URLS }}
+          WEBGAINS_FEED_URLS: ${{ secrets.WEBGAINS_FEED_URLS }}
       - run: npm run check && npm run build && npm run validate && npm run seo && npm run security
         env:
           SITE_URL: https://joellehrheuer-code.github.io/angebotslotse

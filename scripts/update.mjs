@@ -56,7 +56,8 @@ try {
   const countBy = (rows, key) => Object.fromEntries([...rows.reduce((counts, row) => { const value = row[key] || "sonstige"; counts.set(value, (counts.get(value) || 0) + 1); return counts; }, new Map())].sort((a, b) => b[1] - a[1] || String(a[0]).localeCompare(String(b[0]), "de")).map(([name, count]) => [name, count]));
   const quarantined = new Set((impactLinkPolicy.quarantinedAdvertisers ?? []).map(rule => `${rule.advertiserId ?? ""}|${String(rule.advertiserName ?? "").toLowerCase()}`));
   const isQuarantined = offer => quarantined.has(`${offer.advertiserId ?? ""}|${String(offer.advertiser ?? "").toLowerCase()}`);
-  const sourceStats = countBy(publicOffers.map(offer => ({ source: offer.source === "awin" ? "Awin" : offer.source === "impact" ? "Impact" : offer.source === "amazon" ? "Amazon" : "sonstige" })), "source");
+  const sourceNames={awin:"Awin",impact:"Impact",amazon:"Amazon",direct:"Direkt",daisycon:"Daisycon",tradedoubler:"Tradedoubler",webgains:"Webgains"};
+  const sourceStats = countBy(publicOffers.map(offer => ({ source: sourceNames[offer.source] || "sonstige" })), "source");
   const merchantStats = countBy(publicOffers, "advertiser");
   const categoryStats = countBy(publicOffers, "category");
   const impactSignals=impact?.audit?.programSignals??[];
