@@ -126,3 +126,13 @@ footer{border-color:#252b43;color:#f7f8ff}footer p{color:#9ea8c1}footer nav a{co
 @media(max-width:1000px){.shop-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(max-width:760px){.shop-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:520px){.shop-grid{grid-template-columns:1fr}}
+
+/* Data-driven deal check on canonical offer pages. */
+.deal-check{margin-top:34px;padding:24px;border:1px solid #30385a;border-radius:22px;background:linear-gradient(145deg,#10152a,#151126)}
+.deal-check .section-head{margin-bottom:16px}.deal-check .section-head h2{font-size:clamp(28px,3vw,40px);margin:5px 0 0}
+.deal-facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.deal-facts>div{display:flex;min-height:86px;flex-direction:column;justify-content:center;padding:14px 16px;border:1px solid #2b3150;border-radius:15px;background:#0d1121}
+.deal-facts span{font-size:11px;color:#9ea8c1}.deal-facts strong{margin-top:4px;font-size:17px;color:#f7f8ff}
+.deal-check-note{margin:16px 0 0;color:#aeb7d0;font-size:13px;line-height:1.65}
+@media(max-width:760px){.deal-facts{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:480px){.deal-facts{grid-template-columns:1fr}}

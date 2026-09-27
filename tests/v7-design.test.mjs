@@ -86,6 +86,8 @@ test("SEO konsolidiert Produktvarianten auf eine Angebots-URL", () => {
   const legacyHtml = fs.readFileSync("dist/produkt/" + target.slug + ".html", "utf8");
   const sitemap = fs.readFileSync("dist/sitemap.xml", "utf8");
   assert.ok(offerHtml.includes('rel="canonical" href="' + canonicalUrl + '"'));
+  assert.match(offerHtml, /class="deal-check"/);
+  assert.match(offerHtml, /Daten statt Werbeversprechen/);
   assert.match(offerHtml, /class="price-history"/);
   assert.ok(legacyHtml.includes('rel="canonical" href="' + canonicalUrl + '"'));
   assert.ok(sitemap.includes("/angebote/" + target.slug + ".html"));
