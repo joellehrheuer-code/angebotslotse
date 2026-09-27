@@ -85,6 +85,24 @@ export async function fetchImpactOffers({ accountSid, authToken, fetchImpl = fet
   const byCampaign = new Map(programs.map(row => [String(row.CampaignId), row]));
   const byAdvertiser = new Map(programs.map(row => [String(row.AdvertiserId), row]));
   const rows = [];
+  const programSignals = new Map(programs.map(program => [String(program.CampaignId), {
+    name: program.CampaignName,
+    advertiserName: program.AdvertiserName,
+    advertiserId: program.AdvertiserId,
+    campaignId: program.CampaignId,
+    deeplinks: Boolean(program.AllowsDeeplinking),
+    trackingLinkAvailable: Boolean(program.TrackingLink),
+    logoAvailable: Boolean(program.CampaignLogoUri),
+    publicTermsAvailable: Boolean(program.PublicTermsUri),
+    ads: 0,
+    promotions: 0,
+    deals: 0,
+    products: 0
+  }]));
+  const bump = (program, key) => {
+    const signal = program && programSignals.get(String(program.CampaignId));
+    if (signal) signal[key] += 1;
+  };
   const audit = {apiVersion:VERSION,programs:programs.length,ads:0,promotions:0,deals:0,products:0,catalogs:null,stores:null,quarantinedAdvertisers:(policy.quarantinedAdvertisers??[]).length,
     programInventory:programs.map(program=>({name:program.CampaignName,advertiserName:program.AdvertiserName,advertiserId:program.AdvertiserId,campaignId:program.CampaignId,status:program.ContractStatus,countries:list(program.ShippingRegions?.ShippingRegion??program.ShippingRegions),deeplinks:Boolean(program.AllowsDeeplinking),trackingLinkAvailable:Boolean(program.TrackingLink),logoAvailable:Boolean(program.CampaignLogoUri),publicTermsAvailable:Boolean(program.PublicTermsUri)}))};
 
@@ -104,6 +122,7 @@ export async function fetchImpactOffers({ accountSid, authToken, fetchImpl = fet
     if (!program || !ad.Name) continue;
     const trackingUrl = await resolveAdTrackingLink(ad, program, api, policy);
     if (!trackingUrl) continue;
+    bump(program, "ads");
     rows.push({ ...common(program, ad), id: `ad-${ad.Id}`, title: ad.Name, description: ad.Description,
       url: ad.LandingPageUrl || program.AdvertiserUrl || trackingUrl, urlTracking: trackingUrl,
       type: String(ad.Type).toUpperCase() === "COUPON" ? "voucher" : "promotion",
@@ -116,6 +135,7 @@ export async function fetchImpactOffers({ accountSid, authToken, fetchImpl = fet
     const program = byAdvertiser.get(String(promotion.AdvertiserId));
     const trackingUrl = promotion.TrackingLink || program?.TrackingLink;
     if (!program || !promotion.PromotionTitle || !trackingUrlAllowed(trackingUrl, policy, quarantineFor(program, policy))) continue;
+    bump(program, "promotions");
     const [startDate, endDate] = String(promotion.PromotionEffectiveDates ?? "").split("/");
     rows.push({ ...common(program, promotion), id: `promotion-${promotion.PromotionIds}`, title: promotion.PromotionTitle,
       description: promotion.PromotionDescription, terms: promotion.Terms,
@@ -130,6 +150,7 @@ export async function fetchImpactOffers({ accountSid, authToken, fetchImpl = fet
     audit.deals+=deals.length;
     for (const deal of deals) {
       if (String(deal.State).toUpperCase() !== "ACTIVE" || !deal.Name) continue;
+      bump(program, "deals");
       rows.push({ ...common(program), id: `deal-${program.CampaignId}-${deal.Id}`, title: deal.Name, description: deal.Description,
         terms: deal.OfferInstructions, url: program.AdvertiserUrl || program.TrackingLink, urlTracking: program.TrackingLink,
         startDate: cleanDate(deal.StartDate), endDate: cleanDate(deal.EndDate), type: deal.DefaultPromoCode ? "voucher" : "promotion",
@@ -143,6 +164,7 @@ export async function fetchImpactOffers({ accountSid, authToken, fetchImpl = fet
     const program = byCampaign.get(String(product.CampaignId));
     const trackingUrl = product.TrackingLink || product.UrlTracking;
     if (!program || !trackingUrlAllowed(trackingUrl, policy, quarantineFor(program, policy)) || !product.Name || String(product.StockAvailability).toLowerCase() === "outofstock") continue;
+    bump(program, "products");
     rows.push({ ...common(program), id: `product-${product.CatalogId}-${product.CatalogItemId}`, title: product.Name,
       description: product.Description, url: product.Url || trackingUrl, urlTracking: trackingUrl, type: "promotion",
       imageUrl: product.ImageUrl || product.ImageURL || product.ImageUri,
@@ -160,6 +182,7 @@ export async function fetchImpactOffers({ accountSid, authToken, fetchImpl = fet
   for(const [key,pathname,names] of [["catalogs",`/Mediapartners/${account}/Catalogs`,["Catalogs"]],["stores",`/Mediapartners/${account}/Stores`,["Stores"]]]){
     try{audit[key]=(await api.pages(pathname,names)).length;}catch{audit[key]="unavailable";}
   }
+  audit.programSignals=[...programSignals.values()].sort((a,b)=>(b.products+b.promotions+b.deals+b.ads)-(a.products+a.promotions+a.deals+a.ads)||String(a.name).localeCompare(String(b.name),"de"));
   Object.defineProperty(rows,"audit",{value:audit,enumerable:false});
   return rows;
 }

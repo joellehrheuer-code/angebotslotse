@@ -5,6 +5,7 @@ import { updatePriceHistory } from "./lib/price-history.mjs";
 import { selectHomepageOffers } from "./lib/homepage-selection.mjs";
 import { mergeOfferInventory } from "./lib/offer-merge.mjs";
 import { rankAwinOpportunities } from "./lib/program-growth.mjs";
+import { rankImpactPrograms, buildImpactMarketplaceSearches } from "./lib/impact-growth.mjs";
 
 const config = JSON.parse(await fs.readFile("config.json", "utf8"));
 const oldOffers = JSON.parse(await fs.readFile("data/offers.json", "utf8").catch(() => "[]"));
@@ -51,6 +52,9 @@ try {
   const sourceStats = countBy(publicOffers.map(offer => ({ source: offer.source === "awin" ? "Awin" : offer.source === "impact" ? "Impact" : offer.source === "amazon" ? "Amazon" : "sonstige" })), "source");
   const merchantStats = countBy(publicOffers, "advertiser");
   const categoryStats = countBy(publicOffers, "category");
+  const impactSignals=impact?.audit?.programSignals??[];
+  const impactOpportunities=rankImpactPrograms(impactSignals);
+  const impactMarketplaceSearches=buildImpactMarketplaceSearches({siteCategoryStats:categoryStats,signals:impactSignals});
   const awinEnhancedFeeds = feedSources.find(source => source.name === "awin-enhanced-feeds")?.audit?.feeds ?? [];
   const feedAdvertisers=new Set(feedSources.flatMap(source=>(source.audit?.feeds??[]).filter(feed=>feed.state==="available").map(feed=>String(feed.advertiserId))));
   const checkedAt=new Date().toISOString();
@@ -71,21 +75,35 @@ try {
     program.activeDiscoveryOffers=opportunity.activeDiscoveryOffers;
     program.metrics=opportunity.metrics;
   }
+  const impactOpportunityByCampaign=new Map(impactOpportunities.map(opportunity=>[String(opportunity.campaignId),opportunity]));
+  for(const program of impactInventory){
+    const opportunity=impactOpportunityByCampaign.get(String(program.campaignId));
+    if(!opportunity)continue;
+    program.opportunityScore=opportunity.score;
+    program.opportunityPriority=opportunity.priority;
+    program.assets=opportunity.assets;
+    program.nextAction=opportunity.nextAction;
+  }
   const growth={generatedAt:new Date().toISOString(),market:"DE",publisherId:Number(process.env.AWIN_PUBLISHER_ID)||null,
     awin:{counts:Object.fromEntries(Object.entries(collected.awinPrograms??{}).map(([key,rows])=>[key,rows.length])),programs:programmeRows,discoveryOffers:awinDiscoveryOffers.length,discoveryError:collected.awinDiscoveryError??null,detailsEnriched:Object.keys(collected.awinProgramDetails??{}).length,opportunities:opportunities.slice(0,25),feeds:feedSources.map(source=>({source:source.name,state:source.state,count:source.rows.length,audit:source.audit??null}))},
-    impact:{state:impact?.state??"disabled",publishableOffers:impact?.rows.length??0,inventory:impact?.audit??null},
+    impact:{state:impact?.state??"disabled",publishableOffers:impact?.rows.length??0,inventory:impact?.audit??null,opportunities:impactOpportunities.slice(0,25),marketplaceSearches:impactMarketplaceSearches.slice(0,10)},
     publication:{offers:publicOffers.length,concreteAwaitingMedia:concreteOffers.filter(offer=>!isPublicationReady(offer)).length,partnerEntries:offers.length-concreteOffers.length,merchants:new Set(publicOffers.map(offer=>offer.advertiser)).size,products:publicOffers.filter(offer=>offer.productId).length,images:publicOffers.filter(offer=>offer.imageUrl).length,videos:publicOffers.filter(offer=>offer.videoUrl).length,prices:publicOffers.filter(offer=>offer.currentPrice!=null).length,discounts:publicOffers.filter(offer=>offer.discountPercent).length,coupons:publicOffers.filter(offer=>offer.voucherCode).length},
     safeguards:{unjoinedProgramsPublished:false,applicationSubmission:"review-required",credentialsPersisted:false}};
   await fs.writeFile("data/affiliate-growth.json",`${JSON.stringify(growth,null,2)}\n`);
   await fs.mkdir("report",{recursive:true});
   await fs.writeFile("report/program-inventory.json",`${JSON.stringify({generatedAt:checkedAt,programs:[...programInventory,...impactInventory]},null,2)}\n`);
-  await fs.writeFile("data/program-opportunities.json",`${JSON.stringify({generatedAt:checkedAt,scope:"Automatisch aus dem aktuellen Awin-Programminventar, aktiven DE-Discovery-Angeboten und verfügbaren Feed-Signalen erzeugt.",automation:{discovery:"automatic",ranking:"automatic",applicationDrafts:"automatic",submission:"human-review-required",reason:"Bewerbungen können Vertragsbedingungen enthalten und werden nicht blind bestätigt."},programs:opportunities.slice(0,50),impact:{status:impact?.state??"disabled",joinedPrograms:impactInventory.length,marketplaceDiscovery:"dashboard-review-required",applicationTermsRequireApproval:true,note:"Aktive Impact-Programme werden per Partner API synchronisiert. Neue Marketplace-Bewerbungen werden erst nach Prüfung der jeweiligen Bedingungen bestätigt."}},null,2)}\n`);
+  await fs.writeFile("data/program-opportunities.json",`${JSON.stringify({generatedAt:checkedAt,scope:"Automatisch aus dem aktuellen Awin-Programminventar, aktiven DE-Discovery-Angeboten und verfügbaren Feed-Signalen erzeugt.",automation:{discovery:"automatic",ranking:"automatic",applicationDrafts:"automatic",submission:"human-review-required",reason:"Bewerbungen können Vertragsbedingungen enthalten und werden nicht blind bestätigt."},programs:opportunities.slice(0,50),impact:{status:impact?.state??"disabled",joinedPrograms:impactInventory.length,opportunities:impactOpportunities.slice(0,25),marketplaceSearches:impactMarketplaceSearches.slice(0,10),marketplaceDiscovery:"dashboard-review-required",applicationTermsRequireApproval:true,note:"Bestehende Impact-Programme werden automatisch nach nutzbaren Produkten, Aktionen, Deals und Creatives priorisiert. Neue Marketplace-Bewerbungen werden erst nach Prüfung der jeweiligen Bedingungen bestätigt."}},null,2)}\n`);
+  await fs.writeFile("data/impact-opportunities.json",`${JSON.stringify({generatedAt:checkedAt,status:impact?.state??"disabled",joinedPrograms:impactInventory.length,automation:{joinedProgramScoring:"automatic",marketplaceGapDetection:"automatic",contactDrafts:"automatic",marketplaceSubmission:"human-review-required"},programs:impactOpportunities.slice(0,50),marketplaceSearches:impactMarketplaceSearches.slice(0,10)},null,2)}\n`);
   const manualActions=[];
   if(!process.env.AWIN_PUBLISHER_ID||!process.env.AWIN_API_TOKEN)manualActions.push({id:"awin-api-credentials",platform:"Awin",action:"AWIN_PUBLISHER_ID und AWIN_API_TOKEN als sichere Runtime-/GitHub-Secrets konfigurieren.",reason:"Ohne Publisher-ID und API-Token können aktive Awin-Programme und Enhanced Feeds nicht aktualisiert werden."});
   if(!process.env.AWIN_DATAFEED_API_KEY)manualActions.push({id:"awin-datafeed-key",platform:"Awin",action:"AWIN_DATAFEED_API_KEY als lokales .env.local-Secret und GitHub Actions Secret hinterlegen.",reason:"Die offizielle Legacy-Produktfeed-Liste benötigt einen separaten Datafeed-Key."});
   if(!process.env.AMAZON_CREATORS_CREDENTIAL_ID||!process.env.AMAZON_CREATORS_CREDENTIAL_SECRET||!process.env.AMAZON_PARTNER_TAG)manualActions.push({id:"amazon-creators-api",platform:"Amazon",action:"Amazon PartnerNet vollständig freischalten, Creators-API-Credentials und deutschen Partner-Tag als GitHub Secrets hinterlegen.",reason:"Ohne finale Amazon-Associates-Freigabe, Credential ID, Secret und Partner-Tag werden keine Amazon-Preise oder Produktbilder automatisiert übernommen."});
   if(!process.env.IMPACT_ACCOUNT_SID||!process.env.IMPACT_AUTH_TOKEN)manualActions.push({id:"impact-api-credentials",platform:"Impact",action:"IMPACT_ACCOUNT_SID und IMPACT_AUTH_TOKEN als sichere Runtime-/GitHub-Secrets konfigurieren.",reason:"Ohne beide Impact-Zugangswerte können Kampagnen, Ads und Katalogdaten nicht synchronisiert werden."});
-  else manualActions.push({id:"impact-marketplace-review",platform:"Impact",action:"Brands Marketplace auf neue passende Programme prüfen und nur nach Prüfung der jeweiligen Vertragsbedingungen bewerben.",reason:"Die API synchronisiert bestehende Impact-Programme und Angebote; neue Marketplace-Bewerbungen können Vertragsannahmen oder Surveys erfordern und werden deshalb nicht blind abgesendet."});
+  else {
+    const gap=impactMarketplaceSearches[0];
+    manualActions.push({id:"impact-marketplace-review",platform:"Impact",action:gap?`Impact Marketplace zuerst nach passenden Brands für ${gap.category} durchsuchen (${gap.searchTerms.join(", ")}).`:"Brands Marketplace auf neue passende Programme prüfen und nur nach Prüfung der jeweiligen Vertragsbedingungen bewerben.",reason:gap?`Automatisch erkannte Abdeckungslücke: ${gap.siteOffers} Angebotslotse-Angebote stehen ${gap.joinedPrograms} zugeordneten Impact-Programmen gegenüber. Vertragsbedingungen vor Bewerbung prüfen.`:"Neue Marketplace-Bewerbungen können Vertragsannahmen oder Surveys erfordern und werden deshalb nicht blind abgesendet."});
+    for(const opportunity of impactOpportunities.filter(row=>row.contactDraft).slice(0,3))manualActions.push({id:`impact-contact-${opportunity.campaignId}`,platform:"Impact",action:opportunity.nextAction,reason:`Bestehende Partnerschaft automatisch priorisiert (${opportunity.score} Punkte): ${opportunity.reasons.join(", ") || "wenige nutzbare Assets"}.`,contactDraft:opportunity.contactDraft});
+  }
   for(const opportunity of opportunities.filter(opportunity=>opportunity.applicationRequired&&opportunity.priority!=="niedrig").slice(0,8))manualActions.push({id:`awin-apply-${opportunity.advertiserId}`,platform:"Awin",action:opportunity.nextAction,reason:`Automatisch priorisiert (${opportunity.score} Punkte): ${opportunity.reasons.join(", ") || "passendes Programm"}. Keine automatische Zustimmung zu Vertragsbedingungen.`,applicationDraft:opportunity.applicationDraft});
   await fs.writeFile("report/manual-actions.json",`${JSON.stringify({generatedAt:checkedAt,actions:manualActions},null,2)}\n`);
   const oldProgramKeys=new Set((oldProgramInventory.programs??[]).map(program=>`${program.platform}:${program.advertiserId}:${program.campaignId??""}`));

@@ -44,6 +44,9 @@ test("Impact nutzt Media-Partner-API und Basic Auth", async () => {
   assert.ok(calls.every(call => /^Basic /.test(call.options.headers.Authorization)));
   assert.ok(calls.every(call => call.options.headers["IR-Version"] === IMPACT_API_VERSION));
   assert.equal(rows.length, 2);
+  assert.equal(rows.audit.programSignals[0].campaignId, "42");
+  assert.equal(rows.audit.programSignals[0].ads, 1);
+  assert.equal(rows.audit.programSignals[0].products, 0);
 });
 
 test("Impact veröffentlicht quarantänisierte Ads nicht ohne abweichenden offiziellen Trackinglink", async () => {
