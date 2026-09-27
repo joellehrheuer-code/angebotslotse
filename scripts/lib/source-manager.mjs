@@ -4,7 +4,7 @@ import { fetchAwinProductFeeds, fetchAwinEnhancedFeeds } from "./awin-product-fe
 import { fetchImpactOffers } from "./impact.mjs";
 import { fetchDirectOffers } from "./direct.mjs";
 import { fetchAmazonCreatorItems } from "./amazon.mjs";
-import { fetchDaisyconOffers } from "./daisycon.mjs";
+import { fetchDaisyconOffers, fetchDaisyconPrograms } from "./daisycon.mjs";
 import { fetchTradedoublerOffers } from "./tradedoubler.mjs";
 import { fetchWebgainsOffers } from "./webgains.mjs";
 import fs from "node:fs/promises";
@@ -14,6 +14,8 @@ export async function collectSources(env = process.env) {
   let awinPrograms=null;
   let awinDiscoveryOffers=[];
   let awinDiscoveryError=null;
+  let daisyconPrograms=null;
+  let daisyconProgramError=null;
   const awinProgramDetails={};
   if(env.AWIN_PUBLISHER_ID&&env.AWIN_API_TOKEN) {
     try{awinPrograms=await fetchAwinPrograms({publisherId:env.AWIN_PUBLISHER_ID,token:env.AWIN_API_TOKEN});}catch{}
@@ -29,6 +31,10 @@ export async function collectSources(env = process.env) {
       try{awinProgramDetails[String(advertiserId)]=await fetchAwinProgramDetails({publisherId:env.AWIN_PUBLISHER_ID,token:env.AWIN_API_TOKEN,advertiserId,relationship:String(program.relationship??"notjoined").toLowerCase()});}
       catch{/* KPI enrichment is optional; discovery continues without it. */}
     }
+  }
+  if(env.DAISYCON_PUBLISHER_ID&&env.DAISYCON_ACCESS_TOKEN){
+    try{daisyconPrograms=await fetchDaisyconPrograms({publisherId:env.DAISYCON_PUBLISHER_ID,accessToken:env.DAISYCON_ACCESS_TOKEN});}
+    catch(error){daisyconProgramError=String(error.message).slice(0,160);}
   }
   const joined=(awinPrograms?.joined??[]).map(row=>({id:row.id??row.advertiserId,name:row.name??row.advertiserName})).filter(row=>row.id);
   const definitions = [
@@ -54,5 +60,5 @@ export async function collectSources(env = process.env) {
     try { const rows=await run(); return { name, state: "ok", rows, audit:rows.audit??null }; }
     catch (error) { return { name, state: "error", rows: [], error: String(error.message).slice(0, 160) }; }
   }));
-  return {sources:results,awinPrograms,awinDiscoveryOffers,awinDiscoveryError,awinProgramDetails};
+  return {sources:results,awinPrograms,awinDiscoveryOffers,awinDiscoveryError,awinProgramDetails,daisyconPrograms,daisyconProgramError};
 }
