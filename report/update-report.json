@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-27T02:54:42.080Z",
+  "generatedAt": "2026-09-27T03:17:45.544Z",
   "newAwinPrograms": 0,
   "newImpactPrograms": 0,
   "activeAwinPrograms": 5,
@@ -115,21 +115,21 @@
     }
   ],
   "quarantinedRecords": 460,
-  "dailyDeal": "3e40748538467ba2",
+  "dailyDeal": "12f05c88bb4138a2",
   "dailyHighlights": [
-    "3e40748538467ba2",
-    "db317f3109ddbf2e",
+    "12f05c88bb4138a2",
     "0f1e515e7e72fe69",
+    "0736f74b20773bba",
     "134153f06aa7013c",
-    "815c39bb3fad1936"
+    "0a16e63f96d3c7c3"
   ],
   "weekDeals": [],
   "monthHighlights": [
-    "3e40748538467ba2",
-    "db317f3109ddbf2e",
-    "0f1e515e7e72fe69",
-    "134153f06aa7013c",
-    "815c39bb3fad1936"
+    "10bb463f70696c2e",
+    "0055caa27aa9a32c",
+    "039a1ca39383f7b6",
+    "04b0eab2f2c77729",
+    "127502cb89a74114"
   ],
   "apiErrors": 1,
   "affiliateLinkErrors": 0
