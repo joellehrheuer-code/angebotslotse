@@ -203,3 +203,15 @@ footer{border-color:#252b43;color:#f7f8ff}footer p{color:#9ea8c1}footer nav a{co
 .account-sync-status{min-height:24px;margin-top:12px}
 .account-security-card{grid-column:1/-1}
 @media(max-width:760px){.account-grid{grid-template-columns:1fr}.account-security-card{grid-column:auto}.account-actions{display:grid}.account-actions .button{width:100%}}
+
+.account-alerts-card{grid-column:1/-1}
+.account-alert-form{display:grid;grid-template-columns:1fr 1.4fr .8fr .8fr auto;gap:10px;align-items:end;margin:18px 0 10px}
+.account-alert-form label{display:grid;gap:7px;color:#d9e1f5;font-size:11px;font-weight:850}
+.account-alert-form input,.account-alert-form select{width:100%;min-width:0;padding:12px 13px;border:1px solid #343b5d;border-radius:12px;background:#0d1121;color:#fff;font:inherit;outline:0}
+.account-alert-form input:focus,.account-alert-form select:focus{border-color:#ff3fa8;box-shadow:0 0 0 4px rgba(255,63,168,.1)}
+.account-alert-list{display:grid;gap:8px;margin-top:12px}
+.account-alert-item{display:flex;justify-content:space-between;gap:14px;align-items:center;padding:12px 14px;border:1px solid #2b3150;border-radius:14px;background:#0d1121}
+.account-alert-item>div{display:grid;gap:3px}.account-alert-item small,.account-alert-empty{color:#9ea8c1}
+.button.small{min-height:36px;padding:8px 11px;font-size:11px}
+@media(max-width:900px){.account-alert-form{grid-template-columns:repeat(2,minmax(0,1fr))}.account-alert-form .button{width:100%}}
+@media(max-width:560px){.account-alert-form{grid-template-columns:1fr}.account-alert-item{align-items:flex-start;flex-direction:column}.account-alert-item .button{width:100%}}

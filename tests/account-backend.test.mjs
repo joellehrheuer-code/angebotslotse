@@ -32,3 +32,30 @@ test("nur veröffentlichbare Supabase-Konfiguration ist als Browser-Konfiguratio
   assert.match(securityCheck, /SUPABASE_SECRET_KEY/);
   assert.match(securityCheck, /RESEND_API_KEY/);
 });
+
+
+test("private Versandtabellen haben zusätzliche RLS-Schutzschicht ohne Client-Policies", () => {
+  const privateRls = fs.readFileSync("supabase/migrations/20260927_private_rls.sql", "utf8");
+  for (const table of ["newsletter_consents","push_subscriptions","notification_outbox","notification_events"]) {
+    assert.match(privateRls, new RegExp("alter table private\\." + table + " enable row level security"));
+  }
+  assert.doesNotMatch(privateRls, /^\s*create policy/im);
+});
+
+test("Cloud-Speicher ist privat, größenbegrenzt und auf den eigenen Nutzerordner beschränkt", () => {
+  const storage = fs.readFileSync("supabase/migrations/20260927_user_assets_storage.sql", "utf8");
+  assert.match(storage, /'user-assets'/);
+  assert.match(storage, /false,\s*10485760/);
+  assert.match(storage, /auth\.uid\(\)::text/);
+  for (const action of ["select","insert","update","delete"]) {
+    assert.match(storage, new RegExp('create policy "user_assets_' + action + '_own"'));
+  }
+});
+
+test("identische persönliche Alarmregeln werden serverseitig dedupliziert", () => {
+  const dedupe = fs.readFileSync("supabase/migrations/20260927_alert_dedupe.sql", "utf8");
+  assert.match(dedupe, /create unique index if not exists alert_subscriptions_unique_rule/);
+  assert.match(dedupe, /user_id/);
+  assert.match(dedupe, /alert_type/);
+  assert.match(dedupe, /coalesce\(max_price, -1\)/);
+});

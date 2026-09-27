@@ -11,14 +11,20 @@ test("Konto-Seite wird mit lokal gebündeltem Supabase-Client gebaut", () => {
   });
 
   const html = fs.readFileSync("dist/konto.html", "utf8");
+  const privacy = fs.readFileSync("dist/datenschutz.html", "utf8");
   const bundle = fs.readFileSync("dist/account-client.js", "utf8");
 
   assert.match(html, /Konto &amp; Preisalarme/);
   assert.match(html, /data-email-login/);
   assert.match(html, /data-sync-watchlist/);
+  assert.match(html, /data-alert-form/);
+  assert.match(html, /data-alert-list/);
+  assert.match(html, /Neue Angebote automatisch beobachten/);
   assert.match(html, /sb_publishable_/);
   assert.match(html, /googleAuthEnabled":false/);
   assert.match(html, /content="noindex,follow"/);
+  assert.match(privacy, /Bei freiwilliger Kontoanmeldung können Merkliste, Wunschpreise, Alarmregeln und Benachrichtigungseinstellungen/);
+  assert.match(privacy, /nicht öffentlichen Supabase-Storage-Bereich/);
   assert.ok(bundle.length > 1000);
   assert.doesNotMatch(bundle, /SUPABASE_SECRET_KEY|service_role|RESEND_API_KEY/);
 });
