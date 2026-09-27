@@ -106,3 +106,42 @@ test("aktive Kategorie-Seiten bieten datenbasierten Mehrwert", () => {
   assert.match(html, /Besser vergleichen/);
   assert.match(html, /Mit Preisverlauf/);
 });
+
+
+test("V8 Merkliste und Wunschpreise werden lokal bereitgestellt", () => {
+  build();
+  const watchlist = fs.readFileSync("dist/merkliste.html", "utf8");
+  const app = fs.readFileSync("dist/app.js", "utf8");
+  const offers = JSON.parse(fs.readFileSync("data/offers.json", "utf8"));
+  const target = offers.find((offer) => offer.slug);
+  assert.ok(target);
+  const offerHtml = fs.readFileSync("dist/angebote/" + target.slug + ".html", "utf8");
+  assert.match(watchlist, /Merkliste & Wunschpreise/);
+  assert.match(watchlist, /id="watch-catalog"/);
+  assert.match(watchlist, /content="noindex,follow"/);
+  assert.match(app, /angebotslotse-watchlist-v1/);
+  assert.match(app, /Wunschpreis erreicht/);
+  assert.match(offerHtml, /data-watch-panel/);
+  assert.match(offerHtml, /data-watch-save/);
+});
+
+test("Shops und Suche werden nicht durch alte Fallback-Blöcke überschrieben", () => {
+  build();
+  const shops = fs.readFileSync("dist/shops.html", "utf8");
+  const search = fs.readFileSync("dist/suche.html", "utf8");
+  assert.match(shops, /Shops & Händler/);
+  assert.match(shops, /mindestens drei veröffentlichungsfähigen Angeboten/);
+  assert.match(search, /data-offer-sort/);
+  assert.match(search, /veröffentlichte Angebote/);
+  assert.match(search, /content="noindex,follow"/);
+});
+
+test("Amazon-Buchseite bleibt ohne Live-API ehrlich und ist für Live-Daten vorbereitet", () => {
+  build();
+  const books = fs.readFileSync("dist/buecher.html", "utf8");
+  const source = fs.readFileSync("scripts/build.mjs", "utf8");
+  assert.match(books, /Preis, Format und Verfügbarkeit werden direkt bei Amazon geprüft|Live-Preis und Bild stammen aus der Amazon Creators API/);
+  assert.match(source, /amazonOfferByAsin/);
+  assert.match(source, /owned-project-price/);
+  assert.doesNotMatch(books, />0,00\s*€/);
+});

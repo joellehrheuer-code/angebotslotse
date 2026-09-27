@@ -167,3 +167,194 @@ spreadshopButton?.addEventListener("click", () => {
   }, {once:true});
   document.body.append(script);
 });
+
+const WATCHLIST_KEY = "angebotslotse-watchlist-v1";
+function readWatchlist() {
+  try {
+    const parsed = JSON.parse(localStorage.getItem(WATCHLIST_KEY) || "{}");
+    return parsed && typeof parsed === "object" && !Array.isArray(parsed) ? parsed : {};
+  } catch { return {}; }
+}
+function writeWatchlist(items) {
+  try { localStorage.setItem(WATCHLIST_KEY, JSON.stringify(items)); } catch {}
+  updateWatchIndicators(items);
+}
+function watchItemFromElement(element) {
+  const price = Number(element.dataset.watchPrice);
+  return {
+    id: element.dataset.watchId || "",
+    title: element.dataset.watchTitle || "",
+    merchant: element.dataset.watchMerchant || "",
+    savedPrice: Number.isFinite(price) && price > 0 ? price : null,
+    currency: element.dataset.watchCurrency || "EUR",
+    url: element.dataset.watchUrl || location.href,
+    targetPrice: null,
+    savedAt: new Date().toISOString()
+  };
+}
+function updateWatchIndicators(items = readWatchlist()) {
+  const count = Object.keys(items).length;
+  document.querySelectorAll("[data-watch-count]").forEach(node => {
+    node.hidden = count === 0;
+    node.textContent = String(count);
+  });
+  document.querySelectorAll("[data-watch-toggle]").forEach(button => {
+    const saved = Boolean(items[button.dataset.watchId]);
+    button.setAttribute("aria-pressed", String(saved));
+    button.classList.toggle("saved", saved);
+    const label = button.querySelector("span");
+    if (label) label.textContent = saved ? "Gemerkt" : "Merken";
+    if (button.firstChild && button.firstChild.nodeType === Node.TEXT_NODE) button.firstChild.textContent = saved ? "♥ " : "♡ ";
+  });
+  document.querySelectorAll("[data-watch-panel]").forEach(panel => {
+    const saved = items[panel.dataset.watchId];
+    const input = panel.querySelector("[data-watch-target]");
+    if (input && saved && saved.targetPrice != null) input.value = String(saved.targetPrice);
+    const remove = panel.querySelector("[data-watch-remove]");
+    if (remove) remove.hidden = !saved;
+    const save = panel.querySelector("[data-watch-save]");
+    if (save) save.textContent = saved ? "Aktualisieren" : "Merken";
+  });
+}
+document.querySelectorAll("[data-watch-toggle]").forEach(button => button.addEventListener("click", () => {
+  const items = readWatchlist();
+  const id = button.dataset.watchId;
+  if (!id) return;
+  if (items[id]) delete items[id];
+  else items[id] = watchItemFromElement(button);
+  writeWatchlist(items);
+}));
+document.querySelectorAll("[data-watch-panel]").forEach(panel => {
+  const save = panel.querySelector("[data-watch-save]");
+  const remove = panel.querySelector("[data-watch-remove]");
+  const status = panel.querySelector("[data-watch-status]");
+  save && save.addEventListener("click", () => {
+    const item = watchItemFromElement(panel);
+    const input = panel.querySelector("[data-watch-target]");
+    const target = Number(input && input.value);
+    item.targetPrice = Number.isFinite(target) && target > 0 ? target : null;
+    const items = readWatchlist();
+    items[item.id] = Object.assign({}, items[item.id] || {}, item);
+    writeWatchlist(items);
+    if (status) status.textContent = item.targetPrice ? "Gespeichert. Wunschpreis wird beim nächsten Besuch mit dem aktuellen Stand verglichen." : "Angebot wurde gemerkt.";
+  });
+  remove && remove.addEventListener("click", () => {
+    const items = readWatchlist();
+    delete items[panel.dataset.watchId];
+    writeWatchlist(items);
+    const input = panel.querySelector("[data-watch-target]");
+    if (input) input.value = "";
+    if (status) status.textContent = "Aus der Merkliste entfernt.";
+  });
+});
+
+const watchCatalogNode = document.querySelector("#watch-catalog");
+const watchlistRoot = document.querySelector("[data-watchlist]");
+if (watchlistRoot && watchCatalogNode) {
+  let catalog = {};
+  try { catalog = JSON.parse(watchCatalogNode.textContent || "{}"); } catch {}
+  const renderWatchlist = () => {
+    const items = readWatchlist();
+    watchlistRoot.replaceChildren();
+    let reached = 0;
+    for (const entry of Object.entries(items)) {
+      const id = entry[0], saved = entry[1];
+      const live = catalog[id] || {};
+      const currentPrice = Number(live.currentPrice);
+      const targetPrice = Number(saved.targetPrice);
+      const hasCurrent = Number.isFinite(currentPrice) && currentPrice > 0;
+      const hasTarget = Number.isFinite(targetPrice) && targetPrice > 0;
+      const hit = hasCurrent && hasTarget && currentPrice <= targetPrice;
+      if (hit) reached += 1;
+
+      const article = document.createElement("article");
+      article.className = "watchlist-item" + (hit ? " target-hit" : "");
+
+      if (live.imageUrl) {
+        const imageLink = document.createElement("a");
+        imageLink.className = "watchlist-image";
+        imageLink.href = live.url || saved.url || "#";
+        const img = document.createElement("img");
+        img.src = live.imageUrl;
+        img.alt = "";
+        img.loading = "lazy";
+        imageLink.append(img);
+        article.append(imageLink);
+      }
+
+      const body = document.createElement("div");
+      body.className = "watchlist-body";
+      const merchant = document.createElement("span");
+      merchant.className = "eyebrow";
+      merchant.textContent = live.merchant || saved.merchant || "Angebot";
+      const title = document.createElement("h2");
+      const titleLink = document.createElement("a");
+      titleLink.href = live.url || saved.url || "#";
+      titleLink.textContent = live.title || saved.title || id;
+      title.append(titleLink);
+      body.append(merchant, title);
+
+      const priceRow = document.createElement("div");
+      priceRow.className = "watchlist-prices";
+      const currency = live.currency || saved.currency || "EUR";
+      const current = document.createElement("strong");
+      current.textContent = hasCurrent ? new Intl.NumberFormat("de-DE",{style:"currency",currency:currency}).format(currentPrice) : "Aktuellen Preis prüfen";
+      priceRow.append(current);
+      if (hasTarget) {
+        const target = document.createElement("span");
+        target.textContent = "Wunschpreis: " + new Intl.NumberFormat("de-DE",{style:"currency",currency:currency}).format(targetPrice);
+        priceRow.append(target);
+      }
+      body.append(priceRow);
+
+      const state = document.createElement("p");
+      state.className = "watchlist-state";
+      state.textContent = hit ? "Wunschpreis erreicht" : hasTarget ? "Wunschpreis noch nicht erreicht" : "Ohne Wunschpreis gespeichert";
+      body.append(state);
+
+      const controls = document.createElement("div");
+      controls.className = "watchlist-controls";
+      const targetInput = document.createElement("input");
+      targetInput.type = "number";
+      targetInput.min = "0";
+      targetInput.step = "0.01";
+      targetInput.inputMode = "decimal";
+      targetInput.placeholder = hasCurrent ? currentPrice.toFixed(2) : "Wunschpreis";
+      if (hasTarget) targetInput.value = String(targetPrice);
+      targetInput.setAttribute("aria-label","Wunschpreis");
+      const saveButton = document.createElement("button");
+      saveButton.type = "button";
+      saveButton.className = "button";
+      saveButton.textContent = "Wunschpreis speichern";
+      saveButton.addEventListener("click", () => {
+        const target = Number(targetInput.value);
+        const all = readWatchlist();
+        all[id] = Object.assign({}, saved, {targetPrice:Number.isFinite(target)&&target>0?target:null});
+        writeWatchlist(all);
+        renderWatchlist();
+      });
+      const removeButton = document.createElement("button");
+      removeButton.type = "button";
+      removeButton.className = "button";
+      removeButton.textContent = "Entfernen";
+      removeButton.addEventListener("click", () => {
+        const all = readWatchlist();
+        delete all[id];
+        writeWatchlist(all);
+        renderWatchlist();
+      });
+      controls.append(targetInput, saveButton, removeButton);
+      body.append(controls);
+      article.append(body);
+      watchlistRoot.append(article);
+    }
+    const count = Object.keys(items).length;
+    const empty = document.querySelector("[data-watch-empty]");
+    if (empty) empty.hidden = count > 0;
+    const summary = document.querySelector("[data-watch-summary]");
+    if (summary) summary.textContent = count ? count + " gemerkt · " + reached + " Wunschpreis" + (reached === 1 ? "" : "e") + " erreicht" : "";
+    updateWatchIndicators(items);
+  };
+  renderWatchlist();
+}
+updateWatchIndicators();

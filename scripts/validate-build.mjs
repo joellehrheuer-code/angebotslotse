@@ -1,7 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 
-const required = ["index.html","impressum.html","datenschutz.html","affiliate.html","status.html","kategorien.html","shops.html","suche.html","neu.html","endet-bald.html","top-rabatte.html","rabattcodes.html","preis-gefallen.html","sitemap.xml","robots.txt","styles.css","app.js","og.png"];
+const required = ["index.html","impressum.html","datenschutz.html","affiliate.html","status.html","kategorien.html","shops.html","suche.html","merkliste.html","neu.html","endet-bald.html","top-rabatte.html","rabattcodes.html","preis-gefallen.html","sitemap.xml","robots.txt","styles.css","app.js","og.png"];
 const errors = [];
 for (const file of required) if (!fs.existsSync(path.join("dist",file))) errors.push(`Fehlt: ${file}`);
 const htmlFiles = [];
@@ -14,6 +14,7 @@ for (const file of htmlFiles) {
   if (!html.includes('<link rel="canonical"')) errors.push(`Canonical fehlt: ${file}`);
   if (!html.includes('<meta name="robots"')) errors.push(`Robots-Meta fehlt: ${file}`);
   if (file.endsWith("404.html") && !html.includes('content="noindex,follow"')) errors.push("404 muss noindex sein");
+  if (file.endsWith("merkliste.html") && !html.includes('content="noindex,follow"')) errors.push("Merkliste muss noindex sein");
   if (!html.includes('<meta property="og:title"') || !html.includes('<meta name="twitter:title"')) errors.push(`Social-Metadaten fehlen: ${file}`);
   if (!html.includes('<meta property="og:site_name"') || !html.includes('<meta property="og:locale"') || !html.includes('<meta name="twitter:description"')) errors.push(`Erweiterte Social-Metadaten fehlen: ${file}`);
   const isOfferDetail = ["angebote", "produkt"].some(directory => file.includes(`${path.sep}${directory}${path.sep}`));
