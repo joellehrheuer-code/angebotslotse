@@ -120,11 +120,32 @@ export function buildAffiliateOpportunityReport({
     ])
   );
 
+  const reviewQueue = opportunities.slice(0, 20).map((row, index) => ({
+    rank:index + 1,
+    network:row.network,
+    brand:row.brand,
+    category:row.category,
+    priority:row.priority,
+    score:row.score,
+    kind:row.kind,
+    status:row.status,
+    actionType:row.kind === "application"
+      ? "application-review"
+      : row.kind === "marketplace-search"
+        ? (row.status === "connected" ? "marketplace-review" : "connection-required")
+        : row.kind === "partner-expansion"
+          ? "partner-expansion"
+          : "monitor",
+    nextAction:row.nextAction,
+    applicationDraft:row.applicationDraft
+  }));
+
   return {
     generatedAt,
     total: opportunities.length,
     highPriority: opportunities.filter(row=>row.priority==="hoch").length,
     byNetwork,
+    reviewQueue,
     safeguards:{
       autoDiscovery:true,
       autoRanking:true,

@@ -33,3 +33,24 @@ test("Marketplace-Suchpläne bleiben von echten Bewerbungen getrennt", () => {
   assert.equal(row.applicationDraft,null);
   assert.match(row.reason,/40 veröffentlichte/);
 });
+
+
+test("Review-Queue trennt Zugang, Marketplace-Prüfung und echte Bewerbungen", () => {
+  const report=buildAffiliateOpportunityReport({
+    awin:[{brand:"Brand A",category:"Gaming",priority:"hoch",score:90,status:"notjoined",applicationRequired:true,applicationDraft:"Draft A",nextAction:"Bedingungen prüfen",reasons:["passend"]}],
+    networkSearches:{
+      webgains:[{category:"Technik & Computer",siteOffers:90,priority:"hoch",searchTerms:["electronics"],connected:true,action:"Programme prüfen"}],
+      tradedoubler:[{category:"Gaming",siteOffers:60,priority:"hoch",searchTerms:["gaming"],connected:false,action:"Zugang verbinden"}]
+    }
+  });
+  assert.ok(report.reviewQueue.length >= 3);
+  const awin=report.reviewQueue.find(row=>row.network==="Awin");
+  const webgains=report.reviewQueue.find(row=>row.network==="Webgains");
+  const tradedoubler=report.reviewQueue.find(row=>row.network==="Tradedoubler");
+  assert.equal(awin.actionType,"application-review");
+  assert.equal(awin.applicationDraft,"Draft A");
+  assert.equal(webgains.actionType,"marketplace-review");
+  assert.equal(webgains.applicationDraft,null);
+  assert.equal(tradedoubler.actionType,"connection-required");
+  assert.deepEqual(report.reviewQueue.map(row=>row.rank),report.reviewQueue.map((_,index)=>index+1));
+});
