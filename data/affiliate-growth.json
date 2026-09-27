@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-27T13:40:48.457Z",
+  "generatedAt": "2026-09-27T14:28:53.750Z",
   "market": "DE",
   "publisherId": 3045061,
   "awin": {
@@ -3168,6 +3168,8 @@
   "daisycon": {
     "state": "disabled",
     "programError": null,
+    "mediaDetected": 0,
+    "reviewsEnriched": 0,
     "programs": [],
     "marketplaceSearches": [
       {

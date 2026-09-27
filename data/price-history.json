@@ -24526,5 +24526,33 @@
     "timestamp": "2026-09-27T13:40:48.425Z",
     "price": 999,
     "currency": "EUR"
+  },
+  {
+    "productId": "105010074",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-09-27T14:28:53.719Z",
+    "price": 1099,
+    "currency": "EUR"
+  },
+  {
+    "productId": "8885022190012",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-09-27T14:28:53.719Z",
+    "price": 499,
+    "currency": "EUR"
+  },
+  {
+    "productId": "105010074",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-09-27T14:28:53.719Z",
+    "price": 699,
+    "currency": "EUR"
+  },
+  {
+    "productId": "8885022190012",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-09-27T14:28:53.719Z",
+    "price": 999,
+    "currency": "EUR"
   }
 ]
