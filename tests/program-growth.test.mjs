@@ -25,6 +25,16 @@ test("rankt nicht beigetretene Programme nach echten Discovery-Signalen", () => 
   assert.ok(rows[0].score > rows[1].score);
 });
 
+test("Awin-KPIs erhöhen die Priorität nachvollziehbar", () => {
+  const programs=[{relationship:"notjoined",advertiserId:14815,name:"Samsung Shop DE",primarySector:"Electronic Superstore"}];
+  const without=rankAwinOpportunities({programs})[0];
+  const withKpis=rankAwinOpportunities({programs,programDetails:{"14815":{kpi:{awinIndex:85,approvalPercentage:92,epc:0.4,conversionRate:2.3,validationDays:12},commissionRange:[{min:3,max:8,type:"percentage"}]}}})[0];
+  assert.ok(withKpis.score > without.score);
+  assert.equal(withKpis.metrics.awinIndex,85);
+  assert.equal(withKpis.metrics.commissionMax,8);
+  assert.ok(withKpis.reasons.some(reason=>reason.includes("Awin Index 85")));
+});
+
 test("ausstehende Bewerbungen werden nicht erneut als sendefertig markiert", () => {
   const [row]=rankAwinOpportunities({programs:[{relationship:"pending",advertiserId:1,name:"Audio Shop",primarySector:"Audio"}]});
   assert.equal(row.applicationRequired,false);

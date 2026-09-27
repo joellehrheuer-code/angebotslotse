@@ -1,4 +1,5 @@
-import { fetchAwinOffers, fetchAwinPrograms } from "./awin.mjs";
+import { fetchAwinOffers, fetchAwinPrograms, fetchAwinProgramDetails } from "./awin.mjs";
+import { categoryForProgram, isStrategicProgram } from "./program-growth.mjs";
 import { fetchAwinProductFeeds, fetchAwinEnhancedFeeds } from "./awin-product-feeds.mjs";
 import { fetchImpactOffers } from "./impact.mjs";
 import { fetchDirectOffers } from "./direct.mjs";
@@ -10,9 +11,21 @@ export async function collectSources(env = process.env) {
   let awinPrograms=null;
   let awinDiscoveryOffers=[];
   let awinDiscoveryError=null;
+  const awinProgramDetails={};
   if(env.AWIN_PUBLISHER_ID&&env.AWIN_API_TOKEN) {
     try{awinPrograms=await fetchAwinPrograms({publisherId:env.AWIN_PUBLISHER_ID,token:env.AWIN_API_TOKEN});}catch{}
     try{awinDiscoveryOffers=await fetchAwinOffers({publisherId:env.AWIN_PUBLISHER_ID,token:env.AWIN_API_TOKEN,membership:"notJoined",maxPages:5});}catch(error){awinDiscoveryError=String(error.message).slice(0,160);}
+    const detailLimit=Math.min(8,Math.max(0,Number(env.AWIN_PROGRAM_DETAIL_LIMIT)||6));
+    const detailCandidates=[...(awinPrograms?.notjoined??[]),...(awinPrograms?.pending??[])]
+      .filter(program=>isStrategicProgram(program)||categoryForProgram(program)!=="Weitere")
+      .sort((a,b)=>Number(isStrategicProgram(b))-Number(isStrategicProgram(a))||String(a.name??"").localeCompare(String(b.name??""),"de"))
+      .slice(0,detailLimit);
+    for(const program of detailCandidates){
+      const advertiserId=program.id??program.advertiserId;
+      if(!advertiserId)continue;
+      try{awinProgramDetails[String(advertiserId)]=await fetchAwinProgramDetails({publisherId:env.AWIN_PUBLISHER_ID,token:env.AWIN_API_TOKEN,advertiserId,relationship:String(program.relationship??"notjoined").toLowerCase()});}
+      catch{/* KPI enrichment is optional; discovery continues without it. */}
+    }
   }
   const joined=(awinPrograms?.joined??[]).map(row=>({id:row.id??row.advertiserId,name:row.name??row.advertiserName})).filter(row=>row.id);
   const definitions = [
@@ -32,5 +45,5 @@ export async function collectSources(env = process.env) {
     try { const rows=await run(); return { name, state: "ok", rows, audit:rows.audit??null }; }
     catch (error) { return { name, state: "error", rows: [], error: String(error.message).slice(0, 160) }; }
   }));
-  return {sources:results,awinPrograms,awinDiscoveryOffers,awinDiscoveryError};
+  return {sources:results,awinPrograms,awinDiscoveryOffers,awinDiscoveryError,awinProgramDetails};
 }

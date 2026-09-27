@@ -42,6 +42,18 @@ export async function fetchAwinPrograms({ publisherId, token, fetchImpl = fetch,
   return inventory;
 }
 
+export async function fetchAwinProgramDetails({ publisherId, token, advertiserId, relationship = "any", fetchImpl = fetch }) {
+  if (!publisherId || !token || !advertiserId) throw new Error("AWIN_PUBLISHER_ID, AWIN_API_TOKEN und advertiserId sind erforderlich.");
+  const allowed = new Set(["joined", "pending", "suspended", "rejected", "notjoined", "any"]);
+  if (!allowed.has(String(relationship).toLowerCase())) throw new Error("Ungültiger Awin-Beziehungsstatus.");
+  const query = new URLSearchParams({ accessToken: token, advertiserId: String(advertiserId), relationship: String(relationship).toLowerCase() });
+  const response = await fetchImpl(`${API}/publishers/${encodeURIComponent(publisherId)}/programmedetails?${query}`, {
+    headers: { Authorization: `Bearer ${token}` }
+  });
+  if (!response.ok) throw new Error(`Awin Program Details API: HTTP ${response.status}`);
+  return response.json();
+}
+
 export async function fetchAwinTransactions({ publisherId, token, startDate, endDate, fetchImpl = fetch }) {
   const query = new URLSearchParams({ accessToken: token, startDate, endDate, timezone: "Europe/Berlin" });
   const response = await fetchImpl(`${API}/publishers/${encodeURIComponent(publisherId)}/transactions/?${query}`, { headers: { Authorization: `Bearer ${token}` } });

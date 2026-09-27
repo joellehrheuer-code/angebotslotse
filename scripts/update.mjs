@@ -60,7 +60,7 @@ try {
   const impactInventory=(impact?.audit?.programInventory??[]).map(row=>({name:row.name,platform:"Impact",status:row.status,country:row.countries,categories:[],commission:null,cookieDuration:null,
     productFeed:(impact?.audit?.catalogs??0)>0,images:(impact?.audit?.products??0)>0,prices:(impact?.audit?.products??0)>0,coupons:(impact?.audit?.promotions??0)>0,deeplinks:row.deeplinks,
     dealShoppingAllowed:null,applicationPossible:false,applicationSent:false,lastChecked:checkedAt,advertiserId:row.advertiserId,campaignId:row.campaignId}));
-  const opportunities=rankAwinOpportunities({programs:programmeRows,discoveryOffers:awinDiscoveryOffers,feedAdvertiserIds:feedAdvertisers});
+  const opportunities=rankAwinOpportunities({programs:programmeRows,discoveryOffers:awinDiscoveryOffers,feedAdvertiserIds:feedAdvertisers,programDetails:collected.awinProgramDetails??{}});
   const opportunityById=new Map(opportunities.map(opportunity=>[String(opportunity.advertiserId),opportunity]));
   for(const program of programInventory){
     const opportunity=opportunityById.get(String(program.advertiserId));
@@ -69,9 +69,10 @@ try {
     program.opportunityScore=opportunity.score;
     program.opportunityPriority=opportunity.priority;
     program.activeDiscoveryOffers=opportunity.activeDiscoveryOffers;
+    program.metrics=opportunity.metrics;
   }
   const growth={generatedAt:new Date().toISOString(),market:"DE",publisherId:Number(process.env.AWIN_PUBLISHER_ID)||null,
-    awin:{counts:Object.fromEntries(Object.entries(collected.awinPrograms??{}).map(([key,rows])=>[key,rows.length])),programs:programmeRows,discoveryOffers:awinDiscoveryOffers.length,discoveryError:collected.awinDiscoveryError??null,opportunities:opportunities.slice(0,25),feeds:feedSources.map(source=>({source:source.name,state:source.state,count:source.rows.length,audit:source.audit??null}))},
+    awin:{counts:Object.fromEntries(Object.entries(collected.awinPrograms??{}).map(([key,rows])=>[key,rows.length])),programs:programmeRows,discoveryOffers:awinDiscoveryOffers.length,discoveryError:collected.awinDiscoveryError??null,detailsEnriched:Object.keys(collected.awinProgramDetails??{}).length,opportunities:opportunities.slice(0,25),feeds:feedSources.map(source=>({source:source.name,state:source.state,count:source.rows.length,audit:source.audit??null}))},
     impact:{state:impact?.state??"disabled",publishableOffers:impact?.rows.length??0,inventory:impact?.audit??null},
     publication:{offers:publicOffers.length,concreteAwaitingMedia:concreteOffers.filter(offer=>!isPublicationReady(offer)).length,partnerEntries:offers.length-concreteOffers.length,merchants:new Set(publicOffers.map(offer=>offer.advertiser)).size,products:publicOffers.filter(offer=>offer.productId).length,images:publicOffers.filter(offer=>offer.imageUrl).length,videos:publicOffers.filter(offer=>offer.videoUrl).length,prices:publicOffers.filter(offer=>offer.currentPrice!=null).length,discounts:publicOffers.filter(offer=>offer.discountPercent).length,coupons:publicOffers.filter(offer=>offer.voucherCode).length},
     safeguards:{unjoinedProgramsPublished:false,applicationSubmission:"review-required",credentialsPersisted:false}};

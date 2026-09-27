@@ -2,12 +2,22 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { fetchDirectOffers } from "../scripts/lib/direct.mjs";
 import { fetchImpactOffers, IMPACT_API_VERSION } from "../scripts/lib/impact.mjs";
-import { fetchAwinPrograms } from "../scripts/lib/awin.mjs";
+import { fetchAwinPrograms, fetchAwinProgramDetails } from "../scripts/lib/awin.mjs";
 
 test("Awin-Programminventar trennt alle offiziellen Beziehungszustände",async()=>{
   const calls=[];const fetchImpl=async url=>{calls.push(String(url));return{ok:true,json:async()=>[{id:1,name:"Programm"}]};};
   const result=await fetchAwinPrograms({publisherId:"3045061",token:"secret",fetchImpl});
   assert.deepEqual(Object.keys(result),["joined","pending","suspended","rejected","notjoined"]);assert.equal(calls.length,5);assert.ok(calls.every(url=>url.includes("countryCode=DE")));
+});
+
+test("Awin-Programmdetails liefern KPI- und Provisionsdaten",async()=>{
+  let called="";
+  const fetchImpl=async url=>{called=String(url);return{ok:true,json:async()=>({kpi:{awinIndex:82,approvalPercentage:91,epc:0.42,conversionRate:3.4,validationDays:18},commissionRange:[{min:3,max:8,type:"percentage"}]})};};
+  const result=await fetchAwinProgramDetails({publisherId:"3045061",token:"secret",advertiserId:14815,relationship:"notjoined",fetchImpl});
+  assert.equal(result.kpi.awinIndex,82);
+  assert.match(called,/programmedetails/);
+  assert.match(called,/advertiserId=14815/);
+  assert.match(called,/relationship=notjoined/);
 });
 
 test("direkte Partner liefern nur aktivierte HTTPS-Angebote", async () => {
