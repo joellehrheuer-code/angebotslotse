@@ -7,6 +7,45 @@ const normalizePriority = value => {
 
 const scoreOf = row => Number.isFinite(Number(row?.score)) ? Number(row.score) : 0;
 
+const actionTypeFor = row => row.kind === "application"
+  ? "application-review"
+  : row.kind === "marketplace-search"
+    ? (row.status === "connected" ? "marketplace-review" : "connection-required")
+    : row.kind === "partner-expansion"
+      ? "partner-expansion"
+      : "monitor";
+
+const actionWeight = {
+  "application-review": 5,
+  "partner-expansion": 4,
+  "marketplace-review": 3,
+  "connection-required": 2,
+  "monitor": 1
+};
+
+const queueSort = (a,b) =>
+  (actionWeight[actionTypeFor(b)] || 0) - (actionWeight[actionTypeFor(a)] || 0) ||
+  (priorityWeight[b.priority] || 0) - (priorityWeight[a.priority] || 0) ||
+  b.score - a.score ||
+  String(a.network).localeCompare(String(b.network),"de") ||
+  String(a.brand).localeCompare(String(b.brand),"de");
+
+const queueRow = (row, index) => ({
+  rank:index + 1,
+  network:row.network,
+  brand:row.brand,
+  category:row.category,
+  priority:row.priority,
+  score:row.score,
+  kind:row.kind,
+  status:row.status,
+  actionType:actionTypeFor(row),
+  nextAction:row.nextAction,
+  applicationDraft:row.applicationDraft,
+  submissionReady:row.submissionReady,
+  humanApprovalRequired:row.humanApprovalRequired
+});
+
 const common = ({ network, brand, category, priority, score, status, action, draft, reason, kind, reference, submissionReady = false, humanApprovalRequired = false }) => ({
   network,
   brand: brand || network,
@@ -45,7 +84,8 @@ export function buildAffiliateOpportunityReport({
       draft:row.applicationDraft,
       reason:(row.reasons || []).join(", "),
       kind:row.applicationRequired ? "application" : "pending",
-      reference:row.advertiserId
+      reference:row.advertiserId,
+      humanApprovalRequired:Boolean(row.applicationRequired)
     }));
   }
 
@@ -143,27 +183,20 @@ export function buildAffiliateOpportunityReport({
     ])
   );
 
-  const reviewQueue = opportunities.slice(0, 20).map((row, index) => ({
-    rank:index + 1,
-    network:row.network,
-    brand:row.brand,
-    category:row.category,
-    priority:row.priority,
-    score:row.score,
-    kind:row.kind,
-    status:row.status,
-    actionType:row.kind === "application"
-      ? "application-review"
-      : row.kind === "marketplace-search"
-        ? (row.status === "connected" ? "marketplace-review" : "connection-required")
-        : row.kind === "partner-expansion"
-          ? "partner-expansion"
-          : "monitor",
-    nextAction:row.nextAction,
-    applicationDraft:row.applicationDraft,
-    submissionReady:row.submissionReady,
-    humanApprovalRequired:row.humanApprovalRequired
-  }));
+  const queueCandidates = [...opportunities].sort(queueSort);
+  const reviewQueue = queueCandidates.slice(0, 20).map(queueRow);
+  const actionNow = queueCandidates
+    .filter(row => ["application-review","partner-expansion","marketplace-review"].includes(actionTypeFor(row)))
+    .slice(0, 12)
+    .map(queueRow);
+  const connectionQueue = queueCandidates
+    .filter(row => actionTypeFor(row) === "connection-required")
+    .slice(0, 12)
+    .map(queueRow);
+  const monitorQueue = queueCandidates
+    .filter(row => actionTypeFor(row) === "monitor")
+    .slice(0, 12)
+    .map(queueRow);
 
   return {
     generatedAt,
@@ -171,6 +204,9 @@ export function buildAffiliateOpportunityReport({
     highPriority: opportunities.filter(row=>row.priority==="hoch").length,
     byNetwork,
     reviewQueue,
+    actionNow,
+    connectionQueue,
+    monitorQueue,
     safeguards:{
       autoDiscovery:true,
       autoRanking:true,

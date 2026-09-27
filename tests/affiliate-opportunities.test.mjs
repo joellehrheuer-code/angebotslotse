@@ -57,3 +57,39 @@ test("Review-Queue trennt Zugang, Marketplace-Prüfung und echte Bewerbungen", (
   assert.equal(tradedoubler.actionType,"connection-required");
   assert.deepEqual(report.reviewQueue.map(row=>row.rank),report.reviewQueue.map((_,index)=>index+1));
 });
+
+
+test("sofort prüfbare Bewerbungen stehen vor reinen Verbindungs-Blockern", () => {
+  const report=buildAffiliateOpportunityReport({
+    awin:[{
+      brand:"Ready Brand",category:"Technik & Computer",priority:"mittel",score:45,
+      status:"notjoined",applicationRequired:true,applicationDraft:"Draft",
+      nextAction:"Bedingungen prüfen",reasons:["passend"]
+    }],
+    networkSearches:{
+      tradedoubler:[{
+        category:"Technik & Computer",siteOffers:500,priority:"hoch",
+        searchTerms:["electronics"],connected:false,action:"Zugang verbinden"
+      }]
+    }
+  });
+  assert.equal(report.reviewQueue[0].network,"Awin");
+  assert.equal(report.reviewQueue[0].actionType,"application-review");
+  assert.equal(report.reviewQueue[0].humanApprovalRequired,true);
+  assert.equal(report.connectionQueue[0].network,"Tradedoubler");
+  assert.equal(report.actionNow[0].brand,"Ready Brand");
+});
+
+test("gemeinsamer Report trennt Jetzt-Aktionen, Verbindungen und Monitoring", () => {
+  const report=buildAffiliateOpportunityReport({
+    impact:[{brand:"Joined Brand",category:"Audio & Musik",priority:"mittel",score:30,nextAction:"Ausbauen",contactDraft:"Kontakt",reasons:["Feed"],campaignId:"x"}],
+    networkSearches:{
+      webgains:[{category:"Gaming",siteOffers:20,priority:"mittel",searchTerms:["gaming"],connected:true,action:"Programme prüfen"}],
+      daisycon:[{category:"Haushalt & Alltag",siteOffers:60,priority:"hoch",searchTerms:["home"],connected:false,action:"Zugang verbinden"}]
+    }
+  });
+  assert.ok(report.actionNow.some(row=>row.actionType==="partner-expansion"));
+  assert.ok(report.actionNow.some(row=>row.actionType==="marketplace-review"));
+  assert.ok(report.connectionQueue.every(row=>row.actionType==="connection-required"));
+  assert.ok(Array.isArray(report.monitorQueue));
+});
