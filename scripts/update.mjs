@@ -1,6 +1,6 @@
 import fs from "node:fs/promises";
 import { collectSources } from "./lib/source-manager.mjs";
-import { normalizeAndDedupe, isConcreteOffer, isPublicationReady } from "./lib/normalize.mjs";
+import { normalizeAndDedupe, isConcreteOffer, isPublicationReady, refineOfferCategory, isMarketCompatibleTitle } from "./lib/normalize.mjs";
 import { updatePriceHistory } from "./lib/price-history.mjs";
 import { selectHomepageOffers } from "./lib/homepage-selection.mjs";
 import { mergeOfferInventory } from "./lib/offer-merge.mjs";
@@ -37,13 +37,17 @@ try {
   const failed = new Set(sources.filter(s => s.state === "error").map(s => s.name));
   const fresh = sources.flatMap(s => s.rows);
     const normalizedFresh = normalizeAndDedupe(fresh, config).filter(offer => !(offer.source === "awin" && String(offer.sourceId).startsWith("enhanced-") && !(Number(offer.currentPrice) > 0 && offer.imageUrl && offer.trackingUrl)));
-  const offers = mergeOfferInventory({
+  const mergedOffers = mergeOfferInventory({
     freshOffers: normalizedFresh,
     oldOffers,
     sources,
     maxOffers: config.maxOffers,
     circuitBreakerRatio: Number(config.inventoryCircuitBreakerRatio) || 0.5
   });
+  const offers = mergedOffers
+    .filter(offer => isMarketCompatibleTitle(offer.title, config.marketCountry))
+    .map(offer => ({...offer,category:refineOfferCategory(offer,config)}));
+  const filteredForeignLocale = Math.max(0, mergedOffers.length - offers.length);
   const newIds = new Set(offers.map(o => o.id));
   const updateAt = new Date().toISOString();
   const removedOffers = oldOffers.filter(o => !newIds.has(o.id));
@@ -51,6 +55,7 @@ try {
   status = { state: "ok", lastSuccessfulUpdate: updateAt, activeOffers: offers.length,
     added: offers.filter(o => !oldIds.has(o.id)).length, removed: removedOffers.length,
     archivedThisRun: removedOffers.length, archivedTotal: archive.items.length,
+    filteredForeignLocale,
     invalidLinks: 0, apiErrors: failed.size, sources: Object.fromEntries(sources.map(s => [s.name, { state: s.state, count: s.rows.length, error: s.error ?? null, audit: s.audit ?? null }])),
     creatorFeed: creatorFeedState,
     stale: offers.filter(o => o.isStale).length,
@@ -195,7 +200,7 @@ try {
   await fs.writeFile("report/manual-actions.json",`${JSON.stringify({generatedAt:checkedAt,actions:manualActions},null,2)}\n`);
   const oldProgramKeys=new Set((oldProgramInventory.programs??[]).map(program=>`${program.platform}:${program.advertiserId}:${program.campaignId??""}`));
   const selections=selectHomepageOffers(publicOffers,{now:new Date(checkedAt),score:offer=>(offer.discountPercent||0)*1000+(offer.currentPrice!=null?80:0)+(offer.endDate?50:0)+(offer.voucherCode?30:0)+(offer.imageUrl?25:0)});
-  const report={generatedAt:checkedAt,newAwinPrograms:programInventory.filter(program=>!oldProgramKeys.has(`Awin:${program.advertiserId}:`)).length,newImpactPrograms:impactInventory.filter(program=>!oldProgramKeys.has(`Impact:${program.advertiserId}:${program.campaignId??""}`)).length,newDaisyconPrograms:daisyconInventory.filter(program=>!oldProgramKeys.has(`Daisycon:${program.advertiserId}:`)).length,activeAwinPrograms:programInventory.filter(program=>program.status==="joined").length,activeImpactPrograms:impactInventory.filter(program=>String(program.status).toLowerCase()==="active").length,applicationsSent:0,pendingApplications:programInventory.filter(program=>program.status==="pending").length,manualApplications:manualActions.filter(action=>/-apply-/.test(action.id)).length,networkReviewActions:manualActions.filter(action=>/(marketplace-review|connect)$/.test(action.id)).length,awinDiscoveryOffers:awinDiscoveryOffers.length,applicationCandidates:opportunities.filter(opportunity=>opportunity.applicationRequired).length+daisyconOpportunities.filter(opportunity=>opportunity.applicationPossible).length,newMerchants:new Set(publicOffers.filter(offer=>!oldIds.has(offer.id)).map(offer=>offer.advertiser)).size,newProducts:publicOffers.filter(offer=>!oldIds.has(offer.id)&&offer.productId).length,productsWithImage:publicOffers.filter(offer=>offer.imageUrl).length,productsWithVideo:publicOffers.filter(offer=>offer.videoUrl).length,productsWithPrice:publicOffers.filter(offer=>Number(offer.currentPrice)>0).length,productsWithOldPrice:publicOffers.filter(offer=>Number(offer.previousPrice)>Number(offer.currentPrice)).length,productsWithDiscount:publicOffers.filter(offer=>Number(offer.discountPercent)>0).length,newCoupons:publicOffers.filter(offer=>offer.voucherCode&&!oldIds.has(offer.id)).length,coupons:publicOffers.filter(offer=>offer.voucherCode).length,priceChanges:publicOffers.filter(offer=>offer.lastPriceChange).length,expiredOffers:oldOffers.filter(offer=>offer.endDate&&new Date(offer.endDate)<=new Date()).length,expiredCoupons:oldOffers.filter(offer=>offer.voucherCode&&offer.endDate&&new Date(offer.endDate)<=new Date()).length,totalProducts:publicOffers.length,productsBySource:sourceStats,productsByMerchant:merchantStats,productsByCategory:categoryStats,awinEnhancedFeeds,quarantinedRecords:oldOffers.filter(isQuarantined).length,dailyDeal:selections.dailyDeal?.id||null,dailyHighlights:selections.dailyHighlights.map(offer=>offer.id),weekDeals:selections.weekDeals.map(offer=>offer.id),monthHighlights:selections.monthHighlights.map(offer=>offer.id),apiErrors:failed.size,affiliateLinkErrors:0};
+  const report={generatedAt:checkedAt,newAwinPrograms:programInventory.filter(program=>!oldProgramKeys.has(`Awin:${program.advertiserId}:`)).length,newImpactPrograms:impactInventory.filter(program=>!oldProgramKeys.has(`Impact:${program.advertiserId}:${program.campaignId??""}`)).length,newDaisyconPrograms:daisyconInventory.filter(program=>!oldProgramKeys.has(`Daisycon:${program.advertiserId}:`)).length,activeAwinPrograms:programInventory.filter(program=>program.status==="joined").length,activeImpactPrograms:impactInventory.filter(program=>String(program.status).toLowerCase()==="active").length,applicationsSent:0,pendingApplications:programInventory.filter(program=>program.status==="pending").length,manualApplications:manualActions.filter(action=>/-apply-/.test(action.id)).length,networkReviewActions:manualActions.filter(action=>/(marketplace-review|connect)$/.test(action.id)).length,awinDiscoveryOffers:awinDiscoveryOffers.length,applicationCandidates:opportunities.filter(opportunity=>opportunity.applicationRequired).length+daisyconOpportunities.filter(opportunity=>opportunity.applicationPossible).length,newMerchants:new Set(publicOffers.filter(offer=>!oldIds.has(offer.id)).map(offer=>offer.advertiser)).size,newProducts:publicOffers.filter(offer=>!oldIds.has(offer.id)&&offer.productId).length,productsWithImage:publicOffers.filter(offer=>offer.imageUrl).length,productsWithVideo:publicOffers.filter(offer=>offer.videoUrl).length,productsWithPrice:publicOffers.filter(offer=>Number(offer.currentPrice)>0).length,productsWithOldPrice:publicOffers.filter(offer=>Number(offer.previousPrice)>Number(offer.currentPrice)).length,productsWithDiscount:publicOffers.filter(offer=>Number(offer.discountPercent)>0).length,newCoupons:publicOffers.filter(offer=>offer.voucherCode&&!oldIds.has(offer.id)).length,coupons:publicOffers.filter(offer=>offer.voucherCode).length,priceChanges:publicOffers.filter(offer=>offer.lastPriceChange).length,expiredOffers:oldOffers.filter(offer=>offer.endDate&&new Date(offer.endDate)<=new Date()).length,expiredCoupons:oldOffers.filter(offer=>offer.voucherCode&&offer.endDate&&new Date(offer.endDate)<=new Date()).length,filteredForeignLocale,totalProducts:publicOffers.length,productsBySource:sourceStats,productsByMerchant:merchantStats,productsByCategory:categoryStats,awinEnhancedFeeds,quarantinedRecords:oldOffers.filter(isQuarantined).length,dailyDeal:selections.dailyDeal?.id||null,dailyHighlights:selections.dailyHighlights.map(offer=>offer.id),weekDeals:selections.weekDeals.map(offer=>offer.id),monthHighlights:selections.monthHighlights.map(offer=>offer.id),apiErrors:failed.size,affiliateLinkErrors:0};
   await fs.writeFile("report/update-report.json",`${JSON.stringify(report,null,2)}\n`);
 } catch (error) {
   status = { state: "error", lastSuccessfulUpdate: oldStatus.lastSuccessfulUpdate ?? null, activeOffers: oldOffers.length, added: 0, removed: 0,

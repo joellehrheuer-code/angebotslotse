@@ -12,13 +12,13 @@
     "webPushVapidPublicKey": "BKqtqxwHo2pSbCh2S7eVfusa7vOJbijVvoN03AxxEuZaIxbUTQRz9x8dT2KrJbQWjEkWvoYD8VfxTflq6MPiZDM"
   },
   "categories": {
-    "technik": ["elektronik", "technik", "mobile", "smartphone", "tv"],
-    "gaming": ["gaming", "konsole", "playstation", "xbox", "nintendo"],
-    "audio-musik": ["audio", "musik", "mikrofon", "gitarre", "plugin", "studio", "rode", "waves", "thomann"],
-    "computer": ["computer", "laptop", "notebook", "pc", "monitor"],
-    "zubehoer": ["zubehör", "zubehoer", "kabel", "adapter", "case"],
-    "haushalt": ["haushalt", "home", "küche", "garden"],
-    "werkzeug": ["werkzeug", "tools", "bohrer", "maschine"],
+    "technik": ["elektronik", "technik", "mobile", "smartphone", "tv", "kamera", "camera", "smart home", "smarthome"],
+    "gaming": ["gaming", "konsole", "playstation", "xbox", "nintendo", "controller"],
+    "audio-musik": ["audio", "musik", "mikrofon", "microphone", "gitarre", "plugin", "studio", "headset", "lark", "solidcom", "rode", "waves", "thomann"],
+    "computer": ["computer", "laptop", "notebook", "pc", "monitor", "keyboard", "tastatur", "maus", "mouse"],
+    "zubehoer": ["zubehör", "zubehoer", "kabel", "cable", "adapter", "case", "akku", "battery", "antenne", "antenna", "halterung", "bracket", "clamp"],
+    "haushalt": ["haushalt", "home", "küche", "garden", "kaffee", "coffee", "espresso", "barista", "latte", "siebeinsatz"],
+    "werkzeug": ["werkzeug", "tools", "bohrer", "maschine", "mähroboter", "maehroboter", "rasenmäher", "rasenmaeher", "mower", "klinge", "ladestation", "rtk"],
     "mode": ["mode", "fashion", "schuhe", "clothing"],
     "freizeit": ["freizeit", "sport", "reise", "travel"],
     "sonstiges": []

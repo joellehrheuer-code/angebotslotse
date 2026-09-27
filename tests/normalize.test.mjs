@@ -29,3 +29,33 @@ test("Awin-Discovery kann aktive Angebote nicht beigetretener Programme getrennt
   assert.equal(body.filters.membership,"notJoined");
   assert.deepEqual(body.filters.regionCodes,["DE"]);
 });
+
+
+test("explizite fremde Locale-Varianten werden trotz DE-Region verworfen",()=>{
+  const cfg={marketCountry:"DE",maxOffers:100,categories:{gaming:["gaming"],sonstiges:[]}};
+  const base={...valid,source:"impact",title:"(Local: DE) Razer Gaming Mouse",url:"https://razer.example/de",urlTracking:"https://track.example/de",regions:{list:[{countryCode:"DE"}]}};
+  assert.ok(normalizeOffer(base,cfg,new Date("2026-01-01")));
+  assert.ok(normalizeOffer({...base,title:"(Local: EU) Razer Gaming Mouse"},cfg,new Date("2026-01-01")));
+  assert.equal(normalizeOffer({...base,title:"(Local: US) Razer Gaming Mouse"},cfg,new Date("2026-01-01")),null);
+  assert.equal(normalizeOffer({...base,title:"INDEPENDENT (UK) - Razer Gaming Mouse"},cfg,new Date("2026-01-01")),null);
+  assert.equal(normalizeOffer({...base,title:"US: Razer Gaming Mouse"},cfg,new Date("2026-01-01")),null);
+});
+
+test("Händler-Fallback kategorisiert echte Sortimente nur in vorhandene Kategorien",()=>{
+  const cfg={marketCountry:"DE",maxOffers:100,categories:{
+    technik:["kamera"],gaming:["gaming"],"audio-musik":["mikrofon"],computer:["laptop"],zubehoer:["cable"],haushalt:["kaffee"],werkzeug:["mähroboter"],sonstiges:[]
+  }};
+  const raw=(merchant,title,brand="")=>({...valid,title,description:"",advertiser:{id:9,name:merchant,joined:true},brand,urlTracking:"https://track.example/"+encodeURIComponent(title),url:"https://shop.example/"+encodeURIComponent(title)});
+  assert.equal(normalizeOffer(raw("ANTHBOT DE","ANTHBOT N8","ANTHBOT-DE"),cfg,new Date("2026-01-01")).category,"werkzeug");
+  assert.equal(normalizeOffer(raw("Outin Germany","OutIn Pin-Nano","OutIn"),cfg,new Date("2026-01-01")).category,"haushalt");
+  assert.equal(normalizeOffer(raw("Hollyland DE","Pyro S","Hollyland"),cfg,new Date("2026-01-01")).category,"audio-musik");
+  assert.equal(normalizeOffer(raw("Imou DE","Ranger 2","Imou"),cfg,new Date("2026-01-01")).category,"technik");
+  assert.equal(normalizeOffer(raw("Razer Store","Quartz Collection","Razer"),cfg,new Date("2026-01-01")).category,"gaming");
+  assert.equal(normalizeOffer(raw("Hollyland DE","HDMI Cable","Hollyland"),cfg,new Date("2026-01-01")).category,"zubehoer");
+});
+
+test("Händler-Fallback erfindet keine Kategorie außerhalb der Config",()=>{
+  const cfg={marketCountry:"DE",maxOffers:100,categories:{sonstiges:[]}};
+  const row={...valid,title:"ANTHBOT N8",advertiser:{id:9,name:"ANTHBOT DE",joined:true},urlTracking:"https://track.example/a",url:"https://shop.example/a"};
+  assert.equal(normalizeOffer(row,cfg,new Date("2026-01-01")).category,"sonstiges");
+});

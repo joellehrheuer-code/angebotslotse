@@ -33,6 +33,49 @@ export function categoryFor(value, categories) {
   return Object.entries(categories).find(([key, words]) => key !== "sonstiges" && words.some(word => source.includes(word)))?.[0] ?? "sonstiges";
 }
 
+const explicitMarketFromTitle = value => {
+  const source = text(value, 180);
+  const patterns = [
+    /^\s*\(local:\s*([a-z]{2})\)/i,
+    /^\s*\(([a-z]{2})\)/i,
+    /^\s*independent\s*\(([a-z]{2})\)/i,
+    /^\s*([a-z]{2}):\s/i
+  ];
+  for (const pattern of patterns) {
+    const match = source.match(pattern);
+    if (match) return match[1].toUpperCase();
+  }
+  return null;
+};
+
+const merchantCategoryFallback = value => {
+  const source = text(value, 300).toLowerCase();
+  if (/\brazer\b/.test(source)) return "gaming";
+  if (/\banthbot\b/.test(source)) return "werkzeug";
+  if (/\bimou\b/.test(source)) return "technik";
+  if (/\bhollyland\b/.test(source)) return "audio-musik";
+  if (/\bout\s*in\b|\boutin\b/.test(source)) return "haushalt";
+  return "sonstiges";
+};
+
+const categoryForOffer = (raw, advertiser, config) => {
+  if (raw.category && raw.category !== "sonstiges" && config.categories[raw.category]) return raw.category;
+  const detected = categoryFor(`${raw.title ?? ""} ${raw.description ?? ""} ${raw.brand ?? raw.manufacturer ?? ""}`, config.categories);
+  if (detected !== "sonstiges") return detected;
+  const fallback = merchantCategoryFallback(`${advertiser} ${raw.brand ?? raw.manufacturer ?? ""}`);
+  return config.categories[fallback] ? fallback : "sonstiges";
+};
+
+export const isMarketCompatibleTitle = (value, marketCountry = "DE") => {
+  const explicitMarket = explicitMarketFromTitle(value);
+  return !explicitMarket || [String(marketCountry || "DE").toUpperCase(), "EU"].includes(explicitMarket);
+};
+
+export const refineOfferCategory = (raw, config) => {
+  const advertiser = text(raw.advertiser?.name ?? raw.advertiserName ?? raw.advertiser, 120);
+  return categoryForOffer(raw, advertiser, config);
+};
+
 export function normalizeOffer(raw, config, now = new Date()) {
   const title = text(raw.title, 180);
   const trackingUrl = safeHttpUrl(raw.urlTracking ?? raw.trackingUrl);
@@ -42,6 +85,7 @@ export function normalizeOffer(raw, config, now = new Date()) {
   const regions = raw.regions?.all ? ["ALL"] : (raw.regions?.list ?? []).map(r => text(r.countryCode, 2).toUpperCase());
   if (!title || !trackingUrl || !destinationUrl) return null;
   if (raw.advertiser?.joined === false) return null;
+  if (!isMarketCompatibleTitle(title, config.marketCountry)) return null;
   if (endDate && (!Number.isFinite(endDate.valueOf()) || endDate < now)) return null;
   if (startDate && Number.isFinite(startDate.valueOf()) && startDate > now) return null;
   if (regions.length && !regions.includes("ALL") && !regions.includes(config.marketCountry)) return null;
@@ -61,7 +105,7 @@ export function normalizeOffer(raw, config, now = new Date()) {
     type: raw.type === "voucher" ? "voucher" : "promotion",
     voucherCode: raw.voucher?.code ? text(raw.voucher.code, 100) : null,
     trackingUrl, destinationUrl, startDate: startDate?.toISOString() ?? null,
-    endDate: endDate?.toISOString() ?? null, category: raw.category && config.categories[raw.category] ? raw.category : categoryFor(`${raw.title} ${raw.description}`, config.categories),
+    endDate: endDate?.toISOString() ?? null, category: categoryForOffer(raw, advertiser, config),
     dateAdded: raw.dateAdded ? new Date(raw.dateAdded).toISOString() : null,
     updatedAt: now.toISOString(),
     imageUrl: safeHttpUrl(raw.imageUrl ?? raw.image ?? raw.imageUri),
