@@ -1,6 +1,6 @@
 {
   "state": "ok",
-  "lastSuccessfulUpdate": "2026-09-27T15:16:35.839Z",
+  "lastSuccessfulUpdate": "2026-09-27T15:27:24.034Z",
   "activeOffers": 809,
   "added": 0,
   "removed": 0,
@@ -140,7 +140,7 @@
       "count": 0,
       "error": null,
       "audit": {
-        "reason": "TRADEDOUBLER_FEED_URLS missing – Tradedoubler feed sync skipped"
+        "reason": "TRADEDOUBLER_PRODUCTS_TOKEN / TRADEDOUBLER_FEED_URLS missing – Tradedoubler sync skipped"
       }
     },
     "webgains": {
