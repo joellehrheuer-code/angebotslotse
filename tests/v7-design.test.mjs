@@ -157,3 +157,18 @@ test("Sitemap enthält nur indexierbare Discovery-Seiten", () => {
   assert.doesNotMatch(sitemap, /\/suche\.html/);
   assert.doesNotMatch(sitemap, /\/merkliste\.html/);
 });
+
+
+test("eigene Bücher haben indexierbare Detailseiten mit Book-Markup", () => {
+  build();
+  const catalog = JSON.parse(fs.readFileSync("data/amazon-products.json", "utf8"));
+  const books = (catalog.items || []).filter((item) => item.ownedProject);
+  assert.ok(books.length >= 1);
+  const slug = String(books[0].title).normalize("NFKD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"").slice(0,80) || "shop";
+  const html = fs.readFileSync("dist/buecher/" + slug + ".html", "utf8");
+  const sitemap = fs.readFileSync("dist/sitemap.xml", "utf8");
+  assert.match(html, /"@type":"Book"/);
+  assert.match(html, new RegExp(books[0].asin));
+  assert.ok(sitemap.includes("/buecher/" + slug + ".html"));
+  assert.match(html, /Bei Amazon ansehen/);
+});
