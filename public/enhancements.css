@@ -261,3 +261,19 @@ footer{border-color:#252b43;color:#f7f8ff}footer p{color:#9ea8c1}footer nav a{co
 .button.danger{border-color:#ff5f6d66;color:#ff9aa4}
 .button.danger:hover{background:#3a1018}
 @media(max-width:640px){.account-notification-item{flex-direction:column}.account-notification-item>div:last-child{width:100%}.account-notification-item>div:last-child .button{flex:1}}
+
+
+/* V8 methodology / transparency */
+.methodology-page{max-width:1040px}
+.methodology-page>.lead{max-width:820px;font-size:18px;line-height:1.7;color:#cbd3e7}
+.method-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:24px 0 30px}
+.method-stats>div{display:grid;gap:6px;padding:18px;border:1px solid #2b3150;border-radius:16px;background:linear-gradient(145deg,#11162a,#0d1121)}
+.method-stats strong{font-size:28px;line-height:1;color:#fff}
+.method-stats span{color:#9ea8c1;font-size:12px;line-height:1.4}
+.methodology-page section{margin:22px 0;padding:20px;border:1px solid #272e49;border-radius:16px;background:#0d1121}
+.methodology-page section h2{margin:0 0 8px;font-size:20px}
+.methodology-page section p{margin:0;color:#b8c1d8;line-height:1.7}
+.method-note{margin-top:24px;padding:18px 20px;border:1px solid #ff3fa855;border-radius:16px;background:linear-gradient(120deg,rgba(255,63,168,.08),rgba(157,85,255,.06));color:#dce2f3;line-height:1.6}
+.deal-check-note a{font-weight:850;white-space:nowrap}
+@media(max-width:820px){.method-stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:480px){.method-stats{grid-template-columns:1fr}}
