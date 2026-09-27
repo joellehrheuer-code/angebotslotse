@@ -1,7 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 
-const required = ["index.html","impressum.html","datenschutz.html","affiliate.html","status.html","kategorien.html","shops.html","suche.html","merkliste.html","konto.html","neu.html","endet-bald.html","top-rabatte.html","rabattcodes.html","preis-gefallen.html","sitemap.xml","robots.txt","alerts-feed.json","styles.css","app.js","account-client.js","og.png"];
+const required = ["index.html","impressum.html","datenschutz.html","affiliate.html","status.html","kategorien.html","shops.html","suche.html","merkliste.html","konto.html","offline.html","neu.html","endet-bald.html","top-rabatte.html","rabattcodes.html","preis-gefallen.html","sitemap.xml","robots.txt","manifest.webmanifest","sw.js","alerts-feed.json","styles.css","app.js","account-client.js","og.png"];
 const errors = [];
 for (const file of required) if (!fs.existsSync(path.join("dist",file))) errors.push(`Fehlt: ${file}`);
 const htmlFiles = [];
