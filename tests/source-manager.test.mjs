@@ -16,3 +16,18 @@ test("fehlende Secrets deaktivieren nur die betroffenen Quellen und legen keine 
   assert.match(byName.webgains.audit.reason, /WEBGAINS_FEED_URLS missing/);
   assert.doesNotMatch(JSON.stringify(sources), /token_value|SID_VALUE|credential_secret_value|supersecret123/i);
 });
+
+
+test("Impact kann zwischen 4h-Website-Updates rate-limit-schonend ausgesetzt werden", async () => {
+  const { sources } = await collectSources({
+    IMPACT_ACCOUNT_SID: "SID_VALUE",
+    IMPACT_AUTH_TOKEN: "token_value",
+    IMPACT_SYNC_EVERY_HOURS: "12",
+    SOURCE_SYNC_UTC_HOUR: "4"
+  });
+  const impact = sources.find(source => source.name === "impact");
+  assert.equal(impact.state, "disabled");
+  assert.equal(impact.rows.length, 0);
+  assert.equal(impact.audit.cadenceHours, 12);
+  assert.match(impact.audit.reason, /rate-limit cooldown/i);
+});

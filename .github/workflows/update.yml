@@ -6,7 +6,7 @@ on:
       - "data/offers.json"
       - "data/status.json"
   schedule:
-    - cron: "17 */6 * * *"
+    - cron: "17 */4 * * *"
   workflow_dispatch:
 permissions:
   contents: write
@@ -28,6 +28,7 @@ jobs:
           AWIN_DATAFEED_API_KEY: ${{ secrets.AWIN_DATAFEED_API_KEY }}
           IMPACT_ACCOUNT_SID: ${{ secrets.IMPACT_ACCOUNT_SID || vars.IMPACT_ACCOUNT_SID }}
           IMPACT_AUTH_TOKEN: ${{ secrets.IMPACT_AUTH_TOKEN }}
+          IMPACT_SYNC_EVERY_HOURS: 12
           AMAZON_CREATORS_CREDENTIAL_ID: ${{ secrets.AMAZON_CREATORS_CREDENTIAL_ID }}
           AMAZON_CREATORS_CREDENTIAL_SECRET: ${{ secrets.AMAZON_CREATORS_CREDENTIAL_SECRET }}
           AMAZON_PARTNER_TAG: ${{ secrets.AMAZON_PARTNER_TAG }}

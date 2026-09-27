@@ -9,6 +9,9 @@ import { fetchTradedoublerOffers } from "./tradedoubler.mjs";
 import { fetchWebgainsOffers } from "./webgains.mjs";
 import fs from "node:fs/promises";
 export async function collectSources(env = process.env) {
+  const impactCadenceHours=Math.min(24,Math.max(4,Number(env.IMPACT_SYNC_EVERY_HOURS)||12));
+  const syncHour=Number.isFinite(Number(env.SOURCE_SYNC_UTC_HOUR))?Number(env.SOURCE_SYNC_UTC_HOUR):new Date().getUTCHours();
+  const impactDue=env.FORCE_IMPACT_SYNC==="1" || syncHour % impactCadenceHours===0;
   const impactLinkPolicy = JSON.parse(await fs.readFile("data/impact-link-policy.json", "utf8").catch(() => "{}"));
   const amazonDefinitions = JSON.parse(await fs.readFile("data/amazon-products.json", "utf8").catch(() => '{"items":[]}' ));
   let awinPrograms=null;
@@ -66,6 +69,7 @@ export async function collectSources(env = process.env) {
   const results = await Promise.all(definitions.map(async ([name, run]) => {
     if (name === "awin" && (!env.AWIN_PUBLISHER_ID || !env.AWIN_API_TOKEN)) { const names = [!env.AWIN_PUBLISHER_ID && "AWIN_PUBLISHER_ID", !env.AWIN_API_TOKEN && "AWIN_API_TOKEN"].filter(Boolean); return { name, state: "disabled", rows: [], audit:{reason:`${names.join(", ")} missing – Awin API sync skipped`} }; }
     if (name === "impact" && (!env.IMPACT_ACCOUNT_SID || !env.IMPACT_AUTH_TOKEN)) { const names = [!env.IMPACT_ACCOUNT_SID && "IMPACT_ACCOUNT_SID", !env.IMPACT_AUTH_TOKEN && "IMPACT_AUTH_TOKEN"].filter(Boolean); return { name, state: "disabled", rows: [], audit:{reason:`${names.join(", ")} missing – Impact API sync skipped`} }; }
+    if (name === "impact" && !impactDue) return { name, state: "disabled", rows: [], audit:{reason:`Impact rate-limit cooldown – next scheduled window every ${impactCadenceHours}h`, cadenceHours:impactCadenceHours} };
     if (name === "amazon" && (!env.AMAZON_CREATORS_CREDENTIAL_ID || !env.AMAZON_CREATORS_CREDENTIAL_SECRET || !env.AMAZON_PARTNER_TAG)) { const names = [!env.AMAZON_CREATORS_CREDENTIAL_ID && "AMAZON_CREATORS_CREDENTIAL_ID", !env.AMAZON_CREATORS_CREDENTIAL_SECRET && "AMAZON_CREATORS_CREDENTIAL_SECRET", !env.AMAZON_PARTNER_TAG && "AMAZON_PARTNER_TAG"].filter(Boolean); return { name, state: "disabled", rows: [], audit:{reason:`${names.join(", ")} missing – Amazon Creators API sync skipped`} }; }
     if (name === "awin-product-feeds" && !env.AWIN_DATAFEED_API_KEY) return { name, state: "disabled", rows: [], audit:{reason:"AWIN_DATAFEED_API_KEY missing – Awin Product Feed sync skipped"} };
     if (name === "awin-enhanced-feeds" && (!env.AWIN_API_TOKEN||!joined.length)) return {name,state:"disabled",rows:[],audit:{reason:!env.AWIN_API_TOKEN?"AWIN_API_TOKEN missing – Awin Enhanced Feed sync skipped":"No joined Awin programmes – Enhanced Feed sync skipped"}};
