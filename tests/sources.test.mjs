@@ -5,7 +5,7 @@ import { fetchImpactOffers, IMPACT_API_VERSION } from "../scripts/lib/impact.mjs
 import { fetchAwinPrograms, fetchAwinProgramDetails } from "../scripts/lib/awin.mjs";
 import { fetchDaisyconOffers, fetchDaisyconProgramReview, subscribeDaisyconProgram } from "../scripts/lib/daisycon.mjs";
 import { fetchTradedoublerOffers, fetchTradedoublerVouchers } from "../scripts/lib/tradedoubler.mjs";
-import { fetchWebgainsOffers } from "../scripts/lib/webgains.mjs";
+import { fetchWebgainsOffers, fetchWebgainsProgramMemberships, fetchWebgainsProgramReview, createWebgainsProgramMembership } from "../scripts/lib/webgains.mjs";
 
 test("Awin-Programminventar trennt alle offiziellen Beziehungszustände",async()=>{
   const calls=[];const fetchImpl=async url=>{calls.push(String(url));return{ok:true,json:async()=>[{id:1,name:"Programm"}]};};
@@ -319,3 +319,74 @@ test("Daisycon blockiert Subscribe sobald Terms oder Fragebogen Review verlangen
     );
   }
 });
+
+
+test("Webgains Membership API liest Programme mit Bearer-Token", async () => {
+  const calls=[];
+  const fetchImpl=async (url,options)=>{
+    calls.push({url:String(url),options});
+    return {ok:true,status:200,json:async()=>({data:[{
+      program:{id:77,name:"Gaming Demo",has_product_feed:true},campaign:{id:88},membership_status_name:"available",commission_rate:8
+    }]})};
+  };
+  const rows=await fetchWebgainsProgramMemberships({publisherId:"42",accessToken:"WG_TOKEN",fetchImpl});
+  assert.equal(rows.length,1);
+  assert.equal(rows[0].program.id,77);
+  assert.match(calls[0].url,/platform-api\.webgains\.com\/publishers\/42\/program_memberships/);
+  assert.equal(calls[0].options.headers.Authorization,"Bearer WG_TOKEN");
+});
+
+test("Webgains Review erzeugt stabilen Terms-Digest und bleibt freigabepflichtig", async () => {
+  const calls=[];
+  const membership={
+    program:{id:77,name:"Gaming Demo"},campaign:{id:88},membership_status_name:"available"
+  };
+  const fetchImpl=async (url,options)=>{
+    calls.push({url:String(url),options});
+    return {ok:true,status:200,json:async()=>({version:"2026-09-27",terms:["No brand bidding","DE traffic only"]})};
+  };
+  const review=await fetchWebgainsProgramReview({
+    publisherId:"42",accessToken:"WG_TOKEN",membership,fetchImpl
+  });
+  assert.equal(review.applicationPossible,true);
+  assert.equal(review.submissionReady,false);
+  assert.equal(review.humanApprovalRequired,true);
+  assert.equal(review.automaticSubmissionAllowed,false);
+  assert.match(review.termsDigest,/^[a-f0-9]{64}$/);
+  assert.match(calls[0].url,/\/merchants\/programs\/77\/terms_and_conditions/);
+});
+
+test("Webgains Join blockiert ohne bestätigten identischen Terms-Digest", async () => {
+  const review={
+    programId:77,campaignId:88,joined:false,submissionReady:true,
+    termsDigest:"abc123"
+  };
+  await assert.rejects(
+    ()=>createWebgainsProgramMembership({
+      publisherId:"42",accessToken:"WG_TOKEN",campaignId:88,programId:77,
+      review,confirmedTermsDigest:"abc123",confirmedReview:false,
+      fetchImpl:async()=>{throw new Error("network must not be called");}
+    }),
+    /explicit human review confirmation required/
+  );
+  await assert.rejects(
+    ()=>createWebgainsProgramMembership({
+      publisherId:"42",accessToken:"WG_TOKEN",campaignId:88,programId:77,
+      review,confirmedTermsDigest:"different",confirmedReview:true,
+      fetchImpl:async()=>{throw new Error("network must not be called");}
+    }),
+    /reviewed terms digest confirmation required/
+  );
+});
+
+test("Webgains Join bleibt trotz bestätigtem Terms-Stand fail-closed", async () => {
+  const review={programId:77,campaignId:88,joined:false,submissionReady:false,termsDigest:"digest-ok"};
+  await assert.rejects(
+    ()=>createWebgainsProgramMembership({
+      publisherId:"42",accessToken:"WG_TOKEN",campaignId:88,programId:77,
+      review,confirmedTermsDigest:"digest-ok",confirmedReview:true
+    }),
+    /submission disabled: exact request schema not verified/
+  );
+});
+

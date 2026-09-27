@@ -27,6 +27,7 @@ export function buildAffiliateOpportunityReport({
   awin = [],
   impact = [],
   daisycon = [],
+  webgains = [],
   networkSearches = {},
   generatedAt = new Date().toISOString()
 } = {}) {
@@ -67,6 +68,24 @@ export function buildAffiliateOpportunityReport({
   for (const row of daisycon) {
     items.push(common({
       network:"Daisycon",
+      brand:row.brand,
+      category:row.category,
+      priority:row.priority,
+      score:row.score,
+      status:row.status,
+      action:row.nextAction,
+      draft:row.applicationPossible ? row.applicationDraft ?? null : null,
+      reason:(row.reasons || []).join(", "),
+      kind:row.applicationPossible ? "application" : "program",
+      reference:row.programId,
+      submissionReady:row.submissionReady,
+      humanApprovalRequired:row.humanApprovalRequired
+    }));
+  }
+
+  for (const row of webgains) {
+    items.push(common({
+      network:"Webgains",
       brand:row.brand,
       category:row.category,
       priority:row.priority,

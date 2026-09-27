@@ -6,7 +6,7 @@ import { fetchDirectOffers } from "./direct.mjs";
 import { fetchAmazonCreatorItems } from "./amazon.mjs";
 import { fetchDaisyconOffers, fetchDaisyconPrograms, fetchDaisyconMedia, fetchDaisyconProgramReview } from "./daisycon.mjs";
 import { fetchTradedoublerOffers, fetchTradedoublerVouchers } from "./tradedoubler.mjs";
-import { fetchWebgainsOffers } from "./webgains.mjs";
+import { fetchWebgainsOffers, fetchWebgainsProgramMemberships, fetchWebgainsProgramReview } from "./webgains.mjs";
 import fs from "node:fs/promises";
 export async function collectSources(env = process.env) {
   const impactCadenceHours=Math.min(24,Math.max(4,Number(env.IMPACT_SYNC_EVERY_HOURS)||12));
@@ -21,6 +21,9 @@ export async function collectSources(env = process.env) {
   let daisyconProgramError=null;
   let daisyconMedia=[];
   const daisyconProgramReviews={};
+  let webgainsMemberships=[];
+  let webgainsMembershipError=null;
+  const webgainsProgramReviews={};
   const awinProgramDetails={};
   if(env.AWIN_PUBLISHER_ID&&env.AWIN_API_TOKEN) {
     try{awinPrograms=await fetchAwinPrograms({publisherId:env.AWIN_PUBLISHER_ID,token:env.AWIN_API_TOKEN});}catch{}
@@ -54,6 +57,35 @@ export async function collectSources(env = process.env) {
       catch{/* Review enrichment is optional; ranking continues. */}
     }
   }
+  if(env.WEBGAINS_PUBLISHER_ID&&env.WEBGAINS_ACCESS_TOKEN){
+    try{
+      webgainsMemberships=await fetchWebgainsProgramMemberships({
+        publisherId:env.WEBGAINS_PUBLISHER_ID,
+        accessToken:env.WEBGAINS_ACCESS_TOKEN,
+        size:Number(env.WEBGAINS_MEMBERSHIP_LIMIT)||100
+      });
+    }catch(error){webgainsMembershipError=String(error.message).slice(0,160);}
+    const reviewLimit=Math.min(8,Math.max(0,Number(env.WEBGAINS_PROGRAM_REVIEW_LIMIT)||6));
+    const candidates=(webgainsMemberships??[])
+      .filter(row=>{
+        const program=row?.program&&typeof row.program==="object"?row.program:{};
+        const name=program.name??row?.program_name??row?.programName??row?.name??row?.merchant_name??"";
+        const sector=program.categories??row?.category??row?.categories??row?.description??"";
+        return isStrategicProgram({name})||categoryForProgram({name,primarySector:Array.isArray(sector)?sector.join(" "):sector})!=="Weitere";
+      })
+      .slice(0,reviewLimit);
+    for(const membership of candidates){
+      const programId=membership?.program?.id??membership?.program_id??membership?.programId;
+      if(!programId)continue;
+      try{
+        webgainsProgramReviews[String(programId)]=await fetchWebgainsProgramReview({
+          publisherId:env.WEBGAINS_PUBLISHER_ID,
+          accessToken:env.WEBGAINS_ACCESS_TOKEN,
+          membership
+        });
+      }catch{/* Terms enrichment is optional; discovery continues without it. */}
+    }
+  }
   const joined=(awinPrograms?.joined??[]).map(row=>({id:row.id??row.advertiserId,name:row.name??row.advertiserName})).filter(row=>row.id);
   const definitions = [
     ["awin", () => fetchAwinOffers({ publisherId: env.AWIN_PUBLISHER_ID, token: env.AWIN_API_TOKEN })],
@@ -81,5 +113,5 @@ export async function collectSources(env = process.env) {
     try { const rows=await run(); return { name, state: "ok", rows, audit:rows.audit??null }; }
     catch (error) { return { name, state: "error", rows: [], error: String(error.message).slice(0, 160) }; }
   }));
-  return {sources:results,awinPrograms,awinDiscoveryOffers,awinDiscoveryError,awinProgramDetails,daisyconPrograms,daisyconProgramError,daisyconMedia,daisyconProgramReviews};
+  return {sources:results,awinPrograms,awinDiscoveryOffers,awinDiscoveryError,awinProgramDetails,daisyconPrograms,daisyconProgramError,daisyconMedia,daisyconProgramReviews,webgainsMemberships,webgainsMembershipError,webgainsProgramReviews};
 }

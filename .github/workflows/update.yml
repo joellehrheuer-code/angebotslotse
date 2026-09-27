@@ -37,6 +37,8 @@ jobs:
           TRADEDOUBLER_PRODUCTS_TOKEN: ${{ secrets.TRADEDOUBLER_PRODUCTS_TOKEN }}
           TRADEDOUBLER_VOUCHERS_TOKEN: ${{ secrets.TRADEDOUBLER_VOUCHERS_TOKEN }}
           TRADEDOUBLER_FEED_URLS: ${{ secrets.TRADEDOUBLER_FEED_URLS }}
+          WEBGAINS_PUBLISHER_ID: ${{ secrets.WEBGAINS_PUBLISHER_ID || vars.WEBGAINS_PUBLISHER_ID }}
+          WEBGAINS_ACCESS_TOKEN: ${{ secrets.WEBGAINS_ACCESS_TOKEN }}
           WEBGAINS_FEED_URLS: ${{ secrets.WEBGAINS_FEED_URLS }}
           CREATOR_VIDEO_FEED_URL: ${{ vars.CREATOR_VIDEO_FEED_URL }}
       - run: npm run check && npm run build && npm run validate && npm run seo && npm run security

@@ -1,3 +1,6 @@
+import crypto from "node:crypto";
+
+const PLATFORM_API = "https://platform-api.webgains.com";
 const asUrls = value => String(value ?? "").split(/[\n,]+/).map(v => v.trim()).filter(Boolean);
 const pick = (row, keys) => keys.map(key => row?.[key]).find(value => value !== undefined && value !== null && value !== "");
 const price = value => {
@@ -95,4 +98,126 @@ export async function fetchWebgainsOffers({ feedUrls, maxProducts = 1000, fetchI
   const limited = rows.slice(0,maxProducts);
   Object.defineProperty(limited,"audit",{value:{feeds:urls.length,products:limited.length,mode:"official-export-feed"},enumerable:false});
   return limited;
+}
+
+
+const apiRows = payload => Array.isArray(payload)
+  ? payload
+  : payload?.data ?? payload?.results ?? payload?.items ?? payload?.program_memberships ?? payload?.programMemberships ?? [];
+
+const webgainsRequest = async ({ path, accessToken, fetchImpl = fetch, method = "GET", body }) => {
+  const response = await fetchImpl(new URL(path, PLATFORM_API), {
+    method,
+    headers: {
+      Authorization: "Bearer " + accessToken,
+      Accept: "application/json, application/problem+json",
+      ...(body ? { "Content-Type": "application/json" } : {})
+    },
+    ...(body ? { body: JSON.stringify(body) } : {})
+  });
+  if (response.status === 204) return null;
+  if (!response.ok) throw new Error("Webgains Platform API " + method + " " + path + ": HTTP " + response.status);
+  return response.json();
+};
+
+export async function fetchWebgainsProgramMemberships({
+  publisherId,
+  accessToken,
+  page = 1,
+  size = 100,
+  fetchImpl = fetch
+}) {
+  if (!publisherId || !accessToken) return [];
+  const url = new URL(PLATFORM_API + "/publishers/" + encodeURIComponent(publisherId) + "/program_memberships");
+  url.searchParams.set("page", String(page));
+  url.searchParams.set("size", String(Math.min(100, Math.max(1, Number(size) || 100))));
+  const payload = await webgainsRequest({
+    path: url.pathname + url.search,
+    accessToken,
+    fetchImpl
+  });
+  return apiRows(payload);
+}
+
+export async function fetchWebgainsProgramTerms({
+  programId,
+  accessToken,
+  fetchImpl = fetch
+}) {
+  if (!programId || !accessToken) return null;
+  return webgainsRequest({
+    path: "/merchants/programs/" + encodeURIComponent(programId) + "/terms_and_conditions",
+    accessToken,
+    fetchImpl
+  });
+}
+
+const stableJson = value => JSON.stringify(value, (_, item) => {
+  if (!item || typeof item !== "object" || Array.isArray(item)) return item;
+  return Object.fromEntries(Object.keys(item).sort().map(key => [key,item[key]]));
+});
+
+export async function fetchWebgainsProgramReview({
+  publisherId,
+  accessToken,
+  membership,
+  fetchImpl = fetch
+}) {
+  if (!publisherId || !accessToken || !membership) return null;
+  const program = membership.program && typeof membership.program === "object" ? membership.program : {};
+  const campaign = membership.campaign && typeof membership.campaign === "object" ? membership.campaign : {};
+  const programId = pick(membership, ["program_id","programId"]) ?? program.id;
+  const campaignId = pick(membership, ["campaign_id","campaignId"]) ?? campaign.id;
+  if (!programId) return null;
+  const terms = await fetchWebgainsProgramTerms({ programId, accessToken, fetchImpl });
+  const termsDigest = crypto.createHash("sha256").update(stableJson(terms ?? null)).digest("hex");
+  const statusValue = pick(membership, [
+    "membership_status_name","membershipStatusName","status_name","statusName",
+    "membership_status","membershipStatus","status"
+  ]);
+  const status = typeof statusValue === "string"
+    ? statusValue.trim().toLowerCase()
+    : (statusValue == null ? "unknown" : `code:${statusValue}`);
+  const joined = /joined|active|approved|accepted/.test(status);
+  const explicitOpen = /not.?joined|available|open|new|invitable/.test(status);
+  return {
+    publisherId,
+    programId,
+    campaignId: campaignId ?? null,
+    status,
+    joined,
+    applicationPossible: explicitOpen && !joined && Boolean(campaignId),
+    termsPresent: terms !== null && (typeof terms !== "object" || Object.keys(terms).length > 0),
+    termsDigest,
+    terms,
+    humanApprovalRequired: true,
+    automaticSubmissionAllowed: false,
+    submissionReady: false,
+    submissionMode: "dashboard-review-required",
+    note: typeof statusValue === "number"
+      ? "Numerischen Membership-Status nicht automatisch interpretiert."
+      : "Programmdaten und Terms können geprüft werden; API-Join bleibt deaktiviert."
+  };
+}
+
+export async function createWebgainsProgramMembership({
+  publisherId,
+  accessToken,
+  campaignId,
+  programId,
+  review,
+  confirmedTermsDigest,
+  confirmedReview = false
+}) {
+  if (!publisherId || !accessToken || !campaignId || !programId) {
+    throw new Error("Webgains membership requires publisherId, accessToken, campaignId and programId");
+  }
+  if (!confirmedReview) throw new Error("Webgains membership blocked: explicit human review confirmation required");
+  if (!review || String(review.programId) !== String(programId) || String(review.campaignId) !== String(campaignId)) {
+    throw new Error("Webgains membership blocked: matching program review required");
+  }
+  if (!confirmedTermsDigest || confirmedTermsDigest !== review.termsDigest) {
+    throw new Error("Webgains membership blocked: reviewed terms digest confirmation required");
+  }
+  throw new Error("Webgains membership submission disabled: exact request schema not verified; complete the reviewed join in the Webgains dashboard.");
 }

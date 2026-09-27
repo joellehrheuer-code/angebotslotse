@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { rankDaisyconPrograms, buildNetworkMarketplaceSearches, buildNetworkApplicationDraft } from "../scripts/lib/network-growth.mjs";
+import { rankDaisyconPrograms, rankWebgainsPrograms, buildNetworkMarketplaceSearches, buildNetworkApplicationDraft } from "../scripts/lib/network-growth.mjs";
 
 test("Daisycon-Ranking markiert nur klar erkennbare offene Programme als bewerbbar", () => {
   const rows = rankDaisyconPrograms([
@@ -79,4 +79,29 @@ test("Daisycon-KPIs und Provisionen erhöhen die Priorität ohne Auto-Beitritt",
   assert.equal(enriched.metrics.networkScore,70);
   assert.equal(enriched.metrics.commissionEntries,3);
   assert.equal(enriched.automaticSubmissionAllowed,false);
+});
+
+
+test("Webgains-Ranking priorisiert offene passende Programme, aber nie automatischen Join", () => {
+  const rows=rankWebgainsPrograms([
+    {program:{id:77,name:"Samsung Gaming",categories:["electronics"],has_product_feed:true},campaign:{id:88},membership_status_name:"available",commission_rate:8},
+    {program:{id:78,name:"Home Demo",categories:["home"]},campaign:{id:89},membership_status_name:"joined"},
+    {program:{id:79,name:"Unknown Demo"},campaign:{id:90},status:10}
+  ],{
+    "77":{programId:77,campaignId:88,status:"available",applicationPossible:true,submissionReady:true,termsPresent:true,termsDigest:"digest-77"},
+    "78":{programId:78,campaignId:89,status:"joined",joined:true,applicationPossible:false,submissionReady:false,termsPresent:true,termsDigest:"digest-78"}
+  });
+  const samsung=rows.find(row=>row.programId===77);
+  const joined=rows.find(row=>row.programId===78);
+  const unknown=rows.find(row=>row.programId===79);
+  assert.equal(samsung.applicationPossible,true);
+  assert.equal(samsung.submissionReady,false);
+  assert.equal(samsung.humanApprovalRequired,true);
+  assert.equal(samsung.automaticSubmissionAllowed,false);
+  assert.equal(samsung.automationState,"dashboard-submit-required");
+  assert.equal(samsung.termsDigest,"digest-77");
+  assert.equal(joined.automationState,"joined");
+  assert.equal(joined.applicationPossible,false);
+  assert.equal(unknown.applicationPossible,false);
+  assert.ok(samsung.score>unknown.score);
 });

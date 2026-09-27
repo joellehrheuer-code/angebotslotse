@@ -96,6 +96,53 @@ export function rankDaisyconPrograms(programs = [], reviews = {}) {
     .sort((a,b) => b.score - a.score || String(a.brand).localeCompare(String(b.brand),"de"));
 }
 
+export function rankWebgainsPrograms(memberships = [], reviews = {}) {
+  const reviewMap = reviews instanceof Map ? reviews : new Map(Object.entries(reviews ?? {}));
+  return memberships
+    .map(row => {
+      const program = row?.program && typeof row.program === "object" ? row.program : {};
+      const campaign = row?.campaign && typeof row.campaign === "object" ? row.campaign : {};
+      const name = String(program.name ?? pick(row, ["program_name","programName","name","merchant_name","merchantName"]) ?? "").trim();
+      const programId = program.id ?? pick(row, ["program_id","programId"]);
+      const campaignId = campaign.id ?? pick(row, ["campaign_id","campaignId"]);
+      const sectorRaw = program.categories ?? pick(row, ["category","categories","sector","description"]) ?? "";
+      const sector = Array.isArray(sectorRaw) ? sectorRaw.join(" ") : String(sectorRaw);
+      const review = programId != null ? reviewMap.get(String(programId)) ?? null : null;
+      const rawStatus = review?.status ?? pick(row, ["membership_status_name","membershipStatusName","status_name","statusName","membership_status","membershipStatus","status"]);
+      const status = String(rawStatus ?? "unknown").trim().toLowerCase();
+      const numericStatus = /^code:\d+$/.test(status) || /^\d+$/.test(status);
+      const joined = Boolean(review?.joined) || (!numericStatus && /joined|active|approved|accepted/.test(status));
+      const explicitOpen = !numericStatus && /not.?joined|available|open|new|invitable/.test(status);
+      const category = categoryForProgram({ name, primarySector: sector });
+      const hasProductFeed = Boolean(program.has_product_feed ?? program.hasProductFeed ?? pick(row, ["has_product_feed","hasProductFeed","product_feed","productFeed"]));
+      const commission = Number(program.commission ?? pick(row, ["commission","commission_rate","commissionRate"]));
+      let score = 0;
+      const reasons = [];
+      if (category !== "Weitere") { score += 25; reasons.push(`passt zu ${category}`); }
+      if (isStrategicProgram({ name })) { score += 20; reasons.push("strategisch relevante Marke"); }
+      if (joined) { score += 20; reasons.push("aktive Beziehung"); }
+      if (explicitOpen && !joined) { score += 10; reasons.push("eindeutig als offen/nicht beigetreten markiert"); }
+      if (hasProductFeed) { score += 15; reasons.push("Produktfeed verfügbar"); }
+      if (Number.isFinite(commission) && commission > 0) { score += 5; reasons.push("Provisionssignal vorhanden"); }
+      if (review?.termsPresent) reasons.push("Programmbedingungen abgerufen");
+      if (numericStatus) reasons.push("numerischen Membership-Status nicht automatisch interpretiert");
+      const applicationPossible = Boolean(review?.applicationPossible) && explicitOpen && !joined;
+      const submissionReady = false;
+      let automationState = joined ? "joined" : "monitor";
+      let nextAction = "Programmdaten beobachten; unbekannte oder numerische Statuscodes nicht automatisch interpretieren.";
+      if (applicationPossible) {
+        automationState = "dashboard-submit-required";
+        nextAction = "Terms wurden abgerufen; Beitritt nach Prüfung im Webgains-Dashboard bestätigen.";
+      } else if (explicitOpen && !joined) {
+        automationState = "terms-review-required";
+        nextAction = "Programmbedingungen abrufen und prüfen; API-Join bleibt deaktiviert.";
+      }
+      return {network:"Webgains",programId:programId ?? null,campaignId:campaignId ?? review?.campaignId ?? null,brand:name || "Unbenanntes Programm",status,category,score,priority:score >= 45 ? "hoch" : score >= 25 ? "mittel" : "niedrig",reasons,applicationPossible,submissionReady,termsPresent:Boolean(review?.termsPresent),termsDigest:review?.termsDigest ?? null,humanApprovalRequired:true,automaticSubmissionAllowed:false,automationState,nextAction,metrics:{hasProductFeed,commission:Number.isFinite(commission)?commission:null}};
+    })
+    .filter(row => row.brand && row.brand !== "Unbenanntes Programm")
+    .sort((a,b)=>b.score-a.score||String(a.brand).localeCompare(String(b.brand),"de"));
+}
+
 export function buildNetworkMarketplaceSearches({ siteCategoryStats = {}, network, connected = false } = {}) {
   return Object.entries(categoryMap)
     .map(([category, slugs]) => {
