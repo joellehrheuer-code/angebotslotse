@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-27T02:11:11.987Z",
+  "generatedAt": "2026-09-27T02:22:45.206Z",
   "market": "DE",
   "publisherId": 3045061,
   "awin": {
@@ -3095,7 +3095,78 @@
   "impact": {
     "state": "error",
     "publishableOffers": 0,
-    "inventory": null
+    "inventory": null,
+    "opportunities": [],
+    "marketplaceSearches": [
+      {
+        "category": "Technik & Computer",
+        "siteOffers": 89,
+        "joinedPrograms": 0,
+        "gapScore": 89,
+        "searchTerms": [
+          "electronics",
+          "computer",
+          "hardware",
+          "mobile",
+          "smart home"
+        ],
+        "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
+      },
+      {
+        "category": "Audio & Musik",
+        "siteOffers": 26,
+        "joinedPrograms": 0,
+        "gapScore": 26,
+        "searchTerms": [
+          "audio",
+          "music",
+          "headphones",
+          "microphone",
+          "recording"
+        ],
+        "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
+      },
+      {
+        "category": "Haushalt & Alltag",
+        "siteOffers": 20,
+        "joinedPrograms": 0,
+        "gapScore": 20,
+        "searchTerms": [
+          "home",
+          "appliances",
+          "kitchen",
+          "garden",
+          "DIY"
+        ],
+        "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
+      },
+      {
+        "category": "Mode & Sport",
+        "siteOffers": 6,
+        "joinedPrograms": 0,
+        "gapScore": 6,
+        "searchTerms": [
+          "fashion",
+          "sportswear",
+          "fitness",
+          "shoes"
+        ],
+        "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
+      },
+      {
+        "category": "Freizeit",
+        "siteOffers": 5,
+        "joinedPrograms": 0,
+        "gapScore": 5,
+        "searchTerms": [
+          "travel",
+          "outdoor",
+          "hobby",
+          "tickets"
+        ],
+        "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
+      }
+    ]
   },
   "publication": {
     "offers": 248,

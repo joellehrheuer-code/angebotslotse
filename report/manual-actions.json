@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-27T02:11:11.985Z",
+  "generatedAt": "2026-09-27T02:22:45.203Z",
   "actions": [
     {
       "id": "awin-datafeed-key",
@@ -16,8 +16,8 @@
     {
       "id": "impact-marketplace-review",
       "platform": "Impact",
-      "action": "Brands Marketplace auf neue passende Programme prüfen und nur nach Prüfung der jeweiligen Vertragsbedingungen bewerben.",
-      "reason": "Die API synchronisiert bestehende Impact-Programme und Angebote; neue Marketplace-Bewerbungen können Vertragsannahmen oder Surveys erfordern und werden deshalb nicht blind abgesendet."
+      "action": "Impact Marketplace zuerst nach passenden Brands für Technik & Computer durchsuchen (electronics, computer, hardware, mobile, smart home).",
+      "reason": "Automatisch erkannte Abdeckungslücke: 89 Angebotslotse-Angebote stehen 0 zugeordneten Impact-Programmen gegenüber. Vertragsbedingungen vor Bewerbung prüfen."
     },
     {
       "id": "awin-apply-102205",

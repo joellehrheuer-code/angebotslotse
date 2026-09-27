@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-27T02:11:11.985Z",
+  "generatedAt": "2026-09-27T02:22:45.203Z",
   "scope": "Automatisch aus dem aktuellen Awin-Programminventar, aktiven DE-Discovery-Angeboten und verfügbaren Feed-Signalen erzeugt.",
   "automation": {
     "discovery": "automatic",
@@ -1546,8 +1546,79 @@
   "impact": {
     "status": "error",
     "joinedPrograms": 0,
+    "opportunities": [],
+    "marketplaceSearches": [
+      {
+        "category": "Technik & Computer",
+        "siteOffers": 89,
+        "joinedPrograms": 0,
+        "gapScore": 89,
+        "searchTerms": [
+          "electronics",
+          "computer",
+          "hardware",
+          "mobile",
+          "smart home"
+        ],
+        "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
+      },
+      {
+        "category": "Audio & Musik",
+        "siteOffers": 26,
+        "joinedPrograms": 0,
+        "gapScore": 26,
+        "searchTerms": [
+          "audio",
+          "music",
+          "headphones",
+          "microphone",
+          "recording"
+        ],
+        "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
+      },
+      {
+        "category": "Haushalt & Alltag",
+        "siteOffers": 20,
+        "joinedPrograms": 0,
+        "gapScore": 20,
+        "searchTerms": [
+          "home",
+          "appliances",
+          "kitchen",
+          "garden",
+          "DIY"
+        ],
+        "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
+      },
+      {
+        "category": "Mode & Sport",
+        "siteOffers": 6,
+        "joinedPrograms": 0,
+        "gapScore": 6,
+        "searchTerms": [
+          "fashion",
+          "sportswear",
+          "fitness",
+          "shoes"
+        ],
+        "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
+      },
+      {
+        "category": "Freizeit",
+        "siteOffers": 5,
+        "joinedPrograms": 0,
+        "gapScore": 5,
+        "searchTerms": [
+          "travel",
+          "outdoor",
+          "hobby",
+          "tickets"
+        ],
+        "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
+      }
+    ],
     "marketplaceDiscovery": "dashboard-review-required",
     "applicationTermsRequireApproval": true,
-    "note": "Aktive Impact-Programme werden per Partner API synchronisiert. Neue Marketplace-Bewerbungen werden erst nach Prüfung der jeweiligen Bedingungen bestätigt."
+    "note": "Bestehende Impact-Programme werden automatisch nach nutzbaren Produkten, Aktionen, Deals und Creatives priorisiert. Neue Marketplace-Bewerbungen werden erst nach Prüfung der jeweiligen Bedingungen bestätigt."
   }
 }
