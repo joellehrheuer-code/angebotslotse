@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-27T14:49:49.532Z",
+  "generatedAt": "2026-09-27T15:16:35.893Z",
   "market": "DE",
   "publisherId": 3045061,
   "awin": {
@@ -3090,9 +3090,12 @@
     ]
   },
   "impact": {
-    "state": "error",
+    "state": "disabled",
     "publishableOffers": 0,
-    "inventory": null,
+    "inventory": {
+      "reason": "Impact rate-limit cooldown – next scheduled window every 12h",
+      "cadenceHours": 12
+    },
     "opportunities": [],
     "marketplaceSearches": [
       {
