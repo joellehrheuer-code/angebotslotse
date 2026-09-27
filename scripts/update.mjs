@@ -8,6 +8,8 @@ import { rankAwinOpportunities } from "./lib/program-growth.mjs";
 import { rankImpactPrograms, buildImpactMarketplaceSearches } from "./lib/impact-growth.mjs";
 import { rankDaisyconPrograms, buildNetworkMarketplaceSearches, buildNetworkApplicationDraft } from "./lib/network-growth.mjs";
 import { archiveRemovedOffers } from "./lib/offer-archive.mjs";
+import { buildAffiliateOpportunityReport } from "./lib/affiliate-opportunities.mjs";
+import { fetchCreatorVideoFeed } from "./lib/creator-videos.mjs";
 
 const config = JSON.parse(await fs.readFile("config.json", "utf8"));
 const oldOffers = JSON.parse(await fs.readFile("data/offers.json", "utf8").catch(() => "[]"));
@@ -15,8 +17,19 @@ const oldStatus = JSON.parse(await fs.readFile("data/status.json", "utf8").catch
 const oldHistory = JSON.parse(await fs.readFile("data/price-history.json", "utf8").catch(() => "[]"));
 const oldArchive = JSON.parse(await fs.readFile("data/offer-archive.json", "utf8").catch(() => '{"items":[]}'));
 const oldProgramInventory = JSON.parse(await fs.readFile("report/program-inventory.json", "utf8").catch(() => '{"programs":[]}'));
+const oldCreatorVideos = JSON.parse(await fs.readFile("data/creator-videos.json", "utf8").catch(() => '{"version":1,"source":"public-only","updatedAt":null,"videos":[]}'));
 const impactLinkPolicy = JSON.parse(await fs.readFile("data/impact-link-policy.json", "utf8").catch(() => "{}"));
 const oldIds = new Set(oldOffers.map(o => o.id));
+let creatorFeedState={state:"disabled",count:Array.isArray(oldCreatorVideos.videos)?oldCreatorVideos.videos.length:0,error:null};
+if(process.env.CREATOR_VIDEO_FEED_URL){
+  try{
+    const remote=await fetchCreatorVideoFeed({feedUrl:process.env.CREATOR_VIDEO_FEED_URL,maxVideos:12});
+    await fs.writeFile("data/creator-videos.json",`${JSON.stringify({version:1,source:"social-distributor",updatedAt:remote.updatedAt,videos:remote.videos},null,2)}\n`);
+    creatorFeedState={state:"ok",count:remote.videos.length,error:null};
+  }catch(error){
+    creatorFeedState={state:"stale",count:Array.isArray(oldCreatorVideos.videos)?oldCreatorVideos.videos.length:0,error:String(error.message).slice(0,160)};
+  }
+}
 let status;
 try {
   const collected = await collectSources();
@@ -39,6 +52,7 @@ try {
     added: offers.filter(o => !oldIds.has(o.id)).length, removed: removedOffers.length,
     archivedThisRun: removedOffers.length, archivedTotal: archive.items.length,
     invalidLinks: 0, apiErrors: failed.size, sources: Object.fromEntries(sources.map(s => [s.name, { state: s.state, count: s.rows.length, error: s.error ?? null, audit: s.audit ?? null }])),
+    creatorFeed: creatorFeedState,
     stale: offers.filter(o => o.isStale).length,
     message: failed.size || sources.some(s => s.state === "disabled") ? "Aktualisierung mit geschützten Bestandsdaten abgeschlossen." : "Aktualisierung erfolgreich." };
   await fs.writeFile("data/offers.json", `${JSON.stringify(offers, null, 2)}\n`);
@@ -125,6 +139,14 @@ try {
     webgains:{status:process.env.WEBGAINS_FEED_URLS?"feed-connected":"disabled",marketplaceSearches:networkMarketplaceSearches.webgains.slice(0,10),membershipApi:"supported-review-required"}
   },null,2)}\n`);
   await fs.writeFile("data/impact-opportunities.json",`${JSON.stringify({generatedAt:checkedAt,status:impact?.state??"disabled",joinedPrograms:impactInventory.length,automation:{joinedProgramScoring:"automatic",marketplaceGapDetection:"automatic",contactDrafts:"automatic",marketplaceSubmission:"human-review-required"},programs:impactOpportunities.slice(0,50),marketplaceSearches:impactMarketplaceSearches.slice(0,10)},null,2)}\n`);
+  const affiliateOpportunityReport=buildAffiliateOpportunityReport({
+    awin:opportunities.slice(0,50),
+    impact:impactOpportunities.slice(0,50),
+    daisycon:daisyconOpportunities.map(row=>({...row,applicationDraft:row.applicationPossible?buildNetworkApplicationDraft({network:"Daisycon",brand:row.brand,category:row.category}):null})).slice(0,50),
+    networkSearches:networkMarketplaceSearches,
+    generatedAt:checkedAt
+  });
+  await fs.writeFile("data/affiliate-opportunities.json",`${JSON.stringify(affiliateOpportunityReport,null,2)}\n`);
   const manualActions=[];
   if(!process.env.AWIN_PUBLISHER_ID||!process.env.AWIN_API_TOKEN)manualActions.push({id:"awin-api-credentials",platform:"Awin",action:"AWIN_PUBLISHER_ID und AWIN_API_TOKEN als sichere Runtime-/GitHub-Secrets konfigurieren.",reason:"Ohne Publisher-ID und API-Token können aktive Awin-Programme und Enhanced Feeds nicht aktualisiert werden."});
   if(!process.env.AWIN_DATAFEED_API_KEY)manualActions.push({id:"awin-datafeed-key",platform:"Awin",action:"AWIN_DATAFEED_API_KEY als lokales .env.local-Secret und GitHub Actions Secret hinterlegen.",reason:"Die offizielle Legacy-Produktfeed-Liste benötigt einen separaten Datafeed-Key."});

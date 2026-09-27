@@ -35,6 +35,7 @@ jobs:
           DAISYCON_ACCESS_TOKEN: ${{ secrets.DAISYCON_ACCESS_TOKEN }}
           TRADEDOUBLER_FEED_URLS: ${{ secrets.TRADEDOUBLER_FEED_URLS }}
           WEBGAINS_FEED_URLS: ${{ secrets.WEBGAINS_FEED_URLS }}
+          CREATOR_VIDEO_FEED_URL: ${{ vars.CREATOR_VIDEO_FEED_URL }}
       - run: npm run check && npm run build && npm run validate && npm run seo && npm run security
         env:
           SITE_URL: https://joellehrheuer-code.github.io/angebotslotse
@@ -50,7 +51,7 @@ jobs:
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "chore(data): Angebote automatisch aktualisieren"
-          file_pattern: "data/offers.json data/offer-archive.json data/status.json data/price-history.json data/coupons.json data/affiliate-growth.json data/program-opportunities.json data/impact-opportunities.json report/program-inventory.json report/manual-actions.json report/update-report.json report/seo-report.json"
+          file_pattern: "data/offers.json data/offer-archive.json data/status.json data/price-history.json data/coupons.json data/affiliate-growth.json data/program-opportunities.json data/impact-opportunities.json data/affiliate-opportunities.json data/creator-videos.json report/program-inventory.json report/manual-actions.json report/update-report.json report/seo-report.json"
   deploy:
     needs: update
     permissions: { pages: write, id-token: write }
