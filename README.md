@@ -6,7 +6,7 @@ Die Startseite nutzt ein einheitliches dunkles Navy-/Schwarz-Design mit Magenta-
 
 Echte Produktdaten können über Impact-Kataloge und die offizielle Awin-Produktfeed-Liste einlaufen. Für Awin ist dazu zusätzlich zum normalen API-Token der separate GitHub-Actions-Secret `AWIN_DATAFEED_API_KEY` erforderlich. Die Herkunft und Rechtehinweise offizieller Bilder werden als `imageSource` und `imageRightsNote` gespeichert. Fehlen verifizierte Preise oder Medien, zeigt die Seite ausdrücklich einen Prüfhinweis beziehungsweise ein neutrales Kategorievisual.
 
-Die dokumentierte Bestandsaufnahme steht unter `docs/media-and-program-research.md`; die nicht automatisch versendete Bewerbungsgrundlage unter `docs/program-application-template.md`.
+Die dokumentierte Bestandsaufnahme steht unter `docs/media-and-program-research.md`; die Bewerbungsgrundlage unter `docs/program-application-template.md`. Zusätzlich entdeckt der Update-Lauf passende noch nicht beigetretene Awin-Programme anhand realer DE-Aktionen, Feed-Verfügbarkeit und Themenrelevanz, priorisiert sie und erzeugt individuelle Bewerbungsentwürfe. Vertragsbedingungen und das tatsächliche Absenden bleiben bewusst prüfpflichtig. Bei Impact werden aktive Partnerdaten automatisch synchronisiert; neue Marketplace-Bewerbungen bleiben wegen möglicher Vertragsannahmen und Surveys ebenfalls prüfpflichtig.
 
 ## Angebotslotse V3
 

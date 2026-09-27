@@ -21,3 +21,11 @@ test("gleiche SKU bei zwei Händlern bleibt als zwei Offers erhalten",()=>{const
 test("leere Identifier erzeugen keine gemeinsame Identität",()=>{const rows=[{...valid,id:"a",promotionId:"a",advertiserId:1,advertiserName:"Shop A",title:"A",gtin:"",sku:""},{...valid,id:"b",promotionId:"b",advertiserId:1,advertiserName:"Shop A",title:"B",gtin:"",sku:"",urlTracking:"https://awin1.com/y"}];assert.equal(normalizeAndDedupe(rows,config,new Date("2026-01-01")).length,2)});
 test("gleiche GTIN dedupliziert beim selben Händler, aber nicht händlerübergreifend",()=>{const base={...valid,gtin:"4006381333931",currentPrice:10,imageUrl:"https://img.example/p.jpg"};const sameMerchant=[base,{...base,id:"b",urlTracking:"https://awin1.com/y"}];const otherMerchant=[base,{...base,id:"c",advertiser:{id:3,name:"Hollyland",joined:true},urlTracking:"https://awin1.com/z"}];assert.equal(normalizeAndDedupe(sameMerchant,config,new Date("2026-01-01")).length,1);assert.equal(normalizeAndDedupe(otherMerchant,config,new Date("2026-01-01")).length,2)});
 test("Dedupe-Key enthält Händler und nutzt keine leeren Identifier",()=>{const offer={source:"awin",sourceId:"sku",advertiserId:7,advertiser:"Shop",title:"Produkt",gtin:"",ean:"",mpn:"",brand:""};assert.equal(dedupeKeyForOffer(offer),"source:awin|7|sku");assert.notEqual(dedupeKeyForOffer({...offer,advertiserId:8,advertiser:"Other"}),dedupeKeyForOffer(offer))});
+
+test("Awin-Discovery kann aktive Angebote nicht beigetretener Programme getrennt abrufen",async()=>{
+  let body;
+  const fetchImpl=async(url,options)=>{body=JSON.parse(options.body);return{ok:true,json:async()=>({promotions:[],pagination:{totalPages:1}})}};
+  await fetchAwinOffers({publisherId:"42",token:"secret",membership:"notJoined",fetchImpl});
+  assert.equal(body.filters.membership,"notJoined");
+  assert.deepEqual(body.filters.regionCodes,["DE"]);
+});

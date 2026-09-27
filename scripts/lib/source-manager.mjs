@@ -6,7 +6,12 @@ import fs from "node:fs/promises";
 export async function collectSources(env = process.env) {
   const impactLinkPolicy = JSON.parse(await fs.readFile("data/impact-link-policy.json", "utf8").catch(() => "{}"));
   let awinPrograms=null;
-  if(env.AWIN_PUBLISHER_ID&&env.AWIN_API_TOKEN) try{awinPrograms=await fetchAwinPrograms({publisherId:env.AWIN_PUBLISHER_ID,token:env.AWIN_API_TOKEN});}catch{}
+  let awinDiscoveryOffers=[];
+  let awinDiscoveryError=null;
+  if(env.AWIN_PUBLISHER_ID&&env.AWIN_API_TOKEN) {
+    try{awinPrograms=await fetchAwinPrograms({publisherId:env.AWIN_PUBLISHER_ID,token:env.AWIN_API_TOKEN});}catch{}
+    try{awinDiscoveryOffers=await fetchAwinOffers({publisherId:env.AWIN_PUBLISHER_ID,token:env.AWIN_API_TOKEN,membership:"notJoined",maxPages:5});}catch(error){awinDiscoveryError=String(error.message).slice(0,160);}
+  }
   const joined=(awinPrograms?.joined??[]).map(row=>({id:row.id??row.advertiserId,name:row.name??row.advertiserName})).filter(row=>row.id);
   const definitions = [
     ["awin", () => fetchAwinOffers({ publisherId: env.AWIN_PUBLISHER_ID, token: env.AWIN_API_TOKEN })],
@@ -23,5 +28,5 @@ export async function collectSources(env = process.env) {
     try { const rows=await run(); return { name, state: "ok", rows, audit:rows.audit??null }; }
     catch (error) { return { name, state: "error", rows: [], error: String(error.message).slice(0, 160) }; }
   }));
-  return {sources:results,awinPrograms};
+  return {sources:results,awinPrograms,awinDiscoveryOffers,awinDiscoveryError};
 }

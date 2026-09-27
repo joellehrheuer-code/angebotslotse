@@ -2,8 +2,9 @@ const API = "https://api.awin.com";
 
 export const formatAwinDateTime = value => new Date(value).toISOString().slice(0, 19);
 
-export async function fetchAwinOffers({ publisherId, token, fetchImpl = fetch }) {
+export async function fetchAwinOffers({ publisherId, token, membership = "joined", maxPages = Number.POSITIVE_INFINITY, fetchImpl = fetch }) {
   if (!publisherId || !token) throw new Error("AWIN_PUBLISHER_ID und AWIN_API_TOKEN sind erforderlich.");
+  if (!["joined", "notJoined", "all"].includes(membership)) throw new Error("Ungültiger Awin-Mitgliedschaftsfilter.");
   const collected = [];
   let page = 1;
   for (;;) {
@@ -11,14 +12,14 @@ export async function fetchAwinOffers({ publisherId, token, fetchImpl = fetch })
     const response = await fetchImpl(`${API}/publisher/${encodeURIComponent(publisherId)}/promotions?${query}`, {
       method: "POST",
       headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" },
-      body: JSON.stringify({ filters: { membership: "joined", regionCodes: ["DE"], status: "active", type: "all" }, pagination: { page, pageSize: 200 } })
+      body: JSON.stringify({ filters: { membership, regionCodes: ["DE"], status: "active", type: "all" }, pagination: { page, pageSize: 200 } })
     });
     if (!response.ok) throw new Error(`Awin Offers API: HTTP ${response.status}`);
     const payload = await response.json();
     const rows = Array.isArray(payload) ? payload : (payload.promotions ?? payload.data ?? []);
     collected.push(...rows);
     const totalPages = Number(payload.pagination?.totalPages ?? payload.totalPages ?? 1);
-    if (!rows.length || page >= totalPages) break;
+    if (!rows.length || page >= totalPages || page >= maxPages) break;
     page += 1;
     await new Promise(resolve => setTimeout(resolve, 3100));
   }
