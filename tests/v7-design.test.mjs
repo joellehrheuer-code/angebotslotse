@@ -108,6 +108,19 @@ test("aktive Kategorie-Seiten bieten datenbasierten Mehrwert", () => {
 });
 
 
+test("Angebotsseiten verlinken passende Alternativen intern", () => {
+  build();
+  const offers = JSON.parse(fs.readFileSync("data/offers.json", "utf8"));
+  const counts = new Map();
+  for (const offer of offers) counts.set(offer.category, (counts.get(offer.category) || 0) + 1);
+  const target = offers.find((offer) => (counts.get(offer.category) || 0) > 1);
+  assert.ok(target);
+  const html = fs.readFileSync("dist/angebote/" + target.slug + ".html", "utf8");
+  assert.match(html, /Ähnliche Angebote/);
+  assert.match(html, /Weiter vergleichen/);
+  assert.match(html, /class="related-offers deal-section"/);
+});
+
 test("V8 Merkliste und Wunschpreise werden lokal bereitgestellt", () => {
   build();
   const watchlist = fs.readFileSync("dist/merkliste.html", "utf8");
