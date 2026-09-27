@@ -74,3 +74,20 @@ test("V7 Build-Report erfasst eigene Bücher und Merch", () => {
   assert.equal(report.ownedBooks, 2);
   assert.equal(report.merchPage, true);
 });
+
+
+test("SEO konsolidiert Produktvarianten auf eine Angebots-URL", () => {
+  build();
+  const offers = JSON.parse(fs.readFileSync("data/offers.json", "utf8"));
+  const target = offers.find((offer) => offer.productId && Number(offer.currentPrice) > 0 && offer.slug);
+  assert.ok(target, "Mindestens ein Produkt mit Preis wird für den Canonical-Test benötigt.");
+  const canonicalUrl = siteUrl + "/angebote/" + target.slug + ".html";
+  const offerHtml = fs.readFileSync("dist/angebote/" + target.slug + ".html", "utf8");
+  const legacyHtml = fs.readFileSync("dist/produkt/" + target.slug + ".html", "utf8");
+  const sitemap = fs.readFileSync("dist/sitemap.xml", "utf8");
+  assert.ok(offerHtml.includes('rel="canonical" href="' + canonicalUrl + '"'));
+  assert.match(offerHtml, /class="price-history"/);
+  assert.ok(legacyHtml.includes('rel="canonical" href="' + canonicalUrl + '"'));
+  assert.ok(sitemap.includes("/angebote/" + target.slug + ".html"));
+  assert.doesNotMatch(sitemap, /\/produkt\//);
+});
