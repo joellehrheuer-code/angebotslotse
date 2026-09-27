@@ -61,3 +61,31 @@ test("Hub-Indizes und Rabattcodes verlinken in strukturierten Daten nur interne 
     }
   }
 });
+
+
+test("Startseite verlinkt datenreiche Marken- und Shop-Hubs intern", () => {
+  const html=fs.readFileSync("dist/index.html","utf8");
+  const brandLinks=[...html.matchAll(/href="[^"]*\/marken\/[^"]+\.html"/g)].map(m=>m[0]);
+  const shopLinks=[...html.matchAll(/href="[^"]*\/shops\/[^"]+\.html"/g)].map(m=>m[0]);
+  assert.match(html,/Beliebte Marken/);
+  assert.match(html,/Shops entdecken/);
+  assert.ok(brandLinks.length >= 1);
+  assert.ok(shopLinks.length >= 1);
+  assert.ok(brandLinks.length >= 1);
+  assert.ok(shopLinks.length >= 1);
+});
+
+
+test("Startseiten-Directory-Blöcke bleiben kompakt und rein intern", () => {
+  const html=fs.readFileSync("dist/index.html","utf8");
+  const sections=[...html.matchAll(/<section class="directory-section reveal">[\s\S]*?<\/section>/g)].map(m=>m[0]);
+  const brandSection=sections.find(section=>section.includes("Beliebte Marken"));
+  const shopSection=sections.find(section=>section.includes("Shops entdecken"));
+  assert.ok(brandSection);
+  assert.ok(shopSection);
+  const brandLinks=[...brandSection.matchAll(/href="[^"]*\/marken\/[^"]+\.html"/g)];
+  const shopLinks=[...shopSection.matchAll(/href="[^"]*\/shops\/[^"]+\.html"/g)];
+  assert.ok(brandLinks.length >= 1 && brandLinks.length <= 8);
+  assert.ok(shopLinks.length >= 1 && shopLinks.length <= 8);
+  assert.doesNotMatch(brandSection+shopSection,/rel="sponsored/);
+});
