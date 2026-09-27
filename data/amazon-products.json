@@ -1,0 +1,23 @@
+{
+  "marketplace": "www.amazon.de",
+  "items": [
+    {
+      "asin": "B0H6SZ6WCD",
+      "title": "Von Liebe bis zur tiefsten Trauer",
+      "description": "Buch von Joel Leroy Lehrheuer über Liebe, Verlust und emotionale Verarbeitung.",
+      "author": "Joel Leroy Lehrheuer",
+      "category": "sonstiges",
+      "ownedProject": true,
+      "url": "https://www.amazon.de/Von-Liebe-bis-tiefsten-Trauer/dp/B0H6SZ6WCD/"
+    },
+    {
+      "asin": "B0HJ5LGHM5",
+      "title": "Dinge über Beziehungen",
+      "description": "Buch von Joel Leroy Lehrheuer über Beziehungen, Kommunikation und Erfahrungen rund um Nähe und Partnerschaft.",
+      "author": "Joel Leroy Lehrheuer",
+      "category": "sonstiges",
+      "ownedProject": true,
+      "url": "https://www.amazon.de/Dinge-%C3%BCber-Beziehungen-wissen-musst/dp/B0HJ5LGHM5/"
+    }
+  ]
+}

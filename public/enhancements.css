@@ -101,3 +101,16 @@ body{background:radial-gradient(circle at 82% 0,rgba(169,105,255,.10),transparen
 .section-head>a,.rail-actions>a{color:#dce2f5}.section-head>a:hover,.rail-actions>a:hover{color:#ff7fc4}.listing-tools input,.listing-tools select{background:#11162a;color:#f7f8ff;border-color:#30385a}.text-page p,.detail .lead{color:#b8c1d8}.notice{background:#11162a;border-color:#30385a;color:#bfc9e4}
 footer{border-color:#252b43;color:#f7f8ff}footer p{color:#9ea8c1}footer nav a{color:#cbd3e7}:focus-visible{outline:3px solid var(--electric);outline-offset:4px}
 @media(max-width:620px){.global-search{display:none}.redesigned-hero{background:radial-gradient(circle at 85% 10%,rgba(255,63,168,.22),transparent 30%),linear-gradient(145deg,#0c1022,#21112b)}}
+
+
+/* Owned products: books and privacy-gated merch. */
+.owned-project-page,.merch-page{max-width:1180px}
+.owned-project-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:28px}
+.owned-project-card{min-height:280px;padding:28px;border:1px solid #30385a;border-radius:22px;background:linear-gradient(145deg,#11162a,#17132a);box-shadow:var(--shadow);display:flex;flex-direction:column}
+.owned-project-card h2{margin:10px 0 12px;font:800 clamp(25px,3vw,38px)/1.05 var(--sans);color:#fff}
+.owned-project-card p{color:#bfc9e4;max-width:62ch}.owned-project-card small{display:block;margin-top:16px;color:#8992aa}
+.owned-project-actions{margin-top:auto}.owned-project-footer{margin-top:20px}
+.merch-loader{min-height:360px;margin-top:28px;padding:clamp(26px,5vw,54px);border:1px solid #30385a;border-radius:26px;background:radial-gradient(circle at 90% 10%,rgba(255,63,168,.18),transparent 30%),linear-gradient(145deg,#10152a,#21132d);box-shadow:var(--shadow)}
+.merch-loader-copy{max-width:720px}.merch-loader-copy>strong{display:block;font-size:clamp(28px,4vw,46px);line-height:1.05;color:#fff}.merch-loader-copy p{color:#bfc9e4}
+.merch-loader .button{margin-right:10px}.merch-status{min-height:1.4em;margin-top:14px;color:#a9e8ff}
+@media(max-width:720px){.owned-project-grid{grid-template-columns:1fr}.merch-loader{min-height:300px}.merch-loader .button{width:100%;margin-right:0}}

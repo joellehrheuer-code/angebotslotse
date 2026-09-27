@@ -131,3 +131,38 @@ document.querySelectorAll("[data-copy-code]").forEach(link => link.addEventListe
   try { await navigator.clipboard.writeText(link.dataset.copyCode); }
   catch { /* The affiliate destination still opens when clipboard access is unavailable. */ }
 }));
+
+
+const spreadshop = document.querySelector("[data-spreadshop]");
+const spreadshopButton = spreadshop?.querySelector("[data-load-spreadshop]");
+spreadshopButton?.addEventListener("click", () => {
+  if (!spreadshop || spreadshop.dataset.loaded === "true") return;
+  const status = spreadshop.querySelector("[data-spreadshop-status]");
+  const shopName = spreadshop.dataset.shopName;
+  const prefix = spreadshop.dataset.shopPrefix;
+  const scriptUrl = spreadshop.dataset.shopScript;
+  if (!shopName || !prefix || !scriptUrl) {
+    if (status) status.textContent = "Der Shop konnte nicht konfiguriert werden.";
+    return;
+  }
+  spreadshop.dataset.loaded = "true";
+  spreadshopButton.disabled = true;
+  if (status) status.textContent = "Spreadshop wird geladen …";
+  window.spread_shop_config = {
+    shopName,
+    prefix,
+    baseId: spreadshop.id,
+    locale: "de_DE",
+    updateMetadata: false,
+    usePushState: false
+  };
+  const script = document.createElement("script");
+  script.src = scriptUrl;
+  script.async = true;
+  script.addEventListener("error", () => {
+    spreadshop.dataset.loaded = "false";
+    spreadshopButton.disabled = false;
+    if (status) status.textContent = "Spreadshop konnte nicht geladen werden. Du kannst den Shop separat öffnen.";
+  }, {once:true});
+  document.body.append(script);
+});

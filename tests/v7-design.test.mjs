@@ -51,3 +51,26 @@ test("homepage price-drop copy never corrupts valid currency values", () => {
   assert.doesNotMatch(html, /\dPreis beim Anbieter prüfen in 30 Tagen/);
   assert.doesNotMatch(html, /↓\s*\d+Preis beim Anbieter prüfen/);
 });
+
+
+test("V7 erstellt eigene Buch- und datenschutzfreundliche Merch-Seiten", () => {
+  build();
+  const books = fs.readFileSync("dist/buecher.html", "utf8");
+  const merch = fs.readFileSync("dist/merch.html", "utf8");
+  const sitemap = fs.readFileSync("dist/sitemap.xml", "utf8");
+  assert.match(books, /B0H6SZ6WCD/);
+  assert.match(books, /B0HJ5LGHM5/);
+  assert.match(books, /Bücher von Joel/);
+  assert.match(merch, /data-load-spreadshop/);
+  assert.match(merch, /data-shop-script="https:\/\/joel271997\.myspreadshop\.net\/js\/shopclient\.nocache\.js"/);
+  assert.doesNotMatch(merch, /<script[^>]+myspreadshop\.net\/js\/shopclient\.nocache\.js/);
+  assert.match(sitemap, /\/buecher\.html/);
+  assert.match(sitemap, /\/merch\.html/);
+});
+
+test("V7 Build-Report erfasst eigene Bücher und Merch", () => {
+  build();
+  const report = JSON.parse(fs.readFileSync("dist/build-report.json", "utf8"));
+  assert.equal(report.ownedBooks, 2);
+  assert.equal(report.merchPage, true);
+});

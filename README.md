@@ -100,7 +100,7 @@ Scraping, erfundene Trackinglinks und künstliche Klicktests sind ausgeschlossen
 
 ## Datenschutz und Recht
 
-Die Site lädt keine externen Fonts, setzt keine eigenen Cookies und enthält keine Analytics. Affiliate-Links tragen `rel="sponsored noopener"`. Deshalb ist derzeit kein Cookie-Banner nötig. Impressum und Datenschutz bilden die tatsächlich eingesetzte statische GitHub-Pages-Technik ab; eine individuelle Rechtsprüfung bleibt empfehlenswert.
+Die Site lädt keine externen Fonts und setzt selbst keine Marketing-Cookies. Externe Partnerinhalte werden klar abgegrenzt; der eingebettete Spreadshop wird erst nach einem ausdrücklichen Klick geladen. Affiliate-Links tragen `rel="sponsored noopener"`. Cloudflare Web Analytics bleibt optional und nur bei gesetzter Repository-Variable aktiv. Impressum und Datenschutz bilden die eingesetzte statische GitHub-Pages-Technik und die nachgeladene Merch-Integration ab; eine individuelle Rechtsprüfung bleibt empfehlenswert.
 
 ## JOEL MUSS NUR NOCH DIESE PUNKTE MACHEN
 
@@ -108,8 +108,9 @@ Die automatische Aktualisierung läuft alle sechs Stunden. Ohne die folgenden ex
 
 1. Den separaten Awin-Datafeed-Key als `AWIN_DATAFEED_API_KEY` in `.env.local` und als gleichnamiges GitHub Actions Secret hinterlegen. Der normale Awin-API-Token ersetzt diesen Feed-Key nicht.
 2. Nur die in `report/manual-actions.json` aufgeführten Programmbedingungen prüfen und geeignete Bewerbungen im jeweiligen Dashboard bestätigen. Es werden keine Vertragsbedingungen automatisch akzeptiert und keine Doppel- oder Massenbewerbungen versendet.
-3. Falls Awin oder Impact eine zusätzliche Identitäts-, Vertrags- oder API-Freigabe verlangt, diese einmalig im jeweiligen Dashboard bestätigen.
-4. Impressum und Datenschutzerklärung trotz technischer Anpassung einmal individuell rechtlich prüfen lassen.
+3. Für Amazon: PartnerNet final freischalten, unter **Tools → Creators API** eine Anwendung/Credentials erzeugen und `AMAZON_CREATORS_CREDENTIAL_ID`, `AMAZON_CREATORS_CREDENTIAL_SECRET` sowie den deutschen `AMAZON_PARTNER_TAG` als GitHub Secrets hinterlegen. Bis dahin bleiben Amazon-Preise und -Produktbilder bewusst deaktiviert.
+4. Falls Awin oder Impact eine zusätzliche Identitäts-, Vertrags- oder API-Freigabe verlangt, diese einmalig im jeweiligen Dashboard bestätigen.
+5. Impressum und Datenschutzerklärung trotz technischer Anpassung einmal individuell rechtlich prüfen lassen.
 
 Die Dateien `report/program-inventory.json`, `report/update-report.json` und `report/manual-actions.json` werden bei jedem Update neu erzeugt. Sie enthalten nur unsensible Bestands- und Statusdaten, niemals Tokens oder Zugangsdaten.
 
