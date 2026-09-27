@@ -52,7 +52,27 @@ if(heroSlides.length>1 && !matchMedia("(prefers-reduced-motion: reduce)").matche
 
 const observer="IntersectionObserver" in window ? new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add("in-view");observer.unobserve(entry.target);}}),{rootMargin:"0px 0px -8%"}) : null;
 document.querySelectorAll(".reveal").forEach(element=>observer?observer.observe(element):element.classList.add("in-view"));
-document.querySelectorAll("[data-media]").forEach(image=>{const done=()=>image.closest(".has-media")?.classList.add("loaded");if(image.complete)done();else{image.addEventListener("load",done,{once:true});image.addEventListener("error",done,{once:true});}});
+document.querySelectorAll("[data-media]").forEach(image=>{
+  const wrap=image.closest(".has-media");
+  const done=()=>wrap?.classList.add("loaded");
+  const fallback=()=>{
+    const src=image.dataset.fallbackSrc;
+    if(src && image.src!==src){
+      image.dataset.fallbackUsed="true";
+      image.src=src;
+      image.removeAttribute("referrerpolicy");
+      wrap?.classList.add("media-fallback");
+      return;
+    }
+    done();
+  };
+  if(image.complete){
+    if(image.naturalWidth>0)done(); else fallback();
+  }else{
+    image.addEventListener("load",done,{once:true});
+    image.addEventListener("error",fallback,{once:true});
+  }
+});
 
 document.querySelectorAll("[data-history-range]").forEach(button=>button.addEventListener("click",()=>{
   const history=button.closest(".price-history"),range=button.dataset.historyRange;

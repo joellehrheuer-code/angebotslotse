@@ -300,3 +300,79 @@ footer{border-color:#252b43;color:#f7f8ff}footer p{color:#9ea8c1}footer nav a{co
 .account-push-preferences label{display:flex;gap:10px;align-items:flex-start;color:#d9e1f5;font-size:13px;line-height:1.45}
 .account-push-preferences input{margin-top:2px;accent-color:#ff3fa8}
 @media(max-width:560px){.account-push-actions .button{width:100%}}
+
+.breadcrumbs{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:0 0 18px;color:#8992aa;font-size:12px}
+.breadcrumbs a{color:#cbd3e8;text-decoration:none;font-weight:800}
+.breadcrumbs a:hover{color:#fff;text-decoration:underline;text-underline-offset:3px}
+.breadcrumbs span[aria-current="page"]{max-width:min(680px,70vw);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#8992aa}
+@media(max-width:560px){.breadcrumbs span[aria-current="page"]{max-width:70vw}}
+
+
+/* V9 visual stability pass — single final source of truth for responsive commerce UI. */
+*,*::before,*::after{box-sizing:border-box}
+html,body{max-width:100%;overflow-x:hidden}
+img,svg,video{max-width:100%}
+main{min-width:0}
+.site-header{isolation:isolate}
+.header-row{min-width:0}
+.brand{flex:0 0 auto}
+.global-search{min-width:220px}
+.header-social{flex:0 0 auto}
+.header-social a{width:30px;height:30px;border-radius:9px}
+.header-social a img{width:100%;height:100%;object-fit:cover}
+.deal-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;align-items:stretch}
+.deal-card{height:100%;min-width:0;display:flex;flex-direction:column;overflow:hidden}
+.deal-card .media-wrap{position:relative;flex:0 0 190px;min-height:190px;overflow:hidden;background:#0d1121}
+.deal-card .product-image{width:100%;height:190px;min-height:190px;display:grid;place-items:center;overflow:hidden;background:#0d1121}
+.deal-card .product-image img{display:block;width:100%;height:100%;padding:14px;object-fit:contain;object-position:center;background:#f8f9fc}
+.deal-card .media-fallback img,.deal-card .product-image.placeholder img{padding:0;object-fit:cover;background:#10152a}
+.deal-card .deal-content{display:flex;flex:1;min-width:0;min-height:310px;flex-direction:column;padding:15px}
+.deal-card .card-top{min-width:0}
+.deal-card .brandline,.deal-card .merchant,.deal-card h3,.deal-card .price-note,.deal-card .countdown{max-width:100%;overflow:hidden;text-overflow:ellipsis}
+.deal-card h3{min-height:3.75em;-webkit-line-clamp:3}
+.deal-card .merchant{white-space:nowrap}
+.deal-card .price-block{min-height:66px}
+.deal-card .sparkline{min-width:0;max-width:100%}
+.deal-card .card-cta{margin-top:auto}
+.media-skeleton{pointer-events:none}
+.has-media.media-fallback .media-skeleton{display:none}
+.detail-grid{min-width:0}
+.detail-grid>*{min-width:0}
+.detail .product-image{overflow:hidden}
+.detail .product-image img{display:block;width:100%;height:100%;object-fit:contain}
+.partner-creative-card,.creator-video-card,.owned-project-card,.shop-card,.account-card{min-width:0;overflow:hidden}
+.partner-creative-copy,.creator-video-card>div{min-width:0}
+.partner-creative-copy h3,.creator-video-card h3{overflow-wrap:anywhere}
+.breadcrumbs{min-width:0}
+.breadcrumbs span[aria-current="page"]{min-width:0}
+@media(max-width:1180px){
+  .deal-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .header-social{display:none}
+}
+@media(max-width:900px){
+  .deal-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .header-row{gap:10px}
+  .global-search{min-width:0}
+}
+@media(max-width:680px){
+  .site-header{min-height:74px}
+  .header-row{width:calc(100% - 20px);min-height:74px;padding:8px 0;flex-wrap:nowrap}
+  .brand b{display:none}
+  .global-search{display:none}
+  .menu-toggle{margin-left:auto;flex:0 0 auto}
+  #main-nav{inset:74px 0 auto}
+  #main-nav.open{max-height:calc(100dvh - 74px)}
+  .mobile-nav-search{display:flex}
+  .deal-grid{grid-template-columns:1fr}
+  .deal-card .media-wrap,.deal-card .product-image{height:210px;min-height:210px;flex-basis:210px}
+  .deal-card .deal-content{min-height:0}
+  .deal-card h3,.deal-card .price-block{min-height:0}
+  .detail-grid{grid-template-columns:1fr!important}
+  .header-deals{display:none}
+}
+@media(max-width:420px){
+  .deal-section,.categories,.creator-promo,.project-promo,.partner-section,.listing,.text-page,.detail{padding-left:10px;padding-right:10px}
+  .redesigned-hero{width:calc(100% - 16px);padding:22px 16px}
+  .hero-redesign-copy h1{font-size:38px}
+  .deal-card .media-wrap,.deal-card .product-image{height:190px;min-height:190px;flex-basis:190px}
+}

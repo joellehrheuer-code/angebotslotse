@@ -12,15 +12,18 @@ test("Header nutzt echte lokale Social-PNGs und mobile Hamburger-Suche", () => {
 
   const html = fs.readFileSync("dist/index.html", "utf8");
   const app = fs.readFileSync("dist/app.js", "utf8");
-  for (const name of ["instagram","youtube","twitch","spotify","snapchat","discord"]) {
+  for (const name of ["instagram","tiktok","youtube","twitch","spotify","snapchat","discord"]) {
     const file = "dist/social/" + name + ".png";
     assert.ok(fs.existsSync(file), "Fehlendes Social-Icon: " + name);
     assert.ok(fs.statSync(file).size > 500, "Social-Icon ist verdächtig klein: " + name);
     assert.ok(html.includes("/social/" + name + ".png"));
   }
   assert.match(html, /class="mobile-nav-search"/);
+  assert.match(html, /tiktok\.com\/@joel\.27\.1997/);
   assert.match(html, /snapchat\.com\/add\//);
   assert.match(html, /discord\.gg\//);
+  assert.match(html, /data-fallback-src=/);
+  assert.match(app, /fallbackUsed/);
   assert.match(app, /document\.body\.classList\.add\("menu-open"\)/);
   assert.match(app, /Klick|closeMenu|Menü schließen/);
 });
