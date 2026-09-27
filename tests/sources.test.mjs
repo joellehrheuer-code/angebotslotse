@@ -4,7 +4,7 @@ import { fetchDirectOffers } from "../scripts/lib/direct.mjs";
 import { fetchImpactOffers, IMPACT_API_VERSION } from "../scripts/lib/impact.mjs";
 import { fetchAwinPrograms, fetchAwinProgramDetails } from "../scripts/lib/awin.mjs";
 import { fetchDaisyconOffers, fetchDaisyconProgramReview } from "../scripts/lib/daisycon.mjs";
-import { fetchTradedoublerOffers } from "../scripts/lib/tradedoubler.mjs";
+import { fetchTradedoublerOffers, fetchTradedoublerVouchers } from "../scripts/lib/tradedoubler.mjs";
 import { fetchWebgainsOffers } from "../scripts/lib/webgains.mjs";
 
 test("Awin-Programminventar trennt alle offiziellen Beziehungszustände",async()=>{
@@ -252,4 +252,28 @@ test("Tradedoubler entdeckt aktive Feeds automatisch über den offiziellen Produ
   assert.equal(rows.audit.feedsAvailable,1);
   assert.equal(calls.length,2);
   assert.ok(calls.every(url=>url.includes("token=PRODUCTS_TOKEN")));
+});
+
+
+test("Tradedoubler Voucher API übernimmt nur offizielle HTTPS-Trackinglinks und Codes", async () => {
+  const calls=[];
+  const fetchImpl=async url=>{
+    const href=String(url); calls.push(href);
+    return {ok:true,status:200,json:async()=>({vouchers:[{
+      id:555,title:"20 % Rabatt",description:"Nur heute",programName:"Demo Shop",programId:77,
+      defaultTrackUri:"https://clk.tradedoubler.com/voucher/555",
+      landingUrl:"https://shop.example/sale",
+      code:"DEMO20",startDate:"2026-09-27T00:00:00Z",endDate:"2026-10-01T23:59:59Z",
+      logoPath:"https://img.example/logo.png",exclusive:true
+    }]})};
+  };
+  const rows=await fetchTradedoublerVouchers({token:"VOUCHER_TOKEN",maxVouchers:10,fetchImpl});
+  assert.equal(rows.length,1);
+  assert.equal(rows[0].source,"tradedoubler");
+  assert.equal(rows[0].type,"voucher");
+  assert.equal(rows[0].voucher.code,"DEMO20");
+  assert.equal(rows[0].urlTracking,"https://clk.tradedoubler.com/voucher/555");
+  assert.equal(rows[0].isExclusiveVoucher,true);
+  assert.match(calls[0],/vouchers\.json/);
+  assert.match(calls[0],/token=VOUCHER_TOKEN/);
 });

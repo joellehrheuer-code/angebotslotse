@@ -170,13 +170,26 @@ try {
     }
   }
 
-  for(const [key,network,secretName] of [["tradedoubler","Tradedoubler","TRADEDOUBLER_FEED_URLS"],["webgains","Webgains","WEBGAINS_FEED_URLS"]]){
-    const searches=networkMarketplaceSearches[key]??[];
+  {
+    const searches=networkMarketplaceSearches.tradedoubler??[];
     const gap=searches[0];
-    if(!process.env[secretName]){
-      manualActions.push({id:`${key}-connect`,platform:network,action:`Kostenlosen ${network}-Publisherzugang freischalten und anschließend den offiziellen Produktfeed/API-Zugang als ${secretName} hinterlegen.`,reason:gap?`Danach zuerst Programme für ${gap.category} priorisieren (${gap.searchTerms.join(", ")}), weil dort aktuell ${gap.siteOffers} Angebotslotse-Angebote liegen.`:"Ohne Netzwerkzugang kann die automatische Programmsuche noch keine echten Programmdaten bewerten."});
+    const productsConnected=Boolean(process.env.TRADEDOUBLER_PRODUCTS_TOKEN||process.env.TRADEDOUBLER_FEED_URLS);
+    if(!productsConnected){
+      manualActions.push({id:"tradedoubler-connect",platform:"Tradedoubler",action:"Kostenlosen Tradedoubler-Publisherzugang freischalten und entweder TRADEDOUBLER_PRODUCTS_TOKEN oder einen offiziellen Produktfeed als TRADEDOUBLER_FEED_URLS hinterlegen.",reason:gap?`Danach zuerst Programme für ${gap.category} priorisieren (${gap.searchTerms.join(", ")}), weil dort aktuell ${gap.siteOffers} Angebotslotse-Angebote liegen.`:"Ohne Netzwerkzugang können Produktfeeds noch nicht automatisch synchronisiert werden."});
     } else if(gap){
-      manualActions.push({id:`${key}-marketplace-review`,platform:network,action:`${network} nach passenden Programmen für ${gap.category} durchsuchen (${gap.searchTerms.join(", ")}); Beitritt erst nach Prüfung der Programmbedingungen bestätigen.`,reason:`Automatisch priorisierte Kategorie mit ${gap.siteOffers} Angebotslotse-Angeboten. Das Netzwerk unterstützt Programmbewerbungen/-mitgliedschaften technisch, Vertragsbedingungen bleiben review-pflichtig.`});
+      manualActions.push({id:"tradedoubler-marketplace-review",platform:"Tradedoubler",action:`Tradedoubler nach passenden Programmen für ${gap.category} durchsuchen (${gap.searchTerms.join(", ")}); Bewerbung erst nach Prüfung der Programmbedingungen bestätigen.`,reason:`Automatisch priorisierte Kategorie mit ${gap.siteOffers} Angebotslotse-Angeboten. Die Publisher API unterstützt Programmbewerbungen, Vertragsbedingungen bleiben review-pflichtig.`});
+    }
+    if(!process.env.TRADEDOUBLER_VOUCHERS_TOKEN){
+      manualActions.push({id:"tradedoubler-vouchers-connect",platform:"Tradedoubler",action:"Optional den offiziellen Voucher-API-Token als TRADEDOUBLER_VOUCHERS_TOKEN hinterlegen.",reason:"Damit können gültige Gutscheine und Rabattcodes zusätzlich automatisch eingelesen werden; ohne Token bleibt diese Quelle deaktiviert."});
+    }
+  }
+  {
+    const searches=networkMarketplaceSearches.webgains??[];
+    const gap=searches[0];
+    if(!process.env.WEBGAINS_FEED_URLS){
+      manualActions.push({id:"webgains-connect",platform:"Webgains",action:"Kostenlosen Webgains-Publisherzugang freischalten und anschließend den offiziellen Produktfeed/API-Zugang als WEBGAINS_FEED_URLS hinterlegen.",reason:gap?`Danach zuerst Programme für ${gap.category} priorisieren (${gap.searchTerms.join(", ")}), weil dort aktuell ${gap.siteOffers} Angebotslotse-Angebote liegen.`:"Ohne Netzwerkzugang kann die automatische Programmsuche noch keine echten Programmdaten bewerten."});
+    } else if(gap){
+      manualActions.push({id:"webgains-marketplace-review",platform:"Webgains",action:`Webgains nach passenden Programmen für ${gap.category} durchsuchen (${gap.searchTerms.join(", ")}); Beitritt erst nach Prüfung der Programmbedingungen bestätigen.`,reason:`Automatisch priorisierte Kategorie mit ${gap.siteOffers} Angebotslotse-Angeboten. Vertragsbedingungen bleiben review-pflichtig.`});
     }
   }
   await fs.writeFile("report/manual-actions.json",`${JSON.stringify({generatedAt:checkedAt,actions:manualActions},null,2)}\n`);

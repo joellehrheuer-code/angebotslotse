@@ -5,7 +5,7 @@ import { fetchImpactOffers } from "./impact.mjs";
 import { fetchDirectOffers } from "./direct.mjs";
 import { fetchAmazonCreatorItems } from "./amazon.mjs";
 import { fetchDaisyconOffers, fetchDaisyconPrograms, fetchDaisyconMedia, fetchDaisyconProgramReview } from "./daisycon.mjs";
-import { fetchTradedoublerOffers } from "./tradedoubler.mjs";
+import { fetchTradedoublerOffers, fetchTradedoublerVouchers } from "./tradedoubler.mjs";
 import { fetchWebgainsOffers } from "./webgains.mjs";
 import fs from "node:fs/promises";
 export async function collectSources(env = process.env) {
@@ -64,6 +64,7 @@ export async function collectSources(env = process.env) {
     ["impact", () => fetchImpactOffers({ accountSid: env.IMPACT_ACCOUNT_SID, authToken: env.IMPACT_AUTH_TOKEN, linkPolicy: impactLinkPolicy })],
     ["daisycon", () => fetchDaisyconOffers({ publisherId: env.DAISYCON_PUBLISHER_ID, accessToken: env.DAISYCON_ACCESS_TOKEN, maxProducts: Number(env.DAISYCON_MAX_PRODUCTS) || 100 })],
     ["tradedoubler", () => fetchTradedoublerOffers({ token: env.TRADEDOUBLER_PRODUCTS_TOKEN, feedUrls: env.TRADEDOUBLER_FEED_URLS, maxProducts: Number(env.TRADEDOUBLER_MAX_PRODUCTS) || 1000, maxFeeds: Number(env.TRADEDOUBLER_MAX_FEEDS) || 8 })],
+    ["tradedoubler-vouchers", () => fetchTradedoublerVouchers({ token: env.TRADEDOUBLER_VOUCHERS_TOKEN, maxVouchers: Number(env.TRADEDOUBLER_MAX_VOUCHERS) || 1000 })],
     ["webgains", () => fetchWebgainsOffers({ feedUrls: env.WEBGAINS_FEED_URLS, maxProducts: Number(env.WEBGAINS_MAX_PRODUCTS) || 1000 })]
   ];
   const results = await Promise.all(definitions.map(async ([name, run]) => {
@@ -75,6 +76,7 @@ export async function collectSources(env = process.env) {
     if (name === "awin-enhanced-feeds" && (!env.AWIN_API_TOKEN||!joined.length)) return {name,state:"disabled",rows:[],audit:{reason:!env.AWIN_API_TOKEN?"AWIN_API_TOKEN missing – Awin Enhanced Feed sync skipped":"No joined Awin programmes – Enhanced Feed sync skipped"}};
     if (name === "daisycon" && (!env.DAISYCON_PUBLISHER_ID || !env.DAISYCON_ACCESS_TOKEN)) return {name,state:"disabled",rows:[],audit:{reason:"DAISYCON_PUBLISHER_ID / DAISYCON_ACCESS_TOKEN missing – Daisycon sync skipped"}};
     if (name === "tradedoubler" && !env.TRADEDOUBLER_PRODUCTS_TOKEN && !env.TRADEDOUBLER_FEED_URLS) return {name,state:"disabled",rows:[],audit:{reason:"TRADEDOUBLER_PRODUCTS_TOKEN / TRADEDOUBLER_FEED_URLS missing – Tradedoubler sync skipped"}};
+    if (name === "tradedoubler-vouchers" && !env.TRADEDOUBLER_VOUCHERS_TOKEN) return {name,state:"disabled",rows:[],audit:{reason:"TRADEDOUBLER_VOUCHERS_TOKEN missing – Tradedoubler voucher sync skipped"}};
     if (name === "webgains" && !env.WEBGAINS_FEED_URLS) return {name,state:"disabled",rows:[],audit:{reason:"WEBGAINS_FEED_URLS missing – Webgains feed sync skipped"}};
     try { const rows=await run(); return { name, state: "ok", rows, audit:rows.audit??null }; }
     catch (error) { return { name, state: "error", rows: [], error: String(error.message).slice(0, 160) }; }

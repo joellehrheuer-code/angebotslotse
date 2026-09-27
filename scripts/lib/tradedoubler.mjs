@@ -135,3 +135,65 @@ export async function fetchTradedoublerOffers({ token, feedUrls, maxProducts = 1
   if (token) return fetchFromToken({ token, maxProducts, maxFeeds, fetchImpl });
   return fetchFromUrls({ feedUrls, maxProducts, fetchImpl });
 }
+
+const validHttps = value => {
+  try { const url = new URL(String(value ?? "")); return url.protocol === "https:" ? url.href : null; }
+  catch { return null; }
+};
+
+const dateValue = value => {
+  if (value === null || value === undefined || value === "") return undefined;
+  if (/^\d+$/.test(String(value))) {
+    const date = new Date(Number(value));
+    return Number.isFinite(date.valueOf()) ? date.toISOString() : undefined;
+  }
+  const date = new Date(value);
+  return Number.isFinite(date.valueOf()) ? date.toISOString() : undefined;
+};
+
+export async function fetchTradedoublerVouchers({ token, maxVouchers = 1000, fetchImpl = fetch }) {
+  if (!token) return [];
+  const rows = [];
+  const pageSize = Math.min(250, Math.max(1, Number(maxVouchers) || 1000));
+  for (let page = 0; rows.length < maxVouchers; page += 1) {
+    const url = new URL(API + "/vouchers.json;dateOutputFormat=iso8601;languageId=de;pageSize=" + pageSize + ";page=" + page);
+    url.searchParams.set("token", token);
+    const payload = await getJson(url, fetchImpl, "vouchers");
+    const batch = Array.isArray(payload) ? payload : payload?.vouchers ?? payload?.data ?? [];
+    for (const voucher of batch) {
+      const tracking = validHttps(voucher.defaultTrackUri);
+      if (!tracking || !voucher.title) continue;
+      const code = String(voucher.code ?? "").trim();
+      const typeId = Number(voucher.voucherTypeId);
+      rows.push({
+        id: "voucher-" + String(voucher.id ?? rows.length),
+        title: voucher.title,
+        description: voucher.description || voucher.shortDescription || "",
+        terms: voucher.publisherInformation || "",
+        url: validHttps(voucher.landingUrl) || tracking,
+        urlTracking: tracking,
+        advertiserName: voucher.programName || "Tradedoubler",
+        advertiserId: voucher.programId,
+        source: "tradedoubler",
+        type: code ? "voucher" : "promotion",
+        voucher: code ? { code } : undefined,
+        startDate: dateValue(voucher.startDate),
+        endDate: dateValue(voucher.endDate),
+        category: "sonstiges",
+        imageUrl: validHttps(voucher.logoPath),
+        imageAlt: voucher.programName ? voucher.programName + " Gutschein" : voucher.title,
+        imageSource: voucher.logoPath ? "Tradedoubler Vouchers API" : undefined,
+        imageRightsNote: voucher.logoPath ? "Vom Advertiser über die offizielle Tradedoubler Vouchers API bereitgestellt." : undefined,
+        discountValue: Number(voucher.discountAmount) || undefined,
+        discountIsPercentage: voucher.isPercentage === true,
+        isExclusiveVoucher: voucher.exclusive === true || voucher.siteSpecific === true,
+        regions: { list: [{ countryCode: "DE" }] },
+        voucherTypeId: Number.isFinite(typeId) ? typeId : undefined
+      });
+    }
+    if (batch.length < pageSize) break;
+  }
+  const limited = rows.slice(0,maxVouchers);
+  Object.defineProperty(limited,"audit",{value:{mode:"vouchers-api",vouchers:limited.length},enumerable:false});
+  return limited;
+}
