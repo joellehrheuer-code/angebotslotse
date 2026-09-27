@@ -1,7 +1,15 @@
 import fs from "node:fs";
 import path from "node:path";
 
-const secrets = [process.env.AWIN_API_TOKEN, process.env.IMPACT_AUTH_TOKEN].filter(value => value?.length >= 12);
+const secrets = [
+  process.env.AWIN_API_TOKEN,
+  process.env.AWIN_DATAFEED_API_KEY,
+  process.env.IMPACT_AUTH_TOKEN,
+  process.env.AMAZON_CREATORS_CREDENTIAL_SECRET,
+  process.env.SUPABASE_SECRET_KEY,
+  process.env.RESEND_API_KEY
+].filter(value => value?.length >= 12);
+const forbiddenPublicNames = /AWIN_API_TOKEN|AWIN_DATAFEED_API_KEY|IMPACT_AUTH_TOKEN|AMAZON_CREATORS_CREDENTIAL_SECRET|SUPABASE_SECRET_KEY|RESEND_API_KEY/;
 const errors = [];
 function walk(dir) {
   if (!fs.existsSync(dir)) return;
@@ -12,7 +20,7 @@ function walk(dir) {
     else {
       const content=fs.readFileSync(p);
       if(secrets.some(secret => content.includes(Buffer.from(secret)))) errors.push(`Secretwert gefunden: ${p}`);
-      if((p.startsWith(`dist${path.sep}`)||p.startsWith(`public${path.sep}`)) && /AWIN_API_TOKEN|IMPACT_AUTH_TOKEN/.test(content.toString("utf8"))) errors.push(`Secretname im öffentlichen Build: ${p}`);
+      if((p.startsWith(`dist${path.sep}`)||p.startsWith(`public${path.sep}`)) && forbiddenPublicNames.test(content.toString("utf8"))) errors.push(`Secretname im öffentlichen Build: ${p}`);
     }
   }
 }
