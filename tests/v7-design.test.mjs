@@ -19,7 +19,7 @@ function build() {
   });
 }
 
-test("V6 homepage keeps premium dark commerce composition and real data", () => {
+test("V7 homepage keeps premium dark commerce composition and real data", () => {
   build();
   const html = fs.readFileSync("dist/index.html", "utf8");
   const css = fs.readFileSync("dist/enhancements.css", "utf8");
@@ -34,13 +34,20 @@ test("V6 homepage keeps premium dark commerce composition and real data", () => 
   assert.match(css, /\.creator-visual img\{position:absolute/);
 });
 
-test("V6 build report records the real publishable inventory", () => {
+test("V7 build report records the real publishable inventory", () => {
   const report = JSON.parse(fs.readFileSync("dist/build-report.json", "utf8"));
   const offers = JSON.parse(fs.readFileSync("data/offers.json", "utf8"));
-  assert.equal(report.version, "V6-premium-dark-commerce");
+  assert.equal(report.version, "V7-premium-dark-commerce");
   assert.equal(report.offers, report.productCards);
   assert.ok(report.offers > 0);
   assert.equal(report.images, offers.filter((offer) => offer.imageUrl).length);
   assert.ok(report.discounts >= 0 && report.discounts <= report.offers);
   assert.ok(report.dailyDeal);
+});
+
+test("homepage price-drop copy never corrupts valid currency values", () => {
+  build();
+  const html = fs.readFileSync("dist/index.html", "utf8");
+  assert.doesNotMatch(html, /\dPreis beim Anbieter prüfen in 30 Tagen/);
+  assert.doesNotMatch(html, /↓\s*\d+Preis beim Anbieter prüfen/);
 });

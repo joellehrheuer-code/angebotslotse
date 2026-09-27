@@ -50,10 +50,10 @@ for (const match of sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)) if (!match[1].star
 const index = fs.readFileSync(path.join("dist","index.html"),"utf8");
 if (!index.includes('id="newsletter"')) errors.push("Newsletter-Bereich fehlt");
 for (const abstractTitle of ["Waves Specials","Musik- und Studioequipment bei Thomann","RØDE Mikrofone und Creator-Zubehör","Gaming-Angebote bei Instant Gaming"]) if (index.includes(`<h3><a`) && index.includes(abstractTitle)) errors.push(`Abstrakter Shop-Einstieg als Karte sichtbar: ${abstractTitle}`);
-if (index.includes("0 Angebote</b>")) errors.push("Leere Kategorie wird prominent verlinkt");
+if (/(?:^|>)\s*0 Angebote<\/b>/.test(index)) errors.push("Leere Kategorie wird prominent verlinkt");
 if (/GearUP/i.test(index)) errors.push("Quarantänisierter Advertiser ist auf der Startseite sichtbar");
 if ((index.match(/class="deal-card"/g) || []).length > 14) errors.push("V2.1-Startseite enthält zu viele Angebotskarten");
-if (/0,00\s*(?:€|&nbsp;€)/.test(index)) errors.push("Nullpreis auf Startseite sichtbar");
+if (/(?:^|>)\s*0,00\s*(?:€|&nbsp;€)\s*</.test(index)) errors.push("Nullpreis auf Startseite sichtbar");
 for (const category of ["gaming","technik","computer","audio-musik","zubehoer","haushalt","werkzeug","mode","freizeit"]) {
   if (!fs.existsSync(path.join("dist",`${category}.html`))) errors.push(`Kategorie-Seite fehlt: ${category}`);
   if (!fs.existsSync(path.join("dist","placeholders",`${category}.svg`))) errors.push(`Kategorie-Platzhalter fehlt: ${category}`);

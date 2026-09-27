@@ -1,8 +1,8 @@
 # Angebotslotse
 
-## V4 – Premium Deal Engine
+## V7 – Premium Dark Commerce
 
-Die Startseite nutzt eine prominente Produktsuche, einen kompakten Drei-Slide-Hero und horizontale Deal-Rails mit fünf sichtbaren Karten auf großen Desktop-Ansichten. Maus-Drag, Touch-Swipe, Pfeile, Tastatursteuerung, Scroll-Snap, Lazy Loading, Skeletons und `prefers-reduced-motion` sind ohne schwere UI-Bibliothek umgesetzt.
+Die Startseite nutzt ein einheitliches dunkles Navy-/Schwarz-Design mit Magenta-, Violett- und Electric-Blue-Akzenten, eine prominente Produktsuche, einen großen Lifestyle-Hero und horizontale Deal-Rails mit bis zu sechs sichtbaren Karten auf großen Desktop-Ansichten. Maus-Drag, Touch-Swipe, Pfeile, Tastatursteuerung, Scroll-Snap, Lazy Loading, Skeletons und `prefers-reduced-motion` sind ohne schwere UI-Bibliothek umgesetzt.
 
 Echte Produktdaten können über Impact-Kataloge und die offizielle Awin-Produktfeed-Liste einlaufen. Für Awin ist dazu zusätzlich zum normalen API-Token der separate GitHub-Actions-Secret `AWIN_DATAFEED_API_KEY` erforderlich. Die Herkunft und Rechtehinweise offizieller Bilder werden als `imageSource` und `imageRightsNote` gespeichert. Fehlen verifizierte Preise oder Medien, zeigt die Seite ausdrücklich einen Prüfhinweis beziehungsweise ein neutrales Kategorievisual.
 
