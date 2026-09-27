@@ -185,3 +185,11 @@ test("eigene Bücher haben indexierbare Detailseiten mit Book-Markup", () => {
   assert.ok(sitemap.includes("/buecher/" + slug + ".html"));
   assert.match(html, /Bei Amazon ansehen/);
 });
+
+test("Sitemap nutzt belastbare lastmod-Werte nur für dynamische Inhalte", () => {
+  build();
+  const sitemap = fs.readFileSync("dist/sitemap.xml", "utf8");
+  assert.match(sitemap, /<lastmod>[^<]+<\/lastmod>/);
+  assert.match(sitemap, /<url><loc>[^<]*\/angebote\/[^<]+<\/loc><lastmod>[^<]+<\/lastmod><\/url>/);
+  assert.match(sitemap, /<url><loc>[^<]*\/impressum\.html<\/loc><\/url>/);
+});
