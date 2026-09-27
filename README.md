@@ -47,6 +47,7 @@ Produktionsfähige, statische Affiliate-Angebotsseite für Deutschland. Sie vere
 - `scripts/build.mjs`: statische Seiten, Detailseiten, Sitemap, Robots und Statusseite
 - `scripts/integrity.mjs`: täglicher Daten- und HTTPS-Linkcheck
 - `scripts/validate-build.mjs`: Pflichtseiten, SEO- und GitHub-Pages-Buildprüfung
+- `scripts/seo-audit.mjs`: automatischer technischer SEO-Audit für Canonicals, Indexierbarkeit, Sitemap, H1, Metadaten und JSON-LD
 - `scripts/security-check.mjs`: Secret-Leak-Prüfung
 - `scripts/report.mjs`: privater 30-Tage-Awin-Report; `data/private/` wird nie veröffentlicht oder committed
 - `.github/workflows`: Angebots-Updates alle sechs Stunden bei Minute 17 (00:17, 06:17, 12:17 und 18:17 UTC) sowie täglicher Integritätscheck
@@ -62,6 +63,7 @@ npm test
 npm run check
 npm run build
 npm run validate
+npm run seo
 npm run security
 ```
 
@@ -112,7 +114,7 @@ Die automatische Aktualisierung läuft alle sechs Stunden. Ohne die folgenden ex
 4. Falls Awin oder Impact eine zusätzliche Identitäts-, Vertrags- oder API-Freigabe verlangt, diese einmalig im jeweiligen Dashboard bestätigen.
 5. Impressum und Datenschutzerklärung trotz technischer Anpassung einmal individuell rechtlich prüfen lassen.
 
-Die Dateien `report/program-inventory.json`, `report/update-report.json` und `report/manual-actions.json` werden bei jedem Update neu erzeugt. Sie enthalten nur unsensible Bestands- und Statusdaten, niemals Tokens oder Zugangsdaten.
+Die Dateien `report/program-inventory.json`, `report/update-report.json`, `report/manual-actions.json` und `report/seo-report.json` werden bei jedem Update neu erzeugt. Sie enthalten nur unsensible Bestands-, SEO- und Statusdaten, niemals Tokens oder Zugangsdaten.
 
 ## Monitoring und Fehler
 
