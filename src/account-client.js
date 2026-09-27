@@ -1,4 +1,5 @@
 import { createClient } from "@supabase/supabase-js";
+import { matchAlertSubscription } from "../scripts/lib/alert-matcher.mjs";
 
 const config = globalThis.ANGEBOTSLOTSE_AUTH_CONFIG || {};
 const root = document.querySelector("[data-account-root]");
@@ -29,6 +30,8 @@ if (!root || !config.url || !config.publishableKey) {
   const alertMinDiscount = root.querySelector("[data-alert-min-discount]");
   const alertStatus = root.querySelector("[data-alert-status]");
   const alertList = root.querySelector("[data-alert-list]");
+  const matchesCard = root.querySelector("[data-account-matches-card]");
+  const matchesNode = root.querySelector("[data-alert-matches]");
 
   const setStatus = (text, kind = "") => {
     if (!statusNode) return;
@@ -132,6 +135,91 @@ if (!root || !config.url || !config.publishableKey) {
     }
   }
 
+  const money = (value, currency = "EUR") => {
+    const number = Number(value);
+    return Number.isFinite(number) && number > 0
+      ? number.toLocaleString("de-DE", { style: "currency", currency })
+      : "Preis beim Anbieter prüfen";
+  };
+
+  const offerDiscount = offer => {
+    const current = Number(offer.currentPrice);
+    const previous = Number(offer.previousPrice);
+    return Number.isFinite(current) && current > 0 && Number.isFinite(previous) && previous > current
+      ? Math.round((1 - current / previous) * 100)
+      : 0;
+  };
+
+  function renderAlertMatches(subscriptions, offers) {
+    if (!matchesNode) return;
+    matchesNode.replaceChildren();
+    if (!subscriptions?.length) {
+      const empty = document.createElement("p");
+      empty.className = "account-alert-empty";
+      empty.textContent = "Lege zuerst einen Alarm an, um passende Angebote zu sehen.";
+      matchesNode.append(empty);
+      return;
+    }
+
+    const matches = (offers || []).map(offer => ({
+      offer,
+      ruleCount: subscriptions.filter(rule => matchAlertSubscription(rule, offer)).length
+    })).filter(row => row.ruleCount > 0)
+      .sort((a, b) => offerDiscount(b.offer) - offerDiscount(a.offer) || String(b.offer.updatedAt || "").localeCompare(String(a.offer.updatedAt || "")))
+      .slice(0, 12);
+
+    if (!matches.length) {
+      const empty = document.createElement("p");
+      empty.className = "account-alert-empty";
+      empty.textContent = "Aktuell gibt es keine Angebote, die deine Alarmregeln erfüllen.";
+      matchesNode.append(empty);
+      return;
+    }
+
+    for (const { offer, ruleCount } of matches) {
+      const link = document.createElement("a");
+      link.className = "account-match-item";
+      link.href = location.origin + accountBase + "/angebote/" + encodeURIComponent(offer.slug) + ".html";
+
+      if (offer.imageUrl) {
+        const image = document.createElement("img");
+        image.src = offer.imageUrl;
+        image.alt = "";
+        image.loading = "lazy";
+        image.decoding = "async";
+        image.referrerPolicy = "no-referrer";
+        link.append(image);
+      }
+
+      const body = document.createElement("span");
+      const title = document.createElement("strong");
+      title.textContent = offer.title || "Angebot";
+      const meta = document.createElement("small");
+      const discount = offerDiscount(offer);
+      meta.textContent = [offer.advertiser || "", money(offer.currentPrice, offer.currency || "EUR"), discount ? "-" + discount + " %" : "", ruleCount > 1 ? ruleCount + " Alarmregeln" : ""].filter(Boolean).join(" · ");
+      body.append(title, meta);
+      link.append(body);
+      matchesNode.append(link);
+    }
+  }
+
+  async function loadAlertMatches(subscriptions) {
+    try {
+      const response = await fetch(location.origin + accountBase + "/alerts-feed.json", { cache: "no-store" });
+      if (!response.ok) throw new Error("Alarm-Feed nicht erreichbar.");
+      const payload = await response.json();
+      renderAlertMatches(subscriptions, Array.isArray(payload?.offers) ? payload.offers : []);
+    } catch (error) {
+      if (!matchesNode) return;
+      matchesNode.replaceChildren();
+      const message = document.createElement("p");
+      message.className = "account-alert-empty";
+      message.textContent = "Aktuelle Alarmtreffer konnten gerade nicht geladen werden.";
+      matchesNode.append(message);
+      console.error(error);
+    }
+  }
+
   async function loadAlerts(userId) {
     const { data, error } = await supabase
       .from("alert_subscriptions")
@@ -139,8 +227,10 @@ if (!root || !config.url || !config.publishableKey) {
       .eq("user_id", userId)
       .order("created_at", { ascending: false });
     if (error) throw error;
-    renderAlerts(data || [], userId);
-    return data || [];
+    const rows = data || [];
+    renderAlerts(rows, userId);
+    await loadAlertMatches(rows);
+    return rows;
   }
 
   async function renderSession(session) {
@@ -148,10 +238,12 @@ if (!root || !config.url || !config.publishableKey) {
     signedOut.hidden = Boolean(user);
     signedIn.hidden = !user;
     if (alertsCard) alertsCard.hidden = !user;
+    if (matchesCard) matchesCard.hidden = !user;
     if (!user) {
       if (userEmail) userEmail.textContent = "";
       if (cloudCount) cloudCount.textContent = "0";
       if (alertList) alertList.replaceChildren();
+      if (matchesNode) matchesNode.replaceChildren();
       return;
     }
     if (userEmail) userEmail.textContent = user.email || "Angemeldet";

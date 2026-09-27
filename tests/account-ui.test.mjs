@@ -12,6 +12,7 @@ test("Konto-Seite wird mit lokal gebündeltem Supabase-Client gebaut", () => {
 
   const html = fs.readFileSync("dist/konto.html", "utf8");
   const privacy = fs.readFileSync("dist/datenschutz.html", "utf8");
+  const feed = JSON.parse(fs.readFileSync("dist/alerts-feed.json", "utf8"));
   const bundle = fs.readFileSync("dist/account-client.js", "utf8");
 
   assert.match(html, /Konto &amp; Preisalarme/);
@@ -25,6 +26,11 @@ test("Konto-Seite wird mit lokal gebündeltem Supabase-Client gebaut", () => {
   assert.match(html, /content="noindex,follow"/);
   assert.match(privacy, /Bei freiwilliger Kontoanmeldung können Merkliste, Wunschpreise, Alarmregeln und Benachrichtigungseinstellungen/);
   assert.match(privacy, /nicht öffentlichen Supabase-Storage-Bereich/);
+  assert.ok(Array.isArray(feed.offers));
+  assert.ok(feed.offers.length > 0);
+  assert.equal("trackingUrl" in feed.offers[0], false);
+  assert.equal("affiliateUrl" in feed.offers[0], false);
+  assert.match(html, /data-alert-matches/);
   assert.ok(bundle.length > 1000);
   assert.doesNotMatch(bundle, /SUPABASE_SECRET_KEY|service_role|RESEND_API_KEY/);
 });

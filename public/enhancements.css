@@ -215,3 +215,14 @@ footer{border-color:#252b43;color:#f7f8ff}footer p{color:#9ea8c1}footer nav a{co
 .button.small{min-height:36px;padding:8px 11px;font-size:11px}
 @media(max-width:900px){.account-alert-form{grid-template-columns:repeat(2,minmax(0,1fr))}.account-alert-form .button{width:100%}}
 @media(max-width:560px){.account-alert-form{grid-template-columns:1fr}.account-alert-item{align-items:flex-start;flex-direction:column}.account-alert-item .button{width:100%}}
+
+.account-matches-card{grid-column:1/-1}
+.account-match-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:14px}
+.account-match-item{display:flex;gap:12px;align-items:center;min-width:0;padding:12px;border:1px solid #2b3150;border-radius:14px;background:#0d1121;color:#f7f8ff;text-decoration:none;transition:transform .18s ease,border-color .18s ease}
+.account-match-item:hover{transform:translateY(-2px);border-color:#ff3fa877}
+.account-match-item img{width:68px;height:68px;flex:0 0 68px;object-fit:contain;border-radius:10px;background:#fff}
+.account-match-item span{display:grid;min-width:0;gap:5px}
+.account-match-item strong{display:-webkit-box;overflow:hidden;-webkit-line-clamp:2;-webkit-box-orient:vertical;font-size:13px;line-height:1.35}
+.account-match-item small{color:#9ea8c1;font-size:11px}
+@media(max-width:900px){.account-match-list{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.account-match-list{grid-template-columns:1fr}}
