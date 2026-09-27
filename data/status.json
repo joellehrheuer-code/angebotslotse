@@ -1,6 +1,6 @@
 {
   "state": "ok",
-  "lastSuccessfulUpdate": "2026-09-27T11:46:06.407Z",
+  "lastSuccessfulUpdate": "2026-09-27T12:17:10.852Z",
   "activeOffers": 809,
   "added": 0,
   "removed": 0,
@@ -123,6 +123,30 @@
       "count": 0,
       "error": "Impact API /Mediapartners/IRY64XT2ENN77662895nd4JzxxVYTNUzJ1/Campaigns: HTTP 429",
       "audit": null
+    },
+    "daisycon": {
+      "state": "disabled",
+      "count": 0,
+      "error": null,
+      "audit": {
+        "reason": "DAISYCON_PUBLISHER_ID / DAISYCON_ACCESS_TOKEN missing – Daisycon sync skipped"
+      }
+    },
+    "tradedoubler": {
+      "state": "disabled",
+      "count": 0,
+      "error": null,
+      "audit": {
+        "reason": "TRADEDOUBLER_FEED_URLS missing – Tradedoubler feed sync skipped"
+      }
+    },
+    "webgains": {
+      "state": "disabled",
+      "count": 0,
+      "error": null,
+      "audit": {
+        "reason": "WEBGAINS_FEED_URLS missing – Webgains feed sync skipped"
+      }
     }
   },
   "stale": 537,
