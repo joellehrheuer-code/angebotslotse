@@ -277,3 +277,19 @@ footer{border-color:#252b43;color:#f7f8ff}footer p{color:#9ea8c1}footer nav a{co
 .deal-check-note a{font-weight:850;white-space:nowrap}
 @media(max-width:820px){.method-stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:480px){.method-stats{grid-template-columns:1fr}}
+
+
+/* V8 data-rich merchant pages */
+.shop-guide{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(320px,.9fr);gap:18px;margin:22px 0;padding:20px;border:1px solid #2b3150;border-radius:18px;background:linear-gradient(145deg,#11162a,#0d1121)}
+.shop-guide>div:first-child p{margin:8px 0 0;color:#aeb8d0;line-height:1.6}
+.shop-guide-facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+.shop-guide-facts span{display:grid;gap:4px;padding:12px 13px;border:1px solid #303756;border-radius:13px;background:#0a0e1b;color:#9ea8c1;font-size:11px}
+.shop-guide-facts strong{font-size:20px;color:#fff}
+.shop-guide-categories{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:8px}
+.shop-guide-categories>a,.shop-guide-categories>span{display:inline-flex;align-items:center;gap:8px;padding:8px 11px;border:1px solid #303756;border-radius:999px;background:#0a0e1b;color:#dce2f3;text-decoration:none;font-size:11px;font-weight:800}
+.shop-guide-categories a:hover{border-color:#ff3fa866}
+.shop-guide-categories a span,.shop-guide-categories>span b{color:#9ea8c1;font-weight:800}
+.shop-guide-source{grid-column:1/-1;margin:0;color:#8992aa;font-size:11px}
+.shop-guide-source a{font-weight:850}
+@media(max-width:820px){.shop-guide{grid-template-columns:1fr}}
+@media(max-width:520px){.shop-guide-facts{grid-template-columns:1fr}}
