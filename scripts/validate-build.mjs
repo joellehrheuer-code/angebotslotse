@@ -1,7 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 
-const required = ["index.html","impressum.html","datenschutz.html","affiliate.html","status.html","kategorien.html","neu.html","endet-bald.html","top-rabatte.html","rabattcodes.html","preis-gefallen.html","sitemap.xml","robots.txt","styles.css","app.js","og.png"];
+const required = ["index.html","impressum.html","datenschutz.html","affiliate.html","status.html","kategorien.html","shops.html","suche.html","neu.html","endet-bald.html","top-rabatte.html","rabattcodes.html","preis-gefallen.html","sitemap.xml","robots.txt","styles.css","app.js","og.png"];
 const errors = [];
 for (const file of required) if (!fs.existsSync(path.join("dist",file))) errors.push(`Fehlt: ${file}`);
 const htmlFiles = [];
