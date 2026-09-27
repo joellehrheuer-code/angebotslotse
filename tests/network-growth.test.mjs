@@ -47,7 +47,7 @@ test("Daisycon-Review erzwingt manuelle Prüfung bei Terms oder Fragebogen", () 
   const rows=rankDaisyconPrograms(programs,{
     "1":{relationship:"not-subscribed",agreementTermsPresent:true,questionnaires:0,reviewRequired:true,automaticSubmissionAllowed:false},
     "2":{relationship:"not-subscribed",agreementTermsPresent:false,questionnaires:2,reviewRequired:true,automaticSubmissionAllowed:false},
-    "3":{relationship:"not-subscribed",agreementTermsPresent:false,questionnaires:0,reviewRequired:false,automaticSubmissionAllowed:false},
+    "3":{relationship:"not-subscribed",agreementTermsPresent:false,questionnaires:0,reviewRequired:false,subscriptionEndpointAvailable:true,submissionReady:true,automaticSubmissionAllowed:false},
     "4":{relationship:"approved",agreementTermsPresent:false,questionnaires:0,reviewRequired:false,automaticSubmissionAllowed:false}
   });
   const terms=rows.find(row=>row.programId===1);
@@ -56,7 +56,9 @@ test("Daisycon-Review erzwingt manuelle Prüfung bei Terms oder Fragebogen", () 
   const joined=rows.find(row=>row.programId===4);
   assert.equal(terms.automationState,"terms-review-required");
   assert.equal(questionnaire.automationState,"questionnaire-review-required");
-  assert.equal(ready.automationState,"ready-for-review");
+  assert.equal(ready.automationState,"ready-for-human-submit");
+  assert.equal(ready.submissionReady,true);
+  assert.equal(ready.humanApprovalRequired,true);
   assert.equal(joined.automationState,"joined");
   assert.equal(joined.applicationPossible,false);
   assert.ok(rows.every(row=>row.automaticSubmissionAllowed===false));

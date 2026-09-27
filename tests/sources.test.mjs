@@ -3,7 +3,7 @@ import assert from "node:assert/strict";
 import { fetchDirectOffers } from "../scripts/lib/direct.mjs";
 import { fetchImpactOffers, IMPACT_API_VERSION } from "../scripts/lib/impact.mjs";
 import { fetchAwinPrograms, fetchAwinProgramDetails } from "../scripts/lib/awin.mjs";
-import { fetchDaisyconOffers, fetchDaisyconProgramReview } from "../scripts/lib/daisycon.mjs";
+import { fetchDaisyconOffers, fetchDaisyconProgramReview, subscribeDaisyconProgram } from "../scripts/lib/daisycon.mjs";
 import { fetchTradedoublerOffers, fetchTradedoublerVouchers } from "../scripts/lib/tradedoubler.mjs";
 import { fetchWebgainsOffers } from "../scripts/lib/webgains.mjs";
 
@@ -276,4 +276,46 @@ test("Tradedoubler Voucher API übernimmt nur offizielle HTTPS-Trackinglinks und
   assert.equal(rows[0].isExclusiveVoucher,true);
   assert.match(calls[0],/vouchers\.json/);
   assert.match(calls[0],/token=VOUCHER_TOKEN/);
+});
+
+
+test("Daisycon blockiert Subscribe ohne ausdrückliche menschliche Freigabe", async () => {
+  const review={programId:99,mediaId:7,reviewRequired:false,agreementTermsPresent:false,questionnaires:0,submissionReady:true};
+  await assert.rejects(
+    ()=>subscribeDaisyconProgram({
+      publisherId:"42",accessToken:"TOKEN",programId:99,mediaId:7,review,confirmedReview:false,
+      fetchImpl:async()=>{throw new Error("network must not be called");}
+    }),
+    /explicit human review confirmation required/
+  );
+});
+
+test("Daisycon nutzt nach freigegebenem Review nur den dokumentierten Subscribe-Endpunkt", async () => {
+  const calls=[];
+  const review={programId:99,mediaId:7,reviewRequired:false,agreementTermsPresent:false,questionnaires:0,submissionReady:true};
+  const result=await subscribeDaisyconProgram({
+    publisherId:"42",accessToken:"TOKEN",programId:99,mediaId:7,review,confirmedReview:true,
+    fetchImpl:async(url,options)=>{
+      calls.push({url:String(url),options});
+      return {ok:true,status:201};
+    }
+  });
+  assert.equal(result.submitted,true);
+  assert.equal(result.status,201);
+  assert.equal(calls.length,1);
+  assert.match(calls[0].url,/services\.daisycon\.com\/publishers\/42\/programs\/99\/subscriptions\/7$/);
+  assert.equal(calls[0].options.method,"POST");
+  assert.equal(calls[0].options.headers.Authorization,"Bearer TOKEN");
+});
+
+test("Daisycon blockiert Subscribe sobald Terms oder Fragebogen Review verlangen", async () => {
+  for(const review of [
+    {programId:99,mediaId:7,reviewRequired:true,agreementTermsPresent:true,questionnaires:0,submissionReady:false},
+    {programId:99,mediaId:7,reviewRequired:true,agreementTermsPresent:false,questionnaires:1,submissionReady:false}
+  ]){
+    await assert.rejects(
+      ()=>subscribeDaisyconProgram({publisherId:"42",accessToken:"TOKEN",programId:99,mediaId:7,review,confirmedReview:true}),
+      /agreement terms or questionnaire require review/
+    );
+  }
 });

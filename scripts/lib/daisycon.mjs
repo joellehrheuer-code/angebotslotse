@@ -182,6 +182,7 @@ export async function fetchDaisyconProgramReview({
     agreementTerms &&
     (Array.isArray(agreementTerms) ? agreementTerms.length : Object.keys(agreementTerms).length)
   );
+  const reviewRequired = agreementTermsPresent || questionnaires.length > 0;
   return {
     programId,
     mediaId: mediaId ?? null,
@@ -192,7 +193,33 @@ export async function fetchDaisyconProgramReview({
     score: score ?? null,
     commissions: commissions.length,
     accessRulesPresent: Boolean(accessRules && (Array.isArray(accessRules) ? accessRules.length : Object.keys(accessRules).length)),
-    reviewRequired: agreementTermsPresent || questionnaires.length > 0,
+    reviewRequired,
+    subscriptionEndpointAvailable: Boolean(mediaId),
+    submissionReady: Boolean(mediaId) && !reviewRequired && /not-subscribed|available|open|new/.test(relationship),
+    humanApprovalRequired: true,
     automaticSubmissionAllowed: false
   };
+}
+
+export async function subscribeDaisyconProgram({
+  publisherId,
+  accessToken,
+  programId,
+  mediaId,
+  review,
+  confirmedReview = false,
+  fetchImpl = fetch
+}) {
+  if (!publisherId || !accessToken || !programId || !mediaId) throw new Error("Daisycon subscription requires publisherId, accessToken, programId and mediaId");
+  if (!confirmedReview) throw new Error("Daisycon subscription blocked: explicit human review confirmation required");
+  if (!review || String(review.programId) !== String(programId) || String(review.mediaId) !== String(mediaId)) throw new Error("Daisycon subscription blocked: matching program review required");
+  if (review.reviewRequired || review.agreementTermsPresent || Number(review.questionnaires) > 0) throw new Error("Daisycon subscription blocked: agreement terms or questionnaire require review");
+  if (!review.submissionReady) throw new Error("Daisycon subscription blocked: program is not ready for subscription");
+  const url = new URL(API + "/publishers/" + encodeURIComponent(publisherId) + "/programs/" + encodeURIComponent(programId) + "/subscriptions/" + encodeURIComponent(mediaId));
+  const response = await fetchImpl(url, {
+    method: "POST",
+    headers: { Authorization: "Bearer " + accessToken, Accept: "application/json" }
+  });
+  if (!response.ok) throw new Error("Daisycon subscribe: HTTP " + response.status);
+  return { submitted: true, programId, mediaId, status: response.status };
 }

@@ -7,7 +7,7 @@ const normalizePriority = value => {
 
 const scoreOf = row => Number.isFinite(Number(row?.score)) ? Number(row.score) : 0;
 
-const common = ({ network, brand, category, priority, score, status, action, draft, reason, kind, reference }) => ({
+const common = ({ network, brand, category, priority, score, status, action, draft, reason, kind, reference, submissionReady = false, humanApprovalRequired = false }) => ({
   network,
   brand: brand || network,
   category: category || "Weitere",
@@ -18,7 +18,9 @@ const common = ({ network, brand, category, priority, score, status, action, dra
   nextAction: action || null,
   applicationDraft: draft || null,
   reason: reason || null,
-  reference: reference || null
+  reference: reference || null,
+  submissionReady: Boolean(submissionReady),
+  humanApprovalRequired: Boolean(humanApprovalRequired)
 });
 
 export function buildAffiliateOpportunityReport({
@@ -74,7 +76,9 @@ export function buildAffiliateOpportunityReport({
       draft:row.applicationPossible ? row.applicationDraft ?? null : null,
       reason:(row.reasons || []).join(", "),
       kind:row.applicationPossible ? "application" : "program",
-      reference:row.programId
+      reference:row.programId,
+      submissionReady:row.submissionReady,
+      humanApprovalRequired:row.humanApprovalRequired
     }));
   }
 
@@ -137,7 +141,9 @@ export function buildAffiliateOpportunityReport({
           ? "partner-expansion"
           : "monitor",
     nextAction:row.nextAction,
-    applicationDraft:row.applicationDraft
+    applicationDraft:row.applicationDraft,
+    submissionReady:row.submissionReady,
+    humanApprovalRequired:row.humanApprovalRequired
   }));
 
   return {

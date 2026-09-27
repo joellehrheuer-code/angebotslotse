@@ -37,6 +37,8 @@ export function rankDaisyconPrograms(programs = [], reviews = {}) {
       const agreementTermsPresent = Boolean(review?.agreementTermsPresent);
       const questionnaires = Number(review?.questionnaires) || 0;
       const reviewRequired = Boolean(review?.reviewRequired || agreementTermsPresent || questionnaires > 0);
+      const subscriptionEndpointAvailable = Boolean(review?.subscriptionEndpointAvailable);
+      const submissionReady = Boolean(review?.submissionReady) && !reviewRequired;
       const networkScore = Number(review?.score?.score ?? review?.score?.overall ?? review?.score);
       const commissions = Number(review?.commissions) || 0;
       const accessRulesPresent = Boolean(review?.accessRulesPresent);
@@ -61,8 +63,11 @@ export function rankDaisyconPrograms(programs = [], reviews = {}) {
       } else if (applicationPossible && agreementTermsPresent) {
         nextAction = "Daisycon Agreement Terms prüfen; Vertragsbedingungen nicht automatisch akzeptieren.";
         automationState = "terms-review-required";
+      } else if (applicationPossible && submissionReady) {
+        nextAction = "Subscribe-Endpunkt ist technisch bereit; Bewerbung erst nach ausdrücklicher menschlicher Freigabe absenden.";
+        automationState = "ready-for-human-submit";
       } else if (applicationPossible) {
-        nextAction = "Bewerbung ist technisch möglich; vor dem Absenden Programmbedingungen final prüfen.";
+        nextAction = "Bewerbung ist potenziell möglich; Media-/Subscribe-Status und Programmbedingungen vor dem Absenden final prüfen.";
         automationState = "ready-for-review";
       }
       return {
@@ -78,6 +83,9 @@ export function rankDaisyconPrograms(programs = [], reviews = {}) {
         agreementTermsPresent,
         questionnaires,
         reviewRequired,
+        subscriptionEndpointAvailable,
+        submissionReady,
+        humanApprovalRequired: true,
         metrics: { networkScore: Number.isFinite(networkScore) ? networkScore : null, commissionEntries: commissions, accessRulesPresent },
         automaticSubmissionAllowed: false,
         automationState,

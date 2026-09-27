@@ -7,7 +7,7 @@ test("zentraler Affiliate-Report sortiert netzwerkübergreifend nach Priorität"
     generatedAt:"2026-09-27T13:00:00.000Z",
     awin:[{brand:"Tech Brand",category:"Technik & Computer",priority:"hoch",score:88,status:"notjoined",applicationRequired:true,applicationDraft:"Draft",nextAction:"Prüfen",reasons:["Feed"]}],
     impact:[{brand:"Audio Brand",category:"Audio & Musik",priority:"mittel",score:44,nextAction:"Feed ausbauen",reasons:["2 Produkte"],campaignId:"i1"}],
-    daisycon:[{brand:"Gaming Brand",category:"Gaming",priority:"hoch",score:60,status:"available",applicationPossible:true,applicationDraft:"Daisy Draft",nextAction:"Bedingungen prüfen",reasons:["passt"]}],
+    daisycon:[{brand:"Gaming Brand",category:"Gaming",priority:"hoch",score:60,status:"available",applicationPossible:true,applicationDraft:"Daisy Draft",nextAction:"Bedingungen prüfen",reasons:["passt"],submissionReady:true,humanApprovalRequired:true}],
     networkSearches:{
       webgains:[{network:"Webgains",category:"Haushalt & Alltag",siteOffers:25,priority:"mittel",searchTerms:["home"],connected:false,action:"Zugang verbinden"}]
     }
@@ -19,6 +19,9 @@ test("zentraler Affiliate-Report sortiert netzwerkübergreifend nach Priorität"
   assert.ok(report.byNetwork.Awin >= 1);
   assert.ok(report.byNetwork.Daisycon >= 1);
   assert.ok(report.byNetwork.Webgains >= 1);
+  const daisy=report.reviewQueue.find(row=>row.network==="Daisycon"&&row.brand==="Gaming Brand");
+  assert.equal(daisy.submissionReady,true);
+  assert.equal(daisy.humanApprovalRequired,true);
 });
 
 test("Marketplace-Suchpläne bleiben von echten Bewerbungen getrennt", () => {
