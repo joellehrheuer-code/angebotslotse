@@ -1,6 +1,6 @@
 {
   "state": "ok",
-  "lastSuccessfulUpdate": "2026-09-27T12:55:28.574Z",
+  "lastSuccessfulUpdate": "2026-09-27T13:40:48.405Z",
   "activeOffers": 809,
   "added": 0,
   "removed": 0,
@@ -148,6 +148,11 @@
         "reason": "WEBGAINS_FEED_URLS missing – Webgains feed sync skipped"
       }
     }
+  },
+  "creatorFeed": {
+    "state": "disabled",
+    "count": 0,
+    "error": null
   },
   "stale": 537,
   "message": "Aktualisierung mit geschützten Bestandsdaten abgeschlossen."
