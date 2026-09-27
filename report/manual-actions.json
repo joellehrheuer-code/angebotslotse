@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-27T12:17:10.883Z",
+  "generatedAt": "2026-09-27T12:41:51.478Z",
   "actions": [
     {
       "id": "awin-datafeed-key",
@@ -74,6 +74,24 @@
       "action": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
       "reason": "Automatisch priorisiert (45 Punkte): passt zu Technik & Computer, strategisch relevante Marke. Keine automatische Zustimmung zu Vertragsbedingungen.",
       "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten PremiumSIM DE redaktionell passend im Bereich Technik & Computer einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung."
+    },
+    {
+      "id": "daisycon-connect",
+      "platform": "Daisycon",
+      "action": "Kostenlosen Daisycon-Publisherzugang/API-Zugang freischalten und DAISYCON_PUBLISHER_ID + DAISYCON_ACCESS_TOKEN sicher hinterlegen.",
+      "reason": "Danach zuerst Programme für Technik & Computer priorisieren (electronics, computer, hardware, mobile, smart home), weil dort aktuell 89 veröffentlichte Angebotslotse-Angebote liegen."
+    },
+    {
+      "id": "tradedoubler-connect",
+      "platform": "Tradedoubler",
+      "action": "Kostenlosen Tradedoubler-Publisherzugang freischalten und anschließend den offiziellen Produktfeed/API-Zugang als TRADEDOUBLER_FEED_URLS hinterlegen.",
+      "reason": "Danach zuerst Programme für Technik & Computer priorisieren (electronics, computer, hardware, mobile, smart home), weil dort aktuell 89 Angebotslotse-Angebote liegen."
+    },
+    {
+      "id": "webgains-connect",
+      "platform": "Webgains",
+      "action": "Kostenlosen Webgains-Publisherzugang freischalten und anschließend den offiziellen Produktfeed/API-Zugang als WEBGAINS_FEED_URLS hinterlegen.",
+      "reason": "Danach zuerst Programme für Technik & Computer priorisieren (electronics, computer, hardware, mobile, smart home), weil dort aktuell 89 Angebotslotse-Angebote liegen."
     }
   ]
 }

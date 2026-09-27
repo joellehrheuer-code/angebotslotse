@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-09-27T12:17:10.883Z",
-  "scope": "Automatisch aus dem aktuellen Awin-Programminventar, aktiven DE-Discovery-Angeboten und verfügbaren Feed-Signalen erzeugt.",
+  "generatedAt": "2026-09-27T12:41:51.478Z",
+  "scope": "Automatisch aus Programminventar, DE-Angebotsabdeckung und verfügbaren Netzwerk-/Feed-Signalen erzeugt.",
   "automation": {
     "discovery": "automatic",
     "ranking": "automatic",
     "applicationDrafts": "automatic",
     "submission": "human-review-required",
-    "reason": "Bewerbungen können Vertragsbedingungen enthalten und werden nicht blind bestätigt."
+    "reason": "Programmbewerbungen können Vertragsbedingungen enthalten und werden nicht blind bestätigt."
   },
   "programs": [
     {
@@ -1617,5 +1617,243 @@
     "marketplaceDiscovery": "dashboard-review-required",
     "applicationTermsRequireApproval": true,
     "note": "Bestehende Impact-Programme werden automatisch nach nutzbaren Produkten, Aktionen, Deals und Creatives priorisiert. Neue Marketplace-Bewerbungen werden erst nach Prüfung der jeweiligen Bedingungen bestätigt."
+  },
+  "daisycon": {
+    "status": "disabled",
+    "programError": null,
+    "opportunities": [],
+    "marketplaceSearches": [
+      {
+        "network": "Daisycon",
+        "category": "Technik & Computer",
+        "siteOffers": 89,
+        "priority": "hoch",
+        "searchTerms": [
+          "electronics",
+          "computer",
+          "hardware",
+          "mobile",
+          "smart home"
+        ],
+        "connected": false,
+        "action": "Daisycon-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Technik & Computer priorisieren."
+      },
+      {
+        "network": "Daisycon",
+        "category": "Audio & Musik",
+        "siteOffers": 26,
+        "priority": "mittel",
+        "searchTerms": [
+          "audio",
+          "music",
+          "headphones",
+          "microphone",
+          "recording"
+        ],
+        "connected": false,
+        "action": "Daisycon-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Audio & Musik priorisieren."
+      },
+      {
+        "network": "Daisycon",
+        "category": "Haushalt & Alltag",
+        "siteOffers": 20,
+        "priority": "mittel",
+        "searchTerms": [
+          "home",
+          "appliances",
+          "kitchen",
+          "garden",
+          "DIY"
+        ],
+        "connected": false,
+        "action": "Daisycon-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Haushalt & Alltag priorisieren."
+      },
+      {
+        "network": "Daisycon",
+        "category": "Mode & Sport",
+        "siteOffers": 6,
+        "priority": "niedrig",
+        "searchTerms": [
+          "fashion",
+          "sportswear",
+          "fitness",
+          "shoes"
+        ],
+        "connected": false,
+        "action": "Daisycon-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Mode & Sport priorisieren."
+      },
+      {
+        "network": "Daisycon",
+        "category": "Freizeit",
+        "siteOffers": 5,
+        "priority": "niedrig",
+        "searchTerms": [
+          "travel",
+          "outdoor",
+          "hobby",
+          "tickets"
+        ],
+        "connected": false,
+        "action": "Daisycon-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Freizeit priorisieren."
+      }
+    ]
+  },
+  "tradedoubler": {
+    "status": "disabled",
+    "marketplaceSearches": [
+      {
+        "network": "Tradedoubler",
+        "category": "Technik & Computer",
+        "siteOffers": 89,
+        "priority": "hoch",
+        "searchTerms": [
+          "electronics",
+          "computer",
+          "hardware",
+          "mobile",
+          "smart home"
+        ],
+        "connected": false,
+        "action": "Tradedoubler-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Technik & Computer priorisieren."
+      },
+      {
+        "network": "Tradedoubler",
+        "category": "Audio & Musik",
+        "siteOffers": 26,
+        "priority": "mittel",
+        "searchTerms": [
+          "audio",
+          "music",
+          "headphones",
+          "microphone",
+          "recording"
+        ],
+        "connected": false,
+        "action": "Tradedoubler-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Audio & Musik priorisieren."
+      },
+      {
+        "network": "Tradedoubler",
+        "category": "Haushalt & Alltag",
+        "siteOffers": 20,
+        "priority": "mittel",
+        "searchTerms": [
+          "home",
+          "appliances",
+          "kitchen",
+          "garden",
+          "DIY"
+        ],
+        "connected": false,
+        "action": "Tradedoubler-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Haushalt & Alltag priorisieren."
+      },
+      {
+        "network": "Tradedoubler",
+        "category": "Mode & Sport",
+        "siteOffers": 6,
+        "priority": "niedrig",
+        "searchTerms": [
+          "fashion",
+          "sportswear",
+          "fitness",
+          "shoes"
+        ],
+        "connected": false,
+        "action": "Tradedoubler-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Mode & Sport priorisieren."
+      },
+      {
+        "network": "Tradedoubler",
+        "category": "Freizeit",
+        "siteOffers": 5,
+        "priority": "niedrig",
+        "searchTerms": [
+          "travel",
+          "outdoor",
+          "hobby",
+          "tickets"
+        ],
+        "connected": false,
+        "action": "Tradedoubler-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Freizeit priorisieren."
+      }
+    ],
+    "applicationApi": "supported-review-required"
+  },
+  "webgains": {
+    "status": "disabled",
+    "marketplaceSearches": [
+      {
+        "network": "Webgains",
+        "category": "Technik & Computer",
+        "siteOffers": 89,
+        "priority": "hoch",
+        "searchTerms": [
+          "electronics",
+          "computer",
+          "hardware",
+          "mobile",
+          "smart home"
+        ],
+        "connected": false,
+        "action": "Webgains-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Technik & Computer priorisieren."
+      },
+      {
+        "network": "Webgains",
+        "category": "Audio & Musik",
+        "siteOffers": 26,
+        "priority": "mittel",
+        "searchTerms": [
+          "audio",
+          "music",
+          "headphones",
+          "microphone",
+          "recording"
+        ],
+        "connected": false,
+        "action": "Webgains-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Audio & Musik priorisieren."
+      },
+      {
+        "network": "Webgains",
+        "category": "Haushalt & Alltag",
+        "siteOffers": 20,
+        "priority": "mittel",
+        "searchTerms": [
+          "home",
+          "appliances",
+          "kitchen",
+          "garden",
+          "DIY"
+        ],
+        "connected": false,
+        "action": "Webgains-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Haushalt & Alltag priorisieren."
+      },
+      {
+        "network": "Webgains",
+        "category": "Mode & Sport",
+        "siteOffers": 6,
+        "priority": "niedrig",
+        "searchTerms": [
+          "fashion",
+          "sportswear",
+          "fitness",
+          "shoes"
+        ],
+        "connected": false,
+        "action": "Webgains-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Mode & Sport priorisieren."
+      },
+      {
+        "network": "Webgains",
+        "category": "Freizeit",
+        "siteOffers": 5,
+        "priority": "niedrig",
+        "searchTerms": [
+          "travel",
+          "outdoor",
+          "hobby",
+          "tickets"
+        ],
+        "connected": false,
+        "action": "Webgains-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Freizeit priorisieren."
+      }
+    ],
+    "membershipApi": "supported-review-required"
   }
 }
