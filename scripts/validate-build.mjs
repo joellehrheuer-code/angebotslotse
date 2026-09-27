@@ -47,7 +47,20 @@ const robots = fs.readFileSync(path.join("dist","robots.txt"),"utf8");
 if (!robots.includes("User-agent: *") || !robots.includes("Allow: /") || !robots.includes(`Sitemap: ${siteUrl.href.replace(/\/$/,"")}/sitemap.xml`)) errors.push("robots.txt ist unvollständig");
 const sitemap = fs.readFileSync(path.join("dist","sitemap.xml"),"utf8");
 if (sitemap.includes("/404.html")) errors.push("404 darf nicht in der Sitemap stehen");
-for (const match of sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)) if (!match[1].startsWith(siteUrl.href.replace(/\/$/,""))) errors.push(`Nicht-absolute Sitemap-URL: ${match[1]}`);
+for (const match of sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)) {
+  if (!match[1].startsWith(siteUrl.href.replace(/\/$/,""))) { errors.push(`Nicht-absolute Sitemap-URL: ${match[1]}`); continue; }
+  try {
+    const entry = new URL(match[1]);
+    let relative = entry.pathname.slice(siteUrl.pathname.replace(/\/$/,"").length).replace(/^\//,"");
+    if (!relative) relative = "index.html";
+    else if (relative.endsWith("/")) relative += "index.html";
+    const candidate = path.join("dist", relative);
+    if (fs.existsSync(candidate) && candidate.endsWith(".html")) {
+      const listedHtml = fs.readFileSync(candidate,"utf8");
+      if (listedHtml.includes('content="noindex,follow"')) errors.push(`Noindex-Seite in Sitemap: ${match[1]}`);
+    }
+  } catch { errors.push(`Ungültige Sitemap-URL: ${match[1]}`); }
+}
 const index = fs.readFileSync(path.join("dist","index.html"),"utf8");
 if (!index.includes('id="newsletter"')) errors.push("Newsletter-Bereich fehlt");
 for (const abstractTitle of ["Waves Specials","Musik- und Studioequipment bei Thomann","RØDE Mikrofone und Creator-Zubehör","Gaming-Angebote bei Instant Gaming"]) if (index.includes(`<h3><a`) && index.includes(abstractTitle)) errors.push(`Abstrakter Shop-Einstieg als Karte sichtbar: ${abstractTitle}`);

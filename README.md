@@ -1,8 +1,8 @@
 # Angebotslotse
 
-## V7 – Premium Dark Commerce
+## V8 – Premium Dark Commerce
 
-Die Startseite nutzt ein einheitliches dunkles Navy-/Schwarz-Design mit Magenta-, Violett- und Electric-Blue-Akzenten, eine prominente Produktsuche, einen großen Lifestyle-Hero und horizontale Deal-Rails mit bis zu sechs sichtbaren Karten auf großen Desktop-Ansichten. Maus-Drag, Touch-Swipe, Pfeile, Tastatursteuerung, Scroll-Snap, Lazy Loading, Skeletons und `prefers-reduced-motion` sind ohne schwere UI-Bibliothek umgesetzt.
+Die Startseite nutzt ein einheitliches dunkles Navy-/Schwarz-Design mit Magenta-, Violett- und Electric-Blue-Akzenten, eine prominente Produktsuche, einen großen Lifestyle-Hero und horizontale Deal-Rails mit bis zu sechs sichtbaren Karten auf großen Desktop-Ansichten. Maus-Drag, Touch-Swipe, Pfeile, Tastatursteuerung, Scroll-Snap, Lazy Loading, Skeletons und `prefers-reduced-motion` sind ohne schwere UI-Bibliothek umgesetzt. V8 ergänzt eine lokale Merkliste mit Wunschpreisen, datenbasierte Deal-Checks, stärkere Kategorie-Hubs, eindeutige Canonical-Produkt-URLs sowie automatische Awin-/Impact-Wachstumspriorisierung.
 
 Echte Produktdaten können über Impact-Kataloge und die offizielle Awin-Produktfeed-Liste einlaufen. Für Awin ist dazu zusätzlich zum normalen API-Token der separate GitHub-Actions-Secret `AWIN_DATAFEED_API_KEY` erforderlich. Die Herkunft und Rechtehinweise offizieller Bilder werden als `imageSource` und `imageRightsNote` gespeichert. Fehlen verifizierte Preise oder Medien, zeigt die Seite ausdrücklich einen Prüfhinweis beziehungsweise ein neutrales Kategorievisual.
 
@@ -49,7 +49,7 @@ Produktionsfähige, statische Affiliate-Angebotsseite für Deutschland. Sie vere
 - `scripts/validate-build.mjs`: Pflichtseiten, SEO- und GitHub-Pages-Buildprüfung
 - `scripts/security-check.mjs`: Secret-Leak-Prüfung
 - `scripts/report.mjs`: privater 30-Tage-Awin-Report; `data/private/` wird nie veröffentlicht oder committed
-- `.github/workflows`: Updates um 04:17, 12:17 und 20:17 UTC sowie täglicher Integritätscheck
+- `.github/workflows`: Angebots-Updates alle sechs Stunden bei Minute 17 (00:17, 06:17, 12:17 und 18:17 UTC) sowie täglicher Integritätscheck
 
 Der gewählte Rhythmus bleibt weit unter Awins dokumentiertem allgemeinen Limit von 20 API-Aufrufen pro Minute. Die Pagination wartet zusätzlich zwischen Seiten.
 
@@ -100,7 +100,7 @@ Scraping, erfundene Trackinglinks und künstliche Klicktests sind ausgeschlossen
 
 ## Datenschutz und Recht
 
-Die Site lädt keine externen Fonts und setzt selbst keine Marketing-Cookies. Externe Partnerinhalte werden klar abgegrenzt; der eingebettete Spreadshop wird erst nach einem ausdrücklichen Klick geladen. Affiliate-Links tragen `rel="sponsored noopener"`. Cloudflare Web Analytics bleibt optional und nur bei gesetzter Repository-Variable aktiv. Impressum und Datenschutz bilden die eingesetzte statische GitHub-Pages-Technik und die nachgeladene Merch-Integration ab; eine individuelle Rechtsprüfung bleibt empfehlenswert.
+Die Site lädt keine externen Fonts und setzt selbst keine Marketing-Cookies. Die Merkliste und optionale Wunschpreise werden ausschließlich im lokalen Browser-Speicher (`localStorage`) des jeweiligen Geräts abgelegt und nicht an Angebotslotse übertragen. Externe Partnerinhalte werden klar abgegrenzt; der eingebettete Spreadshop wird erst nach einem ausdrücklichen Klick geladen. Affiliate-Links tragen `rel="sponsored noopener"`. Cloudflare Web Analytics bleibt optional und nur bei gesetzter Repository-Variable aktiv. Impressum und Datenschutz bilden die eingesetzte statische GitHub-Pages-Technik, die lokale Merkliste und die nachgeladene Merch-Integration ab; eine individuelle Rechtsprüfung bleibt empfehlenswert.
 
 ## JOEL MUSS NUR NOCH DIESE PUNKTE MACHEN
 

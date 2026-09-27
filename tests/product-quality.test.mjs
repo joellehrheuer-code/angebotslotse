@@ -23,7 +23,7 @@ test("quality report exposes source, identity and gallery counters", () => {
     stdio: "ignore",
   });
   const report = JSON.parse(fs.readFileSync("dist/build-report.json", "utf8"));
-  assert.equal(report.version, "V7-premium-dark-commerce");
+  assert.equal(report.version, "V8-premium-dark-commerce");
   assert.equal(typeof report.rawRecords, "number");
   assert.equal(typeof report.uniqueProducts, "number");
   assert.equal(typeof report.multiImageProducts, "number");

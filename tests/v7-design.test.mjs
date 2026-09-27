@@ -37,7 +37,7 @@ test("V7 homepage keeps premium dark commerce composition and real data", () => 
 test("V7 build report records the real publishable inventory", () => {
   const report = JSON.parse(fs.readFileSync("dist/build-report.json", "utf8"));
   const offers = JSON.parse(fs.readFileSync("data/offers.json", "utf8"));
-  assert.equal(report.version, "V7-premium-dark-commerce");
+  assert.equal(report.version, "V8-premium-dark-commerce");
   assert.equal(report.offers, report.productCards);
   assert.ok(report.offers > 0);
   assert.equal(report.images, offers.filter((offer) => offer.imageUrl).length);
@@ -144,4 +144,16 @@ test("Amazon-Buchseite bleibt ohne Live-API ehrlich und ist für Live-Daten vorb
   assert.match(source, /amazonOfferByAsin/);
   assert.match(source, /owned-project-price/);
   assert.doesNotMatch(books, />0,00\s*€/);
+});
+
+
+test("Sitemap enthält nur indexierbare Discovery-Seiten", () => {
+  build();
+  const sitemap = fs.readFileSync("dist/sitemap.xml", "utf8");
+  const search = fs.readFileSync("dist/suche.html", "utf8");
+  const watchlist = fs.readFileSync("dist/merkliste.html", "utf8");
+  assert.match(search, /content="noindex,follow"/);
+  assert.match(watchlist, /content="noindex,follow"/);
+  assert.doesNotMatch(sitemap, /\/suche\.html/);
+  assert.doesNotMatch(sitemap, /\/merkliste\.html/);
 });
