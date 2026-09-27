@@ -1,14 +1,15 @@
 {
-  "generatedAt": "2026-09-27T16:29:34.224Z",
+  "generatedAt": "2026-09-27T17:20:52.259Z",
   "newAwinPrograms": 0,
   "newImpactPrograms": 0,
   "newDaisyconPrograms": 0,
+  "newWebgainsPrograms": 0,
   "activeAwinPrograms": 5,
   "activeImpactPrograms": 0,
   "applicationsSent": 0,
   "pendingApplications": 1,
   "manualApplications": 8,
-  "networkReviewActions": 5,
+  "networkReviewActions": 6,
   "awinDiscoveryOffers": 200,
   "applicationCandidates": 193,
   "newMerchants": 0,
@@ -27,6 +28,12 @@
   "totalProducts": 252,
   "productsBySource": {
     "Awin": 252
+  },
+  "officialImagesBySource": {
+    "Awin": 248
+  },
+  "missingMediaBySource": {
+    "Awin": 6
   },
   "productsByMerchant": {
     "Hollyland DE": 137,

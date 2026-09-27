@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-27T16:29:34.226Z",
+  "generatedAt": "2026-09-27T17:20:52.261Z",
   "market": "DE",
   "publisherId": 3045061,
   "awin": {
@@ -3291,6 +3291,9 @@
   },
   "webgains": {
     "state": "disabled",
+    "membershipError": null,
+    "reviewsEnriched": 0,
+    "programs": [],
     "marketplaceSearches": [
       {
         "network": "Webgains",
@@ -3353,8 +3356,8 @@
       }
     ],
     "programMembershipApi": "documented",
-    "applicationSubmission": "review-required",
-    "reason": "Webgains dokumentiert Program-Mitgliedschaften per API; beim Beitritt müssen programmspezifische Bedingungen akzeptiert werden."
+    "applicationSubmission": "human-review-required",
+    "reason": "Webgains Memberships und Terms werden automatisch gelesen; accept_terms=true wird nur nach ausdrücklicher menschlicher Bestätigung des geprüften Terms-Stands verwendet."
   },
   "publication": {
     "offers": 252,

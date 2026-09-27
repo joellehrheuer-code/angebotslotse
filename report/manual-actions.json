@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-27T16:29:34.224Z",
+  "generatedAt": "2026-09-27T17:20:52.259Z",
   "actions": [
     {
       "id": "awin-datafeed-key",
@@ -94,10 +94,16 @@
       "reason": "Damit können gültige Gutscheine und Rabattcodes zusätzlich automatisch eingelesen werden; ohne Token bleibt diese Quelle deaktiviert."
     },
     {
-      "id": "webgains-connect",
+      "id": "webgains-api-connect",
       "platform": "Webgains",
-      "action": "Kostenlosen Webgains-Publisherzugang freischalten und anschließend den offiziellen Produktfeed/API-Zugang als WEBGAINS_FEED_URLS hinterlegen.",
+      "action": "Kostenlosen Webgains-Publisherzugang freischalten und WEBGAINS_PUBLISHER_ID + WEBGAINS_ACCESS_TOKEN sicher hinterlegen.",
       "reason": "Danach zuerst Programme für Technik & Computer priorisieren (electronics, computer, hardware, mobile, smart home), weil dort aktuell 122 Angebotslotse-Angebote liegen."
+    },
+    {
+      "id": "webgains-feed-connect",
+      "platform": "Webgains",
+      "action": "Optional nach Programfreigabe offizielle Webgains-Produktfeed-URLs als WEBGAINS_FEED_URLS hinterlegen.",
+      "reason": "Membership-/Terms-Prüfung funktioniert unabhängig vom Produktfeed; der Feed liefert anschließend Produkte, Preise und Bilder."
     }
   ]
 }

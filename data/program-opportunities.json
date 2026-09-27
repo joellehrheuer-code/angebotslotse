@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-27T16:29:34.224Z",
+  "generatedAt": "2026-09-27T17:20:52.259Z",
   "scope": "Automatisch aus Programminventar, DE-Angebotsabdeckung und verfügbaren Netzwerk-/Feed-Signalen erzeugt.",
   "automation": {
     "discovery": "automatic",
@@ -1741,6 +1741,9 @@
   },
   "webgains": {
     "status": "disabled",
+    "membershipError": null,
+    "reviewsEnriched": 0,
+    "opportunities": [],
     "marketplaceSearches": [
       {
         "network": "Webgains",
