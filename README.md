@@ -93,7 +93,7 @@ Der Adapter verwendet die offizielle Partner API v16 mit HTTP Basic Auth aus Acc
 
 Die drei zusätzlichen Netzwerke sind technisch vorbereitet und standardmäßig deaktiviert. Daisycon nutzt die offizielle Publisher-API unter `services.daisycon.com` und benötigt `DAISYCON_PUBLISHER_ID` sowie `DAISYCON_ACCESS_TOKEN`. Tradedoubler wird über die im Publisher-Dashboard erzeugten offiziellen JSON-Produktfeed-URLs angebunden; diese werden als `TRADEDOUBLER_FEED_URLS` ausschließlich als Secret hinterlegt. Webgains verwendet die offiziellen CSV/TSV/JSON-Produktfeed-Exporte über `WEBGAINS_FEED_URLS`. Feed-URLs können Zugangstoken enthalten und gehören deshalb niemals in den Quellcode.
 
-Ohne diese Werte melden die Quellen nur `disabled` und beeinflussen bestehende Awin-, Impact-, Amazon- oder Direktpartnerdaten nicht. Automatische Vertragsannahmen sind nicht Teil des Feed-Imports. Bewerbungen und Programmbedingungen werden nur über dokumentierte Netzwerkfunktionen verarbeitet.
+Ohne diese Werte melden die Quellen nur `disabled` und beeinflussen bestehende Awin-, Impact-, Amazon- oder Direktpartnerdaten nicht. Automatische Vertragsannahmen sind nicht Teil des Feed-Imports. Bei Daisycon prüft die Automation bestehende Subscriptions, Agreement Terms und Fragebögen vor einer möglichen Bewerbung; Bedingungen werden niemals automatisch akzeptiert. Webgains dokumentiert Program-Mitgliedschaften per API, verlangt beim Beitritt jedoch die Zustimmung zu programmspezifischen Bedingungen und bleibt deshalb review-pflichtig. Für Tradedoubler ist aktuell kein offizieller Program-Join-Endpunkt verifiziert; Programmsuche und Beitritt bleiben dort im Publisher-Dashboard, während Produkt- und Voucher-Daten automatisiert werden können.
 
 ## Neue Affiliate-Quelle ergänzen
 
