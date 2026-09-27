@@ -242,15 +242,30 @@ const accountBody=`<section class="listing account-page" data-account-root>
       <p>Diese Treffer werden direkt aus den aktuell veröffentlichten Angeboten berechnet. E-Mail- oder Push-Versand kommt später optional dazu.</p>
       <div class="account-match-list" data-alert-matches></div>
     </section>
+    <section class="account-card account-notifications-card" data-account-notifications-card hidden>
+      <span class="eyebrow">Benachrichtigungen</span>
+      <h2>Deine persönlichen Meldungen</h2>
+      <p>Wunschpreis, Preissturz, Wiederverfügbarkeit und neue Treffer erscheinen hier automatisch.</p>
+      <div class="account-notification-actions">
+        <button class="button" type="button" data-notifications-read-all>Alle als gelesen</button>
+      </div>
+      <p class="account-sync-status" data-notification-status aria-live="polite"></p>
+      <div class="account-notification-list" data-notification-list></div>
+    </section>
     <section class="account-card account-security-card">
-      <span class="eyebrow">Datenschutz</span>
-      <h2>Was im Konto gespeichert wird</h2>
+      <span class="eyebrow">Datenschutz & Kontrolle</span>
+      <h2>Deine Daten bleiben unter deiner Kontrolle</h2>
       <ul>
         <li>gemerkte Angebots-IDs und Wunschpreise</li>
         <li>deine selbst gewählten Alarmregeln</li>
         <li>Benachrichtigungseinstellungen</li>
       </ul>
       <p>Käufe, Zahlungsdaten und Händlerkonten bleiben vollständig beim jeweiligen Anbieter. Angebotslotse ist nur Vermittler.</p>
+      <div class="account-actions" data-account-data-actions hidden>
+        <button class="button" type="button" data-export-account>Meine Daten exportieren</button>
+        <button class="button danger" type="button" data-delete-account>Konto vollständig löschen</button>
+      </div>
+      <p class="account-sync-status" data-account-data-status aria-live="polite"></p>
     </section>
   </div>
   <script>globalThis.ANGEBOTSLOTSE_AUTH_CONFIG=${json(authPublicConfig)};<\/script>

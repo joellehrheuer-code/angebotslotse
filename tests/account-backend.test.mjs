@@ -59,3 +59,32 @@ test("identische persönliche Alarmregeln werden serverseitig dedupliziert", () 
   assert.match(dedupe, /alert_type/);
   assert.match(dedupe, /coalesce\(max_price, -1\)/);
 });
+
+
+test("Cloud-Runtime hält persönliche Meldungen serverseitig erzeugt und RLS-geschützt", () => {
+  const runtime = fs.readFileSync("supabase/migrations/20260927_cloud_runtime.sql", "utf8");
+  assert.match(runtime, /create table if not exists public\.user_notifications/);
+  assert.match(runtime, /alter table public\.user_notifications enable row level security/);
+  assert.match(runtime, /grant select, update, delete on public\.user_notifications to authenticated/);
+  assert.doesNotMatch(runtime, /grant insert on public\.user_notifications to authenticated/i);
+  assert.match(runtime, /evaluate-angebotslotse-alerts-hourly/);
+  assert.match(runtime, /prune-angebotslotse-notifications/);
+  assert.match(runtime, /vault\.create_secret/);
+  assert.doesNotMatch(runtime, /alert_cron_token'\s*,\s*'[A-Fa-f0-9]{32,}/);
+});
+
+test("produktive Edge Functions liegen versioniert im Repository", () => {
+  const evaluator = fs.readFileSync("supabase/functions/evaluate-alerts/index.ts", "utf8");
+  const deletion = fs.readFileSync("supabase/functions/delete-account/index.ts", "utf8");
+  const exporter = fs.readFileSync("supabase/functions/export-account/index.ts", "utf8");
+
+  assert.match(evaluator, /MAX_MATCHES_PER_RULE = 12/);
+  assert.match(evaluator, /verify_alert_cron_token/);
+  assert.match(evaluator, /user_notifications/);
+  assert.match(deletion, /KONTO LÖSCHEN/);
+  assert.match(deletion, /auth\.admin\.deleteUser/);
+  assert.match(exporter, /angebotslotse-meine-daten\.json/);
+  for (const source of [evaluator, deletion, exporter]) {
+    assert.doesNotMatch(source, /sb_secret_|service_role\s*[:=]\s*["'][A-Za-z0-9._-]+/);
+  }
+});

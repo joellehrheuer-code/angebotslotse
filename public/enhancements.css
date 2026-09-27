@@ -247,3 +247,17 @@ footer{border-color:#252b43;color:#f7f8ff}footer p{color:#9ea8c1}footer nav a{co
   #main-nav.open{max-height:calc(100dvh - 118px)}
   .mobile-nav-search{width:calc(100% - 24px)}
 }
+
+.account-notifications-card{grid-column:1/-1}
+.account-notification-actions{display:flex;justify-content:flex-end;margin-bottom:10px}
+.account-notification-list{display:grid;gap:8px}
+.account-notification-item{display:flex;justify-content:space-between;gap:14px;padding:14px;border:1px solid #2b3150;border-radius:14px;background:#0d1121}
+.account-notification-item.unread{border-color:#ff3fa866;box-shadow:inset 3px 0 0 #ff3fa8}
+.account-notification-item>div:first-child{display:grid;gap:5px;min-width:0}
+.account-notification-item p{margin:0;color:#b6bfd6}
+.account-notification-item small{color:#8992aa}
+.account-notification-item a{font-size:12px;font-weight:850}
+.account-notification-item>div:last-child{display:flex;gap:7px;align-items:flex-start}
+.button.danger{border-color:#ff5f6d66;color:#ff9aa4}
+.button.danger:hover{background:#3a1018}
+@media(max-width:640px){.account-notification-item{flex-direction:column}.account-notification-item>div:last-child{width:100%}.account-notification-item>div:last-child .button{flex:1}}

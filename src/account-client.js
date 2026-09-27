@@ -32,6 +32,15 @@ if (!root || !config.url || !config.publishableKey) {
   const alertList = root.querySelector("[data-alert-list]");
   const matchesCard = root.querySelector("[data-account-matches-card]");
   const matchesNode = root.querySelector("[data-alert-matches]");
+  const notificationsCard = root.querySelector("[data-account-notifications-card]");
+  const notificationList = root.querySelector("[data-notification-list]");
+  const notificationStatus = root.querySelector("[data-notification-status]");
+  const notificationsReadAll = root.querySelector("[data-notifications-read-all]");
+  const accountDataActions = root.querySelector("[data-account-data-actions]");
+  const accountDataStatus = root.querySelector("[data-account-data-status]");
+  const exportAccountButton = root.querySelector("[data-export-account]");
+  const deleteAccountButton = root.querySelector("[data-delete-account]");
+  let notificationChannel = null;
 
   const setStatus = (text, kind = "") => {
     if (!statusNode) return;
@@ -233,26 +242,104 @@ if (!root || !config.url || !config.publishableKey) {
     return rows;
   }
 
+  function renderNotifications(rows) {
+    if (!notificationList) return;
+    notificationList.replaceChildren();
+    if (!rows?.length) {
+      const empty = document.createElement("p");
+      empty.className = "account-alert-empty";
+      empty.textContent = "Noch keine persönlichen Meldungen.";
+      notificationList.append(empty);
+      return;
+    }
+    for (const row of rows) {
+      const item = document.createElement("article");
+      item.className = "account-notification-item" + (row.is_read ? "" : " unread");
+      const copy = document.createElement("div");
+      const title = document.createElement("strong");
+      title.textContent = row.title;
+      const body = document.createElement("p");
+      body.textContent = row.body || "";
+      const meta = document.createElement("small");
+      meta.textContent = new Intl.DateTimeFormat("de-DE",{dateStyle:"medium",timeStyle:"short"}).format(new Date(row.created_at));
+      copy.append(title, body, meta);
+      if (row.offer_slug) {
+        const link = document.createElement("a");
+        link.href = location.origin + accountBase + "/angebote/" + encodeURIComponent(row.offer_slug) + ".html";
+        link.textContent = "Angebot ansehen →";
+        copy.append(link);
+      }
+      const actions = document.createElement("div");
+      if (!row.is_read) {
+        const read = document.createElement("button");
+        read.className = "button small";
+        read.type = "button";
+        read.textContent = "Gelesen";
+        read.dataset.notificationRead = row.id;
+        actions.append(read);
+      }
+      const remove = document.createElement("button");
+      remove.className = "button small";
+      remove.type = "button";
+      remove.textContent = "Löschen";
+      remove.dataset.notificationDelete = row.id;
+      actions.append(remove);
+      item.append(copy, actions);
+      notificationList.append(item);
+    }
+  }
+
+  async function loadNotifications(userId) {
+    const { data, error } = await supabase
+      .from("user_notifications")
+      .select("id,event_type,title,body,offer_slug,is_read,created_at")
+      .eq("user_id", userId)
+      .order("created_at", { ascending: false })
+      .limit(50);
+    if (error) throw error;
+    renderNotifications(data || []);
+    return data || [];
+  }
+
+  async function subscribeNotifications(userId) {
+    if (notificationChannel) await supabase.removeChannel(notificationChannel);
+    notificationChannel = supabase.channel("user-notifications-" + userId)
+      .on("postgres_changes", {
+        event: "INSERT", schema: "public", table: "user_notifications",
+        filter: "user_id=eq." + userId
+      }, () => loadNotifications(userId).catch(console.error))
+      .subscribe();
+  }
+
   async function renderSession(session) {
     const user = session?.user || null;
     signedOut.hidden = Boolean(user);
     signedIn.hidden = !user;
     if (alertsCard) alertsCard.hidden = !user;
     if (matchesCard) matchesCard.hidden = !user;
+    if (notificationsCard) notificationsCard.hidden = !user;
+    if (accountDataActions) accountDataActions.hidden = !user;
     if (!user) {
       if (userEmail) userEmail.textContent = "";
       if (cloudCount) cloudCount.textContent = "0";
       if (alertList) alertList.replaceChildren();
       if (matchesNode) matchesNode.replaceChildren();
+      if (notificationList) notificationList.replaceChildren();
+      if (notificationChannel) {
+        await supabase.removeChannel(notificationChannel);
+        notificationChannel = null;
+      }
       return;
     }
     if (userEmail) userEmail.textContent = user.email || "Angemeldet";
     try {
       const [rows] = await Promise.all([
         loadCloudWatchlist(user.id),
-        loadAlerts(user.id)
+        loadAlerts(user.id),
+        loadNotifications(user.id)
       ]);
       writeLocalWatchlist({ ...readLocalWatchlist(), ...cloudRowsToLocal(rows) });
+      await subscribeNotifications(user.id);
     } catch (error) {
       setStatus("Cloud-Daten konnten nicht vollständig geladen werden.", "error");
       console.error(error);
@@ -359,6 +446,76 @@ if (!root || !config.url || !config.publishableKey) {
     } catch (error) {
       if (alertStatus) alertStatus.textContent = error.message || "Alarm konnte nicht gelöscht werden.";
       button.disabled = false;
+    }
+  });
+
+  notificationList?.addEventListener("click", async event => {
+    const read = event.target.closest("[data-notification-read]");
+    const remove = event.target.closest("[data-notification-delete]");
+    if (!read && !remove) return;
+    const { data } = await supabase.auth.getSession();
+    const user = data.session?.user;
+    if (!user) return;
+    const id = read?.dataset.notificationRead || remove?.dataset.notificationDelete;
+    const query = supabase.from("user_notifications");
+    const result = read
+      ? await query.update({ is_read: true }).eq("id", id).eq("user_id", user.id)
+      : await query.delete().eq("id", id).eq("user_id", user.id);
+    if (result.error) {
+      if (notificationStatus) notificationStatus.textContent = result.error.message;
+      return;
+    }
+    await loadNotifications(user.id);
+  });
+
+  notificationsReadAll?.addEventListener("click", async () => {
+    const { data } = await supabase.auth.getSession();
+    const user = data.session?.user;
+    if (!user) return;
+    const { error } = await supabase.from("user_notifications")
+      .update({ is_read: true }).eq("user_id", user.id).eq("is_read", false);
+    if (notificationStatus) notificationStatus.textContent = error ? error.message : "Alle Meldungen als gelesen markiert.";
+    if (!error) await loadNotifications(user.id);
+  });
+
+  exportAccountButton?.addEventListener("click", async () => {
+    exportAccountButton.disabled = true;
+    if (accountDataStatus) accountDataStatus.textContent = "Datenexport wird erstellt …";
+    try {
+      const { data, error } = await supabase.functions.invoke("export-account", { body: {} });
+      if (error) throw error;
+      const blob = new Blob([JSON.stringify(data, null, 2)], { type: "application/json" });
+      const href = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = href;
+      a.download = "angebotslotse-meine-daten.json";
+      a.click();
+      URL.revokeObjectURL(href);
+      if (accountDataStatus) accountDataStatus.textContent = "Datenexport erstellt.";
+    } catch (error) {
+      if (accountDataStatus) accountDataStatus.textContent = error.message || "Datenexport fehlgeschlagen.";
+    } finally {
+      exportAccountButton.disabled = false;
+    }
+  });
+
+  deleteAccountButton?.addEventListener("click", async () => {
+    if (!confirm("Konto wirklich vollständig löschen? Dieser Vorgang kann nicht rückgängig gemacht werden.")) return;
+    const phrase = prompt('Zur Bestätigung exakt "KONTO LÖSCHEN" eingeben:');
+    if (phrase !== "KONTO LÖSCHEN") {
+      if (accountDataStatus) accountDataStatus.textContent = "Löschung abgebrochen.";
+      return;
+    }
+    deleteAccountButton.disabled = true;
+    try {
+      const { error } = await supabase.functions.invoke("delete-account", { body: { confirmation: phrase } });
+      if (error) throw error;
+      localStorage.removeItem(WATCHLIST_KEY);
+      await supabase.auth.signOut();
+      if (accountDataStatus) accountDataStatus.textContent = "Konto wurde gelöscht.";
+    } catch (error) {
+      if (accountDataStatus) accountDataStatus.textContent = error.message || "Konto konnte nicht gelöscht werden.";
+      deleteAccountButton.disabled = false;
     }
   });
 

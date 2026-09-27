@@ -31,6 +31,13 @@ test("Konto-Seite wird mit lokal gebündeltem Supabase-Client gebaut", () => {
   assert.equal("trackingUrl" in feed.offers[0], false);
   assert.equal("affiliateUrl" in feed.offers[0], false);
   assert.match(html, /data-alert-matches/);
+  assert.match(html, /data-notification-list/);
+  assert.match(html, /data-export-account/);
+  assert.match(html, /data-delete-account/);
+  assert.match(bundle, /user_notifications/);
+  assert.match(bundle, /postgres_changes/);
+  assert.match(bundle, /export-account/);
+  assert.match(bundle, /delete-account/);
   assert.ok(bundle.length > 1000);
   assert.doesNotMatch(bundle, /SUPABASE_SECRET_KEY|service_role|RESEND_API_KEY/);
 });
