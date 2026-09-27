@@ -113,3 +113,76 @@ export async function fetchDaisyconPrograms({ publisherId, accessToken, fetchImp
   url.searchParams.set("per", "100");
   return requestJson(url, accessToken, fetchImpl, "programs");
 }
+
+const requestPayload = async (url, accessToken, fetchImpl, label) => {
+  const response = await fetchImpl(url, {
+    headers: { Authorization: "Bearer " + accessToken, Accept: "application/json" }
+  });
+  if (response.status === 204) return null;
+  if (!response.ok) throw new Error("Daisycon API " + label + ": HTTP " + response.status);
+  return response.json();
+};
+
+export async function fetchDaisyconMedia({ publisherId, accessToken, fetchImpl = fetch }) {
+  if (!publisherId || !accessToken) return [];
+  const url = new URL(API + "/publishers/" + encodeURIComponent(publisherId) + "/media");
+  url.searchParams.set("page", "1");
+  url.searchParams.set("per", "100");
+  const payload = await requestPayload(url, accessToken, fetchImpl, "media");
+  return rowsOf(payload);
+}
+
+export async function fetchDaisyconProgramReview({
+  publisherId,
+  accessToken,
+  programId,
+  mediaId,
+  fetchImpl = fetch
+}) {
+  if (!publisherId || !accessToken || !programId) return null;
+  const base = API + "/publishers/" + encodeURIComponent(publisherId) + "/programs/" + encodeURIComponent(programId);
+  const subscriptionsUrl = new URL(base + "/subscriptions");
+  subscriptionsUrl.searchParams.set("page", "1");
+  subscriptionsUrl.searchParams.set("per", "100");
+  const termsUrl = new URL(base + "/agreementterms");
+  const [subscriptionsPayload, agreementTerms] = await Promise.all([
+    requestPayload(subscriptionsUrl, accessToken, fetchImpl, "program subscriptions"),
+    requestPayload(termsUrl, accessToken, fetchImpl, "program agreement terms")
+  ]);
+  const subscriptions = rowsOf(subscriptionsPayload);
+  let questionnaires = [];
+  if (mediaId) {
+    const questionnairesUrl = new URL(API + "/publishers/" + encodeURIComponent(publisherId) + "/media/" + encodeURIComponent(mediaId) + "/questionnaires");
+    questionnairesUrl.searchParams.set("page", "1");
+    questionnairesUrl.searchParams.set("per", "100");
+    const payload = await requestPayload(questionnairesUrl, accessToken, fetchImpl, "media questionnaires");
+    questionnaires = rowsOf(payload).filter(row => {
+      const related = row?.program_id ?? row?.programId ?? row?.program?.id;
+      return related == null || String(related) === String(programId);
+    });
+  }
+  const subscription = subscriptions.find(row => {
+    const rowMediaId = row?.media_id ?? row?.mediaId ?? row?.media?.id;
+    return mediaId == null || rowMediaId == null || String(rowMediaId) === String(mediaId);
+  }) ?? subscriptions[0] ?? null;
+  const relationship = String(
+    subscription?.status ??
+    subscription?.subscription_status ??
+    subscription?.subscriptionStatus ??
+    "not-subscribed"
+  ).toLowerCase();
+  const agreementTermsPresent = Boolean(
+    agreementTerms &&
+    (Array.isArray(agreementTerms) ? agreementTerms.length : Object.keys(agreementTerms).length)
+  );
+  return {
+    programId,
+    mediaId: mediaId ?? null,
+    relationship,
+    subscriptions: subscriptions.length,
+    agreementTermsPresent,
+    questionnaires: questionnaires.length,
+    reviewRequired: agreementTermsPresent || questionnaires.length > 0,
+    automaticSubmissionAllowed: false
+  };
+}

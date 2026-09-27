@@ -35,3 +35,29 @@ test("Bewerbungsentwurf bleibt sachlich und erfindet keine Reichweitenzahlen", (
   assert.match(draft, /Daisycon/);
   assert.doesNotMatch(draft, /\d+[.,]?\d*\s*(Follower|Besucher|Views|Reichweite)/i);
 });
+
+
+test("Daisycon-Review erzwingt manuelle Prüfung bei Terms oder Fragebogen", () => {
+  const programs=[
+    {id:1,name:"Gaming Hardware Shop",status:"available",category:"electronics"},
+    {id:2,name:"Samsung Partner",status:"available",category:"electronics"},
+    {id:3,name:"Home Store",status:"available",category:"home"},
+    {id:4,name:"Joined Shop",status:"available",category:"electronics"}
+  ];
+  const rows=rankDaisyconPrograms(programs,{
+    "1":{relationship:"not-subscribed",agreementTermsPresent:true,questionnaires:0,reviewRequired:true,automaticSubmissionAllowed:false},
+    "2":{relationship:"not-subscribed",agreementTermsPresent:false,questionnaires:2,reviewRequired:true,automaticSubmissionAllowed:false},
+    "3":{relationship:"not-subscribed",agreementTermsPresent:false,questionnaires:0,reviewRequired:false,automaticSubmissionAllowed:false},
+    "4":{relationship:"approved",agreementTermsPresent:false,questionnaires:0,reviewRequired:false,automaticSubmissionAllowed:false}
+  });
+  const terms=rows.find(row=>row.programId===1);
+  const questionnaire=rows.find(row=>row.programId===2);
+  const ready=rows.find(row=>row.programId===3);
+  const joined=rows.find(row=>row.programId===4);
+  assert.equal(terms.automationState,"terms-review-required");
+  assert.equal(questionnaire.automationState,"questionnaire-review-required");
+  assert.equal(ready.automationState,"ready-for-review");
+  assert.equal(joined.automationState,"joined");
+  assert.equal(joined.applicationPossible,false);
+  assert.ok(rows.every(row=>row.automaticSubmissionAllowed===false));
+});

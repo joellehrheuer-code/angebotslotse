@@ -78,7 +78,7 @@ try {
   const impactSignals=impact?.audit?.programSignals??[];
   const impactOpportunities=rankImpactPrograms(impactSignals);
   const impactMarketplaceSearches=buildImpactMarketplaceSearches({siteCategoryStats:categoryStats,signals:impactSignals});
-  const daisyconOpportunities=rankDaisyconPrograms(collected.daisyconPrograms??[]);
+  const daisyconOpportunities=rankDaisyconPrograms(collected.daisyconPrograms??[],collected.daisyconProgramReviews??{});
   const networkMarketplaceSearches={
     daisycon:buildNetworkMarketplaceSearches({siteCategoryStats:categoryStats,network:"Daisycon",connected:Boolean(process.env.DAISYCON_PUBLISHER_ID&&process.env.DAISYCON_ACCESS_TOKEN)}),
     tradedoubler:buildNetworkMarketplaceSearches({siteCategoryStats:categoryStats,network:"Tradedoubler",connected:Boolean(process.env.TRADEDOUBLER_FEED_URLS)}),
@@ -120,7 +120,7 @@ try {
   const growth={generatedAt:new Date().toISOString(),market:"DE",publisherId:Number(process.env.AWIN_PUBLISHER_ID)||null,
     awin:{counts:Object.fromEntries(Object.entries(collected.awinPrograms??{}).map(([key,rows])=>[key,rows.length])),programs:programmeRows,discoveryOffers:awinDiscoveryOffers.length,discoveryError:collected.awinDiscoveryError??null,detailsEnriched:Object.keys(collected.awinProgramDetails??{}).length,opportunities:opportunities.slice(0,25),feeds:feedSources.map(source=>({source:source.name,state:source.state,count:source.rows.length,audit:source.audit??null}))},
     impact:{state:impact?.state??"disabled",publishableOffers:impact?.rows.length??0,inventory:impact?.audit??null,opportunities:impactOpportunities.slice(0,25),marketplaceSearches:impactMarketplaceSearches.slice(0,10)},
-    daisycon:{state:process.env.DAISYCON_PUBLISHER_ID&&process.env.DAISYCON_ACCESS_TOKEN?"connected":"disabled",programError:collected.daisyconProgramError??null,programs:daisyconOpportunities.slice(0,50),marketplaceSearches:networkMarketplaceSearches.daisycon.slice(0,10)},
+    daisycon:{state:process.env.DAISYCON_PUBLISHER_ID&&process.env.DAISYCON_ACCESS_TOKEN?"connected":"disabled",programError:collected.daisyconProgramError??null,mediaDetected:(collected.daisyconMedia??[]).length,reviewsEnriched:Object.keys(collected.daisyconProgramReviews??{}).length,programs:daisyconOpportunities.slice(0,50),marketplaceSearches:networkMarketplaceSearches.daisycon.slice(0,10)},
     tradedoubler:{state:process.env.TRADEDOUBLER_FEED_URLS?"feed-connected":"disabled",marketplaceSearches:networkMarketplaceSearches.tradedoubler.slice(0,10),publisherApiApplication:"supported-by-network-review-required"},
     webgains:{state:process.env.WEBGAINS_FEED_URLS?"feed-connected":"disabled",marketplaceSearches:networkMarketplaceSearches.webgains.slice(0,10),programMembershipApi:"supported-by-network-review-required"},
     publication:{offers:publicOffers.length,concreteAwaitingMedia:concreteOffers.filter(offer=>!isPublicationReady(offer)).length,partnerEntries:offers.length-concreteOffers.length,merchants:new Set(publicOffers.map(offer=>offer.advertiser)).size,products:publicOffers.filter(offer=>offer.productId).length,images:publicOffers.filter(offer=>offer.imageUrl).length,videos:publicOffers.filter(offer=>offer.videoUrl).length,prices:publicOffers.filter(offer=>offer.currentPrice!=null).length,discounts:publicOffers.filter(offer=>offer.discountPercent).length,coupons:publicOffers.filter(offer=>offer.voucherCode).length},
@@ -134,7 +134,7 @@ try {
     automation:{discovery:"automatic",ranking:"automatic",applicationDrafts:"automatic",submission:"human-review-required",reason:"Programmbewerbungen können Vertragsbedingungen enthalten und werden nicht blind bestätigt."},
     programs:opportunities.slice(0,50),
     impact:{status:impact?.state??"disabled",joinedPrograms:impactInventory.length,opportunities:impactOpportunities.slice(0,25),marketplaceSearches:impactMarketplaceSearches.slice(0,10),marketplaceDiscovery:"dashboard-review-required",applicationTermsRequireApproval:true,note:"Bestehende Impact-Programme werden automatisch nach nutzbaren Produkten, Aktionen, Deals und Creatives priorisiert. Neue Marketplace-Bewerbungen werden erst nach Prüfung der jeweiligen Bedingungen bestätigt."},
-    daisycon:{status:process.env.DAISYCON_PUBLISHER_ID&&process.env.DAISYCON_ACCESS_TOKEN?"connected":"disabled",programError:collected.daisyconProgramError??null,opportunities:daisyconOpportunities.slice(0,50),marketplaceSearches:networkMarketplaceSearches.daisycon.slice(0,10)},
+    daisycon:{status:process.env.DAISYCON_PUBLISHER_ID&&process.env.DAISYCON_ACCESS_TOKEN?"connected":"disabled",programError:collected.daisyconProgramError??null,mediaDetected:(collected.daisyconMedia??[]).length,reviewsEnriched:Object.keys(collected.daisyconProgramReviews??{}).length,opportunities:daisyconOpportunities.slice(0,50),marketplaceSearches:networkMarketplaceSearches.daisycon.slice(0,10)},
     tradedoubler:{status:process.env.TRADEDOUBLER_FEED_URLS?"feed-connected":"disabled",marketplaceSearches:networkMarketplaceSearches.tradedoubler.slice(0,10),applicationApi:"supported-review-required"},
     webgains:{status:process.env.WEBGAINS_FEED_URLS?"feed-connected":"disabled",marketplaceSearches:networkMarketplaceSearches.webgains.slice(0,10),membershipApi:"supported-review-required"}
   },null,2)}\n`);

@@ -4,7 +4,7 @@ import { fetchAwinProductFeeds, fetchAwinEnhancedFeeds } from "./awin-product-fe
 import { fetchImpactOffers } from "./impact.mjs";
 import { fetchDirectOffers } from "./direct.mjs";
 import { fetchAmazonCreatorItems } from "./amazon.mjs";
-import { fetchDaisyconOffers, fetchDaisyconPrograms } from "./daisycon.mjs";
+import { fetchDaisyconOffers, fetchDaisyconPrograms, fetchDaisyconMedia, fetchDaisyconProgramReview } from "./daisycon.mjs";
 import { fetchTradedoublerOffers } from "./tradedoubler.mjs";
 import { fetchWebgainsOffers } from "./webgains.mjs";
 import fs from "node:fs/promises";
@@ -16,6 +16,8 @@ export async function collectSources(env = process.env) {
   let awinDiscoveryError=null;
   let daisyconPrograms=null;
   let daisyconProgramError=null;
+  let daisyconMedia=[];
+  const daisyconProgramReviews={};
   const awinProgramDetails={};
   if(env.AWIN_PUBLISHER_ID&&env.AWIN_API_TOKEN) {
     try{awinPrograms=await fetchAwinPrograms({publisherId:env.AWIN_PUBLISHER_ID,token:env.AWIN_API_TOKEN});}catch{}
@@ -35,6 +37,19 @@ export async function collectSources(env = process.env) {
   if(env.DAISYCON_PUBLISHER_ID&&env.DAISYCON_ACCESS_TOKEN){
     try{daisyconPrograms=await fetchDaisyconPrograms({publisherId:env.DAISYCON_PUBLISHER_ID,accessToken:env.DAISYCON_ACCESS_TOKEN});}
     catch(error){daisyconProgramError=String(error.message).slice(0,160);}
+    try{daisyconMedia=await fetchDaisyconMedia({publisherId:env.DAISYCON_PUBLISHER_ID,accessToken:env.DAISYCON_ACCESS_TOKEN});}
+    catch{/* Media enrichment is optional. */}
+    const mediaId=(daisyconMedia.find(row=>/approved|active|verified/i.test(String(row?.approval_status??row?.approvalStatus??row?.status??"")))??daisyconMedia[0])?.id??null;
+    const reviewLimit=Math.min(8,Math.max(0,Number(env.DAISYCON_PROGRAM_REVIEW_LIMIT)||8));
+    const reviewCandidates=(daisyconPrograms??[])
+      .filter(program=>isStrategicProgram(program)||categoryForProgram({name:program?.name??program?.program_name,primarySector:program?.category??program?.sector??program?.description})!=="Weitere")
+      .slice(0,reviewLimit);
+    for(const program of reviewCandidates){
+      const programId=program?.id??program?.program_id;
+      if(!programId)continue;
+      try{daisyconProgramReviews[String(programId)]=await fetchDaisyconProgramReview({publisherId:env.DAISYCON_PUBLISHER_ID,accessToken:env.DAISYCON_ACCESS_TOKEN,programId,mediaId});}
+      catch{/* Review enrichment is optional; ranking continues. */}
+    }
   }
   const joined=(awinPrograms?.joined??[]).map(row=>({id:row.id??row.advertiserId,name:row.name??row.advertiserName})).filter(row=>row.id);
   const definitions = [
@@ -60,5 +75,5 @@ export async function collectSources(env = process.env) {
     try { const rows=await run(); return { name, state: "ok", rows, audit:rows.audit??null }; }
     catch (error) { return { name, state: "error", rows: [], error: String(error.message).slice(0, 160) }; }
   }));
-  return {sources:results,awinPrograms,awinDiscoveryOffers,awinDiscoveryError,awinProgramDetails,daisyconPrograms,daisyconProgramError};
+  return {sources:results,awinPrograms,awinDiscoveryOffers,awinDiscoveryError,awinProgramDetails,daisyconPrograms,daisyconProgramError,daisyconMedia,daisyconProgramReviews};
 }

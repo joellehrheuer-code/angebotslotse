@@ -3,7 +3,7 @@ import assert from "node:assert/strict";
 import { fetchDirectOffers } from "../scripts/lib/direct.mjs";
 import { fetchImpactOffers, IMPACT_API_VERSION } from "../scripts/lib/impact.mjs";
 import { fetchAwinPrograms, fetchAwinProgramDetails } from "../scripts/lib/awin.mjs";
-import { fetchDaisyconOffers } from "../scripts/lib/daisycon.mjs";
+import { fetchDaisyconOffers, fetchDaisyconProgramReview } from "../scripts/lib/daisycon.mjs";
 import { fetchTradedoublerOffers } from "../scripts/lib/tradedoubler.mjs";
 import { fetchWebgainsOffers } from "../scripts/lib/webgains.mjs";
 
@@ -186,4 +186,25 @@ test("Webgains erkennt Semikolon-Feeds automatisch", async () => {
   assert.equal(rows.length,1);
   assert.equal(rows[0].title,"Keyboard");
   assert.equal(rows[0].currentPrice,89.9);
+});
+
+
+test("Daisycon-Review prüft Subscription, Agreement Terms und Fragebogen ohne Auto-Annahme", async () => {
+  const calls=[];
+  const fetchImpl=async url=>{
+    const href=String(url); calls.push(href);
+    if(href.includes("/subscriptions")) return {ok:true,status:200,json:async()=>({results:[{media_id:9,status:"not-subscribed"}]})};
+    if(href.includes("/agreementterms")) return {ok:true,status:200,json:async()=>({id:11,title:"Terms"})};
+    if(href.includes("/questionnaires")) return {ok:true,status:200,json:async()=>({results:[{id:22,program_id:77}]})};
+    throw new Error("unexpected URL "+href);
+  };
+  const review=await fetchDaisyconProgramReview({
+    publisherId:"42",accessToken:"TOKEN",programId:77,mediaId:9,fetchImpl
+  });
+  assert.equal(review.relationship,"not-subscribed");
+  assert.equal(review.agreementTermsPresent,true);
+  assert.equal(review.questionnaires,1);
+  assert.equal(review.reviewRequired,true);
+  assert.equal(review.automaticSubmissionAllowed,false);
+  assert.equal(calls.length,3);
 });
