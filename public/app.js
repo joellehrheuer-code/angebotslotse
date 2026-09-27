@@ -62,21 +62,37 @@ document.querySelectorAll("[data-history-range]").forEach(button=>button.addEven
 
 const menuButton = document.querySelector(".menu-toggle");
 const mainNav = document.querySelector("#main-nav");
+const siteHeader = document.querySelector(".site-header");
+const menuLabel = menuButton?.querySelector(".sr-only");
+const closeMenu = ({focus=false} = {}) => {
+  menuButton?.setAttribute("aria-expanded", "false");
+  mainNav?.classList.remove("open");
+  document.body.classList.remove("menu-open");
+  if (menuLabel) menuLabel.textContent = "Menü öffnen";
+  if (focus) menuButton?.focus();
+};
 menuButton?.addEventListener("click", () => {
   const open = menuButton.getAttribute("aria-expanded") !== "true";
-  menuButton.setAttribute("aria-expanded", String(open));
-  mainNav?.classList.toggle("open", open);
+  if (!open) return closeMenu();
+  menuButton.setAttribute("aria-expanded", "true");
+  mainNav?.classList.add("open");
+  document.body.classList.add("menu-open");
+  if (menuLabel) menuLabel.textContent = "Menü schließen";
+  if (matchMedia("(max-width: 1100px)").matches) {
+    requestAnimationFrame(() => mainNav?.querySelector(".mobile-nav-search input")?.focus());
+  }
 });
 mainNav?.addEventListener("click", event => {
-  if (event.target.closest("a")) { menuButton?.setAttribute("aria-expanded", "false"); mainNav.classList.remove("open"); }
+  if (event.target.closest("a")) closeMenu();
 });
-
+document.addEventListener("click", event => {
+  if (mainNav?.classList.contains("open") && siteHeader && !siteHeader.contains(event.target)) closeMenu();
+});
 document.addEventListener("keydown", event => {
-  if (event.key === "Escape" && mainNav?.classList.contains("open")) {
-    menuButton?.setAttribute("aria-expanded", "false");
-    mainNav.classList.remove("open");
-    menuButton?.focus();
-  }
+  if (event.key === "Escape" && mainNav?.classList.contains("open")) closeMenu({focus:true});
+});
+addEventListener("resize", () => {
+  if (innerWidth > 1100 && mainNav?.classList.contains("open")) closeMenu();
 });
 
 const countdowns = [...document.querySelectorAll("[data-countdown]")];
