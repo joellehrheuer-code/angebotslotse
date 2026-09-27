@@ -93,3 +93,16 @@ test("SEO konsolidiert Produktvarianten auf eine Angebots-URL", () => {
   assert.ok(sitemap.includes("/angebote/" + target.slug + ".html"));
   assert.doesNotMatch(sitemap, /\/produkt\//);
 });
+
+
+test("aktive Kategorie-Seiten bieten datenbasierten Mehrwert", () => {
+  build();
+  const offers = JSON.parse(fs.readFileSync("data/offers.json", "utf8"));
+  const target = offers.find((offer) => offer.category && offer.category !== "sonstiges");
+  assert.ok(target);
+  const html = fs.readFileSync("dist/" + target.category + ".html", "utf8");
+  assert.match(html, /class="category-guide"/);
+  assert.match(html, /class="category-live-stats"/);
+  assert.match(html, /Besser vergleichen/);
+  assert.match(html, /Mit Preisverlauf/);
+});
