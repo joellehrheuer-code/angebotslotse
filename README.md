@@ -43,7 +43,7 @@ Produktionsfähige, statische Affiliate-Angebotsseite für Deutschland. Sie vere
 - `scripts/lib/awin.mjs`: offizielle Awin Publisher Offers API
 - `scripts/lib/impact.mjs`: Impact Partner API v16 für Programme, Ads, Promotions, Deals und Produktkataloge
 - `scripts/lib/daisycon.mjs`: offizielle Daisycon Publisher API für Produktfeeds
-- `scripts/lib/tradedoubler.mjs`: offizielle Tradedoubler JSON-Produktfeeds aus dem Publisherkonto
+- `scripts/lib/tradedoubler.mjs`: offizielle Tradedoubler Products API mit automatischer Feed-Erkennung; manuelle offizielle JSON-Feed-URLs bleiben als Fallback
 - `scripts/lib/webgains.mjs`: offizielle Webgains CSV/TSV/JSON-Produktfeeds
 - `scripts/lib/direct.mjs` und `data/direct-partners.json`: Waves, Thomann, RØDE und Instant Gaming; Razer bleibt deaktiviert
 - `scripts/lib/normalize.mjs`: Validierung, Deutschland-Filter, Kategorien, Dubletten
@@ -91,7 +91,7 @@ Der Adapter verwendet die offizielle Partner API v16 mit HTTP Basic Auth aus Acc
 
 ## Daisycon, Tradedoubler und Webgains
 
-Die drei zusätzlichen Netzwerke sind technisch vorbereitet und standardmäßig deaktiviert. Daisycon nutzt die offizielle Publisher-API unter `services.daisycon.com` und benötigt `DAISYCON_PUBLISHER_ID` sowie `DAISYCON_ACCESS_TOKEN`. Tradedoubler wird über die im Publisher-Dashboard erzeugten offiziellen JSON-Produktfeed-URLs angebunden; diese werden als `TRADEDOUBLER_FEED_URLS` ausschließlich als Secret hinterlegt. Webgains verwendet die offiziellen CSV/TSV/JSON-Produktfeed-Exporte über `WEBGAINS_FEED_URLS`. Feed-URLs können Zugangstoken enthalten und gehören deshalb niemals in den Quellcode.
+Die drei zusätzlichen Netzwerke sind technisch vorbereitet und standardmäßig deaktiviert. Daisycon nutzt die offizielle Publisher-API unter `services.daisycon.com` und benötigt `DAISYCON_PUBLISHER_ID` sowie `DAISYCON_ACCESS_TOKEN`. Tradedoubler nutzt bevorzugt den offiziellen Products-API-Token `TRADEDOUBLER_PRODUCTS_TOKEN`, entdeckt damit aktive Produktfeeds automatisch und übernimmt die von Tradedoubler erzeugten Trackinglinks; alternativ können weiterhin offizielle JSON-Feed-URLs über `TRADEDOUBLER_FEED_URLS` hinterlegt werden. Webgains verwendet die offiziellen CSV/TSV/JSON-Produktfeed-Exporte über `WEBGAINS_FEED_URLS`. Tokens und Feed-URLs gehören ausschließlich in Secrets und niemals in den Quellcode.
 
 Ohne diese Werte melden die Quellen nur `disabled` und beeinflussen bestehende Awin-, Impact-, Amazon- oder Direktpartnerdaten nicht. Automatische Vertragsannahmen sind nicht Teil des Feed-Imports. Bei Daisycon prüft die Automation bestehende Subscriptions, Agreement Terms und Fragebögen vor einer möglichen Bewerbung; Bedingungen werden niemals automatisch akzeptiert. Webgains dokumentiert Program-Mitgliedschaften per API, verlangt beim Beitritt jedoch die Zustimmung zu programmspezifischen Bedingungen und bleibt deshalb review-pflichtig. Für Tradedoubler ist aktuell kein offizieller Program-Join-Endpunkt verifiziert; Programmsuche und Beitritt bleiben dort im Publisher-Dashboard, während Produkt- und Voucher-Daten automatisiert werden können.
 
@@ -115,13 +115,13 @@ Die Site lädt keine externen Fonts und setzt selbst keine Marketing-Cookies. Oh
 
 ## JOEL MUSS NUR NOCH DIESE PUNKTE MACHEN
 
-Die automatische Aktualisierung läuft alle sechs Stunden. Ohne die folgenden externen Freigaben bleibt die Plattform absichtlich bei belegbaren, bereits erlaubten Daten:
+Die automatische Aktualisierung läuft alle vier Stunden; Impact wird dabei aus Rate-Limit-Gründen standardmäßig nur alle zwölf Stunden synchronisiert. Ohne die folgenden externen Freigaben bleibt die Plattform absichtlich bei belegbaren, bereits erlaubten Daten:
 
 1. Den separaten Awin-Datafeed-Key als `AWIN_DATAFEED_API_KEY` in `.env.local` und als gleichnamiges GitHub Actions Secret hinterlegen. Der normale Awin-API-Token ersetzt diesen Feed-Key nicht.
 2. Nur die in `report/manual-actions.json` aufgeführten Programmbedingungen prüfen und geeignete Bewerbungen im jeweiligen Dashboard bestätigen. Es werden keine Vertragsbedingungen automatisch akzeptiert und keine Doppel- oder Massenbewerbungen versendet.
 3. Für Amazon: PartnerNet final freischalten, unter **Tools → Creators API** eine Anwendung/Credentials erzeugen und `AMAZON_CREATORS_CREDENTIAL_ID`, `AMAZON_CREATORS_CREDENTIAL_SECRET` sowie den deutschen `AMAZON_PARTNER_TAG` als GitHub Secrets hinterlegen. Bis dahin bleiben Amazon-Preise und -Produktbilder bewusst deaktiviert.
 4. Falls Awin oder Impact eine zusätzliche Identitäts-, Vertrags- oder API-Freigabe verlangt, diese einmalig im jeweiligen Dashboard bestätigen.
-5. Optional für weitere kostenlose Affiliate-Quellen: Daisycon-Publisherzugang freischalten und `DAISYCON_PUBLISHER_ID` + `DAISYCON_ACCESS_TOKEN` hinterlegen; bei Tradedoubler bzw. Webgains nach Programmfreigabe die offiziellen Produktfeed-URLs als `TRADEDOUBLER_FEED_URLS` bzw. `WEBGAINS_FEED_URLS` speichern. Keine kostenpflichtige Zusatzsoftware ist dafür vorgesehen.
+5. Optional für weitere kostenlose Affiliate-Quellen: Daisycon-Publisherzugang freischalten und `DAISYCON_PUBLISHER_ID` + `DAISYCON_ACCESS_TOKEN` hinterlegen; bei Tradedoubler bevorzugt den kostenlosen Products-API-Token als `TRADEDOUBLER_PRODUCTS_TOKEN` speichern (offizielle Feed-URLs bleiben als Fallback möglich); bei Webgains die offiziellen Feed-URLs als `WEBGAINS_FEED_URLS` hinterlegen. Keine kostenpflichtige Zusatzsoftware ist dafür vorgesehen.
 6. Impressum und Datenschutzerklärung trotz technischer Anpassung einmal individuell rechtlich prüfen lassen.
 
 Die Dateien `report/program-inventory.json`, `report/update-report.json`, `report/manual-actions.json` und `report/seo-report.json` werden bei jedem Update neu erzeugt. Sie enthalten nur unsensible Bestands-, SEO- und Statusdaten, niemals Tokens oder Zugangsdaten.

@@ -12,7 +12,7 @@ test("fehlende Secrets deaktivieren nur die betroffenen Quellen und legen keine 
   assert.match(byName.amazon.audit.reason, /AMAZON_CREATORS_CREDENTIAL_ID.*AMAZON_CREATORS_CREDENTIAL_SECRET.*AMAZON_PARTNER_TAG.*missing/);
   assert.match(byName["awin-product-feeds"].audit.reason, /AWIN_DATAFEED_API_KEY missing/);
   assert.match(byName.daisycon.audit.reason, /DAISYCON_PUBLISHER_ID \/ DAISYCON_ACCESS_TOKEN missing/);
-  assert.match(byName.tradedoubler.audit.reason, /TRADEDOUBLER_FEED_URLS missing/);
+  assert.match(byName.tradedoubler.audit.reason, /TRADEDOUBLER_PRODUCTS_TOKEN \/ TRADEDOUBLER_FEED_URLS missing/);
   assert.match(byName.webgains.audit.reason, /WEBGAINS_FEED_URLS missing/);
   assert.doesNotMatch(JSON.stringify(sources), /token_value|SID_VALUE|credential_secret_value|supersecret123/i);
 });

@@ -1,60 +1,137 @@
+const API = "https://api.tradedoubler.com/1.0";
 const asUrls = value => String(value ?? "").split(/[\n,]+/).map(v => v.trim()).filter(Boolean);
-const payloadRows = payload => Array.isArray(payload) ? payload : payload?.products ?? payload?.product ?? payload?.items ?? payload?.data ?? [];
-
 const pick = (row, keys) => keys.map(key => row?.[key]).find(value => value !== undefined && value !== null && value !== "");
+
 const price = value => {
-  const n = Number(String(value ?? "").replace(",", ".").replace(/[^0-9.-]/g, ""));
+  const raw = value && typeof value === "object" ? (value.value ?? value.amount) : value;
+  const n = Number(String(raw ?? "").replace(",", ".").replace(/[^0-9.-]/g, ""));
   return Number.isFinite(n) && n > 0 ? n : undefined;
 };
 
+const imageUrl = row => {
+  const value = pick(row, ["productImage","imageURL","imageUrl","image_url","image"]);
+  return value && typeof value === "object" ? value.url : value;
+};
+
+const currencyOf = row => {
+  const value = row?.price;
+  return (value && typeof value === "object" ? value.currency : null)
+    ?? pick(row, ["currency","currencyCode","currencyISOCode"])
+    ?? "EUR";
+};
+
+const identifiers = row => row?.identifiers && typeof row.identifiers === "object" ? row.identifiers : {};
+const categoryName = row => {
+  const first = Array.isArray(row?.categories) ? row.categories[0] : row?.categories;
+  return first?.tdCategoryName ?? first?.name ?? pick(row, ["category","productCategory"]);
+};
+
 function mapProduct(row, index) {
+  const ids = identifiers(row);
   const title = pick(row, ["name","productName","title"]);
-  const productUrl = pick(row, ["productURL","productUrl","product_url","url"]);
-  const trackingUrl = pick(row, ["trackingUrl","trackingURL","affiliateUrl","productURL","productUrl","product_url"]);
-  if (!title || !productUrl || !trackingUrl) return null;
+  const tracked = pick(row, ["productUrl","productURL","trackingUrl","trackingURL","affiliateUrl"]);
+  const destination = pick(row, ["sourceProductUrl","source_product_url","productUrl","productURL"]);
+  if (!title || !tracked) return null;
   return {
-    id: String(pick(row, ["productId","productID","id","sku"]) ?? index),
+    id: String(pick(row, ["id","productId","productID","sourceProductId","sku"]) ?? index),
     title,
-    description: pick(row, ["description","shortDescription"]) ?? "",
-    url: productUrl,
-    urlTracking: trackingUrl,
+    description: pick(row, ["description","shortDescription","promoText"]) ?? "",
+    url: destination || tracked,
+    urlTracking: tracked,
     advertiserName: pick(row, ["programName","merchantName","advertiserName"]) ?? "Tradedoubler",
     advertiserId: pick(row, ["programId","merchantId","advertiserId"]),
     source: "tradedoubler",
     type: "promotion",
-    imageUrl: pick(row, ["imageURL","imageUrl","image_url","image"]),
+    imageUrl: imageUrl(row),
     imageAlt: title,
-    imageSource: "Tradedoubler Product Feed",
-    imageRightsNote: "Vom Advertiser über einen offiziellen Tradedoubler-Produktfeed bereitgestellt.",
-    currentPrice: price(pick(row, ["price","salePrice","sale_price"])),
+    imageSource: "Tradedoubler Products API",
+    imageRightsNote: "Vom Advertiser über die offizielle Tradedoubler Products API bereitgestellt.",
+    currentPrice: price(row.price ?? row.salePrice ?? row.sale_price),
     previousPrice: price(pick(row, ["oldPrice","previousPrice","regularPrice","originalPrice"])),
-    currency: pick(row, ["currency","currencyCode"]) ?? "EUR",
-    category: pick(row, ["category","productCategory"]),
+    currency: currencyOf(row),
+    category: categoryName(row),
     brand: pick(row, ["brand","manufacturer"]),
-    gtin: pick(row, ["gtin"]),
-    ean: pick(row, ["ean"]),
-    mpn: pick(row, ["mpn"]),
-    sku: pick(row, ["sku","productId","productID"]),
-    productId: pick(row, ["ean","gtin","mpn","sku","productId","productID"]),
+    gtin: pick(row, ["gtin"]) ?? ids.gtin,
+    ean: pick(row, ["ean"]) ?? ids.ean,
+    mpn: pick(row, ["mpn"]) ?? ids.mpn,
+    sku: pick(row, ["sku"]) ?? ids.sku ?? row.sourceProductId,
+    productId: pick(row, ["ean","gtin","mpn","sku","sourceProductId","id"]) ?? ids.ean ?? ids.gtin ?? ids.mpn ?? ids.sku,
     availability: pick(row, ["availability","stock","inStock"]),
     regions: { list: [{ countryCode: "DE" }] }
   };
 }
 
-export async function fetchTradedoublerOffers({ feedUrls, maxProducts = 1000, fetchImpl = fetch }) {
+const productRows = payload => {
+  const direct = Array.isArray(payload) ? payload : payload?.products ?? payload?.items ?? payload?.data ?? payload?.result?.products ?? [];
+  const rows = [];
+  for (const product of direct) {
+    if (Array.isArray(product?.offers) && product.offers.length) {
+      for (const offer of product.offers) rows.push({ ...product, ...offer, identifiers: product.identifiers ?? offer.identifiers });
+    } else rows.push(product);
+  }
+  return rows;
+};
+
+const feedRows = payload => Array.isArray(payload) ? payload : payload?.feeds ?? payload?.productFeeds ?? payload?.data ?? [];
+
+async function getJson(url, fetchImpl, label) {
+  const response = await fetchImpl(url, { headers: { Accept: "application/json" } });
+  if (!response.ok) throw new Error(`Tradedoubler ${label}: HTTP ${response.status}`);
+  return response.json();
+}
+
+export async function fetchTradedoublerFeedInventory({ token, fetchImpl = fetch }) {
+  if (!token) return [];
+  const url = new URL(API + "/productFeeds.json");
+  url.searchParams.set("token", token);
+  const payload = await getJson(url, fetchImpl, "productFeeds");
+  return feedRows(payload).filter(feed => feed?.active !== false && feed?.visible !== false);
+}
+
+async function fetchFromToken({ token, maxProducts, maxFeeds, fetchImpl }) {
+  const feeds = await fetchTradedoublerFeedInventory({ token, fetchImpl });
+  const preferred = [...feeds].sort((a,b) => {
+    const deA = String(a.languageISOCode ?? "").toLowerCase() === "de" ? 1 : 0;
+    const deB = String(b.languageISOCode ?? "").toLowerCase() === "de" ? 1 : 0;
+    const eurA = String(a.currencyISOCode ?? "").toUpperCase() === "EUR" ? 1 : 0;
+    const eurB = String(b.currencyISOCode ?? "").toUpperCase() === "EUR" ? 1 : 0;
+    return (deB + eurB) - (deA + eurA) || Number(b.numberOfProducts ?? 0) - Number(a.numberOfProducts ?? 0);
+  }).slice(0, Math.max(1, maxFeeds));
+
+  const rows = [];
+  for (const feed of preferred) {
+    const feedId = feed.feedId ?? feed.id;
+    if (!feedId) continue;
+    const remaining = Math.max(1, maxProducts - rows.length);
+    const limit = Math.min(100, remaining);
+    const url = new URL(API + "/products.json;fid=" + encodeURIComponent(feedId) + ";limit=" + limit + ";dateOutputFormat=iso8601");
+    url.searchParams.set("token", token);
+    const payload = await getJson(url, fetchImpl, "products");
+    rows.push(...productRows(payload).map((row,index) => mapProduct(row,index)).filter(Boolean));
+    if (rows.length >= maxProducts) break;
+  }
+  const limited = rows.slice(0,maxProducts);
+  Object.defineProperty(limited,"audit",{value:{mode:"products-api",feedsAvailable:feeds.length,feedsScanned:preferred.length,products:limited.length},enumerable:false});
+  return limited;
+}
+
+async function fetchFromUrls({ feedUrls, maxProducts, fetchImpl }) {
   const urls = asUrls(feedUrls);
   if (!urls.length) return [];
   const rows = [];
   for (const rawUrl of urls) {
     const url = new URL(rawUrl);
     if (url.protocol !== "https:" || !url.hostname.endsWith("tradedoubler.com")) throw new Error("Tradedoubler feed URL must use official HTTPS host");
-    const response = await fetchImpl(url, { headers: { Accept: "application/json" } });
-    if (!response.ok) throw new Error(`Tradedoubler product feed: HTTP ${response.status}`);
-    const payload = await response.json();
-    rows.push(...payloadRows(payload).map((row,index) => mapProduct(row,index)).filter(Boolean));
+    const payload = await getJson(url, fetchImpl, "product feed");
+    rows.push(...productRows(payload).map((row,index) => mapProduct(row,index)).filter(Boolean));
     if (rows.length >= maxProducts) break;
   }
   const limited = rows.slice(0,maxProducts);
   Object.defineProperty(limited,"audit",{value:{feeds:urls.length,products:limited.length,mode:"official-json-feed"},enumerable:false});
   return limited;
+}
+
+export async function fetchTradedoublerOffers({ token, feedUrls, maxProducts = 1000, maxFeeds = 8, fetchImpl = fetch }) {
+  if (token) return fetchFromToken({ token, maxProducts, maxFeeds, fetchImpl });
+  return fetchFromUrls({ feedUrls, maxProducts, fetchImpl });
 }

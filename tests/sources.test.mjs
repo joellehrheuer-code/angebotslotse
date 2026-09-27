@@ -217,3 +217,39 @@ test("Daisycon-Review prüft Subscription, Agreement Terms und Fragebogen ohne A
   assert.ok(calls.some(url=>url.includes("/commissions")));
   assert.ok(calls.some(url=>url.includes("/access-rules")));
 });
+
+
+test("Tradedoubler entdeckt aktive Feeds automatisch über den offiziellen Products-Token", async () => {
+  const calls=[];
+  const fetchImpl=async url=>{
+    const href=String(url); calls.push(href);
+    if(href.includes("/productFeeds.json")) return {
+      ok:true,status:200,json:async()=>({feeds:[
+        {feedId:101,name:"DE Gaming",active:true,visible:true,currencyISOCode:"EUR",languageISOCode:"de",numberOfProducts:50},
+        {feedId:202,name:"Hidden",active:false,visible:true,currencyISOCode:"EUR",languageISOCode:"de",numberOfProducts:100}
+      ]})
+    };
+    if(href.includes("products.json;fid=101")) return {
+      ok:true,status:200,json:async()=>({products:[{
+        id:"td-api-1",name:"Gaming Maus",description:"Wireless",
+        productUrl:"https://pdt.tradedoubler.com/click/affiliate",
+        sourceProductUrl:"https://merchant.example/mouse",
+        productImage:{url:"https://img.example/mouse.jpg"},
+        price:59.99,programName:"Demo Gaming",brand:"Demo",
+        identifiers:{ean:"1234567890123",sku:"MOUSE-1"},
+        availability:"In Stock"
+      }]})
+    };
+    throw new Error("unexpected Tradedoubler URL "+href);
+  };
+  const rows=await fetchTradedoublerOffers({token:"PRODUCTS_TOKEN",maxProducts:20,maxFeeds:4,fetchImpl});
+  assert.equal(rows.length,1);
+  assert.equal(rows[0].urlTracking,"https://pdt.tradedoubler.com/click/affiliate");
+  assert.equal(rows[0].url,"https://merchant.example/mouse");
+  assert.equal(rows[0].currentPrice,59.99);
+  assert.equal(rows[0].ean,"1234567890123");
+  assert.equal(rows.audit.mode,"products-api");
+  assert.equal(rows.audit.feedsAvailable,1);
+  assert.equal(calls.length,2);
+  assert.ok(calls.every(url=>url.includes("token=PRODUCTS_TOKEN")));
+});

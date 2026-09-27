@@ -63,7 +63,7 @@ export async function collectSources(env = process.env) {
     ["amazon", () => fetchAmazonCreatorItems({ credentialId: env.AMAZON_CREATORS_CREDENTIAL_ID, credentialSecret: env.AMAZON_CREATORS_CREDENTIAL_SECRET, partnerTag: env.AMAZON_PARTNER_TAG, definitions: amazonDefinitions.items ?? [] })],
     ["impact", () => fetchImpactOffers({ accountSid: env.IMPACT_ACCOUNT_SID, authToken: env.IMPACT_AUTH_TOKEN, linkPolicy: impactLinkPolicy })],
     ["daisycon", () => fetchDaisyconOffers({ publisherId: env.DAISYCON_PUBLISHER_ID, accessToken: env.DAISYCON_ACCESS_TOKEN, maxProducts: Number(env.DAISYCON_MAX_PRODUCTS) || 100 })],
-    ["tradedoubler", () => fetchTradedoublerOffers({ feedUrls: env.TRADEDOUBLER_FEED_URLS, maxProducts: Number(env.TRADEDOUBLER_MAX_PRODUCTS) || 1000 })],
+    ["tradedoubler", () => fetchTradedoublerOffers({ token: env.TRADEDOUBLER_PRODUCTS_TOKEN, feedUrls: env.TRADEDOUBLER_FEED_URLS, maxProducts: Number(env.TRADEDOUBLER_MAX_PRODUCTS) || 1000, maxFeeds: Number(env.TRADEDOUBLER_MAX_FEEDS) || 8 })],
     ["webgains", () => fetchWebgainsOffers({ feedUrls: env.WEBGAINS_FEED_URLS, maxProducts: Number(env.WEBGAINS_MAX_PRODUCTS) || 1000 })]
   ];
   const results = await Promise.all(definitions.map(async ([name, run]) => {
@@ -74,7 +74,7 @@ export async function collectSources(env = process.env) {
     if (name === "awin-product-feeds" && !env.AWIN_DATAFEED_API_KEY) return { name, state: "disabled", rows: [], audit:{reason:"AWIN_DATAFEED_API_KEY missing – Awin Product Feed sync skipped"} };
     if (name === "awin-enhanced-feeds" && (!env.AWIN_API_TOKEN||!joined.length)) return {name,state:"disabled",rows:[],audit:{reason:!env.AWIN_API_TOKEN?"AWIN_API_TOKEN missing – Awin Enhanced Feed sync skipped":"No joined Awin programmes – Enhanced Feed sync skipped"}};
     if (name === "daisycon" && (!env.DAISYCON_PUBLISHER_ID || !env.DAISYCON_ACCESS_TOKEN)) return {name,state:"disabled",rows:[],audit:{reason:"DAISYCON_PUBLISHER_ID / DAISYCON_ACCESS_TOKEN missing – Daisycon sync skipped"}};
-    if (name === "tradedoubler" && !env.TRADEDOUBLER_FEED_URLS) return {name,state:"disabled",rows:[],audit:{reason:"TRADEDOUBLER_FEED_URLS missing – Tradedoubler feed sync skipped"}};
+    if (name === "tradedoubler" && !env.TRADEDOUBLER_PRODUCTS_TOKEN && !env.TRADEDOUBLER_FEED_URLS) return {name,state:"disabled",rows:[],audit:{reason:"TRADEDOUBLER_PRODUCTS_TOKEN / TRADEDOUBLER_FEED_URLS missing – Tradedoubler sync skipped"}};
     if (name === "webgains" && !env.WEBGAINS_FEED_URLS) return {name,state:"disabled",rows:[],audit:{reason:"WEBGAINS_FEED_URLS missing – Webgains feed sync skipped"}};
     try { const rows=await run(); return { name, state: "ok", rows, audit:rows.audit??null }; }
     catch (error) { return { name, state: "error", rows: [], error: String(error.message).slice(0, 160) }; }
