@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-27T15:27:24.091Z",
+  "generatedAt": "2026-09-27T15:44:00.111Z",
   "newAwinPrograms": 0,
   "newImpactPrograms": 0,
   "newDaisyconPrograms": 0,
@@ -8,7 +8,7 @@
   "applicationsSent": 0,
   "pendingApplications": 1,
   "manualApplications": 8,
-  "networkReviewActions": 4,
+  "networkReviewActions": 5,
   "awinDiscoveryOffers": 200,
   "applicationCandidates": 193,
   "newMerchants": 0,
@@ -19,28 +19,29 @@
   "productsWithOldPrice": 0,
   "productsWithDiscount": 0,
   "newCoupons": 0,
-  "coupons": 0,
+  "coupons": 4,
   "priceChanges": 0,
   "expiredOffers": 0,
   "expiredCoupons": 0,
-  "totalProducts": 248,
+  "totalProducts": 252,
   "productsBySource": {
-    "Awin": 248
+    "Awin": 252
   },
   "productsByMerchant": {
-    "Hollyland DE": 136,
+    "Hollyland DE": 137,
     "ANTHBOT DE": 59,
-    "Outin Germany": 53
+    "Outin Germany": 55,
+    "Imou DE": 1
   },
   "productsByCategory": {
-    "sonstiges": 102,
+    "sonstiges": 105,
     "zubehoer": 47,
     "technik": 31,
     "audio-musik": 26,
     "werkzeug": 20,
     "computer": 11,
-    "mode": 6,
-    "freizeit": 5
+    "freizeit": 6,
+    "mode": 6
   },
   "awinEnhancedFeeds": [
     {
@@ -125,7 +126,10 @@
     "134153f06aa7013c",
     "0a16e63f96d3c7c3"
   ],
-  "weekDeals": [],
+  "weekDeals": [
+    "082bb91da12d2048",
+    "ad2ac243a83e92ac"
+  ],
   "monthHighlights": [
     "10bb463f70696c2e",
     "0055caa27aa9a32c",

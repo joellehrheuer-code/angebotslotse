@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-27T15:27:24.091Z",
+  "generatedAt": "2026-09-27T15:44:00.111Z",
   "total": 65,
   "highPriority": 5,
   "byNetwork": {
@@ -1048,6 +1048,19 @@
     {
       "network": "Daisycon",
       "brand": "Daisycon Marketplace",
+      "category": "Freizeit",
+      "priority": "niedrig",
+      "score": 16,
+      "status": "connection-required",
+      "kind": "marketplace-search",
+      "nextAction": "Daisycon-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Freizeit priorisieren.",
+      "applicationDraft": null,
+      "reason": "6 veröffentlichte Angebotslotse-Angebote in dieser Kategorie.",
+      "reference": "travel, outdoor, hobby, tickets"
+    },
+    {
+      "network": "Daisycon",
+      "brand": "Daisycon Marketplace",
       "category": "Mode & Sport",
       "priority": "niedrig",
       "score": 16,
@@ -1057,6 +1070,19 @@
       "applicationDraft": null,
       "reason": "6 veröffentlichte Angebotslotse-Angebote in dieser Kategorie.",
       "reference": "fashion, sportswear, fitness, shoes"
+    },
+    {
+      "network": "Tradedoubler",
+      "brand": "Tradedoubler Marketplace",
+      "category": "Freizeit",
+      "priority": "niedrig",
+      "score": 16,
+      "status": "connection-required",
+      "kind": "marketplace-search",
+      "nextAction": "Tradedoubler-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Freizeit priorisieren.",
+      "applicationDraft": null,
+      "reason": "6 veröffentlichte Angebotslotse-Angebote in dieser Kategorie.",
+      "reference": "travel, outdoor, hobby, tickets"
     },
     {
       "network": "Tradedoubler",
@@ -1074,6 +1100,19 @@
     {
       "network": "Webgains",
       "brand": "Webgains Marketplace",
+      "category": "Freizeit",
+      "priority": "niedrig",
+      "score": 16,
+      "status": "connection-required",
+      "kind": "marketplace-search",
+      "nextAction": "Webgains-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Freizeit priorisieren.",
+      "applicationDraft": null,
+      "reason": "6 veröffentlichte Angebotslotse-Angebote in dieser Kategorie.",
+      "reference": "travel, outdoor, hobby, tickets"
+    },
+    {
+      "network": "Webgains",
+      "brand": "Webgains Marketplace",
       "category": "Mode & Sport",
       "priority": "niedrig",
       "score": 16,
@@ -1083,45 +1122,6 @@
       "applicationDraft": null,
       "reason": "6 veröffentlichte Angebotslotse-Angebote in dieser Kategorie.",
       "reference": "fashion, sportswear, fitness, shoes"
-    },
-    {
-      "network": "Daisycon",
-      "brand": "Daisycon Marketplace",
-      "category": "Freizeit",
-      "priority": "niedrig",
-      "score": 15,
-      "status": "connection-required",
-      "kind": "marketplace-search",
-      "nextAction": "Daisycon-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Freizeit priorisieren.",
-      "applicationDraft": null,
-      "reason": "5 veröffentlichte Angebotslotse-Angebote in dieser Kategorie.",
-      "reference": "travel, outdoor, hobby, tickets"
-    },
-    {
-      "network": "Tradedoubler",
-      "brand": "Tradedoubler Marketplace",
-      "category": "Freizeit",
-      "priority": "niedrig",
-      "score": 15,
-      "status": "connection-required",
-      "kind": "marketplace-search",
-      "nextAction": "Tradedoubler-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Freizeit priorisieren.",
-      "applicationDraft": null,
-      "reason": "5 veröffentlichte Angebotslotse-Angebote in dieser Kategorie.",
-      "reference": "travel, outdoor, hobby, tickets"
-    },
-    {
-      "network": "Webgains",
-      "brand": "Webgains Marketplace",
-      "category": "Freizeit",
-      "priority": "niedrig",
-      "score": 15,
-      "status": "connection-required",
-      "kind": "marketplace-search",
-      "nextAction": "Webgains-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Freizeit priorisieren.",
-      "applicationDraft": null,
-      "reason": "5 veröffentlichte Angebotslotse-Angebote in dieser Kategorie.",
-      "reference": "travel, outdoor, hobby, tickets"
     }
   ]
 }

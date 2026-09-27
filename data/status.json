@@ -1,6 +1,6 @@
 {
   "state": "ok",
-  "lastSuccessfulUpdate": "2026-09-27T15:27:24.034Z",
+  "lastSuccessfulUpdate": "2026-09-27T15:44:00.058Z",
   "activeOffers": 809,
   "added": 0,
   "removed": 0,
@@ -141,6 +141,14 @@
       "error": null,
       "audit": {
         "reason": "TRADEDOUBLER_PRODUCTS_TOKEN / TRADEDOUBLER_FEED_URLS missing – Tradedoubler sync skipped"
+      }
+    },
+    "tradedoubler-vouchers": {
+      "state": "disabled",
+      "count": 0,
+      "error": null,
+      "audit": {
+        "reason": "TRADEDOUBLER_VOUCHERS_TOKEN missing – Tradedoubler voucher sync skipped"
       }
     },
     "webgains": {

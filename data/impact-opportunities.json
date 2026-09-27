@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-27T15:27:24.091Z",
+  "generatedAt": "2026-09-27T15:44:00.111Z",
   "status": "disabled",
   "joinedPrograms": 0,
   "automation": {
@@ -67,9 +67,9 @@
     },
     {
       "category": "Freizeit",
-      "siteOffers": 5,
+      "siteOffers": 6,
       "joinedPrograms": 0,
-      "gapScore": 5,
+      "gapScore": 6,
       "searchTerms": [
         "travel",
         "outdoor",

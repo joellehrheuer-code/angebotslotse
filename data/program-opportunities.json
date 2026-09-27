@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-27T15:27:24.091Z",
+  "generatedAt": "2026-09-27T15:44:00.111Z",
   "scope": "Automatisch aus Programminventar, DE-Angebotsabdeckung und verfügbaren Netzwerk-/Feed-Signalen erzeugt.",
   "automation": {
     "discovery": "automatic",
@@ -1602,9 +1602,9 @@
       },
       {
         "category": "Freizeit",
-        "siteOffers": 5,
+        "siteOffers": 6,
         "joinedPrograms": 0,
-        "gapScore": 5,
+        "gapScore": 6,
         "searchTerms": [
           "travel",
           "outdoor",
@@ -1672,6 +1672,20 @@
       },
       {
         "network": "Daisycon",
+        "category": "Freizeit",
+        "siteOffers": 6,
+        "priority": "niedrig",
+        "searchTerms": [
+          "travel",
+          "outdoor",
+          "hobby",
+          "tickets"
+        ],
+        "connected": false,
+        "action": "Daisycon-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Freizeit priorisieren."
+      },
+      {
+        "network": "Daisycon",
         "category": "Mode & Sport",
         "siteOffers": 6,
         "priority": "niedrig",
@@ -1683,20 +1697,6 @@
         ],
         "connected": false,
         "action": "Daisycon-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Mode & Sport priorisieren."
-      },
-      {
-        "network": "Daisycon",
-        "category": "Freizeit",
-        "siteOffers": 5,
-        "priority": "niedrig",
-        "searchTerms": [
-          "travel",
-          "outdoor",
-          "hobby",
-          "tickets"
-        ],
-        "connected": false,
-        "action": "Daisycon-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Freizeit priorisieren."
       }
     ]
   },
@@ -1750,6 +1750,20 @@
       },
       {
         "network": "Tradedoubler",
+        "category": "Freizeit",
+        "siteOffers": 6,
+        "priority": "niedrig",
+        "searchTerms": [
+          "travel",
+          "outdoor",
+          "hobby",
+          "tickets"
+        ],
+        "connected": false,
+        "action": "Tradedoubler-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Freizeit priorisieren."
+      },
+      {
+        "network": "Tradedoubler",
         "category": "Mode & Sport",
         "siteOffers": 6,
         "priority": "niedrig",
@@ -1761,20 +1775,6 @@
         ],
         "connected": false,
         "action": "Tradedoubler-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Mode & Sport priorisieren."
-      },
-      {
-        "network": "Tradedoubler",
-        "category": "Freizeit",
-        "siteOffers": 5,
-        "priority": "niedrig",
-        "searchTerms": [
-          "travel",
-          "outdoor",
-          "hobby",
-          "tickets"
-        ],
-        "connected": false,
-        "action": "Tradedoubler-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Freizeit priorisieren."
       }
     ],
     "applicationApi": "not-verified",
@@ -1830,6 +1830,20 @@
       },
       {
         "network": "Webgains",
+        "category": "Freizeit",
+        "siteOffers": 6,
+        "priority": "niedrig",
+        "searchTerms": [
+          "travel",
+          "outdoor",
+          "hobby",
+          "tickets"
+        ],
+        "connected": false,
+        "action": "Webgains-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Freizeit priorisieren."
+      },
+      {
+        "network": "Webgains",
         "category": "Mode & Sport",
         "siteOffers": 6,
         "priority": "niedrig",
@@ -1841,20 +1855,6 @@
         ],
         "connected": false,
         "action": "Webgains-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Mode & Sport priorisieren."
-      },
-      {
-        "network": "Webgains",
-        "category": "Freizeit",
-        "siteOffers": 5,
-        "priority": "niedrig",
-        "searchTerms": [
-          "travel",
-          "outdoor",
-          "hobby",
-          "tickets"
-        ],
-        "connected": false,
-        "action": "Webgains-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Freizeit priorisieren."
       }
     ],
     "membershipApi": "documented",

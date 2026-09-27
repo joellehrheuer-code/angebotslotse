@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-27T15:27:24.091Z",
+  "generatedAt": "2026-09-27T15:44:00.111Z",
   "actions": [
     {
       "id": "awin-datafeed-key",
@@ -84,8 +84,14 @@
     {
       "id": "tradedoubler-connect",
       "platform": "Tradedoubler",
-      "action": "Kostenlosen Tradedoubler-Publisherzugang freischalten und anschließend den offiziellen Produktfeed/API-Zugang als TRADEDOUBLER_FEED_URLS hinterlegen.",
+      "action": "Kostenlosen Tradedoubler-Publisherzugang freischalten und entweder TRADEDOUBLER_PRODUCTS_TOKEN oder einen offiziellen Produktfeed als TRADEDOUBLER_FEED_URLS hinterlegen.",
       "reason": "Danach zuerst Programme für Technik & Computer priorisieren (electronics, computer, hardware, mobile, smart home), weil dort aktuell 89 Angebotslotse-Angebote liegen."
+    },
+    {
+      "id": "tradedoubler-vouchers-connect",
+      "platform": "Tradedoubler",
+      "action": "Optional den offiziellen Voucher-API-Token als TRADEDOUBLER_VOUCHERS_TOKEN hinterlegen.",
+      "reason": "Damit können gültige Gutscheine und Rabattcodes zusätzlich automatisch eingelesen werden; ohne Token bleibt diese Quelle deaktiviert."
     },
     {
       "id": "webgains-connect",
