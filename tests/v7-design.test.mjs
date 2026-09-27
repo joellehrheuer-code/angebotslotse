@@ -27,6 +27,8 @@ test("V7 homepage keeps premium dark commerce composition and real data", () => 
   assert.match(html, /class="premium-hero/);
   assert.match(html, /class="brand-logo"/);
   assert.match(html, /Original-Branding/);
+  assert.match(html, /class="category-tile"/);
+  assert.match(html, /class="category-art"/);
   assert.match(html, /cdn\.shopify\.com|imageUrl/);
   assert.doesNotMatch(html, /GearUP/i);
   assert.match(css, /--magenta:#ff3fa8/);
@@ -89,6 +91,7 @@ test("SEO konsolidiert Produktvarianten auf eine Angebots-URL", () => {
   assert.match(offerHtml, /class="deal-check"/);
   assert.match(offerHtml, /Daten statt Werbeversprechen/);
   assert.match(offerHtml, /class="price-history"/);
+  if (target.imageUrl && target.imageSource) assert.match(offerHtml, /Offizielles Partnerbild/);
   assert.ok(legacyHtml.includes('rel="canonical" href="' + canonicalUrl + '"'));
   assert.ok(sitemap.includes("/angebote/" + target.slug + ".html"));
   assert.doesNotMatch(sitemap, /\/produkt\//);
