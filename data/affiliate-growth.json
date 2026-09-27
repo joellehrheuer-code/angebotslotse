@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-26T22:01:10.360Z",
+  "generatedAt": "2026-09-27T01:41:02.076Z",
   "market": "DE",
   "publisherId": 3045061,
   "awin": {
@@ -31,8 +31,29 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten adidas DE redaktionell passend im Bereich Sportswear einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
+      },
+      {
+        "network": "Awin",
+        "relationship": "notjoined",
+        "advertiserId": 102205,
+        "name": "Bosch Hausgeräte DE",
+        "primarySector": "Electronic Superstore",
+        "primaryRegion": {
+          "name": "Germany",
+          "countryCode": "DE"
+        }
+      },
+      {
+        "network": "Awin",
+        "relationship": "notjoined",
+        "advertiserId": 84955,
+        "name": "bosch Tiernahrung DE",
+        "primarySector": "Pets & Pet Care",
+        "primaryRegion": {
+          "name": "Germany",
+          "countryCode": "DE"
+        }
       },
       {
         "network": "Awin",
@@ -43,8 +64,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten DECATHLON DE redaktionell passend im Bereich Sports Equipment einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -55,8 +75,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Dyson DE redaktionell passend im Bereich Electronic Superstore einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -67,8 +86,29 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Lidl DE redaktionell passend im Bereich Department Stores einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
+      },
+      {
+        "network": "Awin",
+        "relationship": "notjoined",
+        "advertiserId": 130771,
+        "name": "MSI DE",
+        "primarySector": "Computers",
+        "primaryRegion": {
+          "name": "Germany",
+          "countryCode": "DE"
+        }
+      },
+      {
+        "network": "Awin",
+        "relationship": "notjoined",
+        "advertiserId": 15013,
+        "name": "PremiumSIM DE",
+        "primarySector": "Mobile Contract",
+        "primaryRegion": {
+          "name": "Germany",
+          "countryCode": "DE"
+        }
       },
       {
         "network": "Awin",
@@ -79,8 +119,18 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Samsung Shop DE redaktionell passend im Bereich Electronic Superstore einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
+      },
+      {
+        "network": "Awin",
+        "relationship": "notjoined",
+        "advertiserId": 34015,
+        "name": "Sony DE",
+        "primarySector": "Electronic Superstore",
+        "primaryRegion": {
+          "name": "Germany",
+          "countryCode": "DE"
+        }
       },
       {
         "network": "Awin",
@@ -157,8 +207,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten 0815 DE redaktionell passend im Bereich Home & Garden einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -169,8 +218,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten 1. FC Köln DE redaktionell passend im Bereich Sports Equipment einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -181,8 +229,18 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten 11teamsports DE & AT redaktionell passend im Bereich Sportswear einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
+      },
+      {
+        "network": "Awin",
+        "relationship": "notjoined",
+        "advertiserId": 9146,
+        "name": "12-Travel DE",
+        "primarySector": "Travel Agencies",
+        "primaryRegion": {
+          "name": "Germany",
+          "countryCode": "DE"
+        }
       },
       {
         "network": "Awin",
@@ -193,8 +251,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten 360GradFitness DE redaktionell passend im Bereich Sports Equipment einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -205,8 +262,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten 365Rider DE redaktionell passend im Bereich Sportswear einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -217,8 +273,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten 3D Jake DE redaktionell passend im Bereich Computers einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -229,8 +284,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten 3DMakerpro (EU) redaktionell passend im Bereich Electronic Accessories einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -241,8 +295,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten 3pagen DE redaktionell passend im Bereich Home & Garden einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -253,8 +306,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten 3ppp3 DE redaktionell passend im Bereich Electronic Accessories einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -265,8 +317,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten 4 ELEMENTOS DE redaktionell passend im Bereich Sportswear einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -277,8 +328,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten 7even DE redaktionell passend im Bereich Electronic Superstore einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -289,8 +339,18 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten A&M Angelsport DE redaktionell passend im Bereich Sports Equipment einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
+      },
+      {
+        "network": "Awin",
+        "relationship": "notjoined",
+        "advertiserId": 9369,
+        "name": "ab-in-den-urlaub DE",
+        "primarySector": "Travel Agencies",
+        "primaryRegion": {
+          "name": "Germany",
+          "countryCode": "DE"
+        }
       },
       {
         "network": "Awin",
@@ -301,8 +361,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten ab-in-die-BOX DE redaktionell passend im Bereich Home & Garden einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -313,8 +372,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Academy of Sports DE redaktionell passend im Bereich Education, Training & Recruitment einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -325,8 +383,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Acer DE redaktionell passend im Bereich Computers einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -337,8 +394,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten AEG DE - Hausgerätevertrieb redaktionell passend im Bereich Electronic Superstore einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -349,8 +405,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Aerialyoga Berlin DE redaktionell passend im Bereich Sports Equipment einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -361,8 +416,18 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten AfB DE redaktionell passend im Bereich Computers einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
+      },
+      {
+        "network": "Awin",
+        "relationship": "notjoined",
+        "advertiserId": 68036,
+        "name": "Afrika Safari Urlaub DE",
+        "primarySector": "Travel Agencies",
+        "primaryRegion": {
+          "name": "Germany",
+          "countryCode": "DE"
+        }
       },
       {
         "network": "Awin",
@@ -373,8 +438,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Agfashion DE redaktionell passend im Bereich Erotic einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -385,8 +449,18 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten air-Q DE redaktionell passend im Bereich Electronic Superstore einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
+      },
+      {
+        "network": "Awin",
+        "relationship": "notjoined",
+        "advertiserId": 12819,
+        "name": "Airline Direct DE (Longtail)",
+        "primarySector": "Travel Agencies",
+        "primaryRegion": {
+          "name": "Germany",
+          "countryCode": "DE"
+        }
       },
       {
         "network": "Awin",
@@ -397,8 +471,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Akku.net DE redaktionell passend im Bereich Electronic Accessories einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -409,8 +482,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten AKKUman DE redaktionell passend im Bereich Home & Garden einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -421,8 +493,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten aktivshop DE redaktionell passend im Bereich Home & Garden einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -433,8 +504,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten AktivWinter DE redaktionell passend im Bereich Sports Equipment einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -445,8 +515,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Alb Filter redaktionell passend im Bereich Home & Garden einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -457,8 +526,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten All4cycling DE redaktionell passend im Bereich Sportswear einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -469,8 +537,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten ALLDREI DE redaktionell passend im Bereich Home & Garden einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -481,8 +548,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Allekabel DE redaktionell passend im Bereich Electronic Superstore einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -493,8 +559,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten ALLPOWERS DE redaktionell passend im Bereich Home & Garden einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -505,8 +570,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Alternate DE redaktionell passend im Bereich Electronic Superstore einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -517,8 +581,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Amefa redaktionell passend im Bereich Home & Garden einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -529,8 +592,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Andlight DE redaktionell passend im Bereich Home & Garden einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -541,8 +603,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten AngelPlatz DE redaktionell passend im Bereich Sports Equipment einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -553,8 +614,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Angelwelt Gerlinger DE redaktionell passend im Bereich Sports Equipment einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -565,8 +625,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Anker DE redaktionell passend im Bereich Electronic Superstore einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -577,8 +636,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Anker Solix DE redaktionell passend im Bereich Electronic Accessories einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -589,8 +647,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Ankerkraut DE redaktionell passend im Bereich Home & Garden einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -601,8 +658,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Antelope DE redaktionell passend im Bereich Sportswear einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -613,8 +669,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Aosom DE/AT redaktionell passend im Bereich Home & Garden einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -625,8 +680,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten AOSU DA redaktionell passend im Bereich Electronic Accessories einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -637,8 +691,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Arena Sport redaktionell passend im Bereich Sportswear einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -649,8 +702,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Arlo Security DE redaktionell passend im Bereich Electronic Accessories einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -661,8 +713,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten ARLT DE redaktionell passend im Bereich Electronic Accessories einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -673,8 +724,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Arminia Bielefeld DE redaktionell passend im Bereich Sportswear einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -685,8 +735,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Aroundhome DE redaktionell passend im Bereich Lead Gen einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -697,8 +746,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Ars Mundi DE redaktionell passend im Bereich Home & Garden einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -709,8 +757,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Artsauna DE redaktionell passend im Bereich Home & Garden einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -721,8 +768,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten asgoodasnew DE redaktionell passend im Bereich Electronic Superstore einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -733,8 +779,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten ASMC DE redaktionell passend im Bereich Sports Equipment einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -745,8 +790,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Assure Fashion DE redaktionell passend im Bereich Clothing Accessories einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -757,8 +801,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten AsVIVA DE redaktionell passend im Bereich Sports Equipment einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -769,8 +812,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Ava & May DE redaktionell passend im Bereich Home & Garden einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -781,8 +823,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten awg-mode.de - Alle Werden Glücklich redaktionell passend im Bereich Clothing einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -793,8 +834,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten bahn.de - Reise- und Mobilitätsportal redaktionell passend im Bereich Trains einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -805,8 +845,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten BALDUR-Garten DE redaktionell passend im Bereich Home & Garden einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -817,8 +856,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Banggood DE redaktionell passend im Bereich Electronic Superstore einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -829,8 +867,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Basket-Center DE redaktionell passend im Bereich Sports Equipment einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -841,8 +878,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Bassetti DE redaktionell passend im Bereich Home & Garden einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -853,8 +889,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Bast Sauna DE redaktionell passend im Bereich Home & Garden einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -865,8 +900,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Bauknecht DE redaktionell passend im Bereich Electronic Superstore einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -877,8 +911,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Baumschule-Horstmann DE redaktionell passend im Bereich Home & Garden einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -889,8 +922,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Bayer04 Leverkusen DE redaktionell passend im Bereich Sportswear einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -901,8 +933,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten BayWa DE redaktionell passend im Bereich Home & Garden einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -913,8 +944,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Bear Family Records Store DE redaktionell passend im Bereich Music & DVD einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -925,8 +955,18 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Bearaby EU redaktionell passend im Bereich Home & Garden einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
+      },
+      {
+        "network": "Awin",
+        "relationship": "notjoined",
+        "advertiserId": 109766,
+        "name": "Bears with Benefits DE",
+        "primarySector": "Health & Beauty",
+        "primaryRegion": {
+          "name": "Germany",
+          "countryCode": "DE"
+        }
       },
       {
         "network": "Awin",
@@ -937,8 +977,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Beatbot DE redaktionell passend im Bereich Home & Garden einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -949,8 +988,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Befestigungsfuchs DE redaktionell passend im Bereich Home & Garden einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -961,8 +999,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Beleuchtete Wandbilder redaktionell passend im Bereich Home & Garden einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -973,8 +1010,18 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten BENT DE redaktionell passend im Bereich Sports Equipment einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
+      },
+      {
+        "network": "Awin",
+        "relationship": "notjoined",
+        "advertiserId": 10990,
+        "name": "Berge & Meer",
+        "primarySector": "Travel Agencies",
+        "primaryRegion": {
+          "name": "Germany",
+          "countryCode": "DE"
+        }
       },
       {
         "network": "Awin",
@@ -985,8 +1032,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Bergfreunde DE redaktionell passend im Bereich Sportswear einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -997,8 +1043,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Berghaus DE redaktionell passend im Bereich Sportswear einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -1009,8 +1054,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Bergzeit DE / AT redaktionell passend im Bereich Sports Equipment einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -1021,8 +1065,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Bernstein DE redaktionell passend im Bereich Home & Garden einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -1033,8 +1076,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten bestware DE redaktionell passend im Bereich Computers einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -1045,8 +1087,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Bike Components DE redaktionell passend im Bereich Sports Equipment einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -1057,8 +1098,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Bike Mailorder redaktionell passend im Bereich Sports Equipment einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -1069,8 +1109,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Bikepacking Adventure GmbH redaktionell passend im Bereich Sports Equipment einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -1081,8 +1120,29 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Biker-Zone Motorradbekleidung DE redaktionell passend im Bereich Sports Equipment einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
+      },
+      {
+        "network": "Awin",
+        "relationship": "notjoined",
+        "advertiserId": 9296,
+        "name": "Billigfluege DE",
+        "primarySector": "Travel Agencies",
+        "primaryRegion": {
+          "name": "Germany",
+          "countryCode": "DE"
+        }
+      },
+      {
+        "network": "Awin",
+        "relationship": "notjoined",
+        "advertiserId": 12821,
+        "name": "billigflug DE (Longtail)",
+        "primarySector": "Travel Agencies",
+        "primaryRegion": {
+          "name": "Germany",
+          "countryCode": "DE"
+        }
       },
       {
         "network": "Awin",
@@ -1093,8 +1153,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Black Chili Messer DE redaktionell passend im Bereich Home & Garden einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -1105,8 +1164,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Black Diamond DE redaktionell passend im Bereich Sports Equipment einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -1117,8 +1175,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Blaupunkt Ring DE redaktionell passend im Bereich Electronic Accessories einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -1129,8 +1186,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Blaupunkt-Audio DE redaktionell passend im Bereich Electronic Superstore einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -1141,8 +1197,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten BlazeVideo DE redaktionell passend im Bereich Electronic Accessories einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -1153,8 +1208,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten bleywaren - DE redaktionell passend im Bereich Home & Garden einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -1165,8 +1219,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Blick-Store DE redaktionell passend im Bereich Electronic Accessories einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -1177,8 +1230,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Bloomling DE redaktionell passend im Bereich Home & Garden einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -1189,8 +1241,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Blue Tomato CH redaktionell passend im Bereich Sports Equipment einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -1201,8 +1252,18 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Blue Tomato DE redaktionell passend im Bereich Sports Equipment einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
+      },
+      {
+        "network": "Awin",
+        "relationship": "notjoined",
+        "advertiserId": 15470,
+        "name": "Bluebella DE/EU",
+        "primarySector": "Lingerie",
+        "primaryRegion": {
+          "name": "Germany",
+          "countryCode": "DE"
+        }
       },
       {
         "network": "Awin",
@@ -1213,8 +1274,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Bluefin SUP DE redaktionell passend im Bereich Sports Equipment einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -1225,8 +1285,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten BLUETTI DE redaktionell passend im Bereich Electronic Accessories einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -1237,8 +1296,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Blumenshop DE redaktionell passend im Bereich Home & Garden einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -1249,8 +1307,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Bobshop DE redaktionell passend im Bereich Sportswear einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -1261,8 +1318,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Boc 24 DE redaktionell passend im Bereich Sports Equipment einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -1273,20 +1329,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Body Attack DE redaktionell passend im Bereich Sports Equipment einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
-      },
-      {
-        "network": "Awin",
-        "relationship": "notjoined",
-        "advertiserId": 102205,
-        "name": "Bosch Hausgeräte DE",
-        "primarySector": "Electronic Superstore",
-        "primaryRegion": {
-          "name": "Germany",
-          "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Bosch Hausgeräte DE redaktionell passend im Bereich Electronic Superstore einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -1297,8 +1340,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten BOXIO EU redaktionell passend im Bereich Home & Garden einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -1309,8 +1351,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Bresser DE redaktionell passend im Bereich Home & Garden einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -1321,8 +1362,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Briloner DE redaktionell passend im Bereich Home & Garden einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -1333,8 +1373,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten BRITA DE redaktionell passend im Bereich Home & Garden einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -1345,8 +1384,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten BURNHARD DE redaktionell passend im Bereich Home & Garden einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -1357,8 +1395,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Butch DE redaktionell passend im Bereich Home & Garden einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -1369,8 +1406,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Bwareshop DE redaktionell passend im Bereich Home & Garden einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -1381,8 +1417,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten BZEN e-bikes redaktionell passend im Bereich Sports Equipment einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -1393,8 +1428,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten CAFIRO DE redaktionell passend im Bereich Home & Garden einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -1405,8 +1439,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Calisso DE redaktionell passend im Bereich Home & Garden einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -1417,8 +1450,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Cambridge Audio DE redaktionell passend im Bereich Audio Visual einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -1429,8 +1461,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten cambuy DE redaktionell passend im Bereich Electronic Accessories einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -1441,8 +1472,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten CampingWagner DE redaktionell passend im Bereich Home & Garden einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -1453,8 +1483,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten CASA39 DE redaktionell passend im Bereich Home & Garden einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -1465,8 +1494,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten casando DE redaktionell passend im Bereich Home & Garden einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -1477,8 +1505,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Caseking DE redaktionell passend im Bereich Computers einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -1489,8 +1516,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Castore DE redaktionell passend im Bereich Sportswear einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -1501,8 +1527,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten CenterCourt.de Tennisversand redaktionell passend im Bereich Sports Equipment einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -1513,8 +1538,29 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Ceramic Connection DE redaktionell passend im Bereich Home & Garden einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
+      },
+      {
+        "network": "Awin",
+        "relationship": "notjoined",
+        "advertiserId": 12603,
+        "name": "Cheaptickets DACH",
+        "primarySector": "Travel Agencies",
+        "primaryRegion": {
+          "name": "Germany",
+          "countryCode": "DE"
+        }
+      },
+      {
+        "network": "Awin",
+        "relationship": "notjoined",
+        "advertiserId": 9143,
+        "name": "Cheaptickets DE",
+        "primarySector": "Travel Agencies",
+        "primaryRegion": {
+          "name": "Germany",
+          "countryCode": "DE"
+        }
       },
       {
         "network": "Awin",
@@ -1525,8 +1571,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Chipstore DE redaktionell passend im Bereich Electronic Superstore einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -1537,8 +1582,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Chiptuning DE redaktionell passend im Bereich Electronic Accessories einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -1549,8 +1593,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten CK-Modelcars DE redaktionell passend im Bereich Toys & Games einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -1561,8 +1604,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Classic Football Shirts DE redaktionell passend im Bereich Sportswear einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -1573,8 +1615,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Clevertronic DE redaktionell passend im Bereich Electronic Superstore einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -1585,8 +1626,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Cloudpillo DE redaktionell passend im Bereich Home & Garden einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -1597,8 +1637,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten CMB-Systeme DE redaktionell passend im Bereich Electronic Accessories einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -1609,8 +1648,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Com Football Shop redaktionell passend im Bereich Sports Equipment einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -1621,8 +1659,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten compass24 DE redaktionell passend im Bereich Sports Equipment einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -1633,8 +1670,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Compex DACH redaktionell passend im Bereich Sports Equipment einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -1645,8 +1681,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Computeruniverse DE redaktionell passend im Bereich Electronic Superstore einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -1657,8 +1692,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten comspot DE redaktionell passend im Bereich Computers einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -1669,8 +1703,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Conrad Electronic DE redaktionell passend im Bereich Electronic Superstore einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -1681,8 +1714,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Contorion DE redaktionell passend im Bereich Home & Garden einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -1693,8 +1725,18 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten COSORI DE redaktionell passend im Bereich Home & Garden einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
+      },
+      {
+        "network": "Awin",
+        "relationship": "notjoined",
+        "advertiserId": 9134,
+        "name": "Costa Kreuzfahrten DE",
+        "primarySector": "Cruises/Ferries",
+        "primaryRegion": {
+          "name": "Germany",
+          "countryCode": "DE"
+        }
       },
       {
         "network": "Awin",
@@ -1705,8 +1747,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Coway DE redaktionell passend im Bereich Home & Garden einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -1717,8 +1758,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Creality redaktionell passend im Bereich Electronic Superstore einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -1729,8 +1769,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten CURRYSMARTER DE redaktionell passend im Bereich Home & Garden einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -1741,8 +1780,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten cyberport DE redaktionell passend im Bereich Electronic Superstore einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -1753,8 +1791,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Daily Bikers DE redaktionell passend im Bereich Sports Equipment einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -1765,8 +1802,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten DALFILO DE/AT redaktionell passend im Bereich Home & Garden einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -1777,8 +1813,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Danto DE redaktionell passend im Bereich Home & Garden einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -1789,8 +1824,7 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten dartworld DE redaktionell passend im Bereich Sports Equipment einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
       },
       {
         "network": "Awin",
@@ -1801,8 +1835,881 @@
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
-        },
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten DATOUBOSS (DE) redaktionell passend im Bereich Electronic Accessories einbinden und ausschließlich freigegebene Produkt-, Preis- und Aktionsdaten verwenden. Affiliate-Links werden transparent als Werbung gekennzeichnet; Reichweitenangaben werden nicht erfunden. Wir freuen uns über eine Prüfung unserer Bewerbung."
+        }
+      },
+      {
+        "network": "Awin",
+        "relationship": "notjoined",
+        "advertiserId": 24827,
+        "name": "DECORAMI DE",
+        "primarySector": "Home & Garden",
+        "primaryRegion": {
+          "name": "Germany",
+          "countryCode": "DE"
+        }
+      },
+      {
+        "network": "Awin",
+        "relationship": "notjoined",
+        "advertiserId": 119207,
+        "name": "Dein Sportsfreund DE",
+        "primarySector": "Sportswear",
+        "primaryRegion": {
+          "name": "Germany",
+          "countryCode": "DE"
+        }
+      },
+      {
+        "network": "Awin",
+        "relationship": "notjoined",
+        "advertiserId": 22915,
+        "name": "Delonghi DE",
+        "primarySector": "Home & Garden",
+        "primaryRegion": {
+          "name": "Germany",
+          "countryCode": "DE"
+        }
+      },
+      {
+        "network": "Awin",
+        "relationship": "notjoined",
+        "advertiserId": 81911,
+        "name": "delta-bike DE",
+        "primarySector": "Sports Equipment",
+        "primaryRegion": {
+          "name": "Germany",
+          "countryCode": "DE"
+        }
+      },
+      {
+        "network": "Awin",
+        "relationship": "notjoined",
+        "advertiserId": 120411,
+        "name": "Deluxehomeartshop DE",
+        "primarySector": "Home & Garden",
+        "primaryRegion": {
+          "name": "Germany",
+          "countryCode": "DE"
+        }
+      },
+      {
+        "network": "Awin",
+        "relationship": "notjoined",
+        "advertiserId": 76930,
+        "name": "Deporvillage DE",
+        "primarySector": "Sportswear",
+        "primaryRegion": {
+          "name": "Germany",
+          "countryCode": "DE"
+        }
+      },
+      {
+        "network": "Awin",
+        "relationship": "notjoined",
+        "advertiserId": 19030,
+        "name": "DeubaXXL DE",
+        "primarySector": "Home & Garden",
+        "primaryRegion": {
+          "name": "Germany",
+          "countryCode": "DE"
+        }
+      },
+      {
+        "network": "Awin",
+        "relationship": "notjoined",
+        "advertiserId": 29961,
+        "name": "Deuter Sport DE",
+        "primarySector": "Sports Equipment",
+        "primaryRegion": {
+          "name": "Germany",
+          "countryCode": "DE"
+        }
+      },
+      {
+        "network": "Awin",
+        "relationship": "notjoined",
+        "advertiserId": 10959,
+        "name": "Die Moderne Hausfrau DE",
+        "primarySector": "Department Stores",
+        "primaryRegion": {
+          "name": "Germany",
+          "countryCode": "DE"
+        }
+      },
+      {
+        "network": "Awin",
+        "relationship": "notjoined",
+        "advertiserId": 65908,
+        "name": "Direct Running DE",
+        "primarySector": "Sports Equipment",
+        "primaryRegion": {
+          "name": "Germany",
+          "countryCode": "DE"
+        }
+      },
+      {
+        "network": "Awin",
+        "relationship": "notjoined",
+        "advertiserId": 103039,
+        "name": "Direct Volley - DE",
+        "primarySector": "Sportswear",
+        "primaryRegion": {
+          "name": "Germany",
+          "countryCode": "DE"
+        }
+      },
+      {
+        "network": "Awin",
+        "relationship": "notjoined",
+        "advertiserId": 21087,
+        "name": "Djoser Reisen DE",
+        "primarySector": "Travel Agencies",
+        "primaryRegion": {
+          "name": "Germany",
+          "countryCode": "DE"
+        }
+      },
+      {
+        "network": "Awin",
+        "relationship": "notjoined",
+        "advertiserId": 127643,
+        "name": "Dog's Love DE/AT",
+        "primarySector": "Pets & Pet Care",
+        "primaryRegion": {
+          "name": "Germany",
+          "countryCode": "DE"
+        }
+      },
+      {
+        "network": "Awin",
+        "relationship": "notjoined",
+        "advertiserId": 115541,
+        "name": "DOTBLUE eBIKE DE",
+        "primarySector": "Sports Equipment",
+        "primaryRegion": {
+          "name": "Germany",
+          "countryCode": "DE"
+        }
+      },
+      {
+        "network": "Awin",
+        "relationship": "notjoined",
+        "advertiserId": 10076,
+        "name": "Douglas_DE",
+        "primarySector": "Health & Beauty",
+        "primaryRegion": {
+          "name": "Germany",
+          "countryCode": "DE"
+        }
+      },
+      {
+        "network": "Awin",
+        "relationship": "notjoined",
+        "advertiserId": 117193,
+        "name": "DREO",
+        "primarySector": "Home & Garden",
+        "primaryRegion": {
+          "name": "Germany",
+          "countryCode": "DE"
+        }
+      },
+      {
+        "network": "Awin",
+        "relationship": "notjoined",
+        "advertiserId": 126649,
+        "name": "Drinklang DE",
+        "primarySector": "Home & Garden",
+        "primaryRegion": {
+          "name": "Germany",
+          "countryCode": "DE"
+        }
+      },
+      {
+        "network": "Awin",
+        "relationship": "notjoined",
+        "advertiserId": 122982,
+        "name": "drinkpure DE",
+        "primarySector": "Home & Garden",
+        "primaryRegion": {
+          "name": "Germany",
+          "countryCode": "DE"
+        }
+      },
+      {
+        "network": "Awin",
+        "relationship": "notjoined",
+        "advertiserId": 62775,
+        "name": "druckdichaus DE",
+        "primarySector": "Electronic Accessories",
+        "primaryRegion": {
+          "name": "Germany",
+          "countryCode": "DE"
+        }
+      },
+      {
+        "network": "Awin",
+        "relationship": "notjoined",
+        "advertiserId": 26955,
+        "name": "druckerpatronenexpress DE",
+        "primarySector": "Electronic Accessories",
+        "primaryRegion": {
+          "name": "Germany",
+          "countryCode": "DE"
+        }
+      },
+      {
+        "network": "Awin",
+        "relationship": "notjoined",
+        "advertiserId": 11471,
+        "name": "Dry Ager DE",
+        "primarySector": "Electronic Accessories",
+        "primaryRegion": {
+          "name": "Germany",
+          "countryCode": "DE"
+        }
+      },
+      {
+        "network": "Awin",
+        "relationship": "notjoined",
+        "advertiserId": 116147,
+        "name": "Dusbad DE",
+        "primarySector": "Home & Garden",
+        "primaryRegion": {
+          "name": "Germany",
+          "countryCode": "DE"
+        }
+      },
+      {
+        "network": "Awin",
+        "relationship": "notjoined",
+        "advertiserId": 129217,
+        "name": "DyFlora",
+        "primarySector": "Home & Garden",
+        "primaryRegion": {
+          "name": "Germany",
+          "countryCode": "DE"
+        }
+      },
+      {
+        "network": "Awin",
+        "relationship": "notjoined",
+        "advertiserId": 52349,
+        "name": "EASYCLEAN",
+        "primarySector": "Home & Garden",
+        "primaryRegion": {
+          "name": "Germany",
+          "countryCode": "DE"
+        }
+      },
+      {
+        "network": "Awin",
+        "relationship": "notjoined",
+        "advertiserId": 20160,
+        "name": "EasyCookAsia DE",
+        "primarySector": "Home & Garden",
+        "primaryRegion": {
+          "name": "Germany",
+          "countryCode": "DE"
+        }
+      },
+      {
+        "network": "Awin",
+        "relationship": "notjoined",
+        "advertiserId": 39632,
+        "name": "Ebike-24 DE",
+        "primarySector": "Sports Equipment",
+        "primaryRegion": {
+          "name": "Germany",
+          "countryCode": "DE"
+        }
+      },
+      {
+        "network": "Awin",
+        "relationship": "notjoined",
+        "advertiserId": 24228,
+        "name": "ECD Germany DE",
+        "primarySector": "Home & Garden",
+        "primaryRegion": {
+          "name": "Germany",
+          "countryCode": "DE"
+        }
+      },
+      {
+        "network": "Awin",
+        "relationship": "notjoined",
+        "advertiserId": 86265,
+        "name": "Eco-Worthy DE",
+        "primarySector": "Electronic Accessories",
+        "primaryRegion": {
+          "name": "Germany",
+          "countryCode": "DE"
+        }
+      },
+      {
+        "network": "Awin",
+        "relationship": "notjoined",
+        "advertiserId": 51793,
+        "name": "EcoFlow DE",
+        "primarySector": "Electronic Accessories",
+        "primaryRegion": {
+          "name": "Germany",
+          "countryCode": "DE"
+        }
+      },
+      {
+        "network": "Awin",
+        "relationship": "notjoined",
+        "advertiserId": 30763,
+        "name": "Ecovacs DE",
+        "primarySector": "Home & Garden",
+        "primaryRegion": {
+          "name": "Germany",
+          "countryCode": "DE"
+        }
+      },
+      {
+        "network": "Awin",
+        "relationship": "notjoined",
+        "advertiserId": 27704,
+        "name": "ECTIVE DE",
+        "primarySector": "Electronic Superstore",
+        "primaryRegion": {
+          "name": "Germany",
+          "countryCode": "DE"
+        }
+      },
+      {
+        "network": "Awin",
+        "relationship": "notjoined",
+        "advertiserId": 14676,
+        "name": "Eddie Bauer DE / AT",
+        "primarySector": "Sportswear",
+        "primaryRegion": {
+          "name": "Germany",
+          "countryCode": "DE"
+        }
+      },
+      {
+        "network": "Awin",
+        "relationship": "notjoined",
+        "advertiserId": 14013,
+        "name": "Edelnice Trachtenmode DE",
+        "primarySector": "Clothing",
+        "primaryRegion": {
+          "name": "Germany",
+          "countryCode": "DE"
+        }
+      },
+      {
+        "network": "Awin",
+        "relationship": "notjoined",
+        "advertiserId": 46703,
+        "name": "Edelstahl-Tuerklingel DE",
+        "primarySector": "Home & Garden",
+        "primaryRegion": {
+          "name": "Germany",
+          "countryCode": "DE"
+        }
+      }
+    ],
+    "discoveryOffers": 200,
+    "discoveryError": null,
+    "opportunities": [
+      {
+        "brand": "Bosch Hausgeräte DE",
+        "network": "Awin",
+        "advertiserId": 102205,
+        "status": "notjoined",
+        "category": "Technik & Computer",
+        "score": 75,
+        "priority": "hoch",
+        "activeDiscoveryOffers": 5,
+        "offerExamples": [
+          "Bosch Hausgeräte D | MySpotless: Bis zu 30 % Sofortrabatt* sichern.",
+          "Bosch Hausgeräte DE | Bis zu 30 % Rabatt* im  Küchenmaschinen Konfigurator.",
+          "Bosch Hausgeräte DE | MyUnlimited: Bis zu 30 % Sofortrabatt* sichern."
+        ],
+        "productFeed": false,
+        "reasons": [
+          "passt zu Technik & Computer",
+          "strategisch relevante Marke",
+          "5 aktive DE-Aktionen"
+        ],
+        "applicationRequired": true,
+        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Bosch Hausgeräte DE redaktionell passend im Bereich Technik & Computer einbinden. Bei Awin sind aktuell 5 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+        "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+        "automationState": "ready-for-review"
+      },
+      {
+        "brand": "adidas DE",
+        "network": "Awin",
+        "advertiserId": 77004,
+        "status": "notjoined",
+        "category": "Mode & Sport",
+        "score": 45,
+        "priority": "mittel",
+        "activeDiscoveryOffers": 0,
+        "offerExamples": [],
+        "productFeed": false,
+        "reasons": [
+          "passt zu Mode & Sport",
+          "strategisch relevante Marke"
+        ],
+        "applicationRequired": true,
+        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten adidas DE redaktionell passend im Bereich Mode & Sport einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+        "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+        "automationState": "ready-for-review"
+      },
+      {
+        "brand": "DECATHLON DE",
+        "network": "Awin",
+        "advertiserId": 14353,
+        "status": "notjoined",
+        "category": "Mode & Sport",
+        "score": 45,
+        "priority": "mittel",
+        "activeDiscoveryOffers": 0,
+        "offerExamples": [],
+        "productFeed": false,
+        "reasons": [
+          "passt zu Mode & Sport",
+          "strategisch relevante Marke"
+        ],
+        "applicationRequired": true,
+        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten DECATHLON DE redaktionell passend im Bereich Mode & Sport einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+        "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+        "automationState": "ready-for-review"
+      },
+      {
+        "brand": "Dyson DE",
+        "network": "Awin",
+        "advertiserId": 12802,
+        "status": "notjoined",
+        "category": "Technik & Computer",
+        "score": 45,
+        "priority": "mittel",
+        "activeDiscoveryOffers": 0,
+        "offerExamples": [],
+        "productFeed": false,
+        "reasons": [
+          "passt zu Technik & Computer",
+          "strategisch relevante Marke"
+        ],
+        "applicationRequired": true,
+        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Dyson DE redaktionell passend im Bereich Technik & Computer einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+        "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+        "automationState": "ready-for-review"
+      },
+      {
+        "brand": "Lidl DE",
+        "network": "Awin",
+        "advertiserId": 13936,
+        "status": "notjoined",
+        "category": "Haushalt & Alltag",
+        "score": 45,
+        "priority": "mittel",
+        "activeDiscoveryOffers": 0,
+        "offerExamples": [],
+        "productFeed": false,
+        "reasons": [
+          "passt zu Haushalt & Alltag",
+          "strategisch relevante Marke"
+        ],
+        "applicationRequired": true,
+        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Lidl DE redaktionell passend im Bereich Haushalt & Alltag einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+        "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+        "automationState": "ready-for-review"
+      },
+      {
+        "brand": "MSI DE",
+        "network": "Awin",
+        "advertiserId": 130771,
+        "status": "notjoined",
+        "category": "Technik & Computer",
+        "score": 45,
+        "priority": "mittel",
+        "activeDiscoveryOffers": 0,
+        "offerExamples": [],
+        "productFeed": false,
+        "reasons": [
+          "passt zu Technik & Computer",
+          "strategisch relevante Marke"
+        ],
+        "applicationRequired": true,
+        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten MSI DE redaktionell passend im Bereich Technik & Computer einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+        "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+        "automationState": "ready-for-review"
+      },
+      {
+        "brand": "PremiumSIM DE",
+        "network": "Awin",
+        "advertiserId": 15013,
+        "status": "notjoined",
+        "category": "Technik & Computer",
+        "score": 45,
+        "priority": "mittel",
+        "activeDiscoveryOffers": 0,
+        "offerExamples": [],
+        "productFeed": false,
+        "reasons": [
+          "passt zu Technik & Computer",
+          "strategisch relevante Marke"
+        ],
+        "applicationRequired": true,
+        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten PremiumSIM DE redaktionell passend im Bereich Technik & Computer einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+        "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+        "automationState": "ready-for-review"
+      },
+      {
+        "brand": "Samsung Shop DE",
+        "network": "Awin",
+        "advertiserId": 14815,
+        "status": "notjoined",
+        "category": "Technik & Computer",
+        "score": 45,
+        "priority": "mittel",
+        "activeDiscoveryOffers": 0,
+        "offerExamples": [],
+        "productFeed": false,
+        "reasons": [
+          "passt zu Technik & Computer",
+          "strategisch relevante Marke"
+        ],
+        "applicationRequired": true,
+        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Samsung Shop DE redaktionell passend im Bereich Technik & Computer einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+        "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+        "automationState": "ready-for-review"
+      },
+      {
+        "brand": "Sony DE",
+        "network": "Awin",
+        "advertiserId": 34015,
+        "status": "notjoined",
+        "category": "Technik & Computer",
+        "score": 45,
+        "priority": "mittel",
+        "activeDiscoveryOffers": 0,
+        "offerExamples": [],
+        "productFeed": false,
+        "reasons": [
+          "passt zu Technik & Computer",
+          "strategisch relevante Marke"
+        ],
+        "applicationRequired": true,
+        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Sony DE redaktionell passend im Bereich Technik & Computer einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+        "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+        "automationState": "ready-for-review"
+      },
+      {
+        "brand": "Berghaus DE",
+        "network": "Awin",
+        "advertiserId": 45503,
+        "status": "notjoined",
+        "category": "Mode & Sport",
+        "score": 36,
+        "priority": "mittel",
+        "activeDiscoveryOffers": 1,
+        "offerExamples": [
+          "Up to 50% off Outlet"
+        ],
+        "productFeed": false,
+        "reasons": [
+          "passt zu Mode & Sport",
+          "1 aktive DE-Aktion"
+        ],
+        "applicationRequired": true,
+        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Berghaus DE redaktionell passend im Bereich Mode & Sport einbinden. Bei Awin sind aktuell 1 für Deutschland sichtbare Aktion dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+        "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+        "automationState": "ready-for-review"
+      },
+      {
+        "brand": "Delonghi DE",
+        "network": "Awin",
+        "advertiserId": 22915,
+        "status": "notjoined",
+        "category": "Haushalt & Alltag",
+        "score": 36,
+        "priority": "mittel",
+        "activeDiscoveryOffers": 1,
+        "offerExamples": [
+          "Flash-Sale-Angebote"
+        ],
+        "productFeed": false,
+        "reasons": [
+          "passt zu Haushalt & Alltag",
+          "1 aktive DE-Aktion"
+        ],
+        "applicationRequired": true,
+        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Delonghi DE redaktionell passend im Bereich Haushalt & Alltag einbinden. Bei Awin sind aktuell 1 für Deutschland sichtbare Aktion dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+        "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+        "automationState": "ready-for-review"
+      },
+      {
+        "brand": "adidas Affiliate Creators Program",
+        "network": "Awin",
+        "advertiserId": 128789,
+        "status": "pending",
+        "category": "Mode & Sport",
+        "score": 35,
+        "priority": "mittel",
+        "activeDiscoveryOffers": 0,
+        "offerExamples": [],
+        "productFeed": false,
+        "reasons": [
+          "passt zu Mode & Sport",
+          "strategisch relevante Marke"
+        ],
+        "applicationRequired": false,
+        "applicationDraft": null,
+        "nextAction": "Ausstehende Bewerbung weiter beobachten.",
+        "automationState": "pending"
+      },
+      {
+        "brand": "0815 DE",
+        "network": "Awin",
+        "advertiserId": 123390,
+        "status": "notjoined",
+        "category": "Haushalt & Alltag",
+        "score": 30,
+        "priority": "niedrig",
+        "activeDiscoveryOffers": 0,
+        "offerExamples": [],
+        "productFeed": false,
+        "reasons": [
+          "passt zu Haushalt & Alltag"
+        ],
+        "applicationRequired": true,
+        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten 0815 DE redaktionell passend im Bereich Haushalt & Alltag einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+        "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+        "automationState": "ready-for-review"
+      },
+      {
+        "brand": "1. FC Köln DE",
+        "network": "Awin",
+        "advertiserId": 18481,
+        "status": "notjoined",
+        "category": "Mode & Sport",
+        "score": 30,
+        "priority": "niedrig",
+        "activeDiscoveryOffers": 0,
+        "offerExamples": [],
+        "productFeed": false,
+        "reasons": [
+          "passt zu Mode & Sport"
+        ],
+        "applicationRequired": true,
+        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten 1. FC Köln DE redaktionell passend im Bereich Mode & Sport einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+        "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+        "automationState": "ready-for-review"
+      },
+      {
+        "brand": "11teamsports DE & AT",
+        "network": "Awin",
+        "advertiserId": 22165,
+        "status": "notjoined",
+        "category": "Mode & Sport",
+        "score": 30,
+        "priority": "niedrig",
+        "activeDiscoveryOffers": 0,
+        "offerExamples": [],
+        "productFeed": false,
+        "reasons": [
+          "passt zu Mode & Sport"
+        ],
+        "applicationRequired": true,
+        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten 11teamsports DE & AT redaktionell passend im Bereich Mode & Sport einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+        "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+        "automationState": "ready-for-review"
+      },
+      {
+        "brand": "12-Travel DE",
+        "network": "Awin",
+        "advertiserId": 9146,
+        "status": "notjoined",
+        "category": "Freizeit",
+        "score": 30,
+        "priority": "niedrig",
+        "activeDiscoveryOffers": 0,
+        "offerExamples": [],
+        "productFeed": false,
+        "reasons": [
+          "passt zu Freizeit"
+        ],
+        "applicationRequired": true,
+        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten 12-Travel DE redaktionell passend im Bereich Freizeit einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+        "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+        "automationState": "ready-for-review"
+      },
+      {
+        "brand": "360GradFitness DE",
+        "network": "Awin",
+        "advertiserId": 113554,
+        "status": "notjoined",
+        "category": "Mode & Sport",
+        "score": 30,
+        "priority": "niedrig",
+        "activeDiscoveryOffers": 0,
+        "offerExamples": [],
+        "productFeed": false,
+        "reasons": [
+          "passt zu Mode & Sport"
+        ],
+        "applicationRequired": true,
+        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten 360GradFitness DE redaktionell passend im Bereich Mode & Sport einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+        "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+        "automationState": "ready-for-review"
+      },
+      {
+        "brand": "365Rider DE",
+        "network": "Awin",
+        "advertiserId": 30677,
+        "status": "notjoined",
+        "category": "Mode & Sport",
+        "score": 30,
+        "priority": "niedrig",
+        "activeDiscoveryOffers": 0,
+        "offerExamples": [],
+        "productFeed": false,
+        "reasons": [
+          "passt zu Mode & Sport"
+        ],
+        "applicationRequired": true,
+        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten 365Rider DE redaktionell passend im Bereich Mode & Sport einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+        "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+        "automationState": "ready-for-review"
+      },
+      {
+        "brand": "3D Jake DE",
+        "network": "Awin",
+        "advertiserId": 21761,
+        "status": "notjoined",
+        "category": "Technik & Computer",
+        "score": 30,
+        "priority": "niedrig",
+        "activeDiscoveryOffers": 0,
+        "offerExamples": [],
+        "productFeed": false,
+        "reasons": [
+          "passt zu Technik & Computer"
+        ],
+        "applicationRequired": true,
+        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten 3D Jake DE redaktionell passend im Bereich Technik & Computer einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+        "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+        "automationState": "ready-for-review"
+      },
+      {
+        "brand": "3DMakerpro (EU)",
+        "network": "Awin",
+        "advertiserId": 70050,
+        "status": "notjoined",
+        "category": "Technik & Computer",
+        "score": 30,
+        "priority": "niedrig",
+        "activeDiscoveryOffers": 0,
+        "offerExamples": [],
+        "productFeed": false,
+        "reasons": [
+          "passt zu Technik & Computer"
+        ],
+        "applicationRequired": true,
+        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten 3DMakerpro (EU) redaktionell passend im Bereich Technik & Computer einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+        "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+        "automationState": "ready-for-review"
+      },
+      {
+        "brand": "3pagen DE",
+        "network": "Awin",
+        "advertiserId": 14305,
+        "status": "notjoined",
+        "category": "Haushalt & Alltag",
+        "score": 30,
+        "priority": "niedrig",
+        "activeDiscoveryOffers": 0,
+        "offerExamples": [],
+        "productFeed": false,
+        "reasons": [
+          "passt zu Haushalt & Alltag"
+        ],
+        "applicationRequired": true,
+        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten 3pagen DE redaktionell passend im Bereich Haushalt & Alltag einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+        "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+        "automationState": "ready-for-review"
+      },
+      {
+        "brand": "3ppp3 DE",
+        "network": "Awin",
+        "advertiserId": 11410,
+        "status": "notjoined",
+        "category": "Technik & Computer",
+        "score": 30,
+        "priority": "niedrig",
+        "activeDiscoveryOffers": 0,
+        "offerExamples": [],
+        "productFeed": false,
+        "reasons": [
+          "passt zu Technik & Computer"
+        ],
+        "applicationRequired": true,
+        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten 3ppp3 DE redaktionell passend im Bereich Technik & Computer einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+        "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+        "automationState": "ready-for-review"
+      },
+      {
+        "brand": "4 ELEMENTOS DE",
+        "network": "Awin",
+        "advertiserId": 124832,
+        "status": "notjoined",
+        "category": "Mode & Sport",
+        "score": 30,
+        "priority": "niedrig",
+        "activeDiscoveryOffers": 0,
+        "offerExamples": [],
+        "productFeed": false,
+        "reasons": [
+          "passt zu Mode & Sport"
+        ],
+        "applicationRequired": true,
+        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten 4 ELEMENTOS DE redaktionell passend im Bereich Mode & Sport einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+        "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+        "automationState": "ready-for-review"
+      },
+      {
+        "brand": "7even DE",
+        "network": "Awin",
+        "advertiserId": 21065,
+        "status": "notjoined",
+        "category": "Technik & Computer",
+        "score": 30,
+        "priority": "niedrig",
+        "activeDiscoveryOffers": 0,
+        "offerExamples": [],
+        "productFeed": false,
+        "reasons": [
+          "passt zu Technik & Computer"
+        ],
+        "applicationRequired": true,
+        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten 7even DE redaktionell passend im Bereich Technik & Computer einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+        "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+        "automationState": "ready-for-review"
+      },
+      {
+        "brand": "A&M Angelsport DE",
+        "network": "Awin",
+        "advertiserId": 82131,
+        "status": "notjoined",
+        "category": "Mode & Sport",
+        "score": 30,
+        "priority": "niedrig",
+        "activeDiscoveryOffers": 0,
+        "offerExamples": [],
+        "productFeed": false,
+        "reasons": [
+          "passt zu Mode & Sport"
+        ],
+        "applicationRequired": true,
+        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten A&M Angelsport DE redaktionell passend im Bereich Mode & Sport einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+        "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+        "automationState": "ready-for-review"
       }
     ],
     "feeds": [
@@ -1898,1089 +2805,9 @@
     ]
   },
   "impact": {
-    "state": "ok",
-    "publishableOffers": 74,
-    "inventory": {
-      "apiVersion": "16",
-      "programs": 6,
-      "ads": 1531,
-      "promotions": 0,
-      "deals": 2,
-      "products": 2000,
-      "catalogs": 14,
-      "stores": "unavailable",
-      "quarantinedAdvertisers": 2,
-      "programInventory": [
-        {
-          "name": "Belkin DE",
-          "advertiserName": "Belkin",
-          "advertiserId": "165682",
-          "campaignId": "3770",
-          "status": "Active",
-          "countries": [
-            "GERMANY"
-          ],
-          "deeplinks": true,
-          "trackingLinkAvailable": true,
-          "logoAvailable": true,
-          "publicTermsAvailable": true
-        },
-        {
-          "name": "Martinic Audio",
-          "advertiserName": "Martinic - martinic",
-          "advertiserId": "255547",
-          "campaignId": "4482",
-          "status": "Active",
-          "countries": [
-            "MARSHALLISLANDS",
-            "ISRAEL",
-            "FRANCE",
-            "ECUADOR",
-            "REUNION",
-            "ANTIGUABARBUDA",
-            "GREENLAND",
-            "ALBANIA",
-            "CONGO",
-            "SEYCHELLES",
-            "PORTUGAL",
-            "SAINTHELENA",
-            "TUNISIA",
-            "YEMEN",
-            "SANMARINO",
-            "GUADELOUPE",
-            "CUBA",
-            "BRAZIL",
-            "ALGERIA",
-            "THAILAND",
-            "MADAGASCAR",
-            "MALI",
-            "KIRIBATI",
-            "ARUBA",
-            "LAOS",
-            "MOLDOVA",
-            "ZIMBABWE",
-            "BARBADOS",
-            "SENEGAL",
-            "TAJIKISTAN",
-            "MAURITIUS",
-            "NORFOLKISLAND",
-            "LUXEMBOURG",
-            "DIJIBOUTI",
-            "WESTERNSAHARA",
-            "IVORYCOAST",
-            "VATICAN",
-            "ZAMBIA",
-            "ELSALVADOR",
-            "SWITZERLAND",
-            "MONTSERRAT",
-            "NETHERLANDSANTILLES",
-            "JORDAN",
-            "MALDIVES",
-            "LESOTHO",
-            "SAINTLUCIA",
-            "PAPUANEWGUINEA",
-            "MAURITANIA",
-            "BURKINAFASO",
-            "ANGUILLA",
-            "GUINEABISSAU",
-            "LIBYA",
-            "KENYA",
-            "SYRIA",
-            "GABON",
-            "NORTHERNMARIANAISLANDS",
-            "ANTARCTICA",
-            "TOGO",
-            "SAOTOME",
-            "TURKEY",
-            "MOROCCO",
-            "NORTHKOREA",
-            "MARTINIQUE",
-            "GRENADA",
-            "FRENCHSOUTHERNTERRITORIES",
-            "TRINIDADTOBAGO",
-            "UK",
-            "KYRGYZSTAN",
-            "TIMOR",
-            "COMOROS",
-            "HONGKONG",
-            "NAMIBIA",
-            "BAHAMAS",
-            "BAHRAIN",
-            "SOLOMONISLANDS",
-            "US",
-            "BOTSWANA",
-            "AUSTRALIA",
-            "BELIZE",
-            "GEORGIA",
-            "COOKISLANDS",
-            "ITALY",
-            "NAURU",
-            "SURINAME",
-            "CHRISTMASISLAND",
-            "OMAN",
-            "BURUNDI",
-            "JAMAICA",
-            "NIGERIA",
-            "GUATEMALA",
-            "CZECHREPUBLIC",
-            "SOMALIA",
-            "SAUDIARABIA",
-            "LICHTENSTEIN",
-            "CANADA",
-            "LIBERIA",
-            "VIETNAM",
-            "TAIWAN",
-            "SLOVAKIA",
-            "NEWCALEDONIA",
-            "TOKELAU",
-            "FALKLANDISLANDS",
-            "BERMUDA",
-            "BRUNEIDARUSSALAM",
-            "USVIRGINISLANDS",
-            "SIERRALEONE",
-            "SAINTVINCENTGRENADINES",
-            "PERU",
-            "MACEDONIA",
-            "UZBEKISTAN",
-            "CHINA",
-            "ETHIOPIA",
-            "BHUTAN",
-            "CROATIA",
-            "MAYOTTE",
-            "HAITI",
-            "ERITREA",
-            "YOGOSLAVIA",
-            "KAZAKHSTAN",
-            "COSTARICA",
-            "MONTENEGRO",
-            "CYPRUS",
-            "SAINTPIERREMIQUELON",
-            "RUSSIA",
-            "TANZANIA",
-            "ANDORRA",
-            "COCOSISLANDS",
-            "WALLISFUTUNA",
-            "BOSNIAHERZEGOVINA",
-            "KUWAIT",
-            "AUSTRIA",
-            "BRITISHVIRGINISLANDS",
-            "NEPAL",
-            "CAPVERDE",
-            "MYANMAR",
-            "BENIN",
-            "CENTRALAFRICANREPUBLIC",
-            "NICARAGUA",
-            "SPAIN",
-            "BELARUS",
-            "BULGARIA",
-            "PUERTORICO",
-            "VANUATU",
-            "PAKISTAN",
-            "DOMINICA",
-            "CHILE",
-            "CAMBODIA",
-            "DEMOCRATICREPUBLICCONGO",
-            "IRAN",
-            "UAE",
-            "GIBRALTAR",
-            "GHANA",
-            "HUNGARY",
-            "IRAQ",
-            "ICELAND",
-            "AMERICANSAMOA",
-            "INDIA",
-            "TURKMENISTAN",
-            "ARGENTINA",
-            "UKRAINE",
-            "GUYANA",
-            "CHAD",
-            "TUVALU",
-            "SVALBARDJANMAYEN",
-            "ROMANIA",
-            "ANGOLA",
-            "NEWZEALAND",
-            "BOLIVIA",
-            "SWEDEN",
-            "SAMOA",
-            "FIJI",
-            "LATVIA",
-            "PALAU",
-            "SINGAPORE",
-            "POLAND",
-            "HONDURAS",
-            "FRENCHPOLYNESIA",
-            "DENMARK",
-            "SOUTHAFRICA",
-            "LITHUANIA",
-            "SUDAN",
-            "ARMENIA",
-            "SLOVENIA",
-            "MALAWI",
-            "TONGA",
-            "BELGIUM",
-            "AZERBAIJAN",
-            "PALESTINIANTERRITORY",
-            "EQUATORIALGUINEA",
-            "PHILIPPINES",
-            "GUINEA",
-            "SOUTHKOREA",
-            "GUERNSEY",
-            "FAROEISLANDS",
-            "GREECE",
-            "FINLAND",
-            "IRELAND",
-            "INDONESIA",
-            "SRILANKA",
-            "PITCAIRN",
-            "MALAYSIA",
-            "DOMINICANREPUBLIC",
-            "GAMBIA",
-            "SAINTKITTSNEVIS",
-            "MOZAMBIQUE",
-            "NIUE",
-            "TURKSCAICOSISLANDS",
-            "BRITISHINDIANOCEANTERRITORY",
-            "AFGHANISTAN",
-            "GUAM",
-            "PANAMA",
-            "MACAO",
-            "CAYMANISLANDS",
-            "SWAZILAND",
-            "URUGUAY",
-            "GERMANY",
-            "EGYPT",
-            "VENEZUELA",
-            "JAPAN",
-            "QATAR",
-            "MONACO",
-            "NORWAY",
-            "ESTONIA",
-            "CAMEROON",
-            "BANGLADESH",
-            "LEBANON",
-            "UGANDA",
-            "MEXICO",
-            "FRENCHGUIANA",
-            "MICRONESIA",
-            "PARAGUAY",
-            "COLOMBIA",
-            "NIGER",
-            "RWANDA",
-            "NETHERLANDS",
-            "MALTA",
-            "MONGOLIA"
-          ],
-          "deeplinks": true,
-          "trackingLinkAvailable": true,
-          "logoAvailable": true,
-          "publicTermsAvailable": true
-        },
-        {
-          "name": "Razer Affiliate Program",
-          "advertiserName": "Razer (Asia Pacific) Pte Ltd",
-          "advertiserId": "1723018",
-          "campaignId": "10229",
-          "status": "Active",
-          "countries": [
-            "CANADA",
-            "TAIWAN",
-            "SLOVAKIA",
-            "SLOVENIA",
-            "BELGIUM",
-            "FRANCE",
-            "LUXEMBOURG",
-            "AUSTRIA",
-            "PHILIPPINES",
-            "GERMANY",
-            "UK",
-            "JAPAN",
-            "HONGKONG",
-            "ROMANIA",
-            "NEWZEALAND",
-            "US",
-            "SPAIN",
-            "SWEDEN",
-            "PORTUGAL",
-            "GREECE",
-            "FINLAND",
-            "AUSTRALIA",
-            "IRELAND",
-            "LATVIA",
-            "MALAYSIA",
-            "NORWAY",
-            "ITALY",
-            "ESTONIA",
-            "SINGAPORE",
-            "POLAND",
-            "CROATIA",
-            "DENMARK",
-            "THAILAND",
-            "CZECHREPUBLIC",
-            "CYPRUS",
-            "HUNGARY",
-            "NETHERLANDS",
-            "MALTA"
-          ],
-          "deeplinks": true,
-          "trackingLinkAvailable": true,
-          "logoAvailable": true,
-          "publicTermsAvailable": true
-        },
-        {
-          "name": "GearUP",
-          "advertiserName": "GearUP Portal Pte Ltd",
-          "advertiserId": "6117213",
-          "campaignId": "40222",
-          "status": "Active",
-          "countries": [
-            "MARSHALLISLANDS",
-            "ISRAEL",
-            "FRANCE",
-            "ECUADOR",
-            "REUNION",
-            "ANTIGUABARBUDA",
-            "GREENLAND",
-            "ALBANIA",
-            "CONGO",
-            "SEYCHELLES",
-            "PORTUGAL",
-            "SAINTHELENA",
-            "TUNISIA",
-            "YEMEN",
-            "SANMARINO",
-            "GUADELOUPE",
-            "CUBA",
-            "BRAZIL",
-            "ALGERIA",
-            "THAILAND",
-            "MADAGASCAR",
-            "MALI",
-            "KIRIBATI",
-            "ARUBA",
-            "LAOS",
-            "MOLDOVA",
-            "ZIMBABWE",
-            "BARBADOS",
-            "SENEGAL",
-            "TAJIKISTAN",
-            "MAURITIUS",
-            "NORFOLKISLAND",
-            "LUXEMBOURG",
-            "DIJIBOUTI",
-            "WESTERNSAHARA",
-            "IVORYCOAST",
-            "VATICAN",
-            "ZAMBIA",
-            "ELSALVADOR",
-            "SWITZERLAND",
-            "MONTSERRAT",
-            "NETHERLANDSANTILLES",
-            "JORDAN",
-            "MALDIVES",
-            "LESOTHO",
-            "SAINTLUCIA",
-            "PAPUANEWGUINEA",
-            "MAURITANIA",
-            "BURKINAFASO",
-            "ANGUILLA",
-            "GUINEABISSAU",
-            "LIBYA",
-            "KENYA",
-            "SYRIA",
-            "GABON",
-            "NORTHERNMARIANAISLANDS",
-            "ANTARCTICA",
-            "TOGO",
-            "SAOTOME",
-            "TURKEY",
-            "MOROCCO",
-            "NORTHKOREA",
-            "MARTINIQUE",
-            "GRENADA",
-            "FRENCHSOUTHERNTERRITORIES",
-            "TRINIDADTOBAGO",
-            "UK",
-            "KYRGYZSTAN",
-            "TIMOR",
-            "COMOROS",
-            "HONGKONG",
-            "NAMIBIA",
-            "BAHAMAS",
-            "BAHRAIN",
-            "SOLOMONISLANDS",
-            "US",
-            "BOTSWANA",
-            "AUSTRALIA",
-            "BELIZE",
-            "GEORGIA",
-            "COOKISLANDS",
-            "ITALY",
-            "NAURU",
-            "SURINAME",
-            "CHRISTMASISLAND",
-            "OMAN",
-            "BURUNDI",
-            "JAMAICA",
-            "NIGERIA",
-            "GUATEMALA",
-            "CZECHREPUBLIC",
-            "SOMALIA",
-            "SAUDIARABIA",
-            "LICHTENSTEIN",
-            "CANADA",
-            "LIBERIA",
-            "VIETNAM",
-            "TAIWAN",
-            "SLOVAKIA",
-            "NEWCALEDONIA",
-            "TOKELAU",
-            "FALKLANDISLANDS",
-            "BERMUDA",
-            "BRUNEIDARUSSALAM",
-            "USVIRGINISLANDS",
-            "SIERRALEONE",
-            "SAINTVINCENTGRENADINES",
-            "PERU",
-            "MACEDONIA",
-            "UZBEKISTAN",
-            "CHINA",
-            "ETHIOPIA",
-            "BHUTAN",
-            "CROATIA",
-            "MAYOTTE",
-            "HAITI",
-            "ERITREA",
-            "YOGOSLAVIA",
-            "KAZAKHSTAN",
-            "COSTARICA",
-            "MONTENEGRO",
-            "CYPRUS",
-            "SAINTPIERREMIQUELON",
-            "RUSSIA",
-            "TANZANIA",
-            "ANDORRA",
-            "KOSOVO",
-            "COCOSISLANDS",
-            "WALLISFUTUNA",
-            "BOSNIAHERZEGOVINA",
-            "KUWAIT",
-            "AUSTRIA",
-            "BRITISHVIRGINISLANDS",
-            "NEPAL",
-            "CAPVERDE",
-            "MYANMAR",
-            "BENIN",
-            "CENTRALAFRICANREPUBLIC",
-            "NICARAGUA",
-            "SPAIN",
-            "BELARUS",
-            "BULGARIA",
-            "PUERTORICO",
-            "VANUATU",
-            "PAKISTAN",
-            "DOMINICA",
-            "CHILE",
-            "CAMBODIA",
-            "DEMOCRATICREPUBLICCONGO",
-            "IRAN",
-            "UAE",
-            "GIBRALTAR",
-            "GHANA",
-            "HUNGARY",
-            "IRAQ",
-            "ICELAND",
-            "AMERICANSAMOA",
-            "INDIA",
-            "TURKMENISTAN",
-            "ARGENTINA",
-            "UKRAINE",
-            "GUYANA",
-            "CHAD",
-            "TUVALU",
-            "SVALBARDJANMAYEN",
-            "ROMANIA",
-            "ANGOLA",
-            "NEWZEALAND",
-            "BOLIVIA",
-            "SWEDEN",
-            "SAMOA",
-            "FIJI",
-            "LATVIA",
-            "PALAU",
-            "SINGAPORE",
-            "POLAND",
-            "HONDURAS",
-            "FRENCHPOLYNESIA",
-            "DENMARK",
-            "SOUTHAFRICA",
-            "LITHUANIA",
-            "SUDAN",
-            "ARMENIA",
-            "SLOVENIA",
-            "MALAWI",
-            "TONGA",
-            "BELGIUM",
-            "AZERBAIJAN",
-            "PALESTINIANTERRITORY",
-            "EQUATORIALGUINEA",
-            "PHILIPPINES",
-            "GUINEA",
-            "SOUTHKOREA",
-            "GUERNSEY",
-            "FAROEISLANDS",
-            "GREECE",
-            "FINLAND",
-            "IRELAND",
-            "INDONESIA",
-            "SRILANKA",
-            "PITCAIRN",
-            "MALAYSIA",
-            "DOMINICANREPUBLIC",
-            "GAMBIA",
-            "SAINTKITTSNEVIS",
-            "MOZAMBIQUE",
-            "NIUE",
-            "TURKSCAICOSISLANDS",
-            "BRITISHINDIANOCEANTERRITORY",
-            "AFGHANISTAN",
-            "GUAM",
-            "PANAMA",
-            "MACAO",
-            "CAYMANISLANDS",
-            "SWAZILAND",
-            "URUGUAY",
-            "GERMANY",
-            "EGYPT",
-            "VENEZUELA",
-            "JAPAN",
-            "QATAR",
-            "MONACO",
-            "NORWAY",
-            "ESTONIA",
-            "CAMEROON",
-            "BANGLADESH",
-            "LEBANON",
-            "UGANDA",
-            "MEXICO",
-            "FRENCHGUIANA",
-            "MICRONESIA",
-            "PARAGUAY",
-            "COLOMBIA",
-            "NIGER",
-            "RWANDA",
-            "NETHERLANDS",
-            "MALTA",
-            "MONGOLIA"
-          ],
-          "deeplinks": true,
-          "trackingLinkAvailable": true,
-          "logoAvailable": true,
-          "publicTermsAvailable": true
-        },
-        {
-          "name": "GearUP for Mobile",
-          "advertiserName": "GearUP Portal Pte Ltd",
-          "advertiserId": "6117213",
-          "campaignId": "53368",
-          "status": "Active",
-          "countries": [
-            "MARSHALLISLANDS",
-            "ISRAEL",
-            "FRANCE",
-            "ECUADOR",
-            "REUNION",
-            "ANTIGUABARBUDA",
-            "GREENLAND",
-            "ALBANIA",
-            "CONGO",
-            "SEYCHELLES",
-            "PORTUGAL",
-            "SAINTHELENA",
-            "TUNISIA",
-            "YEMEN",
-            "SANMARINO",
-            "GUADELOUPE",
-            "CUBA",
-            "BRAZIL",
-            "ALGERIA",
-            "THAILAND",
-            "MADAGASCAR",
-            "MALI",
-            "KIRIBATI",
-            "ARUBA",
-            "LAOS",
-            "MOLDOVA",
-            "ZIMBABWE",
-            "BARBADOS",
-            "SENEGAL",
-            "TAJIKISTAN",
-            "MAURITIUS",
-            "NORFOLKISLAND",
-            "LUXEMBOURG",
-            "DIJIBOUTI",
-            "WESTERNSAHARA",
-            "IVORYCOAST",
-            "VATICAN",
-            "ZAMBIA",
-            "ELSALVADOR",
-            "SWITZERLAND",
-            "MONTSERRAT",
-            "NETHERLANDSANTILLES",
-            "JORDAN",
-            "MALDIVES",
-            "LESOTHO",
-            "SAINTLUCIA",
-            "PAPUANEWGUINEA",
-            "MAURITANIA",
-            "BURKINAFASO",
-            "ANGUILLA",
-            "GUINEABISSAU",
-            "LIBYA",
-            "KENYA",
-            "SYRIA",
-            "GABON",
-            "NORTHERNMARIANAISLANDS",
-            "ANTARCTICA",
-            "TOGO",
-            "SAOTOME",
-            "TURKEY",
-            "MOROCCO",
-            "NORTHKOREA",
-            "MARTINIQUE",
-            "GRENADA",
-            "FRENCHSOUTHERNTERRITORIES",
-            "TRINIDADTOBAGO",
-            "UK",
-            "KYRGYZSTAN",
-            "TIMOR",
-            "COMOROS",
-            "HONGKONG",
-            "NAMIBIA",
-            "BAHAMAS",
-            "BAHRAIN",
-            "SOLOMONISLANDS",
-            "US",
-            "BOTSWANA",
-            "AUSTRALIA",
-            "BELIZE",
-            "GEORGIA",
-            "COOKISLANDS",
-            "ITALY",
-            "NAURU",
-            "SURINAME",
-            "CHRISTMASISLAND",
-            "OMAN",
-            "BURUNDI",
-            "JAMAICA",
-            "NIGERIA",
-            "GUATEMALA",
-            "CZECHREPUBLIC",
-            "SOMALIA",
-            "SAUDIARABIA",
-            "LICHTENSTEIN",
-            "CANADA",
-            "LIBERIA",
-            "VIETNAM",
-            "TAIWAN",
-            "SLOVAKIA",
-            "NEWCALEDONIA",
-            "TOKELAU",
-            "FALKLANDISLANDS",
-            "BERMUDA",
-            "BRUNEIDARUSSALAM",
-            "USVIRGINISLANDS",
-            "SIERRALEONE",
-            "SAINTVINCENTGRENADINES",
-            "PERU",
-            "MACEDONIA",
-            "UZBEKISTAN",
-            "CHINA",
-            "ETHIOPIA",
-            "BHUTAN",
-            "CROATIA",
-            "MAYOTTE",
-            "HAITI",
-            "ERITREA",
-            "YOGOSLAVIA",
-            "KAZAKHSTAN",
-            "COSTARICA",
-            "MONTENEGRO",
-            "CYPRUS",
-            "SAINTPIERREMIQUELON",
-            "RUSSIA",
-            "TANZANIA",
-            "ANDORRA",
-            "KOSOVO",
-            "COCOSISLANDS",
-            "WALLISFUTUNA",
-            "BOSNIAHERZEGOVINA",
-            "KUWAIT",
-            "AUSTRIA",
-            "BRITISHVIRGINISLANDS",
-            "NEPAL",
-            "CAPVERDE",
-            "MYANMAR",
-            "BENIN",
-            "CENTRALAFRICANREPUBLIC",
-            "NICARAGUA",
-            "SPAIN",
-            "BELARUS",
-            "BULGARIA",
-            "PUERTORICO",
-            "VANUATU",
-            "PAKISTAN",
-            "DOMINICA",
-            "CHILE",
-            "CAMBODIA",
-            "DEMOCRATICREPUBLICCONGO",
-            "IRAN",
-            "UAE",
-            "GIBRALTAR",
-            "GHANA",
-            "HUNGARY",
-            "IRAQ",
-            "ICELAND",
-            "AMERICANSAMOA",
-            "INDIA",
-            "TURKMENISTAN",
-            "ARGENTINA",
-            "UKRAINE",
-            "GUYANA",
-            "CHAD",
-            "TUVALU",
-            "SVALBARDJANMAYEN",
-            "ROMANIA",
-            "ANGOLA",
-            "NEWZEALAND",
-            "BOLIVIA",
-            "SWEDEN",
-            "SAMOA",
-            "FIJI",
-            "LATVIA",
-            "PALAU",
-            "SINGAPORE",
-            "POLAND",
-            "HONDURAS",
-            "FRENCHPOLYNESIA",
-            "DENMARK",
-            "SOUTHAFRICA",
-            "LITHUANIA",
-            "SUDAN",
-            "ARMENIA",
-            "SLOVENIA",
-            "MALAWI",
-            "TONGA",
-            "BELGIUM",
-            "AZERBAIJAN",
-            "PALESTINIANTERRITORY",
-            "EQUATORIALGUINEA",
-            "PHILIPPINES",
-            "GUINEA",
-            "SOUTHKOREA",
-            "GUERNSEY",
-            "FAROEISLANDS",
-            "GREECE",
-            "FINLAND",
-            "IRELAND",
-            "INDONESIA",
-            "SRILANKA",
-            "PITCAIRN",
-            "MALAYSIA",
-            "DOMINICANREPUBLIC",
-            "GAMBIA",
-            "SAINTKITTSNEVIS",
-            "MOZAMBIQUE",
-            "NIUE",
-            "TURKSCAICOSISLANDS",
-            "BRITISHINDIANOCEANTERRITORY",
-            "AFGHANISTAN",
-            "GUAM",
-            "PANAMA",
-            "MACAO",
-            "CAYMANISLANDS",
-            "SWAZILAND",
-            "URUGUAY",
-            "GERMANY",
-            "EGYPT",
-            "VENEZUELA",
-            "JAPAN",
-            "QATAR",
-            "MONACO",
-            "NORWAY",
-            "ESTONIA",
-            "CAMEROON",
-            "BANGLADESH",
-            "LEBANON",
-            "UGANDA",
-            "MEXICO",
-            "FRENCHGUIANA",
-            "MICRONESIA",
-            "PARAGUAY",
-            "COLOMBIA",
-            "NIGER",
-            "RWANDA",
-            "NETHERLANDS",
-            "MALTA",
-            "MONGOLIA"
-          ],
-          "deeplinks": true,
-          "trackingLinkAvailable": true,
-          "logoAvailable": true,
-          "publicTermsAvailable": true
-        },
-        {
-          "name": "ProtoArc",
-          "advertiserName": "ProtoArc",
-          "advertiserId": "7605257",
-          "campaignId": "56905",
-          "status": "Active",
-          "countries": [
-            "MARSHALLISLANDS",
-            "ISRAEL",
-            "FRANCE",
-            "ECUADOR",
-            "REUNION",
-            "ANTIGUABARBUDA",
-            "GREENLAND",
-            "ALBANIA",
-            "CONGO",
-            "SEYCHELLES",
-            "PORTUGAL",
-            "SAINTHELENA",
-            "TUNISIA",
-            "YEMEN",
-            "SANMARINO",
-            "GUADELOUPE",
-            "CUBA",
-            "BRAZIL",
-            "ALGERIA",
-            "THAILAND",
-            "MADAGASCAR",
-            "MALI",
-            "KIRIBATI",
-            "ARUBA",
-            "LAOS",
-            "MOLDOVA",
-            "ZIMBABWE",
-            "BARBADOS",
-            "SENEGAL",
-            "TAJIKISTAN",
-            "MAURITIUS",
-            "NORFOLKISLAND",
-            "LUXEMBOURG",
-            "DIJIBOUTI",
-            "WESTERNSAHARA",
-            "IVORYCOAST",
-            "VATICAN",
-            "ZAMBIA",
-            "ELSALVADOR",
-            "SWITZERLAND",
-            "MONTSERRAT",
-            "NETHERLANDSANTILLES",
-            "JORDAN",
-            "MALDIVES",
-            "LESOTHO",
-            "SAINTLUCIA",
-            "PAPUANEWGUINEA",
-            "MAURITANIA",
-            "BURKINAFASO",
-            "ANGUILLA",
-            "GUINEABISSAU",
-            "LIBYA",
-            "KENYA",
-            "SYRIA",
-            "GABON",
-            "NORTHERNMARIANAISLANDS",
-            "ANTARCTICA",
-            "TOGO",
-            "SAOTOME",
-            "TURKEY",
-            "MOROCCO",
-            "NORTHKOREA",
-            "MARTINIQUE",
-            "GRENADA",
-            "FRENCHSOUTHERNTERRITORIES",
-            "TRINIDADTOBAGO",
-            "UK",
-            "KYRGYZSTAN",
-            "TIMOR",
-            "COMOROS",
-            "HONGKONG",
-            "NAMIBIA",
-            "BAHAMAS",
-            "BAHRAIN",
-            "SOLOMONISLANDS",
-            "US",
-            "BOTSWANA",
-            "AUSTRALIA",
-            "BELIZE",
-            "GEORGIA",
-            "COOKISLANDS",
-            "ITALY",
-            "NAURU",
-            "SURINAME",
-            "CHRISTMASISLAND",
-            "OMAN",
-            "BURUNDI",
-            "JAMAICA",
-            "NIGERIA",
-            "GUATEMALA",
-            "CZECHREPUBLIC",
-            "SOMALIA",
-            "SAUDIARABIA",
-            "LICHTENSTEIN",
-            "CANADA",
-            "LIBERIA",
-            "VIETNAM",
-            "TAIWAN",
-            "SLOVAKIA",
-            "NEWCALEDONIA",
-            "TOKELAU",
-            "FALKLANDISLANDS",
-            "BERMUDA",
-            "BRUNEIDARUSSALAM",
-            "USVIRGINISLANDS",
-            "SIERRALEONE",
-            "SAINTVINCENTGRENADINES",
-            "PERU",
-            "MACEDONIA",
-            "UZBEKISTAN",
-            "CHINA",
-            "ETHIOPIA",
-            "BHUTAN",
-            "CROATIA",
-            "MAYOTTE",
-            "HAITI",
-            "ERITREA",
-            "YOGOSLAVIA",
-            "KAZAKHSTAN",
-            "COSTARICA",
-            "MONTENEGRO",
-            "CYPRUS",
-            "SAINTPIERREMIQUELON",
-            "RUSSIA",
-            "TANZANIA",
-            "ANDORRA",
-            "KOSOVO",
-            "COCOSISLANDS",
-            "WALLISFUTUNA",
-            "BOSNIAHERZEGOVINA",
-            "KUWAIT",
-            "AUSTRIA",
-            "BRITISHVIRGINISLANDS",
-            "NEPAL",
-            "CAPVERDE",
-            "MYANMAR",
-            "BENIN",
-            "CENTRALAFRICANREPUBLIC",
-            "NICARAGUA",
-            "SPAIN",
-            "BELARUS",
-            "BULGARIA",
-            "PUERTORICO",
-            "VANUATU",
-            "PAKISTAN",
-            "DOMINICA",
-            "CHILE",
-            "CAMBODIA",
-            "DEMOCRATICREPUBLICCONGO",
-            "IRAN",
-            "UAE",
-            "GIBRALTAR",
-            "GHANA",
-            "HUNGARY",
-            "IRAQ",
-            "ICELAND",
-            "AMERICANSAMOA",
-            "INDIA",
-            "TURKMENISTAN",
-            "ARGENTINA",
-            "UKRAINE",
-            "GUYANA",
-            "CHAD",
-            "TUVALU",
-            "SVALBARDJANMAYEN",
-            "ROMANIA",
-            "ANGOLA",
-            "NEWZEALAND",
-            "BOLIVIA",
-            "SWEDEN",
-            "SAMOA",
-            "FIJI",
-            "LATVIA",
-            "PALAU",
-            "SINGAPORE",
-            "POLAND",
-            "HONDURAS",
-            "FRENCHPOLYNESIA",
-            "DENMARK",
-            "SOUTHAFRICA",
-            "LITHUANIA",
-            "SUDAN",
-            "ARMENIA",
-            "SLOVENIA",
-            "MALAWI",
-            "TONGA",
-            "BELGIUM",
-            "AZERBAIJAN",
-            "PALESTINIANTERRITORY",
-            "EQUATORIALGUINEA",
-            "PHILIPPINES",
-            "GUINEA",
-            "SOUTHKOREA",
-            "GUERNSEY",
-            "FAROEISLANDS",
-            "GREECE",
-            "FINLAND",
-            "IRELAND",
-            "INDONESIA",
-            "SRILANKA",
-            "PITCAIRN",
-            "MALAYSIA",
-            "DOMINICANREPUBLIC",
-            "GAMBIA",
-            "SAINTKITTSNEVIS",
-            "MOZAMBIQUE",
-            "NIUE",
-            "TURKSCAICOSISLANDS",
-            "BRITISHINDIANOCEANTERRITORY",
-            "AFGHANISTAN",
-            "GUAM",
-            "PANAMA",
-            "MACAO",
-            "CAYMANISLANDS",
-            "SWAZILAND",
-            "URUGUAY",
-            "GERMANY",
-            "EGYPT",
-            "VENEZUELA",
-            "JAPAN",
-            "QATAR",
-            "MONACO",
-            "NORWAY",
-            "ESTONIA",
-            "CAMEROON",
-            "BANGLADESH",
-            "LEBANON",
-            "UGANDA",
-            "MEXICO",
-            "FRENCHGUIANA",
-            "MICRONESIA",
-            "PARAGUAY",
-            "COLOMBIA",
-            "NIGER",
-            "RWANDA",
-            "NETHERLANDS",
-            "MALTA",
-            "MONGOLIA"
-          ],
-          "deeplinks": true,
-          "trackingLinkAvailable": true,
-          "logoAvailable": true,
-          "publicTermsAvailable": true
-        }
-      ]
-    }
+    "state": "error",
+    "publishableOffers": 0,
+    "inventory": null
   },
   "publication": {
     "offers": 248,
