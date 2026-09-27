@@ -39,3 +39,25 @@ test("Kategorie-, Shop- und Marken-Hubs nutzen interne CollectionPage-Strukturda
     assert.doesNotMatch(json,/(awin1\.com|sjv\.io|tradedoubler\.com\/click|webgains\.com\/click|instant-gaming\.com\/\?igr=)/i);
   }
 });
+
+
+test("Hub-Indizes und Rabattcodes verlinken in strukturierten Daten nur interne Seiten", () => {
+  const files=["dist/kategorien.html","dist/shops.html","dist/marken.html","dist/rabattcodes/index.html"];
+  for (const file of files) {
+    assert.ok(fs.existsSync(file), "fehlende Build-Datei: "+file);
+    const html=fs.readFileSync(file,"utf8");
+    const schemaList=schemas(html);
+    assert.ok(schemaList.length > 0, "fehlendes JSON-LD in "+file);
+    const joined=JSON.stringify(schemaList);
+    assert.doesNotMatch(joined,/(awin1\.com|sjv\.io|tradedoubler\.com\/click|webgains\.com\/click|instant-gaming\.com\/\?igr=)/i);
+    if (!file.includes("rabattcodes")) {
+      const graph=schemaList.find(item=>Array.isArray(item?.["@graph"]));
+      assert.ok(graph, "fehlendes Collection-@graph in "+file);
+      const types=graphTypes(graph);
+      assert.ok(types.has("CollectionPage"));
+      assert.ok(types.has("ItemList"));
+    } else {
+      assert.match(joined,/https:\/\/example\.test\/angebotslotse\/angebote\//);
+    }
+  }
+});
