@@ -6,7 +6,20 @@ const offerKey = offer => offer.id ? `offer:${offer.id}` : legacyKey(offer.produ
 
 export function updatePriceHistory(previous, offers, now = new Date()) {
   const cutoff = now.getTime() - 365 * DAY;
-  const valid = previous.filter(row => Number.isFinite(new Date(row.timestamp).getTime()) && new Date(row.timestamp).getTime() >= cutoff && Number.isFinite(row.price) && row.price > 0);
+  const valid = previous.filter(row => Number.isFinite(new Date(row.timestamp).getTime()) && new Date(row.timestamp).getTime() >= cutoff && Number.isFinite(row.price) && row.price > 0).map(row => ({...row}));
+  const currentIdsByLegacyKey = new Map();
+  for (const offer of offers) {
+    if (offer?.isStale || !offer.id || !offer.productId) continue;
+    const key = legacyKey(offer.productId, offer.advertiser, offer.currency || "EUR");
+    const ids = currentIdsByLegacyKey.get(key) || new Set();
+    ids.add(offer.id);
+    currentIdsByLegacyKey.set(key, ids);
+  }
+  for (const row of valid) {
+    if (row.offerId) continue;
+    const ids = currentIdsByLegacyKey.get(legacyKey(row.productId, row.merchant, row.currency));
+    if (ids?.size === 1) row.offerId = [...ids][0];
+  }
   const day = now.toISOString().slice(0,10);
   for (const offer of offers) {
     if (offer?.isStale || !offer.productId || !Number.isFinite(offer.currentPrice) || offer.currentPrice <= 0) continue;
