@@ -59,7 +59,7 @@ export async function collectSources(env = process.env) {
     for(const program of detailCandidates){
       const advertiserId=program.id??program.advertiserId;
       if(!advertiserId)continue;
-      try{awinProgramDetails[String(advertiserId)]=await fetchAwinProgramDetails({publisherId:env.AWIN_PUBLISHER_ID,token:env.AWIN_API_TOKEN,advertiserId,relationship:String(program.relationship??"notjoined").toLowerCase()});}
+      try{awinProgramDetails[String(advertiserId)]=await runSourceWithRetry(()=>fetchAwinProgramDetails({publisherId:env.AWIN_PUBLISHER_ID,token:env.AWIN_API_TOKEN,advertiserId,relationship:String(program.relationship??"notjoined").toLowerCase()}));}
       catch{/* KPI enrichment is optional; discovery continues without it. */}
     }
   }
@@ -76,7 +76,7 @@ export async function collectSources(env = process.env) {
     for(const program of reviewCandidates){
       const programId=program?.id??program?.program_id;
       if(!programId)continue;
-      try{daisyconProgramReviews[String(programId)]=await fetchDaisyconProgramReview({publisherId:env.DAISYCON_PUBLISHER_ID,accessToken:env.DAISYCON_ACCESS_TOKEN,programId,mediaId});}
+      try{daisyconProgramReviews[String(programId)]=await runSourceWithRetry(()=>fetchDaisyconProgramReview({publisherId:env.DAISYCON_PUBLISHER_ID,accessToken:env.DAISYCON_ACCESS_TOKEN,programId,mediaId}));}
       catch{/* Review enrichment is optional; ranking continues. */}
     }
   }
@@ -101,11 +101,11 @@ export async function collectSources(env = process.env) {
       const programId=membership?.program?.id??membership?.program_id??membership?.programId;
       if(!programId)continue;
       try{
-        webgainsProgramReviews[String(programId)]=await fetchWebgainsProgramReview({
+        webgainsProgramReviews[String(programId)]=await runSourceWithRetry(()=>fetchWebgainsProgramReview({
           publisherId:env.WEBGAINS_PUBLISHER_ID,
           accessToken:env.WEBGAINS_ACCESS_TOKEN,
           membership
-        });
+        }));
       }catch{/* Terms enrichment is optional; discovery continues without it. */}
     }
   }
