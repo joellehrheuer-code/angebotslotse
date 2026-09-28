@@ -1,5 +1,5 @@
 import fs from "node:fs/promises";
-import { isConcreteOffer, isPublicationReady } from "./lib/normalize.mjs";
+import { isPublicationReady, isAwaitingMediaOffer, isPublisherPromotion } from "./lib/normalize.mjs";
 const offers = JSON.parse(await fs.readFile("data/offers.json","utf8"));
 const status = JSON.parse(await fs.readFile("data/status.json","utf8"));
 const config = JSON.parse(await fs.readFile("config.json","utf8"));
@@ -15,7 +15,8 @@ for (const o of offers) {
 }
 const allowed = offers.filter(offer => !quarantined(offer));
 const publishable = allowed.filter(isPublicationReady);
-const awaitingMedia = allowed.filter(offer => !offer.isStale && isConcreteOffer(offer) && !isPublicationReady(offer));
+const awaitingMedia = allowed.filter(isAwaitingMediaOffer);
+const blockedPublisherPromotions = allowed.filter(offer => !offer.isStale && isPublisherPromotion(offer));
 const stale = offers.filter(offer => offer.isStale).length;
 const quarantinedCount = offers.length - allowed.length;
 const checkStatusCount = (key, actual) => {
@@ -24,7 +25,8 @@ const checkStatusCount = (key, actual) => {
 checkStatusCount("storedOffers", offers.length);
 checkStatusCount("publishableOffers", publishable.length);
 checkStatusCount("awaitingMedia", awaitingMedia.length);
+checkStatusCount("blockedPublisherPromotions", blockedPublisherPromotions.length);
 checkStatusCount("stale", stale);
 checkStatusCount("quarantined", quarantinedCount);
 if (errors.length) { console.error(errors.join("\n")); process.exit(1); }
-console.log(`Integritätscheck bestanden: ${publishable.length} veröffentlichungsreife Angebote; ${awaitingMedia.length} konkrete Datensätze warten auf Medien; ${stale} veraltete Bestandsdatensätze zurückgehalten; ${quarantinedCount} quarantänisiert.`);
+console.log(`Integritätscheck bestanden: ${publishable.length} veröffentlichungsreife Angebote; ${awaitingMedia.length} echte Medien-Wartefälle; ${blockedPublisherPromotions.length} Publisher-Werbetexte blockiert; ${stale} veraltete Bestandsdatensätze zurückgehalten; ${quarantinedCount} quarantänisiert.`);

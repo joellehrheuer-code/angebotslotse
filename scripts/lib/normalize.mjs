@@ -29,12 +29,18 @@ export const isConcreteOffer = offer => offer.source !== "direct" && Boolean(off
 
 const consumerPromotionSignal = /%|sale|rabatt|aktion|angebot|deal|save|sparen|\boff\b|flash/i;
 const publisherPromotionSignal = /commission|publishers?|affiliate|cashback|purchase intent|\bblogs?\b|\byoutube\b|tutorial|review content/i;
+export const isPublisherPromotion = offer => {
+  if (offer?.type !== "promotion") return false;
+  const copy = `${offer.title ?? ""} ${offer.description ?? ""} ${offer.terms ?? ""}`;
+  return publisherPromotionSignal.test(copy);
+};
 export const isConsumerTextPromotion = offer => {
   if (offer?.type !== "promotion" || !offer?.endDate || !offer?.trackingUrl) return false;
   const copy = `${offer.title ?? ""} ${offer.description ?? ""} ${offer.terms ?? ""}`;
-  return consumerPromotionSignal.test(copy) && !publisherPromotionSignal.test(copy);
+  return consumerPromotionSignal.test(copy) && !isPublisherPromotion(offer);
 };
-export const isPublicationReady = offer => !offer?.isStale && isConcreteOffer(offer) && Boolean(offer.imageUrl || offer.videoUrl || offer.voucherCode || isConsumerTextPromotion(offer));
+export const isPublicationReady = offer => !offer?.isStale && isConcreteOffer(offer) && !isPublisherPromotion(offer) && Boolean(offer.imageUrl || offer.videoUrl || offer.voucherCode || isConsumerTextPromotion(offer));
+export const isAwaitingMediaOffer = offer => !offer?.isStale && isConcreteOffer(offer) && !isPublicationReady(offer) && !isPublisherPromotion(offer);
 
 export function categoryFor(value, categories) {
   const source = text(value).toLowerCase();
