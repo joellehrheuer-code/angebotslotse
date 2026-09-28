@@ -5,6 +5,7 @@
   "marketCountry": "DE",
   "maxOffers": 1000,
   "staleAfterHours": 36,
+  "creatorSocialFeedUrl": "https://social-media-verteiler.onrender.com/public/social-feed.json",
   "supabase": {
     "url": "https://asrklnfcwtgihvyfjiww.supabase.co",
     "publishableKey": "sb_publishable_Zi5LWY0YvHbDFIL6sZOkzQ_vwFYVY0m",

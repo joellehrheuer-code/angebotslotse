@@ -29,9 +29,10 @@ let creatorFeedState={
   error:null,
   mode:null
 };
-if(process.env.CREATOR_SOCIAL_FEED_URL){
+const creatorSocialFeedUrl=process.env.CREATOR_SOCIAL_FEED_URL||config.creatorSocialFeedUrl||"";
+if(creatorSocialFeedUrl){
   try{
-    const remote=await fetchCreatorSocialFeed({feedUrl:process.env.CREATOR_SOCIAL_FEED_URL,maxItems:24});
+    const remote=await fetchCreatorSocialFeed({feedUrl:creatorSocialFeedUrl,maxItems:24});
     const videos=remote.items.filter(item=>item.type==="video").slice(0,12).map(item=>({
       id:item.id,title:item.title,thumbnailUrl:item.thumbnailUrl,publicUrl:item.publicUrl,platform:item.platform,publishedAt:item.publishedAt
     }));

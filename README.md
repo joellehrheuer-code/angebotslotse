@@ -109,7 +109,7 @@ Scraping, erfundene Trackinglinks und künstliche Klicktests sind ausgeschlossen
 
 `data/creators.json` ist bewusst vom Affiliate-System getrennt. Twitch, YouTube, Spotify, Instagram, Snapchat, Discord, Buch und Merch-Shop sind als eigene Projekte vorbereitet. Solange kein eindeutig verifizierter Ziel-Link hinterlegt ist, zeigt die Seite keinen anklickbaren Link. Fremde Creator werden nicht als Partner bezeichnet, sofern keine Partnerschaft besteht.
 
-Für die Verbindung zum Social-Media-Verteiler kann optional `CREATOR_SOCIAL_FEED_URL` gesetzt werden. Erwartet wird ausschließlich eine öffentliche HTTPS-JSON-Datei mit bereits veröffentlichten Posts, Videos, Streams, Musik- oder Community-Links. Drafts, private Nachrichten, Analytics, Zugangstoken und nicht öffentliche Plattformdaten werden verworfen. Bei einem temporären Feedfehler bleibt der letzte gültige Stand bestehen. Der ältere `CREATOR_VIDEO_FEED_URL` bleibt als kompatibler Fallback aktiv. Das genaue Format steht in `docs/social-feed-contract.md`.
+Der Angebotslotse nutzt standardmäßig den read-only Feed `https://social-media-verteiler.onrender.com/public/social-feed.json`. `CREATOR_SOCIAL_FEED_URL` kann diese öffentliche Standardquelle bei Bedarf als Repository-Variable überschreiben. Erwartet wird ausschließlich eine öffentliche HTTPS-JSON-Datei mit bereits veröffentlichten Posts, Videos, Streams, Musik- oder Community-Links. Drafts, private Nachrichten, Analytics, Zugangstoken und nicht öffentliche Plattformdaten werden verworfen. Bei einem temporären Feedfehler bleibt der letzte gültige Stand bestehen. Der ältere `CREATOR_VIDEO_FEED_URL` bleibt als kompatibler Fallback aktiv. Das genaue Format steht in `docs/social-feed-contract.md`.
 
 ## Datenschutz und Recht
 
