@@ -11,6 +11,7 @@ import { archiveRemovedOffers } from "./lib/offer-archive.mjs";
 import { buildAffiliateOpportunityReport } from "./lib/affiliate-opportunities.mjs";
 import { fetchCreatorVideoFeed } from "./lib/creator-videos.mjs";
 import { fetchCreatorSocialFeed } from "./lib/creator-feed.mjs";
+import { buildFailureStatus } from "./lib/update-status.mjs";
 
 const config = JSON.parse(await fs.readFile("config.json", "utf8"));
 const oldOffers = JSON.parse(await fs.readFile("data/offers.json", "utf8").catch(() => "[]"));
@@ -266,28 +267,7 @@ try {
   const report={generatedAt:checkedAt,newAwinPrograms:programInventory.filter(program=>!oldProgramKeys.has(`Awin:${program.advertiserId}:`)).length,newImpactPrograms:impactInventory.filter(program=>!oldProgramKeys.has(`Impact:${program.advertiserId}:${program.campaignId??""}`)).length,newDaisyconPrograms:daisyconInventory.filter(program=>!oldProgramKeys.has(`Daisycon:${program.advertiserId}:`)).length,newWebgainsPrograms:webgainsInventory.filter(program=>!oldProgramKeys.has(`Webgains:${program.advertiserId}:${program.campaignId??""}`)).length,activeAwinPrograms:programInventory.filter(program=>program.status==="joined").length,activeImpactPrograms:impactInventory.filter(program=>String(program.status).toLowerCase()==="active").length,applicationsSent:0,pendingApplications:programInventory.filter(program=>program.status==="pending").length,manualApplications:manualActions.filter(action=>/-apply-/.test(action.id)).length,networkReviewActions:manualActions.filter(action=>/(marketplace-review|connect)$/.test(action.id)).length,awinDiscoveryOffers:awinDiscoveryOffers.length,applicationCandidates:opportunities.filter(opportunity=>opportunity.applicationRequired).length+daisyconOpportunities.filter(opportunity=>opportunity.applicationPossible).length+webgainsOpportunities.filter(opportunity=>opportunity.applicationPossible).length,newMerchants:new Set(publicOffers.filter(offer=>!oldIds.has(offer.id)).map(offer=>offer.advertiser)).size,newProducts:publicOffers.filter(offer=>!oldIds.has(offer.id)&&offer.productId).length,productsWithImage:publicOffers.filter(offer=>offer.imageUrl).length,productsWithVideo:publicOffers.filter(offer=>offer.videoUrl).length,productsWithPrice:publicOffers.filter(offer=>Number(offer.currentPrice)>0).length,productsWithOldPrice:publicOffers.filter(offer=>Number(offer.previousPrice)>Number(offer.currentPrice)).length,productsWithDiscount:publicOffers.filter(offer=>Number(offer.discountPercent)>0).length,newCoupons:publicOffers.filter(offer=>offer.voucherCode&&!oldIds.has(offer.id)).length,coupons:publicOffers.filter(offer=>offer.voucherCode).length,priceChanges:publicOffers.filter(offer=>offer.lastPriceChange).length,expiredOffers:oldOffers.filter(offer=>offer.endDate&&new Date(offer.endDate)<=new Date()).length,expiredCoupons:oldOffers.filter(offer=>offer.voucherCode&&offer.endDate&&new Date(offer.endDate)<=new Date()).length,filteredForeignLocale,totalProducts:publicOffers.length,productsBySource:sourceStats,officialImagesBySource:officialMediaStats,missingMediaBySource:missingMediaStats,productsByMerchant:merchantStats,productsByCategory:categoryStats,awinEnhancedFeeds,quarantinedRecords:offers.filter(isQuarantined).length,blockedPublisherPromotions:blockedPublisherPromotions.length,dailyDeal:selections.dailyDeal?.id||null,dailyHighlights:selections.dailyHighlights.map(offer=>offer.id),weekDeals:selections.weekDeals.map(offer=>offer.id),monthHighlights:selections.monthHighlights.map(offer=>offer.id),apiErrors:failed.size,affiliateLinkErrors:0};
   await fs.writeFile("report/update-report.json",`${JSON.stringify(report,null,2)}\n`);
 } catch (error) {
-  const oldAllowed = oldOffers.filter(offer => !isQuarantinedByPolicy(offer));
-  const oldPublishable = oldAllowed.filter(isPublicationReady).length;
-  const oldAwaitingMedia = oldAllowed.filter(isAwaitingMediaOffer).length;
-  const oldBlockedPublisherPromotions = oldAllowed.filter(offer => !offer.isStale && isPublisherPromotion(offer)).length;
-  status = {
-    ...oldStatus,
-    state: "error",
-    lastSuccessfulUpdate: oldStatus.lastSuccessfulUpdate ?? null,
-    activeOffers: oldPublishable,
-    storedOffers: oldOffers.length,
-    publishableOffers: oldPublishable,
-    awaitingMedia: oldAwaitingMedia,
-    blockedPublisherPromotions: oldBlockedPublisherPromotions,
-    quarantined: oldOffers.length - oldAllowed.length,
-    stale: oldOffers.filter(offer => offer.isStale).length,
-    added: 0,
-    removed: 0,
-    archivedThisRun: 0,
-    invalidLinks: Number(oldStatus.invalidLinks) || 0,
-    apiErrors: Math.max(1, Number(oldStatus.apiErrors) || 0),
-    message: `Aktualisierung fehlgeschlagen; letzter geprüfter Bestand bleibt erhalten. ${String(error.message).slice(0, 180)}`
-  };
+  status = buildFailureStatus({ oldStatus, oldOffers, isQuarantined: isQuarantinedByPolicy, error });
   await fs.writeFile("data/status.json", `${JSON.stringify(status, null, 2)}\n`);
   throw error;
 }
