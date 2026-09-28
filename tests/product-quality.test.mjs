@@ -28,4 +28,9 @@ test("quality report exposes source, identity and gallery counters", () => {
   assert.equal(typeof report.uniqueProducts, "number");
   assert.equal(typeof report.multiImageProducts, "number");
   assert.equal(typeof report.offersWithMultipleMerchants, "number");
+  const status = JSON.parse(fs.readFileSync("data/status.json", "utf8"));
+  assert.equal(report.quarantined, status.quarantined);
+  assert.equal(report.staleStored, status.stale);
+  assert.equal(report.awaitingMedia, status.awaitingMedia);
+  assert.equal(report.excludedFromPublication, report.rawRecords - report.offers);
 });
