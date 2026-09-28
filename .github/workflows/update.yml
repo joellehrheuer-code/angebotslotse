@@ -40,6 +40,7 @@ jobs:
           WEBGAINS_PUBLISHER_ID: ${{ secrets.WEBGAINS_PUBLISHER_ID || vars.WEBGAINS_PUBLISHER_ID }}
           WEBGAINS_ACCESS_TOKEN: ${{ secrets.WEBGAINS_ACCESS_TOKEN }}
           WEBGAINS_FEED_URLS: ${{ secrets.WEBGAINS_FEED_URLS }}
+          CREATOR_SOCIAL_FEED_URL: ${{ vars.CREATOR_SOCIAL_FEED_URL }}
           CREATOR_VIDEO_FEED_URL: ${{ vars.CREATOR_VIDEO_FEED_URL }}
       - run: npm run check && npm run build && npm run validate && npm run seo && npm run security
         env:
@@ -56,7 +57,7 @@ jobs:
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "chore(data): Angebote automatisch aktualisieren"
-          file_pattern: "data/offers.json data/offer-archive.json data/status.json data/price-history.json data/coupons.json data/affiliate-growth.json data/program-opportunities.json data/impact-opportunities.json data/affiliate-opportunities.json data/creator-videos.json report/program-inventory.json report/manual-actions.json report/update-report.json report/seo-report.json"
+          file_pattern: "data/offers.json data/offer-archive.json data/status.json data/price-history.json data/coupons.json data/affiliate-growth.json data/program-opportunities.json data/impact-opportunities.json data/affiliate-opportunities.json data/creator-feed.json data/creator-videos.json report/program-inventory.json report/manual-actions.json report/update-report.json report/seo-report.json"
   deploy:
     needs: update
     permissions: { pages: write, id-token: write }

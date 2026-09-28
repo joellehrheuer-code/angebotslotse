@@ -10,6 +10,7 @@ import { rankDaisyconPrograms, rankWebgainsPrograms, buildNetworkMarketplaceSear
 import { archiveRemovedOffers } from "./lib/offer-archive.mjs";
 import { buildAffiliateOpportunityReport } from "./lib/affiliate-opportunities.mjs";
 import { fetchCreatorVideoFeed } from "./lib/creator-videos.mjs";
+import { fetchCreatorSocialFeed } from "./lib/creator-feed.mjs";
 
 const config = JSON.parse(await fs.readFile("config.json", "utf8"));
 const oldOffers = JSON.parse(await fs.readFile("data/offers.json", "utf8").catch(() => "[]"));
@@ -18,16 +19,37 @@ const oldHistory = JSON.parse(await fs.readFile("data/price-history.json", "utf8
 const oldArchive = JSON.parse(await fs.readFile("data/offer-archive.json", "utf8").catch(() => '{"items":[]}'));
 const oldProgramInventory = JSON.parse(await fs.readFile("report/program-inventory.json", "utf8").catch(() => '{"programs":[]}'));
 const oldCreatorVideos = JSON.parse(await fs.readFile("data/creator-videos.json", "utf8").catch(() => '{"version":1,"source":"public-only","updatedAt":null,"videos":[]}'));
+const oldCreatorFeed = JSON.parse(await fs.readFile("data/creator-feed.json", "utf8").catch(() => '{"version":1,"source":"public-only","updatedAt":null,"items":[]}'));
 const impactLinkPolicy = JSON.parse(await fs.readFile("data/impact-link-policy.json", "utf8").catch(() => "{}"));
 const oldIds = new Set(oldOffers.map(o => o.id));
-let creatorFeedState={state:"disabled",count:Array.isArray(oldCreatorVideos.videos)?oldCreatorVideos.videos.length:0,error:null};
-if(process.env.CREATOR_VIDEO_FEED_URL){
+let creatorFeedState={
+  state:"disabled",
+  count:Array.isArray(oldCreatorFeed.items)?oldCreatorFeed.items.length:(Array.isArray(oldCreatorVideos.videos)?oldCreatorVideos.videos.length:0),
+  videos:Array.isArray(oldCreatorVideos.videos)?oldCreatorVideos.videos.length:0,
+  error:null,
+  mode:null
+};
+if(process.env.CREATOR_SOCIAL_FEED_URL){
+  try{
+    const remote=await fetchCreatorSocialFeed({feedUrl:process.env.CREATOR_SOCIAL_FEED_URL,maxItems:24});
+    const videos=remote.items.filter(item=>item.type==="video").slice(0,12).map(item=>({
+      id:item.id,title:item.title,thumbnailUrl:item.thumbnailUrl,publicUrl:item.publicUrl,platform:item.platform,publishedAt:item.publishedAt
+    }));
+    await fs.writeFile("data/creator-feed.json",`${JSON.stringify({version:1,source:"social-distributor",updatedAt:remote.updatedAt,items:remote.items},null,2)}\n`);
+    await fs.writeFile("data/creator-videos.json",`${JSON.stringify({version:1,source:"social-distributor",updatedAt:remote.updatedAt,videos},null,2)}\n`);
+    creatorFeedState={state:"ok",count:remote.items.length,videos:videos.length,error:null,mode:"social"};
+  }catch(error){
+    creatorFeedState={state:"stale",count:Array.isArray(oldCreatorFeed.items)?oldCreatorFeed.items.length:0,videos:Array.isArray(oldCreatorVideos.videos)?oldCreatorVideos.videos.length:0,error:String(error.message).slice(0,160),mode:"social"};
+  }
+}else if(process.env.CREATOR_VIDEO_FEED_URL){
   try{
     const remote=await fetchCreatorVideoFeed({feedUrl:process.env.CREATOR_VIDEO_FEED_URL,maxVideos:12});
+    const items=remote.videos.map(item=>({...item,type:"video",summary:null}));
     await fs.writeFile("data/creator-videos.json",`${JSON.stringify({version:1,source:"social-distributor",updatedAt:remote.updatedAt,videos:remote.videos},null,2)}\n`);
-    creatorFeedState={state:"ok",count:remote.videos.length,error:null};
+    await fs.writeFile("data/creator-feed.json",`${JSON.stringify({version:1,source:"video-feed-compat",updatedAt:remote.updatedAt,items},null,2)}\n`);
+    creatorFeedState={state:"ok",count:items.length,videos:remote.videos.length,error:null,mode:"video"};
   }catch(error){
-    creatorFeedState={state:"stale",count:Array.isArray(oldCreatorVideos.videos)?oldCreatorVideos.videos.length:0,error:String(error.message).slice(0,160)};
+    creatorFeedState={state:"stale",count:Array.isArray(oldCreatorFeed.items)?oldCreatorFeed.items.length:0,videos:Array.isArray(oldCreatorVideos.videos)?oldCreatorVideos.videos.length:0,error:String(error.message).slice(0,160),mode:"video"};
   }
 }
 let status;
