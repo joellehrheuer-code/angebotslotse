@@ -22,6 +22,7 @@ const quarantinedCount = offers.length - allowed.length;
 const checkStatusCount = (key, actual) => {
   if (status[key] != null && Number(status[key]) !== actual) errors.push(`Status ${key} inkonsistent: ${status[key]} statt ${actual}.`);
 };
+checkStatusCount("activeOffers", publishable.length);
 checkStatusCount("storedOffers", offers.length);
 checkStatusCount("publishableOffers", publishable.length);
 checkStatusCount("awaitingMedia", awaitingMedia.length);
