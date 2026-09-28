@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { collectSources, runSourceWithRetry } from "../scripts/lib/source-manager.mjs";
+import { collectSources, runSourceWithRetry, awinEnhancedFeedGate } from "../scripts/lib/source-manager.mjs";
 
 test("fehlende Secrets deaktivieren nur die betroffenen Quellen und legen keine Werte offen", async () => {
   const { sources } = await collectSources({});
@@ -18,6 +18,22 @@ test("fehlende Secrets deaktivieren nur die betroffenen Quellen und legen keine 
   assert.doesNotMatch(JSON.stringify(sources), /token_value|SID_VALUE|credential_secret_value|supersecret123/i);
 });
 
+
+test("Awin Enhanced Feed unterscheidet Zugang, API-Fehler und leeres Programmportfolio", () => {
+  const missing=awinEnhancedFeedGate({hasPublisherId:false,hasToken:true,joinedCount:0});
+  assert.equal(missing.state,"disabled");
+  assert.match(missing.audit.reason,/AWIN_PUBLISHER_ID missing/);
+
+  const failed=awinEnhancedFeedGate({hasPublisherId:true,hasToken:true,programError:"HTTP 503",joinedCount:0});
+  assert.equal(failed.state,"error");
+  assert.match(failed.error,/programme discovery failed.*503/i);
+
+  const empty=awinEnhancedFeedGate({hasPublisherId:true,hasToken:true,joinedCount:0});
+  assert.equal(empty.state,"disabled");
+  assert.match(empty.audit.reason,/No joined Awin programmes/);
+
+  assert.equal(awinEnhancedFeedGate({hasPublisherId:true,hasToken:true,joinedCount:2}),null);
+});
 
 test("temporäre Quellenfehler werden begrenzt erneut versucht", async () => {
   let calls = 0;

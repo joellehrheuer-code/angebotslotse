@@ -16,6 +16,19 @@ const isTransientSourceError = error => {
   return [408,425,429,500,502,503,504].includes(status) || /(?:\b408\b|\b425\b|\b429\b|\b500\b|\b502\b|\b503\b|\b504\b|fetch failed|econnreset|etimedout|enotfound|eai_again|socket|network)/i.test(message);
 };
 
+export function awinEnhancedFeedGate({ hasPublisherId, hasToken, programError = null, joinedCount = 0 }) {
+  if (!hasPublisherId || !hasToken) {
+    const missing = [!hasPublisherId && "AWIN_PUBLISHER_ID", !hasToken && "AWIN_API_TOKEN"].filter(Boolean);
+    return { state: "disabled", audit: { reason: `${missing.join(", ")} missing – Awin Enhanced Feed sync skipped` } };
+  }
+  if (programError) {
+    const message = `Awin programme discovery failed: ${String(programError).slice(0, 160)}`;
+    return { state: "error", error: message, audit: { reason: message } };
+  }
+  if (joinedCount === 0) return { state: "disabled", audit: { reason: "No joined Awin programmes – Enhanced Feed sync skipped" } };
+  return null;
+}
+
 export async function runSourceWithRetry(run, { attempts = 2, baseDelayMs = 400, sleep = wait } = {}) {
   const maxAttempts = Math.min(3, Math.max(1, Number(attempts) || 1));
   const delay = Math.max(0, Number(baseDelayMs) || 0);
@@ -38,6 +51,7 @@ export async function collectSources(env = process.env) {
   const impactLinkPolicy = JSON.parse(await fs.readFile("data/impact-link-policy.json", "utf8").catch(() => "{}"));
   const amazonDefinitions = JSON.parse(await fs.readFile("data/amazon-products.json", "utf8").catch(() => '{"items":[]}' ));
   let awinPrograms=null;
+  let awinProgramError=null;
   let awinDiscoveryOffers=[];
   let awinDiscoveryError=null;
   let daisyconPrograms=null;
@@ -49,7 +63,8 @@ export async function collectSources(env = process.env) {
   const webgainsProgramReviews={};
   const awinProgramDetails={};
   if(env.AWIN_PUBLISHER_ID&&env.AWIN_API_TOKEN) {
-    try{awinPrograms=await runSourceWithRetry(()=>fetchAwinPrograms({publisherId:env.AWIN_PUBLISHER_ID,token:env.AWIN_API_TOKEN}));}catch{}
+    try{awinPrograms=await runSourceWithRetry(()=>fetchAwinPrograms({publisherId:env.AWIN_PUBLISHER_ID,token:env.AWIN_API_TOKEN}));}
+    catch(error){awinProgramError=String(error?.message??error).slice(0,160);}
     try{awinDiscoveryOffers=await runSourceWithRetry(()=>fetchAwinOffers({publisherId:env.AWIN_PUBLISHER_ID,token:env.AWIN_API_TOKEN,membership:"notJoined",maxPages:5}));}catch(error){awinDiscoveryError=String(error.message).slice(0,160);}
     const detailLimit=Math.min(8,Math.max(0,Number(env.AWIN_PROGRAM_DETAIL_LIMIT)||6));
     const detailCandidates=[...(awinPrograms?.notjoined??[]),...(awinPrograms?.pending??[])]
@@ -128,7 +143,10 @@ export async function collectSources(env = process.env) {
     if (name === "impact" && !impactDue) return { name, state: "disabled", rows: [], audit:{reason:`Impact rate-limit cooldown – next scheduled window every ${impactCadenceHours}h`, cadenceHours:impactCadenceHours} };
     if (name === "amazon" && (!env.AMAZON_CREATORS_CREDENTIAL_ID || !env.AMAZON_CREATORS_CREDENTIAL_SECRET || !env.AMAZON_PARTNER_TAG)) { const names = [!env.AMAZON_CREATORS_CREDENTIAL_ID && "AMAZON_CREATORS_CREDENTIAL_ID", !env.AMAZON_CREATORS_CREDENTIAL_SECRET && "AMAZON_CREATORS_CREDENTIAL_SECRET", !env.AMAZON_PARTNER_TAG && "AMAZON_PARTNER_TAG"].filter(Boolean); return { name, state: "disabled", rows: [], audit:{reason:`${names.join(", ")} missing – Amazon Creators API sync skipped`} }; }
     if (name === "awin-product-feeds" && !env.AWIN_DATAFEED_API_KEY) return { name, state: "disabled", rows: [], audit:{reason:"AWIN_DATAFEED_API_KEY missing – Awin Product Feed sync skipped"} };
-    if (name === "awin-enhanced-feeds" && (!env.AWIN_API_TOKEN||!joined.length)) return {name,state:"disabled",rows:[],audit:{reason:!env.AWIN_API_TOKEN?"AWIN_API_TOKEN missing – Awin Enhanced Feed sync skipped":"No joined Awin programmes – Enhanced Feed sync skipped"}};
+    if (name === "awin-enhanced-feeds") {
+      const gate=awinEnhancedFeedGate({hasPublisherId:Boolean(env.AWIN_PUBLISHER_ID),hasToken:Boolean(env.AWIN_API_TOKEN),programError:awinProgramError,joinedCount:joined.length});
+      if(gate)return{name,rows:[],...gate};
+    }
     if (name === "daisycon" && (!env.DAISYCON_PUBLISHER_ID || !env.DAISYCON_ACCESS_TOKEN)) return {name,state:"disabled",rows:[],audit:{reason:"DAISYCON_PUBLISHER_ID / DAISYCON_ACCESS_TOKEN missing – Daisycon sync skipped"}};
     if (name === "tradedoubler" && !env.TRADEDOUBLER_PRODUCTS_TOKEN && !env.TRADEDOUBLER_FEED_URLS) return {name,state:"disabled",rows:[],audit:{reason:"TRADEDOUBLER_PRODUCTS_TOKEN / TRADEDOUBLER_FEED_URLS missing – Tradedoubler sync skipped"}};
     if (name === "tradedoubler-vouchers" && !env.TRADEDOUBLER_VOUCHERS_TOKEN) return {name,state:"disabled",rows:[],audit:{reason:"TRADEDOUBLER_VOUCHERS_TOKEN missing – Tradedoubler voucher sync skipped"}};
@@ -136,5 +154,5 @@ export async function collectSources(env = process.env) {
     try { const rows=name==="impact" ? await run() : await runSourceWithRetry(run,{attempts:Number(env.SOURCE_RETRY_ATTEMPTS)||2,baseDelayMs:Number(env.SOURCE_RETRY_BASE_DELAY_MS)||400}); return { name, state: "ok", rows, audit:rows.audit??null }; }
     catch (error) { return { name, state: "error", rows: [], error: String(error.message).slice(0, 160) }; }
   }));
-  return {sources:results,awinPrograms,awinDiscoveryOffers,awinDiscoveryError,awinProgramDetails,daisyconPrograms,daisyconProgramError,daisyconMedia,daisyconProgramReviews,webgainsMemberships,webgainsMembershipError,webgainsProgramReviews};
+  return {sources:results,awinPrograms,awinProgramError,awinDiscoveryOffers,awinDiscoveryError,awinProgramDetails,daisyconPrograms,daisyconProgramError,daisyconMedia,daisyconProgramReviews,webgainsMemberships,webgainsMembershipError,webgainsProgramReviews};
 }
