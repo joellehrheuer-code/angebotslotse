@@ -26,7 +26,15 @@ export function dedupeKeyForOffer(offer) {
 }
 
 export const isConcreteOffer = offer => offer.source !== "direct" && Boolean(offer.productId || offer.voucherCode || offer.endDate || (Number.isFinite(offer.currentPrice) && offer.currentPrice > 0));
-export const isPublicationReady = offer => !offer?.isStale && isConcreteOffer(offer) && Boolean(offer.imageUrl || offer.videoUrl || offer.voucherCode);
+
+const consumerPromotionSignal = /%|sale|rabatt|aktion|angebot|deal|save|sparen|\boff\b|flash/i;
+const publisherPromotionSignal = /commission|publishers?|affiliate|cashback|purchase intent|\bblogs?\b|\byoutube\b|tutorial|review content/i;
+export const isConsumerTextPromotion = offer => {
+  if (offer?.type !== "promotion" || !offer?.endDate || !offer?.trackingUrl) return false;
+  const copy = `${offer.title ?? ""} ${offer.description ?? ""} ${offer.terms ?? ""}`;
+  return consumerPromotionSignal.test(copy) && !publisherPromotionSignal.test(copy);
+};
+export const isPublicationReady = offer => !offer?.isStale && isConcreteOffer(offer) && Boolean(offer.imageUrl || offer.videoUrl || offer.voucherCode || isConsumerTextPromotion(offer));
 
 export function categoryFor(value, categories) {
   const source = text(value).toLowerCase();
