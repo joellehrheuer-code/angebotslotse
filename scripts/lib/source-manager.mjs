@@ -13,7 +13,7 @@ const wait = ms => new Promise(resolve => setTimeout(resolve, ms));
 const isTransientSourceError = error => {
   const status = Number(error?.status ?? error?.statusCode);
   const message = String(error?.message ?? error ?? "");
-  return [408,425,429,500,502,503,504].includes(status) || /(?:\b408\b|\b425\b|\b429\b|\b50[0-4]\b|fetch failed|econnreset|etimedout|enotfound|eai_again|socket|network)/i.test(message);
+  return [408,425,429,500,502,503,504].includes(status) || /(?:\b408\b|\b425\b|\b429\b|\b500\b|\b502\b|\b503\b|\b504\b|fetch failed|econnreset|etimedout|enotfound|eai_again|socket|network)/i.test(message);
 };
 
 export async function runSourceWithRetry(run, { attempts = 2, baseDelayMs = 400, sleep = wait } = {}) {
@@ -133,7 +133,7 @@ export async function collectSources(env = process.env) {
     if (name === "tradedoubler" && !env.TRADEDOUBLER_PRODUCTS_TOKEN && !env.TRADEDOUBLER_FEED_URLS) return {name,state:"disabled",rows:[],audit:{reason:"TRADEDOUBLER_PRODUCTS_TOKEN / TRADEDOUBLER_FEED_URLS missing – Tradedoubler sync skipped"}};
     if (name === "tradedoubler-vouchers" && !env.TRADEDOUBLER_VOUCHERS_TOKEN) return {name,state:"disabled",rows:[],audit:{reason:"TRADEDOUBLER_VOUCHERS_TOKEN missing – Tradedoubler voucher sync skipped"}};
     if (name === "webgains" && !env.WEBGAINS_FEED_URLS) return {name,state:"disabled",rows:[],audit:{reason:"WEBGAINS_FEED_URLS missing – Webgains feed sync skipped"}};
-    try { const rows=await runSourceWithRetry(run,{attempts:Number(env.SOURCE_RETRY_ATTEMPTS)||2,baseDelayMs:Number(env.SOURCE_RETRY_BASE_DELAY_MS)||400}); return { name, state: "ok", rows, audit:rows.audit??null }; }
+    try { const rows=name==="impact" ? await run() : await runSourceWithRetry(run,{attempts:Number(env.SOURCE_RETRY_ATTEMPTS)||2,baseDelayMs:Number(env.SOURCE_RETRY_BASE_DELAY_MS)||400}); return { name, state: "ok", rows, audit:rows.audit??null }; }
     catch (error) { return { name, state: "error", rows: [], error: String(error.message).slice(0, 160) }; }
   }));
   return {sources:results,awinPrograms,awinDiscoveryOffers,awinDiscoveryError,awinProgramDetails,daisyconPrograms,daisyconProgramError,daisyconMedia,daisyconProgramReviews,webgainsMemberships,webgainsMembershipError,webgainsProgramReviews};

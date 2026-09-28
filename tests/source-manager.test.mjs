@@ -41,6 +41,15 @@ test("dauerhafte Konfigurationsfehler werden nicht blind erneut versucht", async
   assert.equal(calls, 1);
 });
 
+test("HTTP 501 gilt nicht als transienter Retry-Fehler", async () => {
+  let calls = 0;
+  await assert.rejects(
+    () => runSourceWithRetry(async () => { calls += 1; const error = new Error("HTTP 501"); error.status = 501; throw error; }, { attempts: 3, sleep: async () => {} }),
+    /HTTP 501/
+  );
+  assert.equal(calls, 1);
+});
+
 test("Impact kann zwischen 4h-Website-Updates rate-limit-schonend ausgesetzt werden", async () => {
   const { sources } = await collectSources({
     IMPACT_ACCOUNT_SID: "SID_VALUE",
