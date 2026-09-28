@@ -96,7 +96,8 @@ try {
     message: degraded ? "Aktualisierung teilweise eingeschränkt; bestehende geprüfte Daten bleiben geschützt." : sources.some(s => s.state === "disabled") ? "Aktualisierung mit geschützten Bestandsdaten abgeschlossen." : "Aktualisierung erfolgreich." };
   await fs.writeFile("data/offers.json", `${JSON.stringify(offers, null, 2)}\n`);
   await fs.writeFile("data/offer-archive.json", `${JSON.stringify(archive, null, 2)}\n`);
-  await fs.writeFile("data/price-history.json", `${JSON.stringify(updatePriceHistory(oldHistory, offers), null, 2)}\n`);
+  const priceHistoryOffers = offers.filter(offer => !isQuarantinedByPolicy(offer));
+  await fs.writeFile("data/price-history.json", `${JSON.stringify(updatePriceHistory(oldHistory, priceHistoryOffers), null, 2)}\n`);
   const coupons = offers.filter(offer => !isQuarantinedByPolicy(offer) && isPublicationReady(offer) && offer.voucherCode && (!offer.endDate || new Date(offer.endDate) > new Date())).map(offer => ({code:offer.voucherCode,discountText:offer.description || null,discountPercent:null,validFrom:offer.startDate,validUntil:offer.endDate,merchant:offer.advertiser,landingUrl:offer.trackingUrl,terms:offer.terms || null,source:offer.source,isCommunityExclusive:false,creatorCode:null,creatorBenefit:null}));
   await fs.writeFile("data/coupons.json", `${JSON.stringify(coupons, null, 2)}\n`);
   const priority=/coolblue|beyerdynamic|adidas|dyson|lidl|decathlon|samsung|lenovo|nike|under armour|razer|thomann|rode|waves|logitech|corsair|asus|msi|sony|philips|bosch/i;
