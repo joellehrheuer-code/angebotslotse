@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-28T13:46:38.729Z",
+  "generatedAt": "2026-09-28T13:53:57.729Z",
   "market": "DE",
   "publisherId": 3045061,
   "awin": {
@@ -3103,9 +3103,9 @@
     "marketplaceSearches": [
       {
         "category": "Technik & Computer",
-        "siteOffers": 122,
+        "siteOffers": 120,
         "joinedPrograms": 0,
-        "gapScore": 122,
+        "gapScore": 120,
         "searchTerms": [
           "electronics",
           "computer",
@@ -3168,7 +3168,7 @@
       {
         "network": "Daisycon",
         "category": "Technik & Computer",
-        "siteOffers": 122,
+        "siteOffers": 120,
         "priority": "hoch",
         "searchTerms": [
           "electronics",
@@ -3232,7 +3232,7 @@
       {
         "network": "Tradedoubler",
         "category": "Technik & Computer",
-        "siteOffers": 122,
+        "siteOffers": 120,
         "priority": "hoch",
         "searchTerms": [
           "electronics",
@@ -3301,7 +3301,7 @@
       {
         "network": "Webgains",
         "category": "Technik & Computer",
-        "siteOffers": 122,
+        "siteOffers": 120,
         "priority": "hoch",
         "searchTerms": [
           "electronics",
@@ -3363,14 +3363,14 @@
     "reason": "Webgains Memberships und Terms werden automatisch gelesen; accept_terms=true wird nur nach ausdrücklicher menschlicher Bestätigung des geprüften Terms-Stands verwendet."
   },
   "publication": {
-    "offers": 252,
-    "concreteAwaitingMedia": 6,
+    "offers": 250,
+    "concreteAwaitingMedia": 8,
     "partnerEntries": 221,
     "merchants": 4,
-    "products": 248,
-    "images": 248,
+    "products": 246,
+    "images": 246,
     "videos": 0,
-    "prices": 248,
+    "prices": 246,
     "discounts": 0,
     "coupons": 4
   },
