@@ -7,7 +7,7 @@ test("Kategorie- und Suchseiten bieten kombinierbare Deal-Filter", () => {
   execFileSync(process.execPath, ["scripts/build-account-client.mjs"], { stdio: "pipe" });
   execFileSync(process.execPath, ["scripts/build.mjs"], {
     stdio: "pipe",
-    env: { ...process.env, SITE_URL: "https://example.test/angebotslotse" }
+    env: { ...process.env, SITE_URL: "https://joellehrheuer-code.github.io/angebotslotse" }
   });
 
   const search = fs.readFileSync("dist/suche.html", "utf8");

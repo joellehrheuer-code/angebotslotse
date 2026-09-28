@@ -7,7 +7,7 @@ test("Konto-Seite wird mit lokal gebündeltem Supabase-Client gebaut", () => {
   execFileSync(process.execPath, ["scripts/build-account-client.mjs"], { stdio: "pipe" });
   execFileSync(process.execPath, ["scripts/build.mjs"], {
     stdio: "pipe",
-    env: { ...process.env, SITE_URL: "https://example.test/angebotslotse" }
+    env: { ...process.env, SITE_URL: "https://joellehrheuer-code.github.io/angebotslotse" }
   });
 
   const html = fs.readFileSync("dist/konto.html", "utf8");

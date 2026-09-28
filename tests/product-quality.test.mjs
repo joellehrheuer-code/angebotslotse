@@ -19,7 +19,7 @@ test("keeps the same GTIN as separate offers for different merchants", () => {
 test("quality report exposes source, identity and gallery counters", () => {
   execFileSync(process.execPath, ["scripts/build.mjs"], {
     cwd: process.cwd(),
-    env: { ...process.env, SITE_URL: "https://example.github.io/angebotslotse" },
+    env: { ...process.env, SITE_URL: "https://joellehrheuer-code.github.io/angebotslotse" },
     stdio: "ignore",
   });
   const report = JSON.parse(fs.readFileSync("dist/build-report.json", "utf8"));

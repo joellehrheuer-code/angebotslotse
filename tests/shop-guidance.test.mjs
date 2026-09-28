@@ -7,7 +7,7 @@ test("Shopseiten zeigen datenbasierten Mehrwert und Methodik statt Händlerwertu
   execFileSync(process.execPath, ["scripts/build-account-client.mjs"], { stdio: "pipe" });
   execFileSync(process.execPath, ["scripts/build.mjs"], {
     stdio: "pipe",
-    env: { ...process.env, SITE_URL: "https://example.test/angebotslotse" }
+    env: { ...process.env, SITE_URL: "https://joellehrheuer-code.github.io/angebotslotse" }
   });
 
   const files = fs.readdirSync("dist/shops").filter(name => name.endsWith(".html"));

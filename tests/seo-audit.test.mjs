@@ -4,7 +4,7 @@ import fs from "node:fs";
 import { execFileSync } from "node:child_process";
 
 test("technischer SEO-Audit bleibt fehler- und hinweisfrei", () => {
-  const env = { ...process.env, SITE_URL: "https://example.github.io/angebotslotse" };
+  const env = { ...process.env, SITE_URL: "https://joellehrheuer-code.github.io/angebotslotse" };
   execFileSync(process.execPath, ["scripts/build.mjs"], { cwd: process.cwd(), env, stdio: "ignore" });
   execFileSync(process.execPath, ["scripts/seo-audit.mjs"], { cwd: process.cwd(), env, stdio: "ignore" });
   const report = JSON.parse(fs.readFileSync("report/seo-report.json", "utf8"));

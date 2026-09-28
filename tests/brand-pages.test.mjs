@@ -8,7 +8,7 @@ test("Marken-Hubs entstehen nur mit ausreichendem echtem Angebotsbestand", () =>
   execFileSync(process.execPath, ["scripts/build-account-client.mjs"], { stdio: "pipe" });
   execFileSync(process.execPath, ["scripts/build.mjs"], {
     stdio: "pipe",
-    env: { ...process.env, SITE_URL: "https://example.test/angebotslotse" }
+    env: { ...process.env, SITE_URL: "https://joellehrheuer-code.github.io/angebotslotse" }
   });
 
   const index = fs.readFileSync("dist/marken.html","utf8");

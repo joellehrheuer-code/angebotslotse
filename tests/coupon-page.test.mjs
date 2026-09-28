@@ -7,7 +7,7 @@ test("Rabattcode-Seite nennt verifizierte Partnerquellen statt feste Netzwerke",
   execFileSync(process.execPath, ["scripts/build-account-client.mjs"], { stdio: "pipe" });
   execFileSync(process.execPath, ["scripts/build.mjs"], {
     stdio: "pipe",
-    env: { ...process.env, SITE_URL: "https://example.test/angebotslotse" }
+    env: { ...process.env, SITE_URL: "https://joellehrheuer-code.github.io/angebotslotse" }
   });
 
   const html = fs.readFileSync("dist/rabattcodes/index.html", "utf8");

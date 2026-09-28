@@ -13,7 +13,7 @@ test("Kategorie-, Shop- und Marken-Hubs nutzen interne CollectionPage-Strukturda
   execFileSync(process.execPath, ["scripts/build-account-client.mjs"], { stdio:"pipe" });
   execFileSync(process.execPath, ["scripts/build.mjs"], {
     stdio:"pipe",
-    env:{...process.env,SITE_URL:"https://example.test/angebotslotse"}
+    env:{...process.env,SITE_URL:"https://joellehrheuer-code.github.io/angebotslotse"}
   });
 
   const categoryFiles = ["gaming.html","technik.html","computer.html","audio-musik.html","haushalt.html"]
@@ -35,7 +35,7 @@ test("Kategorie-, Shop- und Marken-Hubs nutzen interne CollectionPage-Strukturda
     assert.ok(types.has("BreadcrumbList"), "BreadcrumbList fehlt in "+file);
     assert.ok(types.has("ItemList"), "ItemList fehlt in "+file);
     const json=JSON.stringify(schema);
-    assert.match(json,/https:\/\/example\.test\/angebotslotse\/angebote\//);
+    assert.match(json,/https:\/\/joellehrheuer-code\.github\.io\/angebotslotse\/angebote\//);
     assert.doesNotMatch(json,/(awin1\.com|sjv\.io|tradedoubler\.com\/click|webgains\.com\/click|instant-gaming\.com\/\?igr=)/i);
   }
 });
@@ -57,7 +57,7 @@ test("Hub-Indizes und Rabattcodes verlinken in strukturierten Daten nur interne 
       assert.ok(types.has("CollectionPage"));
       assert.ok(types.has("ItemList"));
     } else {
-      assert.match(joined,/https:\/\/example\.test\/angebotslotse\/angebote\//);
+      assert.match(joined,/https:\/\/joellehrheuer-code\.github\.io\/angebotslotse\/angebote\//);
     }
   }
 });

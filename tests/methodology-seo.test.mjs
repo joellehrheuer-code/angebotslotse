@@ -7,7 +7,7 @@ test("Methodik-Seite ist indexierbar, in der Sitemap und aus Deal-Checks verlink
   execFileSync(process.execPath, ["scripts/build-account-client.mjs"], { stdio: "pipe" });
   execFileSync(process.execPath, ["scripts/build.mjs"], {
     stdio: "pipe",
-    env: { ...process.env, SITE_URL: "https://example.test/angebotslotse" }
+    env: { ...process.env, SITE_URL: "https://joellehrheuer-code.github.io/angebotslotse" }
   });
 
   const html = fs.readFileSync("dist/methodik.html", "utf8");

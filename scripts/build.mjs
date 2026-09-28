@@ -1,5 +1,7 @@
 import fs from "node:fs/promises";
 import path from "node:path";
+import os from "node:os";
+import crypto from "node:crypto";
 import { historyFor } from "./lib/price-history.mjs";
 import { isPublicationReady, refineOfferCategory, isMarketCompatibleTitle } from "./lib/normalize.mjs";
 import { selectHomepageOffers } from "./lib/homepage-selection.mjs";
@@ -25,6 +27,37 @@ const legalName = process.env.LEGAL_NAME || "Joel Leroy Lehrheuer";
 const legalAddress = process.env.LEGAL_ADDRESS || "Rathausstraße 4, 52072 Aachen, Deutschland";
 const analyticsToken = /^[a-f0-9]{32}$/i.test(process.env.CLOUDFLARE_WEB_ANALYTICS_TOKEN ?? "") ? process.env.CLOUDFLARE_WEB_ANALYTICS_TOKEN : "";
 const googleVerification = /^[A-Za-z0-9_-]+$/.test(process.env.GOOGLE_SITE_VERIFICATION ?? "") ? process.env.GOOGLE_SITE_VERIFICATION : "";
+const testBuildCacheEnabled = Boolean(process.env.NODE_TEST_CONTEXT);
+const testBuildCacheFile = path.join(os.tmpdir(), `angebotslotse-test-build-${crypto.createHash("sha256").update(process.cwd()).digest("hex").slice(0,16)}.json`);
+const buildInputRoots = ["package.json","package-lock.json","config.json","scripts","src","data","public"];
+const buildInputSignature = async () => {
+  const hash = crypto.createHash("sha256");
+  hash.update(JSON.stringify({base,email,legalName,legalAddress,analyticsToken,googleVerification}));
+  const visit = async file => {
+    const normalized = file.replaceAll("\\","/");
+    if (normalized === "public/account-client.js") return;
+    const stat = await fs.stat(file).catch(() => null);
+    if (!stat) return;
+    if (stat.isDirectory()) {
+      for (const name of (await fs.readdir(file)).sort()) await visit(path.join(file,name));
+      return;
+    }
+    if (!stat.isFile()) return;
+    hash.update(`${normalized}:${stat.size}:${stat.mtimeMs}`);
+  };
+  for (const root of buildInputRoots) await visit(root);
+  return hash.digest("hex");
+};
+const testBuildSignature = testBuildCacheEnabled ? await buildInputSignature() : null;
+if (testBuildCacheEnabled) {
+  const cached = await readJson(testBuildCacheFile, "{}");
+  const requiredOutputs = ["dist/index.html","dist/build-report.json","dist/sitemap.xml","dist/app.js"];
+  const outputsReady = (await Promise.all(requiredOutputs.map(file => fs.stat(file).then(stat => stat.isFile()).catch(() => false)))).every(Boolean);
+  if (outputsReady && cached.signature === testBuildSignature) {
+    console.log("Test-Build unverändert – vorhandenes dist wird wiederverwendet.");
+    process.exit(0);
+  }
+}
 const out = "dist";
 const esc = value => String(value ?? "").replace(/[&<>\"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const json = value => JSON.stringify(value).replace(/</g, "\\u003c");
@@ -474,4 +507,5 @@ await fs.writeFile(path.join(out,"sitemap.xml"),`<?xml version="1.0" encoding="U
 const alertFeed={updatedAt:now.toISOString(),offers:offers.map(o=>({id:o.id,slug:o.slug,title:o.title,description:o.description||"",category:o.category,brand:o.brand||"",advertiser:o.advertiser,currentPrice:hasPrice(o)?o.currentPrice:null,previousPrice:o.previousPrice>o.currentPrice?o.previousPrice:null,currency:o.currency||"EUR",imageUrl:o.imageUrl||null,updatedAt:o.updatedAt||o.dateAdded||null}))};
 await fs.writeFile(path.join(out,"alerts-feed.json"),`${JSON.stringify(alertFeed)}\n`);
 await fs.writeFile(path.join(out,"build-report.json"),`${JSON.stringify({version:"V8-premium-dark-commerce",rawRecords:storedOffers.length,offers:offers.length,uniqueProducts:new Set(offers.map(o=>o.productId||o.id)).size,offersWithGtin:offers.filter(o=>o.gtin||o.ean).length,offersWithMpn:offers.filter(o=>o.mpn).length,multiImageProducts:offers.filter(o=>(o.additionalImageUrls||[]).length>0).length,offersWithMultipleMerchants:[...new Set(offers.map(o=>o.productId).filter(Boolean))].filter(id=>offers.filter(o=>o.productId===id).length>1).length,productCards:offers.length,images:offers.filter(o=>o.imageUrl).length,placeholders:offers.filter(o=>!o.imageUrl).length,videos:offers.filter(o=>o.videoUrl).length,merchants:new Set(offers.map(o=>o.advertiser)).size,categories:activeCategories.length,prices:offers.filter(hasPrice).length,previousPrices:offers.filter(o=>hasPrice(o)&&o.previousPrice>o.currentPrice).length,discounts:offers.filter(o=>discount(o)).length,coupons:coupons.length,productsWithHistory:new Set(priceHistory.map(r=>r.productId)).size,priceRecords:priceHistory.length,comparisons:[...comparisonGroups.values()].filter(rows=>rows.length>1).length,countdowns:offers.filter(o=>o.endDate).length,productPages:offers.filter(o=>o.productId&&hasPrice(o)).length,landingPages:categories.length+discoveryPages.length+3+brandGroups.length+(brandGroups.length?1:0),brandPages:brandGroups.length,ownedBooks:bookEntries.length,merchPage:Boolean(merchEntry),sitemapUrls:sitemapUrls.length,analytics:analyticsToken?"active":"prepared-not-active",googleVerification:googleVerification?"active":"prepared-not-active",dailyDeal:homepage.dailyDeal?.id||null,currentDeals:homepage.newest.slice(0,5).length,dailyHighlights:homepage.dailyHighlights.length,weekDeals:homepage.weekDeals.length,monthHighlights:homepage.monthHighlights.length,newestProducts:homepage.newest.length,desktopCardsPerViewport:6,tabletCardsPerViewport:3,mobileCardsPerViewport:1,homeCards:[...homeBody.matchAll(/class="deal-card\b/g)].length,quarantined:statusQuarantined,staleStored:statusStale,awaitingMedia:statusAwaitingMedia,excludedFromPublication:storedOffers.length-offers.length},null,2)}\n`);
+if (testBuildCacheEnabled) await fs.writeFile(testBuildCacheFile, `${JSON.stringify({signature:testBuildSignature})}\n`);
 console.log(`V8 gebaut: ${offers.length} Angebote, ${priceHistory.length} echte Preismesspunkte.`);
