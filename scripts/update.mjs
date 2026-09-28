@@ -21,6 +21,9 @@ const oldProgramInventory = JSON.parse(await fs.readFile("report/program-invento
 const oldCreatorVideos = JSON.parse(await fs.readFile("data/creator-videos.json", "utf8").catch(() => '{"version":1,"source":"public-only","updatedAt":null,"videos":[]}'));
 const oldCreatorFeed = JSON.parse(await fs.readFile("data/creator-feed.json", "utf8").catch(() => '{"version":1,"source":"public-only","updatedAt":null,"items":[]}'));
 const impactLinkPolicy = JSON.parse(await fs.readFile("data/impact-link-policy.json", "utf8").catch(() => "{}"));
+const isQuarantinedByPolicy = offer => (impactLinkPolicy.quarantinedAdvertisers ?? []).some(rule =>
+  (rule.advertiserId && String(rule.advertiserId) === String(offer.advertiserId)) ||
+  (rule.advertiserName && String(rule.advertiserName).toLowerCase() === String(offer.advertiser).toLowerCase()));
 const oldIds = new Set(oldOffers.map(o => o.id));
 let creatorFeedState={
   state:"disabled",
@@ -75,13 +78,20 @@ try {
   const updateAt = new Date().toISOString();
   const removedOffers = oldOffers.filter(o => !newIds.has(o.id));
   const archive = archiveRemovedOffers(oldArchive, removedOffers, updateAt);
-  status = { state: "ok", lastSuccessfulUpdate: updateAt, activeOffers: offers.length,
+  const storedOfferCount = offers.length;
+  const staleOfferCount = offers.filter(o => o.isStale).length;
+  const quarantinedOfferCount = offers.filter(isQuarantinedByPolicy).length;
+  const publishableOfferCount = offers.filter(offer => !isQuarantinedByPolicy(offer) && isPublicationReady(offer)).length;
+  const awaitingMediaCount = offers.filter(offer => !offer.isStale && !isQuarantinedByPolicy(offer) && isConcreteOffer(offer) && !isPublicationReady(offer)).length;
+  status = { state: "ok", lastSuccessfulUpdate: updateAt, activeOffers: storedOfferCount,
+    storedOffers: storedOfferCount, publishableOffers: publishableOfferCount,
+    awaitingMedia: awaitingMediaCount, quarantined: quarantinedOfferCount,
     added: offers.filter(o => !oldIds.has(o.id)).length, removed: removedOffers.length,
     archivedThisRun: removedOffers.length, archivedTotal: archive.items.length,
     filteredForeignLocale,
     invalidLinks: 0, apiErrors: failed.size, sources: Object.fromEntries(sources.map(s => [s.name, { state: s.state, count: s.rows.length, error: s.error ?? null, audit: s.audit ?? null }])),
     creatorFeed: creatorFeedState,
-    stale: offers.filter(o => o.isStale).length,
+    stale: staleOfferCount,
     message: failed.size || sources.some(s => s.state === "disabled") ? "Aktualisierung mit geschützten Bestandsdaten abgeschlossen." : "Aktualisierung erfolgreich." };
   await fs.writeFile("data/offers.json", `${JSON.stringify(offers, null, 2)}\n`);
   await fs.writeFile("data/offer-archive.json", `${JSON.stringify(archive, null, 2)}\n`);
@@ -97,8 +107,7 @@ try {
   const feedSources=sources.filter(source=>source.name.includes("feed"));
   const concreteOffers=offers.filter(isConcreteOffer), publicOffers=offers.filter(isPublicationReady);
   const countBy = (rows, key) => Object.fromEntries([...rows.reduce((counts, row) => { const value = row[key] || "sonstige"; counts.set(value, (counts.get(value) || 0) + 1); return counts; }, new Map())].sort((a, b) => b[1] - a[1] || String(a[0]).localeCompare(String(b[0]), "de")).map(([name, count]) => [name, count]));
-  const quarantined = new Set((impactLinkPolicy.quarantinedAdvertisers ?? []).map(rule => `${rule.advertiserId ?? ""}|${String(rule.advertiserName ?? "").toLowerCase()}`));
-  const isQuarantined = offer => quarantined.has(`${offer.advertiserId ?? ""}|${String(offer.advertiser ?? "").toLowerCase()}`);
+  const isQuarantined = isQuarantinedByPolicy;
   const sourceNames={awin:"Awin",impact:"Impact",amazon:"Amazon",direct:"Direkt",daisycon:"Daisycon",tradedoubler:"Tradedoubler",webgains:"Webgains"};
   const sourceStats = countBy(publicOffers.map(offer => ({ source: sourceNames[offer.source] || "sonstige" })), "source");
   const officialMediaStats = countBy(offers.filter(offer=>offer.imageUrl).map(offer=>({source:sourceNames[offer.source]||"sonstige"})),"source");
