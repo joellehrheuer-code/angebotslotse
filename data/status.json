@@ -1,6 +1,6 @@
 {
   "state": "ok",
-  "lastSuccessfulUpdate": "2026-09-28T06:58:11.757Z",
+  "lastSuccessfulUpdate": "2026-09-28T07:15:23.905Z",
   "activeOffers": 479,
   "added": 0,
   "removed": 0,
@@ -162,11 +162,11 @@
     }
   },
   "creatorFeed": {
-    "state": "disabled",
-    "count": 0,
-    "videos": 0,
+    "state": "ok",
+    "count": 4,
+    "videos": 4,
     "error": null,
-    "mode": null
+    "mode": "social"
   },
   "stale": 207,
   "message": "Aktualisierung mit geschützten Bestandsdaten abgeschlossen."
