@@ -106,7 +106,7 @@ try {
   const programmeRows=Object.entries(collected.awinPrograms??{}).flatMap(([relationship,rows])=>rows.map(row=>({network:"Awin",relationship,advertiserId:row.id??row.advertiserId??null,name:row.name??row.advertiserName??null,primarySector:row.primarySector??null,primaryRegion:row.primaryRegion??null}))).filter(row=>row.name&&(row.relationship!=="notjoined"||priority.test(row.name)||relevant.test(`${row.name} ${row.primarySector??""}`)||discoveryAdvertiserIds.has(String(row.advertiserId)))).sort((a,b)=>Number(priority.test(b.name))-Number(priority.test(a.name))||a.relationship.localeCompare(b.relationship)||a.name.localeCompare(b.name,"de")).slice(0,200);
   const impact=sources.find(source=>source.name==="impact");
   const feedSources=sources.filter(source=>source.name.includes("feed"));
-  const concreteOffers=offers.filter(isConcreteOffer), publicOffers=offers.filter(isPublicationReady);
+  const concreteOffers=offers.filter(isConcreteOffer), publicOffers=offers.filter(offer=>!isQuarantinedByPolicy(offer)&&isPublicationReady(offer));
   const countBy = (rows, key) => Object.fromEntries([...rows.reduce((counts, row) => { const value = row[key] || "sonstige"; counts.set(value, (counts.get(value) || 0) + 1); return counts; }, new Map())].sort((a, b) => b[1] - a[1] || String(a[0]).localeCompare(String(b[0]), "de")).map(([name, count]) => [name, count]));
   const isQuarantined = isQuarantinedByPolicy;
   const sourceNames={awin:"Awin",impact:"Impact",amazon:"Amazon",direct:"Direkt",daisycon:"Daisycon",tradedoubler:"Tradedoubler",webgains:"Webgains"};
