@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-28T17:06:03.767Z",
+  "generatedAt": "2026-09-28T17:14:52.444Z",
   "newAwinPrograms": 0,
   "newImpactPrograms": 0,
   "newDaisyconPrograms": 0,
@@ -32,9 +32,7 @@
   "officialImagesBySource": {
     "Awin": 246
   },
-  "missingMediaBySource": {
-    "Awin": 4
-  },
+  "missingMediaBySource": {},
   "productsByMerchant": {
     "Hollyland DE": 137,
     "ANTHBOT DE": 57,
@@ -127,6 +125,7 @@
     }
   ],
   "quarantinedRecords": 130,
+  "blockedPublisherPromotions": 4,
   "dailyDeal": "24fcf0e0d7084d48",
   "dailyHighlights": [
     "24fcf0e0d7084d48",

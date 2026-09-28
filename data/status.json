@@ -1,10 +1,11 @@
 {
   "state": "ok",
-  "lastSuccessfulUpdate": "2026-09-28T17:06:03.725Z",
+  "lastSuccessfulUpdate": "2026-09-28T17:14:52.302Z",
   "activeOffers": 479,
   "storedOffers": 479,
   "publishableOffers": 252,
-  "awaitingMedia": 4,
+  "awaitingMedia": 0,
+  "blockedPublisherPromotions": 4,
   "quarantined": 130,
   "added": 0,
   "removed": 0,
