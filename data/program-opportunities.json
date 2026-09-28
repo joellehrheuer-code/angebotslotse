@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-28T07:15:23.960Z",
+  "generatedAt": "2026-09-28T07:53:35.372Z",
   "scope": "Automatisch aus Programminventar, DE-Angebotsabdeckung und verfügbaren Netzwerk-/Feed-Signalen erzeugt.",
   "automation": {
     "discovery": "automatic",
@@ -150,6 +150,40 @@
       "automationState": "ready-for-review"
     },
     {
+      "brand": "Lidl DE",
+      "network": "Awin",
+      "advertiserId": 13936,
+      "status": "notjoined",
+      "category": "Haushalt & Alltag",
+      "score": 51,
+      "priority": "mittel",
+      "activeDiscoveryOffers": 1,
+      "offerExamples": [
+        "Lidl Fotos: Bis zu 50% Rabatt!"
+      ],
+      "productFeed": false,
+      "metrics": {
+        "awinIndex": null,
+        "epc": null,
+        "conversionRate": null,
+        "approvalPercentage": null,
+        "validationDays": null,
+        "averagePaymentTime": null,
+        "commissionMin": null,
+        "commissionMax": null,
+        "commissionTypes": []
+      },
+      "reasons": [
+        "passt zu Haushalt & Alltag",
+        "strategisch relevante Marke",
+        "1 aktive DE-Aktion"
+      ],
+      "applicationRequired": true,
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Lidl DE redaktionell passend im Bereich Haushalt & Alltag einbinden. Bei Awin sind aktuell 1 für Deutschland sichtbare Aktion dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "automationState": "ready-for-review"
+    },
+    {
       "brand": "Dyson DE",
       "network": "Awin",
       "advertiserId": 12802,
@@ -177,37 +211,6 @@
       ],
       "applicationRequired": true,
       "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Dyson DE redaktionell passend im Bereich Technik & Computer einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "automationState": "ready-for-review"
-    },
-    {
-      "brand": "Lidl DE",
-      "network": "Awin",
-      "advertiserId": 13936,
-      "status": "notjoined",
-      "category": "Haushalt & Alltag",
-      "score": 45,
-      "priority": "mittel",
-      "activeDiscoveryOffers": 0,
-      "offerExamples": [],
-      "productFeed": false,
-      "metrics": {
-        "awinIndex": null,
-        "epc": null,
-        "conversionRate": null,
-        "approvalPercentage": null,
-        "validationDays": null,
-        "averagePaymentTime": null,
-        "commissionMin": null,
-        "commissionMax": null,
-        "commissionTypes": []
-      },
-      "reasons": [
-        "passt zu Haushalt & Alltag",
-        "strategisch relevante Marke"
-      ],
-      "applicationRequired": true,
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Lidl DE redaktionell passend im Bereich Haushalt & Alltag einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
       "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
       "automationState": "ready-for-review"
     },
