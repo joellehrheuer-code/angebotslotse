@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { collectSources } from "../scripts/lib/source-manager.mjs";
+import { collectSources, runSourceWithRetry } from "../scripts/lib/source-manager.mjs";
 
 test("fehlende Secrets deaktivieren nur die betroffenen Quellen und legen keine Werte offen", async () => {
   const { sources } = await collectSources({});
@@ -18,6 +18,28 @@ test("fehlende Secrets deaktivieren nur die betroffenen Quellen und legen keine 
   assert.doesNotMatch(JSON.stringify(sources), /token_value|SID_VALUE|credential_secret_value|supersecret123/i);
 });
 
+
+test("temporäre Quellenfehler werden begrenzt erneut versucht", async () => {
+  let calls = 0;
+  const waits = [];
+  const result = await runSourceWithRetry(async () => {
+    calls += 1;
+    if (calls === 1) throw new Error("fetch failed: ETIMEDOUT");
+    return ["ok"];
+  }, { attempts: 2, baseDelayMs: 25, sleep: async ms => waits.push(ms) });
+  assert.deepEqual(result, ["ok"]);
+  assert.equal(calls, 2);
+  assert.deepEqual(waits, [25]);
+});
+
+test("dauerhafte Konfigurationsfehler werden nicht blind erneut versucht", async () => {
+  let calls = 0;
+  await assert.rejects(
+    () => runSourceWithRetry(async () => { calls += 1; throw new Error("credentials missing"); }, { attempts: 3, sleep: async () => {} }),
+    /credentials missing/
+  );
+  assert.equal(calls, 1);
+});
 
 test("Impact kann zwischen 4h-Website-Updates rate-limit-schonend ausgesetzt werden", async () => {
   const { sources } = await collectSources({

@@ -8,6 +8,29 @@ import { fetchDaisyconOffers, fetchDaisyconPrograms, fetchDaisyconMedia, fetchDa
 import { fetchTradedoublerOffers, fetchTradedoublerVouchers } from "./tradedoubler.mjs";
 import { fetchWebgainsOffers, fetchWebgainsProgramMemberships, fetchWebgainsProgramReview } from "./webgains.mjs";
 import fs from "node:fs/promises";
+
+const wait = ms => new Promise(resolve => setTimeout(resolve, ms));
+const isTransientSourceError = error => {
+  const status = Number(error?.status ?? error?.statusCode);
+  const message = String(error?.message ?? error ?? "");
+  return [408,425,429,500,502,503,504].includes(status) || /(?:\b408\b|\b425\b|\b429\b|\b50[0-4]\b|fetch failed|econnreset|etimedout|enotfound|eai_again|socket|network)/i.test(message);
+};
+
+export async function runSourceWithRetry(run, { attempts = 2, baseDelayMs = 400, sleep = wait } = {}) {
+  const maxAttempts = Math.min(3, Math.max(1, Number(attempts) || 1));
+  const delay = Math.max(0, Number(baseDelayMs) || 0);
+  let lastError;
+  for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
+    try { return await run(); }
+    catch (error) {
+      lastError = error;
+      if (!isTransientSourceError(error) || attempt === maxAttempts) throw error;
+      await sleep(delay * (2 ** (attempt - 1)));
+    }
+  }
+  throw lastError;
+}
+
 export async function collectSources(env = process.env) {
   const impactCadenceHours=Math.min(24,Math.max(4,Number(env.IMPACT_SYNC_EVERY_HOURS)||12));
   const syncHour=Number.isFinite(Number(env.SOURCE_SYNC_UTC_HOUR))?Number(env.SOURCE_SYNC_UTC_HOUR):new Date().getUTCHours();
@@ -26,8 +49,8 @@ export async function collectSources(env = process.env) {
   const webgainsProgramReviews={};
   const awinProgramDetails={};
   if(env.AWIN_PUBLISHER_ID&&env.AWIN_API_TOKEN) {
-    try{awinPrograms=await fetchAwinPrograms({publisherId:env.AWIN_PUBLISHER_ID,token:env.AWIN_API_TOKEN});}catch{}
-    try{awinDiscoveryOffers=await fetchAwinOffers({publisherId:env.AWIN_PUBLISHER_ID,token:env.AWIN_API_TOKEN,membership:"notJoined",maxPages:5});}catch(error){awinDiscoveryError=String(error.message).slice(0,160);}
+    try{awinPrograms=await runSourceWithRetry(()=>fetchAwinPrograms({publisherId:env.AWIN_PUBLISHER_ID,token:env.AWIN_API_TOKEN}));}catch{}
+    try{awinDiscoveryOffers=await runSourceWithRetry(()=>fetchAwinOffers({publisherId:env.AWIN_PUBLISHER_ID,token:env.AWIN_API_TOKEN,membership:"notJoined",maxPages:5}));}catch(error){awinDiscoveryError=String(error.message).slice(0,160);}
     const detailLimit=Math.min(8,Math.max(0,Number(env.AWIN_PROGRAM_DETAIL_LIMIT)||6));
     const detailCandidates=[...(awinPrograms?.notjoined??[]),...(awinPrograms?.pending??[])]
       .filter(program=>isStrategicProgram(program)||categoryForProgram(program)!=="Weitere")
@@ -41,9 +64,9 @@ export async function collectSources(env = process.env) {
     }
   }
   if(env.DAISYCON_PUBLISHER_ID&&env.DAISYCON_ACCESS_TOKEN){
-    try{daisyconPrograms=await fetchDaisyconPrograms({publisherId:env.DAISYCON_PUBLISHER_ID,accessToken:env.DAISYCON_ACCESS_TOKEN});}
+    try{daisyconPrograms=await runSourceWithRetry(()=>fetchDaisyconPrograms({publisherId:env.DAISYCON_PUBLISHER_ID,accessToken:env.DAISYCON_ACCESS_TOKEN}));}
     catch(error){daisyconProgramError=String(error.message).slice(0,160);}
-    try{daisyconMedia=await fetchDaisyconMedia({publisherId:env.DAISYCON_PUBLISHER_ID,accessToken:env.DAISYCON_ACCESS_TOKEN});}
+    try{daisyconMedia=await runSourceWithRetry(()=>fetchDaisyconMedia({publisherId:env.DAISYCON_PUBLISHER_ID,accessToken:env.DAISYCON_ACCESS_TOKEN}));}
     catch{/* Media enrichment is optional. */}
     const mediaId=(daisyconMedia.find(row=>/approved|active|verified/i.test(String(row?.approval_status??row?.approvalStatus??row?.status??"")))??daisyconMedia[0])?.id??null;
     const reviewLimit=Math.min(8,Math.max(0,Number(env.DAISYCON_PROGRAM_REVIEW_LIMIT)||8));
@@ -59,11 +82,11 @@ export async function collectSources(env = process.env) {
   }
   if(env.WEBGAINS_PUBLISHER_ID&&env.WEBGAINS_ACCESS_TOKEN){
     try{
-      webgainsMemberships=await fetchWebgainsProgramMemberships({
+      webgainsMemberships=await runSourceWithRetry(()=>fetchWebgainsProgramMemberships({
         publisherId:env.WEBGAINS_PUBLISHER_ID,
         accessToken:env.WEBGAINS_ACCESS_TOKEN,
         size:Number(env.WEBGAINS_MEMBERSHIP_LIMIT)||100
-      });
+      }));
     }catch(error){webgainsMembershipError=String(error.message).slice(0,160);}
     const reviewLimit=Math.min(8,Math.max(0,Number(env.WEBGAINS_PROGRAM_REVIEW_LIMIT)||6));
     const candidates=(webgainsMemberships??[])
@@ -110,7 +133,7 @@ export async function collectSources(env = process.env) {
     if (name === "tradedoubler" && !env.TRADEDOUBLER_PRODUCTS_TOKEN && !env.TRADEDOUBLER_FEED_URLS) return {name,state:"disabled",rows:[],audit:{reason:"TRADEDOUBLER_PRODUCTS_TOKEN / TRADEDOUBLER_FEED_URLS missing – Tradedoubler sync skipped"}};
     if (name === "tradedoubler-vouchers" && !env.TRADEDOUBLER_VOUCHERS_TOKEN) return {name,state:"disabled",rows:[],audit:{reason:"TRADEDOUBLER_VOUCHERS_TOKEN missing – Tradedoubler voucher sync skipped"}};
     if (name === "webgains" && !env.WEBGAINS_FEED_URLS) return {name,state:"disabled",rows:[],audit:{reason:"WEBGAINS_FEED_URLS missing – Webgains feed sync skipped"}};
-    try { const rows=await run(); return { name, state: "ok", rows, audit:rows.audit??null }; }
+    try { const rows=await runSourceWithRetry(run,{attempts:Number(env.SOURCE_RETRY_ATTEMPTS)||2,baseDelayMs:Number(env.SOURCE_RETRY_BASE_DELAY_MS)||400}); return { name, state: "ok", rows, audit:rows.audit??null }; }
     catch (error) { return { name, state: "error", rows: [], error: String(error.message).slice(0, 160) }; }
   }));
   return {sources:results,awinPrograms,awinDiscoveryOffers,awinDiscoveryError,awinProgramDetails,daisyconPrograms,daisyconProgramError,daisyconMedia,daisyconProgramReviews,webgainsMemberships,webgainsMembershipError,webgainsProgramReviews};
