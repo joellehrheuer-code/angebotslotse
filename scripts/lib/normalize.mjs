@@ -26,7 +26,7 @@ export function dedupeKeyForOffer(offer) {
 }
 
 export const isConcreteOffer = offer => offer.source !== "direct" && Boolean(offer.productId || offer.voucherCode || offer.endDate || (Number.isFinite(offer.currentPrice) && offer.currentPrice > 0));
-export const isPublicationReady = offer => isConcreteOffer(offer) && Boolean(offer.imageUrl || offer.videoUrl || offer.voucherCode);
+export const isPublicationReady = offer => !offer?.isStale && isConcreteOffer(offer) && Boolean(offer.imageUrl || offer.videoUrl || offer.voucherCode);
 
 export function categoryFor(value, categories) {
   const source = text(value).toLowerCase();
