@@ -73,3 +73,20 @@ jobs:
       - name: Deploy GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+  smoke:
+    needs: deploy
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Live-Smoke nach Deployment
+        run: npm run smoke:live
+        env:
+          SITE_URL: https://joellehrheuer-code.github.io/angebotslotse
+          SMOKE_ATTEMPTS: 6
+          SMOKE_RETRY_DELAY_MS: 5000
+          SMOKE_CONCURRENCY: 8

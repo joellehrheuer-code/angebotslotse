@@ -9,6 +9,7 @@
     "build": "node scripts/build-account-client.mjs && node scripts/build.mjs",
     "validate": "node scripts/validate-build.mjs",
     "security": "node scripts/security-check.mjs",
+    "smoke:live": "node scripts/live-smoke.mjs",
     "seo": "node scripts/seo-audit.mjs",
     "check": "node scripts/integrity.mjs",
     "report": "node scripts/report.mjs",
