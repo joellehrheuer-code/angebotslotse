@@ -1,10 +1,9 @@
-const CACHE = "angebotslotse-shell-v1";
+const CACHE = "angebotslotse-shell-v2";
 const scope = self.registration.scope;
 const local = path => new URL(path, scope).href;
 const SHELL = [
   local("./"),
-  local("styles.css"),
-  local("enhancements.css"),
+  local("site.css"),
   local("app.js"),
   local("favicon.svg"),
   local("offline.html")

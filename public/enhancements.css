@@ -432,3 +432,19 @@ main{min-width:0}
 .creator-update-card strong{color:#ff7fc4;font-size:12px}
 @media(max-width:980px){.creator-update-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:620px){.creator-update-grid{grid-template-columns:1fr}.creator-update-card{grid-template-columns:86px minmax(0,1fr)}.creator-update-card>img,.creator-update-placeholder{width:86px;min-height:118px}}
+
+
+/* Rendering performance: defer paint/layout work for large below-the-fold modules. */
+.deal-section,.category-section,.directory-section,.partner-section,.creator-promo,.creator-videos,.project-promo,.newsletter,.owned-project-page,.listing:not(.account-page){
+  content-visibility:auto;
+  contain-intrinsic-size:auto 640px;
+}
+
+
+/* Performance/accessibility follow-up from Lighthouse audit. */
+.instant-gaming-actions{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:16px 0}
+.instant-gaming-module .button.primary{background:#5b1454;color:#fff;border-color:#ff6fbd}
+.instant-gaming-module .button.primary:hover{background:#741b6a;color:#fff}
+.instant-gaming-note{margin:8px 0 0;color:#9ea8c1;font-size:11px}
+.instant-gaming-module [data-ig-banner-host]:not([hidden]){margin-top:16px}
+@media(max-width:560px){.instant-gaming-actions{display:grid}.instant-gaming-actions .button{width:100%}}

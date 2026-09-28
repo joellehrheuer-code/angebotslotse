@@ -236,6 +236,33 @@ spreadshopButton?.addEventListener("click", () => {
   document.body.append(script);
 });
 
+const instantGamingLoad = document.querySelector("[data-ig-banner-load]");
+instantGamingLoad?.addEventListener("click", () => {
+  const host = document.querySelector("[data-ig-banner-host]");
+  const note = document.querySelector("[data-ig-banner-note]");
+  const igr = instantGamingLoad.dataset.igr;
+  if (!host || !igr || instantGamingLoad.dataset.loaded === "true") return;
+  instantGamingLoad.dataset.loaded = "true";
+  instantGamingLoad.disabled = true;
+  host.hidden = false;
+  if (note) note.textContent = "Instant-Gaming-Partnerbanner wird geladen …";
+  window.igBannerConfig = { lang: "de", igr, banners: ["my-banner"] };
+  const script = document.createElement("script");
+  script.src = "https://www.instant-gaming.com/api/banner/partner/loader.js";
+  script.async = true;
+  script.addEventListener("load", () => {
+    instantGamingLoad.hidden = true;
+    if (note) note.textContent = "Externer Instant-Gaming-Inhalt wurde auf deinen Klick geladen.";
+  }, {once:true});
+  script.addEventListener("error", () => {
+    instantGamingLoad.dataset.loaded = "false";
+    instantGamingLoad.disabled = false;
+    host.hidden = true;
+    if (note) note.textContent = "Der Partnerbanner konnte nicht geladen werden. Der direkte Affiliate-Link bleibt verfügbar.";
+  }, {once:true});
+  document.body.append(script);
+});
+
 const WATCHLIST_KEY = "angebotslotse-watchlist-v1";
 function readWatchlist() {
   try {

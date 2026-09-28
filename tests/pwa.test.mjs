@@ -17,5 +17,7 @@ test("PWA-Quelle trennt Offline-Cache von Konto- und Alarmdaten", () => {
   assert.match(validate, /offline\.html/);
   assert.match(sw, /konto\.html/);
   assert.match(sw, /alerts-feed\.json/);
+  assert.match(sw, /site\.css/);
+  assert.doesNotMatch(sw, /local\("styles\.css"\)|local\("enhancements\.css"\)/);
   assert.doesNotMatch(sw, /SUPABASE_SECRET_KEY|RESEND_API_KEY|service_role/);
 });
