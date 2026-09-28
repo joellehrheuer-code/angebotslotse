@@ -83,7 +83,8 @@ try {
   const quarantinedOfferCount = offers.filter(isQuarantinedByPolicy).length;
   const publishableOfferCount = offers.filter(offer => !isQuarantinedByPolicy(offer) && isPublicationReady(offer)).length;
   const awaitingMediaCount = offers.filter(offer => !offer.isStale && !isQuarantinedByPolicy(offer) && isConcreteOffer(offer) && !isPublicationReady(offer)).length;
-  status = { state: "ok", lastSuccessfulUpdate: updateAt, activeOffers: storedOfferCount,
+  const degraded = failed.size > 0 || creatorFeedState.state === "stale";
+  status = { state: degraded ? "degraded" : "ok", lastSuccessfulUpdate: updateAt, activeOffers: storedOfferCount,
     storedOffers: storedOfferCount, publishableOffers: publishableOfferCount,
     awaitingMedia: awaitingMediaCount, quarantined: quarantinedOfferCount,
     added: offers.filter(o => !oldIds.has(o.id)).length, removed: removedOffers.length,
@@ -92,7 +93,7 @@ try {
     invalidLinks: 0, apiErrors: failed.size, sources: Object.fromEntries(sources.map(s => [s.name, { state: s.state, count: s.rows.length, error: s.error ?? null, audit: s.audit ?? null }])),
     creatorFeed: creatorFeedState,
     stale: staleOfferCount,
-    message: failed.size || sources.some(s => s.state === "disabled") ? "Aktualisierung mit geschützten Bestandsdaten abgeschlossen." : "Aktualisierung erfolgreich." };
+    message: degraded ? "Aktualisierung teilweise eingeschränkt; bestehende geprüfte Daten bleiben geschützt." : sources.some(s => s.state === "disabled") ? "Aktualisierung mit geschützten Bestandsdaten abgeschlossen." : "Aktualisierung erfolgreich." };
   await fs.writeFile("data/offers.json", `${JSON.stringify(offers, null, 2)}\n`);
   await fs.writeFile("data/offer-archive.json", `${JSON.stringify(archive, null, 2)}\n`);
   await fs.writeFile("data/price-history.json", `${JSON.stringify(updatePriceHistory(oldHistory, offers), null, 2)}\n`);
