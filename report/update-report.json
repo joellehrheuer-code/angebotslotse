@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-28T14:36:16.774Z",
+  "generatedAt": "2026-09-28T14:42:47.076Z",
   "newAwinPrograms": 0,
   "newImpactPrograms": 0,
   "newDaisyconPrograms": 0,
@@ -25,9 +25,9 @@
   "expiredOffers": 0,
   "expiredCoupons": 0,
   "filteredForeignLocale": 0,
-  "totalProducts": 250,
+  "totalProducts": 252,
   "productsBySource": {
-    "Awin": 250
+    "Awin": 252
   },
   "officialImagesBySource": {
     "Awin": 248
@@ -39,15 +39,17 @@
     "Hollyland DE": 137,
     "ANTHBOT DE": 57,
     "Outin Germany": 55,
-    "Imou DE": 1
+    "Coolblue DE": 1,
+    "Imou DE": 1,
+    "PDF Agile": 1
   },
   "productsByCategory": {
     "audio-musik": 76,
     "zubehoer": 69,
-    "technik": 41,
+    "technik": 42,
     "werkzeug": 27,
     "haushalt": 26,
-    "computer": 10,
+    "computer": 11,
     "freizeit": 1
   },
   "awinEnhancedFeeds": [
@@ -135,7 +137,8 @@
   ],
   "weekDeals": [
     "082bb91da12d2048",
-    "ad2ac243a83e92ac"
+    "ad2ac243a83e92ac",
+    "cfdc2f58b29a6d49"
   ],
   "monthHighlights": [
     "10bb463f70696c2e",

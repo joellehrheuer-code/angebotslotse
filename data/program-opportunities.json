@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-28T14:36:16.774Z",
+  "generatedAt": "2026-09-28T14:42:47.076Z",
   "scope": "Automatisch aus Programminventar, DE-Angebotsabdeckung und verfügbaren Netzwerk-/Feed-Signalen erzeugt.",
   "automation": {
     "discovery": "automatic",
@@ -1550,9 +1550,9 @@
     "marketplaceSearches": [
       {
         "category": "Technik & Computer",
-        "siteOffers": 120,
+        "siteOffers": 122,
         "joinedPrograms": 0,
-        "gapScore": 120,
+        "gapScore": 122,
         "searchTerms": [
           "electronics",
           "computer",
@@ -1618,7 +1618,7 @@
       {
         "network": "Daisycon",
         "category": "Technik & Computer",
-        "siteOffers": 120,
+        "siteOffers": 122,
         "priority": "hoch",
         "searchTerms": [
           "electronics",
@@ -1682,7 +1682,7 @@
       {
         "network": "Tradedoubler",
         "category": "Technik & Computer",
-        "siteOffers": 120,
+        "siteOffers": 122,
         "priority": "hoch",
         "searchTerms": [
           "electronics",
@@ -1751,7 +1751,7 @@
       {
         "network": "Webgains",
         "category": "Technik & Computer",
-        "siteOffers": 120,
+        "siteOffers": 122,
         "priority": "hoch",
         "searchTerms": [
           "electronics",

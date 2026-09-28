@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-28T14:36:16.774Z",
+  "generatedAt": "2026-09-28T14:42:47.076Z",
   "status": "disabled",
   "joinedPrograms": 0,
   "automation": {
@@ -12,9 +12,9 @@
   "marketplaceSearches": [
     {
       "category": "Technik & Computer",
-      "siteOffers": 120,
+      "siteOffers": 122,
       "joinedPrograms": 0,
-      "gapScore": 120,
+      "gapScore": 122,
       "searchTerms": [
         "electronics",
         "computer",
