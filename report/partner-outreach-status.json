@@ -1,5 +1,5 @@
 ﻿{
-    "generatedAt":  "2026-09-30T01:42:00+02:00",
+    "generatedAt":  "2026-09-30T02:05:00+02:00",
     "purpose":  "Deduplication and status tracking for Angebotslotse affiliate/partner outreach. No contracts are auto-accepted.",
     "statuses":  [
                      {
@@ -133,6 +133,51 @@
                          "contact":  "jschaaf@alternate.de",
                          "nextAction":  "Nicht erneut automatisch anschreiben. Nur bei ausdrücklicher neuer Einladung oder klar neuer, vom bisherigen Creator-Kontext unabhängiger Affiliate-Freigabe prüfen.",
                          "notes":  "Frühere Kooperationsanfrage am 02.09.2026 abgelehnt; zur Vermeidung unnötiger Doppelansprache aus Routine-Outreach ausschließen."
+                     },
+                     {
+                         "brand":  "INTERSPORT DE",
+                         "network":  "Awin",
+                         "status":  "pending",
+                         "lastContactAt":  "2026-09-30T02:05:00+02:00",
+                         "contact":  "mara.wieland@intersport.de",
+                         "nextAction":  "Antwort/Freischaltung abwarten; bei Freigabe Produktfeed, Deeplinks und Aktionen integrieren.",
+                         "notes":  "Offizieller Affiliate-Kontakt laut Awin-Profil; unverbindliche Publisher-Anfrage gesendet. Publisher-ID 3045061."
+                     },
+                     {
+                         "brand":  "BSTN DACH",
+                         "network":  "Awin",
+                         "status":  "pending",
+                         "lastContactAt":  "2026-09-30T02:05:00+02:00",
+                         "contact":  "michael.dorsch@bstn.com",
+                         "nextAction":  "Antwort/Freischaltung abwarten; bei Freigabe Produktfeed und Aktionen integrieren.",
+                         "notes":  "Offizieller Affiliate-Kontakt laut BSTN/Awin; unverbindliche Publisher-Anfrage gesendet. Publisher-ID 3045061."
+                     },
+                     {
+                         "brand":  "Sportspar DE",
+                         "network":  "Awin",
+                         "status":  "pending",
+                         "lastContactAt":  "2026-09-30T02:05:00+02:00",
+                         "contact":  "a.borisenko@sportspar.de",
+                         "nextAction":  "Antwort/Freischaltung abwarten; bei Freigabe Deal-Daten, Produktfeed und Deeplinks integrieren.",
+                         "notes":  "Offizieller Affiliate-Kontakt laut Awin; unverbindliche Publisher-Anfrage gesendet. Publisher-ID 3045061."
+                     },
+                     {
+                         "brand":  "PremiumSIM DE",
+                         "network":  "Awin",
+                         "status":  "pending",
+                         "lastContactAt":  "2026-09-30T02:05:00+02:00",
+                         "contact":  "partner@drillisch-online.de",
+                         "nextAction":  "Antwort/Freischaltung abwarten; bei Freigabe Tarif-/Aktionsdaten und Deeplinks integrieren.",
+                         "notes":  "Offizieller Affiliate-Kontakt laut Awin; unverbindliche Publisher-Anfrage gesendet. Publisher-ID 3045061."
+                     },
+                     {
+                         "brand":  "One DE",
+                         "network":  "direct/creator",
+                         "status":  "pending",
+                         "lastContactAt":  "2026-08-19T14:38:32+02:00",
+                         "contact":  "info@one.de",
+                         "nextAction":  "Nicht zusätzlich automatisch als Affiliate neu anschreiben, solange die frühere Creator-Anfrage ohne persönliche Antwort offen ist.",
+                         "notes":  "Frühere Creator-/Sponsoring-Anfrage am 19.08.2026; nur automatische Eingangsbestätigung gefunden. Brand-Dedupe aktiv."
                      }
                  ]
 }
