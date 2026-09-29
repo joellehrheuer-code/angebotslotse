@@ -5,9 +5,9 @@ import { buildAffiliateOpportunityReport } from "../scripts/lib/affiliate-opport
 test("zentraler Affiliate-Report sortiert netzwerkübergreifend nach Priorität", () => {
   const report=buildAffiliateOpportunityReport({
     generatedAt:"2026-09-27T13:00:00.000Z",
-    awin:[{brand:"Tech Brand",category:"Technik & Computer",priority:"hoch",score:88,status:"notjoined",applicationRequired:true,applicationDraft:"Draft",nextAction:"Prüfen",reasons:["Feed"]}],
+    awin:[{brand:"Tech Brand",advertiserId:12591,category:"Technik & Computer",priority:"hoch",score:88,status:"notjoined",applicationRequired:true,applicationDraft:"Draft",nextAction:"Prüfen",reasons:["Feed"]}],
     impact:[{brand:"Audio Brand",category:"Audio & Musik",priority:"mittel",score:44,nextAction:"Feed ausbauen",reasons:["2 Produkte"],campaignId:"i1"}],
-    daisycon:[{brand:"Gaming Brand",category:"Gaming",priority:"hoch",score:60,status:"available",applicationPossible:true,applicationDraft:"Daisy Draft",nextAction:"Bedingungen prüfen",reasons:["passt"],submissionReady:true,humanApprovalRequired:true}],
+    daisycon:[{brand:"Gaming Brand",programId:777,category:"Gaming",priority:"hoch",score:60,status:"available",applicationPossible:true,applicationDraft:"Daisy Draft",nextAction:"Bedingungen prüfen",reasons:["passt"],submissionReady:true,humanApprovalRequired:true}],
     networkSearches:{
       webgains:[{network:"Webgains",category:"Haushalt & Alltag",siteOffers:25,priority:"mittel",searchTerms:["home"],connected:false,action:"Zugang verbinden"}]
     }
@@ -22,6 +22,10 @@ test("zentraler Affiliate-Report sortiert netzwerkübergreifend nach Priorität"
   const daisy=report.reviewQueue.find(row=>row.network==="Daisycon"&&row.brand==="Gaming Brand");
   assert.equal(daisy.submissionReady,true);
   assert.equal(daisy.humanApprovalRequired,true);
+  assert.equal(daisy.programId,777);
+  const awin=report.reviewQueue.find(row=>row.network==="Awin"&&row.brand==="Tech Brand");
+  assert.equal(awin.advertiserId,12591);
+  assert.equal(awin.reference,12591);
 });
 
 test("Marketplace-Suchpläne bleiben von echten Bewerbungen getrennt", () => {

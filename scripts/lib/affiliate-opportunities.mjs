@@ -34,6 +34,10 @@ const queueRow = (row, index) => ({
   rank:index + 1,
   network:row.network,
   brand:row.brand,
+  reference:row.reference ?? null,
+  advertiserId:row.advertiserId ?? null,
+  programId:row.programId ?? null,
+  campaignId:row.campaignId ?? null,
   category:row.category,
   priority:row.priority,
   score:row.score,
@@ -46,7 +50,7 @@ const queueRow = (row, index) => ({
   humanApprovalRequired:row.humanApprovalRequired
 });
 
-const common = ({ network, brand, category, priority, score, status, action, draft, reason, kind, reference, submissionReady = false, humanApprovalRequired = false }) => ({
+const common = ({ network, brand, category, priority, score, status, action, draft, reason, kind, reference, advertiserId = null, programId = null, campaignId = null, submissionReady = false, humanApprovalRequired = false }) => ({
   network,
   brand: brand || network,
   category: category || "Weitere",
@@ -58,6 +62,9 @@ const common = ({ network, brand, category, priority, score, status, action, dra
   applicationDraft: draft || null,
   reason: reason || null,
   reference: reference || null,
+  advertiserId: advertiserId ?? null,
+  programId: programId ?? null,
+  campaignId: campaignId ?? null,
   submissionReady: Boolean(submissionReady),
   humanApprovalRequired: Boolean(humanApprovalRequired)
 });
@@ -85,6 +92,7 @@ export function buildAffiliateOpportunityReport({
       reason:(row.reasons || []).join(", "),
       kind:row.applicationRequired ? "application" : "pending",
       reference:row.advertiserId,
+      advertiserId:row.advertiserId,
       humanApprovalRequired:Boolean(row.applicationRequired)
     }));
   }
@@ -101,7 +109,9 @@ export function buildAffiliateOpportunityReport({
       draft:row.contactDraft,
       reason:(row.reasons || []).join(", "),
       kind:row.contactDraft ? "partner-expansion" : "joined-program",
-      reference:row.campaignId ?? row.advertiserId
+      reference:row.campaignId ?? row.advertiserId,
+      advertiserId:row.advertiserId ?? null,
+      campaignId:row.campaignId ?? null
     }));
   }
 
@@ -118,6 +128,7 @@ export function buildAffiliateOpportunityReport({
       reason:(row.reasons || []).join(", "),
       kind:row.applicationPossible ? "application" : "program",
       reference:row.programId,
+      programId:row.programId,
       submissionReady:row.submissionReady,
       humanApprovalRequired:row.humanApprovalRequired
     }));
@@ -136,6 +147,7 @@ export function buildAffiliateOpportunityReport({
       reason:(row.reasons || []).join(", "),
       kind:row.applicationPossible ? "application" : "program",
       reference:row.programId,
+      programId:row.programId,
       submissionReady:row.submissionReady,
       humanApprovalRequired:row.humanApprovalRequired
     }));
