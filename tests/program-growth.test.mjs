@@ -43,7 +43,7 @@ test("ausstehende Bewerbungen werden nicht erneut als sendefertig markiert", () 
 });
 
 test("Adult-Partner landen nicht in der Awin-Akquise-Queue", () => {
-  const adult={relationship:"notjoined",advertiserId:99,name:"Example Sexshop",primarySector:"Adult"};
+  const adult={relationship:"notjoined",advertiserId:99,name:"Example Fashion",primarySector:"Erotic"};
   assert.equal(isBlockedPartnerProgram(adult),true);
   assert.deepEqual(rankAwinOpportunities({programs:[adult]}),[]);
 });

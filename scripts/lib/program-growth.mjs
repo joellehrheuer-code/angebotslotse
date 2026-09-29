@@ -15,7 +15,7 @@ const rules = [
 ];
 
 const strategic = /amazon|coolblue|beyerdynamic|adidas|dyson|lidl|decathlon|samsung|lenovo|nike|under armour|razer|thomann|rode|waves|logitech|corsair|asus|msi|sony|philips|bosch|lg|anker|eufy|roborock|dreame|ecovacs|irobot|xiaomi|dji|gopro|garmin|fitbit|puma|shure|sennheiser|elgato|steelseries|hyperx|hp|dell|acer/i;
-const blockedPartnerSignal = /\b(?:sexshop|sexspielzeug|sex\s?toy|vibrator|dildo|masturbator|analplug|butt\s?plug|penisring|porn(?:o|ografie|ography)?|erotikshop|bdsm\s?gear|lovense|satisfyer)\b/i;
+const blockedPartnerSignal = /\b(?:adult|erotic|erotik|sexshop|sexspielzeug|sex\s?toy|vibrator|dildo|masturbator|analplug|butt\s?plug|penisring|porn(?:o|ografie|ography)?|erotikshop|bdsm\s?gear|lovense|satisfyer)\b/i;
 export const isBlockedPartnerProgram = program => blockedPartnerSignal.test(`${program?.name??""} ${program?.primarySector??""} ${program?.description??""}`);
 export const isStrategicProgram = program => strategic.test(String(program?.name ?? ""));
 

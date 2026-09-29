@@ -12,7 +12,7 @@ const amount = value => {
 };
 const slugify = value => text(value, 120).toLowerCase().normalize("NFKD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 const merchantIdentity = offer => identityText(offer.advertiserId || offer.advertiser) || "unknown-merchant";
-const blockedAdultSignal = /\b(?:sexshop|sexspielzeug|sex\s?toy|vibrator(?:en)?|dildo(?:s)?|masturbator|analplug|butt\s?plug|penisring|cock\s?ring|porn(?:o|ografie|ography)?|erotikshop|bdsm\s?gear|lovense|satisfyer)\b/i;
+const blockedAdultSignal = /\b(?:adult|erotic|erotik|sexshop|sexspielzeug|sex\s?toy|vibrator(?:en)?|dildo(?:s)?|masturbator|analplug|butt\s?plug|penisring|cock\s?ring|porn(?:o|ografie|ography)?|erotikshop|bdsm\s?gear|lovense|satisfyer)\b/i;
 export const isBlockedAdultOffer = raw => blockedAdultSignal.test(`${raw?.title??""} ${raw?.description??""} ${raw?.terms??""} ${raw?.advertiserName??raw?.advertiser?.name??raw?.advertiser??""} ${raw?.brand??raw?.manufacturer??""}`);
 
 export function dedupeKeyForOffer(offer) {
