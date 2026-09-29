@@ -171,7 +171,11 @@
       "mouse",
       "gpu",
       "cpu",
-      "ssd"
+      "ssd",
+      "software",
+      "pdf",
+      "editor",
+      "converter"
     ],
     "zubehoer": [
       "zubehör",
@@ -186,7 +190,9 @@
       "antenna",
       "halterung",
       "bracket",
-      "clamp"
+      "clamp",
+      "stromadapter",
+      "netzteil"
     ],
     "haushalt": [
       "haushalt",

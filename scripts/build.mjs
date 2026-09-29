@@ -3,7 +3,7 @@ import path from "node:path";
 import os from "node:os";
 import crypto from "node:crypto";
 import { historyFor } from "./lib/price-history.mjs";
-import { isPublicationReady, isAwaitingMediaOffer, isPublisherPromotion, refineOfferCategory, isMarketCompatibleTitle, isBlockedAdultOffer } from "./lib/normalize.mjs";
+import { isPublicationReady, isAwaitingMediaOffer, isPublisherPromotion, refineOfferCategory, isMarketCompatibleTitle, isBlockedAdultOffer, isBlockedNonMerchandiseOffer } from "./lib/normalize.mjs";
 import { selectHomepageOffers } from "./lib/homepage-selection.mjs";
 import { sanitizeCreatorVideos } from "./lib/creator-videos.mjs";
 import { sanitizeCreatorFeedItems } from "./lib/creator-feed.mjs";
@@ -69,7 +69,7 @@ const isQuarantined = offer => (linkPolicy.quarantinedAdvertisers ?? []).some(ru
   (rule.advertiserName && String(rule.advertiserName).toLowerCase() === String(offer.advertiser).toLowerCase()));
 const now = new Date();
 const offers = storedOffers
-  .filter(o => !isQuarantined(o) && !isBlockedAdultOffer(o) && isMarketCompatibleTitle(o.title, config.marketCountry) && (!o.endDate || new Date(o.endDate) > now) && isPublicationReady(o))
+  .filter(o => !isQuarantined(o) && !isBlockedAdultOffer(o) && !isBlockedNonMerchandiseOffer(o) && isMarketCompatibleTitle(o.title, config.marketCountry) && (!o.endDate || new Date(o.endDate) > now) && isPublicationReady(o))
   .map(o => ({...o,category:refineOfferCategory(o,config)}))
   .map(o => Number.isFinite(o.currentPrice) && o.currentPrice > 0 ? o : {...o,currentPrice:null,previousPrice:null});
 const hasPrice = o => Number.isFinite(o.currentPrice) && o.currentPrice > 0;

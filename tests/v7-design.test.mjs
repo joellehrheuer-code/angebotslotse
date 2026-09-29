@@ -2,7 +2,7 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import fs from "node:fs";
 import { execFileSync } from "node:child_process";
-import { isPublicationReady } from "../scripts/lib/normalize.mjs";
+import { isPublicationReady, isBlockedNonMerchandiseOffer } from "../scripts/lib/normalize.mjs";
 
 const siteUrl = "https://joellehrheuer-code.github.io/angebotslotse";
 
@@ -43,9 +43,11 @@ test("V7 build report records the real publishable inventory", () => {
   assert.equal(report.version, "V8-premium-dark-commerce");
   assert.equal(report.offers, report.productCards);
   assert.ok(report.offers > 0);
-  assert.equal(report.images, offers.filter(isPublicationReady).filter((offer) => offer.imageUrl).length);
+  assert.equal(report.images, offers.filter((offer) => isPublicationReady(offer) && !isBlockedNonMerchandiseOffer(offer)).filter((offer) => offer.imageUrl).length);
   assert.ok(report.discounts >= 0 && report.discounts <= report.offers);
   assert.ok(report.dailyDeal);
+  const home = fs.readFileSync("dist/index.html", "utf8");
+  assert.doesNotMatch(home, /Shipping Protection|Differenzgebühr|Worry-Free Purchase/i);
 });
 
 test("homepage price-drop copy never corrupts valid currency values", () => {

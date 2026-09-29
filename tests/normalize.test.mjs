@@ -1,11 +1,12 @@
 import test from "node:test"; import assert from "node:assert/strict";
-import { normalizeAndDedupe, normalizeOffer, isConcreteOffer, isPublicationReady, isAwaitingMediaOffer, isPublisherPromotion, isConsumerTextPromotion, dedupeKeyForOffer, isBlockedAdultOffer, categoryFor } from "../scripts/lib/normalize.mjs";
+import { normalizeAndDedupe, normalizeOffer, isConcreteOffer, isPublicationReady, isAwaitingMediaOffer, isPublisherPromotion, isConsumerTextPromotion, dedupeKeyForOffer, isBlockedAdultOffer, isBlockedNonMerchandiseOffer, categoryFor } from "../scripts/lib/normalize.mjs";
 import { fetchAwinOffers, formatAwinDateTime } from "../scripts/lib/awin.mjs";
 const config={marketCountry:"DE",maxOffers:100,categories:{elektronik:["audio"],sonstiges:[]}};
 const valid={promotionId:1,title:"Audio Aktion",description:"Sachlich",url:"https://shop.example/p",urlTracking:"https://awin1.com/x",advertiser:{id:2,name:"Shop",joined:true},regions:{list:[{countryCode:"DE"}]},endDate:"2099-01-01"};
 test("normalisiert aktive DE-Angebote",()=>{const o=normalizeOffer(valid,config,new Date("2026-01-01"));assert.equal(o.category,"elektronik");assert.equal(o.advertiser,"Shop")});
 test("filtert abgelaufene und nicht beigetretene Angebote",()=>{assert.equal(normalizeOffer({...valid,endDate:"2020-01-01"},config,new Date("2026-01-01")),null);assert.equal(normalizeOffer({...valid,advertiser:{joined:false}},config),null)});
 test("blockiert Adult- und Sexshop-Angebote vor der Veröffentlichung",()=>{const adult={...valid,title:"Premium Sexspielzeug Angebot",description:"Adult Shop",urlTracking:"https://track.example/adult"};assert.equal(isBlockedAdultOffer(adult),true);assert.equal(normalizeOffer(adult,config,new Date("2026-01-01")),null);assert.equal(isBlockedAdultOffer({...valid,title:"Erotic Collection"}),true);assert.equal(isBlockedAdultOffer({...valid,title:"Sony Fernseher"}),false)});
+test("blockiert Checkout-Schutz und Differenzgebühren statt sie als Produkte zu veröffentlichen",()=>{const shipping={...valid,title:"Shipping Protection - S001",description:"Add shipping protection at checkout to protect your package against damage, loss and theft.",currentPrice:0.93};const diff={...valid,title:"Differenzgebühr",description:"Hier können Sie die Differenz Ihrer Bestellung bezahlen.",currentPrice:1};const seel={...valid,title:"Worry-Free Purchase - €0.98EUR",description:"Get a full refund if your order doesn’t arrive as described, including loss or damage in transit.",currentPrice:0.98};assert.equal(isBlockedNonMerchandiseOffer(shipping),true);assert.equal(isBlockedNonMerchandiseOffer(diff),true);assert.equal(isBlockedNonMerchandiseOffer(seel),true);assert.equal(normalizeOffer(shipping,config,new Date("2026-01-01")),null);assert.equal(isBlockedNonMerchandiseOffer({...valid,title:"USB-C Kabel",currentPrice:1.99}),false)});
 test("kurze Kategoriebegriffe matchen nur als ganze Wörter",()=>{const categories={auto:["car"],tierbedarf:["pet"],sonstiges:[]};assert.equal(categoryFor("Pets & Pet Care",categories),"tierbedarf");assert.equal(categoryFor("Car Charger",categories),"auto")});
 test("entfernt Dubletten",()=>assert.equal(normalizeAndDedupe([valid,valid],config,new Date("2026-01-01")).length,1));
 test("übernimmt offizielle Bild- und Preisdaten ohne falschen Vergleichspreis",()=>{const o=normalizeOffer({...valid,imageUrl:"https://cdn.example/product.jpg",currentPrice:"59.99",previousPrice:"99.99",currency:"EUR",ean:"1234567890123"},config,new Date("2026-01-01"));assert.equal(o.imageUrl,"https://cdn.example/product.jpg");assert.equal(o.currentPrice,59.99);assert.equal(o.previousPrice,99.99);assert.equal(o.productId,"1234567890123");assert.equal(normalizeOffer({...valid,currentPrice:100,previousPrice:90},config,new Date("2026-01-01")).previousPrice,null)});
@@ -47,7 +48,7 @@ test("explizite fremde Locale-Varianten werden trotz DE-Region verworfen",()=>{
 
 test("Händler-Fallback kategorisiert echte Sortimente nur in vorhandene Kategorien",()=>{
   const cfg={marketCountry:"DE",maxOffers:100,categories:{
-    technik:["kamera"],gaming:["gaming"],"audio-musik":["mikrofon","lark"],computer:["laptop"],zubehoer:["cable","case"],"smart-home":["security camera"],haushalt:["kaffee","espresso","kaffeewaage"],garten:["mähroboter"],werkzeug:["bohrer"],sonstiges:[]
+    technik:["kamera"],gaming:["gaming"],"audio-musik":["mikrofon","lark"],computer:["laptop","software","pdf","editor"],zubehoer:["cable","case","adapter","stromadapter","netzteil"],"smart-home":["security camera"],haushalt:["kaffee","espresso","kaffeewaage"],garten:["mähroboter"],werkzeug:["bohrer","ladestation"],sonstiges:[]
   }};
   const raw=(merchant,title,brand="",description="")=>({...valid,title,description,advertiser:{id:9,name:merchant,joined:true},brand,urlTracking:"https://track.example/"+encodeURIComponent(title),url:"https://shop.example/"+encodeURIComponent(title)});
   assert.equal(normalizeOffer(raw("ANTHBOT DE","ANTHBOT N8","ANTHBOT-DE"),cfg,new Date("2026-01-01")).category,"garten");
@@ -60,6 +61,8 @@ test("Händler-Fallback kategorisiert echte Sortimente nur in vorhandene Kategor
   assert.equal(normalizeOffer(raw("Outin Germany","OutIn Claro Kaffeewaage","OutIn","sicherer Transport und Espresso-Modus"),cfg,new Date("2026-01-01")).category,"haushalt");
   assert.equal(normalizeOffer(raw("Outin Germany","Nano Tragbare Espressomaschine","OutIn","kompatibel mit 12V Auto-Ladegerät und gemahlenem Kaffee"),cfg,new Date("2026-01-01")).category,"haushalt");
   assert.equal(normalizeOffer(raw("Hollyland DE","Mars 4K Storage Case","Hollyland","safe transport"),cfg,new Date("2026-01-01")).category,"zubehoer");
+  assert.equal(normalizeOffer({...raw("PDF Agile","PDF Editor Software","PDF Agile"),category:"werkzeug"},cfg,new Date("2026-01-01")).category,"computer");
+  assert.equal(normalizeOffer({...raw("ANTHBOT DE","Stromadapter für Ladestation - N8","ANTHBOT-DE"),category:"werkzeug"},cfg,new Date("2026-01-01")).category,"zubehoer");
 });
 
 test("Händler-Fallback erfindet keine Kategorie außerhalb der Config",()=>{

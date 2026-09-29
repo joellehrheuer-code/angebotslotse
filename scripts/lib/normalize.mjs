@@ -14,6 +14,15 @@ const slugify = value => text(value, 120).toLowerCase().normalize("NFKD").replac
 const merchantIdentity = offer => identityText(offer.advertiserId || offer.advertiser) || "unknown-merchant";
 const blockedAdultSignal = /\b(?:adult|erotic|erotik|sexshop|sexspielzeug|sex\s?toy|vibrator(?:en)?|dildo(?:s)?|masturbator|analplug|butt\s?plug|penisring|cock\s?ring|porn(?:o|ografie|ography)?|erotikshop|bdsm\s?gear|lovense|satisfyer)\b/i;
 export const isBlockedAdultOffer = raw => blockedAdultSignal.test(`${raw?.title??""} ${raw?.description??""} ${raw?.terms??""} ${raw?.advertiserName??raw?.advertiser?.name??raw?.advertiser??""} ${raw?.brand??raw?.manufacturer??""}`);
+const nonMerchandiseTitleSignal = /\b(?:shipping protection|shipping insurance|package protection|parcel protection|worry[- ]free purchase|difference fee|differenzgeb(?:ühr|uehr)|bestelldifferenz)\b/i;
+const nonMerchandiseDescriptionSignal = /(?:protect your package against damage,? loss|full refund if your order doesn.?t arrive|difference (?:of|for) your order|differenz (?:ihrer|der) bestellung)/i;
+export const isBlockedNonMerchandiseOffer = raw => {
+  const title = text(raw?.title, 240);
+  const description = text(raw?.description, 800);
+  if (nonMerchandiseTitleSignal.test(title)) return true;
+  const price = amount(raw?.currentPrice ?? raw?.price ?? raw?.salePrice);
+  return price !== null && price <= 2 && nonMerchandiseDescriptionSignal.test(description);
+};
 
 export function dedupeKeyForOffer(offer) {
   const merchant = merchantIdentity(offer);
@@ -90,6 +99,7 @@ const merchantCategoryFallback = value => {
 
 const categoryForOffer = (raw, advertiser, config) => {
   const scores = new Map();
+  let strongSignal = false;
   const addMatches = (value, weight) => {
     const source = text(value).toLowerCase();
     if (!source) return;
@@ -97,15 +107,20 @@ const categoryForOffer = (raw, advertiser, config) => {
       if (key === "sonstiges") continue;
       let matches = 0;
       for (const word of words) if (categoryKeywordMatches(source, word)) matches += 1;
-      if (matches) scores.set(key, (scores.get(key) || 0) + matches * weight);
+      if (matches) {
+        scores.set(key, (scores.get(key) || 0) + matches * weight);
+        if (weight >= 5) strongSignal = true;
+      }
     }
   };
   addMatches(raw.title, 8);
   addMatches(raw.brand ?? raw.manufacturer, 5);
-  addMatches(raw.description, 2);
-  addMatches(raw.terms, 1);
+  if (!strongSignal) {
+    addMatches(raw.description, 2);
+    addMatches(raw.terms, 1);
+  }
 
-  if (raw.category && raw.category !== "sonstiges" && config.categories[raw.category]) {
+  if (!strongSignal && raw.category && raw.category !== "sonstiges" && config.categories[raw.category]) {
     scores.set(raw.category, (scores.get(raw.category) || 0) + 2);
   }
 
@@ -133,7 +148,7 @@ export const refineOfferCategory = (raw, config) => {
 
 export function normalizeOffer(raw, config, now = new Date()) {
   const title = text(raw.title, 180);
-  if (isBlockedAdultOffer(raw)) return null;
+  if (isBlockedAdultOffer(raw) || isBlockedNonMerchandiseOffer(raw)) return null;
   const trackingUrl = safeHttpUrl(raw.urlTracking ?? raw.trackingUrl);
   const destinationUrl = safeHttpUrl(raw.url ?? raw.destinationUrl ?? raw.productUrl);
   const endDate = raw.endDate ? new Date(raw.endDate) : null;
