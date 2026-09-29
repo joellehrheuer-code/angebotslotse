@@ -3,7 +3,7 @@ import path from "node:path";
 import os from "node:os";
 import crypto from "node:crypto";
 import { historyFor } from "./lib/price-history.mjs";
-import { isPublicationReady, isAwaitingMediaOffer, isPublisherPromotion, refineOfferCategory, isMarketCompatibleTitle } from "./lib/normalize.mjs";
+import { isPublicationReady, isAwaitingMediaOffer, isPublisherPromotion, refineOfferCategory, isMarketCompatibleTitle, isBlockedAdultOffer } from "./lib/normalize.mjs";
 import { selectHomepageOffers } from "./lib/homepage-selection.mjs";
 import { sanitizeCreatorVideos } from "./lib/creator-videos.mjs";
 import { sanitizeCreatorFeedItems } from "./lib/creator-feed.mjs";
@@ -61,15 +61,15 @@ if (testBuildCacheEnabled) {
 const out = "dist";
 const esc = value => String(value ?? "").replace(/[&<>\"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const json = value => JSON.stringify(value).replace(/</g, "\\u003c");
-const labels = {"technik":"Technik","gaming":"Gaming","audio-musik":"Audio & Musik","computer":"Computer","zubehoer":"Zubehör","haushalt":"Haushalt","werkzeug":"Werkzeug","mode":"Mode","freizeit":"Freizeit","sonstiges":"Weitere"};
-const categories = ["gaming","technik","computer","audio-musik","zubehoer","haushalt","werkzeug","mode","freizeit","sonstiges"];
-const categoryIcons = {gaming:"GAME",technik:"TECH",computer:"PC", "audio-musik":"AUDIO",zubehoer:"GEAR",haushalt:"HOME",werkzeug:"TOOLS",mode:"STYLE",freizeit:"PLAY",sonstiges:"DEAL"};
+const labels = {"technik":"Technik","gaming":"Gaming","audio-musik":"Audio & Musik","computer":"Computer","zubehoer":"Zubehör","smart-home":"Smart Home","homeoffice":"Homeoffice","haushalt":"Haushalt","garten":"Garten","werkzeug":"Werkzeug","mode":"Mode","sport-fitness":"Sport & Fitness","gesundheit":"Gesundheit & Wellness","beauty":"Beauty & Pflege","auto":"Auto & Mobilität","tierbedarf":"Tierbedarf","freizeit":"Freizeit & Reisen","sonstiges":"Weitere"};
+const categories = ["gaming","technik","computer","audio-musik","zubehoer","smart-home","homeoffice","haushalt","garten","werkzeug","mode","sport-fitness","gesundheit","beauty","auto","tierbedarf","freizeit","sonstiges"];
+const categoryIcons = {gaming:"GAME",technik:"TECH",computer:"PC","audio-musik":"AUDIO",zubehoer:"GEAR","smart-home":"SMART",homeoffice:"WORK",haushalt:"HOME",garten:"GARDEN",werkzeug:"TOOLS",mode:"STYLE","sport-fitness":"FIT",gesundheit:"WELL",beauty:"BEAUTY",auto:"AUTO",tierbedarf:"PET",freizeit:"TRAVEL",sonstiges:"DEAL"};
 const isQuarantined = offer => (linkPolicy.quarantinedAdvertisers ?? []).some(rule =>
   (rule.advertiserId && String(rule.advertiserId) === String(offer.advertiserId)) ||
   (rule.advertiserName && String(rule.advertiserName).toLowerCase() === String(offer.advertiser).toLowerCase()));
 const now = new Date();
 const offers = storedOffers
-  .filter(o => !isQuarantined(o) && isMarketCompatibleTitle(o.title, config.marketCountry) && (!o.endDate || new Date(o.endDate) > now) && isPublicationReady(o))
+  .filter(o => !isQuarantined(o) && !isBlockedAdultOffer(o) && isMarketCompatibleTitle(o.title, config.marketCountry) && (!o.endDate || new Date(o.endDate) > now) && isPublicationReady(o))
   .map(o => ({...o,category:refineOfferCategory(o,config)}))
   .map(o => Number.isFinite(o.currentPrice) && o.currentPrice > 0 ? o : {...o,currentPrice:null,previousPrice:null});
 const hasPrice = o => Number.isFinite(o.currentPrice) && o.currentPrice > 0;

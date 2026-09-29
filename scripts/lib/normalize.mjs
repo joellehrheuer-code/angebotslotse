@@ -12,6 +12,8 @@ const amount = value => {
 };
 const slugify = value => text(value, 120).toLowerCase().normalize("NFKD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 const merchantIdentity = offer => identityText(offer.advertiserId || offer.advertiser) || "unknown-merchant";
+const blockedAdultSignal = /\b(?:sexshop|sexspielzeug|sex\s?toy|vibrator(?:en)?|dildo(?:s)?|masturbator|analplug|butt\s?plug|penisring|cock\s?ring|porn(?:o|ografie|ography)?|erotikshop|bdsm\s?gear|lovense|satisfyer)\b/i;
+export const isBlockedAdultOffer = raw => blockedAdultSignal.test(`${raw?.title??""} ${raw?.description??""} ${raw?.terms??""} ${raw?.advertiserName??raw?.advertiser?.name??raw?.advertiser??""} ${raw?.brand??raw?.manufacturer??""}`);
 
 export function dedupeKeyForOffer(offer) {
   const merchant = merchantIdentity(offer);
@@ -92,6 +94,7 @@ export const refineOfferCategory = (raw, config) => {
 
 export function normalizeOffer(raw, config, now = new Date()) {
   const title = text(raw.title, 180);
+  if (isBlockedAdultOffer(raw)) return null;
   const trackingUrl = safeHttpUrl(raw.urlTracking ?? raw.trackingUrl);
   const destinationUrl = safeHttpUrl(raw.url ?? raw.destinationUrl ?? raw.productUrl);
   const endDate = raw.endDate ? new Date(raw.endDate) : null;

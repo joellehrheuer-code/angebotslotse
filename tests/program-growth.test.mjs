@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { buildApplicationDraft, categoryForProgram, rankAwinOpportunities } from "../scripts/lib/program-growth.mjs";
+import { buildApplicationDraft, categoryForProgram, rankAwinOpportunities, isBlockedPartnerProgram } from "../scripts/lib/program-growth.mjs";
 
 test("ordnet Affiliate-Programme passenden Angebotslotse-Kategorien zu", () => {
   assert.equal(categoryForProgram({name:"Samsung Shop DE",primarySector:"Electronic Superstore"}), "Technik & Computer");
@@ -40,6 +40,12 @@ test("ausstehende Bewerbungen werden nicht erneut als sendefertig markiert", () 
   assert.equal(row.applicationRequired,false);
   assert.equal(row.applicationDraft,null);
   assert.equal(row.automationState,"pending");
+});
+
+test("Adult-Partner landen nicht in der Awin-Akquise-Queue", () => {
+  const adult={relationship:"notjoined",advertiserId:99,name:"Example Sexshop",primarySector:"Adult"};
+  assert.equal(isBlockedPartnerProgram(adult),true);
+  assert.deepEqual(rankAwinOpportunities({programs:[adult]}),[]);
 });
 
 test("Bewerbungsentwurf erfindet keine Reichweitenzahlen", () => {

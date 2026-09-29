@@ -1,12 +1,19 @@
-import { categoryForProgram } from "./program-growth.mjs";
+import { categoryForProgram, isBlockedPartnerProgram } from "./program-growth.mjs";
 
 const marketplaceTerms = {
   "Gaming": ["gaming", "games", "console", "esports"],
   "Technik & Computer": ["electronics", "computer", "hardware", "mobile", "smart home"],
-  "Audio & Musik": ["audio", "music", "headphones", "microphone", "recording"],
+  "Smart Home": ["smart home", "security camera", "robot vacuum", "home automation"],
+  "Audio & Creator": ["audio", "music", "headphones", "microphone", "recording", "creator"],
+  "Homeoffice": ["home office", "office", "desk", "webcam", "docking"],
   "Mode & Sport": ["fashion", "sportswear", "fitness", "shoes"],
-  "Haushalt & Alltag": ["home", "appliances", "kitchen", "garden", "DIY"],
-  "Freizeit": ["travel", "outdoor", "hobby", "tickets"]
+  "Gesundheit & Wellness": ["health", "wellness", "sleep", "oral care"],
+  "Haushalt & Küche": ["home", "appliances", "kitchen", "vacuum"],
+  "Garten & Werkzeug": ["garden", "mower", "tools", "DIY"],
+  "Auto & Mobilität": ["automotive", "car accessories", "mobility"],
+  "Tierbedarf": ["pet", "cat", "dog", "pet supplies"],
+  "Beauty & Pflege": ["beauty", "skincare", "haircare", "fragrance"],
+  "Freizeit & Reisen": ["travel", "outdoor", "hobby", "tickets"]
 };
 
 export const buildImpactContactDraft = signal => {
@@ -16,7 +23,7 @@ export const buildImpactContactDraft = signal => {
 };
 
 export function rankImpactPrograms(signals = []) {
-  return signals.map(signal => {
+  return signals.filter(signal => !isBlockedPartnerProgram({ name: `${signal?.name ?? ""} ${signal?.advertiserName ?? ""}` })).map(signal => {
     const category = categoryForProgram({ name: `${signal.name ?? ""} ${signal.advertiserName ?? ""}`, primarySector: "" });
     let score = 0;
     const reasons = [];
@@ -65,6 +72,7 @@ export function rankImpactPrograms(signals = []) {
 export function buildImpactMarketplaceSearches({ siteCategoryStats = {}, signals = [] } = {}) {
   const joinedCoverage = new Map();
   for (const signal of signals) {
+    if (isBlockedPartnerProgram({ name: `${signal?.name ?? ""} ${signal?.advertiserName ?? ""}` })) continue;
     const category = categoryForProgram({ name: `${signal.name ?? ""} ${signal.advertiserName ?? ""}`, primarySector: "" });
     if (category === "Weitere") continue;
     joinedCoverage.set(category, (joinedCoverage.get(category) || 0) + 1);
@@ -72,10 +80,17 @@ export function buildImpactMarketplaceSearches({ siteCategoryStats = {}, signals
   const categoryMap = {
     "Gaming": ["gaming"],
     "Technik & Computer": ["technik", "computer", "zubehoer"],
-    "Audio & Musik": ["audio-musik"],
-    "Mode & Sport": ["mode"],
-    "Haushalt & Alltag": ["haushalt", "werkzeug"],
-    "Freizeit": ["freizeit"]
+    "Smart Home": ["smart-home"],
+    "Audio & Creator": ["audio-musik"],
+    "Homeoffice": ["homeoffice"],
+    "Mode & Sport": ["mode", "sport-fitness"],
+    "Gesundheit & Wellness": ["gesundheit"],
+    "Haushalt & Küche": ["haushalt"],
+    "Garten & Werkzeug": ["garten", "werkzeug"],
+    "Auto & Mobilität": ["auto"],
+    "Tierbedarf": ["tierbedarf"],
+    "Beauty & Pflege": ["beauty"],
+    "Freizeit & Reisen": ["freizeit"]
   };
   return Object.entries(categoryMap).map(([category, slugs]) => {
     const siteOffers = slugs.reduce((sum, slug) => sum + (Number(siteCategoryStats[slug]) || 0), 0);

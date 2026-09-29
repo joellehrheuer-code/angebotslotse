@@ -1,13 +1,22 @@
 const rules = [
-  ["Gaming", /gaming|game|games|console|esport|playstation|xbox|nintendo/i],
-  ["Technik & Computer", /computer|elektronik|electronic|technology|technik|mobile|phone|smartphone|laptop|monitor|hardware/i],
-  ["Audio & Musik", /audio|music|musik|headphone|speaker|microphone|recording/i],
-  ["Mode & Sport", /fashion|mode|sportswear|sport|shoe|sneaker|apparel|clothing/i],
-  ["Haushalt & Alltag", /home|haushalt|department|garden|kitchen|appliance|werkzeug|tool|diy/i],
-  ["Freizeit", /travel|freizeit|outdoor|fitness|hobby/i],
+  ["Gaming", /gaming|game|games|console|esport|playstation|xbox|nintendo|steam/i],
+  ["Technik & Computer", /computer|elektronik|electronic|technology|technik|mobile|phone|smartphone|laptop|monitor|hardware|tablet/i],
+  ["Smart Home", /smart\s?home|robot vacuum|saugroboter|staubsaugerroboter|security camera|thermostat|homekit|matter|roborock|dreame|ecovacs|irobot|imou|eufy/i],
+  ["Audio & Creator", /audio|music|musik|headphone|speaker|microphone|mikrofon|recording|camera|kamera|creator|streaming|webcam/i],
+  ["Homeoffice", /home\s?office|office|büro|buero|desk|schreibtisch|ergonomic|docking|conference|meeting/i],
+  ["Mode & Sport", /fashion|mode|sportswear|sport|fitness|shoe|sneaker|apparel|clothing|running|cycling/i],
+  ["Gesundheit & Wellness", /health|gesundheit|wellness|massage|sleep|schlaf|oral care|zahnpflege|fitness tracker/i],
+  ["Haushalt & Küche", /home|haushalt|kitchen|küche|appliance|coffee|kaffee|vacuum|staubsauger/i],
+  ["Garten & Werkzeug", /garden|garten|mower|mähroboter|maehroboter|werkzeug|tool|diy|grill/i],
+  ["Auto & Mobilität", /automotive|auto|car|vehicle|dashcam|navigation|e-bike|ebike|mobility/i],
+  ["Tierbedarf", /pet|pets|tier|hund|katze|cat|dog|aquarium/i],
+  ["Beauty & Pflege", /beauty|kosmetik|skincare|haircare|pflege|parfum|fragrance/i],
+  ["Freizeit & Reisen", /travel|reise|freizeit|outdoor|hobby|ticket/i],
 ];
 
-const strategic = /amazon|coolblue|beyerdynamic|adidas|dyson|lidl|decathlon|samsung|lenovo|nike|under armour|razer|thomann|rode|waves|logitech|corsair|asus|msi|sony|philips|bosch/i;
+const strategic = /amazon|coolblue|beyerdynamic|adidas|dyson|lidl|decathlon|samsung|lenovo|nike|under armour|razer|thomann|rode|waves|logitech|corsair|asus|msi|sony|philips|bosch|lg|anker|eufy|roborock|dreame|ecovacs|irobot|xiaomi|dji|gopro|garmin|fitbit|puma|shure|sennheiser|elgato|steelseries|hyperx|hp|dell|acer/i;
+const blockedPartnerSignal = /\b(?:sexshop|sexspielzeug|sex\s?toy|vibrator|dildo|masturbator|analplug|butt\s?plug|penisring|porn(?:o|ografie|ography)?|erotikshop|bdsm\s?gear|lovense|satisfyer)\b/i;
+export const isBlockedPartnerProgram = program => blockedPartnerSignal.test(`${program?.name??""} ${program?.primarySector??""} ${program?.description??""}`);
 export const isStrategicProgram = program => strategic.test(String(program?.name ?? ""));
 
 const finiteMetric = value => {
@@ -60,7 +69,7 @@ export function rankAwinOpportunities({ programs = [], discoveryOffers = [], fee
   }
 
   return programs
-    .filter(program => ["notjoined", "pending"].includes(String(program.relationship).toLowerCase()))
+    .filter(program => !isBlockedPartnerProgram(program) && ["notjoined", "pending"].includes(String(program.relationship).toLowerCase()))
     .map(program => {
       const advertiserId = program.advertiserId ?? program.id ?? null;
       const id = String(advertiserId ?? "");

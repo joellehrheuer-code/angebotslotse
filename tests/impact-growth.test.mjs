@@ -14,6 +14,11 @@ test("rankt Impact-Programme nach echten Assets und Fähigkeiten", () => {
   assert.match(rows[0].nextAction,/Produktkatalog/);
 });
 
+test("Adult-Partner landen nicht im Impact-Ranking", () => {
+  const rows=rankImpactPrograms([{name:"Adult Erotikshop",advertiserName:"Adult Erotikshop",products:50,deals:5}]);
+  assert.deepEqual(rows,[]);
+});
+
 test("erstellt Kontaktentwurf ohne erfundene Reichweitenwerte", () => {
   const draft=buildImpactContactDraft({name:"Audio Brand",advertiserName:"Audio Brand"});
   assert.match(draft,/impact\.com/);
