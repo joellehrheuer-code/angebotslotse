@@ -44,9 +44,17 @@ export const isConsumerTextPromotion = offer => {
 export const isPublicationReady = offer => !offer?.isStale && isConcreteOffer(offer) && !isPublisherPromotion(offer) && Boolean(offer.imageUrl || offer.videoUrl || offer.voucherCode || isConsumerTextPromotion(offer));
 export const isAwaitingMediaOffer = offer => !offer?.isStale && isConcreteOffer(offer) && !isPublicationReady(offer) && !isPublisherPromotion(offer);
 
+const categoryKeywordMatches = (source, value) => {
+  const word = text(value, 80).toLowerCase();
+  if (!word) return false;
+  if (word.length > 3 || /\s/.test(word)) return source.includes(word);
+  const escaped = word.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  return new RegExp(`(?:^|[^a-z0-9])${escaped}(?=$|[^a-z0-9])`, "i").test(source);
+};
+
 export function categoryFor(value, categories) {
   const source = text(value).toLowerCase();
-  return Object.entries(categories).find(([key, words]) => key !== "sonstiges" && words.some(word => source.includes(word)))?.[0] ?? "sonstiges";
+  return Object.entries(categories).find(([key, words]) => key !== "sonstiges" && words.some(word => categoryKeywordMatches(source, word)))?.[0] ?? "sonstiges";
 }
 
 const explicitMarketFromTitle = value => {

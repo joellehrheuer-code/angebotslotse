@@ -42,6 +42,10 @@ test("ausstehende Bewerbungen werden nicht erneut als sendefertig markiert", () 
   assert.equal(row.automationState,"pending");
 });
 
+test("Pet Care wird nicht als Auto klassifiziert", () => {
+  assert.equal(categoryForProgram({name:"bosch Tiernahrung DE",primarySector:"Pets & Pet Care"}),"Tierbedarf");
+});
+
 test("Adult-Partner landen nicht in der Awin-Akquise-Queue", () => {
   const adult={relationship:"notjoined",advertiserId:99,name:"Example Fashion",primarySector:"Erotic"};
   assert.equal(isBlockedPartnerProgram(adult),true);

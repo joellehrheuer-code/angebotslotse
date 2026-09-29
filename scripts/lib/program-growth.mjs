@@ -8,7 +8,7 @@ const rules = [
   ["Gesundheit & Wellness", /health|gesundheit|wellness|massage|sleep|schlaf|oral care|zahnpflege|fitness tracker/i],
   ["Haushalt & Küche", /home|haushalt|kitchen|küche|appliance|coffee|kaffee|vacuum|staubsauger/i],
   ["Garten & Werkzeug", /garden|garten|mower|mähroboter|maehroboter|werkzeug|tool|diy|grill/i],
-  ["Auto & Mobilität", /automotive|auto|car|vehicle|dashcam|navigation|e-bike|ebike|mobility/i],
+  ["Auto & Mobilität", /automotive|\\bauto\\b|\\bcar\\b|vehicle|dashcam|navigation|e-bike|ebike|mobility/i],
   ["Tierbedarf", /pet|pets|tier|hund|katze|cat|dog|aquarium/i],
   ["Beauty & Pflege", /beauty|kosmetik|skincare|haircare|pflege|parfum|fragrance/i],
   ["Freizeit & Reisen", /travel|reise|freizeit|outdoor|hobby|ticket/i],
