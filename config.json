@@ -200,7 +200,12 @@
       "latte",
       "staubsauger",
       "vacuum",
-      "appliance"
+      "appliance",
+      "espressomaschine",
+      "kaffeewaage",
+      "milchaufschäumer",
+      "milchaufschaeumer",
+      "kaffeemaschine"
     ],
     "werkzeug": [
       "werkzeug",

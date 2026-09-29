@@ -47,15 +47,19 @@ test("explizite fremde Locale-Varianten werden trotz DE-Region verworfen",()=>{
 
 test("Händler-Fallback kategorisiert echte Sortimente nur in vorhandene Kategorien",()=>{
   const cfg={marketCountry:"DE",maxOffers:100,categories:{
-    technik:["kamera"],gaming:["gaming"],"audio-musik":["mikrofon"],computer:["laptop"],zubehoer:["cable"],haushalt:["kaffee"],werkzeug:["mähroboter"],sonstiges:[]
+    technik:["kamera"],gaming:["gaming"],"audio-musik":["mikrofon","lark"],computer:["laptop"],zubehoer:["cable","case"],"smart-home":["security camera"],haushalt:["kaffee","espresso","kaffeewaage"],garten:["mähroboter"],werkzeug:["bohrer"],sonstiges:[]
   }};
-  const raw=(merchant,title,brand="")=>({...valid,title,description:"",advertiser:{id:9,name:merchant,joined:true},brand,urlTracking:"https://track.example/"+encodeURIComponent(title),url:"https://shop.example/"+encodeURIComponent(title)});
-  assert.equal(normalizeOffer(raw("ANTHBOT DE","ANTHBOT N8","ANTHBOT-DE"),cfg,new Date("2026-01-01")).category,"werkzeug");
+  const raw=(merchant,title,brand="",description="")=>({...valid,title,description,advertiser:{id:9,name:merchant,joined:true},brand,urlTracking:"https://track.example/"+encodeURIComponent(title),url:"https://shop.example/"+encodeURIComponent(title)});
+  assert.equal(normalizeOffer(raw("ANTHBOT DE","ANTHBOT N8","ANTHBOT-DE"),cfg,new Date("2026-01-01")).category,"garten");
   assert.equal(normalizeOffer(raw("Outin Germany","OutIn Pin-Nano","OutIn"),cfg,new Date("2026-01-01")).category,"haushalt");
-  assert.equal(normalizeOffer(raw("Hollyland DE","Pyro S","Hollyland"),cfg,new Date("2026-01-01")).category,"audio-musik");
-  assert.equal(normalizeOffer(raw("Imou DE","Ranger 2","Imou"),cfg,new Date("2026-01-01")).category,"technik");
+  assert.equal(normalizeOffer(raw("Hollyland DE","Pyro S","Hollyland","Auto Frequency Hopping HDMI SDI Streaming"),cfg,new Date("2026-01-01")).category,"audio-musik");
+  assert.equal(normalizeOffer(raw("Imou DE","Ranger 2","Imou"),cfg,new Date("2026-01-01")).category,"smart-home");
   assert.equal(normalizeOffer(raw("Razer Store","Quartz Collection","Razer"),cfg,new Date("2026-01-01")).category,"gaming");
   assert.equal(normalizeOffer(raw("Hollyland DE","HDMI Cable","Hollyland"),cfg,new Date("2026-01-01")).category,"zubehoer");
+  assert.equal(normalizeOffer(raw("Hollyland DE","Lark C1","Hollyland","usable while charging and immediate playback"),cfg,new Date("2026-01-01")).category,"audio-musik");
+  assert.equal(normalizeOffer(raw("Outin Germany","OutIn Claro Kaffeewaage","OutIn","sicherer Transport und Espresso-Modus"),cfg,new Date("2026-01-01")).category,"haushalt");
+  assert.equal(normalizeOffer(raw("Outin Germany","Nano Tragbare Espressomaschine","OutIn","kompatibel mit 12V Auto-Ladegerät und gemahlenem Kaffee"),cfg,new Date("2026-01-01")).category,"haushalt");
+  assert.equal(normalizeOffer(raw("Hollyland DE","Mars 4K Storage Case","Hollyland","safe transport"),cfg,new Date("2026-01-01")).category,"zubehoer");
 });
 
 test("Händler-Fallback erfindet keine Kategorie außerhalb der Config",()=>{

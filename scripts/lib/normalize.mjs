@@ -47,14 +47,20 @@ export const isAwaitingMediaOffer = offer => !offer?.isStale && isConcreteOffer(
 const categoryKeywordMatches = (source, value) => {
   const word = text(value, 80).toLowerCase();
   if (!word) return false;
-  if (word.length > 3 || /\s/.test(word)) return source.includes(word);
+  if (/\s/.test(word)) return source.includes(word);
   const escaped = word.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-  return new RegExp(`(?:^|[^a-z0-9])${escaped}(?=$|[^a-z0-9])`, "i").test(source);
+  return new RegExp(`(?:^|[^\\p{L}\\p{N}])${escaped}(?=$|[^\\p{L}\\p{N}])`, "iu").test(source);
 };
 
 export function categoryFor(value, categories) {
   const source = text(value).toLowerCase();
-  return Object.entries(categories).find(([key, words]) => key !== "sonstiges" && words.some(word => categoryKeywordMatches(source, word)))?.[0] ?? "sonstiges";
+  let best = "sonstiges", bestScore = 0;
+  for (const [key, words] of Object.entries(categories)) {
+    if (key === "sonstiges") continue;
+    const score = words.reduce((sum, word) => sum + Number(categoryKeywordMatches(source, word)), 0);
+    if (score > bestScore) { best = key; bestScore = score; }
+  }
+  return best;
 }
 
 const explicitMarketFromTitle = value => {
@@ -75,19 +81,44 @@ const explicitMarketFromTitle = value => {
 const merchantCategoryFallback = value => {
   const source = text(value, 300).toLowerCase();
   if (/\brazer\b/.test(source)) return "gaming";
-  if (/\banthbot\b/.test(source)) return "werkzeug";
-  if (/\bimou\b/.test(source)) return "technik";
+  if (/\banthbot\b/.test(source)) return "garten";
+  if (/\bimou\b/.test(source)) return "smart-home";
   if (/\bhollyland\b/.test(source)) return "audio-musik";
   if (/\bout\s*in\b|\boutin\b/.test(source)) return "haushalt";
   return "sonstiges";
 };
 
 const categoryForOffer = (raw, advertiser, config) => {
-  if (raw.category && raw.category !== "sonstiges" && config.categories[raw.category]) return raw.category;
-  const detected = categoryFor(`${raw.title ?? ""} ${raw.description ?? ""} ${raw.brand ?? raw.manufacturer ?? ""}`, config.categories);
-  if (detected !== "sonstiges") return detected;
+  const scores = new Map();
+  const addMatches = (value, weight) => {
+    const source = text(value).toLowerCase();
+    if (!source) return;
+    for (const [key, words] of Object.entries(config.categories)) {
+      if (key === "sonstiges") continue;
+      let matches = 0;
+      for (const word of words) if (categoryKeywordMatches(source, word)) matches += 1;
+      if (matches) scores.set(key, (scores.get(key) || 0) + matches * weight);
+    }
+  };
+  addMatches(raw.title, 8);
+  addMatches(raw.brand ?? raw.manufacturer, 5);
+  addMatches(raw.description, 2);
+  addMatches(raw.terms, 1);
+
+  if (raw.category && raw.category !== "sonstiges" && config.categories[raw.category]) {
+    scores.set(raw.category, (scores.get(raw.category) || 0) + 2);
+  }
+
   const fallback = merchantCategoryFallback(`${advertiser} ${raw.brand ?? raw.manufacturer ?? ""}`);
-  return config.categories[fallback] ? fallback : "sonstiges";
+  if (fallback !== "sonstiges" && config.categories[fallback]) {
+    scores.set(fallback, (scores.get(fallback) || 0) + 5);
+  }
+
+  let best = "sonstiges", bestScore = 0;
+  for (const [key, score] of scores) {
+    if (score > bestScore) { best = key; bestScore = score; }
+  }
+  return best;
 };
 
 export const isMarketCompatibleTitle = (value, marketCountry = "DE") => {
