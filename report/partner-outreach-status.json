@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-29T19:20:00+02:00",
+  "generatedAt": "2026-09-29T23:10:00+02:00",
   "purpose": "Deduplication and status tracking for Angebotslotse affiliate/partner outreach. No contracts are auto-accepted.",
   "statuses": [
     {
@@ -88,6 +88,15 @@
       "contact": "mareike.mueschen@heise.de",
       "nextAction": "Antwort auf erneute technische Prüfung abwarten; keine Registrierung oder Vertragsannahme automatisch durchführen.",
       "notes": "Heise bestätigt: thematisch geeignet, Einzelbetreiber möglich, GitHub-Pages JS/iFrame möglich, keine Grund-/Einrichtungs-/laufenden Gebühren oder Mindestreichweite, CPC-Share-Modell; nur Widgets, keine API/Feeds. Nach Website-Verbesserungen erneute Prüfung angefragt."
+    },
+    {
+      "brand": "Chime Mattress",
+      "network": "Impact",
+      "status": "rejected",
+      "lastContactAt": "2026-09-29T16:28:34+02:00",
+      "contact": "Impact notification",
+      "nextAction": "Nicht erneut bewerben, solange keine neue ausdr?ckliche Einladung oder relevante Programm?nderung vorliegt.",
+      "notes": "Impact-Kampagne 56440 / Nectar Brand LLC (1233374): Bewerbung am 29.09.2026 ausdr?cklich abgelehnt."
     }
   ]
 }
