@@ -10,6 +10,21 @@ import { fetchWebgainsOffers, fetchWebgainsProgramMemberships, fetchWebgainsProg
 import fs from "node:fs/promises";
 
 const wait = ms => new Promise(resolve => setTimeout(resolve, ms));
+export async function runSourceWithTimeout(run, { timeoutMs = 45_000, label = "source" } = {}) {
+  const timeout = Math.min(120_000, Math.max(1, Number(timeoutMs) || 45_000));
+  return await new Promise((resolve, reject) => {
+    const timer = setTimeout(() => {
+      const error = new Error(`${label} timed out after ${timeout}ms`);
+      error.code = "SOURCE_TIMEOUT";
+      reject(error);
+    }, timeout);
+    timer.unref?.();
+    Promise.resolve().then(run).then(
+      value => { clearTimeout(timer); resolve(value); },
+      error => { clearTimeout(timer); reject(error); }
+    );
+  });
+}
 const isTransientSourceError = error => {
   const status = Number(error?.status ?? error?.statusCode);
   const message = String(error?.message ?? error ?? "");
@@ -29,25 +44,29 @@ export function awinEnhancedFeedGate({ hasPublisherId, hasToken, programError = 
   return null;
 }
 
-export async function runSourceWithRetry(run, { attempts = 2, baseDelayMs = 400, sleep = wait } = {}) {
-  const maxAttempts = Math.min(3, Math.max(1, Number(attempts) || 1));
-  const delay = Math.max(0, Number(baseDelayMs) || 0);
-  let lastError;
-  for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
-    try { return await run(); }
-    catch (error) {
-      lastError = error;
-      if (!isTransientSourceError(error) || attempt === maxAttempts) throw error;
-      await sleep(delay * (2 ** (attempt - 1)));
+export async function runSourceWithRetry(run, { attempts = 2, baseDelayMs = 400, sleep = wait, timeoutMs = 45_000, label = "source" } = {}) {
+  return runSourceWithTimeout(async () => {
+    const maxAttempts = Math.min(3, Math.max(1, Number(attempts) || 1));
+    const delay = Math.max(0, Number(baseDelayMs) || 0);
+    let lastError;
+    for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
+      try { return await run(); }
+      catch (error) {
+        lastError = error;
+        if (!isTransientSourceError(error) || attempt === maxAttempts) throw error;
+        await sleep(delay * (2 ** (attempt - 1)));
+      }
     }
-  }
-  throw lastError;
+    throw lastError;
+  }, { timeoutMs, label });
 }
 
 export async function collectSources(env = process.env) {
   const impactCadenceHours=Math.min(24,Math.max(4,Number(env.IMPACT_SYNC_EVERY_HOURS)||12));
   const syncHour=Number.isFinite(Number(env.SOURCE_SYNC_UTC_HOUR))?Number(env.SOURCE_SYNC_UTC_HOUR):new Date().getUTCHours();
-  const impactDue=env.FORCE_IMPACT_SYNC==="1" || syncHour % impactCadenceHours===0;
+  const impactExplicitlyDisabled=env.IMPACT_SYNC_ENABLED==="0" && env.FORCE_IMPACT_SYNC!=="1";
+  const impactDue=!impactExplicitlyDisabled && (env.FORCE_IMPACT_SYNC==="1" || syncHour % impactCadenceHours===0);
+  const sourceTotalTimeoutMs=Math.min(120_000,Math.max(5_000,Number(env.SOURCE_TOTAL_TIMEOUT_MS)||45_000));
   const impactLinkPolicy = JSON.parse(await fs.readFile("data/impact-link-policy.json", "utf8").catch(() => "{}"));
   const amazonDefinitions = JSON.parse(await fs.readFile("data/amazon-products.json", "utf8").catch(() => '{"items":[]}' ));
   let awinPrograms=null;
@@ -140,6 +159,7 @@ export async function collectSources(env = process.env) {
   const results = await Promise.all(definitions.map(async ([name, run]) => {
     if (name === "awin" && (!env.AWIN_PUBLISHER_ID || !env.AWIN_API_TOKEN)) { const names = [!env.AWIN_PUBLISHER_ID && "AWIN_PUBLISHER_ID", !env.AWIN_API_TOKEN && "AWIN_API_TOKEN"].filter(Boolean); return { name, state: "disabled", rows: [], audit:{reason:`${names.join(", ")} missing – Awin API sync skipped`} }; }
     if (name === "impact" && (!env.IMPACT_ACCOUNT_SID || !env.IMPACT_AUTH_TOKEN)) { const names = [!env.IMPACT_ACCOUNT_SID && "IMPACT_ACCOUNT_SID", !env.IMPACT_AUTH_TOKEN && "IMPACT_AUTH_TOKEN"].filter(Boolean); return { name, state: "disabled", rows: [], audit:{reason:`${names.join(", ")} missing – Impact API sync skipped`} }; }
+    if (name === "impact" && impactExplicitlyDisabled) return { name, state: "disabled", rows: [], audit:{reason:"Impact sync reserved for the dedicated daily workflow window", cadenceHours:24} };
     if (name === "impact" && !impactDue) return { name, state: "disabled", rows: [], audit:{reason:`Impact rate-limit cooldown – next scheduled window every ${impactCadenceHours}h`, cadenceHours:impactCadenceHours} };
     if (name === "amazon" && (!env.AMAZON_CREATORS_CREDENTIAL_ID || !env.AMAZON_CREATORS_CREDENTIAL_SECRET || !env.AMAZON_PARTNER_TAG)) { const names = [!env.AMAZON_CREATORS_CREDENTIAL_ID && "AMAZON_CREATORS_CREDENTIAL_ID", !env.AMAZON_CREATORS_CREDENTIAL_SECRET && "AMAZON_CREATORS_CREDENTIAL_SECRET", !env.AMAZON_PARTNER_TAG && "AMAZON_PARTNER_TAG"].filter(Boolean); return { name, state: "disabled", rows: [], audit:{reason:`${names.join(", ")} missing – Amazon Creators API sync skipped`} }; }
     if (name === "awin-product-feeds" && !env.AWIN_DATAFEED_API_KEY) return { name, state: "disabled", rows: [], audit:{reason:"AWIN_DATAFEED_API_KEY missing – Awin Product Feed sync skipped"} };
@@ -151,7 +171,12 @@ export async function collectSources(env = process.env) {
     if (name === "tradedoubler" && !env.TRADEDOUBLER_PRODUCTS_TOKEN && !env.TRADEDOUBLER_FEED_URLS) return {name,state:"disabled",rows:[],audit:{reason:"TRADEDOUBLER_PRODUCTS_TOKEN / TRADEDOUBLER_FEED_URLS missing – Tradedoubler sync skipped"}};
     if (name === "tradedoubler-vouchers" && !env.TRADEDOUBLER_VOUCHERS_TOKEN) return {name,state:"disabled",rows:[],audit:{reason:"TRADEDOUBLER_VOUCHERS_TOKEN missing – Tradedoubler voucher sync skipped"}};
     if (name === "webgains" && !env.WEBGAINS_FEED_URLS) return {name,state:"disabled",rows:[],audit:{reason:"WEBGAINS_FEED_URLS missing – Webgains feed sync skipped"}};
-    try { const rows=name==="impact" ? await run() : await runSourceWithRetry(run,{attempts:Number(env.SOURCE_RETRY_ATTEMPTS)||2,baseDelayMs:Number(env.SOURCE_RETRY_BASE_DELAY_MS)||400}); return { name, state: "ok", rows, audit:rows.audit??null }; }
+    try {
+      const rows = name==="impact"
+        ? await runSourceWithTimeout(run,{timeoutMs:sourceTotalTimeoutMs,label:name})
+        : await runSourceWithRetry(run,{attempts:Number(env.SOURCE_RETRY_ATTEMPTS)||2,baseDelayMs:Number(env.SOURCE_RETRY_BASE_DELAY_MS)||400,timeoutMs:sourceTotalTimeoutMs,label:name});
+      return { name, state: "ok", rows, audit:rows.audit??null };
+    }
     catch (error) { return { name, state: "error", rows: [], error: String(error.message).slice(0, 160) }; }
   }));
   return {sources:results,awinPrograms,awinProgramError,awinDiscoveryOffers,awinDiscoveryError,awinProgramDetails,daisyconPrograms,daisyconProgramError,daisyconMedia,daisyconProgramReviews,webgainsMemberships,webgainsMembershipError,webgainsProgramReviews};

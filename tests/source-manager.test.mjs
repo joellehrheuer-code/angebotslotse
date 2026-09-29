@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { collectSources, runSourceWithRetry, awinEnhancedFeedGate } from "../scripts/lib/source-manager.mjs";
+import { collectSources, runSourceWithRetry, runSourceWithTimeout, awinEnhancedFeedGate } from "../scripts/lib/source-manager.mjs";
 
 test("fehlende Secrets deaktivieren nur die betroffenen Quellen und legen keine Werte offen", async () => {
   const { sources } = await collectSources({});
@@ -79,3 +79,24 @@ test("Impact kann zwischen 4h-Website-Updates rate-limit-schonend ausgesetzt wer
   assert.equal(impact.audit.cadenceHours, 12);
   assert.match(impact.audit.reason, /rate-limit cooldown/i);
 });
+
+test("Gesamt-Timeout beendet eine dauerhaft hängende Quelle fail-closed", async () => {
+  await assert.rejects(
+    () => runSourceWithTimeout(() => new Promise(() => {}), { timeoutMs: 20, label: "hang-test" }),
+    /hang-test timed out after 20ms/
+  );
+});
+
+test("Impact kann für normale Push- und 4h-Läufe vollständig deaktiviert werden", async () => {
+  const { sources } = await collectSources({
+    IMPACT_ACCOUNT_SID: "SID_VALUE",
+    IMPACT_AUTH_TOKEN: "token_value",
+    IMPACT_SYNC_ENABLED: "0",
+    FORCE_IMPACT_SYNC: "0",
+    SOURCE_SYNC_UTC_HOUR: "0"
+  });
+  const impact = sources.find(source => source.name === "impact");
+  assert.equal(impact.state, "disabled");
+  assert.match(impact.audit.reason, /dedicated daily workflow window/i);
+});
+

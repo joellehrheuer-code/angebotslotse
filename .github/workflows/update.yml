@@ -4,9 +4,24 @@ on:
     branches: [main]
     paths-ignore:
       - "data/offers.json"
+      - "data/offer-archive.json"
       - "data/status.json"
+      - "data/price-history.json"
+      - "data/coupons.json"
+      - "data/affiliate-growth.json"
+      - "data/program-opportunities.json"
+      - "data/impact-opportunities.json"
+      - "data/affiliate-opportunities.json"
+      - "data/creator-feed.json"
+      - "data/creator-videos.json"
+      - "report/program-inventory.json"
+      - "report/manual-actions.json"
+      - "report/update-report.json"
+      - "report/seo-report.json"
+      - "report/partner-outreach-status.json"
   schedule:
     - cron: "17 */4 * * *"
+    - cron: "23 2 * * *"
   workflow_dispatch:
 permissions:
   contents: write
