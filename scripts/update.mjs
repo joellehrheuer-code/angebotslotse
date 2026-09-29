@@ -9,6 +9,7 @@ import { rankImpactPrograms, buildImpactMarketplaceSearches } from "./lib/impact
 import { rankDaisyconPrograms, rankWebgainsPrograms, buildNetworkMarketplaceSearches, buildNetworkApplicationDraft } from "./lib/network-growth.mjs";
 import { archiveRemovedOffers } from "./lib/offer-archive.mjs";
 import { buildAffiliateOpportunityReport } from "./lib/affiliate-opportunities.mjs";
+import { buildPartnerOutreachQueue } from "./lib/outreach-queue.mjs";
 import { fetchCreatorVideoFeed } from "./lib/creator-videos.mjs";
 import { fetchCreatorSocialFeed } from "./lib/creator-feed.mjs";
 import { buildFailureStatus } from "./lib/update-status.mjs";
@@ -16,6 +17,7 @@ import { buildFailureStatus } from "./lib/update-status.mjs";
 const config = JSON.parse(await fs.readFile("config.json", "utf8"));
 const oldOffers = JSON.parse(await fs.readFile("data/offers.json", "utf8").catch(() => "[]"));
 const oldStatus = JSON.parse(await fs.readFile("data/status.json", "utf8").catch(() => "{}"));
+const partnerOutreachStatus=JSON.parse(await fs.readFile("report/partner-outreach-status.json","utf8").catch(() => '{"statuses":[]}' ));
 const oldHistory = JSON.parse(await fs.readFile("data/price-history.json", "utf8").catch(() => "[]"));
 const oldArchive = JSON.parse(await fs.readFile("data/offer-archive.json", "utf8").catch(() => '{"items":[]}'));
 const oldProgramInventory = JSON.parse(await fs.readFile("report/program-inventory.json", "utf8").catch(() => '{"programs":[]}'));
@@ -196,6 +198,8 @@ try {
     generatedAt:checkedAt
   });
   await fs.writeFile("data/affiliate-opportunities.json",`${JSON.stringify(affiliateOpportunityReport,null,2)}\n`);
+  const partnerOutreachQueue=buildPartnerOutreachQueue({opportunities:affiliateOpportunityReport.actionNow,statusRows:partnerOutreachStatus.statuses??[],generatedAt:checkedAt,dailyLimit:8});
+  await fs.writeFile("data/partner-outreach-queue.json",`${JSON.stringify(partnerOutreachQueue,null,2)}\n`);
   const manualActions=[];
   if(!process.env.AWIN_PUBLISHER_ID||!process.env.AWIN_API_TOKEN)manualActions.push({id:"awin-api-credentials",platform:"Awin",action:"AWIN_PUBLISHER_ID und AWIN_API_TOKEN als sichere Runtime-/GitHub-Secrets konfigurieren.",reason:"Ohne Publisher-ID und API-Token können aktive Awin-Programme und Enhanced Feeds nicht aktualisiert werden."});
   if(!process.env.AWIN_DATAFEED_API_KEY)manualActions.push({id:"awin-datafeed-key",platform:"Awin",action:"AWIN_DATAFEED_API_KEY als lokales .env.local-Secret und GitHub Actions Secret hinterlegen.",reason:"Die offizielle Legacy-Produktfeed-Liste benötigt einen separaten Datafeed-Key."});
