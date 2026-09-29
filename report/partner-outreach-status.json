@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-29T13:17:00+02:00",
+  "generatedAt": "2026-09-29T13:45:00+02:00",
   "purpose": "Deduplication and status tracking for Angebotslotse affiliate/partner outreach. No contracts are auto-accepted.",
   "statuses": [
     {
@@ -48,7 +48,10 @@
       "network": "Awin",
       "status": "pending",
       "lastContactAt": "2026-09-29T13:36:00+02:00",
-      "contact": ["nicole.schlueter@awin.com", "verena.witkowski@awin.com"],
+      "contact": [
+        "nicole.schlueter@awin.com",
+        "verena.witkowski@awin.com"
+      ],
       "nextAction": "Antwort/Freischaltung überwachen; bei Freigabe Produktfeed, Kampagnen und Creatives integrieren."
     },
     {
@@ -67,6 +70,15 @@
       "contact": "sanpro@network-genius.com",
       "nextAction": "Nicht erneut an dieselbe Adresse senden; nur bei verifiziertem alternativen offiziellen Affiliate-Kontakt erneut prüfen.",
       "notes": "Zustellung fehlgeschlagen: Microsoft 554 5.4.14 / Hop count exceeded; Empfängeradresse wurde nicht zugestellt."
+    },
+    {
+      "brand": "DECATHLON DE",
+      "network": "Awin",
+      "status": "pending",
+      "lastContactAt": "2026-09-29T13:45:00+02:00",
+      "contact": "manuel.veenhues@decathlon.com",
+      "nextAction": "Antwort/Freischaltung überwachen; bei Freigabe täglich aktualisierten Produktfeed, Deeplinks, Aktionen und Werbemittel integrieren.",
+      "notes": "Offizieller Affiliate-Ansprechpartner laut Awin-Programmprofil kontaktiert."
     }
   ]
 }
