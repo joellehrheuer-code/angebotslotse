@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { buildApplicationDraft, categoryForProgram, rankAwinOpportunities, isBlockedPartnerProgram } from "../scripts/lib/program-growth.mjs";
+import { buildApplicationDraft, categoryForProgram, rankAwinOpportunities, isBlockedPartnerProgram, isStrategicProgram } from "../scripts/lib/program-growth.mjs";
 
 test("ordnet Affiliate-Programme passenden Angebotslotse-Kategorien zu", () => {
   assert.equal(categoryForProgram({name:"Samsung Shop DE",primarySector:"Electronic Superstore"}), "Technik & Computer");
@@ -57,3 +57,10 @@ test("Bewerbungsentwurf erfindet keine Reichweitenzahlen", () => {
   assert.match(draft,/Reichweitenangaben werden nicht erfunden/);
   assert.doesNotMatch(draft,/\b\d+[.,]?\d*\s*(Follower|Views|Abonnenten)/i);
 });
+
+test("INTERSPORT und ONE werden als strategische breite Sortimente erkannt", () => {
+  assert.equal(categoryForProgram({name:"INTERSPORT DE",primarySector:"Sports"}),"Mode & Sport");
+  assert.equal(categoryForProgram({name:"One DE",primarySector:"Computers"}),"Technik & Computer");
+  assert.equal(isStrategicProgram({name:"One DE"}),true);
+});
+

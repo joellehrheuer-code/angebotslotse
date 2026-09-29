@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-29T23:20:00+02:00",
+  "generatedAt": "2026-09-29T23:35:00+02:00",
   "purpose": "Verified official contact routes for routine Angebotslotse partner outreach. sendAllowed=false means research/review is still required before sending.",
   "contacts": [
     {
@@ -46,6 +46,42 @@
       "verifiedAt": "2026-09-29",
       "sendAllowed": false,
       "notes": "Official Anker affiliate-team address; Anker DE is already pending, so SOLIX outreach stays suppressed until that thread is resolved."
+    },
+    {
+      "brand": "One DE",
+      "contact": "affiliate@one.de",
+      "contactType": "official-affiliate",
+      "sourceUrl": "https://ui.awin.com/merchant-profile/117435",
+      "verifiedAt": "2026-09-29",
+      "sendAllowed": true,
+      "notes": "Awin profile explicitly publishes the affiliate-team email and current product data/CSV support."
+    },
+    {
+      "brand": "INTERSPORT DE",
+      "contact": "mara.wieland@intersport.de",
+      "contactType": "official-affiliate",
+      "sourceUrl": "https://ui.awin.com/merchant-profile/14050",
+      "verifiedAt": "2026-09-29",
+      "sendAllowed": true,
+      "notes": "Awin profile explicitly publishes a personal affiliate contact and daily product data."
+    },
+    {
+      "brand": "BSTN DACH",
+      "contact": "michael.dorsch@bstn.com",
+      "contactType": "official-affiliate",
+      "sourceUrl": "https://www.bstn.com/eu_de/affiliates",
+      "verifiedAt": "2026-09-29",
+      "sendAllowed": true,
+      "notes": "Official BSTN affiliate page publishes the affiliate-team contact and daily product feed."
+    },
+    {
+      "brand": "Sportspar DE",
+      "contact": "a.borisenko@sportspar.de",
+      "contactType": "official-affiliate",
+      "sourceUrl": "https://ui.awin.com/merchant-profile/14366",
+      "verifiedAt": "2026-09-29",
+      "sendAllowed": true,
+      "notes": "Awin profile explicitly publishes affiliate support for cooperation ideas and regular deal campaigns."
     }
   ]
 }

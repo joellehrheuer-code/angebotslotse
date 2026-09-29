@@ -109,7 +109,8 @@ try {
   const relevant=/gaming|computer|elektronik|electronic|audio|musik|music|mode|fashion|sport|haushalt|home|werkzeug|tools|travel|outdoor|fitness/i;
   const awinDiscoveryOffers=collected.awinDiscoveryOffers??[];
   const discoveryAdvertiserIds=new Set(awinDiscoveryOffers.map(offer=>String(offer?.advertiser?.id??offer?.advertiserId??"")).filter(Boolean));
-  const programmeRows=Object.entries(collected.awinPrograms??{}).flatMap(([relationship,rows])=>rows.map(row=>({network:"Awin",relationship,advertiserId:row.id??row.advertiserId??null,name:row.name??row.advertiserName??null,primarySector:row.primarySector??null,primaryRegion:row.primaryRegion??null}))).filter(row=>row.name&&(row.relationship!=="notjoined"||priority.test(row.name)||relevant.test(`${row.name} ${row.primarySector??""}`)||discoveryAdvertiserIds.has(String(row.advertiserId)))).sort((a,b)=>Number(priority.test(b.name))-Number(priority.test(a.name))||a.relationship.localeCompare(b.relationship)||a.name.localeCompare(b.name,"de")).slice(0,200);
+  const allProgrammeRows=Object.entries(collected.awinPrograms??{}).flatMap(([relationship,rows])=>rows.map(row=>({network:"Awin",relationship,advertiserId:row.id??row.advertiserId??null,name:row.name??row.advertiserName??null,primarySector:row.primarySector??null,primaryRegion:row.primaryRegion??null}))).filter(row=>row.name);
+  const programmeRows=allProgrammeRows.filter(row=>row.relationship!=="notjoined"||priority.test(row.name)||relevant.test(`${row.name} ${row.primarySector??""}`)||discoveryAdvertiserIds.has(String(row.advertiserId))).sort((a,b)=>Number(priority.test(b.name))-Number(priority.test(a.name))||a.relationship.localeCompare(b.relationship)||a.name.localeCompare(b.name,"de")).slice(0,200);
   const impact=sources.find(source=>source.name==="impact");
   const feedSources=sources.filter(source=>source.name.includes("feed"));
   const concreteOffers=offers.filter(isConcreteOffer), publicOffers=offers.filter(offer=>!isQuarantinedByPolicy(offer)&&isPublicationReady(offer));
@@ -148,7 +149,7 @@ try {
     productFeed:row.metrics?.hasProductFeed??null,images:null,prices:null,coupons:null,deeplinks:null,dealShoppingAllowed:null,
     applicationPossible:row.applicationPossible,applicationSent:false,lastChecked:checkedAt,advertiserId:row.programId,campaignId:row.campaignId,
     opportunityScore:row.score,opportunityPriority:row.priority,nextAction:row.nextAction,submissionReady:row.submissionReady,humanApprovalRequired:true}));
-  const opportunities=rankAwinOpportunities({programs:programmeRows,discoveryOffers:awinDiscoveryOffers,feedAdvertiserIds:feedAdvertisers,programDetails:collected.awinProgramDetails??{}});
+  const opportunities=rankAwinOpportunities({programs:allProgrammeRows,discoveryOffers:awinDiscoveryOffers,feedAdvertiserIds:feedAdvertisers,programDetails:collected.awinProgramDetails??{}});
   const opportunityById=new Map(opportunities.map(opportunity=>[String(opportunity.advertiserId),opportunity]));
   for(const program of programInventory){
     const opportunity=opportunityById.get(String(program.advertiserId));
@@ -169,7 +170,7 @@ try {
     program.nextAction=opportunity.nextAction;
   }
   const growth={generatedAt:new Date().toISOString(),market:"DE",publisherId:Number(process.env.AWIN_PUBLISHER_ID)||null,
-    awin:{counts:Object.fromEntries(Object.entries(collected.awinPrograms??{}).map(([key,rows])=>[key,rows.length])),programs:programmeRows,discoveryOffers:awinDiscoveryOffers.length,discoveryError:collected.awinDiscoveryError??null,detailsEnriched:Object.keys(collected.awinProgramDetails??{}).length,opportunities:opportunities.slice(0,25),feeds:feedSources.map(source=>({source:source.name,state:source.state,count:source.rows.length,audit:source.audit??null}))},
+    awin:{counts:Object.fromEntries(Object.entries(collected.awinPrograms??{}).map(([key,rows])=>[key,rows.length])),totalProgramsEvaluated:allProgrammeRows.length,reportedPrograms:programmeRows.length,programs:programmeRows,discoveryOffers:awinDiscoveryOffers.length,discoveryError:collected.awinDiscoveryError??null,detailsEnriched:Object.keys(collected.awinProgramDetails??{}).length,opportunities:opportunities.slice(0,25),feeds:feedSources.map(source=>({source:source.name,state:source.state,count:source.rows.length,audit:source.audit??null}))},
     impact:{state:impact?.state??"disabled",publishableOffers:impact?.rows.length??0,inventory:impact?.audit??null,opportunities:impactOpportunities.slice(0,25),marketplaceSearches:impactMarketplaceSearches.slice(0,10)},
     daisycon:{state:process.env.DAISYCON_PUBLISHER_ID&&process.env.DAISYCON_ACCESS_TOKEN?"connected":"disabled",programError:collected.daisyconProgramError??null,mediaDetected:(collected.daisyconMedia??[]).length,reviewsEnriched:Object.keys(collected.daisyconProgramReviews??{}).length,programs:daisyconOpportunities.slice(0,50),marketplaceSearches:networkMarketplaceSearches.daisycon.slice(0,10)},
     tradedoubler:{state:process.env.TRADEDOUBLER_FEED_URLS?"feed-connected":"disabled",marketplaceSearches:networkMarketplaceSearches.tradedoubler.slice(0,10),programJoinAutomation:"not-verified",nextStep:"Programmsuche/Beitritt bis zu einem dokumentierten Join-Endpunkt im Publisher-Dashboard prüfen."},
