@@ -3,4 +3,3 @@
 .app-install-row{display:flex;align-items:center;gap:.7rem;flex-wrap:wrap;margin:.9rem 0 .25rem}
 .app-install-button{cursor:pointer}
 .app-install-help{max-width:34rem;color:var(--muted,#aeb7c9);line-height:1.45}
-
