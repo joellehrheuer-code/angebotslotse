@@ -18,7 +18,6 @@ export async function runSourceWithTimeout(run, { timeoutMs = 45_000, label = "s
       error.code = "SOURCE_TIMEOUT";
       reject(error);
     }, timeout);
-    timer.unref?.();
     Promise.resolve().then(run).then(
       value => { clearTimeout(timer); resolve(value); },
       error => { clearTimeout(timer); reject(error); }

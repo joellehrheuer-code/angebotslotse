@@ -99,4 +99,3 @@ test("Impact kann für normale Push- und 4h-Läufe vollständig deaktiviert werd
   assert.equal(impact.state, "disabled");
   assert.match(impact.audit.reason, /dedicated daily workflow window/i);
 });
-

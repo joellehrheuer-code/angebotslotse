@@ -21,3 +21,24 @@ test("PWA-Quelle trennt Offline-Cache von Konto- und Alarmdaten", () => {
   assert.doesNotMatch(sw, /local\("styles\.css"\)|local\("enhancements\.css"\)/);
   assert.doesNotMatch(sw, /SUPABASE_SECRET_KEY|RESEND_API_KEY|service_role/);
 });
+
+test("PWA-App-Icons sind echte PNGs mit Store-tauglichen Größen", () => {
+  const expected = [
+    ["public/app-icon-192.png", 192, 192],
+    ["public/app-icon-512.png", 512, 512],
+    ["public/app-icon-maskable-512.png", 512, 512],
+    ["public/apple-touch-icon.png", 180, 180]
+  ];
+  for (const [file,width,height] of expected) {
+    const data = fs.readFileSync(file);
+    assert.equal(data.subarray(0,8).toString("hex"), "89504e470d0a1a0a");
+    assert.equal(data.readUInt32BE(16), width);
+    assert.equal(data.readUInt32BE(20), height);
+  }
+  const build = fs.readFileSync("scripts/build.mjs", "utf8");
+  assert.match(build, /apple-touch-icon\.png/);
+  assert.match(build, /app-icon-192\.png/);
+  assert.match(build, /app-icon-512\.png/);
+  assert.match(build, /app-icon-maskable-512\.png/);
+  assert.match(build, /purpose:"maskable"/);
+});
