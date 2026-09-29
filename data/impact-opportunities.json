@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-29T09:37:15.505Z",
+  "generatedAt": "2026-09-29T09:46:11.560Z",
   "status": "disabled",
   "joinedPrograms": 0,
   "automation": {
@@ -12,9 +12,9 @@
   "marketplaceSearches": [
     {
       "category": "Technik & Computer",
-      "siteOffers": 122,
+      "siteOffers": 53,
       "joinedPrograms": 0,
-      "gapScore": 122,
+      "gapScore": 53,
       "searchTerms": [
         "electronics",
         "computer",
@@ -25,35 +25,113 @@
       "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
     },
     {
-      "category": "Audio & Musik",
-      "siteOffers": 76,
+      "category": "Audio & Creator",
+      "siteOffers": 42,
       "joinedPrograms": 0,
-      "gapScore": 76,
+      "gapScore": 42,
       "searchTerms": [
         "audio",
         "music",
         "headphones",
         "microphone",
-        "recording"
+        "recording",
+        "creator"
       ],
       "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
     },
     {
-      "category": "Haushalt & Alltag",
-      "siteOffers": 53,
+      "category": "Auto & Mobilität",
+      "siteOffers": 41,
       "joinedPrograms": 0,
-      "gapScore": 53,
+      "gapScore": 41,
       "searchTerms": [
-        "home",
-        "appliances",
-        "kitchen",
+        "automotive",
+        "car accessories",
+        "mobility"
+      ],
+      "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
+    },
+    {
+      "category": "Garten & Werkzeug",
+      "siteOffers": 38,
+      "joinedPrograms": 0,
+      "gapScore": 38,
+      "searchTerms": [
         "garden",
+        "mower",
+        "tools",
         "DIY"
       ],
       "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
     },
     {
-      "category": "Freizeit",
+      "category": "Smart Home",
+      "siteOffers": 26,
+      "joinedPrograms": 0,
+      "gapScore": 26,
+      "searchTerms": [
+        "smart home",
+        "security camera",
+        "robot vacuum",
+        "home automation"
+      ],
+      "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
+    },
+    {
+      "category": "Tierbedarf",
+      "siteOffers": 21,
+      "joinedPrograms": 0,
+      "gapScore": 21,
+      "searchTerms": [
+        "pet",
+        "cat",
+        "dog",
+        "pet supplies"
+      ],
+      "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
+    },
+    {
+      "category": "Haushalt & Küche",
+      "siteOffers": 14,
+      "joinedPrograms": 0,
+      "gapScore": 14,
+      "searchTerms": [
+        "home",
+        "appliances",
+        "kitchen",
+        "vacuum"
+      ],
+      "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
+    },
+    {
+      "category": "Mode & Sport",
+      "siteOffers": 9,
+      "joinedPrograms": 0,
+      "gapScore": 9,
+      "searchTerms": [
+        "fashion",
+        "sportswear",
+        "fitness",
+        "shoes"
+      ],
+      "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
+    },
+    {
+      "category": "Homeoffice",
+      "siteOffers": 7,
+      "joinedPrograms": 0,
+      "gapScore": 7,
+      "searchTerms": [
+        "home office",
+        "office",
+        "desk",
+        "webcam",
+        "docking"
+      ],
+      "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
+    },
+    {
+      "category": "Freizeit & Reisen",
       "siteOffers": 1,
       "joinedPrograms": 0,
       "gapScore": 1,

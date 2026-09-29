@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-29T09:37:15.505Z",
+  "generatedAt": "2026-09-29T09:46:11.560Z",
   "scope": "Automatisch aus Programminventar, DE-Angebotsabdeckung und verfügbaren Netzwerk-/Feed-Signalen erzeugt.",
   "automation": {
     "discovery": "automatic",
@@ -10,57 +10,59 @@
   },
   "programs": [
     {
-      "brand": "DECATHLON DE",
+      "brand": "Ecovacs DE",
       "network": "Awin",
-      "advertiserId": 14353,
+      "advertiserId": 30763,
       "status": "notjoined",
-      "category": "Mode & Sport",
-      "score": 70,
+      "category": "Smart Home",
+      "score": 75,
       "priority": "hoch",
-      "activeDiscoveryOffers": 0,
-      "offerExamples": [],
+      "activeDiscoveryOffers": 7,
+      "offerExamples": [
+        "Ecovacs Fall Prime Day Sale: Bis Zu 700€ Rabatt",
+        "859,99€ Rabatt Geschenkpaket GOAT A1600 LiDAR PRO (inklusive Garage)",
+        "100€ Rabatt WINBOT W2S PRO OMNI Care Kit"
+      ],
       "productFeed": false,
       "metrics": {
-        "awinIndex": 59.65,
-        "epc": 0.11,
-        "conversionRate": 1.2,
-        "approvalPercentage": 91.35,
-        "validationDays": 34,
-        "averagePaymentTime": "59",
+        "awinIndex": null,
+        "epc": null,
+        "conversionRate": null,
+        "approvalPercentage": null,
+        "validationDays": null,
+        "averagePaymentTime": null,
         "commissionMin": null,
         "commissionMax": null,
         "commissionTypes": []
       },
       "reasons": [
-        "passt zu Mode & Sport",
+        "passt zu Smart Home",
         "strategisch relevante Marke",
-        "Awin Index 59.65",
-        "Approval 91.35%",
-        "EPC 0.11"
+        "7 aktive DE-Aktionen"
       ],
       "applicationRequired": true,
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten DECATHLON DE redaktionell passend im Bereich Mode & Sport einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Ecovacs DE redaktionell passend im Bereich Smart Home einbinden. Bei Awin sind aktuell 7 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
       "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
       "automationState": "ready-for-review"
     },
     {
-      "brand": "Bosch Hausgeräte DE",
+      "brand": "Anker DE",
       "network": "Awin",
-      "advertiserId": 102205,
+      "advertiserId": 30691,
       "status": "notjoined",
       "category": "Technik & Computer",
-      "score": 68,
-      "priority": "mittel",
+      "score": 71,
+      "priority": "hoch",
       "activeDiscoveryOffers": 0,
       "offerExamples": [],
       "productFeed": false,
       "metrics": {
-        "awinIndex": 50.2,
-        "epc": 0.26,
-        "conversionRate": 2.39,
-        "approvalPercentage": 98.79,
-        "validationDays": 55,
-        "averagePaymentTime": "76",
+        "awinIndex": 65.64,
+        "epc": 1.42,
+        "conversionRate": 3.63,
+        "approvalPercentage": 90.07,
+        "validationDays": 28,
+        "averagePaymentTime": "89",
         "commissionMin": null,
         "commissionMax": null,
         "commissionTypes": []
@@ -68,12 +70,46 @@
       "reasons": [
         "passt zu Technik & Computer",
         "strategisch relevante Marke",
-        "Awin Index 50.2",
-        "Approval 98.79%",
-        "EPC 0.26"
+        "Awin Index 65.64",
+        "Approval 90.07%",
+        "EPC 1.42"
       ],
       "applicationRequired": true,
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Bosch Hausgeräte DE redaktionell passend im Bereich Technik & Computer einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Anker DE redaktionell passend im Bereich Technik & Computer einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "automationState": "ready-for-review"
+    },
+    {
+      "brand": "Acer DE",
+      "network": "Awin",
+      "advertiserId": 12591,
+      "status": "notjoined",
+      "category": "Technik & Computer",
+      "score": 66,
+      "priority": "mittel",
+      "activeDiscoveryOffers": 0,
+      "offerExamples": [],
+      "productFeed": false,
+      "metrics": {
+        "awinIndex": 52.73,
+        "epc": 0.24,
+        "conversionRate": 0.63,
+        "approvalPercentage": 84.62,
+        "validationDays": 39,
+        "averagePaymentTime": "78",
+        "commissionMin": null,
+        "commissionMax": null,
+        "commissionTypes": []
+      },
+      "reasons": [
+        "passt zu Technik & Computer",
+        "strategisch relevante Marke",
+        "Awin Index 52.73",
+        "Approval 84.62%",
+        "EPC 0.24"
+      ],
+      "applicationRequired": true,
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Acer DE redaktionell passend im Bereich Technik & Computer einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
       "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
       "automationState": "ready-for-review"
     },
@@ -112,19 +148,49 @@
       "automationState": "ready-for-review"
     },
     {
-      "brand": "Ecovacs DE",
+      "brand": "Anker Solix DE",
       "network": "Awin",
-      "advertiserId": 30763,
+      "advertiserId": 32623,
       "status": "notjoined",
-      "category": "Haushalt & Alltag",
-      "score": 60,
+      "category": "Technik & Computer",
+      "score": 63,
       "priority": "mittel",
-      "activeDiscoveryOffers": 7,
-      "offerExamples": [
-        "Ecovacs Fall Prime Day Sale: Bis Zu 700€ Rabatt",
-        "859,99€ Rabatt Geschenkpaket GOAT A1600 LiDAR PRO (inklusive Garage)",
-        "100€ Rabatt WINBOT W2S PRO OMNI Care Kit"
+      "activeDiscoveryOffers": 0,
+      "offerExamples": [],
+      "productFeed": false,
+      "metrics": {
+        "awinIndex": 40.55,
+        "epc": 0.98,
+        "conversionRate": 1.11,
+        "approvalPercentage": 87.43,
+        "validationDays": 73,
+        "averagePaymentTime": "91",
+        "commissionMin": null,
+        "commissionMax": null,
+        "commissionTypes": []
+      },
+      "reasons": [
+        "passt zu Technik & Computer",
+        "strategisch relevante Marke",
+        "Awin Index 40.55",
+        "Approval 87.43%",
+        "EPC 0.98"
       ],
+      "applicationRequired": true,
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Anker Solix DE redaktionell passend im Bereich Technik & Computer einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "automationState": "ready-for-review"
+    },
+    {
+      "brand": "Ankerkraut DE",
+      "network": "Awin",
+      "advertiserId": 127917,
+      "status": "notjoined",
+      "category": "Haushalt & Küche",
+      "score": 45,
+      "priority": "mittel",
+      "activeDiscoveryOffers": 0,
+      "offerExamples": [],
       "productFeed": false,
       "metrics": {
         "awinIndex": null,
@@ -138,11 +204,42 @@
         "commissionTypes": []
       },
       "reasons": [
-        "passt zu Haushalt & Alltag",
-        "7 aktive DE-Aktionen"
+        "passt zu Haushalt & Küche",
+        "strategisch relevante Marke"
       ],
       "applicationRequired": true,
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Ecovacs DE redaktionell passend im Bereich Haushalt & Alltag einbinden. Bei Awin sind aktuell 7 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Ankerkraut DE redaktionell passend im Bereich Haushalt & Küche einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "automationState": "ready-for-review"
+    },
+    {
+      "brand": "Bosch Hausgeräte DE",
+      "network": "Awin",
+      "advertiserId": 102205,
+      "status": "notjoined",
+      "category": "Technik & Computer",
+      "score": 45,
+      "priority": "mittel",
+      "activeDiscoveryOffers": 0,
+      "offerExamples": [],
+      "productFeed": false,
+      "metrics": {
+        "awinIndex": null,
+        "epc": null,
+        "conversionRate": null,
+        "approvalPercentage": null,
+        "validationDays": null,
+        "averagePaymentTime": null,
+        "commissionMin": null,
+        "commissionMax": null,
+        "commissionTypes": []
+      },
+      "reasons": [
+        "passt zu Technik & Computer",
+        "strategisch relevante Marke"
+      ],
+      "applicationRequired": true,
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Bosch Hausgeräte DE redaktionell passend im Bereich Technik & Computer einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
       "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
       "automationState": "ready-for-review"
     },
@@ -151,31 +248,60 @@
       "network": "Awin",
       "advertiserId": 84955,
       "status": "notjoined",
-      "category": "Weitere",
-      "score": 56,
+      "category": "Auto & Mobilität",
+      "score": 45,
       "priority": "mittel",
       "activeDiscoveryOffers": 0,
       "offerExamples": [],
       "productFeed": false,
       "metrics": {
-        "awinIndex": 92.12,
-        "epc": 1.04,
-        "conversionRate": 9.68,
-        "approvalPercentage": 100,
-        "validationDays": 4,
-        "averagePaymentTime": "27",
+        "awinIndex": null,
+        "epc": null,
+        "conversionRate": null,
+        "approvalPercentage": null,
+        "validationDays": null,
+        "averagePaymentTime": null,
         "commissionMin": null,
         "commissionMax": null,
         "commissionTypes": []
       },
       "reasons": [
-        "strategisch relevante Marke",
-        "Awin Index 92.12",
-        "Approval 100%",
-        "EPC 1.04"
+        "passt zu Auto & Mobilität",
+        "strategisch relevante Marke"
       ],
       "applicationRequired": true,
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten bosch Tiernahrung DE redaktionell passend im Bereich Weitere einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten bosch Tiernahrung DE redaktionell passend im Bereich Auto & Mobilität einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "automationState": "ready-for-review"
+    },
+    {
+      "brand": "DECATHLON DE",
+      "network": "Awin",
+      "advertiserId": 14353,
+      "status": "notjoined",
+      "category": "Mode & Sport",
+      "score": 45,
+      "priority": "mittel",
+      "activeDiscoveryOffers": 0,
+      "offerExamples": [],
+      "productFeed": false,
+      "metrics": {
+        "awinIndex": null,
+        "epc": null,
+        "conversionRate": null,
+        "approvalPercentage": null,
+        "validationDays": null,
+        "averagePaymentTime": null,
+        "commissionMin": null,
+        "commissionMax": null,
+        "commissionTypes": []
+      },
+      "reasons": [
+        "passt zu Mode & Sport",
+        "strategisch relevante Marke"
+      ],
+      "applicationRequired": true,
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten DECATHLON DE redaktionell passend im Bereich Mode & Sport einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
       "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
       "automationState": "ready-for-review"
     },
@@ -207,37 +333,6 @@
       ],
       "applicationRequired": true,
       "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Dyson DE redaktionell passend im Bereich Technik & Computer einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "automationState": "ready-for-review"
-    },
-    {
-      "brand": "Lidl DE",
-      "network": "Awin",
-      "advertiserId": 13936,
-      "status": "notjoined",
-      "category": "Haushalt & Alltag",
-      "score": 45,
-      "priority": "mittel",
-      "activeDiscoveryOffers": 0,
-      "offerExamples": [],
-      "productFeed": false,
-      "metrics": {
-        "awinIndex": null,
-        "epc": null,
-        "conversionRate": null,
-        "approvalPercentage": null,
-        "validationDays": null,
-        "averagePaymentTime": null,
-        "commissionMin": null,
-        "commissionMax": null,
-        "commissionTypes": []
-      },
-      "reasons": [
-        "passt zu Haushalt & Alltag",
-        "strategisch relevante Marke"
-      ],
-      "applicationRequired": true,
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Lidl DE redaktionell passend im Bereich Haushalt & Alltag einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
       "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
       "automationState": "ready-for-review"
     },
@@ -366,11 +461,77 @@
       "automationState": "ready-for-review"
     },
     {
+      "brand": "Bodylab24 DE",
+      "network": "Awin",
+      "advertiserId": 15016,
+      "status": "notjoined",
+      "category": "Gesundheit & Wellness",
+      "score": 36,
+      "priority": "niedrig",
+      "activeDiscoveryOffers": 1,
+      "offerExamples": [
+        "65% Rabatt auf 3kg Creatine Bundle + gratis Whey Sample Box"
+      ],
+      "productFeed": false,
+      "metrics": {
+        "awinIndex": null,
+        "epc": null,
+        "conversionRate": null,
+        "approvalPercentage": null,
+        "validationDays": null,
+        "averagePaymentTime": null,
+        "commissionMin": null,
+        "commissionMax": null,
+        "commissionTypes": []
+      },
+      "reasons": [
+        "passt zu Gesundheit & Wellness",
+        "1 aktive DE-Aktion"
+      ],
+      "applicationRequired": true,
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Bodylab24 DE redaktionell passend im Bereich Gesundheit & Wellness einbinden. Bei Awin sind aktuell 1 für Deutschland sichtbare Aktion dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "automationState": "ready-for-review"
+    },
+    {
+      "brand": "Douglas_DE",
+      "network": "Awin",
+      "advertiserId": 10076,
+      "status": "notjoined",
+      "category": "Gesundheit & Wellness",
+      "score": 36,
+      "priority": "niedrig",
+      "activeDiscoveryOffers": 1,
+      "offerExamples": [
+        "Dein Geschenk: GRATIS: 3 La Mer Minis* zur Bestellung ab 89 € mit Beauty Card"
+      ],
+      "productFeed": false,
+      "metrics": {
+        "awinIndex": null,
+        "epc": null,
+        "conversionRate": null,
+        "approvalPercentage": null,
+        "validationDays": null,
+        "averagePaymentTime": null,
+        "commissionMin": null,
+        "commissionMax": null,
+        "commissionTypes": []
+      },
+      "reasons": [
+        "passt zu Gesundheit & Wellness",
+        "1 aktive DE-Aktion"
+      ],
+      "applicationRequired": true,
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Douglas_DE redaktionell passend im Bereich Gesundheit & Wellness einbinden. Bei Awin sind aktuell 1 für Deutschland sichtbare Aktion dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "automationState": "ready-for-review"
+    },
+    {
       "brand": "adidas Affiliate Creators Program",
       "network": "Awin",
       "advertiserId": 128789,
       "status": "pending",
-      "category": "Mode & Sport",
+      "category": "Audio & Creator",
       "score": 35,
       "priority": "niedrig",
       "activeDiscoveryOffers": 0,
@@ -388,7 +549,7 @@
         "commissionTypes": []
       },
       "reasons": [
-        "passt zu Mode & Sport",
+        "passt zu Audio & Creator",
         "strategisch relevante Marke"
       ],
       "applicationRequired": false,
@@ -401,7 +562,7 @@
       "network": "Awin",
       "advertiserId": 123390,
       "status": "notjoined",
-      "category": "Haushalt & Alltag",
+      "category": "Haushalt & Küche",
       "score": 30,
       "priority": "niedrig",
       "activeDiscoveryOffers": 0,
@@ -419,10 +580,10 @@
         "commissionTypes": []
       },
       "reasons": [
-        "passt zu Haushalt & Alltag"
+        "passt zu Haushalt & Küche"
       ],
       "applicationRequired": true,
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten 0815 DE redaktionell passend im Bereich Haushalt & Alltag einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten 0815 DE redaktionell passend im Bereich Haushalt & Küche einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
       "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
       "automationState": "ready-for-review"
     },
@@ -491,7 +652,7 @@
       "network": "Awin",
       "advertiserId": 9146,
       "status": "notjoined",
-      "category": "Freizeit",
+      "category": "Freizeit & Reisen",
       "score": 30,
       "priority": "niedrig",
       "activeDiscoveryOffers": 0,
@@ -509,10 +670,10 @@
         "commissionTypes": []
       },
       "reasons": [
-        "passt zu Freizeit"
+        "passt zu Freizeit & Reisen"
       ],
       "applicationRequired": true,
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten 12-Travel DE redaktionell passend im Bereich Freizeit einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten 12-Travel DE redaktionell passend im Bereich Freizeit & Reisen einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
       "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
       "automationState": "ready-for-review"
     },
@@ -641,7 +802,7 @@
       "network": "Awin",
       "advertiserId": 14305,
       "status": "notjoined",
-      "category": "Haushalt & Alltag",
+      "category": "Haushalt & Küche",
       "score": 30,
       "priority": "niedrig",
       "activeDiscoveryOffers": 0,
@@ -659,10 +820,10 @@
         "commissionTypes": []
       },
       "reasons": [
-        "passt zu Haushalt & Alltag"
+        "passt zu Haushalt & Küche"
       ],
       "applicationRequired": true,
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten 3pagen DE redaktionell passend im Bereich Haushalt & Alltag einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten 3pagen DE redaktionell passend im Bereich Haushalt & Küche einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
       "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
       "automationState": "ready-for-review"
     },
@@ -791,7 +952,7 @@
       "network": "Awin",
       "advertiserId": 9369,
       "status": "notjoined",
-      "category": "Freizeit",
+      "category": "Freizeit & Reisen",
       "score": 30,
       "priority": "niedrig",
       "activeDiscoveryOffers": 0,
@@ -809,10 +970,10 @@
         "commissionTypes": []
       },
       "reasons": [
-        "passt zu Freizeit"
+        "passt zu Freizeit & Reisen"
       ],
       "applicationRequired": true,
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten ab-in-den-urlaub DE redaktionell passend im Bereich Freizeit einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten ab-in-den-urlaub DE redaktionell passend im Bereich Freizeit & Reisen einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
       "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
       "automationState": "ready-for-review"
     },
@@ -821,7 +982,7 @@
       "network": "Awin",
       "advertiserId": 105797,
       "status": "notjoined",
-      "category": "Haushalt & Alltag",
+      "category": "Haushalt & Küche",
       "score": 30,
       "priority": "niedrig",
       "activeDiscoveryOffers": 0,
@@ -839,10 +1000,10 @@
         "commissionTypes": []
       },
       "reasons": [
-        "passt zu Haushalt & Alltag"
+        "passt zu Haushalt & Küche"
       ],
       "applicationRequired": true,
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten ab-in-die-BOX DE redaktionell passend im Bereich Haushalt & Alltag einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten ab-in-die-BOX DE redaktionell passend im Bereich Haushalt & Küche einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
       "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
       "automationState": "ready-for-review"
     },
@@ -873,36 +1034,6 @@
       ],
       "applicationRequired": true,
       "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Academy of Sports DE redaktionell passend im Bereich Mode & Sport einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "automationState": "ready-for-review"
-    },
-    {
-      "brand": "Acer DE",
-      "network": "Awin",
-      "advertiserId": 12591,
-      "status": "notjoined",
-      "category": "Technik & Computer",
-      "score": 30,
-      "priority": "niedrig",
-      "activeDiscoveryOffers": 0,
-      "offerExamples": [],
-      "productFeed": false,
-      "metrics": {
-        "awinIndex": null,
-        "epc": null,
-        "conversionRate": null,
-        "approvalPercentage": null,
-        "validationDays": null,
-        "averagePaymentTime": null,
-        "commissionMin": null,
-        "commissionMax": null,
-        "commissionTypes": []
-      },
-      "reasons": [
-        "passt zu Technik & Computer"
-      ],
-      "applicationRequired": true,
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Acer DE redaktionell passend im Bereich Technik & Computer einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
       "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
       "automationState": "ready-for-review"
     },
@@ -1001,7 +1132,7 @@
       "network": "Awin",
       "advertiserId": 68036,
       "status": "notjoined",
-      "category": "Freizeit",
+      "category": "Freizeit & Reisen",
       "score": 30,
       "priority": "niedrig",
       "activeDiscoveryOffers": 0,
@@ -1019,10 +1150,10 @@
         "commissionTypes": []
       },
       "reasons": [
-        "passt zu Freizeit"
+        "passt zu Freizeit & Reisen"
       ],
       "applicationRequired": true,
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Afrika Safari Urlaub DE redaktionell passend im Bereich Freizeit einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Afrika Safari Urlaub DE redaktionell passend im Bereich Freizeit & Reisen einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
       "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
       "automationState": "ready-for-review"
     },
@@ -1091,7 +1222,7 @@
       "network": "Awin",
       "advertiserId": 12819,
       "status": "notjoined",
-      "category": "Freizeit",
+      "category": "Freizeit & Reisen",
       "score": 30,
       "priority": "niedrig",
       "activeDiscoveryOffers": 0,
@@ -1109,10 +1240,10 @@
         "commissionTypes": []
       },
       "reasons": [
-        "passt zu Freizeit"
+        "passt zu Freizeit & Reisen"
       ],
       "applicationRequired": true,
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Airline Direct DE (Longtail) redaktionell passend im Bereich Freizeit einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Airline Direct DE (Longtail) redaktionell passend im Bereich Freizeit & Reisen einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
       "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
       "automationState": "ready-for-review"
     },
@@ -1151,7 +1282,7 @@
       "network": "Awin",
       "advertiserId": 118209,
       "status": "notjoined",
-      "category": "Haushalt & Alltag",
+      "category": "Haushalt & Küche",
       "score": 30,
       "priority": "niedrig",
       "activeDiscoveryOffers": 0,
@@ -1169,10 +1300,10 @@
         "commissionTypes": []
       },
       "reasons": [
-        "passt zu Haushalt & Alltag"
+        "passt zu Haushalt & Küche"
       ],
       "applicationRequired": true,
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten AKKUman DE redaktionell passend im Bereich Haushalt & Alltag einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten AKKUman DE redaktionell passend im Bereich Haushalt & Küche einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
       "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
       "automationState": "ready-for-review"
     },
@@ -1181,7 +1312,7 @@
       "network": "Awin",
       "advertiserId": 15006,
       "status": "notjoined",
-      "category": "Haushalt & Alltag",
+      "category": "Haushalt & Küche",
       "score": 30,
       "priority": "niedrig",
       "activeDiscoveryOffers": 0,
@@ -1199,10 +1330,10 @@
         "commissionTypes": []
       },
       "reasons": [
-        "passt zu Haushalt & Alltag"
+        "passt zu Haushalt & Küche"
       ],
       "applicationRequired": true,
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten aktivshop DE redaktionell passend im Bereich Haushalt & Alltag einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten aktivshop DE redaktionell passend im Bereich Haushalt & Küche einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
       "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
       "automationState": "ready-for-review"
     },
@@ -1241,7 +1372,7 @@
       "network": "Awin",
       "advertiserId": 125002,
       "status": "notjoined",
-      "category": "Haushalt & Alltag",
+      "category": "Haushalt & Küche",
       "score": 30,
       "priority": "niedrig",
       "activeDiscoveryOffers": 0,
@@ -1259,10 +1390,10 @@
         "commissionTypes": []
       },
       "reasons": [
-        "passt zu Haushalt & Alltag"
+        "passt zu Haushalt & Küche"
       ],
       "applicationRequired": true,
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Alb Filter redaktionell passend im Bereich Haushalt & Alltag einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Alb Filter redaktionell passend im Bereich Haushalt & Küche einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
       "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
       "automationState": "ready-for-review"
     },
@@ -1301,7 +1432,7 @@
       "network": "Awin",
       "advertiserId": 28945,
       "status": "notjoined",
-      "category": "Haushalt & Alltag",
+      "category": "Haushalt & Küche",
       "score": 30,
       "priority": "niedrig",
       "activeDiscoveryOffers": 0,
@@ -1319,10 +1450,10 @@
         "commissionTypes": []
       },
       "reasons": [
-        "passt zu Haushalt & Alltag"
+        "passt zu Haushalt & Küche"
       ],
       "applicationRequired": true,
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten ALLDREI DE redaktionell passend im Bereich Haushalt & Alltag einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten ALLDREI DE redaktionell passend im Bereich Haushalt & Küche einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
       "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
       "automationState": "ready-for-review"
     },
@@ -1361,7 +1492,7 @@
       "network": "Awin",
       "advertiserId": 67914,
       "status": "notjoined",
-      "category": "Haushalt & Alltag",
+      "category": "Haushalt & Küche",
       "score": 30,
       "priority": "niedrig",
       "activeDiscoveryOffers": 0,
@@ -1379,10 +1510,10 @@
         "commissionTypes": []
       },
       "reasons": [
-        "passt zu Haushalt & Alltag"
+        "passt zu Haushalt & Küche"
       ],
       "applicationRequired": true,
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten ALLPOWERS DE redaktionell passend im Bereich Haushalt & Alltag einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten ALLPOWERS DE redaktionell passend im Bereich Haushalt & Küche einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
       "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
       "automationState": "ready-for-review"
     },
@@ -1415,126 +1546,6 @@
       "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Alternate DE redaktionell passend im Bereich Technik & Computer einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
       "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
       "automationState": "ready-for-review"
-    },
-    {
-      "brand": "Amefa",
-      "network": "Awin",
-      "advertiserId": 129379,
-      "status": "notjoined",
-      "category": "Haushalt & Alltag",
-      "score": 30,
-      "priority": "niedrig",
-      "activeDiscoveryOffers": 0,
-      "offerExamples": [],
-      "productFeed": false,
-      "metrics": {
-        "awinIndex": null,
-        "epc": null,
-        "conversionRate": null,
-        "approvalPercentage": null,
-        "validationDays": null,
-        "averagePaymentTime": null,
-        "commissionMin": null,
-        "commissionMax": null,
-        "commissionTypes": []
-      },
-      "reasons": [
-        "passt zu Haushalt & Alltag"
-      ],
-      "applicationRequired": true,
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Amefa redaktionell passend im Bereich Haushalt & Alltag einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "automationState": "ready-for-review"
-    },
-    {
-      "brand": "Andlight DE",
-      "network": "Awin",
-      "advertiserId": 21347,
-      "status": "notjoined",
-      "category": "Haushalt & Alltag",
-      "score": 30,
-      "priority": "niedrig",
-      "activeDiscoveryOffers": 0,
-      "offerExamples": [],
-      "productFeed": false,
-      "metrics": {
-        "awinIndex": null,
-        "epc": null,
-        "conversionRate": null,
-        "approvalPercentage": null,
-        "validationDays": null,
-        "averagePaymentTime": null,
-        "commissionMin": null,
-        "commissionMax": null,
-        "commissionTypes": []
-      },
-      "reasons": [
-        "passt zu Haushalt & Alltag"
-      ],
-      "applicationRequired": true,
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Andlight DE redaktionell passend im Bereich Haushalt & Alltag einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "automationState": "ready-for-review"
-    },
-    {
-      "brand": "AngelPlatz DE",
-      "network": "Awin",
-      "advertiserId": 15089,
-      "status": "notjoined",
-      "category": "Mode & Sport",
-      "score": 30,
-      "priority": "niedrig",
-      "activeDiscoveryOffers": 0,
-      "offerExamples": [],
-      "productFeed": false,
-      "metrics": {
-        "awinIndex": null,
-        "epc": null,
-        "conversionRate": null,
-        "approvalPercentage": null,
-        "validationDays": null,
-        "averagePaymentTime": null,
-        "commissionMin": null,
-        "commissionMax": null,
-        "commissionTypes": []
-      },
-      "reasons": [
-        "passt zu Mode & Sport"
-      ],
-      "applicationRequired": true,
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten AngelPlatz DE redaktionell passend im Bereich Mode & Sport einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "automationState": "ready-for-review"
-    },
-    {
-      "brand": "Angelwelt Gerlinger DE",
-      "network": "Awin",
-      "advertiserId": 74620,
-      "status": "notjoined",
-      "category": "Mode & Sport",
-      "score": 30,
-      "priority": "niedrig",
-      "activeDiscoveryOffers": 0,
-      "offerExamples": [],
-      "productFeed": false,
-      "metrics": {
-        "awinIndex": null,
-        "epc": null,
-        "conversionRate": null,
-        "approvalPercentage": null,
-        "validationDays": null,
-        "averagePaymentTime": null,
-        "commissionMin": null,
-        "commissionMax": null,
-        "commissionTypes": []
-      },
-      "reasons": [
-        "passt zu Mode & Sport"
-      ],
-      "applicationRequired": true,
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Angelwelt Gerlinger DE redaktionell passend im Bereich Mode & Sport einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "automationState": "ready-for-review"
     }
   ],
   "impact": {
@@ -1544,9 +1555,9 @@
     "marketplaceSearches": [
       {
         "category": "Technik & Computer",
-        "siteOffers": 122,
+        "siteOffers": 53,
         "joinedPrograms": 0,
-        "gapScore": 122,
+        "gapScore": 53,
         "searchTerms": [
           "electronics",
           "computer",
@@ -1557,35 +1568,113 @@
         "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
       },
       {
-        "category": "Audio & Musik",
-        "siteOffers": 76,
+        "category": "Audio & Creator",
+        "siteOffers": 42,
         "joinedPrograms": 0,
-        "gapScore": 76,
+        "gapScore": 42,
         "searchTerms": [
           "audio",
           "music",
           "headphones",
           "microphone",
-          "recording"
+          "recording",
+          "creator"
         ],
         "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
       },
       {
-        "category": "Haushalt & Alltag",
-        "siteOffers": 53,
+        "category": "Auto & Mobilität",
+        "siteOffers": 41,
         "joinedPrograms": 0,
-        "gapScore": 53,
+        "gapScore": 41,
         "searchTerms": [
-          "home",
-          "appliances",
-          "kitchen",
+          "automotive",
+          "car accessories",
+          "mobility"
+        ],
+        "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
+      },
+      {
+        "category": "Garten & Werkzeug",
+        "siteOffers": 38,
+        "joinedPrograms": 0,
+        "gapScore": 38,
+        "searchTerms": [
           "garden",
+          "mower",
+          "tools",
           "DIY"
         ],
         "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
       },
       {
-        "category": "Freizeit",
+        "category": "Smart Home",
+        "siteOffers": 26,
+        "joinedPrograms": 0,
+        "gapScore": 26,
+        "searchTerms": [
+          "smart home",
+          "security camera",
+          "robot vacuum",
+          "home automation"
+        ],
+        "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
+      },
+      {
+        "category": "Tierbedarf",
+        "siteOffers": 21,
+        "joinedPrograms": 0,
+        "gapScore": 21,
+        "searchTerms": [
+          "pet",
+          "cat",
+          "dog",
+          "pet supplies"
+        ],
+        "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
+      },
+      {
+        "category": "Haushalt & Küche",
+        "siteOffers": 14,
+        "joinedPrograms": 0,
+        "gapScore": 14,
+        "searchTerms": [
+          "home",
+          "appliances",
+          "kitchen",
+          "vacuum"
+        ],
+        "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
+      },
+      {
+        "category": "Mode & Sport",
+        "siteOffers": 9,
+        "joinedPrograms": 0,
+        "gapScore": 9,
+        "searchTerms": [
+          "fashion",
+          "sportswear",
+          "fitness",
+          "shoes"
+        ],
+        "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
+      },
+      {
+        "category": "Homeoffice",
+        "siteOffers": 7,
+        "joinedPrograms": 0,
+        "gapScore": 7,
+        "searchTerms": [
+          "home office",
+          "office",
+          "desk",
+          "webcam",
+          "docking"
+        ],
+        "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
+      },
+      {
+        "category": "Freizeit & Reisen",
         "siteOffers": 1,
         "joinedPrograms": 0,
         "gapScore": 1,
@@ -1612,7 +1701,7 @@
       {
         "network": "Daisycon",
         "category": "Technik & Computer",
-        "siteOffers": 122,
+        "siteOffers": 53,
         "priority": "hoch",
         "searchTerms": [
           "electronics",
@@ -1627,8 +1716,8 @@
       {
         "network": "Daisycon",
         "category": "Audio & Musik",
-        "siteOffers": 76,
-        "priority": "hoch",
+        "siteOffers": 42,
+        "priority": "mittel",
         "searchTerms": [
           "audio",
           "music",
@@ -1642,8 +1731,8 @@
       {
         "network": "Daisycon",
         "category": "Haushalt & Alltag",
-        "siteOffers": 53,
-        "priority": "hoch",
+        "siteOffers": 16,
+        "priority": "mittel",
         "searchTerms": [
           "home",
           "appliances",
@@ -1676,7 +1765,7 @@
       {
         "network": "Tradedoubler",
         "category": "Technik & Computer",
-        "siteOffers": 122,
+        "siteOffers": 53,
         "priority": "hoch",
         "searchTerms": [
           "electronics",
@@ -1691,8 +1780,8 @@
       {
         "network": "Tradedoubler",
         "category": "Audio & Musik",
-        "siteOffers": 76,
-        "priority": "hoch",
+        "siteOffers": 42,
+        "priority": "mittel",
         "searchTerms": [
           "audio",
           "music",
@@ -1706,8 +1795,8 @@
       {
         "network": "Tradedoubler",
         "category": "Haushalt & Alltag",
-        "siteOffers": 53,
-        "priority": "hoch",
+        "siteOffers": 16,
+        "priority": "mittel",
         "searchTerms": [
           "home",
           "appliances",
@@ -1745,7 +1834,7 @@
       {
         "network": "Webgains",
         "category": "Technik & Computer",
-        "siteOffers": 122,
+        "siteOffers": 53,
         "priority": "hoch",
         "searchTerms": [
           "electronics",
@@ -1760,8 +1849,8 @@
       {
         "network": "Webgains",
         "category": "Audio & Musik",
-        "siteOffers": 76,
-        "priority": "hoch",
+        "siteOffers": 42,
+        "priority": "mittel",
         "searchTerms": [
           "audio",
           "music",
@@ -1775,8 +1864,8 @@
       {
         "network": "Webgains",
         "category": "Haushalt & Alltag",
-        "siteOffers": 53,
-        "priority": "hoch",
+        "siteOffers": 16,
+        "priority": "mittel",
         "searchTerms": [
           "home",
           "appliances",
