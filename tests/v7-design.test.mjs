@@ -122,7 +122,7 @@ test("Angebotsseiten verlinken passende Alternativen intern", () => {
   assert.ok(target);
   const html = fs.readFileSync("dist/angebote/" + target.slug + ".html", "utf8");
   assert.match(html, /Ähnliche Angebote/);
-  assert.match(html, /Weiter vergleichen/);
+  assert.match(html, /Andere Marken vergleichen/);
   assert.match(html, /class="related-offers deal-section"/);
 });
 
