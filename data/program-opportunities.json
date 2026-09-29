@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-29T11:40:19.575Z",
+  "generatedAt": "2026-09-29T11:44:34.711Z",
   "scope": "Automatisch aus Programminventar, DE-Angebotsabdeckung und verfügbaren Netzwerk-/Feed-Signalen erzeugt.",
   "automation": {
     "discovery": "automatic",
@@ -248,7 +248,7 @@
       "network": "Awin",
       "advertiserId": 84955,
       "status": "notjoined",
-      "category": "Auto & Mobilität",
+      "category": "Tierbedarf",
       "score": 45,
       "priority": "mittel",
       "activeDiscoveryOffers": 0,
@@ -266,11 +266,11 @@
         "commissionTypes": []
       },
       "reasons": [
-        "passt zu Auto & Mobilität",
+        "passt zu Tierbedarf",
         "strategisch relevante Marke"
       ],
       "applicationRequired": true,
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten bosch Tiernahrung DE redaktionell passend im Bereich Auto & Mobilität einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten bosch Tiernahrung DE redaktionell passend im Bereich Tierbedarf einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
       "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
       "automationState": "ready-for-review"
     },
@@ -1555,9 +1555,9 @@
     "marketplaceSearches": [
       {
         "category": "Technik & Computer",
-        "siteOffers": 53,
+        "siteOffers": 73,
         "joinedPrograms": 0,
-        "gapScore": 53,
+        "gapScore": 73,
         "searchTerms": [
           "electronics",
           "computer",
@@ -1569,9 +1569,9 @@
       },
       {
         "category": "Audio & Creator",
-        "siteOffers": 42,
+        "siteOffers": 62,
         "joinedPrograms": 0,
-        "gapScore": 42,
+        "gapScore": 62,
         "searchTerms": [
           "audio",
           "music",
@@ -1583,22 +1583,10 @@
         "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
       },
       {
-        "category": "Auto & Mobilität",
-        "siteOffers": 41,
-        "joinedPrograms": 0,
-        "gapScore": 41,
-        "searchTerms": [
-          "automotive",
-          "car accessories",
-          "mobility"
-        ],
-        "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
-      },
-      {
         "category": "Garten & Werkzeug",
-        "siteOffers": 38,
+        "siteOffers": 42,
         "joinedPrograms": 0,
-        "gapScore": 38,
+        "gapScore": 42,
         "searchTerms": [
           "garden",
           "mower",
@@ -1621,15 +1609,14 @@
         "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
       },
       {
-        "category": "Tierbedarf",
-        "siteOffers": 21,
+        "category": "Auto & Mobilität",
+        "siteOffers": 16,
         "joinedPrograms": 0,
-        "gapScore": 21,
+        "gapScore": 16,
         "searchTerms": [
-          "pet",
-          "cat",
-          "dog",
-          "pet supplies"
+          "automotive",
+          "car accessories",
+          "mobility"
         ],
         "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
       },
@@ -1674,6 +1661,19 @@
         "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
       },
       {
+        "category": "Tierbedarf",
+        "siteOffers": 2,
+        "joinedPrograms": 0,
+        "gapScore": 2,
+        "searchTerms": [
+          "pet",
+          "cat",
+          "dog",
+          "pet supplies"
+        ],
+        "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
+      },
+      {
         "category": "Freizeit & Reisen",
         "siteOffers": 1,
         "joinedPrograms": 0,
@@ -1701,7 +1701,7 @@
       {
         "network": "Daisycon",
         "category": "Technik & Computer",
-        "siteOffers": 53,
+        "siteOffers": 73,
         "priority": "hoch",
         "searchTerms": [
           "electronics",
@@ -1716,8 +1716,8 @@
       {
         "network": "Daisycon",
         "category": "Audio & Musik",
-        "siteOffers": 42,
-        "priority": "mittel",
+        "siteOffers": 62,
+        "priority": "hoch",
         "searchTerms": [
           "audio",
           "music",
@@ -1731,7 +1731,7 @@
       {
         "network": "Daisycon",
         "category": "Haushalt & Alltag",
-        "siteOffers": 16,
+        "siteOffers": 20,
         "priority": "mittel",
         "searchTerms": [
           "home",
@@ -1765,7 +1765,7 @@
       {
         "network": "Tradedoubler",
         "category": "Technik & Computer",
-        "siteOffers": 53,
+        "siteOffers": 73,
         "priority": "hoch",
         "searchTerms": [
           "electronics",
@@ -1780,8 +1780,8 @@
       {
         "network": "Tradedoubler",
         "category": "Audio & Musik",
-        "siteOffers": 42,
-        "priority": "mittel",
+        "siteOffers": 62,
+        "priority": "hoch",
         "searchTerms": [
           "audio",
           "music",
@@ -1795,7 +1795,7 @@
       {
         "network": "Tradedoubler",
         "category": "Haushalt & Alltag",
-        "siteOffers": 16,
+        "siteOffers": 20,
         "priority": "mittel",
         "searchTerms": [
           "home",
@@ -1834,7 +1834,7 @@
       {
         "network": "Webgains",
         "category": "Technik & Computer",
-        "siteOffers": 53,
+        "siteOffers": 73,
         "priority": "hoch",
         "searchTerms": [
           "electronics",
@@ -1849,8 +1849,8 @@
       {
         "network": "Webgains",
         "category": "Audio & Musik",
-        "siteOffers": 42,
-        "priority": "mittel",
+        "siteOffers": 62,
+        "priority": "hoch",
         "searchTerms": [
           "audio",
           "music",
@@ -1864,7 +1864,7 @@
       {
         "network": "Webgains",
         "category": "Haushalt & Alltag",
-        "siteOffers": 16,
+        "siteOffers": 20,
         "priority": "mittel",
         "searchTerms": [
           "home",

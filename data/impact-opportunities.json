@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-29T11:40:19.575Z",
+  "generatedAt": "2026-09-29T11:44:34.711Z",
   "status": "disabled",
   "joinedPrograms": 0,
   "automation": {
@@ -12,9 +12,9 @@
   "marketplaceSearches": [
     {
       "category": "Technik & Computer",
-      "siteOffers": 53,
+      "siteOffers": 73,
       "joinedPrograms": 0,
-      "gapScore": 53,
+      "gapScore": 73,
       "searchTerms": [
         "electronics",
         "computer",
@@ -26,9 +26,9 @@
     },
     {
       "category": "Audio & Creator",
-      "siteOffers": 42,
+      "siteOffers": 62,
       "joinedPrograms": 0,
-      "gapScore": 42,
+      "gapScore": 62,
       "searchTerms": [
         "audio",
         "music",
@@ -40,22 +40,10 @@
       "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
     },
     {
-      "category": "Auto & Mobilität",
-      "siteOffers": 41,
-      "joinedPrograms": 0,
-      "gapScore": 41,
-      "searchTerms": [
-        "automotive",
-        "car accessories",
-        "mobility"
-      ],
-      "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
-    },
-    {
       "category": "Garten & Werkzeug",
-      "siteOffers": 38,
+      "siteOffers": 42,
       "joinedPrograms": 0,
-      "gapScore": 38,
+      "gapScore": 42,
       "searchTerms": [
         "garden",
         "mower",
@@ -78,15 +66,14 @@
       "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
     },
     {
-      "category": "Tierbedarf",
-      "siteOffers": 21,
+      "category": "Auto & Mobilität",
+      "siteOffers": 16,
       "joinedPrograms": 0,
-      "gapScore": 21,
+      "gapScore": 16,
       "searchTerms": [
-        "pet",
-        "cat",
-        "dog",
-        "pet supplies"
+        "automotive",
+        "car accessories",
+        "mobility"
       ],
       "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
     },
@@ -127,6 +114,19 @@
         "desk",
         "webcam",
         "docking"
+      ],
+      "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
+    },
+    {
+      "category": "Tierbedarf",
+      "siteOffers": 2,
+      "joinedPrograms": 0,
+      "gapScore": 2,
+      "searchTerms": [
+        "pet",
+        "cat",
+        "dog",
+        "pet supplies"
       ],
       "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
     },

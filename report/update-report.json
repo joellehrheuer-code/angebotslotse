@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-29T11:40:19.575Z",
+  "generatedAt": "2026-09-29T11:44:34.711Z",
   "newAwinPrograms": 0,
   "newImpactPrograms": 0,
   "newDaisyconPrograms": 0,
@@ -42,18 +42,18 @@
     "PDF Agile": 1
   },
   "productsByCategory": {
-    "audio-musik": 42,
-    "auto": 41,
+    "audio-musik": 62,
+    "zubehoer": 47,
     "garten": 36,
     "smart-home": 26,
-    "zubehoer": 26,
-    "technik": 24,
-    "tierbedarf": 21,
+    "technik": 22,
+    "auto": 16,
     "haushalt": 14,
     "sport-fitness": 9,
     "homeoffice": 7,
-    "computer": 3,
-    "werkzeug": 2,
+    "werkzeug": 6,
+    "computer": 4,
+    "tierbedarf": 2,
     "freizeit": 1
   },
   "awinEnhancedFeeds": [
