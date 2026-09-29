@@ -4,14 +4,28 @@ const retryDelay=Math.max(1000,Number(process.env.SMOKE_RETRY_DELAY_MS)||4000);
 const concurrency=Math.min(12,Math.max(1,Number(process.env.SMOKE_CONCURRENCY)||8));
 
 const sleep=ms=>new Promise(resolve=>setTimeout(resolve,ms));
+const transientHttpStatus=status=>status===429||(status>=500&&status<=599);
 const fetchOk=async url=>{
-  const controller=new AbortController();
-  const timer=setTimeout(()=>controller.abort(),15000);
-  try{
-    const response=await fetch(url,{cache:"no-store",signal:controller.signal,headers:{"user-agent":"Angebotslotse-Live-Smoke/1.0"}});
-    if(!response.ok)throw new Error(`HTTP ${response.status} ${response.statusText}`);
-    return response;
-  }finally{clearTimeout(timer);}
+  const maxFetchAttempts=Math.min(4,attempts);
+  let lastError;
+  for(let attempt=1;attempt<=maxFetchAttempts;attempt+=1){
+    const controller=new AbortController();
+    const timer=setTimeout(()=>controller.abort(),15000);
+    try{
+      const response=await fetch(url,{cache:"no-store",signal:controller.signal,headers:{"user-agent":"Angebotslotse-Live-Smoke/1.0"}});
+      if(response.ok)return response;
+      const error=new Error(`HTTP ${response.status} ${response.statusText}`);
+      error.status=response.status;
+      throw error;
+    }catch(error){
+      lastError=error;
+      const status=Number(error?.status);
+      const networkError=!Number.isFinite(status);
+      if(attempt===maxFetchAttempts||(!networkError&&!transientHttpStatus(status)))throw error;
+      await sleep(Math.min(retryDelay,3000)*attempt);
+    }finally{clearTimeout(timer);}
+  }
+  throw lastError;
 };
 const fetchText=async path=>(await fetchOk(`${base}${path}${path.includes("?")?"&":"?"}smoke=${Date.now()}`)).text();
 const fetchJson=async path=>JSON.parse(await fetchText(path));
