@@ -1,6 +1,6 @@
 {
   "state": "ok",
-  "lastSuccessfulUpdate": "2026-09-29T16:54:37.129Z",
+  "lastSuccessfulUpdate": "2026-09-29T16:56:53.338Z",
   "activeOffers": 252,
   "storedOffers": 479,
   "publishableOffers": 252,
@@ -129,8 +129,8 @@
       "count": 0,
       "error": null,
       "audit": {
-        "reason": "Impact rate-limit cooldown – next scheduled window every 12h",
-        "cadenceHours": 12
+        "reason": "Impact sync reserved for the dedicated daily workflow window",
+        "cadenceHours": 24
       }
     },
     "daisycon": {

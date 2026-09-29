@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-29T16:54:37.193Z",
+  "generatedAt": "2026-09-29T16:56:53.385Z",
   "market": "DE",
   "publisherId": 3045061,
   "awin": {
@@ -3101,8 +3101,8 @@
     "state": "disabled",
     "publishableOffers": 0,
     "inventory": {
-      "reason": "Impact rate-limit cooldown – next scheduled window every 12h",
-      "cadenceHours": 12
+      "reason": "Impact sync reserved for the dedicated daily workflow window",
+      "cadenceHours": 24
     },
     "opportunities": [],
     "marketplaceSearches": [
