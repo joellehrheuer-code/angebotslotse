@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-29T21:28:48.805Z",
+  "generatedAt": "2026-09-29T21:31:07.151Z",
   "dailyNewContactLimit": 8,
   "safeguards": {
     "dedupeAgainst": "report/partner-outreach-status.json",
@@ -10,10 +10,10 @@
   },
   "nextBatch": [
     {
-      "id": "awin-acer-de",
+      "id": "awin-12591",
       "network": "Awin",
       "brand": "Acer DE",
-      "advertiserId": null,
+      "advertiserId": 12591,
       "programId": null,
       "campaignId": null,
       "category": "Technik & Computer",
@@ -33,10 +33,10 @@
       "reason": "Routine-Outreach darf nur an verifizierte offizielle Kontakte vorbereitet/versendet werden; Vertragsbedingungen, AGB, Exklusivität oder kostenpflichtige Verpflichtungen werden nicht automatisch akzeptiert."
     },
     {
-      "id": "awin-adidas-de",
+      "id": "awin-77004",
       "network": "Awin",
       "brand": "adidas DE",
-      "advertiserId": null,
+      "advertiserId": 77004,
       "programId": null,
       "campaignId": null,
       "category": "Mode & Sport",
@@ -56,10 +56,10 @@
       "reason": "Routine-Outreach darf nur an verifizierte offizielle Kontakte vorbereitet/versendet werden; Vertragsbedingungen, AGB, Exklusivität oder kostenpflichtige Verpflichtungen werden nicht automatisch akzeptiert."
     },
     {
-      "id": "awin-alternate-de",
+      "id": "awin-11731",
       "network": "Awin",
       "brand": "Alternate DE",
-      "advertiserId": null,
+      "advertiserId": 11731,
       "programId": null,
       "campaignId": null,
       "category": "Technik & Computer",
@@ -79,10 +79,10 @@
       "reason": "Routine-Outreach darf nur an verifizierte offizielle Kontakte vorbereitet/versendet werden; Vertragsbedingungen, AGB, Exklusivität oder kostenpflichtige Verpflichtungen werden nicht automatisch akzeptiert."
     },
     {
-      "id": "awin-elv-de",
+      "id": "awin-11447",
       "network": "Awin",
       "brand": "ELV DE",
-      "advertiserId": null,
+      "advertiserId": 11447,
       "programId": null,
       "campaignId": null,
       "category": "Technik & Computer",
@@ -102,10 +102,10 @@
       "reason": "Routine-Outreach darf nur an verifizierte offizielle Kontakte vorbereitet/versendet werden; Vertragsbedingungen, AGB, Exklusivität oder kostenpflichtige Verpflichtungen werden nicht automatisch akzeptiert."
     },
     {
-      "id": "awin-pollin-electronic-de",
+      "id": "awin-15965",
       "network": "Awin",
       "brand": "Pollin Electronic DE",
-      "advertiserId": null,
+      "advertiserId": 15965,
       "programId": null,
       "campaignId": null,
       "category": "Technik & Computer",
@@ -125,10 +125,10 @@
       "reason": "Routine-Outreach darf nur an verifizierte offizielle Kontakte vorbereitet/versendet werden; Vertragsbedingungen, AGB, Exklusivität oder kostenpflichtige Verpflichtungen werden nicht automatisch akzeptiert."
     },
     {
-      "id": "awin-iherb-eur",
+      "id": "awin-76734",
       "network": "Awin",
       "brand": "iHerb EUR",
-      "advertiserId": null,
+      "advertiserId": 76734,
       "programId": null,
       "campaignId": null,
       "category": "Gesundheit & Wellness",
@@ -148,10 +148,10 @@
       "reason": "Routine-Outreach darf nur an verifizierte offizielle Kontakte vorbereitet/versendet werden; Vertragsbedingungen, AGB, Exklusivität oder kostenpflichtige Verpflichtungen werden nicht automatisch akzeptiert."
     },
     {
-      "id": "awin-sharkninja-de",
+      "id": "awin-19810",
       "network": "Awin",
       "brand": "SharkNinja DE",
-      "advertiserId": null,
+      "advertiserId": 19810,
       "programId": null,
       "campaignId": null,
       "category": "Haushalt & Küche",
@@ -171,10 +171,10 @@
       "reason": "Routine-Outreach darf nur an verifizierte offizielle Kontakte vorbereitet/versendet werden; Vertragsbedingungen, AGB, Exklusivität oder kostenpflichtige Verpflichtungen werden nicht automatisch akzeptiert."
     },
     {
-      "id": "awin-ankerkraut-de",
+      "id": "awin-127917",
       "network": "Awin",
       "brand": "Ankerkraut DE",
-      "advertiserId": null,
+      "advertiserId": 127917,
       "programId": null,
       "campaignId": null,
       "category": "Haushalt & Küche",
