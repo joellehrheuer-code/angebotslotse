@@ -14,10 +14,11 @@ const rules = [
   ["Freizeit & Reisen", /travel|reise|freizeit|outdoor|hobby|ticket/i],
 ];
 
-const strategic = /amazon|coolblue|beyerdynamic|adidas|dyson|lidl|decathlon|samsung|lenovo|nike|under armour|razer|thomann|rode|waves|logitech|corsair|asus|msi|sony|philips|bosch|lg|anker|ankerkraut|eufy|roborock|dreame|ecovacs|irobot|xiaomi|dji|gopro|garmin|fitbit|puma|shure|sennheiser|elgato|steelseries|hyperx|hp|dell|acer|intersport|sportspar|bstn|premiumsim|one de|zooplus|fressnapf|alternate|cyberport|notebooksbilliger/i;
+const strategic = /\b(?:amazon|coolblue|beyerdynamic|adidas|dyson|lidl|decathlon|samsung|lenovo|nike|under armour|razer|thomann|rode|waves|logitech|corsair|asus|msi|sony|philips|bosch|lg|anker|ankerkraut|eufy|roborock|dreame|ecovacs|irobot|xiaomi|dji|gopro|garmin|fitbit|puma|shure|sennheiser|elgato|steelseries|hyperx|hp|dell|acer|intersport|sportspar|bstn|premiumsim|zooplus|fressnapf|alternate|cyberport|notebooksbilliger)\b/i;
+const strategicExact = /^(?:one de)$/i;
 const blockedPartnerSignal = /\b(?:adult|erotic|erotik|sexshop|sexspielzeug|sex\s?toy|vibrator|dildo|masturbator|analplug|butt\s?plug|penisring|porn(?:o|ografie|ography)?|erotikshop|bdsm\s?gear|lovense|satisfyer)\b/i;
 export const isBlockedPartnerProgram = program => blockedPartnerSignal.test(`${program?.name??""} ${program?.primarySector??""} ${program?.description??""}`);
-export const isStrategicProgram = program => strategic.test(String(program?.name ?? ""));
+export const isStrategicProgram = program => { const name=String(program?.name ?? "").trim(); return strategicExact.test(name) || strategic.test(name); };
 
 const finiteMetric = value => {
   const number = Number(value);

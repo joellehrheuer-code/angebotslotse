@@ -62,5 +62,8 @@ test("INTERSPORT und ONE werden als strategische breite Sortimente erkannt", () 
   assert.equal(categoryForProgram({name:"INTERSPORT DE",primarySector:"Sports"}),"Mode & Sport");
   assert.equal(categoryForProgram({name:"One DE",primarySector:"Computers"}),"Technik & Computer");
   assert.equal(isStrategicProgram({name:"One DE"}),true);
+  assert.equal(isStrategicProgram({name:"LGBTQ Worldwide DE"}),false);
+  assert.equal(isStrategicProgram({name:"HER ONE DE"}),false);
+  assert.equal(isStrategicProgram({name:"Shop Apotheke DE"}),false);
 });
 

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-29T23:35:00+02:00",
+  "generatedAt": "2026-09-29T23:40:00+02:00",
   "purpose": "Verified official contact routes for routine Angebotslotse partner outreach. sendAllowed=false means research/review is still required before sending.",
   "contacts": [
     {
@@ -82,6 +82,33 @@
       "verifiedAt": "2026-09-29",
       "sendAllowed": true,
       "notes": "Awin profile explicitly publishes affiliate support for cooperation ideas and regular deal campaigns."
+    },
+    {
+      "brand": "Alternate DE",
+      "contact": "awin@alternate.de",
+      "contactType": "official-affiliate",
+      "sourceUrl": "https://ui.awin.com/merchant-profile/11731",
+      "verifiedAt": "2026-09-29",
+      "sendAllowed": true,
+      "notes": "Awin profile explicitly publishes affiliate contact, CSV product lists and personal support."
+    },
+    {
+      "brand": "ELV DE",
+      "contact": "elv@sunnysales.de",
+      "contactType": "official-affiliate",
+      "sourceUrl": "https://ui.awin.com/merchant-profile/11447",
+      "verifiedAt": "2026-09-29",
+      "sendAllowed": true,
+      "notes": "Awin profile explicitly publishes affiliate contact, product list and deeplinks."
+    },
+    {
+      "brand": "Pollin Electronic DE",
+      "contact": "partnerprogramm@pollin.de",
+      "contactType": "official-affiliate",
+      "sourceUrl": "https://ui.awin.com/merchant-profile/15965",
+      "verifiedAt": "2026-09-29",
+      "sendAllowed": true,
+      "notes": "Awin profile explicitly publishes affiliate-team contact and continuously updated CSV product lists."
     }
   ]
 }
