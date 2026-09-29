@@ -1,5 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
+import fs from "node:fs";
 import { fetchDirectOffers } from "../scripts/lib/direct.mjs";
 import { fetchImpactOffers, IMPACT_API_VERSION } from "../scripts/lib/impact.mjs";
 import { fetchAwinPrograms, fetchAwinProgramDetails } from "../scripts/lib/awin.mjs";
@@ -25,8 +26,10 @@ test("Awin-Programmdetails liefern KPI- und Provisionsdaten",async()=>{
 
 test("direkte Partner liefern nur aktivierte HTTPS-Angebote", async () => {
   const rows = await fetchDirectOffers();
-  assert.equal(rows.length, 16);
+  const configured = JSON.parse(fs.readFileSync("data/direct-partners.json", "utf8")).filter(row => row.enabled);
+  assert.equal(rows.length, configured.length);
   assert.ok(rows.every(r => r.source === "direct" && r.urlTracking.startsWith("https://")));
+  assert.equal(rows.some(r => r.advertiserName === "Coolblue DE"), false);
 });
 test("Impact bleibt ohne Zugangsdaten deaktiviert", async () => assert.deepEqual(await fetchImpactOffers({}), []));
 test("Impact nutzt Media-Partner-API und Basic Auth", async () => {
@@ -389,4 +392,3 @@ test("Webgains Join bleibt trotz bestätigtem Terms-Stand fail-closed", async ()
     /submission disabled: exact request schema not verified/
   );
 });
-

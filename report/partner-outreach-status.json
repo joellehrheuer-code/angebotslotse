@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-09-29T13:45:00+02:00",
+  "generatedAt": "2026-09-29T18:55:00+02:00",
   "purpose": "Deduplication and status tracking for Angebotslotse affiliate/partner outreach. No contracts are auto-accepted.",
   "statuses": [
     {
       "brand": "Coolblue DE",
       "network": "Awin",
-      "status": "needs-info",
-      "lastContactAt": "2026-09-29T11:32:02+02:00",
+      "status": "pending-termination",
+      "lastContactAt": "2026-09-29T18:55:00+02:00",
       "contact": "affiliate@coolblue.de",
-      "nextAction": "Website Angebotslotse im Awin-Publisherprofil hinterlegen; danach Publisher-ID an Coolblue senden.",
-      "notes": "Coolblue hat positiv geantwortet und möchte das Portal nach Hinterlegung im Awin-Profil prüfen."
+      "nextAction": "Affiliate-Links entfernt lassen; Coolblue/Awin um Reaktivierung bei aktiver Nutzung bitten und erst nach bestätigter Mitgliedschaft wieder freischalten.",
+      "notes": "Awin meldet Kündigung wegen fehlender Aktivität; Mitgliedschaft noch 7 Tage aktiv. Awin empfiehlt vorübergehend sämtliche Coolblue-Links zu entfernen."
     },
     {
       "brand": "EcoFlow DE",

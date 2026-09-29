@@ -2,8 +2,10 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import fs from "node:fs";
 import { execFileSync } from "node:child_process";
-import { isPublicationReady, isBlockedNonMerchandiseOffer } from "../scripts/lib/normalize.mjs";
+import { isPublicationReady, isBlockedNonMerchandiseOffer, isSuppressedAdvertiserOffer } from "../scripts/lib/normalize.mjs";
 
+const siteConfig = JSON.parse(fs.readFileSync("config.json", "utf8"));
+const isSitePublishable = offer => isPublicationReady(offer) && !isBlockedNonMerchandiseOffer(offer) && !isSuppressedAdvertiserOffer(offer, siteConfig);
 const siteUrl = "https://joellehrheuer-code.github.io/angebotslotse";
 
 function build() {
@@ -43,7 +45,7 @@ test("V7 build report records the real publishable inventory", () => {
   assert.equal(report.version, "V8-premium-dark-commerce");
   assert.equal(report.offers, report.productCards);
   assert.ok(report.offers > 0);
-  assert.equal(report.images, offers.filter((offer) => isPublicationReady(offer) && !isBlockedNonMerchandiseOffer(offer)).filter((offer) => offer.imageUrl).length);
+  assert.equal(report.images, offers.filter(isSitePublishable).filter((offer) => offer.imageUrl).length);
   assert.ok(report.discounts >= 0 && report.discounts <= report.offers);
   assert.ok(report.dailyDeal);
   const home = fs.readFileSync("dist/index.html", "utf8");
@@ -84,7 +86,7 @@ test("V7 Build-Report erfasst eigene Bücher und Merch", () => {
 test("SEO konsolidiert Produktvarianten auf eine Angebots-URL", () => {
   build();
   const offers = JSON.parse(fs.readFileSync("data/offers.json", "utf8"));
-  const target = offers.find((offer) => isPublicationReady(offer) && offer.productId && Number(offer.currentPrice) > 0 && offer.slug);
+  const target = offers.find((offer) => isSitePublishable(offer) && offer.productId && Number(offer.currentPrice) > 0 && offer.slug);
   assert.ok(target, "Mindestens ein Produkt mit Preis wird für den Canonical-Test benötigt.");
   const canonicalUrl = siteUrl + "/angebote/" + target.slug + ".html";
   const offerHtml = fs.readFileSync("dist/angebote/" + target.slug + ".html", "utf8");
@@ -104,7 +106,7 @@ test("SEO konsolidiert Produktvarianten auf eine Angebots-URL", () => {
 test("aktive Kategorie-Seiten bieten datenbasierten Mehrwert", () => {
   build();
   const offers = JSON.parse(fs.readFileSync("data/offers.json", "utf8"));
-  const target = offers.find((offer) => isPublicationReady(offer) && offer.category && offer.category !== "sonstiges");
+  const target = offers.find((offer) => isSitePublishable(offer) && offer.category && offer.category !== "sonstiges");
   assert.ok(target);
   const html = fs.readFileSync("dist/" + target.category + ".html", "utf8");
   assert.match(html, /class="category-guide"/);
@@ -117,7 +119,7 @@ test("aktive Kategorie-Seiten bieten datenbasierten Mehrwert", () => {
 test("Angebotsseiten verlinken passende Alternativen intern", () => {
   build();
   const offers = JSON.parse(fs.readFileSync("data/offers.json", "utf8"));
-  const publishable = offers.filter(isPublicationReady);
+  const publishable = offers.filter(isSitePublishable);
   const counts = new Map();
   for (const offer of publishable) counts.set(offer.category, (counts.get(offer.category) || 0) + 1);
   const target = publishable.find((offer) => (counts.get(offer.category) || 0) > 1);
@@ -133,7 +135,7 @@ test("V8 Merkliste und Wunschpreise werden lokal bereitgestellt", () => {
   const watchlist = fs.readFileSync("dist/merkliste.html", "utf8");
   const app = fs.readFileSync("dist/app.js", "utf8");
   const offers = JSON.parse(fs.readFileSync("data/offers.json", "utf8"));
-  const target = offers.find((offer) => isPublicationReady(offer) && offer.slug);
+  const target = offers.find((offer) => isSitePublishable(offer) && offer.slug);
   assert.ok(target);
   const offerHtml = fs.readFileSync("dist/angebote/" + target.slug + ".html", "utf8");
   assert.match(watchlist, /Merkliste & Wunschpreise/);

@@ -240,5 +240,8 @@
     ],
     "sonstiges": []
   },
-  "inventoryCircuitBreakerRatio": 0.5
+  "inventoryCircuitBreakerRatio": 0.5,
+  "suppressedAdvertiserIds": [
+    85171
+  ]
 }

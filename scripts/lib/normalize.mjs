@@ -23,6 +23,11 @@ export const isBlockedNonMerchandiseOffer = raw => {
   const price = amount(raw?.currentPrice ?? raw?.price ?? raw?.salePrice);
   return price !== null && price <= 2 && nonMerchandiseDescriptionSignal.test(description);
 };
+export const isSuppressedAdvertiserOffer = (raw, config = {}) => {
+  const advertiserId = Number(raw?.advertiser?.id ?? raw?.advertiserId ?? raw?.merchantId);
+  if (!Number.isFinite(advertiserId)) return false;
+  return (config.suppressedAdvertiserIds ?? []).some(value => Number(value) === advertiserId);
+};
 
 export function dedupeKeyForOffer(offer) {
   const merchant = merchantIdentity(offer);
@@ -148,7 +153,7 @@ export const refineOfferCategory = (raw, config) => {
 
 export function normalizeOffer(raw, config, now = new Date()) {
   const title = text(raw.title, 180);
-  if (isBlockedAdultOffer(raw) || isBlockedNonMerchandiseOffer(raw)) return null;
+  if (isBlockedAdultOffer(raw) || isBlockedNonMerchandiseOffer(raw) || isSuppressedAdvertiserOffer(raw, config)) return null;
   const trackingUrl = safeHttpUrl(raw.urlTracking ?? raw.trackingUrl);
   const destinationUrl = safeHttpUrl(raw.url ?? raw.destinationUrl ?? raw.productUrl);
   const endDate = raw.endDate ? new Date(raw.endDate) : null;

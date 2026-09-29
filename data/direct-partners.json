@@ -155,7 +155,8 @@
     "trackingUrl": "https://www.awin1.com/cread.php?s=4859203&v=85171&q=567243&r=3045061",
     "creativeUrl": "https://www.awin1.com/cshow.php?s=4859203&v=85171&q=567243&r=3045061",
     "destinationUrl": "https://www.awin1.com/cread.php?s=4859203&v=85171&q=567243&r=3045061",
-    "enabled": true
+    "enabled": false,
+    "disabledReason": "Awin membership pending termination; affiliate links temporarily removed per network notice."
   },
   {
     "id": "awin-hollyland-creative",
