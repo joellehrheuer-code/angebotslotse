@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-29T21:20:22.628Z",
+  "generatedAt": "2026-09-29T21:22:31.803Z",
   "dailyNewContactLimit": 8,
   "safeguards": {
     "dedupeAgainst": "report/partner-outreach-status.json",
@@ -28,6 +28,7 @@
       "routineOutreachAllowed": false,
       "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Acer DE redaktionell passend im Bereich Technik & Computer einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
       "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "networkApplicationNextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
       "contractualSubmissionAllowed": false,
       "reason": "Routine-Outreach darf nur an verifizierte offizielle Kontakte vorbereitet/versendet werden; Vertragsbedingungen, AGB, Exklusivität oder kostenpflichtige Verpflichtungen werden nicht automatisch akzeptiert."
     },
@@ -50,6 +51,7 @@
       "routineOutreachAllowed": false,
       "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten adidas DE redaktionell passend im Bereich Mode & Sport einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
       "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "networkApplicationNextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
       "contractualSubmissionAllowed": false,
       "reason": "Routine-Outreach darf nur an verifizierte offizielle Kontakte vorbereitet/versendet werden; Vertragsbedingungen, AGB, Exklusivität oder kostenpflichtige Verpflichtungen werden nicht automatisch akzeptiert."
     },
@@ -71,7 +73,8 @@
       "contactState": "verified-official-contact",
       "routineOutreachAllowed": true,
       "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Ankerkraut DE redaktionell passend im Bereich Haushalt & Küche einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "nextAction": "Verifizierten offiziellen Kontakt dedupliziert per Angebotslotse-Mail anschreiben; Netzwerk-AGB oder Vertragsbedingungen nicht automatisch bestätigen.",
+      "networkApplicationNextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
       "contractualSubmissionAllowed": false,
       "reason": "Routine-Outreach darf nur an verifizierte offizielle Kontakte vorbereitet/versendet werden; Vertragsbedingungen, AGB, Exklusivität oder kostenpflichtige Verpflichtungen werden nicht automatisch akzeptiert."
     },
@@ -94,6 +97,7 @@
       "routineOutreachAllowed": false,
       "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten bosch Tiernahrung DE redaktionell passend im Bereich Tierbedarf einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
       "nextAction": "Official provider address is verified, but no dedicated affiliate contact was found; keep manual/research review before outreach.",
+      "networkApplicationNextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
       "contractualSubmissionAllowed": false,
       "reason": "Routine-Outreach darf nur an verifizierte offizielle Kontakte vorbereitet/versendet werden; Vertragsbedingungen, AGB, Exklusivität oder kostenpflichtige Verpflichtungen werden nicht automatisch akzeptiert."
     },
@@ -116,6 +120,7 @@
       "routineOutreachAllowed": false,
       "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten MSI DE redaktionell passend im Bereich Technik & Computer einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
       "nextAction": "Official German general-contact address; no dedicated affiliate email was verified yet.",
+      "networkApplicationNextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
       "contractualSubmissionAllowed": false,
       "reason": "Routine-Outreach darf nur an verifizierte offizielle Kontakte vorbereitet/versendet werden; Vertragsbedingungen, AGB, Exklusivität oder kostenpflichtige Verpflichtungen werden nicht automatisch akzeptiert."
     },
@@ -137,7 +142,8 @@
       "contactState": "verified-official-contact",
       "routineOutreachAllowed": true,
       "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten PremiumSIM DE redaktionell passend im Bereich Technik & Computer einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "nextAction": "Verifizierten offiziellen Kontakt dedupliziert per Angebotslotse-Mail anschreiben; Netzwerk-AGB oder Vertragsbedingungen nicht automatisch bestätigen.",
+      "networkApplicationNextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
       "contractualSubmissionAllowed": false,
       "reason": "Routine-Outreach darf nur an verifizierte offizielle Kontakte vorbereitet/versendet werden; Vertragsbedingungen, AGB, Exklusivität oder kostenpflichtige Verpflichtungen werden nicht automatisch akzeptiert."
     }
