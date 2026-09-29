@@ -18,6 +18,7 @@ const config = JSON.parse(await fs.readFile("config.json", "utf8"));
 const oldOffers = JSON.parse(await fs.readFile("data/offers.json", "utf8").catch(() => "[]"));
 const oldStatus = JSON.parse(await fs.readFile("data/status.json", "utf8").catch(() => "{}"));
 const partnerOutreachStatus=JSON.parse(await fs.readFile("report/partner-outreach-status.json","utf8").catch(() => '{"statuses":[]}' ));
+const partnerContactDirectory=JSON.parse(await fs.readFile("data/partner-contact-directory.json","utf8").catch(() => '{"contacts":[]}' ));
 const oldHistory = JSON.parse(await fs.readFile("data/price-history.json", "utf8").catch(() => "[]"));
 const oldArchive = JSON.parse(await fs.readFile("data/offer-archive.json", "utf8").catch(() => '{"items":[]}'));
 const oldProgramInventory = JSON.parse(await fs.readFile("report/program-inventory.json", "utf8").catch(() => '{"programs":[]}'));
@@ -198,7 +199,7 @@ try {
     generatedAt:checkedAt
   });
   await fs.writeFile("data/affiliate-opportunities.json",`${JSON.stringify(affiliateOpportunityReport,null,2)}\n`);
-  const partnerOutreachQueue=buildPartnerOutreachQueue({opportunities:affiliateOpportunityReport.actionNow,statusRows:partnerOutreachStatus.statuses??[],generatedAt:checkedAt,dailyLimit:8});
+  const partnerOutreachQueue=buildPartnerOutreachQueue({opportunities:affiliateOpportunityReport.actionNow,statusRows:partnerOutreachStatus.statuses??[],contactDirectory:partnerContactDirectory.contacts??[],generatedAt:checkedAt,dailyLimit:8});
   await fs.writeFile("data/partner-outreach-queue.json",`${JSON.stringify(partnerOutreachQueue,null,2)}\n`);
   const manualActions=[];
   if(!process.env.AWIN_PUBLISHER_ID||!process.env.AWIN_API_TOKEN)manualActions.push({id:"awin-api-credentials",platform:"Awin",action:"AWIN_PUBLISHER_ID und AWIN_API_TOKEN als sichere Runtime-/GitHub-Secrets konfigurieren.",reason:"Ohne Publisher-ID und API-Token können aktive Awin-Programme und Enhanced Feeds nicht aktualisiert werden."});

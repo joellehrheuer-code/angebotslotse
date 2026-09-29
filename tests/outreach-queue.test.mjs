@@ -20,3 +20,29 @@ test("Adult-Partner und laufende Netzwerkbewerbungen landen nicht in der Kontakt
   assert.equal(q.excluded.some(x=>x.reason==="adult-blocked"),true);
   assert.equal(q.excluded.some(x=>x.reason==="network-application-pending"),true);
 });
+
+test("Outreach-Queue unterdrückt Anker SOLIX solange Anker DE offen ist",()=>{
+  const q=buildPartnerOutreachQueue({
+    opportunities:[row("Anker Solix DE",75)],
+    statusRows:[{brand:"Anker DE",status:"pending",lastContactAt:"2026-09-29T10:00:00Z"}]
+  });
+  assert.equal(q.nextBatch.length,0);
+  assert.equal(q.excluded[0].reason,"related-brand-status:pending");
+  assert.equal(q.excluded[0].relatedBrand,"Anker DE");
+});
+
+test("Verifizierte Kontakte werden angereichert, unklare Kontakte bleiben review-pflichtig",()=>{
+  const directory=[
+    {brand:"PremiumSIM DE",contact:"partner@drillisch-online.de",contactType:"official-affiliate",sourceUrl:"https://example.test/premium",sendAllowed:true},
+    {brand:"MSI DE",contact:"de-info@msi.com",contactType:"official-general",sourceUrl:"https://example.test/msi",sendAllowed:false,notes:"Affiliate-Kontakt weiter verifizieren."}
+  ];
+  const q=buildPartnerOutreachQueue({opportunities:[row("PremiumSIM DE",70),row("MSI DE",60)],contactDirectory:directory});
+  const premium=q.nextBatch.find(x=>x.brand==="PremiumSIM DE");
+  const msi=q.nextBatch.find(x=>x.brand==="MSI DE");
+  assert.equal(premium.contact,"partner@drillisch-online.de");
+  assert.equal(premium.contactState,"verified-official-contact");
+  assert.equal(premium.routineOutreachAllowed,true);
+  assert.equal(msi.contactState,"verified-contact-manual-review");
+  assert.equal(msi.routineOutreachAllowed,false);
+});
+

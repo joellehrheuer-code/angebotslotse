@@ -1,0 +1,51 @@
+{
+  "generatedAt": "2026-09-29T23:20:00+02:00",
+  "purpose": "Verified official contact routes for routine Angebotslotse partner outreach. sendAllowed=false means research/review is still required before sending.",
+  "contacts": [
+    {
+      "brand": "Ankerkraut DE",
+      "contact": "marketing@ankerkraut.de",
+      "contactType": "official-marketing-partnership",
+      "sourceUrl": "https://www.ankerkraut.de/pages/kontakt",
+      "verifiedAt": "2026-09-29",
+      "sendAllowed": true,
+      "notes": "Official site explicitly lists this address for other sales inquiries and ideas."
+    },
+    {
+      "brand": "PremiumSIM DE",
+      "contact": "partner@drillisch-online.de",
+      "contactType": "official-affiliate",
+      "sourceUrl": "https://ui.awin.com/merchant-profile/15013?setLocale=en_US",
+      "verifiedAt": "2026-09-29",
+      "sendAllowed": true,
+      "notes": "Awin merchant profile explicitly lists this as the affiliate-team contact."
+    },
+    {
+      "brand": "bosch Tiernahrung DE",
+      "contact": "info@bosch-tiernahrung.de",
+      "contactType": "official-general",
+      "sourceUrl": "https://ui.awin.com/merchant-profile-terms/84955",
+      "verifiedAt": "2026-09-29",
+      "sendAllowed": false,
+      "notes": "Official provider address is verified, but no dedicated affiliate contact was found; keep manual/research review before outreach."
+    },
+    {
+      "brand": "MSI DE",
+      "contact": "de-info@msi.com",
+      "contactType": "official-general",
+      "sourceUrl": "https://de.msi.com/page/kontakt",
+      "verifiedAt": "2026-09-29",
+      "sendAllowed": false,
+      "notes": "Official German general-contact address; no dedicated affiliate email was verified yet."
+    },
+    {
+      "brand": "Anker Solix DE",
+      "contact": "affiliate@anker.com",
+      "contactType": "official-parent-affiliate",
+      "sourceUrl": "https://ui.awin.com/merchant-profile/30691",
+      "verifiedAt": "2026-09-29",
+      "sendAllowed": false,
+      "notes": "Official Anker affiliate-team address; Anker DE is already pending, so SOLIX outreach stays suppressed until that thread is resolved."
+    }
+  ]
+}
