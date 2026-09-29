@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-29T11:46:41.706Z",
+  "generatedAt": "2026-09-29T12:12:34.170Z",
   "topActions": [
     {
       "rank": 1,
@@ -187,54 +187,9 @@
       "rank": 1,
       "network": "Daisycon",
       "brand": "Daisycon Marketplace",
-      "category": "Technik & Computer",
-      "priority": "hoch",
-      "score": 103,
-      "kind": "marketplace-search",
-      "status": "connection-required",
-      "actionType": "connection-required",
-      "nextAction": "Daisycon-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Technik & Computer priorisieren.",
-      "applicationDraft": null,
-      "submissionReady": false,
-      "humanApprovalRequired": false
-    },
-    {
-      "rank": 2,
-      "network": "Tradedoubler",
-      "brand": "Tradedoubler Marketplace",
-      "category": "Technik & Computer",
-      "priority": "hoch",
-      "score": 103,
-      "kind": "marketplace-search",
-      "status": "connection-required",
-      "actionType": "connection-required",
-      "nextAction": "Tradedoubler-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Technik & Computer priorisieren.",
-      "applicationDraft": null,
-      "submissionReady": false,
-      "humanApprovalRequired": false
-    },
-    {
-      "rank": 3,
-      "network": "Webgains",
-      "brand": "Webgains Marketplace",
-      "category": "Technik & Computer",
-      "priority": "hoch",
-      "score": 103,
-      "kind": "marketplace-search",
-      "status": "connection-required",
-      "actionType": "connection-required",
-      "nextAction": "Webgains-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Technik & Computer priorisieren.",
-      "applicationDraft": null,
-      "submissionReady": false,
-      "humanApprovalRequired": false
-    },
-    {
-      "rank": 4,
-      "network": "Daisycon",
-      "brand": "Daisycon Marketplace",
       "category": "Audio & Musik",
       "priority": "hoch",
-      "score": 92,
+      "score": 120,
       "kind": "marketplace-search",
       "status": "connection-required",
       "actionType": "connection-required",
@@ -244,12 +199,12 @@
       "humanApprovalRequired": false
     },
     {
-      "rank": 5,
+      "rank": 2,
       "network": "Tradedoubler",
       "brand": "Tradedoubler Marketplace",
       "category": "Audio & Musik",
       "priority": "hoch",
-      "score": 92,
+      "score": 120,
       "kind": "marketplace-search",
       "status": "connection-required",
       "actionType": "connection-required",
@@ -259,12 +214,12 @@
       "humanApprovalRequired": false
     },
     {
-      "rank": 6,
+      "rank": 3,
       "network": "Webgains",
       "brand": "Webgains Marketplace",
       "category": "Audio & Musik",
       "priority": "hoch",
-      "score": 92,
+      "score": 120,
       "kind": "marketplace-search",
       "status": "connection-required",
       "actionType": "connection-required",
@@ -274,12 +229,12 @@
       "humanApprovalRequired": false
     },
     {
-      "rank": 7,
+      "rank": 4,
       "network": "Daisycon",
       "brand": "Daisycon Marketplace",
       "category": "Haushalt & Alltag",
-      "priority": "mittel",
-      "score": 40,
+      "priority": "hoch",
+      "score": 91,
       "kind": "marketplace-search",
       "status": "connection-required",
       "actionType": "connection-required",
@@ -289,12 +244,12 @@
       "humanApprovalRequired": false
     },
     {
-      "rank": 8,
+      "rank": 5,
       "network": "Tradedoubler",
       "brand": "Tradedoubler Marketplace",
       "category": "Haushalt & Alltag",
-      "priority": "mittel",
-      "score": 40,
+      "priority": "hoch",
+      "score": 91,
       "kind": "marketplace-search",
       "status": "connection-required",
       "actionType": "connection-required",
@@ -304,12 +259,12 @@
       "humanApprovalRequired": false
     },
     {
-      "rank": 9,
+      "rank": 6,
       "network": "Webgains",
       "brand": "Webgains Marketplace",
       "category": "Haushalt & Alltag",
-      "priority": "mittel",
-      "score": 40,
+      "priority": "hoch",
+      "score": 91,
       "kind": "marketplace-search",
       "status": "connection-required",
       "actionType": "connection-required",
@@ -319,46 +274,46 @@
       "humanApprovalRequired": false
     },
     {
-      "rank": 10,
+      "rank": 7,
       "network": "Daisycon",
       "brand": "Daisycon Marketplace",
-      "category": "Freizeit",
-      "priority": "niedrig",
-      "score": 11,
+      "category": "Technik & Computer",
+      "priority": "mittel",
+      "score": 68,
       "kind": "marketplace-search",
       "status": "connection-required",
       "actionType": "connection-required",
-      "nextAction": "Daisycon-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Freizeit priorisieren.",
+      "nextAction": "Daisycon-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Technik & Computer priorisieren.",
       "applicationDraft": null,
       "submissionReady": false,
       "humanApprovalRequired": false
     },
     {
-      "rank": 11,
+      "rank": 8,
       "network": "Tradedoubler",
       "brand": "Tradedoubler Marketplace",
-      "category": "Freizeit",
-      "priority": "niedrig",
-      "score": 11,
+      "category": "Technik & Computer",
+      "priority": "mittel",
+      "score": 68,
       "kind": "marketplace-search",
       "status": "connection-required",
       "actionType": "connection-required",
-      "nextAction": "Tradedoubler-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Freizeit priorisieren.",
+      "nextAction": "Tradedoubler-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Technik & Computer priorisieren.",
       "applicationDraft": null,
       "submissionReady": false,
       "humanApprovalRequired": false
     },
     {
-      "rank": 12,
+      "rank": 9,
       "network": "Webgains",
       "brand": "Webgains Marketplace",
-      "category": "Freizeit",
-      "priority": "niedrig",
-      "score": 11,
+      "category": "Technik & Computer",
+      "priority": "mittel",
+      "score": 68,
       "kind": "marketplace-search",
       "status": "connection-required",
       "actionType": "connection-required",
-      "nextAction": "Webgains-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Freizeit priorisieren.",
+      "nextAction": "Webgains-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Technik & Computer priorisieren.",
       "applicationDraft": null,
       "submissionReady": false,
       "humanApprovalRequired": false
@@ -380,8 +335,8 @@
     {
       "id": "impact-marketplace-review",
       "platform": "Impact",
-      "action": "Impact Marketplace zuerst nach passenden Brands für Technik & Computer durchsuchen (electronics, computer, hardware, mobile, smart home).",
-      "reason": "Automatisch erkannte Abdeckungslücke: 73 Angebotslotse-Angebote stehen 0 zugeordneten Impact-Programmen gegenüber. Vertragsbedingungen vor Bewerbung prüfen."
+      "action": "Impact Marketplace zuerst nach passenden Brands für Audio & Creator durchsuchen (audio, music, headphones, microphone, recording, creator).",
+      "reason": "Automatisch erkannte Abdeckungslücke: 90 Angebotslotse-Angebote stehen 0 zugeordneten Impact-Programmen gegenüber. Vertragsbedingungen vor Bewerbung prüfen."
     },
     {
       "id": "awin-apply-30763",
@@ -443,13 +398,13 @@
       "id": "daisycon-connect",
       "platform": "Daisycon",
       "action": "Kostenlosen Daisycon-Publisherzugang/API-Zugang freischalten und DAISYCON_PUBLISHER_ID + DAISYCON_ACCESS_TOKEN sicher hinterlegen.",
-      "reason": "Danach zuerst Programme für Technik & Computer priorisieren (electronics, computer, hardware, mobile, smart home), weil dort aktuell 73 veröffentlichte Angebotslotse-Angebote liegen."
+      "reason": "Danach zuerst Programme für Audio & Musik priorisieren (audio, music, headphones, microphone, recording), weil dort aktuell 90 veröffentlichte Angebotslotse-Angebote liegen."
     },
     {
       "id": "tradedoubler-connect",
       "platform": "Tradedoubler",
       "action": "Kostenlosen Tradedoubler-Publisherzugang freischalten und entweder TRADEDOUBLER_PRODUCTS_TOKEN oder einen offiziellen Produktfeed als TRADEDOUBLER_FEED_URLS hinterlegen.",
-      "reason": "Danach zuerst Programme für Technik & Computer priorisieren (electronics, computer, hardware, mobile, smart home), weil dort aktuell 73 Angebotslotse-Angebote liegen."
+      "reason": "Danach zuerst Programme für Audio & Musik priorisieren (audio, music, headphones, microphone, recording), weil dort aktuell 90 Angebotslotse-Angebote liegen."
     },
     {
       "id": "tradedoubler-vouchers-connect",
@@ -461,7 +416,7 @@
       "id": "webgains-api-connect",
       "platform": "Webgains",
       "action": "Kostenlosen Webgains-Publisherzugang freischalten und WEBGAINS_PUBLISHER_ID + WEBGAINS_ACCESS_TOKEN sicher hinterlegen.",
-      "reason": "Danach zuerst Programme für Technik & Computer priorisieren (electronics, computer, hardware, mobile, smart home), weil dort aktuell 73 Angebotslotse-Angebote liegen."
+      "reason": "Danach zuerst Programme für Audio & Musik priorisieren (audio, music, headphones, microphone, recording), weil dort aktuell 90 Angebotslotse-Angebote liegen."
     },
     {
       "id": "webgains-feed-connect",

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-29T11:46:41.710Z",
+  "generatedAt": "2026-09-29T12:12:34.174Z",
   "market": "DE",
   "publisherId": 3045061,
   "awin": {
@@ -3098,33 +3098,16 @@
     ]
   },
   "impact": {
-    "state": "disabled",
+    "state": "error",
     "publishableOffers": 0,
-    "inventory": {
-      "reason": "Impact rate-limit cooldown – next scheduled window every 12h",
-      "cadenceHours": 12
-    },
+    "inventory": null,
     "opportunities": [],
     "marketplaceSearches": [
       {
-        "category": "Technik & Computer",
-        "siteOffers": 73,
-        "joinedPrograms": 0,
-        "gapScore": 73,
-        "searchTerms": [
-          "electronics",
-          "computer",
-          "hardware",
-          "mobile",
-          "smart home"
-        ],
-        "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
-      },
-      {
         "category": "Audio & Creator",
-        "siteOffers": 62,
+        "siteOffers": 90,
         "joinedPrograms": 0,
-        "gapScore": 62,
+        "gapScore": 90,
         "searchTerms": [
           "audio",
           "music",
@@ -3137,9 +3120,9 @@
       },
       {
         "category": "Garten & Werkzeug",
-        "siteOffers": 42,
+        "siteOffers": 58,
         "joinedPrograms": 0,
-        "gapScore": 42,
+        "gapScore": 58,
         "searchTerms": [
           "garden",
           "mower",
@@ -3149,35 +3132,10 @@
         "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
       },
       {
-        "category": "Smart Home",
-        "siteOffers": 26,
-        "joinedPrograms": 0,
-        "gapScore": 26,
-        "searchTerms": [
-          "smart home",
-          "security camera",
-          "robot vacuum",
-          "home automation"
-        ],
-        "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
-      },
-      {
-        "category": "Auto & Mobilität",
-        "siteOffers": 16,
-        "joinedPrograms": 0,
-        "gapScore": 16,
-        "searchTerms": [
-          "automotive",
-          "car accessories",
-          "mobility"
-        ],
-        "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
-      },
-      {
         "category": "Haushalt & Küche",
-        "siteOffers": 14,
+        "siteOffers": 54,
         "joinedPrograms": 0,
-        "gapScore": 14,
+        "gapScore": 54,
         "searchTerms": [
           "home",
           "appliances",
@@ -3187,55 +3145,29 @@
         "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
       },
       {
-        "category": "Mode & Sport",
-        "siteOffers": 9,
+        "category": "Technik & Computer",
+        "siteOffers": 48,
         "joinedPrograms": 0,
-        "gapScore": 9,
+        "gapScore": 48,
         "searchTerms": [
-          "fashion",
-          "sportswear",
-          "fitness",
-          "shoes"
+          "electronics",
+          "computer",
+          "hardware",
+          "mobile",
+          "smart home"
         ],
         "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
       },
       {
-        "category": "Homeoffice",
-        "siteOffers": 7,
-        "joinedPrograms": 0,
-        "gapScore": 7,
-        "searchTerms": [
-          "home office",
-          "office",
-          "desk",
-          "webcam",
-          "docking"
-        ],
-        "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
-      },
-      {
-        "category": "Tierbedarf",
-        "siteOffers": 2,
-        "joinedPrograms": 0,
-        "gapScore": 2,
-        "searchTerms": [
-          "pet",
-          "cat",
-          "dog",
-          "pet supplies"
-        ],
-        "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
-      },
-      {
-        "category": "Freizeit & Reisen",
+        "category": "Smart Home",
         "siteOffers": 1,
         "joinedPrograms": 0,
         "gapScore": 1,
         "searchTerms": [
-          "travel",
-          "outdoor",
-          "hobby",
-          "tickets"
+          "smart home",
+          "security camera",
+          "robot vacuum",
+          "home automation"
         ],
         "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
       }
@@ -3250,23 +3182,8 @@
     "marketplaceSearches": [
       {
         "network": "Daisycon",
-        "category": "Technik & Computer",
-        "siteOffers": 73,
-        "priority": "hoch",
-        "searchTerms": [
-          "electronics",
-          "computer",
-          "hardware",
-          "mobile",
-          "smart home"
-        ],
-        "connected": false,
-        "action": "Daisycon-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Technik & Computer priorisieren."
-      },
-      {
-        "network": "Daisycon",
         "category": "Audio & Musik",
-        "siteOffers": 62,
+        "siteOffers": 90,
         "priority": "hoch",
         "searchTerms": [
           "audio",
@@ -3281,8 +3198,8 @@
       {
         "network": "Daisycon",
         "category": "Haushalt & Alltag",
-        "siteOffers": 20,
-        "priority": "mittel",
+        "siteOffers": 61,
+        "priority": "hoch",
         "searchTerms": [
           "home",
           "appliances",
@@ -3295,28 +3212,9 @@
       },
       {
         "network": "Daisycon",
-        "category": "Freizeit",
-        "siteOffers": 1,
-        "priority": "niedrig",
-        "searchTerms": [
-          "travel",
-          "outdoor",
-          "hobby",
-          "tickets"
-        ],
-        "connected": false,
-        "action": "Daisycon-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Freizeit priorisieren."
-      }
-    ]
-  },
-  "tradedoubler": {
-    "state": "disabled",
-    "marketplaceSearches": [
-      {
-        "network": "Tradedoubler",
         "category": "Technik & Computer",
-        "siteOffers": 73,
-        "priority": "hoch",
+        "siteOffers": 48,
+        "priority": "mittel",
         "searchTerms": [
           "electronics",
           "computer",
@@ -3325,12 +3223,17 @@
           "smart home"
         ],
         "connected": false,
-        "action": "Tradedoubler-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Technik & Computer priorisieren."
-      },
+        "action": "Daisycon-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Technik & Computer priorisieren."
+      }
+    ]
+  },
+  "tradedoubler": {
+    "state": "disabled",
+    "marketplaceSearches": [
       {
         "network": "Tradedoubler",
         "category": "Audio & Musik",
-        "siteOffers": 62,
+        "siteOffers": 90,
         "priority": "hoch",
         "searchTerms": [
           "audio",
@@ -3345,8 +3248,8 @@
       {
         "network": "Tradedoubler",
         "category": "Haushalt & Alltag",
-        "siteOffers": 20,
-        "priority": "mittel",
+        "siteOffers": 61,
+        "priority": "hoch",
         "searchTerms": [
           "home",
           "appliances",
@@ -3359,17 +3262,18 @@
       },
       {
         "network": "Tradedoubler",
-        "category": "Freizeit",
-        "siteOffers": 1,
-        "priority": "niedrig",
+        "category": "Technik & Computer",
+        "siteOffers": 48,
+        "priority": "mittel",
         "searchTerms": [
-          "travel",
-          "outdoor",
-          "hobby",
-          "tickets"
+          "electronics",
+          "computer",
+          "hardware",
+          "mobile",
+          "smart home"
         ],
         "connected": false,
-        "action": "Tradedoubler-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Freizeit priorisieren."
+        "action": "Tradedoubler-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Technik & Computer priorisieren."
       }
     ],
     "programJoinAutomation": "not-verified",
@@ -3383,23 +3287,8 @@
     "marketplaceSearches": [
       {
         "network": "Webgains",
-        "category": "Technik & Computer",
-        "siteOffers": 73,
-        "priority": "hoch",
-        "searchTerms": [
-          "electronics",
-          "computer",
-          "hardware",
-          "mobile",
-          "smart home"
-        ],
-        "connected": false,
-        "action": "Webgains-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Technik & Computer priorisieren."
-      },
-      {
-        "network": "Webgains",
         "category": "Audio & Musik",
-        "siteOffers": 62,
+        "siteOffers": 90,
         "priority": "hoch",
         "searchTerms": [
           "audio",
@@ -3414,8 +3303,8 @@
       {
         "network": "Webgains",
         "category": "Haushalt & Alltag",
-        "siteOffers": 20,
-        "priority": "mittel",
+        "siteOffers": 61,
+        "priority": "hoch",
         "searchTerms": [
           "home",
           "appliances",
@@ -3428,17 +3317,18 @@
       },
       {
         "network": "Webgains",
-        "category": "Freizeit",
-        "siteOffers": 1,
-        "priority": "niedrig",
+        "category": "Technik & Computer",
+        "siteOffers": 48,
+        "priority": "mittel",
         "searchTerms": [
-          "travel",
-          "outdoor",
-          "hobby",
-          "tickets"
+          "electronics",
+          "computer",
+          "hardware",
+          "mobile",
+          "smart home"
         ],
         "connected": false,
-        "action": "Webgains-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Freizeit priorisieren."
+        "action": "Webgains-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Technik & Computer priorisieren."
       }
     ],
     "programMembershipApi": "documented",
