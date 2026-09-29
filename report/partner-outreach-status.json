@@ -1,0 +1,71 @@
+{
+  "generatedAt": "2026-09-29T13:17:00+02:00",
+  "purpose": "Deduplication and status tracking for Angebotslotse affiliate/partner outreach. No contracts are auto-accepted.",
+  "statuses": [
+    {
+      "brand": "Coolblue DE",
+      "network": "Awin",
+      "status": "needs-info",
+      "lastContactAt": "2026-09-29T11:32:02+02:00",
+      "contact": "affiliate@coolblue.de",
+      "nextAction": "Website Angebotslotse im Awin-Publisherprofil hinterlegen; danach Publisher-ID an Coolblue senden.",
+      "notes": "Coolblue hat positiv geantwortet und möchte das Portal nach Hinterlegung im Awin-Profil prüfen."
+    },
+    {
+      "brand": "EcoFlow DE",
+      "network": "direct/affiliate",
+      "status": "bounced",
+      "lastContactAt": "2026-09-29T02:59:39+02:00",
+      "contact": "eu.affiliate@ecoflow.com",
+      "nextAction": "Nicht erneut an dieselbe Adresse senden; nur bei verifiziertem alternativen offiziellen Affiliate-Kontakt erneut prüfen."
+    },
+    {
+      "brand": "Anker DE",
+      "network": "Awin",
+      "status": "pending",
+      "lastContactAt": "2026-09-29T13:25:00+02:00",
+      "contact": "affiliate@anker.com",
+      "nextAction": "Antwort/Freischaltung überwachen; bei Freigabe Feed, Promotions, Creatives und Deeplinks integrieren."
+    },
+    {
+      "brand": "ECOVACS DE",
+      "network": "Awin",
+      "status": "pending",
+      "lastContactAt": "2026-09-29T13:25:00+02:00",
+      "contact": "partner@affprogramhub.com",
+      "nextAction": "Antwort/Freischaltung überwachen; bei Freigabe Produktfeed, Promotions und Creatives integrieren."
+    },
+    {
+      "brand": "Samsung Shop DE",
+      "network": "Awin",
+      "status": "pending",
+      "lastContactAt": "2026-09-29T13:36:00+02:00",
+      "contact": "samsung@sunnysales.de",
+      "nextAction": "Antwort/Freischaltung überwachen; bei Freigabe Produktfeed, Deeplinks und Promotions integrieren."
+    },
+    {
+      "brand": "Dyson DE",
+      "network": "Awin",
+      "status": "pending",
+      "lastContactAt": "2026-09-29T13:36:00+02:00",
+      "contact": ["nicole.schlueter@awin.com", "verena.witkowski@awin.com"],
+      "nextAction": "Antwort/Freischaltung überwachen; bei Freigabe Produktfeed, Kampagnen und Creatives integrieren."
+    },
+    {
+      "brand": "Bosch Hausgeräte DE",
+      "network": "Awin",
+      "status": "pending",
+      "lastContactAt": "2026-09-29T13:40:00+02:00",
+      "contact": "bsh-affiliate@house-of-communication.com",
+      "nextAction": "Antwort/Freischaltung überwachen; bei Freigabe Produktfeed, Endkundenaktionen und Werbemittel integrieren."
+    },
+    {
+      "brand": "Sanpro DE",
+      "network": "Awin",
+      "status": "pending",
+      "lastContactAt": "2026-09-29T13:40:00+02:00",
+      "contact": "sanpro@network-genius.com",
+      "nextAction": "Antwort/Freischaltung überwachen; bei Freigabe Werkzeug-/Garten-Produkte und Creatives integrieren."
+    }
+  ]
+}
