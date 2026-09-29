@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-29T17:08:09.659Z",
+  "generatedAt": "2026-09-29T17:16:48.477Z",
   "newAwinPrograms": 0,
   "newImpactPrograms": 0,
   "newDaisyconPrograms": 0,
@@ -25,9 +25,9 @@
   "expiredOffers": 0,
   "expiredCoupons": 0,
   "filteredForeignLocale": 0,
-  "totalProducts": 249,
+  "totalProducts": 248,
   "productsBySource": {
-    "Awin": 249
+    "Awin": 248
   },
   "officialImagesBySource": {
     "Awin": 243
@@ -37,7 +37,6 @@
     "Hollyland DE": 136,
     "ANTHBOT DE": 55,
     "Outin Germany": 55,
-    "Coolblue DE": 1,
     "Imou DE": 1,
     "PDF Agile": 1
   },
@@ -49,8 +48,7 @@
     "computer": 4,
     "werkzeug": 3,
     "freizeit": 1,
-    "smart-home": 1,
-    "sonstiges": 1
+    "smart-home": 1
   },
   "awinEnhancedFeeds": [
     {
