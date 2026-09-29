@@ -478,3 +478,7 @@ main{min-width:0}
 .card-media-link .product-image{transition:transform .22s ease,background .22s ease}
 .deal-card:hover .card-media-link .product-image{transform:scale(1.015)}
 .related-offers+.related-offers{padding-top:10px}
+
+/* Angebotslotse: Medien-Fallback */
+.soft-media-fallback{display:grid;place-items:center;width:100%;min-height:120px;padding:18px;border-radius:14px;background:radial-gradient(circle at 72% 18%,rgba(255,63,168,.20),transparent 38%),linear-gradient(135deg,#151a31,#21142d);color:#f7f8ff;font-weight:900;text-align:center}
+.creator-video-media .soft-media-fallback,.creator-update-card .soft-media-fallback{height:100%}

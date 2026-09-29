@@ -533,3 +533,21 @@ updateWatchIndicators();
     } finally { submit?.removeAttribute("disabled"); }
   });
 })();
+
+/* Angebotslotse: robuster Medien-Fallback */
+(() => {
+  const mediaImages=document.querySelectorAll('img[data-soft-fallback], img.partner-creative, .creator-update-card img');
+  mediaImages.forEach(img=>{
+    const replaceBroken=()=>{
+      if(img.dataset.fallbackApplied==="1")return;
+      img.dataset.fallbackApplied="1";
+      const fallback=document.createElement("span");
+      fallback.className="soft-media-fallback";
+      const type=img.dataset.softFallback || (img.classList.contains("partner-creative")?"partner":"video");
+      fallback.textContent=type==="video"?"▶ Beitrag":type==="partner"?"Partner-Angebot":"Angebotslotse";
+      img.replaceWith(fallback);
+    };
+    if(img.complete&&img.naturalWidth===0)replaceBroken();
+    else img.addEventListener("error",replaceBroken,{once:true});
+  });
+})();
