@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-29T12:12:34.170Z",
+  "generatedAt": "2026-09-29T16:52:38.013Z",
   "scope": "Automatisch aus Programminventar, DE-Angebotsabdeckung und verfügbaren Netzwerk-/Feed-Signalen erzeugt.",
   "automation": {
     "discovery": "automatic",
@@ -503,7 +503,7 @@
       "priority": "niedrig",
       "activeDiscoveryOffers": 1,
       "offerExamples": [
-        "Dein Geschenk: GRATIS: 3 La Mer Minis* zur Bestellung ab 89 € mit Beauty Card"
+        "Dein Geschenk: GRATIS: Überraschungs-Bag mit Minis zu deiner Bestellung ab 99€ mit Beauty Card"
       ],
       "productFeed": false,
       "metrics": {
@@ -1549,7 +1549,7 @@
     }
   ],
   "impact": {
-    "status": "error",
+    "status": "disabled",
     "joinedPrograms": 0,
     "opportunities": [],
     "marketplaceSearches": [

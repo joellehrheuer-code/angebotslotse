@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-29T12:12:34.174Z",
+  "generatedAt": "2026-09-29T16:52:38.016Z",
   "market": "DE",
   "publisherId": 3045061,
   "awin": {
@@ -8,7 +8,7 @@
       "pending": 5,
       "suspended": 0,
       "rejected": 1,
-      "notjoined": 2611
+      "notjoined": 2613
     },
     "programs": [
       {
@@ -2710,7 +2710,7 @@
         "priority": "niedrig",
         "activeDiscoveryOffers": 1,
         "offerExamples": [
-          "Dein Geschenk: GRATIS: 3 La Mer Minis* zur Bestellung ab 89 € mit Beauty Card"
+          "Dein Geschenk: GRATIS: Überraschungs-Bag mit Minis zu deiner Bestellung ab 99€ mit Beauty Card"
         ],
         "productFeed": false,
         "metrics": {
@@ -3076,7 +3076,7 @@
               "locale": "en_DE",
               "state": "available",
               "products": 240,
-              "rawProducts": 362,
+              "rawProducts": 366,
               "validProducts": 240,
               "withPrice": 240,
               "withImage": 240,
@@ -3098,9 +3098,12 @@
     ]
   },
   "impact": {
-    "state": "error",
+    "state": "disabled",
     "publishableOffers": 0,
-    "inventory": null,
+    "inventory": {
+      "reason": "Impact rate-limit cooldown – next scheduled window every 12h",
+      "cadenceHours": 12
+    },
     "opportunities": [],
     "marketplaceSearches": [
       {

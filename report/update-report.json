@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-29T12:12:34.170Z",
+  "generatedAt": "2026-09-29T16:52:38.013Z",
   "newAwinPrograms": 0,
   "newImpactPrograms": 0,
   "newDaisyconPrograms": 0,
@@ -116,7 +116,7 @@
       "locale": "en_DE",
       "state": "available",
       "products": 240,
-      "rawProducts": 362,
+      "rawProducts": 366,
       "validProducts": 240,
       "withPrice": 240,
       "withImage": 240,
@@ -147,6 +147,6 @@
     "0a432f17c1a1c534",
     "27ad80a19fc0afe1"
   ],
-  "apiErrors": 1,
+  "apiErrors": 0,
   "affiliateLinkErrors": 0
 }

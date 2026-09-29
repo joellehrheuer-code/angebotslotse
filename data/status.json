@@ -1,6 +1,6 @@
 {
-  "state": "degraded",
-  "lastSuccessfulUpdate": "2026-09-29T12:12:34.118Z",
+  "state": "ok",
+  "lastSuccessfulUpdate": "2026-09-29T16:52:37.970Z",
   "activeOffers": 252,
   "storedOffers": 479,
   "publishableOffers": 252,
@@ -13,7 +13,7 @@
   "archivedTotal": 330,
   "filteredForeignLocale": 0,
   "invalidLinks": 0,
-  "apiErrors": 1,
+  "apiErrors": 0,
   "sources": {
     "awin": {
       "state": "ok",
@@ -91,7 +91,7 @@
             "locale": "en_DE",
             "state": "available",
             "products": 240,
-            "rawProducts": 362,
+            "rawProducts": 366,
             "validProducts": 240,
             "withPrice": 240,
             "withImage": 240,
@@ -125,10 +125,13 @@
       }
     },
     "impact": {
-      "state": "error",
+      "state": "disabled",
       "count": 0,
-      "error": "Impact API /Mediapartners/IRY64XT2ENN77662895nd4JzxxVYTNUzJ1/Campaigns: HTTP 429",
-      "audit": null
+      "error": null,
+      "audit": {
+        "reason": "Impact rate-limit cooldown – next scheduled window every 12h",
+        "cadenceHours": 12
+      }
     },
     "daisycon": {
       "state": "disabled",
@@ -171,5 +174,5 @@
     "mode": "social"
   },
   "stale": 207,
-  "message": "Aktualisierung teilweise eingeschränkt; bestehende geprüfte Daten bleiben geschützt."
+  "message": "Aktualisierung mit geschützten Bestandsdaten abgeschlossen."
 }
