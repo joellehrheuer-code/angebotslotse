@@ -2,6 +2,8 @@ import { gunzipSync } from "node:zlib";
 
 const FEED_LIST = "https://productdata.awin.com/datafeed/list/apikey";
 const API = "https://api.awin.com";
+const HTTP_TIMEOUT_MS = Math.min(60_000, Math.max(5_000, Number(process.env.SOURCE_HTTP_TIMEOUT_MS) || 12_000));
+const timedFetch = (fetchImpl, url, options = {}) => fetchImpl(url, { ...options, signal: options.signal ?? AbortSignal.timeout(HTTP_TIMEOUT_MS) });
 
 export function parseCsv(source, delimiter = ",") {
   const rows=[]; let row=[],field="",quoted=false;
@@ -17,13 +19,13 @@ const german=row=>/^(de|germany|deutschland)$/i.test(pick(row,"Primary Region","
 
 export async function fetchAwinProductFeeds({ apiKey, fetchImpl=fetch, maxFeeds=6, maxProducts=500 }) {
   if(!apiKey)return[];
-  const listResponse=await fetchImpl(`${FEED_LIST}/${encodeURIComponent(apiKey)}`);
+  const listResponse=await timedFetch(fetchImpl, `${FEED_LIST}/${encodeURIComponent(apiKey)}`);
   if(!listResponse.ok)throw new Error(`Awin Product Feed List: HTTP ${listResponse.status}`);
   const feedRows=parseCsv(await listResponse.text()).filter(row=>joined(row)&&german(row)&&pick(row,"URL","url")).slice(0,maxFeeds);
   const products=[];
   for(const feed of feedRows){
     if(products.length>=maxProducts)break;
-    const response=await fetchImpl(pick(feed,"URL","url"));
+    const response=await timedFetch(fetchImpl, pick(feed,"URL","url"));
     if(!response.ok)continue;
     const bytes=Buffer.from(await response.arrayBuffer());
     let text; try{text=gunzipSync(bytes).toString("utf8");}catch{text=bytes.toString("utf8");}
@@ -59,7 +61,7 @@ export async function fetchAwinEnhancedFeeds({ publisherId, token, advertisers=[
     let advertiserImported=0;
     for(const locale of ["de_DE","en_DE"]){
       const endpoint=`${API}/publishers/${encodeURIComponent(publisherId)}/awinfeeds/download/${encodeURIComponent(advertiser.id)}-retail-${locale}.jsonl`;
-      const response=await fetchImpl(endpoint,{headers:{Authorization:`Bearer ${token}`}});
+      const response=await timedFetch(fetchImpl, endpoint,{headers:{Authorization:`Bearer ${token}`}});
       if(response.status===404){feeds.push({advertiserId:advertiser.id,advertiserName:advertiser.name,locale,state:"not-found"});continue;}
       if(!response.ok){feeds.push({advertiserId:advertiser.id,advertiserName:advertiser.name,locale,state:`http-${response.status}`});continue;}
       const lines=(await response.text()).split(/\r?\n/).filter(Boolean); let imported=0; const audit={rawProducts:lines.length,validProducts:0,withPrice:0,withImage:0,withTracking:0,rejected:0,rejectionReasons:{}};

@@ -448,3 +448,26 @@ main{min-width:0}
 .instant-gaming-note{margin:8px 0 0;color:#9ea8c1;font-size:11px}
 .instant-gaming-module [data-ig-banner-host]:not([hidden]){margin-top:16px}
 @media(max-width:560px){.instant-gaming-actions{display:grid}.instant-gaming-actions .button{width:100%}}
+
+/* Angebotslotse: Reports + Newsletter */
+.newsletter-live{display:grid;grid-template-columns:minmax(0,1fr) minmax(320px,.8fr);align-items:center;gap:32px}
+.newsletter-form{display:grid;gap:11px;min-width:0}
+.newsletter-input-row{display:flex;gap:8px;padding:6px;border:1px solid #343b5d;border-radius:16px;background:#0d1121}
+.newsletter-input-row input{min-width:0;flex:1;border:0;background:transparent;color:#fff;padding:11px 12px;outline:0;font:inherit}
+.newsletter-input-row input::placeholder{color:#858fa8}
+.newsletter-consent{display:flex;gap:8px;align-items:flex-start;color:#aeb7d0;font-size:11px;line-height:1.45}
+.newsletter-consent input{margin-top:2px}
+.form-status{min-height:20px;margin:0;color:#aeb7d0;font-size:11px;font-weight:750}
+.form-status[data-kind="success"]{color:#62e6b8}.form-status[data-kind="error"]{color:#ff8d9b}.form-status[data-kind="info"]{color:#8bdcff}
+.hp-field{position:absolute!important;left:-10000px!important;width:1px!important;height:1px!important;opacity:0!important;pointer-events:none!important}
+.footer-report-link{border:0;background:none;color:inherit;font:inherit;padding:0;cursor:pointer;text-decoration:underline;text-decoration-color:#ffffff33;text-underline-offset:3px}
+.report-fab{position:fixed;right:18px;bottom:18px;z-index:75;display:flex;align-items:center;gap:8px;border:1px solid #3b4367;border-radius:999px;padding:10px 13px;background:rgba(13,17,33,.94);backdrop-filter:blur(16px);color:#f7f8ff;box-shadow:0 16px 42px rgba(0,0,0,.38);cursor:pointer;font-weight:850}
+.report-fab span{display:grid;place-items:center;width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg,#ff3fa8,#a969ff);font-weight:950}.report-fab b{font-size:11px}
+.report-dialog{width:min(620px,calc(100% - 24px));max-height:min(780px,calc(100vh - 32px));padding:0;border:1px solid #343b5d;border-radius:24px;background:#11162a;color:#f7f8ff;box-shadow:0 28px 100px #000c}
+.report-dialog::backdrop{background:rgba(3,5,12,.72);backdrop-filter:blur(5px)}
+.report-form{padding:24px;display:grid;gap:15px}.report-head{display:flex;justify-content:space-between;gap:20px;align-items:flex-start}.report-head h2{font-size:32px;margin:4px 0}.report-head+p{margin:0;color:#aeb7d0;line-height:1.55}
+.report-close{border:1px solid #343b5d;border-radius:12px;background:#0d1121;color:#fff;width:40px;height:40px;font-size:25px;cursor:pointer}
+.report-form label{display:grid;gap:7px;font-size:12px;font-weight:850;color:#dce3f4}.report-form label small{font-weight:600;color:#909bb4}.report-form input,.report-form textarea,.report-form select{width:100%;border:1px solid #343b5d;border-radius:12px;background:#0d1121;color:#fff;padding:12px 13px;font:inherit;outline:0}.report-form input:focus,.report-form textarea:focus,.report-form select:focus{border-color:#ff3fa8;box-shadow:0 0 0 4px rgba(255,63,168,.1)}
+.report-actions{display:flex;gap:9px;flex-wrap:wrap}
+@media(max-width:1100px){.report-fab{bottom:84px}.newsletter-live{grid-template-columns:1fr}}
+@media(max-width:620px){.report-fab{right:10px;bottom:82px;padding:8px}.report-fab b{display:none}.newsletter-input-row{display:grid}.newsletter-input-row .button{width:100%}.report-actions{display:grid}.report-actions .button{width:100%}}

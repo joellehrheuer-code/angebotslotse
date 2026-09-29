@@ -29,7 +29,7 @@ test("Lighthouse-Fixes reduzieren Hero-Asset und benennen Creator-Links", () => 
   assert.match(css, /content-visibility:auto/);
   assert.match(css, /instant-gaming-module \.button\.primary/);
   assert.equal((home.match(/rel="stylesheet"/g) || []).length, 1);
-  assert.match(home, /site\.css\?v=9/);
+  assert.match(home, /site\.css\?v=11/);
   assert.doesNotMatch(home, /styles\.css\?v=8|enhancements\.css\?v=8/);
   assert.match(home, /cdn\.shopify\.com[^"]*width=640|cdn\.shopify\.com[^"]*width%3D640/);
 });

@@ -1,4 +1,6 @@
 const API = "https://api.awin.com";
+const HTTP_TIMEOUT_MS = Math.min(60_000, Math.max(5_000, Number(process.env.SOURCE_HTTP_TIMEOUT_MS) || 12_000));
+const timedFetch = (fetchImpl, url, options = {}) => fetchImpl(url, { ...options, signal: options.signal ?? AbortSignal.timeout(HTTP_TIMEOUT_MS) });
 
 export const formatAwinDateTime = value => new Date(value).toISOString().slice(0, 19);
 
@@ -9,7 +11,7 @@ export async function fetchAwinOffers({ publisherId, token, membership = "joined
   let page = 1;
   for (;;) {
     const query = new URLSearchParams({ accessToken: token });
-    const response = await fetchImpl(`${API}/publisher/${encodeURIComponent(publisherId)}/promotions?${query}`, {
+    const response = await timedFetch(fetchImpl, `${API}/publisher/${encodeURIComponent(publisherId)}/promotions?${query}`, {
       method: "POST",
       headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" },
       body: JSON.stringify({ filters: { membership, regionCodes: ["DE"], status: "active", type: "all" }, pagination: { page, pageSize: 200 } })
@@ -32,7 +34,7 @@ export async function fetchAwinPrograms({ publisherId, token, fetchImpl = fetch,
   const inventory = {};
   for (const relationship of relationships) {
     const query = new URLSearchParams({ accessToken: token, relationship, countryCode });
-    const response = await fetchImpl(`${API}/publishers/${encodeURIComponent(publisherId)}/programmes?${query}`, {
+    const response = await timedFetch(fetchImpl, `${API}/publishers/${encodeURIComponent(publisherId)}/programmes?${query}`, {
       headers: { Authorization: `Bearer ${token}` }
     });
     if (!response.ok) throw new Error(`Awin Programs API (${relationship}): HTTP ${response.status}`);
@@ -47,7 +49,7 @@ export async function fetchAwinProgramDetails({ publisherId, token, advertiserId
   const allowed = new Set(["joined", "pending", "suspended", "rejected", "notjoined", "any"]);
   if (!allowed.has(String(relationship).toLowerCase())) throw new Error("Ungültiger Awin-Beziehungsstatus.");
   const query = new URLSearchParams({ accessToken: token, advertiserId: String(advertiserId), relationship: String(relationship).toLowerCase() });
-  const response = await fetchImpl(`${API}/publishers/${encodeURIComponent(publisherId)}/programmedetails?${query}`, {
+  const response = await timedFetch(fetchImpl, `${API}/publishers/${encodeURIComponent(publisherId)}/programmedetails?${query}`, {
     headers: { Authorization: `Bearer ${token}` }
   });
   if (!response.ok) throw new Error(`Awin Program Details API: HTTP ${response.status}`);
@@ -56,7 +58,7 @@ export async function fetchAwinProgramDetails({ publisherId, token, advertiserId
 
 export async function fetchAwinTransactions({ publisherId, token, startDate, endDate, fetchImpl = fetch }) {
   const query = new URLSearchParams({ accessToken: token, startDate, endDate, timezone: "Europe/Berlin" });
-  const response = await fetchImpl(`${API}/publishers/${encodeURIComponent(publisherId)}/transactions/?${query}`, { headers: { Authorization: `Bearer ${token}` } });
+  const response = await timedFetch(fetchImpl, `${API}/publishers/${encodeURIComponent(publisherId)}/transactions/?${query}`, { headers: { Authorization: `Bearer ${token}` } });
   if (!response.ok) throw new Error(`Awin Transactions API: HTTP ${response.status}`);
   return response.json();
 }

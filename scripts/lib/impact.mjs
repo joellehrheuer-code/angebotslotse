@@ -2,6 +2,7 @@ const API = "https://api.impact.com";
 const VERSION = "16";
 const PAGE_SIZE = 100;
 const MAX_RETRIES = 3;
+const HTTP_TIMEOUT_MS = Math.min(60_000, Math.max(5_000, Number(process.env.SOURCE_HTTP_TIMEOUT_MS) || 12_000));
 
 const list = value => Array.isArray(value) ? value : value == null ? [] : [value];
 const first = (payload, keys) => keys.map(key => payload?.[key]).find(Array.isArray) ?? [];
@@ -20,7 +21,7 @@ function client(accountSid, authToken, fetchImpl) {
     const url = new URL(`${API}${pathname}`);
     for (const [key, value] of Object.entries(params)) if (value !== undefined) url.searchParams.set(key, String(value));
     for (let attempt = 0; attempt <= MAX_RETRIES; attempt += 1) {
-      const response = await fetchImpl(url, { headers });
+      const response = await fetchImpl(url, { headers, signal: AbortSignal.timeout(HTTP_TIMEOUT_MS) });
       if (response.ok) return response.json();
       if (response.status !== 429 || attempt === MAX_RETRIES) throw new Error(`Impact API ${pathname}: HTTP ${response.status}`);
       const retryAfter = response.headers?.get?.("retry-after") ?? response.headers?.["retry-after"];

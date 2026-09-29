@@ -453,3 +453,83 @@ if (watchlistRoot && watchCatalogNode) {
   renderWatchlist();
 }
 updateWatchIndicators();
+
+// Angebotslotse: öffentliche Reports + Newsletter Double-Opt-in
+(() => {
+  const INTAKE_ENDPOINT = "https://asrklnfcwtgihvyfjiww.supabase.co/functions/v1/public-intake";
+  const postIntake = async payload => {
+    const response = await fetch(INTAKE_ENDPOINT, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    });
+    let data = null;
+    try { data = await response.json(); } catch {}
+    if (!response.ok || !data?.ok) throw new Error(data?.error || `HTTP ${response.status}`);
+    return data;
+  };
+  const setStatus=(node,text,kind="info")=>{ if(!node)return; node.textContent=text; node.dataset.kind=kind; };
+
+  const dialog=document.querySelector("[data-report-dialog]");
+  const openReport=()=>{
+    if(!dialog)return;
+    const status=dialog.querySelector("[data-report-status]");
+    setStatus(status,"");
+    if(typeof dialog.showModal==="function")dialog.showModal(); else dialog.setAttribute("open","");
+  };
+  const closeReport=()=>{ if(!dialog)return; if(typeof dialog.close==="function")dialog.close(); else dialog.removeAttribute("open"); };
+  document.querySelectorAll("[data-report-open]").forEach(button=>button.addEventListener("click",openReport));
+  document.querySelectorAll("[data-report-close]").forEach(button=>button.addEventListener("click",closeReport));
+
+  const reportForm=document.querySelector("[data-report-form]");
+  reportForm?.addEventListener("submit",async event=>{
+    event.preventDefault();
+    const status=reportForm.querySelector("[data-report-status]");
+    const submit=reportForm.querySelector('button[type="submit"]');
+    const fd=new FormData(reportForm);
+    submit?.setAttribute("disabled","");
+    setStatus(status,"Report wird gesendet …","info");
+    const match=location.pathname.match(/\/angebote\/([^/]+)\.html$/);
+    try {
+      const data=await postIntake({
+        kind:"report",
+        pageUrl:location.href.split("#")[0],
+        reportType:String(fd.get("reportType")||"other"),
+        message:String(fd.get("message")||""),
+        email:String(fd.get("email")||""),
+        offerSlug:match?.[1]||"",
+        website:String(fd.get("website")||""),
+      });
+      setStatus(status,`Danke – Report ${String(data.reportId||"").slice(0,8)} wurde aufgenommen.`, "success");
+      reportForm.reset();
+      setTimeout(closeReport,1400);
+    } catch(error) {
+      const rate=String(error?.message||"").includes("rate_limited");
+      setStatus(status,rate?"Zu viele Meldungen in kurzer Zeit. Bitte später erneut versuchen.":"Report konnte gerade nicht gesendet werden. Bitte später erneut versuchen.","error");
+    } finally { submit?.removeAttribute("disabled"); }
+  });
+
+  const newsletter=document.querySelector("[data-newsletter-form]");
+  newsletter?.addEventListener("submit",async event=>{
+    event.preventDefault();
+    const status=newsletter.querySelector("[data-newsletter-status]");
+    const submit=newsletter.querySelector('button[type="submit"]');
+    const fd=new FormData(newsletter);
+    submit?.setAttribute("disabled","");
+    setStatus(status,"Anmeldung wird gespeichert …","info");
+    try {
+      const data=await postIntake({
+        kind:"newsletter",
+        email:String(fd.get("email")||""),
+        consent:fd.get("consent")==="on",
+        source:"website-home",
+        website:String(fd.get("website")||""),
+      });
+      setStatus(status,data.state==="already_active"?"Diese Adresse ist bereits bestätigt.":"Fast geschafft: Bitte bestätige die E-Mail, die wir dir schicken.","success");
+      newsletter.reset();
+    } catch(error) {
+      const rate=String(error?.message||"").includes("rate_limited");
+      setStatus(status,rate?"Zu viele Versuche in kurzer Zeit. Bitte später erneut versuchen.":"Anmeldung konnte gerade nicht gespeichert werden.","error");
+    } finally { submit?.removeAttribute("disabled"); }
+  });
+})();
