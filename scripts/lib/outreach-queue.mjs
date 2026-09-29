@@ -45,8 +45,9 @@ export function buildPartnerOutreachQueue({opportunities=[],statusRows=[],contac
       routineOutreachAllowed:sendAllowed,
       applicationDraft:row.applicationDraft??null,
       nextAction:sendAllowed
-        ? (row.nextAction??"Verifizierten offiziellen Kontakt dedupliziert anschreiben.")
+        ? "Verifizierten offiziellen Kontakt dedupliziert per Angebotslotse-Mail anschreiben; Netzwerk-AGB oder Vertragsbedingungen nicht automatisch bestätigen."
         : (contact?.notes??row.nextAction??"Offiziellen Affiliate-/Partnerkontakt verifizieren und erst danach dedupliziert anschreiben."),
+      networkApplicationNextAction:row.nextAction??null,
       contractualSubmissionAllowed:false,
       reason:"Routine-Outreach darf nur an verifizierte offizielle Kontakte vorbereitet/versendet werden; Vertragsbedingungen, AGB, Exklusivität oder kostenpflichtige Verpflichtungen werden nicht automatisch akzeptiert."
     });

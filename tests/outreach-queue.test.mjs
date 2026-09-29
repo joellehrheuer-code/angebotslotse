@@ -36,12 +36,14 @@ test("Verifizierte Kontakte werden angereichert, unklare Kontakte bleiben review
     {brand:"PremiumSIM DE",contact:"partner@drillisch-online.de",contactType:"official-affiliate",sourceUrl:"https://example.test/premium",sendAllowed:true},
     {brand:"MSI DE",contact:"de-info@msi.com",contactType:"official-general",sourceUrl:"https://example.test/msi",sendAllowed:false,notes:"Affiliate-Kontakt weiter verifizieren."}
   ];
-  const q=buildPartnerOutreachQueue({opportunities:[row("PremiumSIM DE",70),row("MSI DE",60)],contactDirectory:directory});
+  const q=buildPartnerOutreachQueue({opportunities:[row("PremiumSIM DE",70,{nextAction:"Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen."}),row("MSI DE",60)],contactDirectory:directory});
   const premium=q.nextBatch.find(x=>x.brand==="PremiumSIM DE");
   const msi=q.nextBatch.find(x=>x.brand==="MSI DE");
   assert.equal(premium.contact,"partner@drillisch-online.de");
   assert.equal(premium.contactState,"verified-official-contact");
   assert.equal(premium.routineOutreachAllowed,true);
+  assert.match(premium.nextAction,/per Angebotslotse-Mail anschreiben/);
+  assert.match(premium.networkApplicationNextAction,/Bedingungen prüfen/);
   assert.equal(msi.contactState,"verified-contact-manual-review");
   assert.equal(msi.routineOutreachAllowed,false);
 });
