@@ -6,6 +6,45 @@ if (globalQuery && input) input.value = globalQuery;
 function filter() { const q = (input?.value || "").trim().toLowerCase(); let visible=0; for (const card of cards) { const ok=card.dataset.search.includes(q) && (!category || card.dataset.search.includes(category)); card.hidden=!ok; if(ok) visible++; } if(noResults) noResults.hidden=visible>0; }
 input?.addEventListener("input",filter); filter();
 
+
+const appInstallButton = document.querySelector("[data-app-install]");
+const appInstallHelp = document.querySelector("[data-app-install-help]");
+let deferredInstallPrompt = null;
+const appStandalone = matchMedia("(display-mode: standalone)").matches || navigator.standalone === true;
+const isiOS = /iphone|ipad|ipod/i.test(navigator.userAgent) && !appStandalone;
+const showInstallHelp = message => {
+  if (!appInstallHelp) return;
+  appInstallHelp.textContent = message;
+  appInstallHelp.hidden = false;
+};
+if (appInstallButton && !appStandalone) {
+  if (isiOS) appInstallButton.hidden = false;
+  addEventListener("beforeinstallprompt", event => {
+    event.preventDefault();
+    deferredInstallPrompt = event;
+    appInstallButton.hidden = false;
+  });
+  appInstallButton.addEventListener("click", async () => {
+    if (isiOS) {
+      showInstallHelp("Auf iPhone/iPad: Teilen öffnen und „Zum Home-Bildschirm“ wählen.");
+      return;
+    }
+    if (!deferredInstallPrompt) {
+      showInstallHelp("Die Installation ist in diesem Browser gerade nicht verfügbar. Nutze das Browser-Menü und wähle „App installieren“ bzw. „Zum Startbildschirm hinzufügen“.");
+      return;
+    }
+    deferredInstallPrompt.prompt();
+    const choice = await deferredInstallPrompt.userChoice.catch(() => null);
+    if (choice?.outcome === "accepted") appInstallButton.hidden = true;
+    deferredInstallPrompt = null;
+  });
+  addEventListener("appinstalled", () => {
+    appInstallButton.hidden = true;
+    if (appInstallHelp) appInstallHelp.hidden = true;
+    deferredInstallPrompt = null;
+  });
+}
+
 const categorySearch = document.querySelector("[data-offer-search]");
 const categorySort = document.querySelector("[data-offer-sort]");
 const brandFilter = document.querySelector("[data-filter-brand]");

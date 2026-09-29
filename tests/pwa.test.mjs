@@ -42,3 +42,13 @@ test("PWA-App-Icons sind echte PNGs mit Store-tauglichen Größen", () => {
   assert.match(build, /app-icon-maskable-512\.png/);
   assert.match(build, /purpose:"maskable"/);
 });
+
+test("Startseite bietet einen gerätegerechten PWA-Installationsweg", () => {
+  const build = fs.readFileSync("scripts/build.mjs", "utf8");
+  const app = fs.readFileSync("public/app.js", "utf8");
+  assert.match(build, /data-app-install/);
+  assert.match(app, /beforeinstallprompt/);
+  assert.match(app, /appinstalled/);
+  assert.match(app, /navigator\.standalone/);
+  assert.match(app, /Zum Home-Bildschirm/);
+});
