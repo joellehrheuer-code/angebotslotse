@@ -1,14 +1,14 @@
 {
-  "generatedAt": "2026-09-29T10:41:26.840Z",
+  "generatedAt": "2026-09-29T11:25:04.227Z",
   "market": "DE",
   "publisherId": 3045061,
   "awin": {
     "counts": {
       "joined": 5,
-      "pending": 2,
+      "pending": 5,
       "suspended": 0,
       "rejected": 1,
-      "notjoined": 2614
+      "notjoined": 2611
     },
     "programs": [
       {
@@ -773,17 +773,6 @@
       {
         "network": "Awin",
         "relationship": "notjoined",
-        "advertiserId": 14718,
-        "name": "ASMC DE",
-        "primarySector": "Sports Equipment",
-        "primaryRegion": {
-          "name": "Germany",
-          "countryCode": "DE"
-        }
-      },
-      {
-        "network": "Awin",
-        "relationship": "notjoined",
         "advertiserId": 99679,
         "name": "Assure Fashion DE",
         "primarySector": "Clothing Accessories",
@@ -1359,6 +1348,17 @@
         "advertiserId": 121694,
         "name": "BRITA DE",
         "primarySector": "Home & Garden",
+        "primaryRegion": {
+          "name": "Germany",
+          "countryCode": "DE"
+        }
+      },
+      {
+        "network": "Awin",
+        "relationship": "notjoined",
+        "advertiserId": 14584,
+        "name": "bücher.de DE",
+        "primarySector": "Books & Subscriptions",
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
