@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-29T16:56:53.382Z",
+  "generatedAt": "2026-09-29T17:06:17.567Z",
   "newAwinPrograms": 0,
   "newImpactPrograms": 0,
   "newDaisyconPrograms": 0,
@@ -14,9 +14,9 @@
   "applicationCandidates": 192,
   "newMerchants": 0,
   "newProducts": 0,
-  "productsWithImage": 246,
+  "productsWithImage": 243,
   "productsWithVideo": 0,
-  "productsWithPrice": 246,
+  "productsWithPrice": 243,
   "productsWithOldPrice": 0,
   "productsWithDiscount": 0,
   "newCoupons": 0,
@@ -25,29 +25,30 @@
   "expiredOffers": 0,
   "expiredCoupons": 0,
   "filteredForeignLocale": 0,
-  "totalProducts": 252,
+  "totalProducts": 249,
   "productsBySource": {
-    "Awin": 252
+    "Awin": 249
   },
   "officialImagesBySource": {
-    "Awin": 246
+    "Awin": 243
   },
   "missingMediaBySource": {},
   "productsByMerchant": {
-    "Hollyland DE": 137,
-    "ANTHBOT DE": 57,
+    "Hollyland DE": 136,
+    "ANTHBOT DE": 55,
     "Outin Germany": 55,
     "Coolblue DE": 1,
     "Imou DE": 1,
     "PDF Agile": 1
   },
   "productsByCategory": {
-    "audio-musik": 90,
-    "haushalt": 54,
-    "garten": 51,
-    "zubehoer": 46,
-    "werkzeug": 7,
-    "computer": 2,
+    "audio-musik": 88,
+    "haushalt": 53,
+    "garten": 49,
+    "zubehoer": 49,
+    "computer": 4,
+    "werkzeug": 3,
+    "freizeit": 1,
     "smart-home": 1,
     "sonstiges": 1
   },
@@ -145,7 +146,7 @@
     "0055caa27aa9a32c",
     "04b0eab2f2c77729",
     "0a432f17c1a1c534",
-    "27ad80a19fc0afe1"
+    "2d494a434af99f92"
   ],
   "apiErrors": 0,
   "affiliateLinkErrors": 0

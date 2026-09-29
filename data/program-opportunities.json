@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-29T16:56:53.382Z",
+  "generatedAt": "2026-09-29T17:06:17.567Z",
   "scope": "Automatisch aus Programminventar, DE-Angebotsabdeckung und verfügbaren Netzwerk-/Feed-Signalen erzeugt.",
   "automation": {
     "discovery": "automatic",
@@ -1555,9 +1555,9 @@
     "marketplaceSearches": [
       {
         "category": "Audio & Creator",
-        "siteOffers": 90,
+        "siteOffers": 88,
         "joinedPrograms": 0,
-        "gapScore": 90,
+        "gapScore": 88,
         "searchTerms": [
           "audio",
           "music",
@@ -1569,23 +1569,24 @@
         "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
       },
       {
-        "category": "Garten & Werkzeug",
-        "siteOffers": 58,
+        "category": "Technik & Computer",
+        "siteOffers": 53,
         "joinedPrograms": 0,
-        "gapScore": 58,
+        "gapScore": 53,
         "searchTerms": [
-          "garden",
-          "mower",
-          "tools",
-          "DIY"
+          "electronics",
+          "computer",
+          "hardware",
+          "mobile",
+          "smart home"
         ],
         "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
       },
       {
         "category": "Haushalt & Küche",
-        "siteOffers": 54,
+        "siteOffers": 53,
         "joinedPrograms": 0,
-        "gapScore": 54,
+        "gapScore": 53,
         "searchTerms": [
           "home",
           "appliances",
@@ -1595,16 +1596,15 @@
         "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
       },
       {
-        "category": "Technik & Computer",
-        "siteOffers": 48,
+        "category": "Garten & Werkzeug",
+        "siteOffers": 52,
         "joinedPrograms": 0,
-        "gapScore": 48,
+        "gapScore": 52,
         "searchTerms": [
-          "electronics",
-          "computer",
-          "hardware",
-          "mobile",
-          "smart home"
+          "garden",
+          "mower",
+          "tools",
+          "DIY"
         ],
         "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
       },
@@ -1618,6 +1618,19 @@
           "security camera",
           "robot vacuum",
           "home automation"
+        ],
+        "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
+      },
+      {
+        "category": "Freizeit & Reisen",
+        "siteOffers": 1,
+        "joinedPrograms": 0,
+        "gapScore": 1,
+        "searchTerms": [
+          "travel",
+          "outdoor",
+          "hobby",
+          "tickets"
         ],
         "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
       }
@@ -1636,7 +1649,7 @@
       {
         "network": "Daisycon",
         "category": "Audio & Musik",
-        "siteOffers": 90,
+        "siteOffers": 88,
         "priority": "hoch",
         "searchTerms": [
           "audio",
@@ -1651,7 +1664,7 @@
       {
         "network": "Daisycon",
         "category": "Haushalt & Alltag",
-        "siteOffers": 61,
+        "siteOffers": 56,
         "priority": "hoch",
         "searchTerms": [
           "home",
@@ -1666,8 +1679,8 @@
       {
         "network": "Daisycon",
         "category": "Technik & Computer",
-        "siteOffers": 48,
-        "priority": "mittel",
+        "siteOffers": 53,
+        "priority": "hoch",
         "searchTerms": [
           "electronics",
           "computer",
@@ -1677,6 +1690,20 @@
         ],
         "connected": false,
         "action": "Daisycon-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Technik & Computer priorisieren."
+      },
+      {
+        "network": "Daisycon",
+        "category": "Freizeit",
+        "siteOffers": 1,
+        "priority": "niedrig",
+        "searchTerms": [
+          "travel",
+          "outdoor",
+          "hobby",
+          "tickets"
+        ],
+        "connected": false,
+        "action": "Daisycon-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Freizeit priorisieren."
       }
     ]
   },
@@ -1686,7 +1713,7 @@
       {
         "network": "Tradedoubler",
         "category": "Audio & Musik",
-        "siteOffers": 90,
+        "siteOffers": 88,
         "priority": "hoch",
         "searchTerms": [
           "audio",
@@ -1701,7 +1728,7 @@
       {
         "network": "Tradedoubler",
         "category": "Haushalt & Alltag",
-        "siteOffers": 61,
+        "siteOffers": 56,
         "priority": "hoch",
         "searchTerms": [
           "home",
@@ -1716,8 +1743,8 @@
       {
         "network": "Tradedoubler",
         "category": "Technik & Computer",
-        "siteOffers": 48,
-        "priority": "mittel",
+        "siteOffers": 53,
+        "priority": "hoch",
         "searchTerms": [
           "electronics",
           "computer",
@@ -1727,6 +1754,20 @@
         ],
         "connected": false,
         "action": "Tradedoubler-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Technik & Computer priorisieren."
+      },
+      {
+        "network": "Tradedoubler",
+        "category": "Freizeit",
+        "siteOffers": 1,
+        "priority": "niedrig",
+        "searchTerms": [
+          "travel",
+          "outdoor",
+          "hobby",
+          "tickets"
+        ],
+        "connected": false,
+        "action": "Tradedoubler-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Freizeit priorisieren."
       }
     ],
     "applicationApi": "not-verified",
@@ -1741,7 +1782,7 @@
       {
         "network": "Webgains",
         "category": "Audio & Musik",
-        "siteOffers": 90,
+        "siteOffers": 88,
         "priority": "hoch",
         "searchTerms": [
           "audio",
@@ -1756,7 +1797,7 @@
       {
         "network": "Webgains",
         "category": "Haushalt & Alltag",
-        "siteOffers": 61,
+        "siteOffers": 56,
         "priority": "hoch",
         "searchTerms": [
           "home",
@@ -1771,8 +1812,8 @@
       {
         "network": "Webgains",
         "category": "Technik & Computer",
-        "siteOffers": 48,
-        "priority": "mittel",
+        "siteOffers": 53,
+        "priority": "hoch",
         "searchTerms": [
           "electronics",
           "computer",
@@ -1782,6 +1823,20 @@
         ],
         "connected": false,
         "action": "Webgains-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Technik & Computer priorisieren."
+      },
+      {
+        "network": "Webgains",
+        "category": "Freizeit",
+        "siteOffers": 1,
+        "priority": "niedrig",
+        "searchTerms": [
+          "travel",
+          "outdoor",
+          "hobby",
+          "tickets"
+        ],
+        "connected": false,
+        "action": "Webgains-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Freizeit priorisieren."
       }
     ],
     "membershipApi": "documented",

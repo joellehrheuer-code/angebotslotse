@@ -1,9 +1,9 @@
 {
   "state": "ok",
-  "lastSuccessfulUpdate": "2026-09-29T16:56:53.338Z",
-  "activeOffers": 252,
+  "lastSuccessfulUpdate": "2026-09-29T17:06:17.506Z",
+  "activeOffers": 249,
   "storedOffers": 479,
-  "publishableOffers": 252,
+  "publishableOffers": 249,
   "awaitingMedia": 0,
   "blockedPublisherPromotions": 4,
   "quarantined": 130,
@@ -173,6 +173,6 @@
     "error": null,
     "mode": "social"
   },
-  "stale": 207,
+  "stale": 210,
   "message": "Aktualisierung mit geschützten Bestandsdaten abgeschlossen."
 }
