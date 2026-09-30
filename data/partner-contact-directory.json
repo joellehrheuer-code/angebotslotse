@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-30T02:22:00+02:00",
+  "generatedAt": "2026-09-30T02:35:00+02:00",
   "purpose": "Verified official contact routes for routine Angebotslotse partner outreach. sendAllowed=false means research/review is still required before sending.",
   "contacts": [
     {
@@ -118,6 +118,42 @@
       "verifiedAt": "2026-09-30",
       "sendAllowed": true,
       "notes": "Official Awin merchant profile explicitly lists affiliate@tink.io for partner questions; daily product feed is advertised."
+    },
+    {
+      "brand": "Acer DE",
+      "contact": null,
+      "contactType": "official-program-no-direct-email",
+      "sourceUrl": "https://ui.awin.com/merchant-profile/12591",
+      "verifiedAt": "2026-09-30",
+      "sendAllowed": false,
+      "notes": "Official Awin program verified. Program is relevant for computer/IT sites, but no dedicated German affiliate email was verified. Program terms require review before application."
+    },
+    {
+      "brand": "adidas DE",
+      "contact": null,
+      "contactType": "official-program-no-direct-email",
+      "sourceUrl": "https://ui.awin.com/merchant-profile/77004",
+      "verifiedAt": "2026-09-30",
+      "sendAllowed": false,
+      "notes": "Official Awin program verified and explicitly welcomes shopping/editorial platforms. Program terms are referenced in Awin Documents; keep manual review before application/outreach."
+    },
+    {
+      "brand": "SharkNinja DE",
+      "contact": null,
+      "contactType": "official-program-no-direct-email",
+      "sourceUrl": "https://ui.awin.com/merchant-profile/19810",
+      "verifiedAt": "2026-09-30",
+      "sendAllowed": false,
+      "notes": "Official Awin program verified with comparison/deal publisher commissions and full data feed advertised. No dedicated German affiliate email was verified; keep manual review."
+    },
+    {
+      "brand": "iHerb EUR",
+      "contact": null,
+      "contactType": "official-program-protected-contact",
+      "sourceUrl": "https://de.iherb.com/info/affiliates",
+      "verifiedAt": "2026-09-30",
+      "sendAllowed": false,
+      "notes": "Official iHerb affiliate page explicitly accepts shopping comparison publishers and provides an application/promotions contact, but the address is Cloudflare-protected in public HTML. Do not guess the email; verify interactively before sending."
     }
   ]
 }
