@@ -482,3 +482,14 @@ main{min-width:0}
 /* Angebotslotse: Medien-Fallback */
 .soft-media-fallback{display:grid;place-items:center;width:100%;min-height:120px;padding:18px;border-radius:14px;background:radial-gradient(circle at 72% 18%,rgba(255,63,168,.20),transparent 38%),linear-gradient(135deg,#151a31,#21142d);color:#f7f8ff;font-weight:900;text-align:center}
 .creator-video-media .soft-media-fallback,.creator-update-card .soft-media-fallback{height:100%}
+
+.account-cashback-card{grid-column:1/-1}
+.account-cashback-summary{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:14px 0}
+.account-cashback-summary>div{padding:16px;border:1px solid rgba(255,255,255,.09);border-radius:14px;background:rgba(255,255,255,.035);display:grid;gap:4px}
+.account-cashback-summary strong{font-size:1.4rem}
+.account-cashback-summary small{color:var(--muted,#aeb7c9)}
+.account-cashback-list{display:grid;gap:10px;margin:12px 0}
+.account-cashback-item{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 14px;border:1px solid rgba(255,255,255,.08);border-radius:12px;background:rgba(255,255,255,.025)}
+.account-cashback-item small{color:var(--muted,#aeb7c9);text-align:right}
+@media(max-width:560px){.account-cashback-summary{grid-template-columns:1fr}.account-cashback-item{align-items:flex-start;flex-direction:column}.account-cashback-item small{text-align:left}}
+

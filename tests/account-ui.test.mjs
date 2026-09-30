@@ -25,7 +25,7 @@ test("Konto-Seite wird mit lokal gebündeltem Supabase-Client gebaut", () => {
   assert.match(html, /sb_publishable_/);
   assert.match(html, /googleAuthEnabled":false/);
   assert.match(html, /content="noindex,follow"/);
-  assert.match(privacy, /Bei freiwilliger Kontoanmeldung können Merkliste, Wunschpreise, Alarmregeln und Benachrichtigungseinstellungen/);
+  assert.match(privacy, /Bei freiwilliger Kontoanmeldung können Merkliste, Wunschpreise, Alarmregeln, Benachrichtigungseinstellungen und – nur bei aktiviertem Cashback – zugeordnete Cashback-Ansprüche/);
   assert.match(privacy, /nicht öffentlichen Supabase-Storage-Bereich/);
   assert.ok(Array.isArray(feed.offers));
   assert.ok(feed.offers.length > 0);

@@ -47,6 +47,12 @@ if (!root || !config.url || !config.publishableKey) {
   const pushPrice = root.querySelector("[data-push-price]");
   const pushMatches = root.querySelector("[data-push-matches]");
   const pushStatus = root.querySelector("[data-push-status]");
+  const cashbackCard = root.querySelector("[data-account-cashback-card]");
+  const cashbackConfirmed = root.querySelector("[data-cashback-confirmed]");
+  const cashbackPending = root.querySelector("[data-cashback-pending]");
+  const cashbackStatus = root.querySelector("[data-cashback-status]");
+  const cashbackList = root.querySelector("[data-cashback-list]");
+
   let notificationChannel = null;
 
   const setStatus = (text, kind = "") => {
@@ -308,6 +314,60 @@ if (!root || !config.url || !config.publishableKey) {
     return data || [];
   }
 
+  const cashbackMoney = (value, currency = "EUR") => {
+    const number = Number(value || 0);
+    return Number.isFinite(number)
+      ? number.toLocaleString("de-DE", { style: "currency", currency })
+      : "0,00 €";
+  };
+
+  function renderCashbackClaims(rows) {
+    if (!cashbackList) return;
+    cashbackList.replaceChildren();
+    const confirmedTotal = (rows || [])
+      .filter(row => row.claim_status === "confirmed" || row.claim_status === "paid")
+      .reduce((sum,row)=>sum+Number(row.cashback_amount || 0),0);
+    const pendingTotal = (rows || [])
+      .filter(row => row.claim_status === "pending")
+      .reduce((sum,row)=>sum+Number(row.cashback_amount || 0),0);
+    if (cashbackConfirmed) cashbackConfirmed.textContent = cashbackMoney(confirmedTotal);
+    if (cashbackPending) cashbackPending.textContent = cashbackMoney(pendingTotal);
+
+    if (!rows?.length) {
+      const empty=document.createElement("p");
+      empty.className="account-alert-empty";
+      empty.textContent="Noch keine Cashback-Ansprüche vorhanden.";
+      cashbackList.append(empty);
+      return;
+    }
+    const labels={pending:"In Prüfung",confirmed:"Bestätigt",paid:"Ausgezahlt",rejected:"Abgelehnt",expired:"Verfallen"};
+    for (const row of rows) {
+      const item=document.createElement("article");
+      item.className="account-cashback-item";
+      const title=document.createElement("strong");
+      title.textContent=row.cashback_programs?.display_name || row.merchant_key || "Partner";
+      const meta=document.createElement("small");
+      const when=row.transaction_at || row.created_at;
+      meta.textContent=[labels[row.claim_status] || row.claim_status,cashbackMoney(row.cashback_amount,row.currency || "EUR"),when ? new Intl.DateTimeFormat("de-DE",{dateStyle:"medium"}).format(new Date(when)) : ""].filter(Boolean).join(" · ");
+      item.append(title,meta);
+      cashbackList.append(item);
+    }
+  }
+
+  async function loadCashbackClaims(userId) {
+    if (!cashbackCard) return [];
+    const { data, error } = await supabase
+      .from("cashback_claims")
+      .select("id,merchant_key,claim_status,cashback_amount,currency,transaction_at,confirmed_at,paid_at,created_at,cashback_programs(display_name)")
+      .eq("user_id", userId)
+      .order("created_at", { ascending: false })
+      .limit(100);
+    if (error) throw error;
+    renderCashbackClaims(data || []);
+    if (cashbackStatus) cashbackStatus.textContent = "";
+    return data || [];
+  }
+
   async function subscribeNotifications(userId) {
     if (notificationChannel) await supabase.removeChannel(notificationChannel);
     notificationChannel = supabase.channel("user-notifications-" + userId)
@@ -387,6 +447,7 @@ if (!root || !config.url || !config.publishableKey) {
     if (matchesCard) matchesCard.hidden = !user;
     if (notificationsCard) notificationsCard.hidden = !user;
     if (pushCard) pushCard.hidden = !user;
+    if (cashbackCard) cashbackCard.hidden = !user;
     if (accountDataActions) accountDataActions.hidden = !user;
     if (!user) {
       if (userEmail) userEmail.textContent = "";
@@ -394,6 +455,9 @@ if (!root || !config.url || !config.publishableKey) {
       if (alertList) alertList.replaceChildren();
       if (matchesNode) matchesNode.replaceChildren();
       if (notificationList) notificationList.replaceChildren();
+      if (cashbackList) cashbackList.replaceChildren();
+      if (cashbackConfirmed) cashbackConfirmed.textContent = "0,00 €";
+      if (cashbackPending) cashbackPending.textContent = "0,00 €";
       if (pushPreferences) pushPreferences.hidden = true;
       if (pushDisableButton) pushDisableButton.hidden = true;
       if (pushEnableButton) pushEnableButton.hidden = false;
@@ -410,7 +474,8 @@ if (!root || !config.url || !config.publishableKey) {
         loadCloudWatchlist(user.id),
         loadAlerts(user.id),
         loadNotifications(user.id),
-        loadPushState(user.id)
+        loadPushState(user.id),
+        loadCashbackClaims(user.id)
       ]);
       writeLocalWatchlist({ ...readLocalWatchlist(), ...cloudRowsToLocal(rows) });
       await subscribeNotifications(user.id);
