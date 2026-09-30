@@ -109,3 +109,16 @@ jobs:
           SMOKE_ATTEMPTS: 6
           SMOKE_RETRY_DELAY_MS: 5000
           SMOKE_CONCURRENCY: 8
+
+  indexnow:
+    needs: smoke
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Notify IndexNow about changed discovery pages
+        run: npm run indexnow
+        env:
+          SITE_URL: https://joellehrheuer-code.github.io/angebotslotse
