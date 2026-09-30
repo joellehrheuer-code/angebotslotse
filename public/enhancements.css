@@ -1065,3 +1065,89 @@ footer nav a:hover{color:#fff!important}
 @media(prefers-reduced-motion:reduce){
   .deal-card,.category-tile,.directory-link-grid>a,.project-links a,.partner-section>div a{transition:none!important;transform:none!important}
 }
+
+
+/* V12 BRANDING: desktop wordmark crop + mobile app icon */
+.header-brand{gap:0!important}
+.header-brand-picture{
+  position:relative;
+  display:block;
+  flex:0 0 auto;
+  width:178px;
+  height:54px;
+  overflow:hidden;
+  border:1px solid var(--v11-line-soft);
+  border-radius:11px;
+  background:#f4f1ea;
+}
+.header-brand .brand-logo{
+  display:block;
+  width:178px!important;
+  height:auto!important;
+  max-width:none!important;
+  padding:0!important;
+  border:0!important;
+  border-radius:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+  transform:translateY(-1px);
+  object-fit:initial!important;
+}
+.header-brand .brand-name{display:none!important}
+
+.footer-brand{align-items:flex-start!important;gap:0!important}
+.footer-brand .footer-brand-logo{
+  width:210px!important;
+  height:auto!important;
+  max-width:210px!important;
+  padding:0!important;
+  border:1px solid var(--v11-line-soft)!important;
+  border-radius:12px!important;
+  background:#f4f1ea!important;
+  box-shadow:none!important;
+  object-fit:contain!important;
+}
+.footer-brand .brand-name{display:none!important}
+
+@media(max-width:900px){
+  .header-brand-picture{width:154px;height:49px}
+  .header-brand .brand-logo{width:154px!important}
+  .header-brand .brand-name{display:none!important}
+}
+@media(max-width:680px){
+  .header-brand{gap:9px!important}
+  .header-brand-picture{
+    width:40px;
+    height:40px;
+    border:0;
+    border-radius:50%;
+    overflow:hidden;
+    background:transparent;
+  }
+  .header-brand .brand-logo{
+    width:40px!important;
+    height:40px!important;
+    max-width:40px!important;
+    transform:none!important;
+    object-fit:cover!important;
+    border-radius:50%!important;
+  }
+  .header-brand .brand-name{
+    display:block!important;
+    max-width:118px;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    color:#fff!important;
+    font-size:13px!important;
+  }
+  .footer-brand .footer-brand-logo{
+    width:180px!important;
+    max-width:180px!important;
+  }
+}
+@media(max-width:430px){
+  .header-brand-picture{width:38px;height:38px}
+  .header-brand .brand-logo{width:38px!important;height:38px!important;max-width:38px!important}
+  .header-brand .brand-name{max-width:102px}
+}
