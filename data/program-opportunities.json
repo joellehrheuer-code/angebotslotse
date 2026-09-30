@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-30T14:55:54.210Z",
+  "generatedAt": "2026-09-30T20:10:34.569Z",
   "scope": "Automatisch aus Programminventar, DE-Angebotsabdeckung und verfügbaren Netzwerk-/Feed-Signalen erzeugt.",
   "automation": {
     "discovery": "automatic",
@@ -1068,6 +1068,39 @@
       "automationState": "ready-for-review"
     },
     {
+      "brand": "Bagsmart DE",
+      "network": "Awin",
+      "advertiserId": 122768,
+      "status": "notjoined",
+      "category": "Mode & Sport",
+      "score": 36,
+      "priority": "niedrig",
+      "activeDiscoveryOffers": 1,
+      "offerExamples": [
+        "Oktoberfest: Kaufe 2, 10% Sparen | Kaufe 3, 15% Sparen"
+      ],
+      "productFeed": false,
+      "metrics": {
+        "awinIndex": null,
+        "epc": null,
+        "conversionRate": null,
+        "approvalPercentage": null,
+        "validationDays": null,
+        "averagePaymentTime": null,
+        "commissionMin": null,
+        "commissionMax": null,
+        "commissionTypes": []
+      },
+      "reasons": [
+        "passt zu Mode & Sport",
+        "1 aktive DE-Aktion"
+      ],
+      "applicationRequired": true,
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Bagsmart DE redaktionell passend im Bereich Mode & Sport einbinden. Bei Awin sind aktuell 1 für Deutschland sichtbare Aktion dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "automationState": "ready-for-review"
+    },
+    {
       "brand": "DATOUBOSS (DE)",
       "network": "Awin",
       "advertiserId": 127057,
@@ -1571,36 +1604,6 @@
       "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten 12-Travel DE redaktionell passend im Bereich Freizeit & Reisen einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
       "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
       "automationState": "ready-for-review"
-    },
-    {
-      "brand": "360GradFitness DE",
-      "network": "Awin",
-      "advertiserId": 113554,
-      "status": "notjoined",
-      "category": "Mode & Sport",
-      "score": 30,
-      "priority": "niedrig",
-      "activeDiscoveryOffers": 0,
-      "offerExamples": [],
-      "productFeed": false,
-      "metrics": {
-        "awinIndex": null,
-        "epc": null,
-        "conversionRate": null,
-        "approvalPercentage": null,
-        "validationDays": null,
-        "averagePaymentTime": null,
-        "commissionMin": null,
-        "commissionMax": null,
-        "commissionTypes": []
-      },
-      "reasons": [
-        "passt zu Mode & Sport"
-      ],
-      "applicationRequired": true,
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten 360GradFitness DE redaktionell passend im Bereich Mode & Sport einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "automationState": "ready-for-review"
     }
   ],
   "impact": {
@@ -1610,9 +1613,9 @@
     "marketplaceSearches": [
       {
         "category": "Audio & Creator",
-        "siteOffers": 88,
+        "siteOffers": 57,
         "joinedPrograms": 0,
-        "gapScore": 88,
+        "gapScore": 57,
         "searchTerms": [
           "audio",
           "music",
@@ -1637,20 +1640,6 @@
         "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
       },
       {
-        "category": "Technik & Computer",
-        "siteOffers": 53,
-        "joinedPrograms": 0,
-        "gapScore": 53,
-        "searchTerms": [
-          "electronics",
-          "computer",
-          "hardware",
-          "mobile",
-          "smart home"
-        ],
-        "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
-      },
-      {
         "category": "Haushalt & Küche",
         "siteOffers": 53,
         "joinedPrograms": 0,
@@ -1660,6 +1649,20 @@
           "appliances",
           "kitchen",
           "vacuum"
+        ],
+        "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
+      },
+      {
+        "category": "Technik & Computer",
+        "siteOffers": 45,
+        "joinedPrograms": 0,
+        "gapScore": 45,
+        "searchTerms": [
+          "electronics",
+          "computer",
+          "hardware",
+          "mobile",
+          "smart home"
         ],
         "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
       },
@@ -1704,7 +1707,7 @@
       {
         "network": "Daisycon",
         "category": "Audio & Musik",
-        "siteOffers": 88,
+        "siteOffers": 57,
         "priority": "hoch",
         "searchTerms": [
           "audio",
@@ -1734,8 +1737,8 @@
       {
         "network": "Daisycon",
         "category": "Technik & Computer",
-        "siteOffers": 53,
-        "priority": "hoch",
+        "siteOffers": 45,
+        "priority": "mittel",
         "searchTerms": [
           "electronics",
           "computer",
@@ -1768,7 +1771,7 @@
       {
         "network": "Tradedoubler",
         "category": "Audio & Musik",
-        "siteOffers": 88,
+        "siteOffers": 57,
         "priority": "hoch",
         "searchTerms": [
           "audio",
@@ -1798,8 +1801,8 @@
       {
         "network": "Tradedoubler",
         "category": "Technik & Computer",
-        "siteOffers": 53,
-        "priority": "hoch",
+        "siteOffers": 45,
+        "priority": "mittel",
         "searchTerms": [
           "electronics",
           "computer",
@@ -1837,7 +1840,7 @@
       {
         "network": "Webgains",
         "category": "Audio & Musik",
-        "siteOffers": 88,
+        "siteOffers": 57,
         "priority": "hoch",
         "searchTerms": [
           "audio",
@@ -1867,8 +1870,8 @@
       {
         "network": "Webgains",
         "category": "Technik & Computer",
-        "siteOffers": 53,
-        "priority": "hoch",
+        "siteOffers": 45,
+        "priority": "mittel",
         "searchTerms": [
           "electronics",
           "computer",

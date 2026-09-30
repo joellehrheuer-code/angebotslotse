@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-30T14:55:54.210Z",
+  "generatedAt": "2026-09-30T20:10:34.569Z",
   "status": "disabled",
   "joinedPrograms": 0,
   "automation": {
@@ -12,9 +12,9 @@
   "marketplaceSearches": [
     {
       "category": "Audio & Creator",
-      "siteOffers": 88,
+      "siteOffers": 57,
       "joinedPrograms": 0,
-      "gapScore": 88,
+      "gapScore": 57,
       "searchTerms": [
         "audio",
         "music",
@@ -39,20 +39,6 @@
       "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
     },
     {
-      "category": "Technik & Computer",
-      "siteOffers": 53,
-      "joinedPrograms": 0,
-      "gapScore": 53,
-      "searchTerms": [
-        "electronics",
-        "computer",
-        "hardware",
-        "mobile",
-        "smart home"
-      ],
-      "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
-    },
-    {
       "category": "Haushalt & Küche",
       "siteOffers": 53,
       "joinedPrograms": 0,
@@ -62,6 +48,20 @@
         "appliances",
         "kitchen",
         "vacuum"
+      ],
+      "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
+    },
+    {
+      "category": "Technik & Computer",
+      "siteOffers": 45,
+      "joinedPrograms": 0,
+      "gapScore": 45,
+      "searchTerms": [
+        "electronics",
+        "computer",
+        "hardware",
+        "mobile",
+        "smart home"
       ],
       "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
     },

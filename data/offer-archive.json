@@ -1,6 +1,22 @@
 {
-  "updatedAt": "2026-09-30T14:55:54.148Z",
+  "updatedAt": "2026-09-30T20:10:34.509Z",
   "items": [
+    {
+      "id": "584ca267849648b4",
+      "slug": "waves-specials-584ca267",
+      "title": "Waves Specials",
+      "advertiser": "Waves",
+      "source": "direct",
+      "productId": null,
+      "category": "audio-musik",
+      "lastPrice": null,
+      "currency": "EUR",
+      "firstSeen": "2026-09-15T18:41:05.445Z",
+      "lastSeen": "2026-09-30T14:55:53.942Z",
+      "endDate": null,
+      "archivedAt": "2026-09-30T20:10:34.509Z",
+      "reason": "removed-from-source"
+    },
     {
       "id": "4248fc6b25b2c1bc",
       "slug": "coolblue-de-offizielles-awin-werbemittel-4248fc6b",

@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-09-30T14:55:54.237Z",
+  "generatedAt": "2026-09-30T20:10:34.593Z",
   "market": "DE",
   "publisherId": 3045061,
   "awin": {
     "counts": {
-      "joined": 5,
-      "pending": 5,
+      "joined": 6,
+      "pending": 4,
       "suspended": 0,
       "rejected": 1,
       "notjoined": 2611
@@ -162,6 +162,17 @@
         "advertiserId": 125144,
         "name": "ANTHBOT DE",
         "primarySector": "Electronic Accessories",
+        "primaryRegion": {
+          "name": "Germany",
+          "countryCode": "DE"
+        }
+      },
+      {
+        "network": "Awin",
+        "relationship": "joined",
+        "advertiserId": 14172,
+        "name": "EMP DE",
+        "primarySector": "Clothing",
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
@@ -811,6 +822,17 @@
         "advertiserId": 15977,
         "name": "awg-mode.de - Alle Werden Glücklich",
         "primarySector": "Clothing",
+        "primaryRegion": {
+          "name": "Germany",
+          "countryCode": "DE"
+        }
+      },
+      {
+        "network": "Awin",
+        "relationship": "notjoined",
+        "advertiserId": 122768,
+        "name": "Bagsmart DE",
+        "primarySector": "Clothing Accessories",
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
@@ -2190,28 +2212,6 @@
           "name": "Germany",
           "countryCode": "DE"
         }
-      },
-      {
-        "network": "Awin",
-        "relationship": "notjoined",
-        "advertiserId": 24666,
-        "name": "Egret DE",
-        "primarySector": "Electronic Superstore",
-        "primaryRegion": {
-          "name": "Germany",
-          "countryCode": "DE"
-        }
-      },
-      {
-        "network": "Awin",
-        "relationship": "notjoined",
-        "advertiserId": 11642,
-        "name": "eibmarkt DE",
-        "primarySector": "Electronic Superstore",
-        "primaryRegion": {
-          "name": "Germany",
-          "countryCode": "DE"
-        }
       }
     ],
     "discoveryOffers": 200,
@@ -3019,9 +3019,21 @@
       {
         "source": "awin-enhanced-feeds",
         "state": "ok",
-        "count": 455,
+        "count": 415,
         "audit": {
           "feeds": [
+            {
+              "advertiserId": 14172,
+              "advertiserName": "EMP DE",
+              "locale": "de_DE",
+              "state": "not-found"
+            },
+            {
+              "advertiserId": 14172,
+              "advertiserName": "EMP DE",
+              "locale": "en_DE",
+              "state": "not-found"
+            },
             {
               "advertiserId": 85171,
               "advertiserName": "Coolblue DE",
@@ -3085,12 +3097,12 @@
               "advertiserName": "Hollyland DE",
               "locale": "en_DE",
               "state": "available",
-              "products": 240,
+              "products": 200,
               "rawProducts": 366,
-              "validProducts": 240,
-              "withPrice": 240,
-              "withImage": 240,
-              "withTracking": 240,
+              "validProducts": 200,
+              "withPrice": 200,
+              "withImage": 200,
+              "withTracking": 200,
               "rejected": 0,
               "rejectionReasons": {}
             }
@@ -3118,9 +3130,9 @@
     "marketplaceSearches": [
       {
         "category": "Audio & Creator",
-        "siteOffers": 88,
+        "siteOffers": 57,
         "joinedPrograms": 0,
-        "gapScore": 88,
+        "gapScore": 57,
         "searchTerms": [
           "audio",
           "music",
@@ -3145,20 +3157,6 @@
         "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
       },
       {
-        "category": "Technik & Computer",
-        "siteOffers": 53,
-        "joinedPrograms": 0,
-        "gapScore": 53,
-        "searchTerms": [
-          "electronics",
-          "computer",
-          "hardware",
-          "mobile",
-          "smart home"
-        ],
-        "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
-      },
-      {
         "category": "Haushalt & Küche",
         "siteOffers": 53,
         "joinedPrograms": 0,
@@ -3168,6 +3166,20 @@
           "appliances",
           "kitchen",
           "vacuum"
+        ],
+        "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
+      },
+      {
+        "category": "Technik & Computer",
+        "siteOffers": 45,
+        "joinedPrograms": 0,
+        "gapScore": 45,
+        "searchTerms": [
+          "electronics",
+          "computer",
+          "hardware",
+          "mobile",
+          "smart home"
         ],
         "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
       },
@@ -3209,7 +3221,7 @@
       {
         "network": "Daisycon",
         "category": "Audio & Musik",
-        "siteOffers": 88,
+        "siteOffers": 57,
         "priority": "hoch",
         "searchTerms": [
           "audio",
@@ -3239,8 +3251,8 @@
       {
         "network": "Daisycon",
         "category": "Technik & Computer",
-        "siteOffers": 53,
-        "priority": "hoch",
+        "siteOffers": 45,
+        "priority": "mittel",
         "searchTerms": [
           "electronics",
           "computer",
@@ -3273,7 +3285,7 @@
       {
         "network": "Tradedoubler",
         "category": "Audio & Musik",
-        "siteOffers": 88,
+        "siteOffers": 57,
         "priority": "hoch",
         "searchTerms": [
           "audio",
@@ -3303,8 +3315,8 @@
       {
         "network": "Tradedoubler",
         "category": "Technik & Computer",
-        "siteOffers": 53,
-        "priority": "hoch",
+        "siteOffers": 45,
+        "priority": "mittel",
         "searchTerms": [
           "electronics",
           "computer",
@@ -3342,7 +3354,7 @@
       {
         "network": "Webgains",
         "category": "Audio & Musik",
-        "siteOffers": 88,
+        "siteOffers": 57,
         "priority": "hoch",
         "searchTerms": [
           "audio",
@@ -3372,8 +3384,8 @@
       {
         "network": "Webgains",
         "category": "Technik & Computer",
-        "siteOffers": 53,
-        "priority": "hoch",
+        "siteOffers": 45,
+        "priority": "mittel",
         "searchTerms": [
           "electronics",
           "computer",
@@ -3404,17 +3416,17 @@
     "reason": "Webgains Memberships und Terms werden automatisch gelesen; accept_terms=true wird nur nach ausdrücklicher menschlicher Bestätigung des geprüften Terms-Stands verwendet."
   },
   "publication": {
-    "offers": 252,
-    "concreteAwaitingMedia": 0,
+    "offers": 216,
+    "concreteAwaitingMedia": 1,
     "blockedPublisherPromotions": 4,
-    "partnerEntries": 220,
-    "merchants": 5,
-    "products": 247,
-    "images": 247,
+    "partnerEntries": 219,
+    "merchants": 6,
+    "products": 208,
+    "images": 208,
     "videos": 0,
-    "prices": 247,
+    "prices": 208,
     "discounts": 0,
-    "coupons": 4
+    "coupons": 5
   },
   "safeguards": {
     "unjoinedProgramsPublished": false,

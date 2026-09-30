@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-30T14:55:54.210Z",
+  "generatedAt": "2026-09-30T20:10:34.569Z",
   "topActions": [
     {
       "rank": 1,
@@ -241,7 +241,7 @@
       "campaignId": null,
       "category": "Audio & Musik",
       "priority": "hoch",
-      "score": 118,
+      "score": 87,
       "kind": "marketplace-search",
       "status": "connection-required",
       "actionType": "connection-required",
@@ -260,7 +260,7 @@
       "campaignId": null,
       "category": "Audio & Musik",
       "priority": "hoch",
-      "score": 118,
+      "score": 87,
       "kind": "marketplace-search",
       "status": "connection-required",
       "actionType": "connection-required",
@@ -279,7 +279,7 @@
       "campaignId": null,
       "category": "Audio & Musik",
       "priority": "hoch",
-      "score": 118,
+      "score": 87,
       "kind": "marketplace-search",
       "status": "connection-required",
       "actionType": "connection-required",
@@ -354,8 +354,8 @@
       "programId": null,
       "campaignId": null,
       "category": "Technik & Computer",
-      "priority": "hoch",
-      "score": 83,
+      "priority": "mittel",
+      "score": 65,
       "kind": "marketplace-search",
       "status": "connection-required",
       "actionType": "connection-required",
@@ -373,8 +373,8 @@
       "programId": null,
       "campaignId": null,
       "category": "Technik & Computer",
-      "priority": "hoch",
-      "score": 83,
+      "priority": "mittel",
+      "score": 65,
       "kind": "marketplace-search",
       "status": "connection-required",
       "actionType": "connection-required",
@@ -392,8 +392,8 @@
       "programId": null,
       "campaignId": null,
       "category": "Technik & Computer",
-      "priority": "hoch",
-      "score": 83,
+      "priority": "mittel",
+      "score": 65,
       "kind": "marketplace-search",
       "status": "connection-required",
       "actionType": "connection-required",
@@ -477,7 +477,7 @@
       "id": "impact-marketplace-review",
       "platform": "Impact",
       "action": "Impact Marketplace zuerst nach passenden Brands für Audio & Creator durchsuchen (audio, music, headphones, microphone, recording, creator).",
-      "reason": "Automatisch erkannte Abdeckungslücke: 88 Angebotslotse-Angebote stehen 0 zugeordneten Impact-Programmen gegenüber. Vertragsbedingungen vor Bewerbung prüfen."
+      "reason": "Automatisch erkannte Abdeckungslücke: 57 Angebotslotse-Angebote stehen 0 zugeordneten Impact-Programmen gegenüber. Vertragsbedingungen vor Bewerbung prüfen."
     },
     {
       "id": "awin-apply-30691",
@@ -539,13 +539,13 @@
       "id": "daisycon-connect",
       "platform": "Daisycon",
       "action": "Kostenlosen Daisycon-Publisherzugang/API-Zugang freischalten und DAISYCON_PUBLISHER_ID + DAISYCON_ACCESS_TOKEN sicher hinterlegen.",
-      "reason": "Danach zuerst Programme für Audio & Musik priorisieren (audio, music, headphones, microphone, recording), weil dort aktuell 88 veröffentlichte Angebotslotse-Angebote liegen."
+      "reason": "Danach zuerst Programme für Audio & Musik priorisieren (audio, music, headphones, microphone, recording), weil dort aktuell 57 veröffentlichte Angebotslotse-Angebote liegen."
     },
     {
       "id": "tradedoubler-connect",
       "platform": "Tradedoubler",
       "action": "Kostenlosen Tradedoubler-Publisherzugang freischalten und entweder TRADEDOUBLER_PRODUCTS_TOKEN oder einen offiziellen Produktfeed als TRADEDOUBLER_FEED_URLS hinterlegen.",
-      "reason": "Danach zuerst Programme für Audio & Musik priorisieren (audio, music, headphones, microphone, recording), weil dort aktuell 88 Angebotslotse-Angebote liegen."
+      "reason": "Danach zuerst Programme für Audio & Musik priorisieren (audio, music, headphones, microphone, recording), weil dort aktuell 57 Angebotslotse-Angebote liegen."
     },
     {
       "id": "tradedoubler-vouchers-connect",
@@ -557,7 +557,7 @@
       "id": "webgains-api-connect",
       "platform": "Webgains",
       "action": "Kostenlosen Webgains-Publisherzugang freischalten und WEBGAINS_PUBLISHER_ID + WEBGAINS_ACCESS_TOKEN sicher hinterlegen.",
-      "reason": "Danach zuerst Programme für Audio & Musik priorisieren (audio, music, headphones, microphone, recording), weil dort aktuell 88 Angebotslotse-Angebote liegen."
+      "reason": "Danach zuerst Programme für Audio & Musik priorisieren (audio, music, headphones, microphone, recording), weil dort aktuell 57 Angebotslotse-Angebote liegen."
     },
     {
       "id": "webgains-feed-connect",
