@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-30T02:22:00+02:00",
+  "generatedAt": "2026-09-30T02:35:00+02:00",
   "purpose": "Deduplication and status tracking for Angebotslotse affiliate/partner outreach. No contracts are auto-accepted.",
   "statuses": [
     {
@@ -84,10 +84,10 @@
       "brand": "Heise Compaliate / Preisvergleich",
       "network": "direct/CPC-widget",
       "status": "review-requested",
-      "lastContactAt": "2026-09-29T18:50:00+02:00",
+      "lastContactAt": "2026-09-30T02:22:08+02:00",
       "contact": "mareike.mueschen@heise.de",
       "nextAction": "Antwort auf erneute technische Prüfung abwarten; keine Registrierung oder Vertragsannahme automatisch durchführen.",
-      "notes": "Heise bestätigt: thematisch geeignet, Einzelbetreiber möglich, GitHub-Pages JS/iFrame möglich, keine Grund-/Einrichtungs-/laufenden Gebühren oder Mindestreichweite, CPC-Share-Modell; nur Widgets, keine API/Feeds. Nach Website-Verbesserungen erneute Prüfung angefragt."
+      "notes": "Heise bestätigt: thematisch geeignet, Einzelbetreiber möglich, GitHub-Pages JS/iFrame möglich, keine Grund-/Einrichtungs-/laufenden Gebühren oder Mindestreichweite, CPC-Share-Modell; nur Widgets, keine API/Feeds. Startseite danach erneut geprüft: 68 eindeutige interne Ziele ohne 4xx/5xx. Erneute Prüfung über angebotslotse@agentmail.to angefragt."
     },
     {
       "brand": "Chime Mattress",
