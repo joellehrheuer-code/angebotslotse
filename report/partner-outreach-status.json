@@ -1,183 +1,183 @@
 {
-    "generatedAt":  "2026-09-30T02:05:00+02:00",
-    "purpose":  "Deduplication and status tracking for Angebotslotse affiliate/partner outreach. No contracts are auto-accepted.",
-    "statuses":  [
-                     {
-                         "brand":  "Coolblue DE",
-                         "network":  "Awin",
-                         "status":  "reactivation-requested",
-                         "lastContactAt":  "2026-09-30T01:38:00+02:00",
-                         "contact":  "affiliate@coolblue.de",
-                         "nextAction":  "Antwort von Anne Weitkämper abwarten; falls erforderlich Website im Awin-Konto als Property hinterlegen und danach erneut zur Prüfung melden.",
-                         "notes":  "Publisher-ID 3045061 und Live-URL des Angebotslotse erneut im bestehenden Thread gesendet. Coolblue-Links bis bestätigter Freigabe gesperrt lassen."
-                     },
-                     {
-                         "brand":  "EcoFlow DE",
-                         "network":  "direct/affiliate",
-                         "status":  "bounced",
-                         "lastContactAt":  "2026-09-29T02:59:39+02:00",
-                         "contact":  "eu.affiliate@ecoflow.com",
-                         "nextAction":  "Nicht erneut an dieselbe Adresse senden; nur bei verifiziertem alternativen offiziellen Affiliate-Kontakt erneut prÃ¼fen."
-                     },
-                     {
-                         "brand":  "Anker DE",
-                         "network":  "Awin",
-                         "status":  "pending",
-                         "lastContactAt":  "2026-09-29T13:25:00+02:00",
-                         "contact":  "affiliate@anker.com",
-                         "nextAction":  "Antwort/Freischaltung Ã¼berwachen; bei Freigabe Feed, Promotions, Creatives und Deeplinks integrieren."
-                     },
-                     {
-                         "brand":  "ECOVACS DE",
-                         "network":  "Awin",
-                         "status":  "pending",
-                         "lastContactAt":  "2026-09-29T13:25:00+02:00",
-                         "contact":  "partner@affprogramhub.com",
-                         "nextAction":  "Antwort/Freischaltung Ã¼berwachen; bei Freigabe Produktfeed, Promotions und Creatives integrieren."
-                     },
-                     {
-                         "brand":  "Samsung Shop DE",
-                         "network":  "Awin",
-                         "status":  "pending",
-                         "lastContactAt":  "2026-09-29T13:36:00+02:00",
-                         "contact":  "samsung@sunnysales.de",
-                         "nextAction":  "Antwort/Freischaltung Ã¼berwachen; bei Freigabe Produktfeed, Deeplinks und Promotions integrieren."
-                     },
-                     {
-                         "brand":  "Dyson DE",
-                         "network":  "Awin",
-                         "status":  "pending",
-                         "lastContactAt":  "2026-09-29T13:36:00+02:00",
-                         "contact":  [
-                                         "nicole.schlueter@awin.com",
-                                         "verena.witkowski@awin.com"
-                                     ],
-                         "nextAction":  "Antwort/Freischaltung Ã¼berwachen; bei Freigabe Produktfeed, Kampagnen und Creatives integrieren."
-                     },
-                     {
-                         "brand":  "Bosch HausgerÃ¤te DE",
-                         "network":  "Awin",
-                         "status":  "pending",
-                         "lastContactAt":  "2026-09-29T13:40:00+02:00",
-                         "contact":  "bsh-affiliate@house-of-communication.com",
-                         "nextAction":  "Antwort/Freischaltung Ã¼berwachen; bei Freigabe Produktfeed, Endkundenaktionen und Werbemittel integrieren."
-                     },
-                     {
-                         "brand":  "Sanpro DE",
-                         "network":  "Awin",
-                         "status":  "bounced",
-                         "lastContactAt":  "2026-09-29T13:38:19+02:00",
-                         "contact":  "sanpro@network-genius.com",
-                         "nextAction":  "Nicht erneut an dieselbe Adresse senden; nur bei verifiziertem alternativen offiziellen Affiliate-Kontakt erneut prÃ¼fen.",
-                         "notes":  "Zustellung fehlgeschlagen: Microsoft 554 5.4.14 / Hop count exceeded; EmpfÃ¤ngeradresse wurde nicht zugestellt."
-                     },
-                     {
-                         "brand":  "DECATHLON DE",
-                         "network":  "Awin",
-                         "status":  "pending",
-                         "lastContactAt":  "2026-09-29T13:45:00+02:00",
-                         "contact":  "manuel.veenhues@decathlon.com",
-                         "nextAction":  "Antwort/Freischaltung Ã¼berwachen; bei Freigabe tÃ¤glich aktualisierten Produktfeed, Deeplinks, Aktionen und Werbemittel integrieren.",
-                         "notes":  "Offizieller Affiliate-Ansprechpartner laut Awin-Programmprofil kontaktiert."
-                     },
-                     {
-                         "brand":  "Heise Compaliate / Preisvergleich",
-                         "network":  "direct/CPC-widget",
-                         "status":  "review-requested",
-                         "lastContactAt":  "2026-09-29T18:50:00+02:00",
-                         "contact":  "mareike.mueschen@heise.de",
-                         "nextAction":  "Antwort auf erneute technische PrÃ¼fung abwarten; keine Registrierung oder Vertragsannahme automatisch durchfÃ¼hren.",
-                         "notes":  "Heise bestÃ¤tigt: thematisch geeignet, Einzelbetreiber mÃ¶glich, GitHub-Pages JS/iFrame mÃ¶glich, keine Grund-/Einrichtungs-/laufenden GebÃ¼hren oder Mindestreichweite, CPC-Share-Modell; nur Widgets, keine API/Feeds. Nach Website-Verbesserungen erneute PrÃ¼fung angefragt."
-                     },
-                     {
-                         "brand":  "Chime Mattress",
-                         "network":  "Impact",
-                         "status":  "rejected",
-                         "lastContactAt":  "2026-09-29T16:28:34+02:00",
-                         "contact":  "Impact notification",
-                         "nextAction":  "Nicht erneut bewerben, solange keine neue ausdr?ckliche Einladung oder relevante Programm?nderung vorliegt.",
-                         "notes":  "Impact-Kampagne 56440 / Nectar Brand LLC (1233374): Bewerbung am 29.09.2026 ausdr?cklich abgelehnt."
-                     },
-                     {
-                         "brand":  "ELV DE",
-                         "network":  "Awin",
-                         "status":  "pending",
-                         "lastContactAt":  "2026-09-30T01:41:00+02:00",
-                         "contact":  "elv@sunnysales.de",
-                         "nextAction":  "Antwort/Freischaltung abwarten; bei Freigabe Produktliste, Deeplinks und Aktionen integrieren.",
-                         "notes":  "Offizieller Affiliate-Kontakt laut Awin-Profil; unverbindliche Publisher-Eignungsanfrage für Angebotslotse gesendet. Publisher-ID 3045061."
-                     },
-                     {
-                         "brand":  "Pollin Electronic DE",
-                         "network":  "Awin",
-                         "status":  "pending",
-                         "lastContactAt":  "2026-09-30T01:41:00+02:00",
-                         "contact":  "partnerprogramm@pollin.de",
-                         "nextAction":  "Antwort/Freischaltung abwarten; bei Freigabe Produktlisten, Preise, Deeplinks und Aktionen integrieren.",
-                         "notes":  "Offizieller Affiliate-Kontakt laut Awin-Profil; unverbindliche Publisher-Eignungsanfrage gesendet. Publisher-ID 3045061."
-                     },
-                     {
-                         "brand":  "Ankerkraut DE",
-                         "network":  "Awin/direct",
-                         "status":  "pending",
-                         "lastContactAt":  "2026-09-30T01:41:00+02:00",
-                         "contact":  "marketing@ankerkraut.de",
-                         "nextAction":  "Antwort zum offiziellen Affiliate-/Publisher-Weg abwarten; keine Vertragsbedingungen automatisch akzeptieren.",
-                         "notes":  "Offizieller Marketing-/Partnership-Kontakt; unverbindliche Anfrage für Angebotslotse gesendet."
-                     },
-                     {
-                         "brand":  "Alternate DE",
-                         "network":  "direct/creator",
-                         "status":  "rejected",
-                         "lastContactAt":  "2026-09-02T19:43:09+02:00",
-                         "contact":  "jschaaf@alternate.de",
-                         "nextAction":  "Nicht erneut automatisch anschreiben. Nur bei ausdrücklicher neuer Einladung oder klar neuer, vom bisherigen Creator-Kontext unabhängiger Affiliate-Freigabe prüfen.",
-                         "notes":  "Frühere Kooperationsanfrage am 02.09.2026 abgelehnt; zur Vermeidung unnötiger Doppelansprache aus Routine-Outreach ausschließen."
-                     },
-                     {
-                         "brand":  "INTERSPORT DE",
-                         "network":  "Awin",
-                         "status":  "pending",
-                         "lastContactAt":  "2026-09-30T02:05:00+02:00",
-                         "contact":  "mara.wieland@intersport.de",
-                         "nextAction":  "Antwort/Freischaltung abwarten; bei Freigabe Produktfeed, Deeplinks und Aktionen integrieren.",
-                         "notes":  "Offizieller Affiliate-Kontakt laut Awin-Profil; unverbindliche Publisher-Anfrage gesendet. Publisher-ID 3045061."
-                     },
-                     {
-                         "brand":  "BSTN DACH",
-                         "network":  "Awin",
-                         "status":  "pending",
-                         "lastContactAt":  "2026-09-30T02:05:00+02:00",
-                         "contact":  "michael.dorsch@bstn.com",
-                         "nextAction":  "Antwort/Freischaltung abwarten; bei Freigabe Produktfeed und Aktionen integrieren.",
-                         "notes":  "Offizieller Affiliate-Kontakt laut BSTN/Awin; unverbindliche Publisher-Anfrage gesendet. Publisher-ID 3045061."
-                     },
-                     {
-                         "brand":  "Sportspar DE",
-                         "network":  "Awin",
-                         "status":  "pending",
-                         "lastContactAt":  "2026-09-30T02:05:00+02:00",
-                         "contact":  "a.borisenko@sportspar.de",
-                         "nextAction":  "Antwort/Freischaltung abwarten; bei Freigabe Deal-Daten, Produktfeed und Deeplinks integrieren.",
-                         "notes":  "Offizieller Affiliate-Kontakt laut Awin; unverbindliche Publisher-Anfrage gesendet. Publisher-ID 3045061."
-                     },
-                     {
-                         "brand":  "PremiumSIM DE",
-                         "network":  "Awin",
-                         "status":  "pending",
-                         "lastContactAt":  "2026-09-30T02:05:00+02:00",
-                         "contact":  "partner@drillisch-online.de",
-                         "nextAction":  "Antwort/Freischaltung abwarten; bei Freigabe Tarif-/Aktionsdaten und Deeplinks integrieren.",
-                         "notes":  "Offizieller Affiliate-Kontakt laut Awin; unverbindliche Publisher-Anfrage gesendet. Publisher-ID 3045061."
-                     },
-                     {
-                         "brand":  "One DE",
-                         "network":  "direct/creator",
-                         "status":  "pending",
-                         "lastContactAt":  "2026-08-19T14:38:32+02:00",
-                         "contact":  "info@one.de",
-                         "nextAction":  "Nicht zusätzlich automatisch als Affiliate neu anschreiben, solange die frühere Creator-Anfrage ohne persönliche Antwort offen ist.",
-                         "notes":  "Frühere Creator-/Sponsoring-Anfrage am 19.08.2026; nur automatische Eingangsbestätigung gefunden. Brand-Dedupe aktiv."
-                     }
-                 ]
+  "generatedAt": "2026-09-30T02:25:00+02:00",
+  "purpose": "Deduplication and status tracking for Angebotslotse affiliate/partner outreach. No contracts are auto-accepted.",
+  "statuses": [
+    {
+      "brand": "Coolblue DE",
+      "network": "Awin",
+      "status": "reactivation-requested",
+      "lastContactAt": "2026-09-30T01:38:00+02:00",
+      "contact": "affiliate@coolblue.de",
+      "nextAction": "Antwort von Anne Weitkämper abwarten; falls erforderlich Website im Awin-Konto als Property hinterlegen und danach erneut zur Prüfung melden.",
+      "notes": "Publisher-ID 3045061 und Live-URL des Angebotslotse erneut im bestehenden Thread gesendet. Coolblue-Links bis bestätigter Freigabe gesperrt lassen."
+    },
+    {
+      "brand": "EcoFlow DE",
+      "network": "direct/affiliate",
+      "status": "bounced",
+      "lastContactAt": "2026-09-29T02:59:39+02:00",
+      "contact": "eu.affiliate@ecoflow.com",
+      "nextAction": "Nicht erneut an dieselbe Adresse senden; nur bei verifiziertem alternativen offiziellen Affiliate-Kontakt erneut prüfen."
+    },
+    {
+      "brand": "Anker DE",
+      "network": "Awin",
+      "status": "pending",
+      "lastContactAt": "2026-09-29T13:25:00+02:00",
+      "contact": "affiliate@anker.com",
+      "nextAction": "Antwort/Freischaltung überwachen; bei Freigabe Feed, Promotions, Creatives und Deeplinks integrieren."
+    },
+    {
+      "brand": "ECOVACS DE",
+      "network": "Awin",
+      "status": "pending",
+      "lastContactAt": "2026-09-29T13:25:00+02:00",
+      "contact": "partner@affprogramhub.com",
+      "nextAction": "Antwort/Freischaltung überwachen; bei Freigabe Produktfeed, Promotions und Creatives integrieren."
+    },
+    {
+      "brand": "Samsung Shop DE",
+      "network": "Awin",
+      "status": "pending",
+      "lastContactAt": "2026-09-29T13:36:00+02:00",
+      "contact": "samsung@sunnysales.de",
+      "nextAction": "Antwort/Freischaltung überwachen; bei Freigabe Produktfeed, Deeplinks und Promotions integrieren."
+    },
+    {
+      "brand": "Dyson DE",
+      "network": "Awin",
+      "status": "pending",
+      "lastContactAt": "2026-09-29T13:36:00+02:00",
+      "contact": [
+        "nicole.schlueter@awin.com",
+        "verena.witkowski@awin.com"
+      ],
+      "nextAction": "Antwort/Freischaltung überwachen; bei Freigabe Produktfeed, Kampagnen und Creatives integrieren."
+    },
+    {
+      "brand": "Bosch Hausgeräte DE",
+      "network": "Awin",
+      "status": "pending",
+      "lastContactAt": "2026-09-29T13:40:00+02:00",
+      "contact": "bsh-affiliate@house-of-communication.com",
+      "nextAction": "Antwort/Freischaltung überwachen; bei Freigabe Produktfeed, Endkundenaktionen und Werbemittel integrieren."
+    },
+    {
+      "brand": "Sanpro DE",
+      "network": "Awin",
+      "status": "bounced",
+      "lastContactAt": "2026-09-29T13:38:19+02:00",
+      "contact": "sanpro@network-genius.com",
+      "nextAction": "Nicht erneut an dieselbe Adresse senden; nur bei verifiziertem alternativen offiziellen Affiliate-Kontakt erneut prüfen.",
+      "notes": "Zustellung fehlgeschlagen: Microsoft 554 5.4.14 / Hop count exceeded; Empfängeradresse wurde nicht zugestellt."
+    },
+    {
+      "brand": "DECATHLON DE",
+      "network": "Awin",
+      "status": "pending",
+      "lastContactAt": "2026-09-29T13:45:00+02:00",
+      "contact": "manuel.veenhues@decathlon.com",
+      "nextAction": "Antwort/Freischaltung überwachen; bei Freigabe täglich aktualisierten Produktfeed, Deeplinks, Aktionen und Werbemittel integrieren.",
+      "notes": "Offizieller Affiliate-Ansprechpartner laut Awin-Programmprofil kontaktiert."
+    },
+    {
+      "brand": "Heise Compaliate / Preisvergleich",
+      "network": "direct/CPC-widget",
+      "status": "review-requested",
+      "lastContactAt": "2026-09-29T18:50:00+02:00",
+      "contact": "mareike.mueschen@heise.de",
+      "nextAction": "Antwort auf erneute technische Prüfung abwarten; keine Registrierung oder Vertragsannahme automatisch durchführen.",
+      "notes": "Heise bestätigt: thematisch geeignet, Einzelbetreiber möglich, GitHub-Pages JS/iFrame möglich, keine Grund-/Einrichtungs-/laufenden Gebühren oder Mindestreichweite, CPC-Share-Modell; nur Widgets, keine API/Feeds. Nach Website-Verbesserungen erneute Prüfung angefragt."
+    },
+    {
+      "brand": "Chime Mattress",
+      "network": "Impact",
+      "status": "rejected",
+      "lastContactAt": "2026-09-29T16:28:34+02:00",
+      "contact": "Impact notification",
+      "nextAction": "Nicht erneut bewerben, solange keine neue ausdrückliche Einladung oder relevante Programmänderung vorliegt.",
+      "notes": "Impact-Kampagne 56440 / Nectar Brand LLC (1233374): Bewerbung am 29.09.2026 ausdrücklich abgelehnt."
+    },
+    {
+      "brand": "ELV DE",
+      "network": "Awin",
+      "status": "pending",
+      "lastContactAt": "2026-09-30T01:41:00+02:00",
+      "contact": "elv@sunnysales.de",
+      "nextAction": "Antwort/Freischaltung abwarten; bei Freigabe Produktliste, Deeplinks und Aktionen integrieren.",
+      "notes": "Offizieller Affiliate-Kontakt laut Awin-Profil; unverbindliche Publisher-Eignungsanfrage für Angebotslotse gesendet. Publisher-ID 3045061."
+    },
+    {
+      "brand": "Pollin Electronic DE",
+      "network": "Awin",
+      "status": "pending",
+      "lastContactAt": "2026-09-30T01:41:00+02:00",
+      "contact": "partnerprogramm@pollin.de",
+      "nextAction": "Antwort/Freischaltung abwarten; bei Freigabe Produktlisten, Preise, Deeplinks und Aktionen integrieren.",
+      "notes": "Offizieller Affiliate-Kontakt laut Awin-Profil; unverbindliche Publisher-Eignungsanfrage gesendet. Publisher-ID 3045061."
+    },
+    {
+      "brand": "Ankerkraut DE",
+      "network": "Awin/direct",
+      "status": "pending",
+      "lastContactAt": "2026-09-30T01:41:00+02:00",
+      "contact": "marketing@ankerkraut.de",
+      "nextAction": "Antwort zum offiziellen Affiliate-/Publisher-Weg abwarten; keine Vertragsbedingungen automatisch akzeptieren.",
+      "notes": "Offizieller Marketing-/Partnership-Kontakt; unverbindliche Anfrage für Angebotslotse gesendet."
+    },
+    {
+      "brand": "Alternate DE",
+      "network": "direct/creator",
+      "status": "rejected",
+      "lastContactAt": "2026-09-02T19:43:09+02:00",
+      "contact": "jschaaf@alternate.de",
+      "nextAction": "Nicht erneut automatisch anschreiben. Nur bei ausdrücklicher neuer Einladung oder klar neuer, vom bisherigen Creator-Kontext unabhängiger Affiliate-Freigabe prüfen.",
+      "notes": "Frühere Kooperationsanfrage am 02.09.2026 abgelehnt; zur Vermeidung unnötiger Doppelansprache aus Routine-Outreach ausschließen."
+    },
+    {
+      "brand": "INTERSPORT DE",
+      "network": "Awin",
+      "status": "pending",
+      "lastContactAt": "2026-09-30T02:05:00+02:00",
+      "contact": "mara.wieland@intersport.de",
+      "nextAction": "Antwort/Freischaltung abwarten; bei Freigabe Produktfeed, Deeplinks und Aktionen integrieren.",
+      "notes": "Offizieller Affiliate-Kontakt laut Awin-Profil; unverbindliche Publisher-Anfrage gesendet. Publisher-ID 3045061."
+    },
+    {
+      "brand": "BSTN DACH",
+      "network": "Awin",
+      "status": "pending",
+      "lastContactAt": "2026-09-30T02:05:00+02:00",
+      "contact": "michael.dorsch@bstn.com",
+      "nextAction": "Antwort/Freischaltung abwarten; bei Freigabe Produktfeed und Aktionen integrieren.",
+      "notes": "Offizieller Affiliate-Kontakt laut BSTN/Awin; unverbindliche Publisher-Anfrage gesendet. Publisher-ID 3045061."
+    },
+    {
+      "brand": "Sportspar DE",
+      "network": "Awin",
+      "status": "pending",
+      "lastContactAt": "2026-09-30T02:05:00+02:00",
+      "contact": "a.borisenko@sportspar.de",
+      "nextAction": "Antwort/Freischaltung abwarten; bei Freigabe Deal-Daten, Produktfeed und Deeplinks integrieren.",
+      "notes": "Offizieller Affiliate-Kontakt laut Awin; unverbindliche Publisher-Anfrage gesendet. Publisher-ID 3045061."
+    },
+    {
+      "brand": "PremiumSIM DE",
+      "network": "Awin",
+      "status": "pending",
+      "lastContactAt": "2026-09-30T02:05:00+02:00",
+      "contact": "partner@drillisch-online.de",
+      "nextAction": "Antwort/Freischaltung abwarten; bei Freigabe Tarif-/Aktionsdaten und Deeplinks integrieren.",
+      "notes": "Offizieller Affiliate-Kontakt laut Awin; unverbindliche Publisher-Anfrage gesendet. Publisher-ID 3045061."
+    },
+    {
+      "brand": "One DE",
+      "network": "direct/creator",
+      "status": "pending",
+      "lastContactAt": "2026-08-19T14:38:32+02:00",
+      "contact": "info@one.de",
+      "nextAction": "Nicht zusätzlich automatisch als Affiliate neu anschreiben, solange die frühere Creator-Anfrage ohne persönliche Antwort offen ist.",
+      "notes": "Frühere Creator-/Sponsoring-Anfrage am 19.08.2026; nur automatische Eingangsbestätigung gefunden. Brand-Dedupe aktiv."
+    }
+  ]
 }
