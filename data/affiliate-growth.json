@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-30T20:49:23.752Z",
+  "generatedAt": "2026-09-30T20:34:30.088Z",
   "market": "DE",
   "publisherId": 3045061,
   "awin": {
@@ -3018,9 +3018,96 @@
     "feeds": [
       {
         "source": "awin-enhanced-feeds",
-        "state": "error",
-        "count": 0,
-        "audit": null
+        "state": "ok",
+        "count": 415,
+        "audit": {
+          "feeds": [
+            {
+              "advertiserId": 14172,
+              "advertiserName": "EMP DE",
+              "locale": "de_DE",
+              "state": "not-found"
+            },
+            {
+              "advertiserId": 14172,
+              "advertiserName": "EMP DE",
+              "locale": "en_DE",
+              "state": "not-found"
+            },
+            {
+              "advertiserId": 85171,
+              "advertiserName": "Coolblue DE",
+              "locale": "de_DE",
+              "state": "not-found"
+            },
+            {
+              "advertiserId": 85171,
+              "advertiserName": "Coolblue DE",
+              "locale": "en_DE",
+              "state": "not-found"
+            },
+            {
+              "advertiserId": 125144,
+              "advertiserName": "ANTHBOT DE",
+              "locale": "de_DE",
+              "state": "available",
+              "products": 161,
+              "rawProducts": 161,
+              "validProducts": 161,
+              "withPrice": 161,
+              "withImage": 161,
+              "withTracking": 161,
+              "rejected": 0,
+              "rejectionReasons": {}
+            },
+            {
+              "advertiserId": 125816,
+              "advertiserName": "Imou DE",
+              "locale": "de_DE",
+              "state": "not-found"
+            },
+            {
+              "advertiserId": 125816,
+              "advertiserName": "Imou DE",
+              "locale": "en_DE",
+              "state": "not-found"
+            },
+            {
+              "advertiserId": 127821,
+              "advertiserName": "Outin Germany",
+              "locale": "de_DE",
+              "state": "available",
+              "products": 54,
+              "rawProducts": 54,
+              "validProducts": 54,
+              "withPrice": 54,
+              "withImage": 54,
+              "withTracking": 54,
+              "rejected": 0,
+              "rejectionReasons": {}
+            },
+            {
+              "advertiserId": 128051,
+              "advertiserName": "Hollyland DE",
+              "locale": "de_DE",
+              "state": "not-found"
+            },
+            {
+              "advertiserId": 128051,
+              "advertiserName": "Hollyland DE",
+              "locale": "en_DE",
+              "state": "available",
+              "products": 200,
+              "rawProducts": 366,
+              "validProducts": 200,
+              "withPrice": 200,
+              "withImage": 200,
+              "withTracking": 200,
+              "rejected": 0,
+              "rejectionReasons": {}
+            }
+          ]
+        }
       },
       {
         "source": "awin-product-feeds",
@@ -3042,10 +3129,38 @@
     "opportunities": [],
     "marketplaceSearches": [
       {
-        "category": "Haushalt & Küche",
-        "siteOffers": 2,
+        "category": "Audio & Creator",
+        "siteOffers": 57,
         "joinedPrograms": 0,
-        "gapScore": 2,
+        "gapScore": 57,
+        "searchTerms": [
+          "audio",
+          "music",
+          "headphones",
+          "microphone",
+          "recording",
+          "creator"
+        ],
+        "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
+      },
+      {
+        "category": "Garten & Werkzeug",
+        "siteOffers": 56,
+        "joinedPrograms": 0,
+        "gapScore": 56,
+        "searchTerms": [
+          "garden",
+          "mower",
+          "tools",
+          "DIY"
+        ],
+        "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
+      },
+      {
+        "category": "Haushalt & Küche",
+        "siteOffers": 53,
+        "joinedPrograms": 0,
+        "gapScore": 53,
         "searchTerms": [
           "home",
           "appliances",
@@ -3056,9 +3171,9 @@
       },
       {
         "category": "Technik & Computer",
-        "siteOffers": 1,
+        "siteOffers": 45,
         "joinedPrograms": 0,
-        "gapScore": 1,
+        "gapScore": 45,
         "searchTerms": [
           "electronics",
           "computer",
@@ -3082,17 +3197,15 @@
         "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
       },
       {
-        "category": "Audio & Creator",
+        "category": "Freizeit & Reisen",
         "siteOffers": 1,
         "joinedPrograms": 0,
         "gapScore": 1,
         "searchTerms": [
-          "audio",
-          "music",
-          "headphones",
-          "microphone",
-          "recording",
-          "creator"
+          "travel",
+          "outdoor",
+          "hobby",
+          "tickets"
         ],
         "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
       }
@@ -3107,24 +3220,9 @@
     "marketplaceSearches": [
       {
         "network": "Daisycon",
-        "category": "Haushalt & Alltag",
-        "siteOffers": 2,
-        "priority": "niedrig",
-        "searchTerms": [
-          "home",
-          "appliances",
-          "kitchen",
-          "garden",
-          "DIY"
-        ],
-        "connected": false,
-        "action": "Daisycon-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Haushalt & Alltag priorisieren."
-      },
-      {
-        "network": "Daisycon",
         "category": "Audio & Musik",
-        "siteOffers": 1,
-        "priority": "niedrig",
+        "siteOffers": 57,
+        "priority": "hoch",
         "searchTerms": [
           "audio",
           "music",
@@ -3137,9 +3235,24 @@
       },
       {
         "network": "Daisycon",
+        "category": "Haushalt & Alltag",
+        "siteOffers": 56,
+        "priority": "hoch",
+        "searchTerms": [
+          "home",
+          "appliances",
+          "kitchen",
+          "garden",
+          "DIY"
+        ],
+        "connected": false,
+        "action": "Daisycon-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Haushalt & Alltag priorisieren."
+      },
+      {
+        "network": "Daisycon",
         "category": "Technik & Computer",
-        "siteOffers": 1,
-        "priority": "niedrig",
+        "siteOffers": 45,
+        "priority": "mittel",
         "searchTerms": [
           "electronics",
           "computer",
@@ -3149,6 +3262,20 @@
         ],
         "connected": false,
         "action": "Daisycon-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Technik & Computer priorisieren."
+      },
+      {
+        "network": "Daisycon",
+        "category": "Freizeit",
+        "siteOffers": 1,
+        "priority": "niedrig",
+        "searchTerms": [
+          "travel",
+          "outdoor",
+          "hobby",
+          "tickets"
+        ],
+        "connected": false,
+        "action": "Daisycon-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Freizeit priorisieren."
       }
     ]
   },
@@ -3157,24 +3284,9 @@
     "marketplaceSearches": [
       {
         "network": "Tradedoubler",
-        "category": "Haushalt & Alltag",
-        "siteOffers": 2,
-        "priority": "niedrig",
-        "searchTerms": [
-          "home",
-          "appliances",
-          "kitchen",
-          "garden",
-          "DIY"
-        ],
-        "connected": false,
-        "action": "Tradedoubler-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Haushalt & Alltag priorisieren."
-      },
-      {
-        "network": "Tradedoubler",
         "category": "Audio & Musik",
-        "siteOffers": 1,
-        "priority": "niedrig",
+        "siteOffers": 57,
+        "priority": "hoch",
         "searchTerms": [
           "audio",
           "music",
@@ -3187,9 +3299,24 @@
       },
       {
         "network": "Tradedoubler",
+        "category": "Haushalt & Alltag",
+        "siteOffers": 56,
+        "priority": "hoch",
+        "searchTerms": [
+          "home",
+          "appliances",
+          "kitchen",
+          "garden",
+          "DIY"
+        ],
+        "connected": false,
+        "action": "Tradedoubler-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Haushalt & Alltag priorisieren."
+      },
+      {
+        "network": "Tradedoubler",
         "category": "Technik & Computer",
-        "siteOffers": 1,
-        "priority": "niedrig",
+        "siteOffers": 45,
+        "priority": "mittel",
         "searchTerms": [
           "electronics",
           "computer",
@@ -3199,6 +3326,20 @@
         ],
         "connected": false,
         "action": "Tradedoubler-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Technik & Computer priorisieren."
+      },
+      {
+        "network": "Tradedoubler",
+        "category": "Freizeit",
+        "siteOffers": 1,
+        "priority": "niedrig",
+        "searchTerms": [
+          "travel",
+          "outdoor",
+          "hobby",
+          "tickets"
+        ],
+        "connected": false,
+        "action": "Tradedoubler-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Freizeit priorisieren."
       }
     ],
     "programJoinAutomation": "not-verified",
@@ -3212,24 +3353,9 @@
     "marketplaceSearches": [
       {
         "network": "Webgains",
-        "category": "Haushalt & Alltag",
-        "siteOffers": 2,
-        "priority": "niedrig",
-        "searchTerms": [
-          "home",
-          "appliances",
-          "kitchen",
-          "garden",
-          "DIY"
-        ],
-        "connected": false,
-        "action": "Webgains-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Haushalt & Alltag priorisieren."
-      },
-      {
-        "network": "Webgains",
         "category": "Audio & Musik",
-        "siteOffers": 1,
-        "priority": "niedrig",
+        "siteOffers": 57,
+        "priority": "hoch",
         "searchTerms": [
           "audio",
           "music",
@@ -3242,9 +3368,24 @@
       },
       {
         "network": "Webgains",
+        "category": "Haushalt & Alltag",
+        "siteOffers": 56,
+        "priority": "hoch",
+        "searchTerms": [
+          "home",
+          "appliances",
+          "kitchen",
+          "garden",
+          "DIY"
+        ],
+        "connected": false,
+        "action": "Webgains-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Haushalt & Alltag priorisieren."
+      },
+      {
+        "network": "Webgains",
         "category": "Technik & Computer",
-        "siteOffers": 1,
-        "priority": "niedrig",
+        "siteOffers": 45,
+        "priority": "mittel",
         "searchTerms": [
           "electronics",
           "computer",
@@ -3254,6 +3395,20 @@
         ],
         "connected": false,
         "action": "Webgains-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Technik & Computer priorisieren."
+      },
+      {
+        "network": "Webgains",
+        "category": "Freizeit",
+        "siteOffers": 1,
+        "priority": "niedrig",
+        "searchTerms": [
+          "travel",
+          "outdoor",
+          "hobby",
+          "tickets"
+        ],
+        "connected": false,
+        "action": "Webgains-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Freizeit priorisieren."
       }
     ],
     "programMembershipApi": "documented",
@@ -3261,15 +3416,15 @@
     "reason": "Webgains Memberships und Terms werden automatisch gelesen; accept_terms=true wird nur nach ausdrücklicher menschlicher Bestätigung des geprüften Terms-Stands verwendet."
   },
   "publication": {
-    "offers": 8,
+    "offers": 216,
     "concreteAwaitingMedia": 1,
     "blockedPublisherPromotions": 4,
     "partnerEntries": 219,
-    "merchants": 5,
-    "products": 0,
-    "images": 0,
+    "merchants": 6,
+    "products": 208,
+    "images": 208,
     "videos": 0,
-    "prices": 0,
+    "prices": 208,
     "discounts": 0,
     "coupons": 5
   },

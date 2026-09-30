@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-30T20:49:23.725Z",
+  "generatedAt": "2026-09-30T20:34:30.067Z",
   "newAwinPrograms": 0,
   "newImpactPrograms": 0,
   "newDaisyconPrograms": 0,
@@ -14,9 +14,9 @@
   "applicationCandidates": 2594,
   "newMerchants": 0,
   "newProducts": 0,
-  "productsWithImage": 0,
+  "productsWithImage": 208,
   "productsWithVideo": 0,
-  "productsWithPrice": 0,
+  "productsWithPrice": 208,
   "productsWithOldPrice": 0,
   "productsWithDiscount": 0,
   "newCoupons": 0,
@@ -25,60 +25,205 @@
   "expiredOffers": 0,
   "expiredCoupons": 0,
   "filteredForeignLocale": 0,
-  "totalProducts": 8,
+  "totalProducts": 216,
   "productsBySource": {
-    "Awin": 8
+    "Awin": 216
   },
-  "officialImagesBySource": {},
+  "officialImagesBySource": {
+    "Awin": 208
+  },
   "missingMediaBySource": {
     "Awin": 1
   },
   "productsByMerchant": {
+    "Hollyland DE": 97,
+    "ANTHBOT DE": 59,
+    "Outin Germany": 55,
     "EMP DE": 3,
-    "Outin Germany": 2,
-    "Hollyland DE": 1,
     "Imou DE": 1,
     "PDF Agile": 1
   },
   "productsByCategory": {
+    "audio-musik": 57,
+    "garten": 53,
+    "haushalt": 53,
+    "zubehoer": 40,
+    "computer": 4,
     "sonstiges": 3,
-    "haushalt": 2,
-    "audio-musik": 1,
-    "computer": 1,
-    "smart-home": 1
+    "werkzeug": 3,
+    "freizeit": 1,
+    "smart-home": 1,
+    "technik": 1
   },
-  "awinEnhancedFeeds": [],
+  "awinEnhancedFeeds": [
+    {
+      "advertiserId": 14172,
+      "advertiserName": "EMP DE",
+      "locale": "de_DE",
+      "state": "not-found"
+    },
+    {
+      "advertiserId": 14172,
+      "advertiserName": "EMP DE",
+      "locale": "en_DE",
+      "state": "not-found"
+    },
+    {
+      "advertiserId": 85171,
+      "advertiserName": "Coolblue DE",
+      "locale": "de_DE",
+      "state": "not-found"
+    },
+    {
+      "advertiserId": 85171,
+      "advertiserName": "Coolblue DE",
+      "locale": "en_DE",
+      "state": "not-found"
+    },
+    {
+      "advertiserId": 125144,
+      "advertiserName": "ANTHBOT DE",
+      "locale": "de_DE",
+      "state": "available",
+      "products": 161,
+      "rawProducts": 161,
+      "validProducts": 161,
+      "withPrice": 161,
+      "withImage": 161,
+      "withTracking": 161,
+      "rejected": 0,
+      "rejectionReasons": {}
+    },
+    {
+      "advertiserId": 125816,
+      "advertiserName": "Imou DE",
+      "locale": "de_DE",
+      "state": "not-found"
+    },
+    {
+      "advertiserId": 125816,
+      "advertiserName": "Imou DE",
+      "locale": "en_DE",
+      "state": "not-found"
+    },
+    {
+      "advertiserId": 127821,
+      "advertiserName": "Outin Germany",
+      "locale": "de_DE",
+      "state": "available",
+      "products": 54,
+      "rawProducts": 54,
+      "validProducts": 54,
+      "withPrice": 54,
+      "withImage": 54,
+      "withTracking": 54,
+      "rejected": 0,
+      "rejectionReasons": {}
+    },
+    {
+      "advertiserId": 128051,
+      "advertiserName": "Hollyland DE",
+      "locale": "de_DE",
+      "state": "not-found"
+    },
+    {
+      "advertiserId": 128051,
+      "advertiserName": "Hollyland DE",
+      "locale": "en_DE",
+      "state": "available",
+      "products": 200,
+      "rawProducts": 366,
+      "validProducts": 200,
+      "withPrice": 200,
+      "withImage": 200,
+      "withTracking": 200,
+      "rejected": 0,
+      "rejectionReasons": {}
+    }
+  ],
   "awinEnhancedDedupe": {
-    "inputRows": 0,
-    "normalizedRows": 0,
-    "filteredBeforeDedupe": 0,
-    "outputOffers": 0,
-    "dedupedRows": 0,
-    "collapsedRows": 0,
-    "byMerchant": []
+    "inputRows": 415,
+    "normalizedRows": 216,
+    "filteredBeforeDedupe": 199,
+    "outputOffers": 208,
+    "dedupedRows": 8,
+    "collapsedRows": 207,
+    "byMerchant": [
+      {
+        "merchant": "ANTHBOT DE",
+        "inputRows": 161,
+        "normalizedRows": 62,
+        "filteredBeforeDedupe": 99,
+        "outputOffers": 59,
+        "dedupedRows": 3,
+        "collapsedRows": 102,
+        "rowsWithGtin": 6,
+        "duplicateGtinExtras": 3,
+        "rowsWithMpn": 158,
+        "duplicateMpnExtras": 105,
+        "duplicateSourceIdExtras": 0,
+        "rejectionReasons": {
+          "blocked-non-merchandise": 99
+        }
+      },
+      {
+        "merchant": "Hollyland DE",
+        "inputRows": 200,
+        "normalizedRows": 100,
+        "filteredBeforeDedupe": 100,
+        "outputOffers": 96,
+        "dedupedRows": 4,
+        "collapsedRows": 104,
+        "rowsWithGtin": 95,
+        "duplicateGtinExtras": 4,
+        "rowsWithMpn": 200,
+        "duplicateMpnExtras": 99,
+        "duplicateSourceIdExtras": 0,
+        "rejectionReasons": {
+          "blocked-non-merchandise": 100
+        }
+      },
+      {
+        "merchant": "Outin Germany",
+        "inputRows": 54,
+        "normalizedRows": 54,
+        "filteredBeforeDedupe": 0,
+        "outputOffers": 53,
+        "dedupedRows": 1,
+        "collapsedRows": 1,
+        "rowsWithGtin": 10,
+        "duplicateGtinExtras": 1,
+        "rowsWithMpn": 54,
+        "duplicateMpnExtras": 0,
+        "duplicateSourceIdExtras": 0,
+        "rejectionReasons": {}
+      }
+    ]
   },
   "quarantinedRecords": 130,
   "blockedPublisherPromotions": 4,
-  "dailyDeal": "082bb91da12d2048",
+  "dailyDeal": "2a01a48be68aebb3",
   "dailyHighlights": [
-    "082bb91da12d2048",
-    "eab48839b81fd0dc",
-    "f74abc6b07883d50",
-    "cfdc2f58b29a6d49",
-    "e5e0705dfd6c9fb4"
+    "2a01a48be68aebb3",
+    "29d2a178b5b502ba",
+    "064f9fca5159a01d",
+    "ca56d808d3c14eb1",
+    "134153f06aa7013c"
   ],
   "weekDeals": [
+    "ca56d808d3c14eb1",
+    "2a01a48be68aebb3",
     "5ddceb8cbe41971d",
     "082bb91da12d2048",
-    "ad2ac243a83e92ac"
+    "6b0f463fb47703de"
   ],
   "monthHighlights": [
-    "5ddceb8cbe41971d",
-    "082bb91da12d2048",
-    "cfdc2f58b29a6d49",
-    "ad2ac243a83e92ac",
-    "e983835a0f9d79e0"
+    "ca56d808d3c14eb1",
+    "2a01a48be68aebb3",
+    "10bb463f70696c2e",
+    "0055caa27aa9a32c",
+    "0a432f17c1a1c534"
   ],
-  "apiErrors": 1,
+  "apiErrors": 0,
   "affiliateLinkErrors": 0
 }
