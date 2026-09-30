@@ -1,7 +1,7 @@
 {
   "version": 1,
   "source": "social-distributor",
-  "updatedAt": "2026-09-30T01:22:41.202Z",
+  "updatedAt": "2026-09-30T01:33:32.379Z",
   "videos": [
     {
       "id": "instagram-b353e2b6-2887-4826-8158-22ea247d6a3b",
@@ -22,7 +22,7 @@
     {
       "id": "youtube-5dd4e9eb-2ee1-48c2-a5b8-0263294c5b5e",
       "title": "Menschen zeigen nicht immer, was in ihnen vorgeht",
-      "thumbnailUrl": null,
+      "thumbnailUrl": "https://i.ytimg.com/vi/5T0e7jzMK7o/hqdefault.jpg",
       "publicUrl": "https://www.youtube.com/shorts/5T0e7jzMK7o",
       "platform": "YouTube",
       "publishedAt": "2026-09-26T21:22:22.097Z"
