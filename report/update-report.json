@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-30T00:45:22.955Z",
+  "generatedAt": "2026-09-30T00:48:25.343Z",
   "newAwinPrograms": 0,
   "newImpactPrograms": 0,
   "newDaisyconPrograms": 0,
@@ -144,7 +144,10 @@
         "duplicateGtinExtras": 3,
         "rowsWithMpn": 158,
         "duplicateMpnExtras": 105,
-        "duplicateSourceIdExtras": 0
+        "duplicateSourceIdExtras": 0,
+        "rejectionReasons": {
+          "blocked-non-merchandise": 99
+        }
       },
       {
         "merchant": "Hollyland DE",
@@ -158,7 +161,10 @@
         "duplicateGtinExtras": 5,
         "rowsWithMpn": 240,
         "duplicateMpnExtras": 99,
-        "duplicateSourceIdExtras": 0
+        "duplicateSourceIdExtras": 0,
+        "rejectionReasons": {
+          "blocked-non-merchandise": 100
+        }
       },
       {
         "merchant": "Outin Germany",
@@ -172,7 +178,8 @@
         "duplicateGtinExtras": 1,
         "rowsWithMpn": 54,
         "duplicateMpnExtras": 0,
-        "duplicateSourceIdExtras": 0
+        "duplicateSourceIdExtras": 0,
+        "rejectionReasons": {}
       }
     ]
   },
