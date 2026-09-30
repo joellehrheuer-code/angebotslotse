@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-30T00:36:54.685Z",
+  "generatedAt": "2026-09-30T00:42:08.657Z",
   "newAwinPrograms": 0,
   "newImpactPrograms": 0,
   "newDaisyconPrograms": 0,
@@ -12,8 +12,8 @@
   "networkReviewActions": 6,
   "awinDiscoveryOffers": 200,
   "applicationCandidates": 2596,
-  "newMerchants": 1,
-  "newProducts": 3,
+  "newMerchants": 0,
+  "newProducts": 0,
   "productsWithImage": 247,
   "productsWithVideo": 0,
   "productsWithPrice": 247,
@@ -124,6 +124,46 @@
       "rejectionReasons": {}
     }
   ],
+  "awinEnhancedDedupe": {
+    "inputRows": 455,
+    "outputOffers": 247,
+    "collapsedRows": 208,
+    "byMerchant": [
+      {
+        "merchant": "ANTHBOT DE",
+        "inputRows": 161,
+        "outputOffers": 59,
+        "collapsedRows": 102,
+        "rowsWithGtin": 6,
+        "duplicateGtinExtras": 3,
+        "rowsWithMpn": 158,
+        "duplicateMpnExtras": 105,
+        "duplicateSourceIdExtras": 0
+      },
+      {
+        "merchant": "Hollyland DE",
+        "inputRows": 240,
+        "outputOffers": 135,
+        "collapsedRows": 105,
+        "rowsWithGtin": 135,
+        "duplicateGtinExtras": 5,
+        "rowsWithMpn": 240,
+        "duplicateMpnExtras": 99,
+        "duplicateSourceIdExtras": 0
+      },
+      {
+        "merchant": "Outin Germany",
+        "inputRows": 54,
+        "outputOffers": 53,
+        "collapsedRows": 1,
+        "rowsWithGtin": 10,
+        "duplicateGtinExtras": 1,
+        "rowsWithMpn": 54,
+        "duplicateMpnExtras": 0,
+        "duplicateSourceIdExtras": 0
+      }
+    ]
+  },
   "quarantinedRecords": 130,
   "blockedPublisherPromotions": 4,
   "dailyDeal": "6b0f463fb47703de",
