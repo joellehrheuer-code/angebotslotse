@@ -270,12 +270,20 @@ const homepageTopDiscounts=diversifyOffers(topDiscounts,{limit:10,maxPerBrand:2,
 const homepageTech=diversifyOffers(offers.filter(o=>["gaming","technik","computer","audio-musik","zubehoer","smart-home","homeoffice"].includes(o.category)).sort((a,b)=>qualityScore(b)-qualityScore(a)),{limit:10,maxPerBrand:2,maxPerMerchant:2,maxPerCategory:3});
 const homepageEveryday=diversifyOffers(offers.filter(o=>["haushalt","garten","werkzeug","mode","sport-fitness","gesundheit","beauty","auto","tierbedarf","freizeit"].includes(o.category)).sort((a,b)=>qualityScore(b)-qualityScore(a)),{limit:10,maxPerBrand:2,maxPerMerchant:2,maxPerCategory:3});
 const homepageSeenIds=new Set(homepage.dailyDeal?.id?[homepage.dailyDeal.id]:[]);
-const takeUniqueHomepage=(items,limit)=>{
+const takeUniqueHomepage=(items,limit,minItems=Math.min(4,limit))=>{
   const rows=uniqueOfferRows(items),selected=[];
   for(const item of rows){
     if(selected.length>=limit)break;
     if(homepageSeenIds.has(item.id))continue;
     selected.push(item);homepageSeenIds.add(item.id);
+  }
+  const minimum=Math.min(minItems,rows.length);
+  if(selected.length<minimum){
+    for(const item of rows){
+      if(selected.length>=minimum)break;
+      if(selected.some(row=>row.id===item.id))continue;
+      selected.push(item);
+    }
   }
   return selected;
 };
