@@ -14,7 +14,8 @@
     "seo": "node scripts/seo-audit.mjs",
     "check": "node scripts/integrity.mjs",
     "report": "node scripts/report.mjs",
-    "test": "node --test --test-concurrency=1"
+    "test": "node --test --test-concurrency=1",
+    "cashback:sync": "node scripts/cashback-sync.mjs"
   },
   "engines": {
     "node": ">=20"
