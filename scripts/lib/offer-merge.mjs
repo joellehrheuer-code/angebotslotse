@@ -81,7 +81,9 @@ export function mergeOfferInventory({ freshOffers, oldOffers, sources, now = new
 
     const reason = guardReason === "unavailable"
       ? `source-${info?.sourceNames.join("+")}-${info?.hasError ? "unavailable" : "disabled"}`
-      : guardReason;
+      : guardReason === "partial-source-disabled"
+        ? `source-${info?.sourceNames.join("+")}-disabled`
+        : guardReason;
     merged.set(oldOffer.id, markStale(oldOffer, now, reason));
   }
 
