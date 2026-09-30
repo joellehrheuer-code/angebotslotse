@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-30T00:42:08.657Z",
+  "generatedAt": "2026-09-30T00:45:22.955Z",
   "newAwinPrograms": 0,
   "newImpactPrograms": 0,
   "newDaisyconPrograms": 0,
@@ -126,13 +126,19 @@
   ],
   "awinEnhancedDedupe": {
     "inputRows": 455,
+    "normalizedRows": 256,
+    "filteredBeforeDedupe": 199,
     "outputOffers": 247,
+    "dedupedRows": 9,
     "collapsedRows": 208,
     "byMerchant": [
       {
         "merchant": "ANTHBOT DE",
         "inputRows": 161,
+        "normalizedRows": 62,
+        "filteredBeforeDedupe": 99,
         "outputOffers": 59,
+        "dedupedRows": 3,
         "collapsedRows": 102,
         "rowsWithGtin": 6,
         "duplicateGtinExtras": 3,
@@ -143,7 +149,10 @@
       {
         "merchant": "Hollyland DE",
         "inputRows": 240,
+        "normalizedRows": 140,
+        "filteredBeforeDedupe": 100,
         "outputOffers": 135,
+        "dedupedRows": 5,
         "collapsedRows": 105,
         "rowsWithGtin": 135,
         "duplicateGtinExtras": 5,
@@ -154,7 +163,10 @@
       {
         "merchant": "Outin Germany",
         "inputRows": 54,
+        "normalizedRows": 54,
+        "filteredBeforeDedupe": 0,
         "outputOffers": 53,
+        "dedupedRows": 1,
         "collapsedRows": 1,
         "rowsWithGtin": 10,
         "duplicateGtinExtras": 1,
