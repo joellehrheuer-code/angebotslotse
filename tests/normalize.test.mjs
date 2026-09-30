@@ -1,5 +1,5 @@
 import test from "node:test"; import assert from "node:assert/strict";
-import { normalizeAndDedupe, normalizeOffer, isConcreteOffer, isPublicationReady, isAwaitingMediaOffer, isPublisherPromotion, isConsumerTextPromotion, dedupeKeyForOffer, isBlockedAdultOffer, isBlockedNonMerchandiseOffer, isSuppressedAdvertiserOffer, categoryFor } from "../scripts/lib/normalize.mjs";
+import { normalizeAndDedupe, normalizeOffer, isConcreteOffer, isPublicationReady, isAwaitingMediaOffer, isPublisherPromotion, isConsumerTextPromotion, dedupeKeyForOffer, isBlockedAdultOffer, isBlockedNonMerchandiseOffer, isSuppressedAdvertiserOffer, categoryFor, explainOfferRejection } from "../scripts/lib/normalize.mjs";
 import { fetchAwinOffers, formatAwinDateTime } from "../scripts/lib/awin.mjs";
 const config={marketCountry:"DE",maxOffers:100,categories:{elektronik:["audio"],sonstiges:[]}};
 const valid={promotionId:1,title:"Audio Aktion",description:"Sachlich",url:"https://shop.example/p",urlTracking:"https://awin1.com/x",advertiser:{id:2,name:"Shop",joined:true},regions:{list:[{countryCode:"DE"}]},endDate:"2099-01-01"};
@@ -72,3 +72,13 @@ test("Händler-Fallback erfindet keine Kategorie außerhalb der Config",()=>{
   const row={...valid,title:"ANTHBOT N8",advertiser:{id:9,name:"ANTHBOT DE",joined:true},urlTracking:"https://track.example/a",url:"https://shop.example/a"};
   assert.equal(normalizeOffer(row,cfg,new Date("2026-01-01")).category,"sonstiges");
 });
+
+test("Normalisierungsdiagnose benennt Schutz- und Marktfilter ohne Verhalten zu ändern",()=>{
+  const now=new Date("2026-01-01");
+  assert.equal(explainOfferRejection(valid,config,now),null);
+  assert.equal(explainOfferRejection({...valid,title:"(US) Audio Aktion"},config,now),"foreign-market-title");
+  assert.equal(explainOfferRejection({...valid,url:"javascript:alert(1)"},config,now),"missing-destination-url");
+  assert.equal(explainOfferRejection({...valid,title:"Premium Sexspielzeug"},config,now),"blocked-adult");
+  assert.equal(normalizeOffer({...valid,title:"(US) Audio Aktion"},config,now),null);
+});
+

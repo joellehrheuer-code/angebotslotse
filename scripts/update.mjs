@@ -1,6 +1,6 @@
 import fs from "node:fs/promises";
 import { collectSources } from "./lib/source-manager.mjs";
-import { normalizeAndDedupe, normalizeOffer, isConcreteOffer, isPublicationReady, isAwaitingMediaOffer, isPublisherPromotion, refineOfferCategory, isMarketCompatibleTitle } from "./lib/normalize.mjs";
+import { normalizeAndDedupe, normalizeOffer, explainOfferRejection, isConcreteOffer, isPublicationReady, isAwaitingMediaOffer, isPublisherPromotion, refineOfferCategory, isMarketCompatibleTitle } from "./lib/normalize.mjs";
 import { updatePriceHistory } from "./lib/price-history.mjs";
 import { selectHomepageOffers } from "./lib/homepage-selection.mjs";
 import { mergeOfferInventory } from "./lib/offer-merge.mjs";
@@ -76,7 +76,8 @@ try {
   const awinEnhancedDedupe = buildEnhancedFeedDedupeDiagnostics({
     rawRows: enhancedRawRows,
     preNormalizedOffers: enhancedPreNormalized,
-    normalizedOffers: normalizedFresh
+    normalizedOffers: normalizedFresh,
+    rejectionReasonForRow: row => explainOfferRejection(row, config, normalizedAt)
   });
   const mergedOffers = mergeOfferInventory({
     freshOffers: normalizedFresh,

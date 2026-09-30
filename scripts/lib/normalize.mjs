@@ -152,6 +152,27 @@ export const refineOfferCategory = (raw, config) => {
   return categoryForOffer(raw, advertiser, config);
 };
 
+export function explainOfferRejection(raw, config, now = new Date()) {
+  if (isBlockedAdultOffer(raw)) return "blocked-adult";
+  if (isBlockedNonMerchandiseOffer(raw)) return "blocked-non-merchandise";
+  if (isSuppressedAdvertiserOffer(raw, config)) return "suppressed-advertiser";
+  const title = text(raw.title, 180);
+  const trackingUrl = safeHttpUrl(raw.urlTracking ?? raw.trackingUrl);
+  const destinationUrl = safeHttpUrl(raw.url ?? raw.destinationUrl ?? raw.productUrl);
+  const endDate = raw.endDate ? new Date(raw.endDate) : null;
+  const startDate = raw.startDate ? new Date(raw.startDate) : null;
+  const regions = raw.regions?.all ? ["ALL"] : (raw.regions?.list ?? []).map(r => text(r.countryCode, 2).toUpperCase());
+  if (!title) return "missing-title";
+  if (!trackingUrl) return "missing-tracking-url";
+  if (!destinationUrl) return "missing-destination-url";
+  if (raw.advertiser?.joined === false) return "advertiser-not-joined";
+  if (!isMarketCompatibleTitle(title, config.marketCountry)) return "foreign-market-title";
+  if (endDate && (!Number.isFinite(endDate.valueOf()) || endDate < now)) return "invalid-or-expired-end-date";
+  if (startDate && Number.isFinite(startDate.valueOf()) && startDate > now) return "not-started";
+  if (regions.length && !regions.includes("ALL") && !regions.includes(config.marketCountry)) return "wrong-region";
+  return null;
+}
+
 export function normalizeOffer(raw, config, now = new Date()) {
   const title = text(raw.title, 180);
   if (isBlockedAdultOffer(raw) || isBlockedNonMerchandiseOffer(raw) || isSuppressedAdvertiserOffer(raw, config)) return null;

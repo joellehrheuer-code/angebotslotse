@@ -8,7 +8,7 @@ const countDuplicateExtras=values=>{
   return [...counts.values()].reduce((sum,count)=>sum+Math.max(0,count-1),0);
 };
 
-export function buildEnhancedFeedDedupeDiagnostics({rawRows=[],preNormalizedOffers=[],normalizedOffers=[]}={}){
+export function buildEnhancedFeedDedupeDiagnostics({rawRows=[],preNormalizedOffers=[],normalizedOffers=[],rejectionReasonForRow=()=>null}={}){
   const enhancedRaw=rawRows.filter(row=>String(row?.id??"").startsWith("enhanced-"));
   const enhancedPreNormalized=preNormalizedOffers.filter(row=>String(row?.sourceId??"").startsWith("enhanced-"));
   const enhancedNormalized=normalizedOffers.filter(row=>String(row?.sourceId??"").startsWith("enhanced-"));
@@ -20,6 +20,11 @@ export function buildEnhancedFeedDedupeDiagnostics({rawRows=[],preNormalizedOffe
     const gtins=raw.map(row=>clean(row.gtin??row.ean)).filter(Boolean).map(value=>signature(merchant,value));
     const mpns=raw.filter(row=>clean(row.mpn)).map(row=>signature(merchant,row.mpn,row.brand));
     const ids=raw.map(row=>clean(row.id)).filter(Boolean);
+    const rejectionReasons=Object.fromEntries([...raw.filter(row=>!pre.some(item=>String(item.sourceId??"")===String(row.id??""))).reduce((counts,row)=>{
+      const reason=clean(rejectionReasonForRow(row))||"unknown";
+      counts.set(reason,(counts.get(reason)||0)+1);
+      return counts;
+    },new Map())].sort((a,b)=>b[1]-a[1]||a[0].localeCompare(b[0])));
     return {
       merchant,
       inputRows:raw.length,
@@ -32,7 +37,8 @@ export function buildEnhancedFeedDedupeDiagnostics({rawRows=[],preNormalizedOffe
       duplicateGtinExtras:countDuplicateExtras(gtins),
       rowsWithMpn:mpns.length,
       duplicateMpnExtras:countDuplicateExtras(mpns),
-      duplicateSourceIdExtras:countDuplicateExtras(ids)
+      duplicateSourceIdExtras:countDuplicateExtras(ids),
+      rejectionReasons
     };
   });
   return {

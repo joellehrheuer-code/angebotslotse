@@ -20,7 +20,7 @@ test("Enhanced-Feed-Diagnose zählt Kollaps und Identifier-Dubletten pro Händle
     {sourceId:"enhanced-1-c",advertiser:"Shop A"},
     {sourceId:"enhanced-2-a",advertiser:"Shop B"}
   ];
-  const d=buildEnhancedFeedDedupeDiagnostics({rawRows,preNormalizedOffers,normalizedOffers});
+  const d=buildEnhancedFeedDedupeDiagnostics({rawRows,preNormalizedOffers,normalizedOffers,rejectionReasonForRow:row=>row.id==="enhanced-1-b"?"wrong-region":null});
   assert.equal(d.inputRows,4);
   assert.equal(d.normalizedRows,4);
   assert.equal(d.filteredBeforeDedupe,0);
@@ -47,3 +47,19 @@ test("Nicht-Enhanced-Zeilen werden aus der Diagnose ausgeschlossen",()=>{
   assert.equal(d.inputRows,0);
   assert.equal(d.outputOffers,0);
 });
+
+test("Enhanced-Feed-Diagnose gruppiert Normalisierungs-Ablehnungsgründe pro Händler",()=>{
+  const rawRows=[
+    {id:"enhanced-1-a",advertiserName:"Shop A"},
+    {id:"enhanced-1-b",advertiserName:"Shop A"},
+    {id:"enhanced-1-c",advertiserName:"Shop A"}
+  ];
+  const preNormalizedOffers=[{sourceId:"enhanced-1-a",advertiser:"Shop A"}];
+  const normalizedOffers=[{sourceId:"enhanced-1-a",advertiser:"Shop A"}];
+  const reasons={"enhanced-1-b":"foreign-market-title","enhanced-1-c":"missing-destination-url"};
+  const d=buildEnhancedFeedDedupeDiagnostics({rawRows,preNormalizedOffers,normalizedOffers,rejectionReasonForRow:row=>reasons[row.id]});
+  const a=d.byMerchant[0];
+  assert.equal(a.filteredBeforeDedupe,2);
+  assert.deepEqual(a.rejectionReasons,{"foreign-market-title":1,"missing-destination-url":1});
+});
+
