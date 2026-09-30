@@ -14,17 +14,19 @@ import { fetchCreatorVideoFeed } from "./lib/creator-videos.mjs";
 import { fetchCreatorSocialFeed } from "./lib/creator-feed.mjs";
 import { buildFailureStatus } from "./lib/update-status.mjs";
 
-const config = JSON.parse(await fs.readFile("config.json", "utf8"));
-const oldOffers = JSON.parse(await fs.readFile("data/offers.json", "utf8").catch(() => "[]"));
-const oldStatus = JSON.parse(await fs.readFile("data/status.json", "utf8").catch(() => "{}"));
-const partnerOutreachStatus=JSON.parse(await fs.readFile("report/partner-outreach-status.json","utf8").catch(() => '{"statuses":[]}' ));
-const partnerContactDirectory=JSON.parse(await fs.readFile("data/partner-contact-directory.json","utf8").catch(() => '{"contacts":[]}' ));
-const oldHistory = JSON.parse(await fs.readFile("data/price-history.json", "utf8").catch(() => "[]"));
-const oldArchive = JSON.parse(await fs.readFile("data/offer-archive.json", "utf8").catch(() => '{"items":[]}'));
-const oldProgramInventory = JSON.parse(await fs.readFile("report/program-inventory.json", "utf8").catch(() => '{"programs":[]}'));
-const oldCreatorVideos = JSON.parse(await fs.readFile("data/creator-videos.json", "utf8").catch(() => '{"version":1,"source":"public-only","updatedAt":null,"videos":[]}'));
-const oldCreatorFeed = JSON.parse(await fs.readFile("data/creator-feed.json", "utf8").catch(() => '{"version":1,"source":"public-only","updatedAt":null,"items":[]}'));
-const impactLinkPolicy = JSON.parse(await fs.readFile("data/impact-link-policy.json", "utf8").catch(() => "{}"));
+const readJson = async (path, fallback) => JSON.parse((await fs.readFile(path, "utf8").catch(() => fallback)).replace(/^\uFEFF/, ""));
+
+const config = await readJson("config.json", "{}");
+const oldOffers = await readJson("data/offers.json", "[]");
+const oldStatus = await readJson("data/status.json", "{}");
+const partnerOutreachStatus = await readJson("report/partner-outreach-status.json", '{"statuses":[]}');
+const partnerContactDirectory = await readJson("data/partner-contact-directory.json", '{"contacts":[]}');
+const oldHistory = await readJson("data/price-history.json", "[]");
+const oldArchive = await readJson("data/offer-archive.json", '{"items":[]}');
+const oldProgramInventory = await readJson("report/program-inventory.json", '{"programs":[]}');
+const oldCreatorVideos = await readJson("data/creator-videos.json", '{"version":1,"source":"public-only","updatedAt":null,"videos":[]}');
+const oldCreatorFeed = await readJson("data/creator-feed.json", '{"version":1,"source":"public-only","updatedAt":null,"items":[]}');
+const impactLinkPolicy = await readJson("data/impact-link-policy.json", "{}");
 const isQuarantinedByPolicy = offer => (impactLinkPolicy.quarantinedAdvertisers ?? []).some(rule =>
   (rule.advertiserId && String(rule.advertiserId) === String(offer.advertiserId)) ||
   (rule.advertiserName && String(rule.advertiserName).toLowerCase() === String(offer.advertiser).toLowerCase()));
