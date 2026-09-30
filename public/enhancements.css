@@ -576,3 +576,31 @@ main,.header-row,.nav-panel,footer{min-width:0}
 @media(prefers-reduced-motion:reduce){
   .reveal,.reveal.in-view{opacity:1!important;transform:none!important;animation:none!important}
 }
+
+
+/* V10 QA: mobile brand visibility and creator visual flow */
+.creator-visual img{
+  position:relative!important;
+  inset:auto!important;
+  width:100%!important;
+  height:auto!important;
+  max-height:220px!important;
+  margin:0 0 18px!important;
+  object-fit:contain!important;
+  object-position:center!important;
+  mix-blend-mode:normal!important;
+  opacity:1!important;
+}
+.creator-visual{justify-content:flex-end}
+@media(max-width:900px){
+  .site-header{min-height:118px}
+  .header-row{min-height:118px;align-content:center;padding-block:10px}
+  .brand b{display:block!important}
+  .global-search{order:3;flex:1 0 100%;max-width:none}
+  #main-nav{inset:118px 0 0}
+  .creator-visual img{max-height:200px!important}
+}
+@media(max-width:430px){
+  .brand b{display:block!important;max-width:128px;overflow:hidden;text-overflow:ellipsis}
+  .creator-visual img{max-height:170px!important}
+}
