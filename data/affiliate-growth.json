@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-30T05:32:05.508Z",
+  "generatedAt": "2026-09-30T08:45:22.371Z",
   "market": "DE",
   "publisherId": 3045061,
   "awin": {
@@ -8,9 +8,9 @@
       "pending": 5,
       "suspended": 0,
       "rejected": 1,
-      "notjoined": 2613
+      "notjoined": 2612
     },
-    "totalProgramsEvaluated": 2624,
+    "totalProgramsEvaluated": 2623,
     "reportedPrograms": 200,
     "programs": [
       {
@@ -1039,6 +1039,17 @@
       {
         "network": "Awin",
         "relationship": "notjoined",
+        "advertiserId": 25012,
+        "name": "Berliner Kaffeeroesterei DE",
+        "primarySector": "FMCG",
+        "primaryRegion": {
+          "name": "Germany",
+          "countryCode": "DE"
+        }
+      },
+      {
+        "network": "Awin",
+        "relationship": "notjoined",
         "advertiserId": 118519,
         "name": "Bernstein DE",
         "primarySector": "Home & Garden",
@@ -1306,17 +1317,6 @@
         "advertiserId": 14328,
         "name": "Body Attack DE",
         "primarySector": "Sports Equipment",
-        "primaryRegion": {
-          "name": "Germany",
-          "countryCode": "DE"
-        }
-      },
-      {
-        "network": "Awin",
-        "relationship": "notjoined",
-        "advertiserId": 15016,
-        "name": "Bodylab24 DE",
-        "primarySector": "Health & Beauty",
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
@@ -1853,17 +1853,6 @@
       {
         "network": "Awin",
         "relationship": "notjoined",
-        "advertiserId": 11783,
-        "name": "DELIFE EU",
-        "primarySector": "Furniture & Soft Furnishings",
-        "primaryRegion": {
-          "name": "Germany",
-          "countryCode": "DE"
-        }
-      },
-      {
-        "network": "Awin",
-        "relationship": "notjoined",
         "advertiserId": 22915,
         "name": "Delonghi DE",
         "primarySector": "Home & Garden",
@@ -1889,6 +1878,17 @@
         "advertiserId": 120411,
         "name": "Deluxehomeartshop DE",
         "primarySector": "Home & Garden",
+        "primaryRegion": {
+          "name": "Germany",
+          "countryCode": "DE"
+        }
+      },
+      {
+        "network": "Awin",
+        "relationship": "notjoined",
+        "advertiserId": 14100,
+        "name": "Denimfy.de",
+        "primarySector": "Clothing",
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
@@ -1933,6 +1933,17 @@
         "advertiserId": 10959,
         "name": "Die Moderne Hausfrau DE",
         "primarySector": "Department Stores",
+        "primaryRegion": {
+          "name": "Germany",
+          "countryCode": "DE"
+        }
+      },
+      {
+        "network": "Awin",
+        "relationship": "notjoined",
+        "advertiserId": 13954,
+        "name": "Die Weinbörse DE",
+        "primarySector": "Wine, Spirits & Tobacco",
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
@@ -2201,17 +2212,6 @@
           "name": "Germany",
           "countryCode": "DE"
         }
-      },
-      {
-        "network": "Awin",
-        "relationship": "notjoined",
-        "advertiserId": 24666,
-        "name": "Egret DE",
-        "primarySector": "Electronic Superstore",
-        "primaryRegion": {
-          "name": "Germany",
-          "countryCode": "DE"
-        }
       }
     ],
     "discoveryOffers": 200,
@@ -2224,10 +2224,12 @@
         "advertiserId": 30691,
         "status": "notjoined",
         "category": "Technik & Computer",
-        "score": 71,
+        "score": 77,
         "priority": "hoch",
-        "activeDiscoveryOffers": 0,
-        "offerExamples": [],
+        "activeDiscoveryOffers": 1,
+        "offerExamples": [
+          "Anker eufy Milchpumpe mit Ladecase S2 Pro - €319.99(€80off) w/Code: WS24T60A13B0"
+        ],
         "productFeed": false,
         "metrics": {
           "awinIndex": 65.64,
@@ -2243,12 +2245,13 @@
         "reasons": [
           "passt zu Technik & Computer",
           "strategisch relevante Marke",
+          "1 aktive DE-Aktion",
           "Awin Index 65.64",
           "Approval 90.07%",
           "EPC 1.42"
         ],
         "applicationRequired": true,
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Anker DE redaktionell passend im Bereich Technik & Computer einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Anker DE redaktionell passend im Bereich Technik & Computer einbinden. Bei Awin sind aktuell 1 für Deutschland sichtbare Aktion dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
         "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
         "automationState": "ready-for-review"
       },
@@ -2421,41 +2424,6 @@
         ],
         "applicationRequired": true,
         "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten iHerb EUR redaktionell passend im Bereich Gesundheit & Wellness einbinden. Bei Awin sind aktuell 3 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-        "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-        "automationState": "ready-for-review"
-      },
-      {
-        "brand": "tink DE",
-        "network": "Awin",
-        "advertiserId": 13686,
-        "status": "notjoined",
-        "category": "Technik & Computer",
-        "score": 48,
-        "priority": "mittel",
-        "activeDiscoveryOffers": 3,
-        "offerExamples": [
-          "10 EUR Gutschein auf Homematic-IP",
-          "10 EUR Rabatt auf EVE",
-          "10€ Rabatt auf Amazon Produkte"
-        ],
-        "productFeed": false,
-        "metrics": {
-          "awinIndex": null,
-          "epc": null,
-          "conversionRate": null,
-          "approvalPercentage": null,
-          "validationDays": null,
-          "averagePaymentTime": null,
-          "commissionMin": null,
-          "commissionMax": null,
-          "commissionTypes": []
-        },
-        "reasons": [
-          "passt zu Technik & Computer",
-          "3 aktive DE-Aktionen"
-        ],
-        "applicationRequired": true,
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten tink DE redaktionell passend im Bereich Technik & Computer einbinden. Bei Awin sind aktuell 3 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
         "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
         "automationState": "ready-for-review"
       },
@@ -3016,6 +2984,37 @@
         "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Samsung Shop DE redaktionell passend im Bereich Technik & Computer einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
         "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
         "automationState": "ready-for-review"
+      },
+      {
+        "brand": "Sony DE",
+        "network": "Awin",
+        "advertiserId": 34015,
+        "status": "notjoined",
+        "category": "Technik & Computer",
+        "score": 45,
+        "priority": "mittel",
+        "activeDiscoveryOffers": 0,
+        "offerExamples": [],
+        "productFeed": false,
+        "metrics": {
+          "awinIndex": null,
+          "epc": null,
+          "conversionRate": null,
+          "approvalPercentage": null,
+          "validationDays": null,
+          "averagePaymentTime": null,
+          "commissionMin": null,
+          "commissionMax": null,
+          "commissionTypes": []
+        },
+        "reasons": [
+          "passt zu Technik & Computer",
+          "strategisch relevante Marke"
+        ],
+        "applicationRequired": true,
+        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Sony DE redaktionell passend im Bereich Technik & Computer einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+        "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+        "automationState": "ready-for-review"
       }
     ],
     "feeds": [
@@ -3111,12 +3110,9 @@
     ]
   },
   "impact": {
-    "state": "disabled",
+    "state": "error",
     "publishableOffers": 0,
-    "inventory": {
-      "reason": "Impact sync reserved for the dedicated daily workflow window",
-      "cadenceHours": 24
-    },
+    "inventory": null,
     "opportunities": [],
     "marketplaceSearches": [
       {

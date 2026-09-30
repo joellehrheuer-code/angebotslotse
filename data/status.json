@@ -1,6 +1,6 @@
 {
-  "state": "ok",
-  "lastSuccessfulUpdate": "2026-09-30T05:32:05.418Z",
+  "state": "degraded",
+  "lastSuccessfulUpdate": "2026-09-30T08:45:22.305Z",
   "activeOffers": 252,
   "storedOffers": 481,
   "publishableOffers": 252,
@@ -13,7 +13,7 @@
   "archivedTotal": 331,
   "filteredForeignLocale": 0,
   "invalidLinks": 0,
-  "apiErrors": 0,
+  "apiErrors": 1,
   "sources": {
     "awin": {
       "state": "ok",
@@ -125,13 +125,10 @@
       }
     },
     "impact": {
-      "state": "disabled",
+      "state": "error",
       "count": 0,
-      "error": null,
-      "audit": {
-        "reason": "Impact sync reserved for the dedicated daily workflow window",
-        "cadenceHours": 24
-      }
+      "error": "impact timed out after 45000ms",
+      "audit": null
     },
     "daisycon": {
       "state": "disabled",
@@ -174,5 +171,5 @@
     "mode": "social"
   },
   "stale": 210,
-  "message": "Aktualisierung mit geschützten Bestandsdaten abgeschlossen."
+  "message": "Aktualisierung teilweise eingeschränkt; bestehende geprüfte Daten bleiben geschützt."
 }

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-30T05:32:05.485Z",
+  "generatedAt": "2026-09-30T08:45:22.351Z",
   "dailyNewContactLimit": 8,
   "safeguards": {
     "dedupeAgainst": "report/partner-outreach-status.json",
@@ -100,6 +100,29 @@
       "networkApplicationNextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
       "contractualSubmissionAllowed": false,
       "reason": "Routine-Outreach darf nur an verifizierte offizielle Kontakte vorbereitet/versendet werden; Vertragsbedingungen, AGB, Exklusivität oder kostenpflichtige Verpflichtungen werden nicht automatisch akzeptiert."
+    },
+    {
+      "id": "awin-11657",
+      "network": "Awin",
+      "brand": "cyberport DE",
+      "advertiserId": 11657,
+      "programId": null,
+      "campaignId": null,
+      "category": "Technik & Computer",
+      "priority": "mittel",
+      "score": 45,
+      "networkStatus": "notjoined",
+      "actionType": "application-review",
+      "contact": null,
+      "contactType": null,
+      "contactSource": null,
+      "contactState": "official-contact-research-required",
+      "routineOutreachAllowed": false,
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten cyberport DE redaktionell passend im Bereich Technik & Computer einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "networkApplicationNextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "contractualSubmissionAllowed": false,
+      "reason": "Routine-Outreach darf nur an verifizierte offizielle Kontakte vorbereitet/versendet werden; Vertragsbedingungen, AGB, Exklusivität oder kostenpflichtige Verpflichtungen werden nicht automatisch akzeptiert."
     }
   ],
   "backlog": [],
@@ -124,13 +147,6 @@
       "relatedBrand": null,
       "status": "pending",
       "lastContactAt": "2026-09-30T01:41:00+02:00"
-    },
-    {
-      "brand": "tink DE",
-      "reason": "existing-status:pending",
-      "relatedBrand": null,
-      "status": "pending",
-      "lastContactAt": "2026-09-30T02:22:00+02:00"
     },
     {
       "brand": "Ankerkraut DE",
