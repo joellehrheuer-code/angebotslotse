@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-29T23:40:00+02:00",
+  "generatedAt": "2026-09-30T02:22:00+02:00",
   "purpose": "Verified official contact routes for routine Angebotslotse partner outreach. sendAllowed=false means research/review is still required before sending.",
   "contacts": [
     {
@@ -109,6 +109,15 @@
       "verifiedAt": "2026-09-29",
       "sendAllowed": true,
       "notes": "Awin profile explicitly publishes affiliate-team contact and continuously updated CSV product lists."
+    },
+    {
+      "brand": "tink DE",
+      "contact": "affiliate@tink.io",
+      "contactType": "official-affiliate",
+      "sourceUrl": "https://ui.awin.com/merchant-profile/13686",
+      "verifiedAt": "2026-09-30",
+      "sendAllowed": true,
+      "notes": "Official Awin merchant profile explicitly lists affiliate@tink.io for partner questions; daily product feed is advertised."
     }
   ]
 }

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-30T02:25:00+02:00",
+  "generatedAt": "2026-09-30T02:22:00+02:00",
   "purpose": "Deduplication and status tracking for Angebotslotse affiliate/partner outreach. No contracts are auto-accepted.",
   "statuses": [
     {
@@ -178,6 +178,15 @@
       "contact": "info@one.de",
       "nextAction": "Nicht zusätzlich automatisch als Affiliate neu anschreiben, solange die frühere Creator-Anfrage ohne persönliche Antwort offen ist.",
       "notes": "Frühere Creator-/Sponsoring-Anfrage am 19.08.2026; nur automatische Eingangsbestätigung gefunden. Brand-Dedupe aktiv."
+    },
+    {
+      "brand": "tink DE",
+      "network": "Awin",
+      "status": "pending",
+      "lastContactAt": "2026-09-30T02:22:00+02:00",
+      "contact": "affiliate@tink.io",
+      "nextAction": "Antwort/Freischaltung abwarten; bei Freigabe täglichen Produktfeed, Deeplinks, Aktionen und Werbemittel integrieren.",
+      "notes": "Offizieller Affiliate-Kontakt laut Awin-Profil; unverbindliche Publisher-Anfrage gesendet. Publisher-ID 3045061."
     }
   ]
 }
