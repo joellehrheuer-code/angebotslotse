@@ -1,3 +1,5 @@
+import { repairCreatorText, deriveCreatorThumbnail } from "./creator-media.mjs";
+
 const isPublicHttpsUrl = value => {
   try {
     const url = new URL(String(value || ""));
@@ -7,7 +9,7 @@ const isPublicHttpsUrl = value => {
   }
 };
 
-const cleanText = (value, maxLength) => String(value || "").replace(/[<>]/g, "").trim().slice(0, maxLength);
+const cleanText = (value, maxLength) => repairCreatorText(value).slice(0, maxLength);
 
 export function sanitizeCreatorVideos(input) {
   if (!Array.isArray(input)) return [];
@@ -18,7 +20,8 @@ export function sanitizeCreatorVideos(input) {
     const title = cleanText(item.title, 180);
     const publicUrl = String(item.publicUrl || "").trim();
     const platform = cleanText(item.platform, 40);
-    const thumbnailUrl = String(item.thumbnailUrl || "").trim();
+    const suppliedThumbnail = String(item.thumbnailUrl || "").trim();
+    const thumbnailUrl = suppliedThumbnail || deriveCreatorThumbnail(publicUrl, platform) || "";
     const publishedAt = item.publishedAt ? new Date(item.publishedAt) : null;
     if (!id || seen.has(id) || !title || !platform || !isPublicHttpsUrl(publicUrl)) return null;
     if (thumbnailUrl && !isPublicHttpsUrl(thumbnailUrl)) return null;

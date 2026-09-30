@@ -1,5 +1,7 @@
 const allowedTypes = new Set(["video","post","stream","music","community"]);
 
+import { repairCreatorText, deriveCreatorThumbnail } from "./creator-media.mjs";
+
 const isPublicHttpsUrl = value => {
   try {
     const url = new URL(String(value || ""));
@@ -9,7 +11,7 @@ const isPublicHttpsUrl = value => {
   }
 };
 
-const cleanText = (value, maxLength) => String(value || "").replace(/[<>]/g, "").trim().slice(0, maxLength);
+const cleanText = (value, maxLength) => repairCreatorText(value).slice(0, maxLength);
 
 export function sanitizeCreatorFeedItems(input) {
   if (!Array.isArray(input)) return [];
@@ -22,7 +24,8 @@ export function sanitizeCreatorFeedItems(input) {
     const summary = cleanText(item.summary || item.description || "", 420);
     const platform = cleanText(item.platform, 40);
     const publicUrl = String(item.publicUrl || "").trim();
-    const thumbnailUrl = String(item.thumbnailUrl || "").trim();
+    const suppliedThumbnail = String(item.thumbnailUrl || "").trim();
+    const thumbnailUrl = suppliedThumbnail || deriveCreatorThumbnail(publicUrl, platform) || "";
     const publishedAt = item.publishedAt ? new Date(item.publishedAt) : null;
     if (!id || seen.has(id) || !allowedTypes.has(type) || !title || !platform || !isPublicHttpsUrl(publicUrl)) return null;
     if (thumbnailUrl && !isPublicHttpsUrl(thumbnailUrl)) return null;
