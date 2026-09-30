@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-30T08:45:22.371Z",
+  "generatedAt": "2026-09-30T14:55:54.237Z",
   "market": "DE",
   "publisherId": 3045061,
   "awin": {
@@ -8,9 +8,9 @@
       "pending": 5,
       "suspended": 0,
       "rejected": 1,
-      "notjoined": 2612
+      "notjoined": 2611
     },
-    "totalProgramsEvaluated": 2623,
+    "totalProgramsEvaluated": 2622,
     "reportedPrograms": 200,
     "programs": [
       {
@@ -1369,17 +1369,6 @@
       {
         "network": "Awin",
         "relationship": "notjoined",
-        "advertiserId": 14584,
-        "name": "bücher.de DE",
-        "primarySector": "Books & Subscriptions",
-        "primaryRegion": {
-          "name": "Germany",
-          "countryCode": "DE"
-        }
-      },
-      {
-        "network": "Awin",
-        "relationship": "notjoined",
         "advertiserId": 108998,
         "name": "BURNHARD DE",
         "primarySector": "Home & Garden",
@@ -1996,17 +1985,6 @@
       {
         "network": "Awin",
         "relationship": "notjoined",
-        "advertiserId": 10076,
-        "name": "Douglas_DE",
-        "primarySector": "Health & Beauty",
-        "primaryRegion": {
-          "name": "Germany",
-          "countryCode": "DE"
-        }
-      },
-      {
-        "network": "Awin",
-        "relationship": "notjoined",
         "advertiserId": 117193,
         "name": "DREO",
         "primarySector": "Home & Garden",
@@ -2212,6 +2190,28 @@
           "name": "Germany",
           "countryCode": "DE"
         }
+      },
+      {
+        "network": "Awin",
+        "relationship": "notjoined",
+        "advertiserId": 24666,
+        "name": "Egret DE",
+        "primarySector": "Electronic Superstore",
+        "primaryRegion": {
+          "name": "Germany",
+          "countryCode": "DE"
+        }
+      },
+      {
+        "network": "Awin",
+        "relationship": "notjoined",
+        "advertiserId": 11642,
+        "name": "eibmarkt DE",
+        "primarySector": "Electronic Superstore",
+        "primaryRegion": {
+          "name": "Germany",
+          "countryCode": "DE"
+        }
       }
     ],
     "discoveryOffers": 200,
@@ -2224,11 +2224,13 @@
         "advertiserId": 30691,
         "status": "notjoined",
         "category": "Technik & Computer",
-        "score": 77,
+        "score": 101,
         "priority": "hoch",
-        "activeDiscoveryOffers": 1,
+        "activeDiscoveryOffers": 23,
         "offerExamples": [
-          "Anker eufy Milchpumpe mit Ladecase S2 Pro - €319.99(€80off) w/Code: WS24T60A13B0"
+          "eufy Saug- und Wischroboter HydroJet S2 - €1099(€400off) w/Code: WS24T2081G11",
+          "eufy Mähroboter C15 Standard mit Garage - €699(€300off) w/Code: WS24T2B28031",
+          "eufy Saug- und Wischroboter Omni E25 - €579(€320off) w/Code: WS24T2353G11"
         ],
         "productFeed": false,
         "metrics": {
@@ -2245,13 +2247,13 @@
         "reasons": [
           "passt zu Technik & Computer",
           "strategisch relevante Marke",
-          "1 aktive DE-Aktion",
+          "23 aktive DE-Aktionen",
           "Awin Index 65.64",
           "Approval 90.07%",
           "EPC 1.42"
         ],
         "applicationRequired": true,
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Anker DE redaktionell passend im Bereich Technik & Computer einbinden. Bei Awin sind aktuell 1 für Deutschland sichtbare Aktion dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Anker DE redaktionell passend im Bereich Technik & Computer einbinden. Bei Awin sind aktuell 23 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
         "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
         "automationState": "ready-for-review"
       },
@@ -2354,41 +2356,6 @@
         ],
         "applicationRequired": true,
         "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Alternate DE redaktionell passend im Bereich Technik & Computer einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-        "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-        "automationState": "ready-for-review"
-      },
-      {
-        "brand": "ELV DE",
-        "network": "Awin",
-        "advertiserId": 11447,
-        "status": "notjoined",
-        "category": "Technik & Computer",
-        "score": 60,
-        "priority": "mittel",
-        "activeDiscoveryOffers": 7,
-        "offerExamples": [
-          "Eqiva 3er-Set BLUETOOTH® Smart Heizkörperthermostat, mit App-Steuerung für nur 39,95 EUR (inkl. Versand) bei ELV.",
-          "dnt 3er-Set Heizkörperthermostat ThermoTune, Stand-alone, ca. 4 Jahre Batterielaufzeit für nur 39,95 EUR (inkl. Versand) bei ELV.",
-          "Eqiva 5er-Set BLUETOOTH® Smart Heizkörperthermostat, mit App-Steuerung für nur 64,95 EUR (inkl. Versand) bei ELV."
-        ],
-        "productFeed": false,
-        "metrics": {
-          "awinIndex": null,
-          "epc": null,
-          "conversionRate": null,
-          "approvalPercentage": null,
-          "validationDays": null,
-          "averagePaymentTime": null,
-          "commissionMin": null,
-          "commissionMax": null,
-          "commissionTypes": []
-        },
-        "reasons": [
-          "passt zu Technik & Computer",
-          "7 aktive DE-Aktionen"
-        ],
-        "applicationRequired": true,
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten ELV DE redaktionell passend im Bereich Technik & Computer einbinden. Bei Awin sind aktuell 7 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
         "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
         "automationState": "ready-for-review"
       },
@@ -3015,6 +2982,37 @@
         "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Sony DE redaktionell passend im Bereich Technik & Computer einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
         "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
         "automationState": "ready-for-review"
+      },
+      {
+        "brand": "Sportspar DE",
+        "network": "Awin",
+        "advertiserId": 14366,
+        "status": "notjoined",
+        "category": "Mode & Sport",
+        "score": 45,
+        "priority": "mittel",
+        "activeDiscoveryOffers": 0,
+        "offerExamples": [],
+        "productFeed": false,
+        "metrics": {
+          "awinIndex": null,
+          "epc": null,
+          "conversionRate": null,
+          "approvalPercentage": null,
+          "validationDays": null,
+          "averagePaymentTime": null,
+          "commissionMin": null,
+          "commissionMax": null,
+          "commissionTypes": []
+        },
+        "reasons": [
+          "passt zu Mode & Sport",
+          "strategisch relevante Marke"
+        ],
+        "applicationRequired": true,
+        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Sportspar DE redaktionell passend im Bereich Mode & Sport einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+        "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+        "automationState": "ready-for-review"
       }
     ],
     "feeds": [
@@ -3110,9 +3108,12 @@
     ]
   },
   "impact": {
-    "state": "error",
+    "state": "disabled",
     "publishableOffers": 0,
-    "inventory": null,
+    "inventory": {
+      "reason": "Impact sync reserved for the dedicated daily workflow window",
+      "cadenceHours": 24
+    },
     "opportunities": [],
     "marketplaceSearches": [
       {

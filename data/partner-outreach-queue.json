@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-30T08:45:22.351Z",
+  "generatedAt": "2026-09-30T14:55:54.210Z",
   "dailyNewContactLimit": 8,
   "safeguards": {
     "dedupeAgainst": "report/partner-outreach-status.json",
@@ -142,13 +142,6 @@
       "lastContactAt": "2026-09-02T19:43:09+02:00"
     },
     {
-      "brand": "ELV DE",
-      "reason": "existing-status:pending",
-      "relatedBrand": null,
-      "status": "pending",
-      "lastContactAt": "2026-09-30T01:41:00+02:00"
-    },
-    {
       "brand": "Ankerkraut DE",
       "reason": "existing-status:pending",
       "relatedBrand": null,
@@ -168,6 +161,13 @@
       "relatedBrand": null,
       "status": "pending",
       "lastContactAt": "2026-09-30T02:05:00+02:00"
+    },
+    {
+      "brand": "DECATHLON DE",
+      "reason": "existing-status:pending",
+      "relatedBrand": null,
+      "status": "pending",
+      "lastContactAt": "2026-09-29T13:45:00+02:00"
     }
   ]
 }
