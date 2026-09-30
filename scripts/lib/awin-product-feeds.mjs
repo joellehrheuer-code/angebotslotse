@@ -39,16 +39,41 @@ export async function fetchAwinProductFeeds({ apiKey, fetchImpl=fetch, maxFeeds=
 }
 
 const numberWithCurrency=value=>{const match=String(value??"").match(/([0-9]+(?:[.,][0-9]+)?)\s*([A-Z]{3})?/i);return match?{amount:match[1].replace(",","."),currency:(match[2]||"EUR").toUpperCase()}:{amount:null,currency:"EUR"};};
-const enhancedProduct=(row,advertiser)=>{
-  const sections=Object.values(row).filter(value=>value&&typeof value==="object"&&!Array.isArray(value));
-  const product=Object.assign({},row,...sections); const current=numberWithCurrency(product.sale_price??product.price); const original=numberWithCurrency(product.price);
-  const tracking=product.aw_deep_link??product.tracking_link??product.link_tracking;
-  return {source:"awin",id:`enhanced-${advertiser.id}-${product.id}`,title:product.title,description:product.description,url:product.link,urlTracking:tracking,
+const plainObject=value=>Boolean(value)&&typeof value==="object"&&!Array.isArray(value);
+const section=(row,name)=>plainObject(row?.[name])?row[name]:{};
+const trackingFromEnhancedRow=row=>{
+  for(const container of [row,section(row,"product_basic"),...Object.values(row??{}).filter(plainObject)]){
+    const tracking=container?.aw_deep_link??container?.tracking_link??container?.link_tracking;
+    if(String(tracking??"").trim())return tracking;
+  }
+  return null;
+};
+export const enhancedProduct=(row,advertiser)=>{
+  const basic=section(row,"product_basic");
+  const pricing=section(row,"price_and_availability");
+  const identifiers=section(row,"product_identifiers");
+  const category=section(row,"product_category");
+  const id=basic.id??row.id;
+  const title=basic.title??row.title;
+  const description=basic.description??row.description;
+  const link=basic.link??row.link;
+  const imageLink=basic.image_link??row.image_link;
+  const additionalImages=basic.additional_image_link??row.additional_image_link;
+  const salePrice=pricing.sale_price??row.sale_price;
+  const regularPrice=pricing.price??row.price;
+  const current=numberWithCurrency(salePrice??regularPrice);
+  const original=numberWithCurrency(regularPrice);
+  const tracking=trackingFromEnhancedRow(row);
+  const brand=identifiers.brand??row.brand;
+  const gtin=identifiers.gtin??row.gtin;
+  const mpn=identifiers.mpn??row.mpn;
+  const availability=pricing.availability??row.availability;
+  return {source:"awin",id:`enhanced-${advertiser.id}-${id}`,title,description,url:link,urlTracking:tracking,
     advertiserName:advertiser.name,advertiserId:advertiser.id,regions:{list:[{countryCode:"DE"}]},type:"promotion",
-    imageUrl:Array.isArray(product.image_link)?product.image_link[0]:product.image_link,additionalImageUrls:product.additional_image_link,imageAlt:product.title,imageSource:"Awin Enhanced Product Feed",
+    imageUrl:Array.isArray(imageLink)?imageLink[0]:imageLink,additionalImageUrls:additionalImages,imageAlt:title,imageSource:"Awin Enhanced Product Feed",
     imageRightsNote:"Vom freigegebenen Advertiser im offiziellen Awin-Produktfeed bereitgestellt.",currentPrice:current.amount,
-    previousPrice:product.sale_price?original.amount:null,currency:current.currency,brand:product.brand,productId:product.gtin??product.mpn??product.id,
-    gtin:product.gtin,ean:product.gtin,mpn:product.mpn,availability:product.availability};
+    previousPrice:salePrice?original.amount:null,currency:current.currency,brand,productId:gtin??mpn??id,
+    gtin,ean:gtin,mpn,availability,category:category.product_type??category.google_product_category??undefined};
 };
 
 export async function fetchAwinEnhancedFeeds({ publisherId, token, advertisers=[], fetchImpl=fetch, maxProducts=500 }) {

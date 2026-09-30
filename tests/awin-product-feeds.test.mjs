@@ -36,3 +36,22 @@ test("bevorzugt Awins offiziellen Bild-Cache vor Merchant-Bildern",async()=>{
   assert.equal(rows[0].imageUrl,"https://images.awin.com/cache.jpg");
   assert.equal(rows[0].imageSource,"Awin Image Resize & Caching");
 });
+
+
+test("Enhanced-Feed-Parser vermischt Shipping- oder Checkout-Nebenobjekte nicht mit Produktdaten",async()=>{
+  const row={
+    product_basic:{id:"robot-1",title:"ANTHBOT Genie Mähroboter",description:"Mähroboter für den Garten",link:"https://shop.example/robot",image_link:"https://cdn.example/robot.jpg",aw_deep_link:"https://track.example/robot"},
+    price_and_availability:{price:"999.00 EUR",availability:"in_stock"},
+    product_identifiers:{brand:"ANTHBOT",mpn:"GENIE-1000"},
+    shipping:{service:"Shipping Protection",price:"0.99 EUR"},
+    checkout_offer:{title:"Shipping Protection",description:"Protect your package against damage, loss",price:"0.99 EUR"}
+  };
+  const fetchImpl=async()=>({ok:true,status:200,text:async()=>JSON.stringify(row)});
+  const result=await fetchAwinEnhancedFeeds({publisherId:"3045061",token:"secret",advertisers:[{id:7,name:"ANTHBOT DE"}],fetchImpl});
+  assert.equal(result.products.length,1);
+  assert.equal(result.products[0].title,"ANTHBOT Genie Mähroboter");
+  assert.equal(result.products[0].description,"Mähroboter für den Garten");
+  assert.equal(result.products[0].currentPrice,"999.00");
+  assert.equal(result.products[0].brand,"ANTHBOT");
+  assert.equal(result.products[0].mpn,"GENIE-1000");
+});
