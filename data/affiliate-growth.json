@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-29T21:37:09.446Z",
+  "generatedAt": "2026-09-30T00:15:56.525Z",
   "market": "DE",
   "publisherId": 3045061,
   "awin": {
@@ -1204,6 +1204,17 @@
       {
         "network": "Awin",
         "relationship": "notjoined",
+        "advertiserId": 117497,
+        "name": "Blimburn Seeds DE",
+        "primarySector": "FMCG",
+        "primaryRegion": {
+          "name": "Germany",
+          "countryCode": "DE"
+        }
+      },
+      {
+        "network": "Awin",
+        "relationship": "notjoined",
         "advertiserId": 79440,
         "name": "Bloomling DE",
         "primarySector": "Home & Garden",
@@ -2201,17 +2212,6 @@
           "name": "Germany",
           "countryCode": "DE"
         }
-      },
-      {
-        "network": "Awin",
-        "relationship": "notjoined",
-        "advertiserId": 11642,
-        "name": "eibmarkt DE",
-        "primarySector": "Electronic Superstore",
-        "primaryRegion": {
-          "name": "Germany",
-          "countryCode": "DE"
-        }
       }
     ],
     "discoveryOffers": 200,
@@ -2426,41 +2426,6 @@
         "automationState": "ready-for-review"
       },
       {
-        "brand": "Pollin Electronic DE",
-        "network": "Awin",
-        "advertiserId": 15965,
-        "status": "notjoined",
-        "category": "Technik & Computer",
-        "score": 60,
-        "priority": "mittel",
-        "activeDiscoveryOffers": 5,
-        "offerExamples": [
-          "Lichterketten Sale!",
-          "Reduziertes Angebot: APA Drehmomentschlüssel, 21058, 31% reduziert - für nur 19,99€ statt UVP 28,95€",
-          "Reduziertes Angebot: APA Rangierwagenheber, 21031, 3000 kg, TÜV-GS, 21% reduziert - für nur 74,99€ statt UVP 94,95€"
-        ],
-        "productFeed": false,
-        "metrics": {
-          "awinIndex": null,
-          "epc": null,
-          "conversionRate": null,
-          "approvalPercentage": null,
-          "validationDays": null,
-          "averagePaymentTime": null,
-          "commissionMin": null,
-          "commissionMax": null,
-          "commissionTypes": []
-        },
-        "reasons": [
-          "passt zu Technik & Computer",
-          "5 aktive DE-Aktionen"
-        ],
-        "applicationRequired": true,
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Pollin Electronic DE redaktionell passend im Bereich Technik & Computer einbinden. Bei Awin sind aktuell 5 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-        "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-        "automationState": "ready-for-review"
-      },
-      {
         "brand": "iHerb EUR",
         "network": "Awin",
         "advertiserId": 76734,
@@ -2527,6 +2492,41 @@
         ],
         "applicationRequired": true,
         "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten SharkNinja DE redaktionell passend im Bereich Haushalt & Küche einbinden. Bei Awin sind aktuell 3 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+        "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+        "automationState": "ready-for-review"
+      },
+      {
+        "brand": "tink DE",
+        "network": "Awin",
+        "advertiserId": 13686,
+        "status": "notjoined",
+        "category": "Technik & Computer",
+        "score": 48,
+        "priority": "mittel",
+        "activeDiscoveryOffers": 3,
+        "offerExamples": [
+          "10 EUR Gutschein auf Homematic-IP",
+          "10 EUR Rabatt auf EVE",
+          "10€ Rabatt auf Amazon Produkte"
+        ],
+        "productFeed": false,
+        "metrics": {
+          "awinIndex": null,
+          "epc": null,
+          "conversionRate": null,
+          "approvalPercentage": null,
+          "validationDays": null,
+          "averagePaymentTime": null,
+          "commissionMin": null,
+          "commissionMax": null,
+          "commissionTypes": []
+        },
+        "reasons": [
+          "passt zu Technik & Computer",
+          "3 aktive DE-Aktionen"
+        ],
+        "applicationRequired": true,
+        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten tink DE redaktionell passend im Bereich Technik & Computer einbinden. Bei Awin sind aktuell 3 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
         "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
         "automationState": "ready-for-review"
       },

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-29T21:37:09.420Z",
+  "generatedAt": "2026-09-30T00:15:56.502Z",
   "topActions": [
     {
       "rank": 1,
@@ -118,25 +118,6 @@
     {
       "rank": 7,
       "network": "Awin",
-      "brand": "Pollin Electronic DE",
-      "reference": 15965,
-      "advertiserId": 15965,
-      "programId": null,
-      "campaignId": null,
-      "category": "Technik & Computer",
-      "priority": "mittel",
-      "score": 60,
-      "kind": "application",
-      "status": "notjoined",
-      "actionType": "application-review",
-      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Pollin Electronic DE redaktionell passend im Bereich Technik & Computer einbinden. Bei Awin sind aktuell 5 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-      "submissionReady": false,
-      "humanApprovalRequired": true
-    },
-    {
-      "rank": 8,
-      "network": "Awin",
       "brand": "iHerb EUR",
       "reference": 76734,
       "advertiserId": 76734,
@@ -154,7 +135,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 9,
+      "rank": 8,
       "network": "Awin",
       "brand": "SharkNinja DE",
       "reference": 19810,
@@ -169,6 +150,25 @@
       "actionType": "application-review",
       "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
       "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten SharkNinja DE redaktionell passend im Bereich Haushalt & Küche einbinden. Bei Awin sind aktuell 3 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "submissionReady": false,
+      "humanApprovalRequired": true
+    },
+    {
+      "rank": 9,
+      "network": "Awin",
+      "brand": "tink DE",
+      "reference": 13686,
+      "advertiserId": 13686,
+      "programId": null,
+      "campaignId": null,
+      "category": "Technik & Computer",
+      "priority": "mittel",
+      "score": 48,
+      "kind": "application",
+      "status": "notjoined",
+      "actionType": "application-review",
+      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten tink DE redaktionell passend im Bereich Technik & Computer einbinden. Bei Awin sind aktuell 3 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
       "submissionReady": false,
       "humanApprovalRequired": true
     },
@@ -522,18 +522,18 @@
       "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten ELV DE redaktionell passend im Bereich Technik & Computer einbinden. Bei Awin sind aktuell 7 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung."
     },
     {
-      "id": "awin-apply-15965",
-      "platform": "Awin",
-      "action": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "reason": "Automatisch priorisiert (60 Punkte): passt zu Technik & Computer, 5 aktive DE-Aktionen. Keine automatische Zustimmung zu Vertragsbedingungen.",
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Pollin Electronic DE redaktionell passend im Bereich Technik & Computer einbinden. Bei Awin sind aktuell 5 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung."
-    },
-    {
       "id": "awin-apply-76734",
       "platform": "Awin",
       "action": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
       "reason": "Automatisch priorisiert (48 Punkte): passt zu Gesundheit & Wellness, 3 aktive DE-Aktionen. Keine automatische Zustimmung zu Vertragsbedingungen.",
       "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten iHerb EUR redaktionell passend im Bereich Gesundheit & Wellness einbinden. Bei Awin sind aktuell 3 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung."
+    },
+    {
+      "id": "awin-apply-19810",
+      "platform": "Awin",
+      "action": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "reason": "Automatisch priorisiert (48 Punkte): passt zu Haushalt & Küche, 3 aktive DE-Aktionen. Keine automatische Zustimmung zu Vertragsbedingungen.",
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten SharkNinja DE redaktionell passend im Bereich Haushalt & Küche einbinden. Bei Awin sind aktuell 3 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung."
     },
     {
       "id": "daisycon-connect",
