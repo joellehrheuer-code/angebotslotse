@@ -36,6 +36,7 @@ export function dedupeKeyForOffer(offer) {
   const sourceProduct = `${offer.source}|${merchant}|${identityText(offer.sourceId)}`;
   const fallback = `${identityText(offer.title)}|${identityText(offer.brand)}`;
   if (gtin && !["unknown", "undefined", "null"].includes(gtin)) return `gtin:${merchant}:${gtin}`;
+  if (String(offer.sourceId ?? "").startsWith("enhanced-") && identityText(offer.sourceId)) return `source:${sourceProduct}`;
   if (offer.mpn && offer.brand) return `mpn:${merchant}:${mpnBrand}`;
   if (identityText(offer.sourceId)) return `source:${sourceProduct}`;
   return `name:${offer.source}:${merchant}:${fallback}`;
