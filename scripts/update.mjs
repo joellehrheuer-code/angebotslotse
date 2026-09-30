@@ -1,6 +1,6 @@
 import fs from "node:fs/promises";
 import { collectSources } from "./lib/source-manager.mjs";
-import { normalizeAndDedupe, isConcreteOffer, isPublicationReady, isAwaitingMediaOffer, isPublisherPromotion, refineOfferCategory, isMarketCompatibleTitle } from "./lib/normalize.mjs";
+import { normalizeAndDedupe, normalizeOffer, isConcreteOffer, isPublicationReady, isAwaitingMediaOffer, isPublisherPromotion, refineOfferCategory, isMarketCompatibleTitle } from "./lib/normalize.mjs";
 import { updatePriceHistory } from "./lib/price-history.mjs";
 import { selectHomepageOffers } from "./lib/homepage-selection.mjs";
 import { mergeOfferInventory } from "./lib/offer-merge.mjs";
@@ -69,9 +69,13 @@ try {
   const sources = collected.sources;
   const failed = new Set(sources.filter(s => s.state === "error").map(s => s.name));
   const fresh = sources.flatMap(s => s.rows);
-    const normalizedFresh = normalizeAndDedupe(fresh, config).filter(offer => !(offer.source === "awin" && String(offer.sourceId).startsWith("enhanced-") && !(Number(offer.currentPrice) > 0 && offer.imageUrl && offer.trackingUrl)));
+  const normalizedAt = new Date();
+  const normalizedFresh = normalizeAndDedupe(fresh, config, normalizedAt).filter(offer => !(offer.source === "awin" && String(offer.sourceId).startsWith("enhanced-") && !(Number(offer.currentPrice) > 0 && offer.imageUrl && offer.trackingUrl)));
+  const enhancedRawRows = sources.find(source => source.name === "awin-enhanced-feeds")?.rows ?? [];
+  const enhancedPreNormalized = enhancedRawRows.map(row => normalizeOffer(row, config, normalizedAt)).filter(Boolean);
   const awinEnhancedDedupe = buildEnhancedFeedDedupeDiagnostics({
-    rawRows: sources.find(source => source.name === "awin-enhanced-feeds")?.rows ?? [],
+    rawRows: enhancedRawRows,
+    preNormalizedOffers: enhancedPreNormalized,
     normalizedOffers: normalizedFresh
   });
   const mergedOffers = mergeOfferInventory({

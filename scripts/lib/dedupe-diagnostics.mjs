@@ -8,12 +8,14 @@ const countDuplicateExtras=values=>{
   return [...counts.values()].reduce((sum,count)=>sum+Math.max(0,count-1),0);
 };
 
-export function buildEnhancedFeedDedupeDiagnostics({rawRows=[],normalizedOffers=[]}={}){
+export function buildEnhancedFeedDedupeDiagnostics({rawRows=[],preNormalizedOffers=[],normalizedOffers=[]}={}){
   const enhancedRaw=rawRows.filter(row=>String(row?.id??"").startsWith("enhanced-"));
+  const enhancedPreNormalized=preNormalizedOffers.filter(row=>String(row?.sourceId??"").startsWith("enhanced-"));
   const enhancedNormalized=normalizedOffers.filter(row=>String(row?.sourceId??"").startsWith("enhanced-"));
-  const merchants=[...new Set([...enhancedRaw.map(merchantName),...enhancedNormalized.map(merchantName)])].filter(Boolean).sort((a,b)=>a.localeCompare(b,"de"));
+  const merchants=[...new Set([...enhancedRaw.map(merchantName),...enhancedPreNormalized.map(merchantName),...enhancedNormalized.map(merchantName)])].filter(Boolean).sort((a,b)=>a.localeCompare(b,"de"));
   const byMerchant=merchants.map(merchant=>{
     const raw=enhancedRaw.filter(row=>merchantName(row)===merchant);
+    const pre=enhancedPreNormalized.filter(row=>merchantName(row)===merchant);
     const out=enhancedNormalized.filter(row=>merchantName(row)===merchant);
     const gtins=raw.map(row=>clean(row.gtin??row.ean)).filter(Boolean).map(value=>signature(merchant,value));
     const mpns=raw.filter(row=>clean(row.mpn)).map(row=>signature(merchant,row.mpn,row.brand));
@@ -21,7 +23,10 @@ export function buildEnhancedFeedDedupeDiagnostics({rawRows=[],normalizedOffers=
     return {
       merchant,
       inputRows:raw.length,
+      normalizedRows:pre.length,
+      filteredBeforeDedupe:Math.max(0,raw.length-pre.length),
       outputOffers:out.length,
+      dedupedRows:Math.max(0,pre.length-out.length),
       collapsedRows:Math.max(0,raw.length-out.length),
       rowsWithGtin:gtins.length,
       duplicateGtinExtras:countDuplicateExtras(gtins),
@@ -32,7 +37,10 @@ export function buildEnhancedFeedDedupeDiagnostics({rawRows=[],normalizedOffers=
   });
   return {
     inputRows:enhancedRaw.length,
+    normalizedRows:enhancedPreNormalized.length,
+    filteredBeforeDedupe:Math.max(0,enhancedRaw.length-enhancedPreNormalized.length),
     outputOffers:enhancedNormalized.length,
+    dedupedRows:Math.max(0,enhancedPreNormalized.length-enhancedNormalized.length),
     collapsedRows:Math.max(0,enhancedRaw.length-enhancedNormalized.length),
     byMerchant
   };
