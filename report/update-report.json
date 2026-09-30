@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-30T00:29:40.037Z",
+  "generatedAt": "2026-09-30T00:36:54.685Z",
   "newAwinPrograms": 0,
   "newImpactPrograms": 0,
   "newDaisyconPrograms": 0,
@@ -12,11 +12,11 @@
   "networkReviewActions": 6,
   "awinDiscoveryOffers": 200,
   "applicationCandidates": 2596,
-  "newMerchants": 0,
-  "newProducts": 0,
-  "productsWithImage": 243,
+  "newMerchants": 1,
+  "newProducts": 3,
+  "productsWithImage": 247,
   "productsWithVideo": 0,
-  "productsWithPrice": 243,
+  "productsWithPrice": 247,
   "productsWithOldPrice": 0,
   "productsWithDiscount": 0,
   "newCoupons": 0,
@@ -25,25 +25,25 @@
   "expiredOffers": 0,
   "expiredCoupons": 0,
   "filteredForeignLocale": 0,
-  "totalProducts": 248,
+  "totalProducts": 252,
   "productsBySource": {
-    "Awin": 248
+    "Awin": 252
   },
   "officialImagesBySource": {
-    "Awin": 243
+    "Awin": 247
   },
   "missingMediaBySource": {},
   "productsByMerchant": {
     "Hollyland DE": 136,
-    "ANTHBOT DE": 55,
+    "ANTHBOT DE": 59,
     "Outin Germany": 55,
     "Imou DE": 1,
     "PDF Agile": 1
   },
   "productsByCategory": {
     "audio-musik": 88,
+    "garten": 53,
     "haushalt": 53,
-    "garten": 49,
     "zubehoer": 49,
     "computer": 4,
     "werkzeug": 3,
@@ -126,23 +126,25 @@
   ],
   "quarantinedRecords": 130,
   "blockedPublisherPromotions": 4,
-  "dailyDeal": "12f05c88bb4138a2",
+  "dailyDeal": "6b0f463fb47703de",
   "dailyHighlights": [
-    "12f05c88bb4138a2",
+    "6b0f463fb47703de",
     "039a1ca39383f7b6",
+    "12f05c88bb4138a2",
     "134153f06aa7013c",
-    "242d4a7e4d7b95bf",
     "064f9fca5159a01d"
   ],
   "weekDeals": [
+    "2a01a48be68aebb3",
     "082bb91da12d2048",
     "cfdc2f58b29a6d49",
-    "ad2ac243a83e92ac"
+    "6b0f463fb47703de",
+    "8d46d086ba055b32"
   ],
   "monthHighlights": [
+    "2a01a48be68aebb3",
     "10bb463f70696c2e",
     "0055caa27aa9a32c",
-    "04b0eab2f2c77729",
     "0a432f17c1a1c534",
     "2d494a434af99f92"
   ],

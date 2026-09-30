@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-30T00:29:40.037Z",
+  "generatedAt": "2026-09-30T00:36:54.685Z",
   "status": "disabled",
   "joinedPrograms": 0,
   "automation": {
@@ -22,6 +22,19 @@
         "microphone",
         "recording",
         "creator"
+      ],
+      "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
+    },
+    {
+      "category": "Garten & Werkzeug",
+      "siteOffers": 56,
+      "joinedPrograms": 0,
+      "gapScore": 56,
+      "searchTerms": [
+        "garden",
+        "mower",
+        "tools",
+        "DIY"
       ],
       "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
     },
@@ -49,19 +62,6 @@
         "appliances",
         "kitchen",
         "vacuum"
-      ],
-      "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
-    },
-    {
-      "category": "Garten & Werkzeug",
-      "siteOffers": 52,
-      "joinedPrograms": 0,
-      "gapScore": 52,
-      "searchTerms": [
-        "garden",
-        "mower",
-        "tools",
-        "DIY"
       ],
       "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
     },

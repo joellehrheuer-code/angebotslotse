@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-30T00:29:40.056Z",
+  "generatedAt": "2026-09-30T00:36:54.704Z",
   "market": "DE",
   "publisherId": 3045061,
   "awin": {
@@ -3144,6 +3144,19 @@
         "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
       },
       {
+        "category": "Garten & Werkzeug",
+        "siteOffers": 56,
+        "joinedPrograms": 0,
+        "gapScore": 56,
+        "searchTerms": [
+          "garden",
+          "mower",
+          "tools",
+          "DIY"
+        ],
+        "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
+      },
+      {
         "category": "Technik & Computer",
         "siteOffers": 53,
         "joinedPrograms": 0,
@@ -3167,19 +3180,6 @@
           "appliances",
           "kitchen",
           "vacuum"
-        ],
-        "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
-      },
-      {
-        "category": "Garten & Werkzeug",
-        "siteOffers": 52,
-        "joinedPrograms": 0,
-        "gapScore": 52,
-        "searchTerms": [
-          "garden",
-          "mower",
-          "tools",
-          "DIY"
         ],
         "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
       },
@@ -3416,15 +3416,15 @@
     "reason": "Webgains Memberships und Terms werden automatisch gelesen; accept_terms=true wird nur nach ausdrücklicher menschlicher Bestätigung des geprüften Terms-Stands verwendet."
   },
   "publication": {
-    "offers": 248,
+    "offers": 252,
     "concreteAwaitingMedia": 0,
     "blockedPublisherPromotions": 4,
     "partnerEntries": 220,
     "merchants": 5,
-    "products": 243,
-    "images": 243,
+    "products": 247,
+    "images": 247,
     "videos": 0,
-    "prices": 243,
+    "prices": 247,
     "discounts": 0,
     "coupons": 4
   },
