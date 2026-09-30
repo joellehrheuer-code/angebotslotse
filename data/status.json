@@ -1,9 +1,9 @@
 {
-  "state": "ok",
-  "lastSuccessfulUpdate": "2026-09-30T20:34:30.015Z",
-  "activeOffers": 216,
+  "state": "degraded",
+  "lastSuccessfulUpdate": "2026-09-30T20:49:23.672Z",
+  "activeOffers": 8,
   "storedOffers": 485,
-  "publishableOffers": 216,
+  "publishableOffers": 8,
   "awaitingMedia": 1,
   "blockedPublisherPromotions": 4,
   "quarantined": 130,
@@ -13,7 +13,7 @@
   "archivedTotal": 332,
   "filteredForeignLocale": 0,
   "invalidLinks": 0,
-  "apiErrors": 0,
+  "apiErrors": 1,
   "sources": {
     "awin": {
       "state": "ok",
@@ -22,97 +22,10 @@
       "audit": null
     },
     "awin-enhanced-feeds": {
-      "state": "ok",
-      "count": 415,
-      "error": null,
-      "audit": {
-        "feeds": [
-          {
-            "advertiserId": 14172,
-            "advertiserName": "EMP DE",
-            "locale": "de_DE",
-            "state": "not-found"
-          },
-          {
-            "advertiserId": 14172,
-            "advertiserName": "EMP DE",
-            "locale": "en_DE",
-            "state": "not-found"
-          },
-          {
-            "advertiserId": 85171,
-            "advertiserName": "Coolblue DE",
-            "locale": "de_DE",
-            "state": "not-found"
-          },
-          {
-            "advertiserId": 85171,
-            "advertiserName": "Coolblue DE",
-            "locale": "en_DE",
-            "state": "not-found"
-          },
-          {
-            "advertiserId": 125144,
-            "advertiserName": "ANTHBOT DE",
-            "locale": "de_DE",
-            "state": "available",
-            "products": 161,
-            "rawProducts": 161,
-            "validProducts": 161,
-            "withPrice": 161,
-            "withImage": 161,
-            "withTracking": 161,
-            "rejected": 0,
-            "rejectionReasons": {}
-          },
-          {
-            "advertiserId": 125816,
-            "advertiserName": "Imou DE",
-            "locale": "de_DE",
-            "state": "not-found"
-          },
-          {
-            "advertiserId": 125816,
-            "advertiserName": "Imou DE",
-            "locale": "en_DE",
-            "state": "not-found"
-          },
-          {
-            "advertiserId": 127821,
-            "advertiserName": "Outin Germany",
-            "locale": "de_DE",
-            "state": "available",
-            "products": 54,
-            "rawProducts": 54,
-            "validProducts": 54,
-            "withPrice": 54,
-            "withImage": 54,
-            "withTracking": 54,
-            "rejected": 0,
-            "rejectionReasons": {}
-          },
-          {
-            "advertiserId": 128051,
-            "advertiserName": "Hollyland DE",
-            "locale": "de_DE",
-            "state": "not-found"
-          },
-          {
-            "advertiserId": 128051,
-            "advertiserName": "Hollyland DE",
-            "locale": "en_DE",
-            "state": "available",
-            "products": 200,
-            "rawProducts": 366,
-            "validProducts": 200,
-            "withPrice": 200,
-            "withImage": 200,
-            "withTracking": 200,
-            "rejected": 0,
-            "rejectionReasons": {}
-          }
-        ]
-      }
+      "state": "error",
+      "count": 0,
+      "error": "The operation was aborted due to timeout",
+      "audit": null
     },
     "awin-product-feeds": {
       "state": "disabled",
@@ -185,6 +98,6 @@
     "error": null,
     "mode": "social"
   },
-  "stale": 250,
-  "message": "Aktualisierung mit geschützten Bestandsdaten abgeschlossen."
+  "stale": 458,
+  "message": "Aktualisierung teilweise eingeschränkt; bestehende geprüfte Daten bleiben geschützt."
 }

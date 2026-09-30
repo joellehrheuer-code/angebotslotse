@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-30T20:34:30.067Z",
+  "generatedAt": "2026-09-30T20:49:23.725Z",
   "scope": "Automatisch aus Programminventar, DE-Angebotsabdeckung und verfügbaren Netzwerk-/Feed-Signalen erzeugt.",
   "automation": {
     "discovery": "automatic",
@@ -1612,38 +1612,10 @@
     "opportunities": [],
     "marketplaceSearches": [
       {
-        "category": "Audio & Creator",
-        "siteOffers": 57,
-        "joinedPrograms": 0,
-        "gapScore": 57,
-        "searchTerms": [
-          "audio",
-          "music",
-          "headphones",
-          "microphone",
-          "recording",
-          "creator"
-        ],
-        "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
-      },
-      {
-        "category": "Garten & Werkzeug",
-        "siteOffers": 56,
-        "joinedPrograms": 0,
-        "gapScore": 56,
-        "searchTerms": [
-          "garden",
-          "mower",
-          "tools",
-          "DIY"
-        ],
-        "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
-      },
-      {
         "category": "Haushalt & Küche",
-        "siteOffers": 53,
+        "siteOffers": 2,
         "joinedPrograms": 0,
-        "gapScore": 53,
+        "gapScore": 2,
         "searchTerms": [
           "home",
           "appliances",
@@ -1654,9 +1626,9 @@
       },
       {
         "category": "Technik & Computer",
-        "siteOffers": 45,
+        "siteOffers": 1,
         "joinedPrograms": 0,
-        "gapScore": 45,
+        "gapScore": 1,
         "searchTerms": [
           "electronics",
           "computer",
@@ -1680,15 +1652,17 @@
         "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
       },
       {
-        "category": "Freizeit & Reisen",
+        "category": "Audio & Creator",
         "siteOffers": 1,
         "joinedPrograms": 0,
         "gapScore": 1,
         "searchTerms": [
-          "travel",
-          "outdoor",
-          "hobby",
-          "tickets"
+          "audio",
+          "music",
+          "headphones",
+          "microphone",
+          "recording",
+          "creator"
         ],
         "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
       }
@@ -1706,24 +1680,9 @@
     "marketplaceSearches": [
       {
         "network": "Daisycon",
-        "category": "Audio & Musik",
-        "siteOffers": 57,
-        "priority": "hoch",
-        "searchTerms": [
-          "audio",
-          "music",
-          "headphones",
-          "microphone",
-          "recording"
-        ],
-        "connected": false,
-        "action": "Daisycon-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Audio & Musik priorisieren."
-      },
-      {
-        "network": "Daisycon",
         "category": "Haushalt & Alltag",
-        "siteOffers": 56,
-        "priority": "hoch",
+        "siteOffers": 2,
+        "priority": "niedrig",
         "searchTerms": [
           "home",
           "appliances",
@@ -1736,9 +1695,24 @@
       },
       {
         "network": "Daisycon",
+        "category": "Audio & Musik",
+        "siteOffers": 1,
+        "priority": "niedrig",
+        "searchTerms": [
+          "audio",
+          "music",
+          "headphones",
+          "microphone",
+          "recording"
+        ],
+        "connected": false,
+        "action": "Daisycon-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Audio & Musik priorisieren."
+      },
+      {
+        "network": "Daisycon",
         "category": "Technik & Computer",
-        "siteOffers": 45,
-        "priority": "mittel",
+        "siteOffers": 1,
+        "priority": "niedrig",
         "searchTerms": [
           "electronics",
           "computer",
@@ -1748,20 +1722,6 @@
         ],
         "connected": false,
         "action": "Daisycon-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Technik & Computer priorisieren."
-      },
-      {
-        "network": "Daisycon",
-        "category": "Freizeit",
-        "siteOffers": 1,
-        "priority": "niedrig",
-        "searchTerms": [
-          "travel",
-          "outdoor",
-          "hobby",
-          "tickets"
-        ],
-        "connected": false,
-        "action": "Daisycon-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Freizeit priorisieren."
       }
     ]
   },
@@ -1770,24 +1730,9 @@
     "marketplaceSearches": [
       {
         "network": "Tradedoubler",
-        "category": "Audio & Musik",
-        "siteOffers": 57,
-        "priority": "hoch",
-        "searchTerms": [
-          "audio",
-          "music",
-          "headphones",
-          "microphone",
-          "recording"
-        ],
-        "connected": false,
-        "action": "Tradedoubler-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Audio & Musik priorisieren."
-      },
-      {
-        "network": "Tradedoubler",
         "category": "Haushalt & Alltag",
-        "siteOffers": 56,
-        "priority": "hoch",
+        "siteOffers": 2,
+        "priority": "niedrig",
         "searchTerms": [
           "home",
           "appliances",
@@ -1800,9 +1745,24 @@
       },
       {
         "network": "Tradedoubler",
+        "category": "Audio & Musik",
+        "siteOffers": 1,
+        "priority": "niedrig",
+        "searchTerms": [
+          "audio",
+          "music",
+          "headphones",
+          "microphone",
+          "recording"
+        ],
+        "connected": false,
+        "action": "Tradedoubler-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Audio & Musik priorisieren."
+      },
+      {
+        "network": "Tradedoubler",
         "category": "Technik & Computer",
-        "siteOffers": 45,
-        "priority": "mittel",
+        "siteOffers": 1,
+        "priority": "niedrig",
         "searchTerms": [
           "electronics",
           "computer",
@@ -1812,20 +1772,6 @@
         ],
         "connected": false,
         "action": "Tradedoubler-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Technik & Computer priorisieren."
-      },
-      {
-        "network": "Tradedoubler",
-        "category": "Freizeit",
-        "siteOffers": 1,
-        "priority": "niedrig",
-        "searchTerms": [
-          "travel",
-          "outdoor",
-          "hobby",
-          "tickets"
-        ],
-        "connected": false,
-        "action": "Tradedoubler-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Freizeit priorisieren."
       }
     ],
     "applicationApi": "not-verified",
@@ -1839,24 +1785,9 @@
     "marketplaceSearches": [
       {
         "network": "Webgains",
-        "category": "Audio & Musik",
-        "siteOffers": 57,
-        "priority": "hoch",
-        "searchTerms": [
-          "audio",
-          "music",
-          "headphones",
-          "microphone",
-          "recording"
-        ],
-        "connected": false,
-        "action": "Webgains-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Audio & Musik priorisieren."
-      },
-      {
-        "network": "Webgains",
         "category": "Haushalt & Alltag",
-        "siteOffers": 56,
-        "priority": "hoch",
+        "siteOffers": 2,
+        "priority": "niedrig",
         "searchTerms": [
           "home",
           "appliances",
@@ -1869,9 +1800,24 @@
       },
       {
         "network": "Webgains",
+        "category": "Audio & Musik",
+        "siteOffers": 1,
+        "priority": "niedrig",
+        "searchTerms": [
+          "audio",
+          "music",
+          "headphones",
+          "microphone",
+          "recording"
+        ],
+        "connected": false,
+        "action": "Webgains-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Audio & Musik priorisieren."
+      },
+      {
+        "network": "Webgains",
         "category": "Technik & Computer",
-        "siteOffers": 45,
-        "priority": "mittel",
+        "siteOffers": 1,
+        "priority": "niedrig",
         "searchTerms": [
           "electronics",
           "computer",
@@ -1881,20 +1827,6 @@
         ],
         "connected": false,
         "action": "Webgains-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Technik & Computer priorisieren."
-      },
-      {
-        "network": "Webgains",
-        "category": "Freizeit",
-        "siteOffers": 1,
-        "priority": "niedrig",
-        "searchTerms": [
-          "travel",
-          "outdoor",
-          "hobby",
-          "tickets"
-        ],
-        "connected": false,
-        "action": "Webgains-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Freizeit priorisieren."
       }
     ],
     "membershipApi": "documented",
