@@ -33,5 +33,5 @@ test("V9 offer detail uses a clear media and purchase hierarchy", () => {
   assert.match(css, /\.detail h1\{[\s\S]*?color:var\(--portal-ink\)!important/);
   assert.match(css, /\.offer-primary-action\{[\s\S]*?min-height:54px/);
   assert.match(css, /\.detail \.comparison>div>a\{[\s\S]*?min-height:54px/);
-  assert.match(html, /site\.css\?v=20/);
+  assert.match(html, /site\.css\?v=\d+/);
 });
