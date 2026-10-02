@@ -1676,3 +1676,42 @@ body{
 }
 .comparison-state-badge.external{background:#eef7f2;color:#0d5f49;border:1px solid #c9ddd2}
 .comparison-state-badge.planned{background:#f4f4ed;color:#68766f;border:1px solid #dedfd4}
+
+
+/* V9 touch-target hardening */
+.header-brand{min-height:44px}
+.header-links a{
+  display:inline-flex;
+  align-items:center;
+  min-height:44px;
+  padding-inline:6px;
+  border-radius:9px;
+}
+.header-social a{
+  width:44px!important;
+  height:44px!important;
+  min-width:44px;
+  min-height:44px;
+}
+.header-social a img{width:30px!important;height:30px!important}
+.search-chips a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:44px;
+  padding:9px 13px!important;
+}
+.section-head>a,.rail-actions>a{
+  display:inline-flex;
+  align-items:center;
+  min-height:44px;
+  padding-block:8px;
+}
+.nav-panel a{
+  display:flex;
+  align-items:center;
+  min-height:44px;
+}
+@media(max-width:1180px){
+  .header-social{display:none!important}
+}
