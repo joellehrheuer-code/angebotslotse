@@ -23,5 +23,5 @@ test("V9 primary navigation exposes comfortable touch targets", () => {
   assert.match(css, /\.search-chips a\{[\s\S]*?min-height:44px/);
   assert.match(css, /\.section-head>a,\.rail-actions>a\{[\s\S]*?min-height:44px/);
   assert.match(css, /\.nav-panel a\{[\s\S]*?min-height:44px/);
-  assert.match(html, /site\.css\?v=19/);
+  assert.match(html, /site\.css\?v=\d+/);
 });
