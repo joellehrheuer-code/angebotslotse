@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-02T21:50:14.031Z",
+  "generatedAt": "2026-10-02T22:12:41.825Z",
   "market": "DE",
   "publisherId": 3045061,
   "awin": {
@@ -852,6 +852,17 @@
       {
         "network": "Awin",
         "relationship": "notjoined",
+        "advertiserId": 116921,
+        "name": "Banak DE",
+        "primarySector": "Furniture & Soft Furnishings",
+        "primaryRegion": {
+          "name": "Germany",
+          "countryCode": "DE"
+        }
+      },
+      {
+        "network": "Awin",
+        "relationship": "notjoined",
         "advertiserId": 15389,
         "name": "Banggood DE",
         "primarySector": "Electronic Superstore",
@@ -1328,17 +1339,6 @@
         "advertiserId": 14328,
         "name": "Body Attack DE",
         "primarySector": "Sports Equipment",
-        "primaryRegion": {
-          "name": "Germany",
-          "countryCode": "DE"
-        }
-      },
-      {
-        "network": "Awin",
-        "relationship": "notjoined",
-        "advertiserId": 15016,
-        "name": "Bodylab24 DE",
-        "primarySector": "Health & Beauty",
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
