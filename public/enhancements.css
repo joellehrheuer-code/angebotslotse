@@ -3109,3 +3109,71 @@ a{color:inherit}
 @media(prefers-reduced-motion:reduce){
   .shop-card{transition:none!important;transform:none!important}
 }
+
+
+/* V12.3 MOBILE QA — resolve legacy flex conflict and harden touch targets */
+.header-links a{
+  min-height:44px!important;
+}
+.rail-actions button{
+  width:44px!important;
+  height:44px!important;
+  min-width:44px!important;
+  min-height:44px!important;
+}
+.watch-button{
+  min-height:44px!important;
+  padding:8px 12px!important;
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+}
+.live-network-head>a{
+  min-height:44px!important;
+  display:inline-flex!important;
+  align-items:center!important;
+}
+.live-store-strip>div a{
+  min-height:44px!important;
+  display:flex!important;
+  align-items:center!important;
+}
+.footer-about-link,
+.footer-social a,
+.site-footer nav a,
+.footer-report-link,
+.site-footer summary{
+  min-height:44px!important;
+  display:flex!important;
+  align-items:center!important;
+}
+.deal-card .brandline a,
+.deal-card .merchant a,
+.deal-card h3 a{
+  min-height:32px;
+  display:inline-flex;
+  align-items:center;
+}
+@media(max-width:760px){
+  .category-grid{
+    display:grid!important;
+    overflow:visible!important;
+    scroll-snap-type:none!important;
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    gap:12px!important;
+  }
+  .category-grid>a,
+  .category-tile{
+    min-width:0!important;
+    width:auto!important;
+    scroll-snap-align:none!important;
+  }
+}
+@media(max-width:480px){
+  .category-grid{
+    grid-template-columns:1fr!important;
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  .watch-button,.live-store-strip>div a,.rail-actions button{transition:none!important}
+}
