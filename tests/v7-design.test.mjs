@@ -36,12 +36,12 @@ test("V9 homepage exposes comparison-first portal architecture and real data", (
   assert.match(html, /class="category-art"/);
   assert.match(html, /cdn\.shopify\.com|imageUrl/);
   assert.doesNotMatch(html, /GearUP/i);
-  assert.match(css, /--portal-blue:#4f7cff/);
+  assert.match(css, /--portal-blue:#0d5f49/);
   assert.match(css, /\.portal-path-grid/);
   assert.match(css, /@media\(prefers-reduced-motion:reduce\)/);
   const compareHub = fs.readFileSync("dist/vergleichen.html", "utf8");
   assert.match(compareHub, /Tarife & Verträge/);
-  assert.match(compareHub, /Integration vorbereitet/);
+  assert.match(compareHub, /Vergleich bei Verivox öffnen/);\n  assert.match(compareHub, /verivox\\.de/);
   assert.match(compareHub, /content="noindex,follow"/);
 });
 
