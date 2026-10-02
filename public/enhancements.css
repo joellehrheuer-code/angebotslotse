@@ -2820,3 +2820,28 @@ a{color:inherit}
   .hero-product-stack{transform:none!important}
   .hero-product-card,.deal-card,.category-tile,.lifestyle-category .category-art img{transition:none!important}
 }
+
+
+/* V12 utility surfaces */
+.mobile-bottom-nav{
+  background:rgba(8,10,18,.96)!important;border-top:1px solid #252b3d!important;
+  box-shadow:0 -12px 35px rgba(0,0,0,.28)!important;backdrop-filter:blur(18px);
+}
+.mobile-bottom-nav a{color:#8f99af!important}
+.mobile-bottom-nav a:hover,.mobile-bottom-nav a[aria-current="page"]{color:#fff!important}
+.mobile-bottom-nav a[aria-current="page"] span{color:#ff6fba!important}
+.report-fab{background:linear-gradient(120deg,#ff3fa8,#985dff)!important;color:#fff!important;box-shadow:0 16px 40px rgba(0,0,0,.32)!important}
+.report-dialog{background:#0f1320!important;color:#f4f5fb!important;border-color:#2b3248!important}
+.report-form label{color:#aab2c5!important}
+.report-form input,.report-form textarea,.report-form select{background:#171b2b!important;color:#f5f6fb!important;border-color:#30384f!important}
+.account-card,.watchlist-grid>*,.comparison-service-grid article,.comparison-trust{
+  background:#0f1320!important;border-color:#272e43!important;color:#f5f6fb!important;box-shadow:none!important;
+}
+.account-card p,.comparison-service-grid article p,.comparison-trust p{color:#909ab0!important}
+.account-card input,.account-card select{background:#171b2b!important;color:#fff!important;border-color:#30384f!important}
+.comparison-service-grid article h2,.comparison-trust h2{color:#fff!important}
+.comparison-service-icon{background:#22172b!important;color:#ff78c0!important}
+.comparison-service-link{color:#ff78c0!important}
+.breadcrumbs{color:#7e899f!important}
+.breadcrumbs a{color:#b8c0d2!important}
+.back{color:#bac1d2!important}
