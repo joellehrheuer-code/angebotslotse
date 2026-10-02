@@ -31,6 +31,71 @@ if (globalQuery && input) input.value = globalQuery;
 function filter() { const q = (input?.value || "").trim(); let visible=0; for (const card of cards) { const ok=searchMatches(card.dataset.search,q) && (!category || card.dataset.search.includes(category)); card.hidden=!ok; if(ok) visible++; } if(noResults) noResults.hidden=visible>0; }
 input?.addEventListener("input",filter); filter();
 
+const quickSearchDataNode=document.querySelector("#quick-search-data");
+let quickSearchData={products:[],shops:[],categories:[]};
+try{quickSearchData=JSON.parse(quickSearchDataNode?.textContent||"{}");}catch{}
+const moneyQuick=(value,currency="EUR")=>new Intl.NumberFormat("de-DE",{style:"currency",currency,maximumFractionDigits:2}).format(Number(value));
+const makeSuggestion=(tag,className)=>{const el=document.createElement(tag);el.className=className;return el;};
+function renderSmartSearch(form){
+  const field=form.querySelector('input[type="search"]');
+  const panel=form.querySelector("[data-search-panel]");
+  if(!field||!panel)return;
+  const close=()=>{panel.hidden=true;panel.replaceChildren();field.setAttribute("aria-expanded","false");};
+  const render=()=>{
+    const q=field.value.trim();
+    if(q.length<2){close();return;}
+    const products=(quickSearchData.products||[]).filter(row=>searchMatches([row.title,row.brand,row.merchant,row.category].join(" "),q)).slice(0,4);
+    const shops=(quickSearchData.shops||[]).filter(row=>searchMatches(row.name,q)).slice(0,3);
+    const categories=(quickSearchData.categories||[]).filter(row=>searchMatches(row.name,q)).slice(0,3);
+    panel.replaceChildren();
+    const addGroup=(title,rows,kind)=>{
+      if(!rows.length)return;
+      const section=makeSuggestion("section","search-suggest-group");
+      const heading=makeSuggestion("strong","search-suggest-heading");heading.textContent=title;section.append(heading);
+      rows.forEach(row=>{
+        const link=makeSuggestion("a","search-suggest-item "+kind);link.href=row.url;
+        if(kind==="product"&&row.imageUrl){const img=document.createElement("img");img.src=row.imageUrl;img.alt="";img.loading="lazy";img.decoding="async";img.referrerPolicy="no-referrer";link.append(img);}
+        const copy=makeSuggestion("span","search-suggest-copy");
+        const name=makeSuggestion("b","");name.textContent=kind==="product"?row.title:row.name;copy.append(name);
+        const meta=makeSuggestion("small","");
+        if(kind==="product")meta.textContent=[row.brand,row.merchant].filter(Boolean).join(" · ");
+        else meta.textContent=String(row.count||0)+(kind==="shop"?" Deals":" Angebote");
+        copy.append(meta);link.append(copy);
+        if(kind==="product"&&row.price!=null){const price=makeSuggestion("em","");price.textContent=moneyQuick(row.price,row.currency);link.append(price);}
+        section.append(link);
+      });
+      panel.append(section);
+    };
+    addGroup("Produkte",products,"product");
+    addGroup("Shops",shops,"shop");
+    addGroup("Kategorien",categories,"category");
+    if(!panel.childElementCount){const empty=makeSuggestion("p","search-suggest-empty");empty.textContent="Keine direkte Empfehlung – Enter zeigt dir die vollständige Suche.";panel.append(empty);}
+    panel.hidden=false;field.setAttribute("aria-expanded","true");
+  };
+  field.setAttribute("aria-expanded","false");
+  field.addEventListener("input",render);
+  field.addEventListener("focus",()=>{if(field.value.trim().length>=2)render();});
+  field.addEventListener("keydown",event=>{if(event.key==="Escape")close();});
+  document.addEventListener("pointerdown",event=>{if(!form.contains(event.target))close();});
+}
+document.querySelectorAll("[data-smart-search]").forEach(renderSmartSearch);
+
+
+const premiumHero=document.querySelector("[data-hero-parallax]");
+const reduceMotion=matchMedia("(prefers-reduced-motion: reduce)");
+if(premiumHero&&matchMedia("(pointer:fine)").matches&&!reduceMotion.matches){
+  premiumHero.addEventListener("pointermove",event=>{
+    const box=premiumHero.getBoundingClientRect();
+    const x=((event.clientX-box.left)/box.width-.5)*8;
+    const y=((event.clientY-box.top)/box.height-.5)*8;
+    premiumHero.style.setProperty("--hero-x",x.toFixed(2)+"px");
+    premiumHero.style.setProperty("--hero-y",y.toFixed(2)+"px");
+  });
+  premiumHero.addEventListener("pointerleave",()=>{
+    premiumHero.style.setProperty("--hero-x","0px");
+    premiumHero.style.setProperty("--hero-y","0px");
+  });
+}
 
 const appInstallButton = document.querySelector("[data-app-install]");
 const appInstallHelp = document.querySelector("[data-app-install-help]");
@@ -361,6 +426,18 @@ document.addEventListener("click", event => {
   dialog.querySelector(".image-lightbox-original").href=link.href;
   dialog.showModal();
 });
+
+const stickyOfferBar=document.querySelector("[data-sticky-offer-bar]");
+const primaryOfferAction=document.querySelector(".offer-primary-action");
+if(stickyOfferBar&&primaryOfferAction){
+  const setSticky=visible=>{stickyOfferBar.hidden=!visible;document.body.classList.toggle("has-sticky-offer",visible);};
+  if("IntersectionObserver" in window){
+    new IntersectionObserver(entries=>setSticky(!entries[0].isIntersecting),{threshold:.05}).observe(primaryOfferAction);
+  }else{
+    const sync=()=>setSticky(scrollY>primaryOfferAction.offsetTop+primaryOfferAction.offsetHeight);
+    addEventListener("scroll",sync,{passive:true});sync();
+  }
+}
 
 const detail = document.querySelector(".detail");
 if (detail) {
