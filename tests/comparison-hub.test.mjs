@@ -28,8 +28,8 @@ test("Vergleichsbereich ist auf Startseite, Navigation und eigener Seite erreich
   assert.match(home, /class="comparison-hub/);
   assert.match(home, />Vergleiche</);
   assert.match(home, /Tarife & Versicherungen vergleichen/);
-  assert.match(compare, /Strom & Energie/);
-  assert.match(compare, /Internet & DSL/);
+  assert.match(compare, /Strom &amp; Energie/);
+  assert.match(compare, /Internet &amp; DSL/);
   assert.match(compare, /Mobilfunk/);
   assert.match(compare, /Versicherungen/);
   assert.match(compare, /Kfz-Versicherung/);
