@@ -32,6 +32,9 @@ test("V9 homepage exposes comparison-first portal architecture and real data", (
   assert.match(html, /Joel271997 \/ J0JOEL/);
   assert.match(html, /Was möchtest du vergleichen\?/);
   assert.match(html, /Tarife & Verträge/);
+  assert.match(html, /class="skip-link"/);
+  assert.match(html, /id="main-content"/);
+  assert.match(html, /class="mobile-bottom-nav"/);
   assert.match(html, /class="category-tile"/);
   assert.match(html, /class="category-art"/);
   assert.match(html, /cdn\.shopify\.com|imageUrl/);
