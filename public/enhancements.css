@@ -3138,6 +3138,15 @@ a{color:inherit}
   display:flex!important;
   align-items:center!important;
 }
+.footer-about-link,
+.footer-social a,
+.site-footer nav a,
+.footer-report-link,
+.site-footer summary{
+  min-height:44px!important;
+  display:flex!important;
+  align-items:center!important;
+}
 .deal-card .brandline a,
 .deal-card .merchant a,
 .deal-card h3 a{
