@@ -66,5 +66,5 @@ test("V12 footer and cache version are aligned",()=>{
   assert.match(html,/<summary>Deals<\/summary>/);
   assert.match(html,/<summary>Service<\/summary>/);
   assert.match(html,/<summary>Rechtliches<\/summary>/);
-  assert.match(sw,/angebotslotse-shell-v10/);
+  assert.match(sw,/angebotslotse-shell-v11/);
 });
