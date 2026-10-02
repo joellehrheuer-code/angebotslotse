@@ -1841,3 +1841,6 @@ footer nav a:hover{color:var(--v13-forest)!important}
     transform:none!important;
   }
 }
+
+/* V13 header decluttering: social destinations remain available in the menu. */
+.header-social{display:none!important}
