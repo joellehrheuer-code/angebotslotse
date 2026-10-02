@@ -56,5 +56,5 @@ test("V11 tracks the complete 20 plus 180 point audit and rotates the PWA cache"
   assert.match(audit, /20-Punkte-Premium-Masterplan/);
   assert.match(audit, /Erweiterter 180-Punkte-Katalog/);
   assert.ok((audit.match(/^\d+\./gm) || []).length >= 200, "Audit must contain at least 200 numbered entries.");
-  assert.match(sw, /angebotslotse-shell-v8/);
+  assert.match(sw, /angebotslotse-shell-v9/);
 });
