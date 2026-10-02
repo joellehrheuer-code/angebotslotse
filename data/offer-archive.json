@@ -1,6 +1,22 @@
 {
-  "updatedAt": "2026-09-30T21:02:31.540Z",
+  "updatedAt": "2026-10-02T16:12:45.706Z",
   "items": [
+    {
+      "id": "5ddceb8cbe41971d",
+      "slug": "midweek-madness-22-sparen-5ddceb8c",
+      "title": "Midweek Madness: 22% sparen!",
+      "advertiser": "EMP DE",
+      "source": "awin",
+      "productId": null,
+      "category": "sonstiges",
+      "lastPrice": null,
+      "currency": "EUR",
+      "firstSeen": "2026-09-29T10:45:19.000Z",
+      "lastSeen": "2026-09-30T21:02:31.316Z",
+      "endDate": "2026-09-30T21:59:00.000Z",
+      "archivedAt": "2026-10-02T16:12:45.706Z",
+      "reason": "expired"
+    },
     {
       "id": "584ca267849648b4",
       "slug": "waves-specials-584ca267",
