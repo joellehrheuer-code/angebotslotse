@@ -1666,3 +1666,13 @@ body{
 @media(prefers-reduced-motion:reduce){
   .skip-link,.mobile-bottom-nav a{transition:none!important}
 }
+
+
+/* V9.4 COMPARISON STATUS — distinguish external tools from future partner integration */
+.comparison-service-state{display:flex;flex-wrap:wrap;gap:6px;margin:14px 0 10px}
+.comparison-state-badge{
+  display:inline-flex;align-items:center;min-height:28px;padding:5px 8px;border-radius:999px;
+  font:800 10px/1.1 var(--sans);letter-spacing:.02em;
+}
+.comparison-state-badge.external{background:#eef7f2;color:#0d5f49;border:1px solid #c9ddd2}
+.comparison-state-badge.planned{background:#f4f4ed;color:#68766f;border:1px solid #dedfd4}
