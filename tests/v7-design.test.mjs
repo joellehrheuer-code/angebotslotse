@@ -29,6 +29,8 @@ test("V9 homepage exposes comparison-first portal architecture and real data", (
 
   assert.match(html, /class="premium-hero portal-hero/);
   assert.match(html, /class="brand-logo"/);
+  assert.match(html, /class="skip-link"/);
+  assert.match(html, /class="mobile-bottom-nav"/);
   assert.match(html, /Joel271997 \/ J0JOEL/);
   assert.match(html, /Was möchtest du vergleichen\?/);
   assert.match(html, /Tarife & Verträge/);
@@ -49,7 +51,7 @@ test("V9 homepage exposes comparison-first portal architecture and real data", (
 test("V7 build report records the real publishable inventory", () => {
   const report = JSON.parse(fs.readFileSync("dist/build-report.json", "utf8"));
   const offers = JSON.parse(fs.readFileSync("data/offers.json", "utf8"));
-  assert.equal(report.version, "V8-premium-dark-commerce");
+  assert.equal(report.version, "V9-comparison-portal");
   assert.equal(report.offers, report.productCards);
   assert.ok(report.offers > 0);
   assert.equal(report.images, offers.filter(isSitePublishable).filter((offer) => offer.imageUrl).length);
