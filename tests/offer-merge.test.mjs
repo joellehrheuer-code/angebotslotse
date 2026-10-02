@@ -60,6 +60,36 @@ test("trips a circuit breaker on a suspiciously small successful response", () =
   assert.equal(result.filter(row => row.isStale).length, 9);
 });
 
+test("does not preserve an expired offer when a sibling source is disabled", () => {
+  const expired = { ...offer("awin-expired"), endDate: "2026-09-14T23:59:59.000Z" };
+  const result = mergeOfferInventory({
+    freshOffers: [],
+    oldOffers: [expired],
+    sources: [
+      { name: "awin", state: "ok", rows: [] },
+      { name: "awin-enhanced-feeds", state: "disabled", rows: [] }
+    ],
+    now: "2026-09-15T12:00:00.000Z",
+    maxOffers: 10
+  });
+  assert.deepEqual(result, []);
+});
+
+test("does not preserve an expired offer when a sibling source errors", () => {
+  const expired = { ...offer("awin-expired"), endDate: "2026-09-14T23:59:59.000Z" };
+  const result = mergeOfferInventory({
+    freshOffers: [],
+    oldOffers: [expired],
+    sources: [
+      { name: "awin", state: "ok", rows: [] },
+      { name: "awin-enhanced-feeds", state: "error", rows: [], error: "timeout" }
+    ],
+    now: "2026-09-15T12:00:00.000Z",
+    maxOffers: 10
+  });
+  assert.deepEqual(result, []);
+});
+
 test("does not preserve an expired source when its inventory is healthy", () => {
   const result = mergeOfferInventory({
     freshOffers: [offer("awin-new")],
