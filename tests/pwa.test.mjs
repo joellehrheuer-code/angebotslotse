@@ -9,7 +9,7 @@ test("PWA-Quelle trennt Offline-Cache von Konto- und Alarmdaten", () => {
 
   assert.match(build, /manifest\.webmanifest/);
   assert.match(build, /display:"standalone"/);
-  assert.match(build, /theme_color:"#0d5f49"/);
+  assert.match(build, /theme_color:"#080a12"/);
   assert.match(build, /serviceWorker/);
   assert.match(build, /offline\.html/);
   assert.match(validate, /manifest\.webmanifest/);

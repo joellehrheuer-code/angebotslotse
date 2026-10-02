@@ -1,4 +1,4 @@
-const CACHE = "angebotslotse-shell-v7";
+const CACHE = "angebotslotse-shell-v8";
 const scope = self.registration.scope;
 const local = path => new URL(path, scope).href;
 const SHELL = [
