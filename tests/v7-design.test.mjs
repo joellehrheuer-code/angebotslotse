@@ -39,6 +39,10 @@ test("V9 homepage exposes comparison-first portal architecture and real data", (
   assert.match(css, /--portal-blue:#0d5f49/);
   assert.match(css, /\.portal-path-grid/);
   assert.match(css, /@media\(prefers-reduced-motion:reduce\)/);
+  assert.match(css, /V9\.2 SITE-WIDE SURFACE CONSISTENCY/);
+  for (const selector of [".owned-project-card",".merch-loader",".shop-card",".deal-check",".category-guide",".watch-panel",".report-dialog",".account-card"]) {
+    assert.ok(css.lastIndexOf(selector) > css.indexOf("V9.2 SITE-WIDE SURFACE CONSISTENCY"), selector + " needs a V9.2 override");
+  }
   const compareHub = fs.readFileSync("dist/vergleichen.html", "utf8");
   assert.match(compareHub, /Tarife & Verträge/);
   assert.match(compareHub, /Vergleich bei Verivox öffnen/);

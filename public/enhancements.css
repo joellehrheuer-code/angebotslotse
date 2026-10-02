@@ -1467,3 +1467,158 @@ body{
   .active-filter-row{grid-column:auto}
 }
 @media(prefers-reduced-motion:reduce){.active-filter-chip{transition:none!important;transform:none!important}}
+
+
+/* V9.2 SITE-WIDE SURFACE CONSISTENCY — remove legacy pink/dark islands */
+.owned-project-card,.merch-loader,.shop-card,.deal-check,.category-guide,.watch-panel,
+.price-history,.history-panel,.source-empty,.inventory-note,.account-card,.report-dialog{
+  border-color:var(--portal-line)!important;
+  color:var(--portal-ink)!important;
+}
+.owned-project-card,.shop-card,.deal-check,.category-guide,.watch-panel,.account-card{
+  background:rgba(255,255,255,.92)!important;
+  box-shadow:0 10px 34px rgba(18,56,45,.07)!important;
+}
+.owned-project-card{
+  border-radius:22px!important;
+  transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease;
+}
+.owned-project-card:hover{transform:translateY(-3px);border-color:#b7d0c3!important;box-shadow:var(--portal-shadow)!important}
+.owned-project-card h2,.owned-project-card h3{color:var(--portal-ink)!important}
+.owned-project-card p,.owned-project-card small{color:var(--portal-muted)!important}
+.owned-project-card .button.primary{background:var(--portal-blue)!important;color:#fff!important}
+
+.merch-loader{
+  background:
+    radial-gradient(circle at 90% 8%,rgba(205,235,63,.18),transparent 30%),
+    linear-gradient(145deg,#fff,#f2f7f1)!important;
+  box-shadow:var(--portal-shadow)!important;
+}
+.merch-loader-copy>strong{color:var(--portal-ink)!important}
+.merch-loader-copy p,.merch-status{color:var(--portal-muted)!important}
+
+.shop-card{
+  color:var(--portal-ink)!important;
+  text-decoration:none;
+  transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease;
+}
+.shop-card:hover{transform:translateY(-4px);border-color:#a9c8b7!important;box-shadow:var(--portal-shadow-hover)!important}
+.shop-card strong{color:var(--portal-ink)!important}
+.shop-card span{color:var(--portal-muted)!important}
+.shop-card small{color:var(--portal-blue)!important}
+
+.search-page .listing-tools label{color:#53655d!important}
+.search-page .listing-tools input{
+  border-color:#d8e2db!important;background:#fff!important;color:var(--portal-ink)!important;
+}
+.search-page .listing-tools input:focus{border-color:var(--portal-blue)!important;box-shadow:0 0 0 4px rgba(13,95,73,.11)!important}
+
+.deal-check{background:linear-gradient(145deg,#fff,#f6faf7)!important}
+.deal-check .section-head h2,.deal-check h2{color:var(--portal-ink)!important}
+.deal-facts>div{
+  border-color:#dbe5de!important;background:#f8fbf9!important;color:var(--portal-ink)!important;
+}
+.deal-facts span{color:var(--portal-muted)!important}
+.deal-facts strong{color:var(--portal-ink)!important}
+.deal-check-note{color:var(--portal-muted)!important}
+
+.category-guide{background:#fff!important}
+.category-live-stats>div{border-color:#dbe5de!important;background:#f8fbf9!important}
+.category-live-stats span{color:var(--portal-muted)!important}
+.category-live-stats strong,.category-guide-copy h2,.category-guide-copy h3{color:var(--portal-ink)!important}
+.category-guide-copy p,.category-guide-copy li{color:var(--portal-muted)!important}
+
+.watch-panel{background:linear-gradient(145deg,#fff,#f7faf8)!important}
+.watch-panel h2,.watch-panel h3,.watch-panel strong{color:var(--portal-ink)!important}
+.watch-panel p,.watch-panel small{color:var(--portal-muted)!important}
+.watch-actions input,.watch-actions select{
+  border-color:#d8e2db!important;background:#fff!important;color:var(--portal-ink)!important;
+}
+.watch-actions input:focus,.watch-actions select:focus{
+  border-color:var(--portal-blue)!important;box-shadow:0 0 0 4px rgba(13,95,73,.10)!important;
+}
+
+.price-history,.history-panel{background:#fff!important;color:var(--portal-ink)!important}
+.history-head h2{color:var(--portal-ink)!important}
+.history-head button{
+  border-color:#d8e2db!important;background:#fff!important;color:#496158!important;
+}
+.history-head button:hover{border-color:#aac4b5!important;background:#f4faf6!important}
+.history-head button[aria-pressed=true]{background:var(--portal-blue)!important;color:#fff!important;border-color:var(--portal-blue)!important}
+
+.coupon-filters span{
+  border-color:#d8e2db!important;background:#fff!important;color:#496158!important;
+}
+.coupon-filters span:hover{border-color:#aac4b5!important;background:#f4faf6!important}
+
+.notice{
+  border-color:#dce5df!important;background:#f4f8f5!important;color:#5d7067!important;
+}
+.inventory-note{
+  background:linear-gradient(145deg,#fff,#f5f9f6)!important;
+  box-shadow:0 8px 28px rgba(18,56,45,.06)!important;
+}
+.inventory-note strong{color:var(--portal-ink)!important}
+.inventory-note span{color:var(--portal-muted)!important}
+.source-empty{
+  background:linear-gradient(145deg,#0a4c3b,#0d5f49)!important;
+  color:#fff!important;box-shadow:var(--portal-shadow)!important;
+}
+.source-empty h1{color:#fff!important}
+.source-empty p{color:#d7e8e0!important}
+
+.report-fab{
+  border-color:rgba(255,255,255,.22)!important;
+  background:rgba(8,75,58,.94)!important;color:#fff!important;
+  box-shadow:0 16px 42px rgba(8,75,58,.24)!important;
+}
+.report-fab span{background:var(--portal-warm)!important;color:#12382d!important}
+.report-dialog{
+  background:#fff!important;
+  box-shadow:0 28px 100px rgba(8,75,58,.24)!important;
+}
+.report-dialog::backdrop{background:rgba(8,28,22,.58)!important}
+.report-head h2{color:var(--portal-ink)!important}
+.report-head+p{color:var(--portal-muted)!important}
+.report-close{
+  border-color:#d8e2db!important;background:#f7faf8!important;color:var(--portal-ink)!important;
+}
+.report-form label{color:#36564c!important}
+.report-form label small{color:var(--portal-muted)!important}
+.report-form input,.report-form textarea,.report-form select{
+  border-color:#d8e2db!important;background:#fff!important;color:var(--portal-ink)!important;
+}
+.report-form input:focus,.report-form textarea:focus,.report-form select:focus{
+  border-color:var(--portal-blue)!important;box-shadow:0 0 0 4px rgba(13,95,73,.10)!important;
+}
+
+.account-page{color:var(--portal-ink)!important}
+.account-card{border-radius:20px!important}
+.account-card h2,.account-card h3,.account-card strong{color:var(--portal-ink)!important}
+.account-card p,.account-card small{color:var(--portal-muted)!important}
+.account-card input,.account-card select,.account-card textarea{
+  border-color:#d8e2db!important;background:#fff!important;color:var(--portal-ink)!important;
+}
+.account-cashback-summary>div,.account-cashback-item{
+  border-color:#dce5df!important;background:#f7faf8!important;
+}
+.account-cashback-summary small,.account-cashback-item small{color:var(--portal-muted)!important}
+
+.soft-media-fallback{
+  background:
+    radial-gradient(circle at 75% 18%,rgba(205,235,63,.18),transparent 38%),
+    linear-gradient(135deg,#eef4eb,#dce9df)!important;
+  color:var(--portal-ink)!important;
+}
+.image-gallery a{border-color:#d8e2db!important;background:#f4f8f5!important}
+.image-gallery a:hover{border-color:var(--portal-blue)!important}
+
+:focus-visible{outline:3px solid var(--portal-warm)!important;outline-offset:4px}
+
+@media(max-width:720px){
+  .owned-project-card,.deal-check,.category-guide,.watch-panel,.account-card{border-radius:18px!important}
+  .report-dialog{border-radius:18px!important}
+}
+@media(prefers-reduced-motion:reduce){
+  .owned-project-card,.shop-card,.image-gallery a{transition:none!important;transform:none!important}
+}
