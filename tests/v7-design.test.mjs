@@ -22,21 +22,27 @@ function build() {
   });
 }
 
-test("V7 homepage keeps premium dark commerce composition and real data", () => {
+test("V9 homepage exposes comparison-first portal architecture and real data", () => {
   build();
   const html = fs.readFileSync("dist/index.html", "utf8");
   const css = fs.readFileSync("dist/enhancements.css", "utf8");
 
-  assert.match(html, /class="premium-hero/);
+  assert.match(html, /class="premium-hero portal-hero/);
   assert.match(html, /class="brand-logo"/);
   assert.match(html, /Joel271997 \/ J0JOEL/);
+  assert.match(html, /Was möchtest du vergleichen\?/);
+  assert.match(html, /Tarife & Verträge/);
   assert.match(html, /class="category-tile"/);
   assert.match(html, /class="category-art"/);
   assert.match(html, /cdn\.shopify\.com|imageUrl/);
   assert.doesNotMatch(html, /GearUP/i);
-  assert.match(css, /--magenta:#ff3fa8/);
-  assert.match(css, /\.deal-card\{background:var\(--soft-card\)/);
-  assert.match(css, /\.creator-visual img\{position:absolute/);
+  assert.match(css, /--portal-blue:#4f7cff/);
+  assert.match(css, /\.portal-path-grid/);
+  assert.match(css, /@media\(prefers-reduced-motion:reduce\)/);
+  const compareHub = fs.readFileSync("dist/vergleichen.html", "utf8");
+  assert.match(compareHub, /Tarife & Verträge/);
+  assert.match(compareHub, /Integration vorbereitet/);
+  assert.match(compareHub, /content="noindex,follow"/);
 });
 
 test("V7 build report records the real publishable inventory", () => {
