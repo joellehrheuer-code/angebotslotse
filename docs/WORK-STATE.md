@@ -1,54 +1,51 @@
 # Angebotslotse – aktueller Arbeitsstand
 
-Stand: 2. Oktober 2026, nach V12.2 Sitewide
+Stand: 2. Oktober 2026, nach V12.3.1 Mobile/Footer QA
 
 ## Aktuelle Phase
 V12 „Night Market“ – Premium-Shopping-Portal, siteweite Design-/UX-Vereinheitlichung und finale Qualitätsrunde.
 
 ## Source of Truth
 - Produktion: `main`
-- Letzter funktionaler Release: `V12.2 Sitewide: Premium-Design auf allen Hauptseiten`
+- Letzter funktionaler Release: `V12.3.1 Footer QA: letzte Mobile-Touchziele korrigieren`
 - Weltmarken-Audit: `docs/WELTMARKE-200-AUDIT.md`
 - Arbeitsregel: größere Änderungen isoliert auf `work/**`, `feature/**` oder per PR; vor Merge vollständige Validation.
 
 ## Bereits live
-- V12 Night-Market-Design: dunkles Navy/Schwarz mit gezielten Pink/Violett/Blau-Akzenten
-- LIVE-Leiste und „Aktuell angebunden“ mit echten Angebots-/Shop-/Quellen-/Kategorie-Daten
-- Search-first Hero, Smart Search, große Kategorie-Kacheln, Top-Deals und Deal des Tages
-- faktenbasierte Preis-/Deal-Einordnung und Sticky Provider CTA auf Produktseiten
-- reduzierte Navigation, Mobile-Navigation, Merkliste/Konto
-- echtes Angebotslotse-Branding
-- echtes Joel271997/J0JOEL-Creator-Logo
-- Instagram, YouTube, TikTok, Facebook, Snapchat, Twitch, Spotify und Discord in der Creator-/Social-Struktur
-- identische Cross-Plattform-Clips werden als eine Veröffentlichung mit Plattform-Links dargestellt
-- eigener Bereich „Musik & Streams“
-- Bücher und Merch als eigener, klar getrennter Bereich
-- V12.2 Premium-Unterseitenaufbau auf Kategorien, Suche, Merkliste, Konto, Shops, Marken, Bücher, Merch, Methodik, Status und Utility-Seiten
-- siteweit vereinheitlichte Filter-, Statistik-, Info- und Kartenflächen
-- verbesserte Mobile-Abstände und responsive Filterlogik
-- Reduced Motion, Fokuszustände, ausreichend große Touch-Ziele
+- V12 Night-Market-Design mit dunklem Navy/Schwarz und gezielten Pink/Violett/Blau-Akzenten
+- Search-first Hero, Smart Search, Kategorien, Top-Deals und Deal des Tages
+- „Aktuell angebunden“ mit echten Angebots-/Shop-/Quellen-/Kategorie-Daten
+- Premium-Unterseitenaufbau auf Kategorien, Suche, Merkliste, Konto, Shops, Marken, Bücher, Merch, Methodik, Status und Utility-Seiten
+- Produktdetail mit Preis-/Deal-Einordnung und Sticky Provider CTA
+- Creator-/Social-Bereich mit echtem Joel271997/J0JOEL-Logo, Facebook, deduplizierten Cross-Plattform-Releases sowie Musik & Streams
+- Mobile-Navigation, Merkliste, Konto, Reduced Motion, Fokuszustände und vergrößerte Touch-Ziele
+- Social-Verteiler liest veröffentlichte ShortSync-Posts jetzt paginiert über Cursor und dedupliziert Plattform/Post-ID
 - automatisierte Tests, Datenupdate, Build, SEO, Security, Pages-Deploy, Live-Smoke und IndexNow
 
 ## Verifiziert
-- V12.2 Branch-/PR-Validation vollständig erfolgreich
-- V12.2 Produktionsworkflow vollständig erfolgreich
-- Live-Smoke erfolgreich
-- Live-Seiten HTTP 200: Startseite, Suche, Kategorien, Shops, Konto, Methodik, Status, 404 und Produktdetail
-- Suche, Kategorien, Shops, Konto, Methodik, Status und Utility-Seiten liefern den neuen `subpage-hero`
-- Produktdetail liefert weiterhin `detail-grid` und `sticky-offer-bar`
-- CSS-Cache V12.2: `site.css?v=26`
-- PWA Shell Cache: `angebotslotse-shell-v10`
+- V12.3.1 Produktionsworkflow: Tests, Update, Build, Validierung, SEO, Security, Deploy und Live-Smoke erfolgreich
+- Live CSS: `site.css?v=28`
+- PWA Shell: `angebotslotse-shell-v12`
+- 375px Live-QA: kein horizontaler Overflow
+- Mobile Kategorie-Kacheln: zuvor 16–24px breit, jetzt 336px breit und einspaltig
+- Slider-Pfeile: 44×44px
+- Merken-Buttons: 44px hoch
+- Live-Shop-Links: 44px hoch
+- Footer About-Link: 154×44px
+- Footer Social-/Navigationslinks: 44px hoch
+- Footer Problem-melden: 137×44px
+- Live-Performance-Messung vor V12.3: CSS ca. 42KB übertragen, app.js ca. 11KB übertragen, gemessener Load ca. 305ms
+- Social-Verteiler Render-Deploy `e065743cb8000682bcbfac3c5244faa975ee313a` ist live
 
 ## Bekannte Datenbegrenzung
-Der öffentliche Social-Verteiler liefert derzeit nur vier Plattform-Posts desselben Clips vom 26.09.2026. Der Angebotslotse kann mehr Einträge verarbeiten; sobald der Verteiler weitere unterschiedliche öffentliche Veröffentlichungen liefert, entstehen automatisch weitere Release-Karten. Keine historische Veröffentlichung wird erfunden.
+Der öffentliche Social-Verteiler liefert aktuell weiterhin nur vier Plattform-Posts desselben Clips vom 26.09.2026. Die Pagination ist live und kann ältere ShortSync-Seiten lesen, sobald ShortSync dafür tatsächlich einen Cursor liefert. Es werden keine historischen Veröffentlichungen erfunden.
 
 ## Nächste offene Blöcke
-1. Social-Verteiler-Publikationshistorie erweitern, damit zukünftige echte Veröffentlichungen dauerhaft im öffentlichen Feed erhalten bleiben.
-2. V12 Performance/Accessibility mit realen Messwerten weiter optimieren.
-3. verbleibende Legacy-CSS-Blöcke schrittweise entfernen, ohne V12.2-Funktionen zu brechen.
-4. weitere visuelle Live-QA auf kleinen Mobilgeräten und sehr breiten Desktop-Auflösungen.
-5. Tarif-/Versicherungsintegrationen nur nach echter Partnerfreigabe weiter ausbauen.
-6. Heise/compaliate erst nach finaler Gesamt-QA erneut zur Prüfung vorlegen.
+1. Legacy-CSS schrittweise bereinigen, beginnend mit nachweislich überholten Mobile-/Theme-Regeln.
+2. weitere Performance-/Accessibility-Messungen auf Start-, Such-, Kategorie-, Konto- und Produktseiten.
+3. visuelle QA auf sehr kleinen Geräten sowie sehr breiten Desktop-Auflösungen.
+4. Tarif-/Versicherungsintegrationen nur nach echter Partnerfreigabe weiter ausbauen.
+5. Heise/compaliate erst nach finaler Gesamt-QA erneut zur Prüfung vorlegen.
 
 ## Regel bei Chat-/Stream-Abbruch
 1. Diese Datei lesen.
