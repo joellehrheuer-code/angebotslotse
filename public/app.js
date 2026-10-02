@@ -2,8 +2,33 @@ const input = document.querySelector("#search");
 const cards = [...document.querySelectorAll("[data-search]")];
 const noResults = document.querySelector("#no-results");
 const params = new URLSearchParams(location.search); const category = params.get("kategorie"); const globalQuery = params.get("suche");
+const normalizeSearch = value => String(value || "").normalize("NFKD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/[^a-z0-9äöüß]+/g," ").trim();
+const oneEditAway = (word,query) => {
+  if (word === query) return true;
+  if (Math.abs(word.length-query.length) > 1) return false;
+  let i=0,j=0,diffs=0;
+  while(i<word.length && j<query.length){
+    if(word[i]===query[j]){i++;j++;continue;}
+    if(++diffs>1)return false;
+    if(word.length>query.length)i++;
+    else if(query.length>word.length)j++;
+    else {i++;j++;}
+  }
+  return diffs + (i<word.length || j<query.length ? 1 : 0) <= 1;
+};
+function searchMatches(haystack,query){
+  const normalizedQuery=normalizeSearch(query);
+  if(!normalizedQuery)return true;
+  const normalizedHaystack=normalizeSearch(haystack);
+  if(normalizedHaystack.includes(normalizedQuery))return true;
+  const words=normalizedHaystack.split(/\s+/).filter(Boolean);
+  return normalizedQuery.split(/\s+/).filter(Boolean).every(token =>
+    normalizedHaystack.includes(token) ||
+    (token.length>=4 && words.some(word => word.startsWith(token) || token.startsWith(word) || oneEditAway(word,token)))
+  );
+}
 if (globalQuery && input) input.value = globalQuery;
-function filter() { const q = (input?.value || "").trim().toLowerCase(); let visible=0; for (const card of cards) { const ok=card.dataset.search.includes(q) && (!category || card.dataset.search.includes(category)); card.hidden=!ok; if(ok) visible++; } if(noResults) noResults.hidden=visible>0; }
+function filter() { const q = (input?.value || "").trim(); let visible=0; for (const card of cards) { const ok=searchMatches(card.dataset.search,q) && (!category || card.dataset.search.includes(category)); card.hidden=!ok; if(ok) visible++; } if(noResults) noResults.hidden=visible>0; }
 input?.addEventListener("input",filter); filter();
 
 
@@ -96,7 +121,7 @@ function syncActiveFilterChips() {
 }
 function updateCategoryListing() {
   if (!sortGrid) return;
-  const query = (categorySearch?.value || "").trim().toLowerCase();
+  const query = (categorySearch?.value || "").trim();
   const brand = (brandFilter?.value || "").trim().toLowerCase();
   const merchant = (merchantFilter?.value || "").trim().toLowerCase();
   const maxPriceValue = Number(maxPriceFilter?.value);
@@ -108,7 +133,7 @@ function updateCategoryListing() {
   let visible = 0;
   for (const row of rows) {
     const price = Number(row.dataset.price);
-    const matches = row.dataset.search.includes(query)
+    const matches = searchMatches(row.dataset.search,query)
       && (!brand || row.dataset.brand === brand)
       && (!merchant || row.dataset.merchant === merchant)
       && (!hasMaxPrice || (Number.isFinite(price) && price > 0 && price <= maxPriceValue))
@@ -228,6 +253,13 @@ document.querySelectorAll("[data-history-range]").forEach(button=>button.addEven
   history?.querySelectorAll("[data-history-panel]").forEach(panel=>panel.hidden=panel.dataset.historyPanel!==range);
 }));
 
+document.querySelectorAll(".header-links a, #main-nav a, .mobile-bottom-nav a, .footer-groups a").forEach(link => {
+  try {
+    const target = new URL(link.href, location.href);
+    if (target.origin === location.origin && target.pathname === location.pathname && (!target.hash || location.pathname !== "/")) link.setAttribute("aria-current","page");
+  } catch {}
+});
+
 const menuButton = document.querySelector(".menu-toggle");
 const mainNav = document.querySelector("#main-nav");
 const siteHeader = document.querySelector(".site-header");
@@ -285,6 +317,12 @@ addEventListener("scroll", () => {
   requestAnimationFrame(updateHeaderOnScroll);
 }, {passive:true});
 
+const footerGroups=[...document.querySelectorAll("[data-footer-group]")];
+const footerMobileQuery=matchMedia("(max-width:760px)");
+const syncFooterGroups=()=>footerGroups.forEach(group=>{group.open=!footerMobileQuery.matches;});
+syncFooterGroups();
+footerMobileQuery.addEventListener?.("change",syncFooterGroups);
+
 const countdowns = [...document.querySelectorAll("[data-countdown]")];
 function updateCountdowns() {
   const now = Date.now();
@@ -303,6 +341,26 @@ function updateCountdowns() {
 }
 updateCountdowns();
 if (countdowns.length) setInterval(updateCountdowns, 60000);
+
+document.addEventListener("click", event => {
+  const link=event.target.closest("[data-lightbox-link]");
+  if(!link)return;
+  event.preventDefault();
+  let dialog=document.querySelector(".image-lightbox-dialog");
+  if(!dialog){
+    dialog=document.createElement("dialog");
+    dialog.className="image-lightbox-dialog";
+    dialog.innerHTML='<button type="button" class="image-lightbox-close" aria-label="Bildansicht schließen">×</button><img alt=""><a class="image-lightbox-original" target="_blank" rel="noopener">Original öffnen ↗</a>';
+    document.body.append(dialog);
+    dialog.querySelector(".image-lightbox-close").addEventListener("click",()=>dialog.close());
+    dialog.addEventListener("click",e=>{if(e.target===dialog)dialog.close();});
+  }
+  const image=dialog.querySelector("img");
+  image.src=link.href;
+  image.alt=link.querySelector("img")?.alt || "Produktbild";
+  dialog.querySelector(".image-lightbox-original").href=link.href;
+  dialog.showModal();
+});
 
 const detail = document.querySelector(".detail");
 if (detail) {
