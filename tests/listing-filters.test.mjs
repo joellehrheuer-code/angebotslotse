@@ -23,6 +23,9 @@ test("Kategorie- und Suchseiten bieten kombinierbare Deal-Filter", () => {
     assert.match(html, /data-filter-reset/);
     assert.match(html, /data-filter-count/);
     assert.match(html, /data-filter-max-price/);
+    assert.match(html, /data-active-filters/);
+    assert.match(html, /data-active-filter-chips/);
+    assert.match(html, /data-filter-clear-all/);
   }
   assert.match(search, /data-filter-merchant/);
   assert.match(app, /data-filter-brand/);
@@ -31,4 +34,10 @@ test("Kategorie- und Suchseiten bieten kombinierbare Deal-Filter", () => {
   assert.match(app, /maxPriceValue/);
   assert.match(app, /row\.dataset\.merchant/);
   assert.match(app, /row\.dataset\.brand/);
+  assert.match(app, /syncActiveFilterChips/);
+  assert.match(app, /data-clear-filter/);
+  assert.match(app, /replaceChildren/);
+  const css = fs.readFileSync("dist/site.css", "utf8");
+  assert.match(css, /\.active-filter-chip/);
+  assert.match(css, /--portal-blue/);
 });
