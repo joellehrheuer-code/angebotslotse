@@ -41,7 +41,8 @@ test("V9 homepage exposes comparison-first portal architecture and real data", (
   assert.match(css, /@media\(prefers-reduced-motion:reduce\)/);
   const compareHub = fs.readFileSync("dist/vergleichen.html", "utf8");
   assert.match(compareHub, /Tarife & Verträge/);
-  assert.match(compareHub, /Vergleich bei Verivox öffnen/);\n  assert.match(compareHub, /verivox\\.de/);
+  assert.match(compareHub, /Vergleich bei Verivox öffnen/);
+  assert.match(compareHub, /verivox\.de/);
   assert.match(compareHub, /content="noindex,follow"/);
 });
 
