@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-02T16:54:41.957Z",
+  "generatedAt": "2026-10-02T17:00:13.994Z",
   "market": "DE",
   "publisherId": 3045061,
   "awin": {
@@ -382,17 +382,6 @@
         "advertiserId": 12591,
         "name": "Acer DE",
         "primarySector": "Computers",
-        "primaryRegion": {
-          "name": "Germany",
-          "countryCode": "DE"
-        }
-      },
-      {
-        "network": "Awin",
-        "relationship": "notjoined",
-        "advertiserId": 21647,
-        "name": "ACV DE",
-        "primarySector": "Insurance",
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
@@ -2212,49 +2201,23 @@
           "name": "Germany",
           "countryCode": "DE"
         }
+      },
+      {
+        "network": "Awin",
+        "relationship": "notjoined",
+        "advertiserId": 11642,
+        "name": "eibmarkt DE",
+        "primarySector": "Electronic Superstore",
+        "primaryRegion": {
+          "name": "Germany",
+          "countryCode": "DE"
+        }
       }
     ],
     "discoveryOffers": 200,
     "discoveryError": null,
     "detailsEnriched": 5,
     "opportunities": [
-      {
-        "brand": "Acer DE",
-        "network": "Awin",
-        "advertiserId": 12591,
-        "status": "notjoined",
-        "category": "Technik & Computer",
-        "score": 71,
-        "priority": "hoch",
-        "activeDiscoveryOffers": 1,
-        "offerExamples": [
-          "Spare 10 % auf nicht reduzierte Artikel mit dem Code SAVE10"
-        ],
-        "productFeed": false,
-        "metrics": {
-          "awinIndex": 52.43,
-          "epc": 0.34,
-          "conversionRate": 0.67,
-          "approvalPercentage": 83.84,
-          "validationDays": 39,
-          "averagePaymentTime": "78",
-          "commissionMin": null,
-          "commissionMax": null,
-          "commissionTypes": []
-        },
-        "reasons": [
-          "passt zu Technik & Computer",
-          "strategisch relevante Marke",
-          "1 aktive DE-Aktion",
-          "Awin Index 52.43",
-          "Approval 83.84%",
-          "EPC 0.34"
-        ],
-        "applicationRequired": true,
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Acer DE redaktionell passend im Bereich Technik & Computer einbinden. Bei Awin sind aktuell 1 für Deutschland sichtbare Aktion dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-        "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-        "automationState": "ready-for-review"
-      },
       {
         "brand": "Anker DE",
         "network": "Awin",
@@ -2354,6 +2317,40 @@
         ],
         "applicationRequired": true,
         "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Alternate DE redaktionell passend im Bereich Technik & Computer einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+        "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+        "automationState": "ready-for-review"
+      },
+      {
+        "brand": "Acer DE",
+        "network": "Awin",
+        "advertiserId": 12591,
+        "status": "notjoined",
+        "category": "Technik & Computer",
+        "score": 65,
+        "priority": "mittel",
+        "activeDiscoveryOffers": 0,
+        "offerExamples": [],
+        "productFeed": false,
+        "metrics": {
+          "awinIndex": 52.43,
+          "epc": 0.34,
+          "conversionRate": 0.67,
+          "approvalPercentage": 83.84,
+          "validationDays": 39,
+          "averagePaymentTime": "78",
+          "commissionMin": null,
+          "commissionMax": null,
+          "commissionTypes": []
+        },
+        "reasons": [
+          "passt zu Technik & Computer",
+          "strategisch relevante Marke",
+          "Awin Index 52.43",
+          "Approval 83.84%",
+          "EPC 0.34"
+        ],
+        "applicationRequired": true,
+        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Acer DE redaktionell passend im Bereich Technik & Computer einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
         "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
         "automationState": "ready-for-review"
       },
