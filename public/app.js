@@ -168,6 +168,38 @@ if(heroSlides.length>1 && !matchMedia("(prefers-reduced-motion: reduce)").matche
 
 const observer="IntersectionObserver" in window ? new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add("in-view");observer.unobserve(entry.target);}}),{rootMargin:"0px 0px -8%"}) : null;
 document.querySelectorAll(".reveal").forEach(element=>observer?observer.observe(element):element.classList.add("in-view"));
+
+const numberFormatter = new Intl.NumberFormat("de-DE");
+const countElements = [...document.querySelectorAll("[data-count-up]")];
+const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const animateCount = element => {
+  const target = Number(element.dataset.countUp || 0);
+  if (!Number.isFinite(target) || target < 0) return;
+  if (reducedMotion || target === 0) {
+    element.textContent = numberFormatter.format(target);
+    return;
+  }
+  const duration = Math.min(1100, 520 + target * 5);
+  const start = performance.now();
+  const step = now => {
+    const progress = Math.min(1, (now - start) / duration);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    element.textContent = numberFormatter.format(Math.round(target * eased));
+    if (progress < 1) requestAnimationFrame(step);
+  };
+  requestAnimationFrame(step);
+};
+if (countElements.length) {
+  if (reducedMotion || !("IntersectionObserver" in window)) countElements.forEach(animateCount);
+  else {
+    const countObserver = new IntersectionObserver(entries => entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      animateCount(entry.target);
+      countObserver.unobserve(entry.target);
+    }), {rootMargin:"0px 0px -10%"});
+    countElements.forEach(element => countObserver.observe(element));
+  }
+}
 document.querySelectorAll("[data-media]").forEach(image=>{
   const wrap=image.closest(".has-media");
   const done=()=>wrap?.classList.add("loaded");
@@ -230,6 +262,28 @@ document.addEventListener("keydown", event => {
 addEventListener("resize", () => {
   if (innerWidth > 1100 && mainNav?.classList.contains("open")) closeMenu();
 });
+
+let lastHeaderScrollY = scrollY;
+let headerTicking = false;
+const updateHeaderOnScroll = () => {
+  headerTicking = false;
+  if (!siteHeader || mainNav?.classList.contains("open") || siteHeader.matches(":focus-within")) {
+    siteHeader?.classList.remove("header-hidden");
+    lastHeaderScrollY = scrollY;
+    return;
+  }
+  const currentY = Math.max(0, scrollY);
+  const delta = currentY - lastHeaderScrollY;
+  if (currentY < 110) siteHeader.classList.remove("header-hidden");
+  else if (delta > 8) siteHeader.classList.add("header-hidden");
+  else if (delta < -6) siteHeader.classList.remove("header-hidden");
+  lastHeaderScrollY = currentY;
+};
+addEventListener("scroll", () => {
+  if (headerTicking) return;
+  headerTicking = true;
+  requestAnimationFrame(updateHeaderOnScroll);
+}, {passive:true});
 
 const countdowns = [...document.querySelectorAll("[data-countdown]")];
 function updateCountdowns() {
