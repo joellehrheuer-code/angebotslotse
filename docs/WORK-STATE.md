@@ -1,52 +1,57 @@
 # Angebotslotse – aktueller Arbeitsstand
 
-Stand: 2. Oktober 2026, nach V9-Produktdetail-Merge
+Stand: 2. Oktober 2026, nach V12.1 Creator & Social
 
 ## Aktuelle Phase
-V9 Phase 1 – Portal-Fundament, Design-Stabilisierung und Live-QA.
+V12 „Night Market“ – Premium-Shopping-Portal, Creator-/Social-Integration und finale Qualitätsrunde.
 
 ## Source of Truth
 - Produktion: `main`
-- Letzter funktionaler Merge: `feat(v9): unify product detail purchase hierarchy`
-- Masterplan: `docs/MASTERPLAN-V9.md`
-- Arbeitsregel: neue UI-Pakete isoliert auf `work/**` oder `feature/**`, vor Merge über Branch Validation prüfen
+- Letzter funktionaler Release: `V12.1 Creator & Social: Logo, Facebook und Multi-Plattform-Releases`
+- Weltmarken-Audit: `docs/WELTMARKE-200-AUDIT.md`
+- Arbeitsregel: größere Änderungen isoliert auf `work/**`, `feature/**` oder `design/**`; vor Merge Branch Validation.
 
-## Bereits umgesetzt
-- Ablauf-/Expired-Offer-Fehler behoben
-- V9 Startseite mit Produkte/Deals + Tarife/Verträge
-- Vergleichs-Hub mit transparentem externem Verivox-Status
-- Angebotslotse Branding, Logo und Socials
-- V9 Produktfilter inklusive sichtbarer aktiver Filter
-- siteweite V9 Oberflächenangleichung
-- PWA Cache-Rotation
-- mobile Schnellnavigation mit Safe Area
-- Skip-Link und Fokuszustände
-- primäre Klick-/Touchflächen auf mindestens 44 px vergrößert
-- Produktdetailseite: getrennte Medien-/Kaufbereiche, stärkerer Preis, 54-px-Haupt-CTA
-- Deal-Check, Merkliste, Preisverlauf und Preisvergleich auf V9-Oberflächen vereinheitlicht
-- automatisierte Tests, Update, Build, SEO, Security, Deploy, Smoke und IndexNow
-- Branch-/PR-Validierung vor main
+## Bereits live
+- V12 Night-Market-Design: dunkles Navy/Schwarz mit gezielten Pink/Violett/Blau-Akzenten
+- LIVE-Leiste und „Aktuell angebunden“ mit echten Angebots-/Shop-/Quellen-/Kategorie-Daten
+- Search-first Hero, Smart Search, große Kategorie-Kacheln, Top-Deals und Deal des Tages
+- faktenbasierte Preis-/Deal-Einordnung und Sticky Provider CTA auf Produktseiten
+- reduzierte Navigation, Mobile-Navigation, Merkliste/Konto
+- echtes Angebotslotse-Branding
+- echtes hochgeladenes Joel271997/J0JOEL-Creator-Logo im Creator-Bereich
+- Instagram, YouTube, TikTok, Facebook, Snapchat, Twitch, Spotify und Discord in der Creator-/Social-Struktur
+- identische Cross-Plattform-Clips werden als eine Veröffentlichung mit Plattform-Links dargestellt
+- eigener Bereich „Musik & Streams“; echte Feed-Einträge ersetzen automatisch die Spotify-/Twitch-Einstiegskarten
+- Bücher und Merch bleiben eigener, klar getrennter Bereich
+- Reduced Motion, Fokuszustände, ausreichend große Touch-Ziele
+- automatisierte Tests, Datenupdate, Build, SEO, Security, Pages-Deploy, Live-Smoke und IndexNow
 
-## Aktuell laufend
-1. Produktionsworkflow des Produktdetail-Merges vollständig abschließen
-2. danach Live-QA einer echten Angebotsdetailseite auf Desktop + Mobile
-3. falls nötig nur konkrete Live-Abweichungen als kleines Folgepaket fixen
+## Verifiziert
+- V12.1 Produktionsworkflow vollständig erfolgreich
+- Live-Seite HTTP 200
+- Creator-Logo im ausgelieferten HTML vorhanden
+- Facebook-Link kommt aus einem echten öffentlichen Facebook-Reel des Social-Verteilers; kein erfundenes Profil
+- aktueller Clip wird live genau einmal dargestellt, mit Instagram-, TikTok-, YouTube- und Facebook-Links
+- Musik-/Stream-Bereich live mit Spotify J0JOEL und Twitch Joel271997
+- CSS-Cache V12.1: site.css?v=25
+- PWA Shell Cache: angebotslotse-shell-v9
 
-## Danach
-1. Performance und Accessibility final messen
-2. weitere verbleibende Legacy-CSS-Inseln entfernen
-3. Tarif-/Versicherungs-Hub nur nach echter Partnerfreigabe weiter monetarisieren
-4. finale Website-QA
-5. Heise erst nach finalem Frontend erneut zur Prüfung vorlegen
+## Bekannte Datenbegrenzung
+Der öffentliche Social-Verteiler liefert derzeit nur vier Plattform-Posts desselben Clips vom 26.09.2026. Der Angebotslotse kann mehr Einträge verarbeiten; sobald der Verteiler weitere unterschiedliche öffentliche Veröffentlichungen liefert, entstehen automatisch weitere Release-Karten. Keine historische Veröffentlichung wird erfunden.
+
+## Nächste offene Blöcke
+1. Social-Verteiler-Publikationshistorie prüfen/erweitern, damit zukünftige echte Veröffentlichungen dauerhaft im öffentlichen Feed erhalten bleiben.
+2. V12 Performance/Accessibility messen und Asset-Größen weiter reduzieren.
+3. verbleibende Legacy-CSS-Blöcke schrittweise entfernen, ohne V12-Funktionen zu brechen.
+4. vollständige Desktop-/Mobile-Live-QA aller Hauptseiten (Start, Suche, Kategorien, Shops, Produktdetail, Vergleiche, Konto).
+5. Tarif-/Versicherungsintegrationen nur nach echter Partnerfreigabe weiter ausbauen.
+6. Heise/compaliate erst nach finaler Gesamt-QA erneut zur Prüfung vorlegen.
 
 ## Regel bei Chat-/Stream-Abbruch
-Ein Chat-/Übermittlungs-Timeout darf den Projektstand nicht bestimmen.
+1. Diese Datei lesen.
+2. Neuesten `main`-Commit prüfen.
+3. Offene PRs und letzte Workflow-Läufe prüfen.
+4. Beim ersten offenen Punkt unter „Nächste offene Blöcke“ fortsetzen.
+5. Bereits gemergte und live-verifizierte Arbeit nicht neu bauen.
 
-Beim Wiederaufnehmen:
-1. diese Datei lesen
-2. neuesten `main`-Commit prüfen
-3. offene PRs und letzte Workflow-Läufe prüfen
-4. beim ersten offenen Punkt unter „Aktuell laufend“ fortsetzen
-5. bereits gemergte Arbeit nicht neu bauen
-
-Große Änderungen in kleine, separat testbare Pakete aufteilen. Nach jedem erfolgreichen Paket einen Git-Checkpoint behalten. Keine Behauptung „live“, bevor Deploy + Live-Smoke erfolgreich waren.
+Keine Behauptung „live“, bevor Deploy + Live-Smoke erfolgreich waren.
