@@ -18,6 +18,15 @@ test("Header nutzt echte lokale Social-PNGs und mobile Hamburger-Suche", () => {
     assert.ok(fs.statSync(file).size > 500, "Social-Icon ist verdächtig klein: " + name);
     assert.ok(html.includes("/social/" + name + ".png"));
   }
+  assert.ok(fs.existsSync("dist/social/facebook.svg"), "Fehlendes Facebook-Icon");
+  assert.match(html, /social\/facebook\.svg/);
+  assert.match(html, /facebook\.com\/reel\//);
+  assert.match(html, /class="creator-logo-art"/);
+  assert.match(html, /joel-logo\.svg/);
+  assert.match(html, /creator-platform-links/);
+  assert.match(html, /Musik & Streams/);
+  assert.match(html, /J0JOEL – Musik/);
+  assert.match(html, /Joel271997 – Streams/);
   assert.match(html, /class="mobile-nav-search"/);
   assert.match(html, /tiktok\.com\/@joel\.27\.1997/);
   assert.match(html, /snapchat\.com\/add\//);
