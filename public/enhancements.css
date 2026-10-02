@@ -2320,3 +2320,8 @@ h1,h2,h3,.hero-redesign-copy h1,.daily-title{font-family:var(--sans)!important}
   .hero-logo-stage{max-width:340px;padding:9px;border-radius:20px}
   .footer-wordmark{width:min(100%,260px)!important}
 }
+
+
+/* V11 compatibility: preserve the tested brand-picture hook without reverting the new lockup */
+.brand-mark.header-brand-picture{width:46px!important;height:46px!important;border-radius:14px!important;padding:4px!important;background:#fff!important}
+@media(max-width:760px){.brand-mark.header-brand-picture{width:40px!important;height:40px!important;border-radius:12px!important}}
