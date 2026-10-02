@@ -67,6 +67,14 @@ export function mergeOfferInventory({ freshOffers, oldOffers, sources, now = new
 
   for (const oldOffer of oldOffers) {
     if (freshById.has(oldOffer.id)) continue;
+
+    // Source protection is only for temporarily missing data. A deal with a
+    // confirmed past end date must never be kept alive by a disabled/erroring
+    // sibling feed, otherwise expired vouchers block integrity and deployment.
+    const endTime = oldOffer.endDate ? Date.parse(oldOffer.endDate) : NaN;
+    const nowTime = Date.parse(now);
+    if (Number.isFinite(endTime) && Number.isFinite(nowTime) && endTime <= nowTime) continue;
+
     const group = sourceGroup(oldOffer.sourceGroup ?? oldOffer.source);
     const guardReason = guardedGroups.get(group);
     if (!guardReason) continue;
