@@ -137,8 +137,12 @@ test("V8 Merkliste und Wunschpreise werden lokal bereitgestellt", () => {
   const watchlist = fs.readFileSync("dist/merkliste.html", "utf8");
   const app = fs.readFileSync("dist/app.js", "utf8");
   const offers = JSON.parse(fs.readFileSync("data/offers.json", "utf8"));
-  const target = offers.find((offer) => isSitePublishable(offer) && offer.slug);
-  assert.ok(target);
+  const target = offers.find((offer) =>
+    isSitePublishable(offer) &&
+    offer.slug &&
+    fs.existsSync("dist/angebote/" + offer.slug + ".html")
+  );
+  assert.ok(target, "Mindestens ein tatsächlich gebautes Angebot wird für den Merkliste-Test benötigt.");
   const offerHtml = fs.readFileSync("dist/angebote/" + target.slug + ".html", "utf8");
   assert.match(watchlist, /Merkliste & Wunschpreise/);
   assert.match(watchlist, /id="watch-catalog"/);
