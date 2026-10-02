@@ -55,8 +55,45 @@ const resetFilters = document.querySelector("[data-filter-reset]");
 const filterCount = document.querySelector("[data-filter-count]");
 const sortGrid = document.querySelector("[data-sort-grid]");
 const filterEmpty = document.querySelector("[data-no-filter-results]");
+const activeFilters = document.querySelector("[data-active-filters]");
+const activeFilterChips = document.querySelector("[data-active-filter-chips]");
+const clearAllFilters = document.querySelector("[data-filter-clear-all]");
 const forwardedSearch = params.get("suche");
 if (forwardedSearch && categorySearch) categorySearch.value = forwardedSearch;
+const filterOptionText = select => select?.selectedOptions?.[0]?.textContent?.trim() || "";
+function clearListingFilter(key) {
+  if (key === "search" && categorySearch) categorySearch.value = "";
+  if (key === "brand" && brandFilter) brandFilter.value = "";
+  if (key === "merchant" && merchantFilter) merchantFilter.value = "";
+  if (key === "price" && maxPriceFilter) maxPriceFilter.value = "";
+  if (key === "discount" && discountFilter) discountFilter.checked = false;
+}
+function syncActiveFilterChips() {
+  if (!activeFilters || !activeFilterChips) return;
+  const chips = [];
+  const searchValue = categorySearch?.value?.trim();
+  if (searchValue) chips.push(["search", "Suche: " + searchValue]);
+  if (brandFilter?.value) chips.push(["brand", "Marke: " + filterOptionText(brandFilter)]);
+  if (merchantFilter?.value) chips.push(["merchant", "Händler: " + filterOptionText(merchantFilter)]);
+  const maxValue = Number(maxPriceFilter?.value);
+  if (Number.isFinite(maxValue) && maxValue > 0) chips.push(["price", "Bis " + new Intl.NumberFormat("de-DE",{style:"currency",currency:"EUR"}).format(maxValue)]);
+  if (discountFilter?.checked) chips.push(["discount", "Nur Rabatt"]);
+  activeFilterChips.replaceChildren(...chips.map(([key,label]) => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "active-filter-chip";
+    button.dataset.clearFilter = key;
+    button.setAttribute("aria-label", label + " entfernen");
+    const text = document.createElement("span");
+    text.textContent = label;
+    const close = document.createElement("b");
+    close.setAttribute("aria-hidden","true");
+    close.textContent = "×";
+    button.append(text, close);
+    return button;
+  }));
+  activeFilters.hidden = chips.length === 0;
+}
 function updateCategoryListing() {
   if (!sortGrid) return;
   const query = (categorySearch?.value || "").trim().toLowerCase();
@@ -82,9 +119,17 @@ function updateCategoryListing() {
   }
   if (filterCount) filterCount.textContent = String(visible) + " Treffer";
   if (filterEmpty) filterEmpty.hidden = visible > 0;
+  syncActiveFilterChips();
 }
 for (const element of [categorySearch,maxPriceFilter]) element?.addEventListener("input", updateCategoryListing);
 for (const element of [categorySort,brandFilter,merchantFilter,discountFilter]) element?.addEventListener("change", updateCategoryListing);
+activeFilterChips?.addEventListener("click", event => {
+  const button = event.target.closest("[data-clear-filter]");
+  if (!button) return;
+  clearListingFilter(button.dataset.clearFilter);
+  updateCategoryListing();
+});
+clearAllFilters?.addEventListener("click", () => resetFilters?.click());
 resetFilters?.addEventListener("click", () => {
   if (categorySearch) categorySearch.value = "";
   if (categorySort) categorySort.value = "current";
