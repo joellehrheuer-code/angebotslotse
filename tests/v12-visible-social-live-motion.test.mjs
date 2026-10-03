@@ -18,7 +18,7 @@ test("V12.6 hält Socials oben sichtbar und unabhängig vom alten Header-Breakpo
   for(const platform of ["Instagram","TikTok","YouTube","Facebook","Twitch","Snapchat","Spotify","Discord"]){
     assert.match(html,new RegExp(`aria-label="${platform}"`),`Social-Link fehlt oben: ${platform}`);
   }
-  assert.match(html,/class="top-social-links"/);
+  assert.match(html,/class="[^"]*top-social-links[^"]*"/);
   assert.match(css,/\.top-social-links\{[\s\S]*?display:flex!important/);
   assert.match(css,/@media\(max-width:760px\)[\s\S]*?\.top-social-links\{[\s\S]*?display:flex!important/);
 });
@@ -44,7 +44,7 @@ test("V12.6 erzwingt frische Assets und PWA-Cache-Version",()=>{
   build();
   const html=fs.readFileSync("dist/index.html","utf8");
   const sw=fs.readFileSync("public/sw.js","utf8");
-  assert.match(html,/site\.css\?v=30/);
+  assert.match(html,/site\.css\?v=31/);
   assert.match(html,/app\.js\?v=17/);
-  assert.match(sw,/angebotslotse-shell-v14/);
+  assert.match(sw,/angebotslotse-shell-v15/);
 });

@@ -22,8 +22,8 @@ test("V12 homepage keeps live connected stats and premium shopping hierarchy",()
   assert.match(html,/Gerade sichtbar/);
   assert.match(html,/Aktuelle Top-Deals/);
   assert.match(html,/Deal des Tages/);
-  assert.match(html,/Die besten Angebote/);
-  assert.match(html,/Für deinen Lifestyle/);
+  assert.match(html,/Gute Angebote/);
+  assert.match(html,/Klar gefunden/);
   assert.ok(html.indexOf("AKTUELL ANGEBUNDEN") < html.indexOf("Aktuelle Top-Deals"));
   assert.match(css,/V12 NIGHT MARKET/);
   assert.match(css,/--nm-pink:#ff3fa8/);
@@ -66,5 +66,5 @@ test("V12 footer and cache version are aligned",()=>{
   assert.match(html,/<summary>Deals<\/summary>/);
   assert.match(html,/<summary>Service<\/summary>/);
   assert.match(html,/<summary>Rechtliches<\/summary>/);
-  assert.match(sw,/angebotslotse-shell-v14/);
+  assert.match(sw,/angebotslotse-shell-v15/);
 });
