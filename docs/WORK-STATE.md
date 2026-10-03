@@ -1,6 +1,6 @@
 # Angebotslotse – aktueller Arbeitsstand
 
-Stand: 3. Oktober 2026, V12.5 Trust & Quality in Arbeit
+Stand: 3. Oktober 2026, V12.6 Visible Social + Live Motion in Arbeit
 
 ## Aktuelle Phase
 V12 „Night Market“ – Premium-Shopping-Portal, siteweite Design-/UX-Vereinheitlichung und finale Qualitätsrunde.
@@ -8,7 +8,7 @@ V12 „Night Market“ – Premium-Shopping-Portal, siteweite Design-/UX-Vereinh
 ## Source of Truth
 - Produktion: `main`
 - Letzter funktionaler Release: `V12.4.1 echte Produktions-Minifizierung`
-- Aktueller Arbeitsbranch: `work/v12-5-trust-quality`
+- Aktueller Arbeitsbranch: `work/v12-6-visible-social-live-motion`
 - Weltmarken-Audit: `docs/WELTMARKE-200-AUDIT.md`
 - Arbeitsregel: größere Änderungen isoliert auf `work/**`, `feature/**` oder per PR; vor Merge vollständige Validation.
 
@@ -55,6 +55,14 @@ Der öffentliche Social-Verteiler liefert aktuell weiterhin nur vier Plattform-P
 - erweiterter Live-Smoke für Startseiten-Verträge und kritische Assets
 - zusätzliche Regressionstests für Buttons, Bilder, Links und Bewertungs-Transparenz
 - internes Build-Report-Label auf V12.5 aktualisiert
+
+## V12.6 feste Nutzeranforderungen
+- Instagram, TikTok, YouTube, Facebook, Twitch, Snapchat, Spotify und Discord bleiben oben sichtbar und dürfen nicht durch Desktop-/Tablet-/Mobile-Breakpoints komplett ausgeblendet werden.
+- Die Socials sitzen in einer eigenen Top-Leiste, damit Suche, Navigation und Konto nicht um denselben Platz kämpfen.
+- „Aktuell angebunden“ bleibt erhalten und bekommt echte sichtbare Interaktion: Shop-Karten, Rangfolge sowie animierte Sortierung nach „Meiste Deals“ und „A–Z“.
+- Count-up, Reveal, Live-Puls und Kartenbewegung respektieren `prefers-reduced-motion`.
+- Bestehende gute Bereiche werden nicht für neue Änderungen entfernt.
+- CSS/JS/PWA-Versionen werden bei sichtbaren Änderungen hochgezählt, damit Browser nicht einen alten Stand aus dem Cache zeigen.
 
 ## Nächste offene Blöcke
 1. V12.5 Branch-Validation vollständig grün bekommen, Fehler direkt korrigieren.

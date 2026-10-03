@@ -36,8 +36,8 @@ test("Lighthouse-Fixes reduzieren Hero-Asset und benennen Creator-Links", () => 
   assert.ok(app.length < sourceApp.length, "Produktions-JS muss kleiner als die lesbare Quelle sein.");
   assert.doesNotMatch(css, /\/\* V12 NIGHT MARKET/);
   assert.equal((home.match(/rel="stylesheet"/g) || []).length, 1);
-  assert.match(home, /site\.css\?v=29/);
-  assert.match(home, /app\.js\?v=16/);
+  assert.match(home, /site\.css\?v=30/);
+  assert.match(home, /app\.js\?v=17/);
   assert.doesNotMatch(home, /styles\.css\?v=8|enhancements\.css\?v=8/);
   assert.match(home, /cdn\.shopify\.com[^"]*width=640|cdn\.shopify\.com[^"]*width%3D640/);
 });
