@@ -50,10 +50,12 @@ const validateState=({report,statusHtml,urls,homeHtml})=>{
   if(new Set(urls).size!==urls.length)errors.push("Sitemap enthält doppelte URLs");
   if(urls.some(url=>!url.startsWith(`${base}/`)&&url!==base))errors.push("Sitemap enthält fremde oder unerwartete URLs");
   const requiredHomeMarkers=[
-    'site.css?v=29',
-    'app.js?v=16',
+    'site.css?v=30',
+    'app.js?v=17',
     'id="aktuell-angebunden"',
-    'class="header-social"',
+    'class="top-social-links"',
+    'data-live-sort="deals"',
+    'data-live-store-list',
     'id="vertrauen"',
     'data-report-open',
     'id="newsletter"'
@@ -92,8 +94,8 @@ for(let attempt=1;attempt<=attempts;attempt+=1){
 if(!live||stateErrors.length)throw new Error(`Live-Statusprüfung fehlgeschlagen: ${stateErrors.join("; ")}`);
 
 const criticalAssets=[
-  "/site.css?v=29",
-  "/app.js?v=16",
+  "/site.css?v=30",
+  "/app.js?v=17",
   "/favicon.svg",
   "/manifest.webmanifest",
   "/brand-hero.jpg",
