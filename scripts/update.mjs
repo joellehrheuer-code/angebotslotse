@@ -1,5 +1,5 @@
 import fs from "node:fs/promises";
-import { collectSources } from "./lib/source-manager.mjs";
+import { collectSources, createTimedFetch } from "./lib/source-manager.mjs";
 import { normalizeAndDedupe, normalizeOffer, explainOfferRejection, isConcreteOffer, isPublicationReady, isAwaitingMediaOffer, isPublisherPromotion, refineOfferCategory, isMarketCompatibleTitle } from "./lib/normalize.mjs";
 import { updatePriceHistory } from "./lib/price-history.mjs";
 import { selectHomepageOffers } from "./lib/homepage-selection.mjs";
@@ -14,6 +14,13 @@ import { fetchCreatorVideoFeed } from "./lib/creator-videos.mjs";
 import { fetchCreatorSocialFeed } from "./lib/creator-feed.mjs";
 import { buildFailureStatus } from "./lib/update-status.mjs";
 import { buildEnhancedFeedDedupeDiagnostics } from "./lib/dedupe-diagnostics.mjs";
+
+const baseFetch = globalThis.fetch;
+if (typeof baseFetch === "function") {
+  globalThis.fetch = createTimedFetch(baseFetch, {
+    timeoutMs: Number(process.env.NETWORK_FETCH_TIMEOUT_MS) || 30_000
+  });
+}
 
 const readJson = async (path, fallback) => JSON.parse((await fs.readFile(path, "utf8").catch(() => fallback)).replace(/^\uFEFF/, ""));
 

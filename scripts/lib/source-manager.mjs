@@ -10,6 +10,25 @@ import { fetchWebgainsOffers, fetchWebgainsProgramMemberships, fetchWebgainsProg
 import fs from "node:fs/promises";
 
 const wait = ms => new Promise(resolve => setTimeout(resolve, ms));
+
+export function createTimedFetch(fetchImpl = globalThis.fetch, { timeoutMs = 30_000 } = {}) {
+  if (typeof fetchImpl !== "function") throw new TypeError("fetch implementation required");
+  const timeout = Math.min(120_000, Math.max(1, Number(timeoutMs) || 30_000));
+  return async (input, init = {}) => {
+    const controller = new AbortController();
+    const callerSignal = init?.signal;
+    const abortFromCaller = () => controller.abort(callerSignal?.reason ?? new Error("fetch aborted by caller"));
+    if (callerSignal?.aborted) abortFromCaller();
+    else callerSignal?.addEventListener?.("abort", abortFromCaller, { once: true });
+    const timer = setTimeout(() => controller.abort(new Error(`fetch timed out after ${timeout}ms`)), timeout);
+    try {
+      return await fetchImpl(input, { ...init, signal: controller.signal });
+    } finally {
+      clearTimeout(timer);
+      callerSignal?.removeEventListener?.("abort", abortFromCaller);
+    }
+  };
+}
 export async function runSourceWithTimeout(run, { timeoutMs = 45_000, label = "source" } = {}) {
   const timeout = Math.min(120_000, Math.max(1, Number(timeoutMs) || 45_000));
   return await new Promise((resolve, reject) => {
