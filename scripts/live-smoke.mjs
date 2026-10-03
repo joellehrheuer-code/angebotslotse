@@ -50,15 +50,19 @@ const validateState=({report,statusHtml,urls,homeHtml})=>{
   if(new Set(urls).size!==urls.length)errors.push("Sitemap enthält doppelte URLs");
   if(urls.some(url=>!url.startsWith(`${base}/`)&&url!==base))errors.push("Sitemap enthält fremde oder unerwartete URLs");
   const requiredHomeMarkers=[
-    'site.css?v=30',
+    'site.css?v=31',
     'app.js?v=17',
     'id="aktuell-angebunden"',
-    'class="top-social-links"',
+    'class="top-social-links creator-dock-links"',
     'data-live-sort="deals"',
     'data-live-store-list',
     'id="vertrauen"',
     'data-report-open',
-    'id="newsletter"'
+    'id="newsletter"',
+    'class="creator-top-dock"',
+    'class="creator-world reveal"',
+    'id="eigene-projekte"',
+    'id="neueste-videos"'
   ];
   for(const marker of requiredHomeMarkers)if(!homeHtml.includes(marker))errors.push(`Startseite ohne Pflichtmarker: ${marker}`);
   if(!homeHtml.includes("Keine erfundenen Sterne"))errors.push("Trust-Bereich ohne Bewertungs-Transparenz");
@@ -94,7 +98,7 @@ for(let attempt=1;attempt<=attempts;attempt+=1){
 if(!live||stateErrors.length)throw new Error(`Live-Statusprüfung fehlgeschlagen: ${stateErrors.join("; ")}`);
 
 const criticalAssets=[
-  "/site.css?v=30",
+  "/site.css?v=31",
   "/app.js?v=17",
   "/favicon.svg",
   "/manifest.webmanifest",
