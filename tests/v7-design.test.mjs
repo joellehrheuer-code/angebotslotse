@@ -57,7 +57,7 @@ test("V9 homepage exposes comparison-first portal architecture and real data", (
 test("V7 build report records the real publishable inventory", () => {
   const report = JSON.parse(fs.readFileSync("dist/build-report.json", "utf8"));
   const offers = JSON.parse(fs.readFileSync("data/offers.json", "utf8"));
-  assert.equal(report.version, "V8-premium-dark-commerce");
+  assert.equal(report.version, "V12.5-trust-quality");
   assert.equal(report.offers, report.productCards);
   assert.ok(report.offers > 0);
   assert.equal(report.images, offers.filter(isSitePublishable).filter((offer) => offer.imageUrl).length);
