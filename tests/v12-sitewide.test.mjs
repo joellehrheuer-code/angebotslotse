@@ -18,7 +18,7 @@ test("V12.2 applies one premium architecture to the main subpages", () => {
     assert.ok(fs.existsSync(file), "missing built page: "+file);
     const html=fs.readFileSync(file,"utf8");
     assert.match(html,/class="[^"]*subpage-hero/,"missing premium subpage hero in "+file);
-    assert.match(html,/site\.css\?v=29/,"stale CSS cache version in "+file);
+    assert.match(html,/site\.css\?v=30/,"stale CSS cache version in "+file);
   }
   const category=fs.readFileSync("dist/technik.html","utf8");
   const shops=fs.readFileSync("dist/shops.html","utf8");
@@ -33,5 +33,5 @@ test("V12.2 applies one premium architecture to the main subpages", () => {
   assert.match(css,/\.listing-tools/);
   assert.match(css,/@media\(max-width:680px\)/);
   assert.match(css,/@media\(prefers-reduced-motion:reduce\)/);
-  assert.match(sw,/angebotslotse-shell-v13/);
+  assert.match(sw,/angebotslotse-shell-v14/);
 });
