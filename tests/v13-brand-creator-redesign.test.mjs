@@ -49,3 +49,19 @@ test("V13 nutzt eigene Designschicht und frische Cache-Version",()=>{
   assert.match(css,/\.deal-rail\{/);
   assert.match(sw,/angebotslotse-shell-v15/);
 });
+
+
+test("V13.1 behebt die live beobachteten mobilen Überlagerungen",()=>{
+  build();
+  const css=fs.readFileSync("public/v13.css","utf8");
+  const source=fs.readFileSync("scripts/build.mjs","utf8");
+  assert.match(css,/V13\.1 SCREENSHOT-DRIVEN MOBILE QA/);
+  assert.match(css,/\.site-header\{[\s\S]*?display:block!important/);
+  assert.match(css,/@media\(max-width:760px\)[\s\S]*?\.header-row\{[\s\S]*?grid-template-columns:minmax\(0,1fr\) 44px!important/);
+  assert.match(css,/\.creator-dock-label\{display:none!important\}/);
+  assert.match(css,/\.history-head>div\{[\s\S]*?grid-template-columns:repeat\(3,minmax\(0,1fr\)\)!important/);
+  assert.match(css,/\.history-panel dl\{[\s\S]*?grid-template-columns:repeat\(2,minmax\(0,1fr\)\)!important/);
+  assert.match(css,/\.sticky-offer-bar\{[\s\S]*?bottom:calc\(82px \+ env\(safe-area-inset-bottom\)\)!important/);
+  assert.match(css,/body:has\(\.sticky-offer-bar:not\(\[hidden\]\)\) \.report-fab/);
+  assert.match(source,/flat=max===min/);
+});
