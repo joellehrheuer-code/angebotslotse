@@ -24,6 +24,7 @@ test("V12.5 zeigt belegbare Vertrauenssignale statt erfundener Bewertungen", () 
   assert.match(html,/Keine erfundenen Sterne/);
   assert.match(html,/keine künstlichen Durchschnittsnoten oder angeblichen Besucherzahlen/);
   assert.match(html,/data-report-open/);
+  assert.match(html,/hero-product-card[\s\S]*?data-fallback-src=/);
   assert.match(app,/querySelectorAll\("\[data-report-open\]"\)/);
   assert.doesNotMatch(html,/aggregateRating|ratingValue|bestRating/i);
   assert.doesNotMatch(html,/\b4[,.][7-9]\s*\/\s*5\b/);
