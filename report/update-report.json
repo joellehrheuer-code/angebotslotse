@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-03T05:18:51.133Z",
-  "newAwinPrograms": 0,
+  "generatedAt": "2026-10-03T10:47:58.017Z",
+  "newAwinPrograms": 1,
   "newImpactPrograms": 0,
   "newDaisyconPrograms": 0,
   "newWebgainsPrograms": 0,
@@ -33,7 +33,7 @@
     "Awin": 208
   },
   "missingMediaBySource": {
-    "Awin": 2
+    "Awin": 1
   },
   "productsByMerchant": {
     "Hollyland DE": 97,

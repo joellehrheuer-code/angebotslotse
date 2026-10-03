@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-03T05:18:51.154Z",
+  "generatedAt": "2026-10-03T10:47:58.035Z",
   "market": "DE",
   "publisherId": 3045061,
   "awin": {
@@ -1314,6 +1314,17 @@
       {
         "network": "Awin",
         "relationship": "notjoined",
+        "advertiserId": 19052,
+        "name": "blutsgeschwister DE",
+        "primarySector": "Clothing",
+        "primaryRegion": {
+          "name": "Germany",
+          "countryCode": "DE"
+        }
+      },
+      {
+        "network": "Awin",
+        "relationship": "notjoined",
         "advertiserId": 13708,
         "name": "Bobshop DE",
         "primarySector": "Sportswear",
@@ -2201,17 +2212,6 @@
           "name": "Germany",
           "countryCode": "DE"
         }
-      },
-      {
-        "network": "Awin",
-        "relationship": "notjoined",
-        "advertiserId": 11642,
-        "name": "eibmarkt DE",
-        "primarySector": "Electronic Superstore",
-        "primaryRegion": {
-          "name": "Germany",
-          "countryCode": "DE"
-        }
       }
     ],
     "discoveryOffers": 200,
@@ -2355,18 +2355,18 @@
         "automationState": "ready-for-review"
       },
       {
-        "brand": "SharkNinja DE",
+        "brand": "Zigbuy DE",
         "network": "Awin",
-        "advertiserId": 19810,
+        "advertiserId": 126185,
         "status": "notjoined",
         "category": "Haushalt & Küche",
-        "score": 48,
+        "score": 54,
         "priority": "mittel",
-        "activeDiscoveryOffers": 3,
+        "activeDiscoveryOffers": 4,
         "offerExamples": [
-          "Gratis Zubehör beim Kauf verschiedener Ninja Airfryer!",
-          "180€ Rabatt auf Shark PowerDetect kabelloser Staubsauger IP1251EUT",
-          "150€ Rabatt auf Shark Stratos Akku-Staubsauger mit selbstreinigender Bürstenrolle, Clean Sense iQ und Flexology IZ400EU"
+          "€10 auf JIMMY BX8 Pro",
+          "€10 auf JIMMY BX8 + 6-Filter",
+          "€20 auf JIMMY BX8"
         ],
         "productFeed": false,
         "metrics": {
@@ -2382,10 +2382,10 @@
         },
         "reasons": [
           "passt zu Haushalt & Küche",
-          "3 aktive DE-Aktionen"
+          "4 aktive DE-Aktionen"
         ],
         "applicationRequired": true,
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten SharkNinja DE redaktionell passend im Bereich Haushalt & Küche einbinden. Bei Awin sind aktuell 3 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Zigbuy DE redaktionell passend im Bereich Haushalt & Küche einbinden. Bei Awin sind aktuell 4 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
         "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
         "automationState": "ready-for-review"
       },
@@ -3412,7 +3412,7 @@
   },
   "publication": {
     "offers": 217,
-    "concreteAwaitingMedia": 2,
+    "concreteAwaitingMedia": 1,
     "blockedPublisherPromotions": 4,
     "partnerEntries": 219,
     "merchants": 6,

@@ -1,6 +1,6 @@
 {
   "state": "ok",
-  "lastSuccessfulUpdate": "2026-10-03T05:18:51.073Z",
+  "lastSuccessfulUpdate": "2026-10-03T10:47:57.968Z",
   "activeOffers": 217,
   "storedOffers": 486,
   "publishableOffers": 217,
@@ -17,7 +17,7 @@
   "sources": {
     "awin": {
       "state": "ok",
-      "count": 16,
+      "count": 15,
       "error": null,
       "audit": null
     },
