@@ -1,6 +1,6 @@
 {
-  "state": "degraded",
-  "lastSuccessfulUpdate": "2026-10-03T19:14:11.912Z",
+  "state": "ok",
+  "lastSuccessfulUpdate": "2026-10-03T23:04:15.637Z",
   "activeOffers": 217,
   "storedOffers": 486,
   "publishableOffers": 217,
@@ -179,12 +179,12 @@
     }
   },
   "creatorFeed": {
-    "state": "stale",
+    "state": "ok",
     "count": 4,
     "videos": 4,
-    "error": "Creator social feed: HTTP 503",
+    "error": null,
     "mode": "social"
   },
   "stale": 250,
-  "message": "Aktualisierung teilweise eingeschränkt; bestehende geprüfte Daten bleiben geschützt."
+  "message": "Aktualisierung mit geschützten Bestandsdaten abgeschlossen."
 }
