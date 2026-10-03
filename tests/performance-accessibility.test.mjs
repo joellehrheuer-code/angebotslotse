@@ -21,7 +21,7 @@ test("Lighthouse-Fixes reduzieren Hero-Asset und benennen Creator-Links", () => 
   assert.ok(hero.size < 100_000, "Optimiertes Hero-Bild sollte deutlich unter 100 KB bleiben.");
   assert.match(home, /brand-hero\.jpg/);
   assert.match(home, /header-brand-picture/);
-  assert.match(home, /app-icon-192\.png/);
+  assert.match(home, /joel-logo\.svg/);
   assert.match(home, /width="720" height="378"/);
   assert.doesNotMatch(home, /<img[^>]+src="[^"]*\/og\.png"/);
   assert.match(home, /creator-video-media[^>]+aria-label=/);
