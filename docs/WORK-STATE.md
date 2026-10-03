@@ -42,6 +42,11 @@ V12 „Night Market“ – Premium-Shopping-Portal, siteweite Design-/UX-Vereinh
 ## Bekannte Datenbegrenzung
 Der öffentliche Social-Verteiler liefert aktuell weiterhin nur vier Plattform-Posts desselben Clips vom 26.09.2026. Die Pagination ist live und kann ältere ShortSync-Seiten lesen, sobald ShortSync dafür tatsächlich einen Cursor liefert. Es werden keine historischen Veröffentlichungen erfunden.
 
+## Arbeitsregel: Gute bestehende Bereiche erhalten
+- Bereits funktionierende und vom Nutzer bestätigte Bereiche nicht entfernen, nur weil ein neuer Optimierungsschritt folgt.
+- Header behält Suche, Schnellnavigation, Merkliste/Konto und Socials; oben wird das echte Joel271997/J0JOEL-Logo verwendet.
+- „Aktuell angebunden“, Creator/Social, Deal-Struktur und andere bestätigte V12-Bereiche bleiben erhalten, solange kein nachgewiesener Fehler vorliegt.
+
 ## Nächste offene Blöcke
 1. V12.4.1 Minify-Regression vollständig validieren und nach erfolgreichem Produktions-Smoke live verifizieren.
 2. Legacy-CSS schrittweise weiter bereinigen, nur nachweislich überholte Mobile-/Theme-Regeln.
