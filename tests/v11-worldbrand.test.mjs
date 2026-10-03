@@ -21,7 +21,7 @@ test("V11 premium system keeps the real brand, search and footer architecture", 
   build();
   const html = fs.readFileSync("dist/index.html", "utf8");
   const css = fs.readFileSync("dist/enhancements.css", "utf8");
-  const app = fs.readFileSync("dist/app.js", "utf8");
+  const app = fs.readFileSync("public/app.js", "utf8");
   assert.match(html, /class="hero-logo-stage"/);
   assert.match(html, /brand-hero\.jpg/);
   assert.match(html, /global-search-suggestions/);
@@ -56,5 +56,5 @@ test("V11 tracks the complete 20 plus 180 point audit and rotates the PWA cache"
   assert.match(audit, /20-Punkte-Premium-Masterplan/);
   assert.match(audit, /Erweiterter 180-Punkte-Katalog/);
   assert.ok((audit.match(/^\d+\./gm) || []).length >= 200, "Audit must contain at least 200 numbered entries.");
-  assert.match(sw, /angebotslotse-shell-v12/);
+  assert.match(sw, /angebotslotse-shell-v13/);
 });
