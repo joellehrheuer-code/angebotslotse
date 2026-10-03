@@ -34,7 +34,7 @@ test("V12 homepage keeps live connected stats and premium shopping hierarchy",()
 test("V12 smart search exposes grouped real products shops and categories",()=>{
   buildSite();
   const html=fs.readFileSync("dist/index.html","utf8");
-  const app=fs.readFileSync("dist/app.js","utf8");
+  const app=fs.readFileSync("public/app.js","utf8");
   assert.match(html,/id="quick-search-data"/);
   assert.match(html,/data-smart-search/);
   assert.match(html,/data-search-panel/);
@@ -66,5 +66,5 @@ test("V12 footer and cache version are aligned",()=>{
   assert.match(html,/<summary>Deals<\/summary>/);
   assert.match(html,/<summary>Service<\/summary>/);
   assert.match(html,/<summary>Rechtliches<\/summary>/);
-  assert.match(sw,/angebotslotse-shell-v12/);
+  assert.match(sw,/angebotslotse-shell-v13/);
 });
