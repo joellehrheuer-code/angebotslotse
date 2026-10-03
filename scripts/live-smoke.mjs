@@ -31,16 +31,17 @@ const fetchText=async path=>(await fetchOk(`${base}${path}${path.includes("?")?"
 const fetchJson=async path=>JSON.parse(await fetchText(path));
 
 const readLiveState=async()=>{
-  const [report,statusHtml,sitemap]=await Promise.all([
+  const [report,statusHtml,sitemap,homeHtml]=await Promise.all([
     fetchJson("/build-report.json"),
     fetchText("/status.html"),
-    fetchText("/sitemap.xml")
+    fetchText("/sitemap.xml"),
+    fetchText("/")
   ]);
   const urls=[...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(match=>match[1].replaceAll("&amp;","&"));
-  return {report,statusHtml,urls};
+  return {report,statusHtml,urls,homeHtml};
 };
 
-const validateState=({report,statusHtml,urls})=>{
+const validateState=({report,statusHtml,urls,homeHtml})=>{
   const errors=[];
   if(!Number.isInteger(report.offers)||report.offers<=0)errors.push(`build-report offers ungültig: ${report.offers}`);
   if(!Number.isInteger(report.rawRecords)||report.rawRecords<report.offers)errors.push(`build-report rawRecords ungültig: ${report.rawRecords}`);
@@ -48,6 +49,18 @@ const validateState=({report,statusHtml,urls})=>{
   if(urls.length===0)errors.push("Sitemap enthält keine URLs");
   if(new Set(urls).size!==urls.length)errors.push("Sitemap enthält doppelte URLs");
   if(urls.some(url=>!url.startsWith(`${base}/`)&&url!==base))errors.push("Sitemap enthält fremde oder unerwartete URLs");
+  const requiredHomeMarkers=[
+    'site.css?v=29',
+    'app.js?v=16',
+    'id="aktuell-angebunden"',
+    'class="header-social"',
+    'id="vertrauen"',
+    'data-report-open',
+    'id="newsletter"'
+  ];
+  for(const marker of requiredHomeMarkers)if(!homeHtml.includes(marker))errors.push(`Startseite ohne Pflichtmarker: ${marker}`);
+  if(!homeHtml.includes("Keine erfundenen Sterne"))errors.push("Trust-Bereich ohne Bewertungs-Transparenz");
+
   const expected=[
     ["Veröffentlichte Angebote",report.offers],
     ["Gespeicherter Bestand",report.rawRecords],
@@ -78,6 +91,26 @@ for(let attempt=1;attempt<=attempts;attempt+=1){
 }
 if(!live||stateErrors.length)throw new Error(`Live-Statusprüfung fehlgeschlagen: ${stateErrors.join("; ")}`);
 
+const criticalAssets=[
+  "/site.css?v=29",
+  "/app.js?v=16",
+  "/favicon.svg",
+  "/manifest.webmanifest",
+  "/brand-hero.jpg",
+  "/joel-logo.svg",
+  "/social/instagram.png",
+  "/social/youtube.png",
+  "/social/facebook.svg",
+  "/social/tiktok.png",
+  "/social/snapchat.png"
+];
+const assetFailures=[];
+await Promise.all(criticalAssets.map(async asset=>{
+  try{await fetchOk(`${base}${asset}${asset.includes("?")?"&":"?"}smoke=${Date.now()}`);}
+  catch(error){assetFailures.push({asset,error:String(error?.message??error)});}
+}));
+if(assetFailures.length)throw new Error(`Kritische Live-Assets fehlen: ${JSON.stringify(assetFailures)}`);
+
 let index=0;
 const failures=[];
 const worker=async()=>{
@@ -94,4 +127,4 @@ if(failures.length){
   console.error(JSON.stringify(failures.slice(0,20),null,2));
   throw new Error(`${failures.length} von ${live.urls.length} Sitemap-URLs sind nicht erreichbar`);
 }
-console.log(`Live-Smoke bestanden: ${live.report.offers} veröffentlichte Angebote, ${live.report.rawRecords} gespeichert, ${live.urls.length}/${live.urls.length} Sitemap-URLs erreichbar.`);
+console.log(`Live-Smoke bestanden: ${live.report.offers} veröffentlichte Angebote, ${live.report.rawRecords} gespeichert, ${live.urls.length}/${live.urls.length} Sitemap-URLs und ${criticalAssets.length}/${criticalAssets.length} kritische Assets erreichbar.`);
