@@ -21,6 +21,9 @@ test("Header nutzt echte lokale Social-PNGs und mobile Hamburger-Suche", () => {
   assert.ok(fs.existsSync("dist/social/facebook.svg"), "Fehlendes Facebook-Icon");
   assert.match(html, /social\/facebook\.svg/);
   assert.match(html, /facebook\.com\/reel\//);
+  assert.match(html, /class="header-social"/);
+  assert.match(html, /class="brand-logo"[^>]+joel-logo\.svg/);
+  assert.doesNotMatch(html, /class="brand-logo"[^>]+app-icon-192\.png/);
   assert.match(html, /class="creator-logo-art"/);
   assert.match(html, /joel-logo\.svg/);
   assert.match(html, /creator-platform-links/);

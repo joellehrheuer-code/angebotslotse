@@ -11,7 +11,7 @@ test("Kategorie- und Suchseiten bieten kombinierbare Deal-Filter", () => {
   });
 
   const search = fs.readFileSync("dist/suche.html", "utf8");
-  const app = fs.readFileSync("dist/app.js", "utf8");
+  const app = fs.readFileSync("public/app.js", "utf8");
   const categoryFiles = ["technik","computer","zubehoer","audio-musik","haushalt","werkzeug","mode","freizeit","gaming"];
   const categoryHtml = categoryFiles
     .map(name => fs.readFileSync("dist/" + name + ".html", "utf8"))
@@ -37,7 +37,7 @@ test("Kategorie- und Suchseiten bieten kombinierbare Deal-Filter", () => {
   assert.match(app, /syncActiveFilterChips/);
   assert.match(app, /data-clear-filter/);
   assert.match(app, /replaceChildren/);
-  const css = fs.readFileSync("dist/site.css", "utf8");
+  const css = fs.readFileSync("public/enhancements.css", "utf8");
   assert.match(css, /\.active-filter-chip/);
   assert.match(css, /--portal-blue/);
 });
