@@ -6,6 +6,25 @@ const errors = [];
 for (const file of required) if (!fs.existsSync(path.join("dist",file))) errors.push(`Fehlt: ${file}`);
 const htmlFiles = [];
 const siteUrl = new URL(process.env.SITE_URL || "https://example.github.io/angebotslotse");
+const siteRootPath = siteUrl.pathname.replace(/\/$/,"");
+const decodeHtmlUrl = value => String(value||"").replaceAll("&amp;","&");
+const localAssetTarget = (value,pageUrl) => {
+  if (!value || /^(?:data:|blob:|javascript:)/i.test(value)) return null;
+  const resolved = new URL(decodeHtmlUrl(value),pageUrl);
+  if (resolved.origin !== siteUrl.origin || !resolved.pathname.startsWith(siteRootPath)) return null;
+  let relative = resolved.pathname.slice(siteRootPath.length).replace(/^\//,"");
+  if (!relative) relative = "index.html";
+  else if (relative.endsWith("/")) relative += "index.html";
+  return relative;
+};
+const ensureLocalAsset = (value,pageUrl,file,label) => {
+  try {
+    const target = localAssetTarget(value,pageUrl);
+    if (target && !fs.existsSync(path.join("dist",target))) errors.push(`Fehlendes lokales ${label} in ${file}: ${value}`);
+  } catch {
+    errors.push(`Ungültige ${label}-URL in ${file}: ${value}`);
+  }
+};
 function walk(dir) { for (const entry of fs.readdirSync(dir,{withFileTypes:true})) { const p=path.join(dir,entry.name); if(entry.isDirectory()) walk(p); else if(p.endsWith(".html")) htmlFiles.push(p); } }
 walk("dist");
 for (const file of htmlFiles) {
@@ -18,6 +37,22 @@ for (const file of htmlFiles) {
   if (file.endsWith("konto.html") && !html.includes('content="noindex,follow"')) errors.push("Konto muss noindex sein");
   if (!html.includes('<meta property="og:title"') || !html.includes('<meta name="twitter:title"')) errors.push(`Social-Metadaten fehlen: ${file}`);
   if (!html.includes('<meta property="og:site_name"') || !html.includes('<meta property="og:locale"') || !html.includes('<meta name="twitter:description"')) errors.push(`Erweiterte Social-Metadaten fehlen: ${file}`);
+  const pageRelative = path.relative("dist", file).split(path.sep).join("/");
+  const pageUrl = new URL(pageRelative === "index.html" ? "" : pageRelative, `${siteUrl.href.replace(/\/$/,"")}/`);
+  for (const [tag] of html.matchAll(/<img\b[^>]*>/gi)) {
+    if (!/\balt=(["']).*?\1/i.test(tag)) errors.push(`Alt-Attribut fehlt: ${file}`);
+    const src = tag.match(/\bsrc=(["'])(.*?)\1/i)?.[2];
+    if (src) ensureLocalAsset(src,pageUrl,file,"Bild");
+  }
+  for (const [tag] of html.matchAll(/<script\b[^>]*>/gi)) {
+    const src = tag.match(/\bsrc=(["'])(.*?)\1/i)?.[2];
+    if (src) ensureLocalAsset(src,pageUrl,file,"Script");
+  }
+  for (const [tag] of html.matchAll(/<link\b[^>]*>/gi)) {
+    if (!/\brel=(["'])stylesheet\1/i.test(tag)) continue;
+    const href = tag.match(/\bhref=(["'])(.*?)\1/i)?.[2];
+    if (href) ensureLocalAsset(href,pageUrl,file,"Stylesheet");
+  }
   const isOfferDetail = ["angebote", "produkt"].some(directory => file.includes(`${path.sep}${directory}${path.sep}`));
   if (isOfferDetail) {
     const fallback = new URL(`${siteUrl.href.replace(/\/$/, "")}/og.png`);
