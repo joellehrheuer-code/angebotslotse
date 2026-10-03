@@ -1,14 +1,14 @@
 # Angebotslotse – aktueller Arbeitsstand
 
-Stand: 3. Oktober 2026, V12.4.1 Performance-Fix in Arbeit
+Stand: 3. Oktober 2026, V12.5 Trust & Quality in Arbeit
 
 ## Aktuelle Phase
 V12 „Night Market“ – Premium-Shopping-Portal, siteweite Design-/UX-Vereinheitlichung und finale Qualitätsrunde.
 
 ## Source of Truth
 - Produktion: `main`
-- Letzter funktionaler Release: `V12.4 Phase 1: bekannte Mobile-/CSS-Konflikte entfernt`
-- Aktueller Arbeitsbranch: `work/v12-4-1-real-minify`
+- Letzter funktionaler Release: `V12.4.1 echte Produktions-Minifizierung`
+- Aktueller Arbeitsbranch: `work/v12-5-trust-quality`
 - Weltmarken-Audit: `docs/WELTMARKE-200-AUDIT.md`
 - Arbeitsregel: größere Änderungen isoliert auf `work/**`, `feature/**` oder per PR; vor Merge vollständige Validation.
 
@@ -24,10 +24,11 @@ V12 „Night Market“ – Premium-Shopping-Portal, siteweite Design-/UX-Vereinh
 - automatisierte Tests, Datenupdate, Build, SEO, Security, Pages-Deploy, Live-Smoke und IndexNow
 
 ## Verifiziert
-- V12.3.1 Produktionsworkflow: Tests, Update, Build, Validierung, SEO, Security, Deploy und Live-Smoke erfolgreich
-- Live CSS vor V12.4.1: `site.css?v=28`
+- V12.4.1 Produktionsworkflow: Tests, Update, Build, Validierung, SEO, Security, Deploy, Live-Smoke und IndexNow erfolgreich
+- Live-Smoke V12.4.1: 217 veröffentlichte Angebote, 487 gespeicherte Datensätze, 252/252 Sitemap-URLs erreichbar
+- Live Produktionsassets V12.4.1: `site.css?v=29`, `app.js?v=16`
 - V12.4.1 baut Produktions-CSS und `app.js` mit esbuild minifiziert; Quellen bleiben lesbar
-- PWA Shell: `angebotslotse-shell-v12`
+- PWA Shell: `angebotslotse-shell-v13`
 - 375px Live-QA: kein horizontaler Overflow
 - Mobile Kategorie-Kacheln: zuvor 16–24px breit, jetzt 336px breit und einspaltig
 - Slider-Pfeile: 44×44px
@@ -47,13 +48,23 @@ Der öffentliche Social-Verteiler liefert aktuell weiterhin nur vier Plattform-P
 - Header behält Suche, Schnellnavigation, Merkliste/Konto und Socials; oben wird das echte Joel271997/J0JOEL-Logo verwendet.
 - „Aktuell angebunden“, Creator/Social, Deal-Struktur und andere bestätigte V12-Bereiche bleiben erhalten, solange kein nachgewiesener Fehler vorliegt.
 
+## V12.5 in Arbeit
+- Faktenbasierter Trust-/Transparenzbereich statt erfundener Sterne oder Besucherzahlen
+- direkte Community-Fehlermeldung über den bestehenden Report-Dialog
+- Build-Validierung für fehlende lokale Bilder, Scripts und Stylesheets sowie fehlende Alt-Attribute
+- erweiterter Live-Smoke für Startseiten-Verträge und kritische Assets
+- zusätzliche Regressionstests für Buttons, Bilder, Links und Bewertungs-Transparenz
+- internes Build-Report-Label auf V12.5 aktualisiert
+
 ## Nächste offene Blöcke
-1. V12.4.1 Minify-Regression vollständig validieren und nach erfolgreichem Produktions-Smoke live verifizieren.
-2. Legacy-CSS schrittweise weiter bereinigen, nur nachweislich überholte Mobile-/Theme-Regeln.
-3. weitere Performance-/Accessibility-Messungen auf Start-, Such-, Kategorie-, Konto- und Produktseiten.
-4. visuelle QA auf sehr kleinen Geräten sowie sehr breiten Desktop-Auflösungen.
-5. Tarif-/Versicherungsintegrationen nur nach echter Partnerfreigabe weiter ausbauen.
-6. Heise/compaliate erst nach finaler Gesamt-QA erneut zur Prüfung vorlegen.
+1. V12.5 Branch-Validation vollständig grün bekommen, Fehler direkt korrigieren.
+2. V12.5 per PR mergen und Produktion bis Live-Smoke verifizieren.
+3. Eigenständiges Angebotslotse-Markenlogo entwickeln; Joel271997/J0JOEL bleibt ein separates Creator-Branding.
+4. Legacy-CSS schrittweise weiter bereinigen, nur nachweislich überholte Mobile-/Theme-Regeln.
+5. weitere Performance-/Accessibility-Messungen auf Start-, Such-, Kategorie-, Konto- und Produktseiten.
+6. visuelle QA auf sehr kleinen Geräten sowie sehr breiten Desktop-Auflösungen.
+7. Tarif-/Versicherungsintegrationen nur nach echter Partnerfreigabe weiter ausbauen.
+8. Heise/compaliate erst nach finaler Gesamt-QA erneut zur Prüfung vorlegen.
 
 ## Regel bei Chat-/Stream-Abbruch
 1. Diese Datei lesen.
