@@ -15,6 +15,7 @@ test("product social images are rendered and only the site fallback is rejected"
   const cwd = fs.mkdtempSync(path.join(os.tmpdir(), "angebotslotse-social-"));
   t.after(() => fs.rmSync(cwd, { recursive: true, force: true }));
   for (const entry of ["scripts", "public", "data", "config.json"]) fs.cpSync(path.join(root, entry), path.join(cwd, entry), { recursive: true });
+  fs.symlinkSync(path.join(root, "node_modules"), path.join(cwd, "node_modules"), "dir");
   const offer = {
     id: "social-image-test", slug: "official-product", source: "awin", productId: "product-1",
     title: "Official product", description: "Product image regression fixture",
