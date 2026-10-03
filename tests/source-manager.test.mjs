@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { collectSources, runSourceWithRetry, runSourceWithTimeout, awinEnhancedFeedGate } from "../scripts/lib/source-manager.mjs";
+import { collectSources, runSourceWithRetry, runSourceWithTimeout, awinEnhancedFeedGate, createTimedFetch } from "../scripts/lib/source-manager.mjs";
 
 test("fehlende Secrets deaktivieren nur die betroffenen Quellen und legen keine Werte offen", async () => {
   const { sources } = await collectSources({});
@@ -98,4 +98,15 @@ test("Impact kann für normale Push- und 4h-Läufe vollständig deaktiviert werd
   const impact = sources.find(source => source.name === "impact");
   assert.equal(impact.state, "disabled");
   assert.match(impact.audit.reason, /dedicated daily workflow window/i);
+});
+
+
+test("Netzwerk-Watchdog bricht hängende Fetch-Aufrufe wirklich ab", async () => {
+  const hangingFetch = (_input, init = {}) => new Promise((resolve, reject) => {
+    const signal = init.signal;
+    if (signal?.aborted) return reject(signal.reason ?? new Error("aborted"));
+    signal?.addEventListener("abort", () => reject(signal.reason ?? new Error("aborted")), { once: true });
+  });
+  const timedFetch = createTimedFetch(hangingFetch, { timeoutMs: 20 });
+  await assert.rejects(() => timedFetch("https://example.invalid"), /fetch timed out after 20ms/);
 });
