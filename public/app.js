@@ -290,6 +290,40 @@ if (countElements.length) {
     countElements.forEach(element => countObserver.observe(element));
   }
 }
+const liveStoreList=document.querySelector("[data-live-store-list]");
+if(liveStoreList){
+  const liveStoreButtons=[...document.querySelectorAll("[data-live-sort]")];
+  const liveStoreCards=[...liveStoreList.querySelectorAll("[data-live-store]")];
+  const sortLiveStores=mode=>{
+    const first=new Map(liveStoreCards.map(card=>[card,card.getBoundingClientRect()]));
+    const sorted=[...liveStoreCards].sort((a,b)=>mode==="az"
+      ? String(a.dataset.storeName||"").localeCompare(String(b.dataset.storeName||""),"de")
+      : Number(b.dataset.storeCount||0)-Number(a.dataset.storeCount||0) || String(a.dataset.storeName||"").localeCompare(String(b.dataset.storeName||""),"de"));
+    liveStoreList.classList.add("is-sorting");
+    sorted.forEach((card,index)=>{
+      liveStoreList.append(card);
+      const rank=card.querySelector("[data-live-rank]");
+      if(rank)rank.textContent=String(index+1);
+    });
+    liveStoreButtons.forEach(button=>button.setAttribute("aria-pressed",String(button.dataset.liveSort===mode)));
+    if(!reducedMotion && typeof Element.prototype.animate==="function"){
+      sorted.forEach((card,index)=>{
+        const before=first.get(card);
+        const after=card.getBoundingClientRect();
+        if(!before||!after)return;
+        const dx=before.left-after.left,dy=before.top-after.top;
+        if(Math.abs(dx)<1&&Math.abs(dy)<1)return;
+        card.animate(
+          [{transform:`translate(${dx}px,${dy}px) scale(.985)`,opacity:.82},{transform:"translate(0,0) scale(1)",opacity:1}],
+          {duration:440+index*35,easing:"cubic-bezier(.2,.8,.2,1)"}
+        );
+      });
+    }
+    setTimeout(()=>liveStoreList.classList.remove("is-sorting"),reduceMotion?0:620);
+  };
+  liveStoreButtons.forEach(button=>button.addEventListener("click",()=>sortLiveStores(button.dataset.liveSort||"deals")));
+}
+
 document.querySelectorAll("[data-media]").forEach(image=>{
   const wrap=image.closest(".has-media");
   const done=()=>wrap?.classList.add("loaded");
