@@ -1,13 +1,14 @@
 # Angebotslotse – aktueller Arbeitsstand
 
-Stand: 2. Oktober 2026, nach V12.3.1 Mobile/Footer QA
+Stand: 3. Oktober 2026, V12.4.1 Performance-Fix in Arbeit
 
 ## Aktuelle Phase
 V12 „Night Market“ – Premium-Shopping-Portal, siteweite Design-/UX-Vereinheitlichung und finale Qualitätsrunde.
 
 ## Source of Truth
 - Produktion: `main`
-- Letzter funktionaler Release: `V12.3.1 Footer QA: letzte Mobile-Touchziele korrigieren`
+- Letzter funktionaler Release: `V12.4 Phase 1: bekannte Mobile-/CSS-Konflikte entfernt`
+- Aktueller Arbeitsbranch: `work/v12-4-1-real-minify`
 - Weltmarken-Audit: `docs/WELTMARKE-200-AUDIT.md`
 - Arbeitsregel: größere Änderungen isoliert auf `work/**`, `feature/**` oder per PR; vor Merge vollständige Validation.
 
@@ -24,7 +25,8 @@ V12 „Night Market“ – Premium-Shopping-Portal, siteweite Design-/UX-Vereinh
 
 ## Verifiziert
 - V12.3.1 Produktionsworkflow: Tests, Update, Build, Validierung, SEO, Security, Deploy und Live-Smoke erfolgreich
-- Live CSS: `site.css?v=28`
+- Live CSS vor V12.4.1: `site.css?v=28`
+- V12.4.1 baut Produktions-CSS und `app.js` mit esbuild minifiziert; Quellen bleiben lesbar
 - PWA Shell: `angebotslotse-shell-v12`
 - 375px Live-QA: kein horizontaler Overflow
 - Mobile Kategorie-Kacheln: zuvor 16–24px breit, jetzt 336px breit und einspaltig
@@ -41,11 +43,12 @@ V12 „Night Market“ – Premium-Shopping-Portal, siteweite Design-/UX-Vereinh
 Der öffentliche Social-Verteiler liefert aktuell weiterhin nur vier Plattform-Posts desselben Clips vom 26.09.2026. Die Pagination ist live und kann ältere ShortSync-Seiten lesen, sobald ShortSync dafür tatsächlich einen Cursor liefert. Es werden keine historischen Veröffentlichungen erfunden.
 
 ## Nächste offene Blöcke
-1. Legacy-CSS schrittweise bereinigen, beginnend mit nachweislich überholten Mobile-/Theme-Regeln.
-2. weitere Performance-/Accessibility-Messungen auf Start-, Such-, Kategorie-, Konto- und Produktseiten.
-3. visuelle QA auf sehr kleinen Geräten sowie sehr breiten Desktop-Auflösungen.
-4. Tarif-/Versicherungsintegrationen nur nach echter Partnerfreigabe weiter ausbauen.
-5. Heise/compaliate erst nach finaler Gesamt-QA erneut zur Prüfung vorlegen.
+1. V12.4.1 Minify-Regression vollständig validieren und nach erfolgreichem Produktions-Smoke live verifizieren.
+2. Legacy-CSS schrittweise weiter bereinigen, nur nachweislich überholte Mobile-/Theme-Regeln.
+3. weitere Performance-/Accessibility-Messungen auf Start-, Such-, Kategorie-, Konto- und Produktseiten.
+4. visuelle QA auf sehr kleinen Geräten sowie sehr breiten Desktop-Auflösungen.
+5. Tarif-/Versicherungsintegrationen nur nach echter Partnerfreigabe weiter ausbauen.
+6. Heise/compaliate erst nach finaler Gesamt-QA erneut zur Prüfung vorlegen.
 
 ## Regel bei Chat-/Stream-Abbruch
 1. Diese Datei lesen.
