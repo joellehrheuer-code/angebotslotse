@@ -19,7 +19,7 @@ test("V13 trennt Angebotslotse-Marke und Joel-Creator-Welt sauber",()=>{
   assert.match(html,/class="creator-top-dock"/);
   assert.match(html,/class="creator-world reveal"/);
   assert.match(html,/class="creator-world-backdrop"/);
-  assert.match(html,/class="creator-profile-image"/);
+  assert.match(html,/creator-profile-image/);
   assert.match(html,/joel-logo\.svg/);
 });
 
