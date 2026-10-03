@@ -528,3 +528,227 @@ body{
 @media(prefers-reduced-motion:reduce){
   .creator-dock-links a,.hero-product-card,.deal-card,.creator-social-card{transition:none!important;transform:none!important}
 }
+
+/* V13.1 SCREENSHOT-DRIVEN MOBILE QA
+   Fixes header stacking, mobile history readability and fixed-action collisions
+   observed on live Android screenshots. */
+.site-header{
+  display:block!important;
+  height:auto!important;
+  padding:0!important;
+}
+.creator-top-dock{box-sizing:border-box}
+
+@media(max-width:760px){
+  body{padding-bottom:calc(88px + env(safe-area-inset-bottom))!important}
+
+  .header-row{
+    min-height:64px!important;
+    grid-template-columns:minmax(0,1fr) 44px!important;
+    gap:10px!important;
+  }
+  .header-brand{
+    width:auto!important;
+    max-width:100%!important;
+    min-width:0!important;
+    overflow:hidden!important;
+  }
+  .header-brand-picture{
+    flex:0 0 40px!important;
+    width:40px!important;
+    height:40px!important;
+  }
+  .header-brand-picture .brand-logo{
+    width:40px!important;
+    height:40px!important;
+  }
+  .brand-lockup{min-width:0!important;overflow:hidden!important}
+  .brand-lockup b{
+    display:block!important;
+    overflow:hidden!important;
+    text-overflow:ellipsis!important;
+    white-space:nowrap!important;
+    font-size:15px!important;
+  }
+  .menu-toggle{
+    width:44px!important;
+    height:44px!important;
+    min-width:44px!important;
+    justify-self:end!important;
+    margin:0!important;
+  }
+
+  .creator-top-dock{
+    width:100%!important;
+    min-height:50px!important;
+    margin:0!important;
+    padding:7px 12px 9px!important;
+    display:block!important;
+    border-top:1px solid #1d2432!important;
+    overflow:hidden!important;
+  }
+  .creator-dock-label{display:none!important}
+  .creator-dock-links{
+    width:100%!important;
+    max-width:none!important;
+    display:flex!important;
+    justify-content:flex-start!important;
+    gap:7px!important;
+    overflow-x:auto!important;
+    overflow-y:hidden!important;
+    scroll-snap-type:x proximity;
+    scrollbar-width:none!important;
+  }
+  .creator-dock-links::-webkit-scrollbar{display:none!important}
+  .creator-dock-links a{
+    flex:0 0 36px!important;
+    width:36px!important;
+    height:36px!important;
+    min-height:36px!important;
+    padding:0!important;
+    display:grid!important;
+    place-items:center!important;
+    border-radius:11px!important;
+    scroll-snap-align:start;
+  }
+  .creator-dock-links img{
+    width:24px!important;
+    height:24px!important;
+  }
+  .creator-dock-links span{display:none!important}
+  #main-nav{inset:146px 0 0!important}
+  .search-suggest-panel{top:152px!important}
+
+  .subpage-hero .back{
+    display:flex!important;
+    width:max-content!important;
+    margin:0 0 10px!important;
+  }
+  .subpage-hero>.eyebrow{
+    display:block!important;
+    width:max-content!important;
+    margin:0 0 10px!important;
+  }
+
+  .listing-tools,.listing-filters{
+    padding:12px!important;
+    gap:9px!important;
+  }
+  .listing-tools input,.listing-tools select,.listing-filters input,.listing-filters select,
+  .filter-reset{
+    min-height:44px!important;
+  }
+  .filter-reset{margin-top:0!important}
+
+  .detail .price-history{
+    padding:18px!important;
+    overflow:hidden!important;
+  }
+  .history-head{
+    display:grid!important;
+    grid-template-columns:1fr!important;
+    align-items:start!important;
+    gap:14px!important;
+  }
+  .history-head>div{
+    width:100%!important;
+    display:grid!important;
+    grid-template-columns:repeat(3,minmax(0,1fr))!important;
+    gap:7px!important;
+  }
+  .history-head button{
+    width:100%!important;
+    min-width:0!important;
+    min-height:40px!important;
+    padding:0 8px!important;
+  }
+  .history-panel{
+    margin-top:16px!important;
+    padding:0!important;
+    background:transparent!important;
+    color:#f4f6fb!important;
+  }
+  .history-panel svg{
+    display:block!important;
+    width:100%!important;
+    height:170px!important;
+    max-height:170px!important;
+    margin:0!important;
+    padding:10px!important;
+    border:1px solid #262d42!important;
+    border-radius:14px!important;
+    background:#0b0f19!important;
+    overflow:visible!important;
+  }
+  .history-panel dl{
+    display:grid!important;
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    gap:8px!important;
+    margin:12px 0 0!important;
+  }
+  .history-panel dl>div{
+    min-width:0!important;
+    padding:11px 12px!important;
+    border:1px solid #262d42!important;
+    border-radius:12px!important;
+    background:#0b0f19!important;
+  }
+  .history-panel dt{
+    color:#7f899f!important;
+    font-size:9px!important;
+    font-weight:850!important;
+    line-height:1.25!important;
+    text-transform:uppercase!important;
+    letter-spacing:.055em!important;
+  }
+  .history-panel dd{
+    margin:4px 0 0!important;
+    color:#fff!important;
+    font-size:15px!important;
+    font-weight:850!important;
+    line-height:1.25!important;
+    overflow-wrap:anywhere!important;
+  }
+
+  .mobile-bottom-nav{
+    left:10px!important;
+    right:10px!important;
+    bottom:calc(8px + env(safe-area-inset-bottom))!important;
+    min-height:62px!important;
+  }
+  .sticky-offer-bar{
+    left:12px!important;
+    right:12px!important;
+    bottom:calc(82px + env(safe-area-inset-bottom))!important;
+    width:auto!important;
+    transform:none!important;
+    grid-template-columns:minmax(0,1fr) auto!important;
+    gap:9px!important;
+    padding:9px 9px 9px 12px!important;
+    border-radius:15px!important;
+  }
+  .sticky-offer-bar>div{min-width:0!important}
+  .sticky-offer-bar small{font-size:7px!important}
+  .sticky-offer-bar strong{font-size:10px!important}
+  .sticky-offer-bar>a{
+    min-width:112px!important;
+    min-height:42px!important;
+    padding:0 11px!important;
+    white-space:nowrap!important;
+  }
+  .detail{padding-bottom:150px!important}
+  .report-fab{bottom:calc(84px + env(safe-area-inset-bottom))!important}
+  body:has(.sticky-offer-bar:not([hidden])) .report-fab{
+    bottom:calc(146px + env(safe-area-inset-bottom))!important;
+  }
+}
+
+@media(max-width:420px){
+  .brand-lockup b{font-size:14px!important}
+  .history-panel dl{grid-template-columns:1fr!important}
+  .sticky-offer-bar>a{min-width:104px!important;font-size:10px!important}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .creator-dock-links{scroll-behavior:auto!important}
+}
