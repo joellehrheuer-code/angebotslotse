@@ -41,7 +41,22 @@ self.addEventListener("fetch", event => {
     return;
   }
 
-  if (["style","script","image","font"].includes(request.destination)) {
+  if (["style","script"].includes(request.destination)) {
+    event.respondWith(
+      fetch(request)
+        .then(response => {
+          if (response.ok) {
+            const copy = response.clone();
+            caches.open(CACHE).then(cache => cache.put(request, copy));
+          }
+          return response;
+        })
+        .catch(() => caches.match(request))
+    );
+    return;
+  }
+
+  if (["image","font"].includes(request.destination)) {
     event.respondWith(
       caches.match(request).then(cached => {
         const network = fetch(request).then(response => {
