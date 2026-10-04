@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-04T14:07:25.156Z",
+  "generatedAt": "2026-10-04T19:38:55.425Z",
   "market": "DE",
   "publisherId": 3045061,
   "awin": {
@@ -910,17 +910,6 @@
         "advertiserId": 9329,
         "name": "Baumschule-Horstmann DE",
         "primarySector": "Home & Garden",
-        "primaryRegion": {
-          "name": "Germany",
-          "countryCode": "DE"
-        }
-      },
-      {
-        "network": "Awin",
-        "relationship": "notjoined",
-        "advertiserId": 14537,
-        "name": "Baur Versand DE",
-        "primarySector": "Department Stores",
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
@@ -2208,6 +2197,17 @@
         "advertiserId": 11642,
         "name": "eibmarkt DE",
         "primarySector": "Electronic Superstore",
+        "primaryRegion": {
+          "name": "Germany",
+          "countryCode": "DE"
+        }
+      },
+      {
+        "network": "Awin",
+        "relationship": "notjoined",
+        "advertiserId": 122352,
+        "name": "Eka Store DE",
+        "primarySector": "Home & Garden",
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
