@@ -150,3 +150,9 @@ Status „offen“ bedeutet: noch kein vollständiger Einzelnachweis für alle A
 | 112 | Skalierung | offen |
 | 113 | Release-Qualität | offen |
 | 114 | Definition of Done | offen |
+
+## Live-Nachprüfung dieser Runde
+
+- Veröffentlichung von PR 28 einschließlich Live-Smoke erfolgreich.
+- Suche, Markenauswahl, Merkliste und Wunschpreis im Live-Browser geprüft.
+- Header-Überlagerung identifiziert: generische `.brand span`-Regel begrenzte den Textblock auf 38 px und färbte ihn pink. Textblock erhält nun eigene, eindeutige Größen- und Hintergrundregeln; CSS-Version auf 32 angehoben.
