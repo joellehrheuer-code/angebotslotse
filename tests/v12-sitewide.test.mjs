@@ -33,5 +33,5 @@ test("V12.2 applies one premium architecture to the main subpages", () => {
   assert.match(css,/\.listing-tools/);
   assert.match(css,/@media\(max-width:680px\)/);
   assert.match(css,/@media\(prefers-reduced-motion:reduce\)/);
-  assert.match(sw,/angebotslotse-shell-v15/);
+  assert.match(sw,/angebotslotse-shell-v16/);
 });

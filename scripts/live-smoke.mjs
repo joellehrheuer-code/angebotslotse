@@ -51,7 +51,7 @@ const validateState=({report,statusHtml,urls,homeHtml})=>{
   if(urls.some(url=>!url.startsWith(`${base}/`)&&url!==base))errors.push("Sitemap enthält fremde oder unerwartete URLs");
   const requiredHomeMarkers=[
     'site.css?v=31',
-    'app.js?v=17',
+    'app.js?v=18',
     'id="aktuell-angebunden"',
     'class="top-social-links creator-dock-links"',
     'data-live-sort="deals"',
@@ -99,7 +99,7 @@ if(!live||stateErrors.length)throw new Error(`Live-Statusprüfung fehlgeschlagen
 
 const criticalAssets=[
   "/site.css?v=31",
-  "/app.js?v=17",
+  "/app.js?v=18",
   "/favicon.svg",
   "/manifest.webmanifest",
   "/brand-hero.jpg",

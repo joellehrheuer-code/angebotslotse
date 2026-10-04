@@ -18,7 +18,7 @@ test("V12 homepage keeps live connected stats and premium shopping hierarchy",()
   assert.match(html,/AKTUELL ANGEBUNDEN/);
   assert.match(html,/Aktive Angebote/);
   assert.match(html,/Stores/);
-  assert.match(html,/Partnerquellen/);
+  assert.match(html,/Partnerlinks/);
   assert.match(html,/Gerade sichtbar/);
   assert.match(html,/Aktuelle Top-Deals/);
   assert.match(html,/Deal des Tages/);
@@ -66,5 +66,5 @@ test("V12 footer and cache version are aligned",()=>{
   assert.match(html,/<summary>Deals<\/summary>/);
   assert.match(html,/<summary>Service<\/summary>/);
   assert.match(html,/<summary>Rechtliches<\/summary>/);
-  assert.match(sw,/angebotslotse-shell-v15/);
+  assert.match(sw,/angebotslotse-shell-v16/);
 });
