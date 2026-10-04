@@ -752,3 +752,206 @@ body{
 @media(prefers-reduced-motion:reduce){
   .creator-dock-links{scroll-behavior:auto!important}
 }
+
+
+/* V13.2 MOBILE SCREENSHOT QA — compact chrome, readable history, no stacked fixed UI */
+@media(max-width:760px){
+  body{padding-bottom:calc(78px + env(safe-area-inset-bottom))!important}
+
+  .header-row{
+    min-height:58px!important;
+    grid-template-columns:minmax(0,1fr) 40px!important;
+    gap:8px!important;
+  }
+  .header-brand-picture{
+    flex:0 0 36px!important;
+    width:36px!important;
+    height:36px!important;
+    border-radius:12px!important;
+  }
+  .header-brand-picture .brand-logo{
+    width:36px!important;
+    height:36px!important;
+  }
+  .brand-lockup b{
+    max-width:132px!important;
+    font-size:13px!important;
+  }
+  .menu-toggle{
+    width:40px!important;
+    height:40px!important;
+    min-width:40px!important;
+    border-radius:12px!important;
+  }
+
+  .creator-top-dock{
+    min-height:42px!important;
+    padding:5px 10px 7px!important;
+  }
+  .creator-dock-links{gap:6px!important}
+  .creator-dock-links a{
+    flex-basis:32px!important;
+    width:32px!important;
+    height:32px!important;
+    min-height:32px!important;
+    border-radius:10px!important;
+  }
+  .creator-dock-links img{
+    width:21px!important;
+    height:21px!important;
+  }
+  #main-nav{inset:132px 0 0!important}
+  .search-suggest-panel{top:138px!important}
+
+  .premium-hero.portal-hero{
+    padding:22px 16px!important;
+    gap:18px!important;
+  }
+  .hero-redesign-copy h1{
+    font-size:clamp(38px,11vw,50px)!important;
+    line-height:.98!important;
+  }
+  .hero-redesign-copy>p{
+    font-size:14px!important;
+    line-height:1.55!important;
+  }
+  .hero-trust-grid{
+    grid-template-columns:repeat(3,minmax(0,1fr))!important;
+    gap:7px!important;
+  }
+  .hero-trust-grid>span{
+    min-height:76px!important;
+    padding:10px 8px!important;
+  }
+  .hero-trust-grid b{font-size:9px!important}
+  .hero-trust-grid small{font-size:7px!important;line-height:1.3!important}
+
+  .live-network{
+    padding:16px!important;
+    border-radius:20px!important;
+  }
+  .live-stat-grid{gap:8px!important}
+  .live-stat-grid article{
+    min-height:108px!important;
+    padding:13px!important;
+  }
+  .live-stat-grid article strong{font-size:36px!important}
+  .live-store-strip{padding:12px!important;border-radius:16px!important}
+
+  .subpage-hero{display:block!important}
+  .subpage-hero .back{
+    margin:0 0 8px!important;
+    line-height:1.2!important;
+  }
+  .subpage-hero>.eyebrow{
+    margin:0 0 8px!important;
+    line-height:1.2!important;
+  }
+
+  .listing-tools,.listing-filters{
+    padding:10px!important;
+    gap:8px!important;
+  }
+  .listing-tools input,.listing-tools select,.listing-filters input,.listing-filters select,
+  .filter-reset{
+    min-height:42px!important;
+  }
+  .filter-reset{
+    background:#151a27!important;
+    color:#d8deea!important;
+    border:1px solid #30384d!important;
+    opacity:1!important;
+  }
+
+  .category-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    gap:10px!important;
+  }
+  .category-tile[data-lifestyle-category]{
+    min-height:205px!important;
+  }
+  .category-tile[data-lifestyle-category] .category-art{
+    height:116px!important;
+  }
+
+  .detail .price-history{padding:15px!important}
+  .history-head{
+    gap:10px!important;
+  }
+  .history-head h2{
+    margin:0!important;
+    font-size:28px!important;
+    line-height:1.05!important;
+  }
+  .history-head>div{gap:6px!important}
+  .history-head button{
+    min-height:36px!important;
+    font-size:10px!important;
+    padding:0 6px!important;
+  }
+  .history-panel{
+    margin-top:12px!important;
+  }
+  .history-panel svg{
+    height:112px!important;
+    max-height:112px!important;
+    padding:8px!important;
+    border-radius:12px!important;
+  }
+  .history-panel-flat svg{
+    height:62px!important;
+    max-height:62px!important;
+  }
+  .history-flat-note{
+    margin:8px 0 0!important;
+    color:#8994aa!important;
+    font-size:10px!important;
+  }
+  .history-panel dl{
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    gap:6px!important;
+    margin-top:8px!important;
+  }
+  .history-panel dl>div{
+    padding:9px 10px!important;
+    border-radius:10px!important;
+  }
+  .history-panel dt{
+    font-size:8px!important;
+    letter-spacing:.04em!important;
+  }
+  .history-panel dd{
+    font-size:13px!important;
+  }
+
+  /* Only one persistent bottom action layer on phones. The product CTA stays in content. */
+  .sticky-offer-bar{display:none!important}
+  .detail{padding-bottom:92px!important}
+  .mobile-bottom-nav{
+    left:8px!important;
+    right:8px!important;
+    bottom:calc(6px + env(safe-area-inset-bottom))!important;
+    min-height:56px!important;
+    padding:4px!important;
+    border-radius:16px!important;
+  }
+  .mobile-bottom-nav a{
+    min-height:46px!important;
+    font-size:16px!important;
+  }
+  .mobile-bottom-nav a b{font-size:8px!important}
+  .report-fab{display:none!important}
+}
+
+@media(max-width:480px){
+  .brand-lockup{display:none!important}
+  .header-row{grid-template-columns:36px minmax(0,1fr) 40px!important}
+  .header-brand{width:36px!important}
+  .creator-dock-links{gap:5px!important}
+  .hero-trust-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+  .history-panel dl{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+}
+@media(max-width:360px){
+  .category-grid{grid-template-columns:1fr!important}
+  .hero-trust-grid{grid-template-columns:1fr!important}
+}
