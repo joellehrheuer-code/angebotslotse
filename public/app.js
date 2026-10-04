@@ -765,15 +765,22 @@ updateWatchIndicators();
 (() => {
   const INTAKE_ENDPOINT = "https://asrklnfcwtgihvyfjiww.supabase.co/functions/v1/public-intake";
   const postIntake = async payload => {
-    const response = await fetch(INTAKE_ENDPOINT, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(payload),
-    });
-    let data = null;
-    try { data = await response.json(); } catch {}
-    if (!response.ok || !data?.ok) throw new Error(data?.error || `HTTP ${response.status}`);
-    return data;
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 15000);
+    try {
+      const response = await fetch(INTAKE_ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+        signal: controller.signal,
+      });
+      let data = null;
+      try { data = await response.json(); } catch (error) {
+        if (controller.signal.aborted) throw error;
+      }
+      if (!response.ok || !data?.ok) throw new Error(data?.error || `HTTP ${response.status}`);
+      return data;
+    } finally { clearTimeout(timeout); }
   };
   const setStatus=(node,text,kind="info")=>{ if(!node)return; node.textContent=text; node.dataset.kind=kind; };
 

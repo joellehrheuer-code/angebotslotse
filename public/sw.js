@@ -1,4 +1,4 @@
-const CACHE = "angebotslotse-shell-v15";
+const CACHE = "angebotslotse-shell-v16";
 const scope = self.registration.scope;
 const local = path => new URL(path, scope).href;
 const SHELL = [
@@ -16,7 +16,7 @@ self.addEventListener("install", event => {
 self.addEventListener("activate", event => {
   event.waitUntil(
     caches.keys()
-      .then(keys => Promise.all(keys.filter(key => key !== CACHE).map(key => caches.delete(key))))
+      .then(keys => Promise.all(keys.filter(key => key.startsWith("angebotslotse-shell-") && key !== CACHE).map(key => caches.delete(key))))
       .then(() => self.clients.claim())
   );
 });
@@ -32,8 +32,10 @@ self.addEventListener("fetch", event => {
     event.respondWith(
       fetch(request)
         .then(response => {
-          const copy = response.clone();
-          caches.open(CACHE).then(cache => cache.put(request, copy));
+          if (response.ok) {
+            const copy = response.clone();
+            event.waitUntil(caches.open(CACHE).then(cache => cache.put(request, copy)).catch(() => {}));
+          }
           return response;
         })
         .catch(async () => (await caches.match(request)) || caches.match(local("offline.html")))
@@ -47,7 +49,7 @@ self.addEventListener("fetch", event => {
         .then(response => {
           if (response.ok) {
             const copy = response.clone();
-            caches.open(CACHE).then(cache => cache.put(request, copy));
+            event.waitUntil(caches.open(CACHE).then(cache => cache.put(request, copy)).catch(() => {}));
           }
           return response;
         })
@@ -62,7 +64,7 @@ self.addEventListener("fetch", event => {
         const network = fetch(request).then(response => {
           if (response.ok) {
             const copy = response.clone();
-            caches.open(CACHE).then(cache => cache.put(request, copy));
+            event.waitUntil(caches.open(CACHE).then(cache => cache.put(request, copy)).catch(() => {}));
           }
           return response;
         }).catch(() => cached);

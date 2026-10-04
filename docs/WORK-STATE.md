@@ -1,5 +1,25 @@
 # Angebotslotse – aktueller Arbeitsstand
 
+Stand: 5. Oktober 2026. V13.2 ist bereits in main; die früheren V12.5/V12.6-To-dos waren veraltet.
+
+## Aktuelle Runde
+Branch: `work/completion-audit-resilience`.
+Abschlussliste: `docs/COMPLETION-CHECKLIST.md`.
+256 Tests bestanden; Veröffentlichung noch nicht bestätigt.
+
+Behoben: Timeout bei öffentlichen Formularen, korrekte Partnerlink-Kennzahl, PWA-Cache-Isolation und Cache-Schreibvorgänge. JS v18 / Shell v16.
+
+## Fortsetzen nach Abbruch
+1. Abschlussliste lesen.
+2. aktuellen main-Commit und letzten Produktionsworkflow prüfen.
+3. Erst Veröffentlichung dieser Runde bestätigen, dann offene visuelle und funktionale Abnahmen durchführen.
+4. Blockierte Integrationen separat führen; keine Zustimmung zu Programmbedingungen vortäuschen.
+5. Keine Behauptung „fertig“ oder „live“ ohne passenden Nachweis.
+
+## Historischer Stand (teilweise überholt)
+
+# Angebotslotse – aktueller Arbeitsstand
+
 Stand: 3. Oktober 2026, V12.6 Visible Social + Live Motion in Arbeit
 
 ## Aktuelle Phase

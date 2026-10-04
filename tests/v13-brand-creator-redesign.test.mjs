@@ -47,7 +47,7 @@ test("V13 nutzt eigene Designschicht und frische Cache-Version",()=>{
   assert.match(css,/\.creator-world\{/);
   assert.match(css,/\.owned-showcase\{/);
   assert.match(css,/\.deal-rail\{/);
-  assert.match(sw,/angebotslotse-shell-v15/);
+  assert.match(sw,/angebotslotse-shell-v16/);
 });
 
 
