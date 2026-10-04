@@ -24,8 +24,7 @@ test("Header nutzt echte lokale Social-PNGs und mobile Hamburger-Suche", () => {
   assert.match(html, /class="[^"]*top-social-links[^"]*"/);
   assert.match(html, /data-live-sort="deals"/);
   assert.match(html, /data-live-sort="az"/);
-  assert.match(html, /class="brand-logo"[^>]+favicon\.svg/);
-  assert.doesNotMatch(html, /class="brand-logo"[^>]+joel-logo\.svg/);
+  assert.match(html, /class="brand-logo"[^>]+joel-logo\.svg\?v=2/);
   assert.match(html, /creator-profile-image/);
   assert.match(html, /class="creator-social-grid"/);
   assert.match(html, /class="creator-top-dock"/);

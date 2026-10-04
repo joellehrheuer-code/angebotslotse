@@ -156,3 +156,11 @@ Status „offen“ bedeutet: noch kein vollständiger Einzelnachweis für alle A
 - Veröffentlichung von PR 28 einschließlich Live-Smoke erfolgreich.
 - Suche, Markenauswahl, Merkliste und Wunschpreis im Live-Browser geprüft.
 - Header-Überlagerung identifiziert: generische `.brand span`-Regel begrenzte den Textblock auf 38 px und färbte ihn pink. Textblock erhält nun eigene, eindeutige Größen- und Hintergrundregeln; CSS-Version auf 32 angehoben.
+
+## Logo und Header – 5. Oktober 2026
+
+- Das vom Nutzer bereitgestellte Joker-Logo wird nun auch im Header verwendet. Die vorhandene Webfassung wurde durch eine höher aufgelöste Fassung desselben vollständigen Motivs ersetzt.
+- Desktop-Header hat fünf explizite Spalten einschließlich Menüknopf; Tablet nutzt vier bzw. drei Spalten. Keine zusätzliche Menüzeile durch implizite Grid-Platzierung.
+- CSS-Version 33 und Logo-Version 2 verhindern alte Browser-Assetstände.
+- 256 Tests bestanden; Integrität, Build, Seitenvalidierung, SEO und Sicherheitsprüfung bestanden.
+- Visuelle Kontrolle nach Veröffentlichung steht noch aus. Vollständige mobile und Cloud-Funktionsabnahme bleibt offen.
