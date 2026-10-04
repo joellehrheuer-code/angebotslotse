@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-04T05:52:06.279Z",
+  "generatedAt": "2026-10-04T14:07:25.156Z",
   "market": "DE",
   "publisherId": 3045061,
   "awin": {
@@ -844,17 +844,6 @@
         "advertiserId": 13634,
         "name": "BALDUR-Garten DE",
         "primarySector": "Home & Garden",
-        "primaryRegion": {
-          "name": "Germany",
-          "countryCode": "DE"
-        }
-      },
-      {
-        "network": "Awin",
-        "relationship": "notjoined",
-        "advertiserId": 116921,
-        "name": "Banak DE",
-        "primarySector": "Furniture & Soft Furnishings",
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
@@ -2207,6 +2196,17 @@
         "relationship": "notjoined",
         "advertiserId": 24666,
         "name": "Egret DE",
+        "primarySector": "Electronic Superstore",
+        "primaryRegion": {
+          "name": "Germany",
+          "countryCode": "DE"
+        }
+      },
+      {
+        "network": "Awin",
+        "relationship": "notjoined",
+        "advertiserId": 11642,
+        "name": "eibmarkt DE",
         "primarySector": "Electronic Superstore",
         "primaryRegion": {
           "name": "Germany",
