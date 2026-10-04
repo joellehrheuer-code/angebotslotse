@@ -1,6 +1,6 @@
 {
   "state": "ok",
-  "lastSuccessfulUpdate": "2026-10-04T23:09:52.319Z",
+  "lastSuccessfulUpdate": "2026-10-04T23:34:17.406Z",
   "activeOffers": 217,
   "storedOffers": 485,
   "publishableOffers": 217,
@@ -8,8 +8,8 @@
   "blockedPublisherPromotions": 4,
   "quarantined": 130,
   "added": 0,
-  "removed": 1,
-  "archivedThisRun": 1,
+  "removed": 0,
+  "archivedThisRun": 0,
   "archivedTotal": 334,
   "filteredForeignLocale": 0,
   "invalidLinks": 0,
