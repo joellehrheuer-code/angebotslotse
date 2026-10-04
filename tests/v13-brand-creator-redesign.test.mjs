@@ -65,3 +65,19 @@ test("V13.1 behebt die live beobachteten mobilen Überlagerungen",()=>{
   assert.match(css,/body:has\(\.sticky-offer-bar:not\(\[hidden\]\)\) \.report-fab/);
   assert.match(source,/flat=max===min/);
 });
+
+
+test("V13.2 macht die Smartphone-Oberfläche kompakter und kollisionsfrei",()=>{
+  build();
+  const css=fs.readFileSync("public/v13.css","utf8");
+  const source=fs.readFileSync("scripts/build.mjs","utf8");
+  const sw=fs.readFileSync("public/sw.js","utf8");
+  assert.match(css,/V13\.2 MOBILE SCREENSHOT QA/);
+  assert.match(css,/@media\(max-width:760px\)[\s\S]*?\.sticky-offer-bar\{display:none!important\}/);
+  assert.match(css,/\.report-fab\{display:none!important\}/);
+  assert.match(css,/\.history-panel-flat svg\{[\s\S]*?height:62px!important/);
+  assert.match(css,/\.category-grid\{[\s\S]*?grid-template-columns:repeat\(2,minmax\(0,1fr\)\)!important/);
+  assert.match(source,/history-panel-flat/);
+  assert.match(source,/Preis im gewählten Zeitraum unverändert/);
+  assert.match(sw,/\["style","script"\][\s\S]*?fetch\(request\)/);
+});
