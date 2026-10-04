@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-04T21:00:35.323Z",
+  "generatedAt": "2026-10-04T23:09:52.370Z",
   "dailyNewContactLimit": 8,
   "safeguards": {
     "dedupeAgainst": "report/partner-outreach-status.json",
@@ -142,6 +142,13 @@
       "lastContactAt": "2026-09-02T19:43:09+02:00"
     },
     {
+      "brand": "BSTN DACH",
+      "reason": "existing-status:pending",
+      "relatedBrand": null,
+      "status": "pending",
+      "lastContactAt": "2026-09-30T02:05:00+02:00"
+    },
+    {
       "brand": "Ankerkraut DE",
       "reason": "existing-status:pending",
       "relatedBrand": null,
@@ -154,13 +161,6 @@
       "relatedBrand": null,
       "status": "pending",
       "lastContactAt": "2026-09-29T13:40:00+02:00"
-    },
-    {
-      "brand": "BSTN DACH",
-      "reason": "existing-status:pending",
-      "relatedBrand": null,
-      "status": "pending",
-      "lastContactAt": "2026-09-30T02:05:00+02:00"
     },
     {
       "brand": "DECATHLON DE",

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-04T21:00:35.323Z",
+  "generatedAt": "2026-10-04T23:09:52.370Z",
   "topActions": [
     {
       "rank": 1,
@@ -99,6 +99,25 @@
     {
       "rank": 6,
       "network": "Awin",
+      "brand": "BSTN DACH",
+      "reference": 104975,
+      "advertiserId": 104975,
+      "programId": null,
+      "campaignId": null,
+      "category": "Mode & Sport",
+      "priority": "mittel",
+      "score": 51,
+      "kind": "application",
+      "status": "notjoined",
+      "actionType": "application-review",
+      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten BSTN DACH redaktionell passend im Bereich Mode & Sport einbinden. Bei Awin sind aktuell 1 für Deutschland sichtbare Aktion dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "submissionReady": false,
+      "humanApprovalRequired": true
+    },
+    {
+      "rank": 7,
+      "network": "Awin",
       "brand": "Anker Solix DE",
       "reference": 32623,
       "advertiserId": 32623,
@@ -116,7 +135,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 7,
+      "rank": 8,
       "network": "Awin",
       "brand": "Ankerkraut DE",
       "reference": 127917,
@@ -135,7 +154,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 8,
+      "rank": 9,
       "network": "Awin",
       "brand": "Bosch Hausgeräte DE",
       "reference": 102205,
@@ -154,7 +173,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 9,
+      "rank": 10,
       "network": "Awin",
       "brand": "bosch Tiernahrung DE",
       "reference": 84955,
@@ -169,25 +188,6 @@
       "actionType": "application-review",
       "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
       "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten bosch Tiernahrung DE redaktionell passend im Bereich Tierbedarf einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-      "submissionReady": false,
-      "humanApprovalRequired": true
-    },
-    {
-      "rank": 10,
-      "network": "Awin",
-      "brand": "BSTN DACH",
-      "reference": 104975,
-      "advertiserId": 104975,
-      "programId": null,
-      "campaignId": null,
-      "category": "Mode & Sport",
-      "priority": "mittel",
-      "score": 45,
-      "kind": "application",
-      "status": "notjoined",
-      "actionType": "application-review",
-      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten BSTN DACH redaktionell passend im Bereich Mode & Sport einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
       "submissionReady": false,
       "humanApprovalRequired": true
     },
@@ -515,6 +515,13 @@
       "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Zigbuy DE redaktionell passend im Bereich Haushalt & Küche einbinden. Bei Awin sind aktuell 4 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung."
     },
     {
+      "id": "awin-apply-104975",
+      "platform": "Awin",
+      "action": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "reason": "Automatisch priorisiert (51 Punkte): passt zu Mode & Sport, strategisch relevante Marke, 1 aktive DE-Aktion. Keine automatische Zustimmung zu Vertragsbedingungen.",
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten BSTN DACH redaktionell passend im Bereich Mode & Sport einbinden. Bei Awin sind aktuell 1 für Deutschland sichtbare Aktion dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung."
+    },
+    {
       "id": "awin-apply-32623",
       "platform": "Awin",
       "action": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
@@ -527,13 +534,6 @@
       "action": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
       "reason": "Automatisch priorisiert (45 Punkte): passt zu Haushalt & Küche, strategisch relevante Marke. Keine automatische Zustimmung zu Vertragsbedingungen.",
       "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Ankerkraut DE redaktionell passend im Bereich Haushalt & Küche einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung."
-    },
-    {
-      "id": "awin-apply-102205",
-      "platform": "Awin",
-      "action": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "reason": "Automatisch priorisiert (45 Punkte): passt zu Technik & Computer, strategisch relevante Marke. Keine automatische Zustimmung zu Vertragsbedingungen.",
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Bosch Hausgeräte DE redaktionell passend im Bereich Technik & Computer einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung."
     },
     {
       "id": "daisycon-connect",

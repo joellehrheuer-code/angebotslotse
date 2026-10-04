@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-04T21:00:35.323Z",
+  "generatedAt": "2026-10-04T23:09:52.370Z",
   "scope": "Automatisch aus Programminventar, DE-Angebotsabdeckung und verfügbaren Netzwerk-/Feed-Signalen erzeugt.",
   "automation": {
     "discovery": "automatic",
@@ -181,6 +181,40 @@
       "automationState": "ready-for-review"
     },
     {
+      "brand": "BSTN DACH",
+      "network": "Awin",
+      "advertiserId": 104975,
+      "status": "notjoined",
+      "category": "Mode & Sport",
+      "score": 51,
+      "priority": "mittel",
+      "activeDiscoveryOffers": 1,
+      "offerExamples": [
+        "Mid Season Sale"
+      ],
+      "productFeed": false,
+      "metrics": {
+        "awinIndex": null,
+        "epc": null,
+        "conversionRate": null,
+        "approvalPercentage": null,
+        "validationDays": null,
+        "averagePaymentTime": null,
+        "commissionMin": null,
+        "commissionMax": null,
+        "commissionTypes": []
+      },
+      "reasons": [
+        "passt zu Mode & Sport",
+        "strategisch relevante Marke",
+        "1 aktive DE-Aktion"
+      ],
+      "applicationRequired": true,
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten BSTN DACH redaktionell passend im Bereich Mode & Sport einbinden. Bei Awin sind aktuell 1 für Deutschland sichtbare Aktion dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "automationState": "ready-for-review"
+    },
+    {
       "brand": "Anker Solix DE",
       "network": "Awin",
       "advertiserId": 32623,
@@ -301,37 +335,6 @@
       ],
       "applicationRequired": true,
       "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten bosch Tiernahrung DE redaktionell passend im Bereich Tierbedarf einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "automationState": "ready-for-review"
-    },
-    {
-      "brand": "BSTN DACH",
-      "network": "Awin",
-      "advertiserId": 104975,
-      "status": "notjoined",
-      "category": "Mode & Sport",
-      "score": 45,
-      "priority": "mittel",
-      "activeDiscoveryOffers": 0,
-      "offerExamples": [],
-      "productFeed": false,
-      "metrics": {
-        "awinIndex": null,
-        "epc": null,
-        "conversionRate": null,
-        "approvalPercentage": null,
-        "validationDays": null,
-        "averagePaymentTime": null,
-        "commissionMin": null,
-        "commissionMax": null,
-        "commissionTypes": []
-      },
-      "reasons": [
-        "passt zu Mode & Sport",
-        "strategisch relevante Marke"
-      ],
-      "applicationRequired": true,
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten BSTN DACH redaktionell passend im Bereich Mode & Sport einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
       "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
       "automationState": "ready-for-review"
     },
@@ -1026,16 +1029,16 @@
       "automationState": "ready-for-review"
     },
     {
-      "brand": "Kenwood DE",
+      "brand": "Koffer to go DE",
       "network": "Awin",
-      "advertiserId": 22919,
+      "advertiserId": 16903,
       "status": "notjoined",
-      "category": "Haushalt & Küche",
+      "category": "Mode & Sport",
       "score": 36,
       "priority": "niedrig",
       "activeDiscoveryOffers": 1,
       "offerExamples": [
-        "SALLY26 – Kenwood Cooking Chef Sallys Edition"
+        "Herbstaktion"
       ],
       "productFeed": false,
       "metrics": {
@@ -1050,11 +1053,11 @@
         "commissionTypes": []
       },
       "reasons": [
-        "passt zu Haushalt & Küche",
+        "passt zu Mode & Sport",
         "1 aktive DE-Aktion"
       ],
       "applicationRequired": true,
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Kenwood DE redaktionell passend im Bereich Haushalt & Küche einbinden. Bei Awin sind aktuell 1 für Deutschland sichtbare Aktion dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Koffer to go DE redaktionell passend im Bereich Mode & Sport einbinden. Bei Awin sind aktuell 1 für Deutschland sichtbare Aktion dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
       "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
       "automationState": "ready-for-review"
     },
@@ -1187,39 +1190,6 @@
       ],
       "applicationRequired": true,
       "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten STRÖH DE redaktionell passend im Bereich Tierbedarf einbinden. Bei Awin sind aktuell 1 für Deutschland sichtbare Aktion dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "automationState": "ready-for-review"
-    },
-    {
-      "brand": "TOM FYFE DE",
-      "network": "Awin",
-      "advertiserId": 123606,
-      "status": "notjoined",
-      "category": "Mode & Sport",
-      "score": 36,
-      "priority": "niedrig",
-      "activeDiscoveryOffers": 1,
-      "offerExamples": [
-        "Eins reicht nicht"
-      ],
-      "productFeed": false,
-      "metrics": {
-        "awinIndex": null,
-        "epc": null,
-        "conversionRate": null,
-        "approvalPercentage": null,
-        "validationDays": null,
-        "averagePaymentTime": null,
-        "commissionMin": null,
-        "commissionMax": null,
-        "commissionTypes": []
-      },
-      "reasons": [
-        "passt zu Mode & Sport",
-        "1 aktive DE-Aktion"
-      ],
-      "applicationRequired": true,
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten TOM FYFE DE redaktionell passend im Bereich Mode & Sport einbinden. Bei Awin sind aktuell 1 für Deutschland sichtbare Aktion dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
       "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
       "automationState": "ready-for-review"
     },
@@ -1587,6 +1557,36 @@
       ],
       "applicationRequired": true,
       "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten 3D Jake DE redaktionell passend im Bereich Technik & Computer einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "automationState": "ready-for-review"
+    },
+    {
+      "brand": "3DMakerpro (EU)",
+      "network": "Awin",
+      "advertiserId": 70050,
+      "status": "notjoined",
+      "category": "Technik & Computer",
+      "score": 30,
+      "priority": "niedrig",
+      "activeDiscoveryOffers": 0,
+      "offerExamples": [],
+      "productFeed": false,
+      "metrics": {
+        "awinIndex": null,
+        "epc": null,
+        "conversionRate": null,
+        "approvalPercentage": null,
+        "validationDays": null,
+        "averagePaymentTime": null,
+        "commissionMin": null,
+        "commissionMax": null,
+        "commissionTypes": []
+      },
+      "reasons": [
+        "passt zu Technik & Computer"
+      ],
+      "applicationRequired": true,
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten 3DMakerpro (EU) redaktionell passend im Bereich Technik & Computer einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
       "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
       "automationState": "ready-for-review"
     }

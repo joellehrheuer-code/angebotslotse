@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-04T21:00:35.347Z",
+  "generatedAt": "2026-10-04T23:09:52.391Z",
   "market": "DE",
   "publisherId": 3045061,
   "awin": {
@@ -918,17 +918,6 @@
       {
         "network": "Awin",
         "relationship": "notjoined",
-        "advertiserId": 14537,
-        "name": "Baur Versand DE",
-        "primarySector": "Department Stores",
-        "primaryRegion": {
-          "name": "Germany",
-          "countryCode": "DE"
-        }
-      },
-      {
-        "network": "Awin",
-        "relationship": "notjoined",
         "advertiserId": 66252,
         "name": "Bayer04 Leverkusen DE",
         "primarySector": "Sportswear",
@@ -1383,6 +1372,28 @@
         "advertiserId": 121694,
         "name": "BRITA DE",
         "primarySector": "Home & Garden",
+        "primaryRegion": {
+          "name": "Germany",
+          "countryCode": "DE"
+        }
+      },
+      {
+        "network": "Awin",
+        "relationship": "notjoined",
+        "advertiserId": 104975,
+        "name": "BSTN DACH",
+        "primarySector": "Shoes",
+        "primaryRegion": {
+          "name": "Germany",
+          "countryCode": "DE"
+        }
+      },
+      {
+        "network": "Awin",
+        "relationship": "notjoined",
+        "advertiserId": 14584,
+        "name": "bücher.de DE",
+        "primarySector": "Books & Subscriptions",
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
@@ -2201,17 +2212,6 @@
           "name": "Germany",
           "countryCode": "DE"
         }
-      },
-      {
-        "network": "Awin",
-        "relationship": "notjoined",
-        "advertiserId": 11642,
-        "name": "eibmarkt DE",
-        "primarySector": "Electronic Superstore",
-        "primaryRegion": {
-          "name": "Germany",
-          "countryCode": "DE"
-        }
       }
     ],
     "discoveryOffers": 200,
@@ -2390,6 +2390,40 @@
         "automationState": "ready-for-review"
       },
       {
+        "brand": "BSTN DACH",
+        "network": "Awin",
+        "advertiserId": 104975,
+        "status": "notjoined",
+        "category": "Mode & Sport",
+        "score": 51,
+        "priority": "mittel",
+        "activeDiscoveryOffers": 1,
+        "offerExamples": [
+          "Mid Season Sale"
+        ],
+        "productFeed": false,
+        "metrics": {
+          "awinIndex": null,
+          "epc": null,
+          "conversionRate": null,
+          "approvalPercentage": null,
+          "validationDays": null,
+          "averagePaymentTime": null,
+          "commissionMin": null,
+          "commissionMax": null,
+          "commissionTypes": []
+        },
+        "reasons": [
+          "passt zu Mode & Sport",
+          "strategisch relevante Marke",
+          "1 aktive DE-Aktion"
+        ],
+        "applicationRequired": true,
+        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten BSTN DACH redaktionell passend im Bereich Mode & Sport einbinden. Bei Awin sind aktuell 1 für Deutschland sichtbare Aktion dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+        "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+        "automationState": "ready-for-review"
+      },
+      {
         "brand": "Anker Solix DE",
         "network": "Awin",
         "advertiserId": 32623,
@@ -2510,37 +2544,6 @@
         ],
         "applicationRequired": true,
         "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten bosch Tiernahrung DE redaktionell passend im Bereich Tierbedarf einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-        "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-        "automationState": "ready-for-review"
-      },
-      {
-        "brand": "BSTN DACH",
-        "network": "Awin",
-        "advertiserId": 104975,
-        "status": "notjoined",
-        "category": "Mode & Sport",
-        "score": 45,
-        "priority": "mittel",
-        "activeDiscoveryOffers": 0,
-        "offerExamples": [],
-        "productFeed": false,
-        "metrics": {
-          "awinIndex": null,
-          "epc": null,
-          "conversionRate": null,
-          "approvalPercentage": null,
-          "validationDays": null,
-          "averagePaymentTime": null,
-          "commissionMin": null,
-          "commissionMax": null,
-          "commissionTypes": []
-        },
-        "reasons": [
-          "passt zu Mode & Sport",
-          "strategisch relevante Marke"
-        ],
-        "applicationRequired": true,
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten BSTN DACH redaktionell passend im Bereich Mode & Sport einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
         "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
         "automationState": "ready-for-review"
       },

@@ -1,6 +1,22 @@
 {
-  "updatedAt": "2026-10-04T21:00:35.270Z",
+  "updatedAt": "2026-10-04T23:09:52.319Z",
   "items": [
+    {
+      "id": "a54110cc8660701d",
+      "slug": "unfassparwochen-a54110cc",
+      "title": "Unfassparwochen",
+      "advertiser": "Coolblue DE",
+      "source": "awin",
+      "productId": null,
+      "category": "sonstiges",
+      "lastPrice": null,
+      "currency": "EUR",
+      "firstSeen": "2026-09-17T13:54:38.000Z",
+      "lastSeen": "2026-09-29T17:08:09.394Z",
+      "endDate": "2026-10-04T21:59:00.000Z",
+      "archivedAt": "2026-10-04T23:09:52.319Z",
+      "reason": "expired"
+    },
     {
       "id": "5ddceb8cbe41971d",
       "slug": "midweek-madness-22-sparen-5ddceb8c",
