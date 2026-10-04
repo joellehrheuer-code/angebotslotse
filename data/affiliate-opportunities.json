@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-04T19:38:55.402Z",
+  "generatedAt": "2026-10-04T21:00:35.323Z",
   "total": 62,
   "highPriority": 6,
   "byNetwork": {
@@ -88,25 +88,6 @@
     {
       "rank": 5,
       "network": "Awin",
-      "brand": "expert DE",
-      "reference": 30007,
-      "advertiserId": 30007,
-      "programId": null,
-      "campaignId": null,
-      "category": "Technik & Computer",
-      "priority": "mittel",
-      "score": 60,
-      "kind": "application",
-      "status": "notjoined",
-      "actionType": "application-review",
-      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten expert DE redaktionell passend im Bereich Technik & Computer einbinden. Bei Awin sind aktuell 14 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-      "submissionReady": false,
-      "humanApprovalRequired": true
-    },
-    {
-      "rank": 6,
-      "network": "Awin",
       "brand": "Zigbuy DE",
       "reference": 126185,
       "advertiserId": 126185,
@@ -124,7 +105,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 7,
+      "rank": 6,
       "network": "Awin",
       "brand": "Anker Solix DE",
       "reference": 32623,
@@ -143,7 +124,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 8,
+      "rank": 7,
       "network": "Awin",
       "brand": "Ankerkraut DE",
       "reference": 127917,
@@ -162,7 +143,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 9,
+      "rank": 8,
       "network": "Awin",
       "brand": "Bosch Hausgeräte DE",
       "reference": 102205,
@@ -181,7 +162,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 10,
+      "rank": 9,
       "network": "Awin",
       "brand": "bosch Tiernahrung DE",
       "reference": 84955,
@@ -200,7 +181,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 11,
+      "rank": 10,
       "network": "Awin",
       "brand": "BSTN DACH",
       "reference": 104975,
@@ -219,7 +200,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 12,
+      "rank": 11,
       "network": "Awin",
       "brand": "cyberport DE",
       "reference": 11657,
@@ -238,7 +219,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 13,
+      "rank": 12,
       "network": "Awin",
       "brand": "DECATHLON DE",
       "reference": 14353,
@@ -257,7 +238,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 14,
+      "rank": 13,
       "network": "Awin",
       "brand": "Dyson DE",
       "reference": 12802,
@@ -276,7 +257,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 15,
+      "rank": 14,
       "network": "Awin",
       "brand": "Ecovacs DE",
       "reference": 30763,
@@ -295,7 +276,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 16,
+      "rank": 15,
       "network": "Awin",
       "brand": "Fressnapf AT",
       "reference": 68692,
@@ -314,7 +295,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 17,
+      "rank": 16,
       "network": "Awin",
       "brand": "Fressnapf-Online-Shop DE",
       "reference": 14757,
@@ -333,7 +314,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 18,
+      "rank": 17,
       "network": "Awin",
       "brand": "INTERSPORT DE",
       "reference": 14050,
@@ -352,7 +333,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 19,
+      "rank": 18,
       "network": "Awin",
       "brand": "LG Electronics DE",
       "reference": 63126,
@@ -371,7 +352,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 20,
+      "rank": 19,
       "network": "Awin",
       "brand": "MSI DE",
       "reference": 130771,
@@ -386,6 +367,25 @@
       "actionType": "application-review",
       "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
       "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten MSI DE redaktionell passend im Bereich Technik & Computer einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "submissionReady": false,
+      "humanApprovalRequired": true
+    },
+    {
+      "rank": 20,
+      "network": "Awin",
+      "brand": "notebooksbilliger DE/AT",
+      "reference": 11348,
+      "advertiserId": 11348,
+      "programId": null,
+      "campaignId": null,
+      "category": "Technik & Computer",
+      "priority": "mittel",
+      "score": 45,
+      "kind": "application",
+      "status": "notjoined",
+      "actionType": "application-review",
+      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten notebooksbilliger DE/AT redaktionell passend im Bereich Technik & Computer einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
       "submissionReady": false,
       "humanApprovalRequired": true
     }
@@ -470,25 +470,6 @@
     {
       "rank": 5,
       "network": "Awin",
-      "brand": "expert DE",
-      "reference": 30007,
-      "advertiserId": 30007,
-      "programId": null,
-      "campaignId": null,
-      "category": "Technik & Computer",
-      "priority": "mittel",
-      "score": 60,
-      "kind": "application",
-      "status": "notjoined",
-      "actionType": "application-review",
-      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten expert DE redaktionell passend im Bereich Technik & Computer einbinden. Bei Awin sind aktuell 14 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-      "submissionReady": false,
-      "humanApprovalRequired": true
-    },
-    {
-      "rank": 6,
-      "network": "Awin",
       "brand": "Zigbuy DE",
       "reference": 126185,
       "advertiserId": 126185,
@@ -506,7 +487,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 7,
+      "rank": 6,
       "network": "Awin",
       "brand": "Anker Solix DE",
       "reference": 32623,
@@ -525,7 +506,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 8,
+      "rank": 7,
       "network": "Awin",
       "brand": "Ankerkraut DE",
       "reference": 127917,
@@ -544,7 +525,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 9,
+      "rank": 8,
       "network": "Awin",
       "brand": "Bosch Hausgeräte DE",
       "reference": 102205,
@@ -563,7 +544,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 10,
+      "rank": 9,
       "network": "Awin",
       "brand": "bosch Tiernahrung DE",
       "reference": 84955,
@@ -582,7 +563,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 11,
+      "rank": 10,
       "network": "Awin",
       "brand": "BSTN DACH",
       "reference": 104975,
@@ -601,7 +582,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 12,
+      "rank": 11,
       "network": "Awin",
       "brand": "cyberport DE",
       "reference": 11657,
@@ -616,6 +597,25 @@
       "actionType": "application-review",
       "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
       "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten cyberport DE redaktionell passend im Bereich Technik & Computer einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "submissionReady": false,
+      "humanApprovalRequired": true
+    },
+    {
+      "rank": 12,
+      "network": "Awin",
+      "brand": "DECATHLON DE",
+      "reference": 14353,
+      "advertiserId": 14353,
+      "programId": null,
+      "campaignId": null,
+      "category": "Mode & Sport",
+      "priority": "mittel",
+      "score": 45,
+      "kind": "application",
+      "status": "notjoined",
+      "actionType": "application-review",
+      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten DECATHLON DE redaktionell passend im Bereich Mode & Sport einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
       "submissionReady": false,
       "humanApprovalRequired": true
     }
@@ -1115,24 +1115,6 @@
     },
     {
       "network": "Awin",
-      "brand": "expert DE",
-      "category": "Technik & Computer",
-      "priority": "mittel",
-      "score": 60,
-      "status": "notjoined",
-      "kind": "application",
-      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten expert DE redaktionell passend im Bereich Technik & Computer einbinden. Bei Awin sind aktuell 14 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-      "reason": "passt zu Technik & Computer, 14 aktive DE-Aktionen",
-      "reference": 30007,
-      "advertiserId": 30007,
-      "programId": null,
-      "campaignId": null,
-      "submissionReady": false,
-      "humanApprovalRequired": true
-    },
-    {
-      "network": "Awin",
       "brand": "Zigbuy DE",
       "category": "Haushalt & Küche",
       "priority": "mittel",
@@ -1601,6 +1583,24 @@
     },
     {
       "network": "Awin",
+      "brand": "expert DE",
+      "category": "Technik & Computer",
+      "priority": "niedrig",
+      "score": 36,
+      "status": "notjoined",
+      "kind": "application",
+      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten expert DE redaktionell passend im Bereich Technik & Computer einbinden. Bei Awin sind aktuell 1 für Deutschland sichtbare Aktion dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "reason": "passt zu Technik & Computer, 1 aktive DE-Aktion",
+      "reference": 30007,
+      "advertiserId": 30007,
+      "programId": null,
+      "campaignId": null,
+      "submissionReady": false,
+      "humanApprovalRequired": true
+    },
+    {
+      "network": "Awin",
       "brand": "Il Lanificio DE",
       "category": "Mode & Sport",
       "priority": "niedrig",
@@ -1612,6 +1612,24 @@
       "reason": "passt zu Mode & Sport, 1 aktive DE-Aktion",
       "reference": 110974,
       "advertiserId": 110974,
+      "programId": null,
+      "campaignId": null,
+      "submissionReady": false,
+      "humanApprovalRequired": true
+    },
+    {
+      "network": "Awin",
+      "brand": "Kenwood DE",
+      "category": "Haushalt & Küche",
+      "priority": "niedrig",
+      "score": 36,
+      "status": "notjoined",
+      "kind": "application",
+      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Kenwood DE redaktionell passend im Bereich Haushalt & Küche einbinden. Bei Awin sind aktuell 1 für Deutschland sichtbare Aktion dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "reason": "passt zu Haushalt & Küche, 1 aktive DE-Aktion",
+      "reference": 22919,
+      "advertiserId": 22919,
       "programId": null,
       "campaignId": null,
       "submissionReady": false,
@@ -1918,24 +1936,6 @@
       "reason": "passt zu Technik & Computer",
       "reference": 21761,
       "advertiserId": 21761,
-      "programId": null,
-      "campaignId": null,
-      "submissionReady": false,
-      "humanApprovalRequired": true
-    },
-    {
-      "network": "Awin",
-      "brand": "3DMakerpro (EU)",
-      "category": "Technik & Computer",
-      "priority": "niedrig",
-      "score": 30,
-      "status": "notjoined",
-      "kind": "application",
-      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten 3DMakerpro (EU) redaktionell passend im Bereich Technik & Computer einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-      "reason": "passt zu Technik & Computer",
-      "reference": 70050,
-      "advertiserId": 70050,
       "programId": null,
       "campaignId": null,
       "submissionReady": false,
