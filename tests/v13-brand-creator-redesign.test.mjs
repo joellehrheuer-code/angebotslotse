@@ -11,11 +11,10 @@ const build=()=>{
   });
 };
 
-test("V13 trennt Angebotslotse-Marke und Joel-Creator-Welt sauber",()=>{
+test("V13 zeigt Joels Logo im Header und in der Creator-Welt",()=>{
   build();
   const html=fs.readFileSync("dist/index.html","utf8");
-  assert.match(html,/class="brand-logo"[^>]+favicon\.svg/);
-  assert.doesNotMatch(html,/class="brand-logo"[^>]+joel-logo\.svg/);
+  assert.match(html,/class="brand-logo"[^>]+joel-logo\.svg\?v=2/);
   assert.match(html,/class="creator-top-dock"/);
   assert.match(html,/class="creator-world reveal"/);
   assert.match(html,/class="creator-world-backdrop"/);
@@ -42,7 +41,7 @@ test("V13 nutzt eigene Designschicht und frische Cache-Version",()=>{
   const html=fs.readFileSync("dist/index.html","utf8");
   const css=fs.readFileSync("public/v13.css","utf8");
   const sw=fs.readFileSync("public/sw.js","utf8");
-  assert.match(html,/site\.css\?v=32/);
+  assert.match(html,/site\.css\?v=33/);
   assert.match(css,/\.creator-top-dock\{/);
   assert.match(css,/\.creator-world\{/);
   assert.match(css,/\.owned-showcase\{/);
