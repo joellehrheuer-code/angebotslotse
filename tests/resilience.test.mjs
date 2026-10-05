@@ -32,3 +32,23 @@ test('PWA activation preserves other applications caches', async () => {
   await completion;
   assert.deepEqual(deleted,['angebotslotse-shell-v15']);
 });
+
+test('cached images keep their delayed background refresh alive', async () => {
+  const handlers = {}, cached = {cached:true}, saved = [];
+  let resolveNetwork, lifetime, response;
+  const context = vm.createContext({URL,
+    self:{registration:{scope:'https://example.test/angebotslotse/'},location:{origin:'https://example.test'},addEventListener:(name,fn)=>{handlers[name]=fn;}},
+    clients:{}, fetch:()=>new Promise(resolve=>{resolveNetwork=resolve;}),
+    caches:{match:async()=>cached,open:async()=>({put:async(request,copy)=>saved.push(copy)})}
+  });
+  vm.runInContext(fs.readFileSync('public/sw.js','utf8'),context);
+  handlers.fetch({request:{method:'GET',url:'https://example.test/image.jpg',destination:'image'},
+    waitUntil:value=>{lifetime=value;},respondWith:value=>{response=value;}});
+  assert.ok(lifetime,'refresh lifetime must be registered synchronously');
+  assert.equal(await response,cached);
+  assert.equal(saved.length,0);
+  resolveNetwork({ok:true,clone:()=>({fresh:true})});
+  await lifetime;
+  assert.equal(saved.length,1);
+  assert.equal(saved[0].fresh,true);
+});

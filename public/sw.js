@@ -59,18 +59,18 @@ self.addEventListener("fetch", event => {
   }
 
   if (["image","font"].includes(request.destination)) {
-    event.respondWith(
-      caches.match(request).then(cached => {
-        const network = fetch(request).then(response => {
-          if (response.ok) {
-            const copy = response.clone();
-            event.waitUntil(caches.open(CACHE).then(cache => cache.put(request, copy)).catch(() => {}));
-          }
-          return response;
-        }).catch(() => cached);
-        return cached || network;
-      })
-    );
+    const cached = caches.match(request);
+    const network = fetch(request).then(async response => {
+      if (response.ok) {
+        const copy = response.clone();
+        await caches.open(CACHE).then(cache => cache.put(request, copy)).catch(() => {});
+      }
+      return response;
+    }).catch(() => cached);
+    // Register the refresh while the fetch event is still active, even if
+    // respondWith immediately serves an already cached image or font.
+    event.waitUntil(network.then(() => {}));
+    event.respondWith(cached.then(response => response || network));
   }
 });
 

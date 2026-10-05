@@ -163,4 +163,10 @@ Status „offen“ bedeutet: noch kein vollständiger Einzelnachweis für alle A
 - Desktop-Header hat fünf explizite Spalten einschließlich Menüknopf; Tablet nutzt vier bzw. drei Spalten. Keine zusätzliche Menüzeile durch implizite Grid-Platzierung.
 - CSS-Version 33 und Logo-Version 2 verhindern alte Browser-Assetstände.
 - 256 Tests bestanden; Integrität, Build, Seitenvalidierung, SEO und Sicherheitsprüfung bestanden.
-- Visuelle Kontrolle nach Veröffentlichung steht noch aus. Vollständige mobile und Cloud-Funktionsabnahme bleibt offen.
+- Veröffentlichung, Live-Smoke und Desktop-Sichtprüfung bestätigt (PR 30). Logo sichtbar; Menüknopf in derselben Header-Zeile. Kategorien, Preisfilter, Produktdetail, Menü und Merkliste live geprüft. Vollständige mobile und Cloud-Funktionsabnahme bleibt offen.
+
+## PWA-Hintergrundaktualisierung – 5. Oktober 2026
+
+- Race Condition bei bereits gespeicherten Bildern und Schriften behoben: Die Hintergrundaktualisierung registriert ihre Lebensdauer direkt beim Fetch-Ereignis, bevor die gespeicherte Antwort ausgeliefert wird.
+- Verhaltenstest liefert zuerst das alte Bild aus und bestätigt anschließend, dass die verspätete Netzantwort gespeichert wird.
+- Google-Login bleibt deaktiviert, bis der OAuth-Client eingerichtet ist. Cloud-Synchronisierung, E-Mail-Anmeldung und Push benötigen weiterhin eine authentifizierte End-to-End-Abnahme.
