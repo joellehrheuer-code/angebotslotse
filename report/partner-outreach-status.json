@@ -46,13 +46,14 @@
     {
       "brand": "Dyson DE",
       "network": "Awin",
-      "status": "pending",
-      "lastContactAt": "2026-09-29T13:36:00+02:00",
+      "status": "needs-info",
+      "lastContactAt": "2026-10-05T13:32:00+02:00",
       "contact": [
         "nicole.schlueter@awin.com",
         "verena.witkowski@awin.com"
       ],
-      "nextAction": "Antwort/Freischaltung überwachen; bei Freigabe Produktfeed, Kampagnen und Creatives integrieren."
+      "nextAction": "Antwort von Verena/Nicole nach Übermittlung der Publisher-ID abwarten; keine Programmbedingungen automatisch bestätigen.",
+      "notes": "Awin konnte das Profil zunächst nicht über die AgentMail-Adresse zuordnen. Publisher-ID 3045061 und Live-URL wurden am 05.10.2026 im bestehenden Thread übermittelt; Awin will danach die Voraussetzungen prüfen und dies mit Dyson besprechen."
     },
     {
       "brand": "Bosch Hausgeräte DE",
