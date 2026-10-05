@@ -1,6 +1,22 @@
 {
-  "updatedAt": "2026-10-05T05:38:59.068Z",
+  "updatedAt": "2026-10-05T11:39:12.218Z",
   "items": [
+    {
+      "id": "34762e17f1888c9f",
+      "slug": "nur-72h-spiral-glow-in-the-dark-34762e17",
+      "title": "Nur 72h: Spiral Glow In The Dark",
+      "advertiser": "EMP DE",
+      "source": "awin",
+      "productId": null,
+      "category": "sonstiges",
+      "lastPrice": null,
+      "currency": "EUR",
+      "firstSeen": "2026-10-02T06:38:04.000Z",
+      "lastSeen": "2026-10-05T05:38:58.940Z",
+      "endDate": "2026-10-05T08:00:00.000Z",
+      "archivedAt": "2026-10-05T11:39:12.218Z",
+      "reason": "expired"
+    },
     {
       "id": "a54110cc8660701d",
       "slug": "unfassparwochen-a54110cc",

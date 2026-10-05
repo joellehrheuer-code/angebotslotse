@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-05T05:38:59.108Z",
+  "generatedAt": "2026-10-05T11:39:12.295Z",
   "dailyNewContactLimit": 8,
   "safeguards": {
     "dedupeAgainst": "report/partner-outreach-status.json",
@@ -51,6 +51,29 @@
       "routineOutreachAllowed": false,
       "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Acer DE redaktionell passend im Bereich Technik & Computer einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
       "nextAction": "Official Awin program verified. Program is relevant for computer/IT sites, but no dedicated German affiliate email was verified. Program terms require review before application.",
+      "networkApplicationNextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "contractualSubmissionAllowed": false,
+      "reason": "Routine-Outreach darf nur an verifizierte offizielle Kontakte vorbereitet/versendet werden; Vertragsbedingungen, AGB, Exklusivität oder kostenpflichtige Verpflichtungen werden nicht automatisch akzeptiert."
+    },
+    {
+      "id": "awin-7624",
+      "network": "Awin",
+      "brand": "LOOKFANTASTIC DACH",
+      "advertiserId": 7624,
+      "programId": null,
+      "campaignId": null,
+      "category": "Gesundheit & Wellness",
+      "priority": "mittel",
+      "score": 60,
+      "networkStatus": "notjoined",
+      "actionType": "application-review",
+      "contact": null,
+      "contactType": null,
+      "contactSource": null,
+      "contactState": "official-contact-research-required",
+      "routineOutreachAllowed": false,
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten LOOKFANTASTIC DACH redaktionell passend im Bereich Gesundheit & Wellness einbinden. Bei Awin sind aktuell 5 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
       "networkApplicationNextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
       "contractualSubmissionAllowed": false,
       "reason": "Routine-Outreach darf nur an verifizierte offizielle Kontakte vorbereitet/versendet werden; Vertragsbedingungen, AGB, Exklusivität oder kostenpflichtige Verpflichtungen werden nicht automatisch akzeptiert."
@@ -142,13 +165,6 @@
       "lastContactAt": "2026-09-02T19:43:09+02:00"
     },
     {
-      "brand": "BSTN DACH",
-      "reason": "existing-status:pending",
-      "relatedBrand": null,
-      "status": "pending",
-      "lastContactAt": "2026-09-30T02:05:00+02:00"
-    },
-    {
       "brand": "Ankerkraut DE",
       "reason": "existing-status:pending",
       "relatedBrand": null,
@@ -163,11 +179,11 @@
       "lastContactAt": "2026-09-29T13:40:00+02:00"
     },
     {
-      "brand": "DECATHLON DE",
+      "brand": "BSTN DACH",
       "reason": "existing-status:pending",
       "relatedBrand": null,
       "status": "pending",
-      "lastContactAt": "2026-09-29T13:45:00+02:00"
+      "lastContactAt": "2026-09-30T02:05:00+02:00"
     }
   ]
 }

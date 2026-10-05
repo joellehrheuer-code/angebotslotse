@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-05T05:38:59.108Z",
-  "newAwinPrograms": 0,
+  "generatedAt": "2026-10-05T11:39:12.295Z",
+  "newAwinPrograms": 4,
   "newImpactPrograms": 0,
   "newDaisyconPrograms": 0,
   "newWebgainsPrograms": 0,
@@ -11,7 +11,7 @@
   "manualApplications": 8,
   "networkReviewActions": 6,
   "awinDiscoveryOffers": 200,
-  "applicationCandidates": 2598,
+  "applicationCandidates": 2597,
   "newMerchants": 0,
   "newProducts": 0,
   "productsWithImage": 208,
@@ -22,7 +22,7 @@
   "newCoupons": 0,
   "coupons": 5,
   "priceChanges": 0,
-  "expiredOffers": 0,
+  "expiredOffers": 1,
   "expiredCoupons": 0,
   "filteredForeignLocale": 0,
   "totalProducts": 217,
@@ -32,9 +32,7 @@
   "officialImagesBySource": {
     "Awin": 208
   },
-  "missingMediaBySource": {
-    "Awin": 1
-  },
+  "missingMediaBySource": {},
   "productsByMerchant": {
     "Hollyland DE": 97,
     "ANTHBOT DE": 59,
