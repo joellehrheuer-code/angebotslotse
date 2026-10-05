@@ -1,5 +1,6 @@
 import { createClient } from "@supabase/supabase-js";
 import { matchAlertSubscription } from "../scripts/lib/alert-matcher.mjs";
+import { fetchJsonWithTimeout } from "./lib/fetch-json.mjs";
 
 const config = globalThis.ANGEBOTSLOTSE_AUTH_CONFIG || {};
 const root = document.querySelector("[data-account-root]");
@@ -227,16 +228,14 @@ if (!root || !config.url || !config.publishableKey) {
 
   async function loadAlertMatches(subscriptions) {
     try {
-      const response = await fetch(location.origin + accountBase + "/alerts-feed.json", { cache: "no-store" });
-      if (!response.ok) throw new Error("Alarm-Feed nicht erreichbar.");
-      const payload = await response.json();
+      const payload = await fetchJsonWithTimeout(location.origin + accountBase + "/alerts-feed.json", { cache: "no-store" });
       renderAlertMatches(subscriptions, Array.isArray(payload?.offers) ? payload.offers : []);
     } catch (error) {
       if (!matchesNode) return;
       matchesNode.replaceChildren();
       const message = document.createElement("p");
       message.className = "account-alert-empty";
-      message.textContent = "Aktuelle Alarmtreffer konnten gerade nicht geladen werden.";
+      message.textContent = error.message || "Aktuelle Alarmtreffer konnten gerade nicht geladen werden.";
       matchesNode.append(message);
       console.error(error);
     }

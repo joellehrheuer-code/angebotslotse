@@ -535,7 +535,7 @@ const accountBody=`<section class="listing account-page" data-account-root>
     </section>
   </div>
   <script>globalThis.ANGEBOTSLOTSE_AUTH_CONFIG=${json(authPublicConfig)};<\/script>
-  <script src="${url("/account-client.js")}" defer><\/script>
+  <script src="${url("/account-client.js?v=2")}" defer><\/script>
 </section>`;
 await fs.writeFile(path.join(out,"konto.html"),page({title:"Konto & Preisalarme",description:"Optionales Angebotslotse-Konto für Cloud-Merkliste, Wunschpreise, Alarmregeln und persönliche In-App-Benachrichtigungen.",canonical:"/konto.html",indexable:false,body:accountBody}));
 
