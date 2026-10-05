@@ -59,7 +59,18 @@ test("CI installiert gepinnte Account-Abhängigkeiten reproduzierbar", () => {
 
   assert.equal(pkg.dependencies["@supabase/supabase-js"], "2.117.2");
   assert.equal(pkg.devDependencies.esbuild, "0.25.10");
+  assert.equal(pkg.engines.node, ">=22");
   assert.match(pkg.scripts.build, /build-account-client/);
   assert.match(update, /npm ci/);
+  assert.doesNotMatch(update, /node-version:\s*20/);
+  assert.match(update, /node-version:\s*22/);
   assert.match(integrity, /npm ci/);
+  assert.match(integrity, /node-version:\s*22/);
+});
+
+test("Integritätscheck bewertet Ablaufdaten zum Snapshot-Zeitpunkt", () => {
+  const source = fs.readFileSync("scripts/integrity.mjs", "utf8");
+  assert.match(source, /snapshotTime = new Date\(status\.lastSuccessfulUpdate\)/);
+  assert.match(source, /new Date\(o\.endDate\) < integrityTime/);
+  assert.doesNotMatch(source, /new Date\(o\.endDate\) < new Date\(\)/);
 });
