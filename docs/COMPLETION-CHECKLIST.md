@@ -13,7 +13,7 @@ Stand: 5. Oktober 2026. Grundlage: aktueller main-Stand 1d90b2f, 19 Projektdatei
 - [x] JS-/PWA-Version erhöhen und bestehende Release-Verträge anpassen.
 - [x] Zwei Verhaltenstests für Abbruch und Cache-Isolation ergänzt: 256 Tests bestanden.
 - [x] Live-Suche, Vorschläge und alphabetische Shop-Sortierung im Browser geprüft.
-- [ ] Veröffentlichung und anschließenden Live-Smoke bestätigen.
+- [x] Veröffentlichung und anschließenden Live-Smoke für PR 28–31 bestätigen.
 
 ## Weitere Abschlussaufgaben
 - [ ] Visuelle Prüfung auf 320/375/768/1440/1920 Pixeln und mit 200 % Textzoom.
@@ -170,3 +170,12 @@ Status „offen“ bedeutet: noch kein vollständiger Einzelnachweis für alle A
 - Race Condition bei bereits gespeicherten Bildern und Schriften behoben: Die Hintergrundaktualisierung registriert ihre Lebensdauer direkt beim Fetch-Ereignis, bevor die gespeicherte Antwort ausgeliefert wird.
 - Verhaltenstest liefert zuerst das alte Bild aus und bestätigt anschließend, dass die verspätete Netzantwort gespeichert wird.
 - Google-Login bleibt deaktiviert, bis der OAuth-Client eingerichtet ist. Cloud-Synchronisierung, E-Mail-Anmeldung und Push benötigen weiterhin eine authentifizierte End-to-End-Abnahme.
+
+## Cloud-Abnahme – 5. Oktober 2026, abends
+
+- Supabase-Projekt `angebotslotse` ist ACTIVE_HEALTHY. Tabellen für Profile, Merkliste, Alarme, Einstellungen und persönliche Meldungen haben RLS; Policies begrenzen SELECT/Änderungen auf auth.uid(), UPDATE und ALL auch mit WITH CHECK.
+- `user-assets` ist live privat, auf 5 MiB pro Datei begrenzt. INSERT prüft zusätzlich `can_upload_user_asset()` (weniger als 20 Dateien im eigenen Ordner). Die historische Migration nennt dagegen 10 MiB und enthält diesen Zusatzschutz nicht. Live-Regeln beibehalten; Versionsabgleich bleibt offen.
+- export-account, delete-account und push-subscription sind aktiv und verlangen JWT. Das ersetzt keinen End-to-End-Test mit einem angemeldeten Testkonto.
+- Alarm-Feed im Kontoclient erhält einen 15-Sekunden-Timeout einschließlich Antwortkörper. Keine automatische Wiederholung. Drei Verhaltenstests hinzugefügt; Client-URL bekommt Cache-Version 2.
+- FreeLLMAPI-Connector verfügbar, aber Healthcheck und Inferenz am 5. Oktober um ca. 21:16–21:18 Uhr MESZ mit HTTP 429 / UNAVAILABLE abgelehnt. Keine erfolgreiche Modell-Ausführung behauptet; unabhängige Prüfung fortgesetzt.
+- Validierung dieser Runde: 260 Tests bestanden, Integrität/Build/Seitenvalidierung/SEO/Sicherheitsprüfung erfolgreich. Veröffentlichung wird anschließend kontrolliert.
