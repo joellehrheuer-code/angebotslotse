@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-05T17:09:41.229Z",
+  "generatedAt": "2026-10-05T19:21:46.268Z",
   "total": 62,
-  "highPriority": 7,
+  "highPriority": 6,
   "byNetwork": {
     "Daisycon": 4,
     "Tradedoubler": 4,
@@ -11,25 +11,6 @@
   "reviewQueue": [
     {
       "rank": 1,
-      "network": "Awin",
-      "brand": "Dyson DE",
-      "reference": 12802,
-      "advertiserId": 12802,
-      "programId": null,
-      "campaignId": null,
-      "category": "Technik & Computer",
-      "priority": "hoch",
-      "score": 75,
-      "kind": "application",
-      "status": "notjoined",
-      "actionType": "application-review",
-      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Dyson DE redaktionell passend im Bereich Technik & Computer einbinden. Bei Awin sind aktuell 5 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-      "submissionReady": false,
-      "humanApprovalRequired": true
-    },
-    {
-      "rank": 2,
       "network": "Awin",
       "brand": "Anker DE",
       "reference": 30691,
@@ -48,7 +29,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 3,
+      "rank": 2,
       "network": "Awin",
       "brand": "adidas DE",
       "reference": 77004,
@@ -67,7 +48,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 4,
+      "rank": 3,
       "network": "Awin",
       "brand": "Alternate DE",
       "reference": 11731,
@@ -86,7 +67,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 5,
+      "rank": 4,
       "network": "Awin",
       "brand": "Acer DE",
       "reference": 12591,
@@ -105,7 +86,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 6,
+      "rank": 5,
       "network": "Awin",
       "brand": "Samsung Shop DE",
       "reference": 14815,
@@ -124,7 +105,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 7,
+      "rank": 6,
       "network": "Awin",
       "brand": "Anker Solix DE",
       "reference": 32623,
@@ -143,7 +124,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 8,
+      "rank": 7,
       "network": "Awin",
       "brand": "Ankerkraut DE",
       "reference": 127917,
@@ -162,7 +143,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 9,
+      "rank": 8,
       "network": "Awin",
       "brand": "Bosch Hausgeräte DE",
       "reference": 102205,
@@ -181,7 +162,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 10,
+      "rank": 9,
       "network": "Awin",
       "brand": "bosch Tiernahrung DE",
       "reference": 84955,
@@ -200,7 +181,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 11,
+      "rank": 10,
       "network": "Awin",
       "brand": "BSTN DACH",
       "reference": 104975,
@@ -219,7 +200,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 12,
+      "rank": 11,
       "network": "Awin",
       "brand": "cyberport DE",
       "reference": 11657,
@@ -238,7 +219,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 13,
+      "rank": 12,
       "network": "Awin",
       "brand": "DECATHLON DE",
       "reference": 14353,
@@ -253,6 +234,25 @@
       "actionType": "application-review",
       "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
       "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten DECATHLON DE redaktionell passend im Bereich Mode & Sport einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "submissionReady": false,
+      "humanApprovalRequired": true
+    },
+    {
+      "rank": 13,
+      "network": "Awin",
+      "brand": "Dyson DE",
+      "reference": 12802,
+      "advertiserId": 12802,
+      "programId": null,
+      "campaignId": null,
+      "category": "Technik & Computer",
+      "priority": "mittel",
+      "score": 45,
+      "kind": "application",
+      "status": "notjoined",
+      "actionType": "application-review",
+      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Dyson DE redaktionell passend im Bereich Technik & Computer einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
       "submissionReady": false,
       "humanApprovalRequired": true
     },
@@ -394,25 +394,6 @@
     {
       "rank": 1,
       "network": "Awin",
-      "brand": "Dyson DE",
-      "reference": 12802,
-      "advertiserId": 12802,
-      "programId": null,
-      "campaignId": null,
-      "category": "Technik & Computer",
-      "priority": "hoch",
-      "score": 75,
-      "kind": "application",
-      "status": "notjoined",
-      "actionType": "application-review",
-      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Dyson DE redaktionell passend im Bereich Technik & Computer einbinden. Bei Awin sind aktuell 5 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-      "submissionReady": false,
-      "humanApprovalRequired": true
-    },
-    {
-      "rank": 2,
-      "network": "Awin",
       "brand": "Anker DE",
       "reference": 30691,
       "advertiserId": 30691,
@@ -430,7 +411,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 3,
+      "rank": 2,
       "network": "Awin",
       "brand": "adidas DE",
       "reference": 77004,
@@ -449,7 +430,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 4,
+      "rank": 3,
       "network": "Awin",
       "brand": "Alternate DE",
       "reference": 11731,
@@ -468,7 +449,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 5,
+      "rank": 4,
       "network": "Awin",
       "brand": "Acer DE",
       "reference": 12591,
@@ -487,7 +468,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 6,
+      "rank": 5,
       "network": "Awin",
       "brand": "Samsung Shop DE",
       "reference": 14815,
@@ -506,7 +487,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 7,
+      "rank": 6,
       "network": "Awin",
       "brand": "Anker Solix DE",
       "reference": 32623,
@@ -525,7 +506,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 8,
+      "rank": 7,
       "network": "Awin",
       "brand": "Ankerkraut DE",
       "reference": 127917,
@@ -544,7 +525,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 9,
+      "rank": 8,
       "network": "Awin",
       "brand": "Bosch Hausgeräte DE",
       "reference": 102205,
@@ -563,7 +544,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 10,
+      "rank": 9,
       "network": "Awin",
       "brand": "bosch Tiernahrung DE",
       "reference": 84955,
@@ -582,7 +563,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 11,
+      "rank": 10,
       "network": "Awin",
       "brand": "BSTN DACH",
       "reference": 104975,
@@ -601,7 +582,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 12,
+      "rank": 11,
       "network": "Awin",
       "brand": "cyberport DE",
       "reference": 11657,
@@ -616,6 +597,25 @@
       "actionType": "application-review",
       "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
       "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten cyberport DE redaktionell passend im Bereich Technik & Computer einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "submissionReady": false,
+      "humanApprovalRequired": true
+    },
+    {
+      "rank": 12,
+      "network": "Awin",
+      "brand": "DECATHLON DE",
+      "reference": 14353,
+      "advertiserId": 14353,
+      "programId": null,
+      "campaignId": null,
+      "category": "Mode & Sport",
+      "priority": "mittel",
+      "score": 45,
+      "kind": "application",
+      "status": "notjoined",
+      "actionType": "application-review",
+      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten DECATHLON DE redaktionell passend im Bereich Mode & Sport einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
       "submissionReady": false,
       "humanApprovalRequired": true
     }
@@ -989,24 +989,6 @@
     },
     {
       "network": "Awin",
-      "brand": "Dyson DE",
-      "category": "Technik & Computer",
-      "priority": "hoch",
-      "score": 75,
-      "status": "notjoined",
-      "kind": "application",
-      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Dyson DE redaktionell passend im Bereich Technik & Computer einbinden. Bei Awin sind aktuell 5 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-      "reason": "passt zu Technik & Computer, strategisch relevante Marke, 5 aktive DE-Aktionen",
-      "reference": 12802,
-      "advertiserId": 12802,
-      "programId": null,
-      "campaignId": null,
-      "submissionReady": false,
-      "humanApprovalRequired": true
-    },
-    {
-      "network": "Awin",
       "brand": "Anker DE",
       "category": "Technik & Computer",
       "priority": "mittel",
@@ -1270,6 +1252,24 @@
       "reason": "passt zu Mode & Sport, strategisch relevante Marke",
       "reference": 14353,
       "advertiserId": 14353,
+      "programId": null,
+      "campaignId": null,
+      "submissionReady": false,
+      "humanApprovalRequired": true
+    },
+    {
+      "network": "Awin",
+      "brand": "Dyson DE",
+      "category": "Technik & Computer",
+      "priority": "mittel",
+      "score": 45,
+      "status": "notjoined",
+      "kind": "application",
+      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Dyson DE redaktionell passend im Bereich Technik & Computer einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "reason": "passt zu Technik & Computer, strategisch relevante Marke",
+      "reference": 12802,
+      "advertiserId": 12802,
       "programId": null,
       "campaignId": null,
       "submissionReady": false,
@@ -1601,24 +1601,6 @@
     },
     {
       "network": "Awin",
-      "brand": "Kopp Verlag DE/AT",
-      "category": "Gesundheit & Wellness",
-      "priority": "niedrig",
-      "score": 36,
-      "status": "notjoined",
-      "kind": "application",
-      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Kopp Verlag DE/AT redaktionell passend im Bereich Gesundheit & Wellness einbinden. Bei Awin sind aktuell 1 für Deutschland sichtbare Aktion dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-      "reason": "passt zu Gesundheit & Wellness, 1 aktive DE-Aktion",
-      "reference": 122692,
-      "advertiserId": 122692,
-      "programId": null,
-      "campaignId": null,
-      "submissionReady": false,
-      "humanApprovalRequired": true
-    },
-    {
-      "network": "Awin",
       "brand": "adidas Affiliate Creators Program",
       "category": "Audio & Creator",
       "priority": "niedrig",
@@ -1936,6 +1918,24 @@
       "reason": "passt zu Mode & Sport",
       "reference": 122900,
       "advertiserId": 122900,
+      "programId": null,
+      "campaignId": null,
+      "submissionReady": false,
+      "humanApprovalRequired": true
+    },
+    {
+      "network": "Awin",
+      "brand": "7even DE",
+      "category": "Technik & Computer",
+      "priority": "niedrig",
+      "score": 30,
+      "status": "notjoined",
+      "kind": "application",
+      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten 7even DE redaktionell passend im Bereich Technik & Computer einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "reason": "passt zu Technik & Computer",
+      "reference": 21065,
+      "advertiserId": 21065,
       "programId": null,
       "campaignId": null,
       "submissionReady": false,

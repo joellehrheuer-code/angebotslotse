@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-05T17:09:41.229Z",
+  "generatedAt": "2026-10-05T19:21:46.268Z",
   "dailyNewContactLimit": 8,
   "safeguards": {
     "dedupeAgainst": "report/partner-outreach-status.json",
@@ -105,13 +105,6 @@
   "backlog": [],
   "excluded": [
     {
-      "brand": "Dyson DE",
-      "reason": "existing-status:needs-info",
-      "relatedBrand": null,
-      "status": "needs-info",
-      "lastContactAt": "2026-10-05T13:32:00+02:00"
-    },
-    {
       "brand": "Anker DE",
       "reason": "existing-status:pending",
       "relatedBrand": null,
@@ -152,6 +145,13 @@
       "relatedBrand": null,
       "status": "pending",
       "lastContactAt": "2026-09-30T02:05:00+02:00"
+    },
+    {
+      "brand": "DECATHLON DE",
+      "reason": "existing-status:pending",
+      "relatedBrand": null,
+      "status": "pending",
+      "lastContactAt": "2026-09-29T13:45:00+02:00"
     }
   ]
 }
