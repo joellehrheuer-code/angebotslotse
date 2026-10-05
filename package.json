@@ -18,7 +18,7 @@
     "cashback:sync": "node scripts/cashback-sync.mjs"
   },
   "engines": {
-    "node": ">=20"
+    "node": ">=22"
   },
   "dependencies": {
     "@supabase/supabase-js": "2.117.2"
