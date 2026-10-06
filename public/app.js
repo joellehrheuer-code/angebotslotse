@@ -923,6 +923,15 @@ updateWatchIndicators();
   };
   loadCommunity();
 
+  try {
+    const pendingRating=Number(sessionStorage.getItem("angebotslotse-review-pending-rating-v1"));
+    if(pendingRating>=1&&pendingRating<=5){
+      const input=document.querySelector(`[data-community-review-form] input[name="rating"][value="${pendingRating}"]`);
+      if(input)input.checked=true;
+      sessionStorage.removeItem("angebotslotse-review-pending-rating-v1");
+    }
+  } catch {}
+
   const communityReviewForm = document.querySelector("[data-community-review-form]");
   communityReviewForm?.addEventListener("submit", async event => {
     event.preventDefault();
@@ -944,6 +953,7 @@ updateWatchIndicators();
       setStatus(status,duplicate
         ? "Diese Bewertung wurde bereits eingereicht."
         : "Danke! Deine Bewertung wurde gespeichert und erscheint nach kurzer Prüfung.","success");
+      try { localStorage.setItem("angebotslotse-review-complete-v1","1"); localStorage.removeItem("angebotslotse-review-dismissed-until-v1"); } catch {}
       if (!duplicate) communityReviewForm.reset();
     } catch(error) {
       const message=String(error?.message||"");
@@ -955,6 +965,45 @@ updateWatchIndicators();
       );
     } finally { submit?.removeAttribute("disabled"); }
   });
+
+  const reviewNudge=document.querySelector("[data-review-nudge]");
+  const reviewNudgeFormLink=reviewNudge?.querySelector("[data-review-nudge-open-form]");
+  let reviewNudgeShown=false;
+  let reviewInteractionCount=0;
+  let reviewInteractionEligible=false;
+  const reviewStorageNumber=key=>{try{return Number(localStorage.getItem(key)||0);}catch{return 0;}};
+  const reviewIsComplete=()=>{try{return localStorage.getItem("angebotslotse-review-complete-v1")==="1";}catch{return false;}};
+  const reviewIsDismissed=()=>reviewStorageNumber("angebotslotse-review-dismissed-until-v1")>Date.now();
+  const closeReviewNudge=()=>{if(!reviewNudge)return;if(typeof reviewNudge.close==="function"&&reviewNudge.open)reviewNudge.close();else reviewNudge.removeAttribute("open");};
+  const dismissReviewNudge=(days=7)=>{try{localStorage.setItem("angebotslotse-review-dismissed-until-v1",String(Date.now()+days*86400000));}catch{}closeReviewNudge();};
+  const showReviewNudge=()=>{
+    if(!reviewNudge||reviewNudgeShown||reviewIsComplete()||reviewIsDismissed()||document.querySelector("[data-report-dialog][open]"))return;
+    reviewNudgeShown=true;
+    if(typeof reviewNudge.showModal==="function")reviewNudge.showModal();else reviewNudge.setAttribute("open","");
+  };
+  setTimeout(()=>{reviewInteractionEligible=true;if(reviewInteractionCount>=3)showReviewNudge();},20000);
+  setTimeout(showReviewNudge,75000);
+  document.addEventListener("click",event=>{
+    const meaningful=event.target.closest('a[href*="/angebote/"],[data-watch-toggle],[data-watch-save],[data-copy-code]');
+    if(!meaningful)return;
+    reviewInteractionCount+=1;
+    if(reviewInteractionEligible&&reviewInteractionCount>=3)showReviewNudge();
+  },{passive:true});
+  reviewNudge?.querySelectorAll("[data-review-nudge-close],[data-review-nudge-later]").forEach(button=>button.addEventListener("click",()=>dismissReviewNudge(7)));
+  reviewNudgeFormLink?.addEventListener("click",()=>closeReviewNudge());
+  reviewNudge?.querySelectorAll("[data-review-nudge-rating]").forEach(button=>button.addEventListener("click",()=>{
+    const rating=Number(button.dataset.reviewNudgeRating);
+    try{sessionStorage.setItem("angebotslotse-review-pending-rating-v1",String(rating));}catch{}
+    const input=document.querySelector(`[data-community-review-form] input[name="rating"][value="${rating}"]`);
+    if(input){
+      input.checked=true;
+      closeReviewNudge();
+      document.querySelector("#bewertung-abgeben")?.scrollIntoView({behavior:"smooth",block:"center"});
+      setTimeout(()=>document.querySelector("[data-community-review-form] textarea")?.focus(),450);
+    }else if(reviewNudgeFormLink?.href){
+      location.assign(reviewNudgeFormLink.href);
+    }
+  }));
 
   const dialog=document.querySelector("[data-report-dialog]");
   const openReport=()=>{
@@ -1031,6 +1080,26 @@ updateWatchIndicators();
       );
     } finally { submit?.removeAttribute("disabled"); }
   });
+})();
+
+/* Angebotslotse: externe Creator-Player erst nach Klick laden */
+(() => {
+  document.querySelectorAll("[data-spotify-player-load]").forEach(button=>button.addEventListener("click",()=>{
+    const host=button.closest(".creator-media-card")?.querySelector("[data-spotify-player-host]");
+    const artist=String(button.dataset.spotifyArtist||"").trim();
+    if(!host||!artist||host.dataset.loaded==="1")return;
+    const frame=document.createElement("iframe");
+    frame.src="https://open.spotify.com/embed/artist/"+encodeURIComponent(artist)+"?utm_source=generator";
+    frame.title="J0JOEL auf Spotify";
+    frame.loading="lazy";
+    frame.allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture";
+    frame.setAttribute("allowfullscreen","");
+    host.replaceChildren(frame);
+    host.hidden=false;
+    host.dataset.loaded="1";
+    button.textContent="Spotify-Player geladen";
+    button.setAttribute("disabled","");
+  }));
 })();
 
 /* Angebotslotse: robuster Medien-Fallback */
