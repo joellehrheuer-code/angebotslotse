@@ -44,12 +44,19 @@ test("private Versandtabellen haben zusätzliche RLS-Schutzschicht ohne Client-P
 
 test("Cloud-Speicher ist privat, größenbegrenzt und auf den eigenen Nutzerordner beschränkt", () => {
   const storage = fs.readFileSync("supabase/migrations/20260927_user_assets_storage.sql", "utf8");
+  const reconciliation = fs.readFileSync("supabase/migrations/20261006_reconcile_user_assets_storage.sql", "utf8");
   assert.match(storage, /'user-assets'/);
   assert.match(storage, /false,\s*10485760/);
   assert.match(storage, /auth\.uid\(\)::text/);
   for (const action of ["select","insert","update","delete"]) {
     assert.match(storage, new RegExp('create policy "user_assets_' + action + '_own"'));
   }
+  assert.match(reconciliation, /file_size_limit\s*=\s*5242880/);
+  assert.match(reconciliation, /create or replace function public\.can_upload_user_asset\(\)/);
+  assert.match(reconciliation, /from storage\.objects/);
+  assert.match(reconciliation, /\) < 20/);
+  assert.match(reconciliation, /and public\.can_upload_user_asset\(\)/);
+  assert.match(reconciliation, /revoke all on function public\.can_upload_user_asset\(\) from public, anon/);
 });
 
 test("identische persönliche Alarmregeln werden serverseitig dedupliziert", () => {
