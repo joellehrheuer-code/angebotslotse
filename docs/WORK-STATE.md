@@ -1,13 +1,13 @@
 # Angebotslotse – aktueller Arbeitsstand
 
-Stand: 5. Oktober 2026. V13.2 ist bereits in main; die früheren V12.5/V12.6-To-dos waren veraltet.
+Stand: 6. Oktober 2026. V13.2 ist bereits in main; die früheren V12.5/V12.6-To-dos waren veraltet.
 
 ## Aktuelle Runde
-Branch: `work/completion-audit-resilience`.
+Branch: `work/storage-contract-reconciliation-20261006`.
 Abschlussliste: `docs/COMPLETION-CHECKLIST.md`.
-256 Tests bestanden; Veröffentlichung noch nicht bestätigt.
+Storage-Vertrag wird mit einer idempotenten Folgemigration an den strengeren Live-Stand angeglichen; vollständige Validierung und Veröffentlichung stehen für diesen Branch noch aus.
 
-Behoben: Timeout bei öffentlichen Formularen, korrekte Partnerlink-Kennzahl, PWA-Cache-Isolation und Cache-Schreibvorgänge. JS v18 / Shell v16.
+Behoben: Timeout bei öffentlichen Formularen, korrekte Partnerlink-Kennzahl, PWA-Cache-Isolation, Cache-Schreibvorgänge und dokumentierter Storage-Migrationsabgleich. JS v18 / Shell v16.
 
 ## Fortsetzen nach Abbruch
 1. Abschlussliste lesen.
