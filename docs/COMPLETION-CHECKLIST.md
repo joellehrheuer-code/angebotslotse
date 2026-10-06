@@ -188,3 +188,4 @@ Status „offen“ bedeutet: noch kein vollständiger Einzelnachweis für alle A
 - FreeLLMAPI-Healthcheck am 06.10.2026: `UNAVAILABLE` wegen HTTP 404 am Tunnel. Keine Modellausführung erfolgt; unabhängige Arbeiten wurden fortgesetzt.
 - Validierung: 261 Tests, Integrität, Build mit 555 HTML-Seiten, Seitenvalidierung, SEO-Audit und Sicherheitsprüfung erfolgreich.
 - Der Supabase-Sicherheitsberater beanstandete die öffentlich aufrufbare `SECURITY DEFINER`-Quotenfunktion. Eine Folgemigration stellt sie auf `SECURITY INVOKER`; die nutzergebundene Storage-SELECT-Policy begrenzt die Zählung weiterhin auf den eigenen Ordner.
+- GitHub Actions nutzt im Update-Workflow nun `contents: read` als Standard. Nur der getrennte Commit-Job erhält `contents: write`; geprüfte generierte Dateien werden über ein kurzlebiges internes Artifact übergeben. Deployment wartet auf Validierung und Commit-Job.
