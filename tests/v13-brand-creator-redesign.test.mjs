@@ -29,7 +29,7 @@ test("V13 hält Socials, Videos und eigene Projekte sichtbar",()=>{
     assert.match(html,new RegExp(`aria-label="${platform}"|>${platform}<`),`Plattform fehlt: ${platform}`);
   }
   assert.match(html,/id="neueste-videos"/);
-  assert.match(html,/class="creator-video-grid/);
+  assert.match(html,/class="creator-video-rail/);
   assert.match(html,/id="eigene-projekte"/);
   assert.match(html,/Von Liebe bis zur tiefsten Trauer/);
   assert.match(html,/Dinge über Beziehungen/);
@@ -41,7 +41,7 @@ test("V13 nutzt eigene Designschicht und frische Cache-Version",()=>{
   const html=fs.readFileSync("dist/index.html","utf8");
   const css=fs.readFileSync("public/v13.css","utf8");
   const sw=fs.readFileSync("public/sw.js","utf8");
-  assert.match(html,/site\.css\?v=44/);
+  assert.match(html,/site\.css\?v=45/);
   assert.match(css,/\.creator-top-dock\{/);
   assert.match(css,/\.creator-world\{/);
   assert.match(css,/\.owned-showcase\{/);

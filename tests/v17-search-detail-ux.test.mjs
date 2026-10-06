@@ -16,8 +16,8 @@ test("V17 verbessert Filter und Angebotsdetailseiten", () => {
   assert.match(build,/data-filter-mobile-toggle/);
   assert.match(build,/data-copy-code=/);
   assert.match(build,/data-copy-code-status/);
-  assert.match(build,/site\.css\?v=44/);
-  assert.match(build,/app\.js\?v=22/);
+  assert.match(build,/site\.css\?v=45/);
+  assert.match(build,/app\.js\?v=23/);
 
   assert.match(app,/mobileFilterToggle/);
   assert.match(app,/mobileFilterCount/);

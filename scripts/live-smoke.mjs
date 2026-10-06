@@ -50,8 +50,8 @@ const validateState=({report,statusHtml,urls,homeHtml})=>{
   if(new Set(urls).size!==urls.length)errors.push("Sitemap enthält doppelte URLs");
   if(urls.some(url=>!url.startsWith(`${base}/`)&&url!==base))errors.push("Sitemap enthält fremde oder unerwartete URLs");
   const requiredHomeMarkers=[
-    'site.css?v=44',
-    'app.js?v=22',
+    'site.css?v=45',
+    'app.js?v=23',
     'id="aktuell-angebunden"',
     'class="top-social-links creator-dock-links"',
     'data-live-sort="deals"',
@@ -98,8 +98,8 @@ for(let attempt=1;attempt<=attempts;attempt+=1){
 if(!live||stateErrors.length)throw new Error(`Live-Statusprüfung fehlgeschlagen: ${stateErrors.join("; ")}`);
 
 const criticalAssets=[
-  "/site.css?v=44",
-  "/app.js?v=22",
+  "/site.css?v=45",
+  "/app.js?v=23",
   "/favicon.ico?v=4",
   "/favicon-32.png?v=4",
   "/joel-logo.svg?v=4",

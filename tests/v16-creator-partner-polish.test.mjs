@@ -15,5 +15,5 @@ test("V16 vereinheitlicht Creator-, Projekt- und Partnerbereiche", () => {
   assert.match(css, /\.partner-section#partner>div\{/);
 
   assert.match(build, /joel-logo\.svg\?v=4/);
-  assert.match(build, /site\.css\?v=44/);
+  assert.match(build, /site\.css\?v=45/);
 });
