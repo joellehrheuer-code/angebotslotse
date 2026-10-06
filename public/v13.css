@@ -3271,3 +3271,385 @@ body{
     grid-column:1/-1!important;
   }
 }
+
+
+/* V18 WATCHLIST + ACCOUNT POLISH — clearer personal area */
+.watchlist-page,
+.account-page{
+  width:var(--v13-container)!important;
+  margin-inline:auto!important;
+}
+.watchlist-summary{
+  margin:14px 0 18px!important;
+  padding:14px 16px!important;
+  display:flex!important;
+  flex-wrap:wrap!important;
+  align-items:center!important;
+  gap:8px 14px!important;
+  border:1px solid #293247!important;
+  border-radius:16px!important;
+  background:#10151f!important;
+  color:#dce3ee!important;
+}
+.watchlist-summary strong{
+  color:#fff!important;
+}
+.watchlist-grid{
+  display:grid!important;
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  gap:12px!important;
+}
+.watchlist-item{
+  min-width:0!important;
+  display:grid!important;
+  grid-template-columns:150px minmax(0,1fr)!important;
+  gap:14px!important;
+  padding:12px!important;
+  border:1px solid #293247!important;
+  border-radius:18px!important;
+  background:#10151f!important;
+  box-shadow:0 12px 28px rgba(0,0,0,.14)!important;
+}
+.watchlist-item.target-hit{
+  border-color:#3b765f!important;
+  box-shadow:0 0 0 3px rgba(82,215,179,.06)!important;
+}
+.watchlist-image{
+  width:150px!important;
+  height:128px!important;
+  aspect-ratio:auto!important;
+  display:block!important;
+  border-radius:13px!important;
+  overflow:hidden!important;
+  background:#f3f5f8!important;
+}
+.watchlist-image img{
+  width:100%!important;
+  height:100%!important;
+  padding:7px!important;
+  object-fit:contain!important;
+}
+.watchlist-body{
+  min-width:0!important;
+}
+.watchlist-body h2{
+  margin:5px 0 8px!important;
+  font-size:17px!important;
+  line-height:1.25!important;
+}
+.watchlist-prices{
+  margin-top:10px!important;
+}
+.watchlist-prices strong{
+  font-size:22px!important;
+}
+.watchlist-state{
+  margin:8px 0!important;
+  font-size:11px!important;
+  line-height:1.45!important;
+}
+.watchlist-item .button,
+.watchlist-item button{
+  min-height:42px!important;
+}
+
+/* Detail wishlist panel */
+.watch-panel{
+  display:grid!important;
+  grid-template-columns:minmax(0,1.2fr) minmax(300px,.8fr)!important;
+  align-items:start!important;
+}
+.watch-panel h2{
+  margin:6px 0 8px!important;
+  font-size:clamp(25px,2.7vw,38px)!important;
+}
+.watch-actions{
+  display:grid!important;
+  grid-template-columns:1fr 1fr!important;
+  gap:8px!important;
+}
+.watch-actions label{
+  grid-column:1/-1!important;
+  display:grid!important;
+  gap:6px!important;
+  color:#b7c0d1!important;
+  font-size:10px!important;
+  font-weight:800!important;
+}
+.watch-actions input{
+  min-height:44px!important;
+  border-radius:11px!important;
+}
+.watch-actions [data-watch-status]{
+  grid-column:1/-1!important;
+  min-height:1.4em!important;
+}
+
+/* Account status */
+.account-status{
+  min-height:0!important;
+  margin:0 0 14px!important;
+  padding:0!important;
+  color:#a6b0c2!important;
+  font-size:12px!important;
+}
+.account-status:empty{
+  display:none!important;
+}
+.account-status:not(:empty){
+  padding:11px 13px!important;
+  border:1px solid #2c3549!important;
+  border-radius:12px!important;
+  background:#111620!important;
+}
+
+/* Account dashboard */
+.account-grid{
+  display:grid!important;
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  gap:12px!important;
+  align-items:start!important;
+}
+.account-card{
+  min-width:0!important;
+  padding:20px!important;
+  border:1px solid #293247!important;
+  border-radius:20px!important;
+  background:
+    radial-gradient(circle at 96% 0,rgba(157,104,255,.06),transparent 42%),
+    #10151f!important;
+  box-shadow:0 12px 30px rgba(0,0,0,.14)!important;
+}
+.account-card h2{
+  margin:7px 0 9px!important;
+  color:#fff!important;
+  font-size:clamp(23px,2.2vw,32px)!important;
+  line-height:1.06!important;
+}
+.account-card>p{
+  margin:0 0 14px!important;
+  color:#929caf!important;
+  line-height:1.55!important;
+}
+.account-card small{
+  color:#7f899c!important;
+  line-height:1.45!important;
+}
+.account-card label{
+  display:grid!important;
+  gap:6px!important;
+  color:#b9c2d2!important;
+  font-size:10px!important;
+  font-weight:800!important;
+}
+.account-card input,
+.account-card select{
+  width:100%!important;
+  min-height:44px!important;
+  padding:10px 12px!important;
+  border:1px solid #323b50!important;
+  border-radius:11px!important;
+  background:#151a25!important;
+  color:#f4f6fb!important;
+}
+.account-card input:focus,
+.account-card select:focus{
+  outline:0!important;
+  border-color:#9d68ff!important;
+  box-shadow:0 0 0 3px rgba(157,104,255,.12)!important;
+}
+.account-login-form,
+.account-alert-form{
+  display:grid!important;
+  gap:10px!important;
+}
+.account-login-form .button{
+  min-height:46px!important;
+}
+.account-google{
+  width:100%!important;
+  min-height:44px!important;
+  margin-top:8px!important;
+}
+.account-google[aria-disabled="true"]{
+  opacity:.55!important;
+  cursor:not-allowed!important;
+}
+.account-actions,
+.account-push-actions,
+.account-notification-actions{
+  display:flex!important;
+  flex-wrap:wrap!important;
+  gap:8px!important;
+}
+.account-actions .button,
+.account-push-actions .button,
+.account-notification-actions .button{
+  min-height:42px!important;
+}
+.account-sync-status{
+  min-height:1.4em!important;
+  margin:10px 0 0!important;
+  color:#aeb8c9!important;
+  font-size:10px!important;
+}
+
+/* Alert form and lists */
+.account-alert-form{
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;
+}
+.account-alert-form button{
+  grid-column:1/-1!important;
+  min-height:46px!important;
+}
+.account-alert-list,
+.account-match-list,
+.account-notification-list,
+.account-cashback-list{
+  display:grid!important;
+  gap:8px!important;
+  margin-top:12px!important;
+}
+.account-alert-list>article,
+.account-match-list>article,
+.account-notification-list>article,
+.account-cashback-list>article{
+  padding:12px!important;
+  border:1px solid #2b3448!important;
+  border-radius:13px!important;
+  background:#141925!important;
+}
+.account-alert-list h3,
+.account-match-list h3,
+.account-notification-list h3,
+.account-cashback-list h3{
+  margin:0 0 5px!important;
+  color:#fff!important;
+  font-size:14px!important;
+}
+
+/* Push preferences */
+.account-push-preferences{
+  display:grid!important;
+  gap:8px!important;
+  margin-top:12px!important;
+}
+.account-push-preferences label{
+  min-height:44px!important;
+  display:flex!important;
+  grid-template-columns:none!important;
+  align-items:center!important;
+  gap:9px!important;
+  padding:9px 11px!important;
+  border:1px solid #2c3549!important;
+  border-radius:11px!important;
+  background:#151a25!important;
+}
+.account-push-preferences input{
+  width:20px!important;
+  height:20px!important;
+  min-height:20px!important;
+  padding:0!important;
+}
+
+/* Cashback */
+.account-cashback-summary{
+  display:grid!important;
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  gap:8px!important;
+  margin:14px 0!important;
+}
+.account-cashback-summary>div{
+  padding:14px!important;
+  border:1px solid #2b3448!important;
+  border-radius:13px!important;
+  background:#151a25!important;
+}
+.account-cashback-summary strong{
+  display:block!important;
+  color:#fff!important;
+  font-size:24px!important;
+}
+.account-cashback-summary small{
+  display:block!important;
+  margin-top:4px!important;
+}
+
+/* Security card */
+.account-security-card{
+  grid-column:1/-1!important;
+}
+.account-security-card ul{
+  display:flex!important;
+  flex-wrap:wrap!important;
+  gap:7px!important;
+  margin:12px 0!important;
+  padding:0!important;
+  list-style:none!important;
+}
+.account-security-card li{
+  padding:7px 10px!important;
+  border:1px solid #2b3448!important;
+  border-radius:999px!important;
+  background:#151a25!important;
+  color:#c5cddd!important;
+  font-size:10px!important;
+}
+.button.danger,
+.account-actions .danger{
+  border-color:#61323e!important;
+  background:#28151b!important;
+  color:#ff9aaa!important;
+}
+
+@media(max-width:900px){
+  .account-grid,
+  .watchlist-grid{
+    grid-template-columns:1fr!important;
+  }
+  .account-security-card{
+    grid-column:auto!important;
+  }
+  .watch-panel{
+    grid-template-columns:1fr!important;
+  }
+}
+@media(max-width:760px){
+  .watchlist-item{
+    grid-template-columns:92px minmax(0,1fr)!important;
+    gap:10px!important;
+  }
+  .watchlist-image{
+    width:92px!important;
+    height:92px!important;
+  }
+  .watchlist-body h2{
+    font-size:15px!important;
+  }
+  .watch-actions{
+    grid-template-columns:1fr!important;
+  }
+  .watch-actions label,
+  .watch-actions [data-watch-status]{
+    grid-column:auto!important;
+  }
+  .account-card{
+    padding:16px!important;
+    border-radius:17px!important;
+  }
+  .account-alert-form{
+    grid-template-columns:1fr!important;
+  }
+  .account-alert-form button{
+    grid-column:auto!important;
+  }
+  .account-cashback-summary{
+    grid-template-columns:1fr!important;
+  }
+  .account-actions,
+  .account-push-actions,
+  .account-notification-actions{
+    display:grid!important;
+    grid-template-columns:1fr!important;
+  }
+}
