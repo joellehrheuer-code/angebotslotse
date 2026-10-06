@@ -1048,3 +1048,122 @@ body{
   border-color:transparent!important;
   min-height:44px!important;
 }
+
+
+/* V13.4 CANONICAL BRAND HEADER — single final source of truth */
+.header-brand{
+  display:flex!important;
+  align-items:center!important;
+  gap:10px!important;
+  min-width:0!important;
+  max-width:100%!important;
+  overflow:hidden!important;
+}
+.header-brand .header-brand-picture{
+  flex:0 0 44px!important;
+  width:44px!important;
+  height:44px!important;
+  padding:0!important;
+  border:1px solid #2a3142!important;
+  border-radius:14px!important;
+  background:#111620!important;
+  overflow:hidden!important;
+}
+.header-brand .brand-logo{
+  display:block!important;
+  width:44px!important;
+  height:44px!important;
+  max-width:44px!important;
+  object-fit:contain!important;
+  border-radius:8px!important;
+  box-shadow:none!important;
+  transform:none!important;
+}
+.header-brand .brand-lockup{
+  display:flex!important;
+  flex-direction:column!important;
+  gap:3px!important;
+  min-width:0!important;
+  overflow:hidden!important;
+}
+.header-brand .brand-name{
+  display:block!important;
+  max-width:100%!important;
+  overflow:hidden!important;
+  text-overflow:ellipsis!important;
+  white-space:nowrap!important;
+  color:#fff!important;
+  font-size:17px!important;
+  font-weight:850!important;
+  line-height:1.05!important;
+  letter-spacing:-.03em!important;
+}
+.header-brand .brand-lockup small{
+  display:block!important;
+  max-width:100%!important;
+  overflow:hidden!important;
+  text-overflow:ellipsis!important;
+  white-space:nowrap!important;
+  color:#949db0!important;
+  font-size:9px!important;
+  font-weight:760!important;
+  line-height:1.2!important;
+  letter-spacing:.075em!important;
+  text-transform:uppercase!important;
+}
+
+@media(max-width:760px){
+  .header-row{
+    grid-template-columns:minmax(0,1fr) 44px!important;
+    gap:10px!important;
+  }
+  .header-brand{
+    grid-column:1!important;
+    width:auto!important;
+  }
+  .header-brand .header-brand-picture{
+    flex-basis:40px!important;
+    width:40px!important;
+    height:40px!important;
+  }
+  .header-brand .brand-logo{
+    width:40px!important;
+    height:40px!important;
+    max-width:40px!important;
+  }
+  .header-brand .brand-name{
+    font-size:15px!important;
+  }
+  .header-brand .brand-lockup small{
+    display:block!important;
+    font-size:8px!important;
+  }
+  .menu-toggle{
+    grid-column:2!important;
+    justify-self:end!important;
+  }
+}
+@media(max-width:480px){
+  .header-row{
+    grid-template-columns:minmax(0,1fr) 44px!important;
+  }
+  .header-brand{
+    width:auto!important;
+    max-width:100%!important;
+  }
+  .header-brand .brand-lockup{
+    display:flex!important;
+  }
+  .header-brand .brand-name{
+    max-width:150px!important;
+    font-size:14px!important;
+  }
+  .header-brand .brand-lockup small{
+    max-width:150px!important;
+    font-size:7px!important;
+  }
+}
+@media(max-width:360px){
+  .header-brand .brand-name{max-width:118px!important}
+  .header-brand .brand-lockup small{max-width:118px!important}
+}
