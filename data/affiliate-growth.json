@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-06T11:44:53.292Z",
+  "generatedAt": "2026-10-06T15:24:21.244Z",
   "market": "DE",
   "publisherId": 3045061,
   "awin": {
@@ -8,9 +8,9 @@
       "pending": 3,
       "suspended": 1,
       "rejected": 2,
-      "notjoined": 2613
+      "notjoined": 2616
     },
-    "totalProgramsEvaluated": 2624,
+    "totalProgramsEvaluated": 2627,
     "reportedPrograms": 200,
     "programs": [
       {
@@ -566,6 +566,17 @@
       {
         "network": "Awin",
         "relationship": "notjoined",
+        "advertiserId": 13683,
+        "name": "alsa-hundewelt DE",
+        "primarySector": "Pets & Pet Care",
+        "primaryRegion": {
+          "name": "Germany",
+          "countryCode": "DE"
+        }
+      },
+      {
+        "network": "Awin",
+        "relationship": "notjoined",
         "advertiserId": 11731,
         "name": "Alternate DE",
         "primarySector": "Electronic Superstore",
@@ -797,6 +808,17 @@
       {
         "network": "Awin",
         "relationship": "notjoined",
+        "advertiserId": 13747,
+        "name": "Atelier Goldner DE/AT",
+        "primarySector": "Womenswear",
+        "primaryRegion": {
+          "name": "Germany",
+          "countryCode": "DE"
+        }
+      },
+      {
+        "network": "Awin",
+        "relationship": "notjoined",
         "advertiserId": 130755,
         "name": "Ava & May DE",
         "primarySector": "Home & Garden",
@@ -811,28 +833,6 @@
         "advertiserId": 15977,
         "name": "awg-mode.de - Alle Werden Glücklich",
         "primarySector": "Clothing",
-        "primaryRegion": {
-          "name": "Germany",
-          "countryCode": "DE"
-        }
-      },
-      {
-        "network": "Awin",
-        "relationship": "notjoined",
-        "advertiserId": 14223,
-        "name": "Babor DE",
-        "primarySector": "Health & Beauty",
-        "primaryRegion": {
-          "name": "Germany",
-          "countryCode": "DE"
-        }
-      },
-      {
-        "network": "Awin",
-        "relationship": "notjoined",
-        "advertiserId": 79932,
-        "name": "Bags CH",
-        "primarySector": "Clothing Accessories",
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
@@ -975,6 +975,17 @@
         "relationship": "notjoined",
         "advertiserId": 123170,
         "name": "Beatbot DE",
+        "primarySector": "Home & Garden",
+        "primaryRegion": {
+          "name": "Germany",
+          "countryCode": "DE"
+        }
+      },
+      {
+        "network": "Awin",
+        "relationship": "notjoined",
+        "advertiserId": 131131,
+        "name": "Bedsure DE",
         "primarySector": "Home & Garden",
         "primaryRegion": {
           "name": "Germany",
@@ -2194,17 +2205,6 @@
       {
         "network": "Awin",
         "relationship": "notjoined",
-        "advertiserId": 23289,
-        "name": "Eins DE",
-        "primarySector": "Utilities",
-        "primaryRegion": {
-          "name": "Germany",
-          "countryCode": "DE"
-        }
-      },
-      {
-        "network": "Awin",
-        "relationship": "notjoined",
         "advertiserId": 122352,
         "name": "Eka Store DE",
         "primarySector": "Home & Garden",
@@ -2218,42 +2218,6 @@
     "discoveryError": null,
     "detailsEnriched": 5,
     "opportunities": [
-      {
-        "brand": "Samsung Shop DE",
-        "network": "Awin",
-        "advertiserId": 14815,
-        "status": "notjoined",
-        "category": "Technik & Computer",
-        "score": 75,
-        "priority": "hoch",
-        "activeDiscoveryOffers": 10,
-        "offerExamples": [
-          "Jetzt ausgewählte Haushaltsgeräte zu tollen Aktionspreisen",
-          "Jetzt ausgewählte TV & Audio-Deals sichern.*",
-          "Jetzt Galaxy Book6-Serie entdecken"
-        ],
-        "productFeed": false,
-        "metrics": {
-          "awinIndex": null,
-          "epc": null,
-          "conversionRate": null,
-          "approvalPercentage": null,
-          "validationDays": null,
-          "averagePaymentTime": null,
-          "commissionMin": null,
-          "commissionMax": null,
-          "commissionTypes": []
-        },
-        "reasons": [
-          "passt zu Technik & Computer",
-          "strategisch relevante Marke",
-          "10 aktive DE-Aktionen"
-        ],
-        "applicationRequired": true,
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Samsung Shop DE redaktionell passend im Bereich Technik & Computer einbinden. Bei Awin sind aktuell 10 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-        "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-        "automationState": "ready-for-review"
-      },
       {
         "brand": "Anker DE",
         "network": "Awin",
@@ -2391,18 +2355,53 @@
         "automationState": "ready-for-review"
       },
       {
-        "brand": "Pollin Electronic DE",
+        "brand": "DOTBLUE eBIKE DE",
         "network": "Awin",
-        "advertiserId": 15965,
+        "advertiserId": 115541,
         "status": "notjoined",
-        "category": "Technik & Computer",
+        "category": "Mode & Sport",
         "score": 60,
         "priority": "mittel",
         "activeDiscoveryOffers": 5,
         "offerExamples": [
-          "Reduziertes Angebot: LED-Lichterkette, 720 LEDs, warmweiß, 230V~, IP44, Innen/Außen, silber/transparent, 24% reduziert - für nur 21,95€ stat",
-          "Reduziertes Angebot: OSRAM LED-Fluter, 26W, 6500K, 3000lm, kaltweiß, IP54, schwarz, 30% reduziert - für nur 55,95€ statt 79,95€",
-          "Reduziertes Angebot: HP AUTOZUBEHÖR Unterstellbock-Set 11115, 2 t, 13% reduziert - für nur 29,50€ statt UVP 33,80€"
+          "Blaupunkt Minna Klappbares E-Trike – Geprüfte Rückläufer zum Vorteilspreis",
+          "Blaupunkt Enno Klapp E-Bike – Geprüfte Rückläufer zum Vorteilspreis",
+          "Blaupunkt Enno Klapp E-Bike – Herbst-/Winter-Deal"
+        ],
+        "productFeed": false,
+        "metrics": {
+          "awinIndex": null,
+          "epc": null,
+          "conversionRate": null,
+          "approvalPercentage": null,
+          "validationDays": null,
+          "averagePaymentTime": null,
+          "commissionMin": null,
+          "commissionMax": null,
+          "commissionTypes": []
+        },
+        "reasons": [
+          "passt zu Mode & Sport",
+          "5 aktive DE-Aktionen"
+        ],
+        "applicationRequired": true,
+        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten DOTBLUE eBIKE DE redaktionell passend im Bereich Mode & Sport einbinden. Bei Awin sind aktuell 5 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+        "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+        "automationState": "ready-for-review"
+      },
+      {
+        "brand": "Office-partner DE",
+        "network": "Awin",
+        "advertiserId": 14611,
+        "status": "notjoined",
+        "category": "Technik & Computer",
+        "score": 54,
+        "priority": "mittel",
+        "activeDiscoveryOffers": 4,
+        "offerExamples": [
+          "15 € Rabatt beim OFFICE Partner Deal of the Week:  CHERRY Xtrfy G80-3000N RGB Wired Tastatur - Schwarz CHERRY  MX Silent Red, DE-Layout QWER",
+          "10 € Rabatt beim OFFICE Partner Deal of the Week:  CHERRY Stream Desktop Ultimate Wireless kabelloses Desktop-Set - QWERTZ DE -",
+          "5 € Rabatt beim OFFICE Partner Deal of the Week:  DICOTA Eco Slim Case Plus BASE 13-15.6 Notebook-Hülle"
         ],
         "productFeed": false,
         "metrics": {
@@ -2418,10 +2417,44 @@
         },
         "reasons": [
           "passt zu Technik & Computer",
-          "5 aktive DE-Aktionen"
+          "4 aktive DE-Aktionen"
         ],
         "applicationRequired": true,
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Pollin Electronic DE redaktionell passend im Bereich Technik & Computer einbinden. Bei Awin sind aktuell 5 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Office-partner DE redaktionell passend im Bereich Technik & Computer einbinden. Bei Awin sind aktuell 4 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+        "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+        "automationState": "ready-for-review"
+      },
+      {
+        "brand": "Samsung Shop DE",
+        "network": "Awin",
+        "advertiserId": 14815,
+        "status": "notjoined",
+        "category": "Technik & Computer",
+        "score": 51,
+        "priority": "mittel",
+        "activeDiscoveryOffers": 1,
+        "offerExamples": [
+          "Jetzt ausgewählte Haushaltsgeräte zu tollen Aktionspreisen"
+        ],
+        "productFeed": false,
+        "metrics": {
+          "awinIndex": null,
+          "epc": null,
+          "conversionRate": null,
+          "approvalPercentage": null,
+          "validationDays": null,
+          "averagePaymentTime": null,
+          "commissionMin": null,
+          "commissionMax": null,
+          "commissionTypes": []
+        },
+        "reasons": [
+          "passt zu Technik & Computer",
+          "strategisch relevante Marke",
+          "1 aktive DE-Aktion"
+        ],
+        "applicationRequired": true,
+        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Samsung Shop DE redaktionell passend im Bereich Technik & Computer einbinden. Bei Awin sind aktuell 1 für Deutschland sichtbare Aktion dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
         "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
         "automationState": "ready-for-review"
       },
@@ -2984,37 +3017,6 @@
         ],
         "applicationRequired": true,
         "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten PremiumSIM DE redaktionell passend im Bereich Technik & Computer einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-        "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-        "automationState": "ready-for-review"
-      },
-      {
-        "brand": "Sony DE",
-        "network": "Awin",
-        "advertiserId": 34015,
-        "status": "notjoined",
-        "category": "Technik & Computer",
-        "score": 45,
-        "priority": "mittel",
-        "activeDiscoveryOffers": 0,
-        "offerExamples": [],
-        "productFeed": false,
-        "metrics": {
-          "awinIndex": null,
-          "epc": null,
-          "conversionRate": null,
-          "approvalPercentage": null,
-          "validationDays": null,
-          "averagePaymentTime": null,
-          "commissionMin": null,
-          "commissionMax": null,
-          "commissionTypes": []
-        },
-        "reasons": [
-          "passt zu Technik & Computer",
-          "strategisch relevante Marke"
-        ],
-        "applicationRequired": true,
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Sony DE redaktionell passend im Bereich Technik & Computer einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
         "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
         "automationState": "ready-for-review"
       }
