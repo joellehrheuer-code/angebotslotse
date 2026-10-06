@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-06T11:34:30.760Z",
+  "generatedAt": "2026-10-06T11:40:49.376Z",
   "scope": "Automatisch aus Programminventar, DE-Angebotsabdeckung und verfügbaren Netzwerk-/Feed-Signalen erzeugt.",
   "automation": {
     "discovery": "automatic",
@@ -1234,6 +1234,39 @@
       "automationState": "ready-for-review"
     },
     {
+      "brand": "Office-partner DE",
+      "network": "Awin",
+      "advertiserId": 14611,
+      "status": "notjoined",
+      "category": "Technik & Computer",
+      "score": 36,
+      "priority": "niedrig",
+      "activeDiscoveryOffers": 1,
+      "offerExamples": [
+        "70 € Rabatt beim OFFICE Partner Deal of the Week:  Acer X1527Ki DLP Beamer 4.000 ANSI Lumen Full HD, HDMI, USB , 3D Ready, 24/7, 144Hz, Fußb"
+      ],
+      "productFeed": false,
+      "metrics": {
+        "awinIndex": null,
+        "epc": null,
+        "conversionRate": null,
+        "approvalPercentage": null,
+        "validationDays": null,
+        "averagePaymentTime": null,
+        "commissionMin": null,
+        "commissionMax": null,
+        "commissionTypes": []
+      },
+      "reasons": [
+        "passt zu Technik & Computer",
+        "1 aktive DE-Aktion"
+      ],
+      "applicationRequired": true,
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Office-partner DE redaktionell passend im Bereich Technik & Computer einbinden. Bei Awin sind aktuell 1 für Deutschland sichtbare Aktion dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "automationState": "ready-for-review"
+    },
+    {
       "brand": "Polo-motorrad DE",
       "network": "Awin",
       "advertiserId": 11475,
@@ -1574,36 +1607,6 @@
       ],
       "applicationRequired": true,
       "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten 12-Travel DE redaktionell passend im Bereich Freizeit & Reisen einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "automationState": "ready-for-review"
-    },
-    {
-      "brand": "360GradFitness DE",
-      "network": "Awin",
-      "advertiserId": 113554,
-      "status": "notjoined",
-      "category": "Mode & Sport",
-      "score": 30,
-      "priority": "niedrig",
-      "activeDiscoveryOffers": 0,
-      "offerExamples": [],
-      "productFeed": false,
-      "metrics": {
-        "awinIndex": null,
-        "epc": null,
-        "conversionRate": null,
-        "approvalPercentage": null,
-        "validationDays": null,
-        "averagePaymentTime": null,
-        "commissionMin": null,
-        "commissionMax": null,
-        "commissionTypes": []
-      },
-      "reasons": [
-        "passt zu Mode & Sport"
-      ],
-      "applicationRequired": true,
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten 360GradFitness DE redaktionell passend im Bereich Mode & Sport einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
       "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
       "automationState": "ready-for-review"
     }
