@@ -468,19 +468,46 @@ if (!root || !config.url || !config.publishableKey) {
       return;
     }
     if (userEmail) userEmail.textContent = user.email || "Angemeldet";
+
+    const accountLoaders = [
+      ["Merkliste", loadCloudWatchlist(user.id)],
+      ["Alarme", loadAlerts(user.id)],
+      ["Meldungen", loadNotifications(user.id)],
+      ["Push", loadPushState(user.id)],
+      ["Cashback", loadCashbackClaims(user.id)]
+    ];
+    const results = await Promise.allSettled(accountLoaders.map(([, task]) => task));
+
+    const watchlistResult = results[0];
+    if (watchlistResult?.status === "fulfilled") {
+      writeLocalWatchlist({
+        ...readLocalWatchlist(),
+        ...cloudRowsToLocal(watchlistResult.value)
+      });
+    }
+
+    let failedAreas = 0;
+    results.forEach((result, index) => {
+      if (result.status === "rejected") {
+        failedAreas += 1;
+        console.error("Konto-Bereich konnte nicht geladen werden:", accountLoaders[index][0], result.reason);
+      }
+    });
+
     try {
-      const [rows] = await Promise.all([
-        loadCloudWatchlist(user.id),
-        loadAlerts(user.id),
-        loadNotifications(user.id),
-        loadPushState(user.id),
-        loadCashbackClaims(user.id)
-      ]);
-      writeLocalWatchlist({ ...readLocalWatchlist(), ...cloudRowsToLocal(rows) });
       await subscribeNotifications(user.id);
     } catch (error) {
-      setStatus("Cloud-Daten konnten nicht vollständig geladen werden.", "error");
-      console.error(error);
+      failedAreas += 1;
+      console.error("Live-Meldungen konnten nicht abonniert werden.", error);
+    }
+
+    if (failedAreas > 0) {
+      setStatus(
+        failedAreas === 1
+          ? "Ein Cloud-Bereich konnte gerade nicht geladen werden. Die übrigen Funktionen bleiben verfügbar."
+          : failedAreas + " Cloud-Bereiche konnten gerade nicht geladen werden. Die übrigen Funktionen bleiben verfügbar.",
+        "error"
+      );
     }
   }
 
