@@ -14,6 +14,7 @@ test("Konto-Seite wird mit lokal gebündeltem Supabase-Client gebaut", () => {
   const privacy = fs.readFileSync("dist/datenschutz.html", "utf8");
   const feed = JSON.parse(fs.readFileSync("dist/alerts-feed.json", "utf8"));
   const bundle = fs.readFileSync("dist/account-client.js", "utf8");
+  const source = fs.readFileSync("src/account-client.js", "utf8");
   const sw = fs.readFileSync("dist/sw.js", "utf8");
 
   assert.match(html, /Konto &amp; Preisalarme/);
@@ -48,6 +49,8 @@ test("Konto-Seite wird mit lokal gebündeltem Supabase-Client gebaut", () => {
   assert.match(bundle, /postgres_changes/);
   assert.match(bundle, /export-account/);
   assert.match(bundle, /delete-account/);
+  assert.match(source, /Promise\.allSettled/);
+  assert.match(source, /Die übrigen Funktionen bleiben verfügbar/);
   assert.ok(bundle.length > 1000);
   assert.doesNotMatch(bundle, /SUPABASE_SECRET_KEY|service_role|RESEND_API_KEY/);
 });
