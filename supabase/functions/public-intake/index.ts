@@ -130,7 +130,7 @@ async function rateLimit(req: Request, kind: string, origin: string) {
   const key = await sha256(`${kind}|${bucket}|${forwarded}|${ua}`);
   const now = new Date().toISOString();
   const { data } = await admin.from("site_intake_rate").select("request_count,window_start").eq("key", key).maybeSingle();
-  const limit = kind === "report" ? 8 : kind === "partner" ? 3 : 5;
+  const limit = kind === "visit" ? 2 : kind === "review" ? 3 : kind === "report" ? 8 : kind === "partner" ? 3 : 5;
   if (data && Number(data.request_count) >= limit) {
     return json({ ok: false, error: "rate_limited" }, 429, origin);
   }
@@ -148,6 +148,38 @@ async function rateLimit(req: Request, kind: string, origin: string) {
     });
   }
   return null;
+}
+
+async function communitySnapshot() {
+  const [{ data: traffic }, { data: ratings }, { data: reviews }] = await Promise.all([
+    admin.from("site_traffic").select("visits,started_at").eq("singleton", 1).maybeSingle(),
+    admin.from("site_reviews").select("rating").eq("status", "approved").limit(1000),
+    admin.from("site_reviews")
+      .select("display_name,rating,comment,created_at")
+      .eq("status", "approved")
+      .order("created_at", { ascending: false })
+      .limit(8),
+  ]);
+
+  const ratingValues = (ratings || [])
+    .map(row => Number(row.rating))
+    .filter(value => Number.isFinite(value) && value >= 1 && value <= 5);
+  const ratingAverage = ratingValues.length
+    ? Math.round((ratingValues.reduce((sum, value) => sum + value, 0) / ratingValues.length) * 10) / 10
+    : null;
+
+  return {
+    visits: Number(traffic?.visits || 0),
+    visitsStartedAt: traffic?.started_at || null,
+    reviewCount: ratingValues.length,
+    ratingAverage,
+    reviews: (reviews || []).map(row => ({
+      name: clean(row.display_name, 60) || "Anonym",
+      rating: Number(row.rating),
+      comment: clean(row.comment, 600),
+      createdAt: row.created_at,
+    })),
+  };
 }
 
 function resultPage(title: string, copy: string) {
@@ -200,7 +232,11 @@ Deno.serve(async (req: Request) => {
       return html(resultPage("Newsletter abgemeldet", "Du erhältst über diesen Newsletter keine weiteren Nachrichten mehr."));
     }
 
-    return json({ ok: true, service: "angebotslotse-public-intake", version: 1 });
+    if (url.searchParams.get("community") === "1") {
+      return json({ ok: true, ...(await communitySnapshot()) }, 200, origin);
+    }
+
+    return json({ ok: true, service: "angebotslotse-public-intake", version: 2 });
   }
 
   if (req.method !== "POST") return json({ ok: false, error: "method_not_allowed" }, 405, origin);
@@ -215,11 +251,61 @@ Deno.serve(async (req: Request) => {
   if (clean(body.website, 200)) return json({ ok: true }, 200, origin);
 
   const kind = clean(body.kind, 30);
-  if (!["report","newsletter","partner"].includes(kind)) return json({ ok: false, error: "invalid_kind" }, 400, origin);
+  if (!["report","newsletter","partner","review","visit"].includes(kind)) return json({ ok: false, error: "invalid_kind" }, 400, origin);
 
   const limited = await rateLimit(req, kind, origin);
   if (limited) return limited;
 
+
+  if (kind === "visit") {
+    const { error } = await admin.rpc("increment_site_visit");
+    if (error) {
+      console.error("Visit increment failed", error.message);
+      return json({ ok: false, error: "save_failed" }, 500, origin);
+    }
+    return json({ ok: true, ...(await communitySnapshot()) }, 200, origin);
+  }
+
+  if (kind === "review") {
+    const displayName = clean(body.displayName, 60) || "Anonym";
+    const rating = Number(body.rating);
+    const comment = clean(body.comment, 600);
+    const source = clean(body.source, 80) || "website";
+
+    if (!Number.isInteger(rating) || rating < 1 || rating > 5 || comment.length < 3) {
+      return json({ ok: false, error: "invalid_review_input" }, 400, origin);
+    }
+    if ((comment.match(/https?:\/\//gi) || []).length > 1) {
+      return json({ ok: false, error: "invalid_review_input" }, 400, origin);
+    }
+
+    const normalizedComment = comment.toLowerCase().replace(/\s+/g, " ").slice(0, 500);
+    const fingerprint = await sha256(`${rating}|${displayName.toLowerCase()}|${normalizedComment}`);
+
+    const { data: existing } = await admin.from("site_reviews")
+      .select("id,status")
+      .eq("fingerprint", fingerprint)
+      .maybeSingle();
+
+    if (existing) {
+      return json({ ok: true, state: existing.status === "approved" ? "already_approved" : "already_submitted" }, 200, origin);
+    }
+
+    const { error } = await admin.from("site_reviews").insert({
+      display_name: displayName,
+      rating,
+      comment,
+      status: "pending",
+      source,
+      fingerprint,
+    });
+    if (error) {
+      console.error("Review save failed", error.message);
+      return json({ ok: false, error: "save_failed" }, 500, origin);
+    }
+
+    return json({ ok: true, state: "pending_moderation" }, 201, origin);
+  }
 
   if (kind === "partner") {
     const companyName = clean(body.companyName, 180);

@@ -816,6 +816,145 @@ updateWatchIndicators();
     } finally { clearTimeout(timeout); }
   };
   const setStatus=(node,text,kind="info")=>{ if(!node)return; node.textContent=text; node.dataset.kind=kind; };
+  const getCommunitySnapshot = async () => {
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 12000);
+    try {
+      const response = await fetch(INTAKE_ENDPOINT + "?community=1", {
+        headers: { "Accept": "application/json" },
+        signal: controller.signal,
+      });
+      const data = await response.json();
+      if (!response.ok || !data?.ok) throw new Error(data?.error || `HTTP ${response.status}`);
+      return data;
+    } finally { clearTimeout(timeout); }
+  };
+
+  let communityRotateTimer = 0;
+  const renderCommunitySnapshot = data => {
+    const visits = Math.max(0, Number(data?.visits || 0));
+    const reviewCount = Math.max(0, Number(data?.reviewCount || 0));
+    const rating = Number(data?.ratingAverage);
+    const number = new Intl.NumberFormat("de-DE");
+
+    document.querySelectorAll("[data-community-visits]").forEach(node => { node.textContent = number.format(visits); });
+    document.querySelectorAll("[data-community-review-count]").forEach(node => { node.textContent = number.format(reviewCount); });
+    document.querySelectorAll("[data-community-rating]").forEach(node => {
+      node.textContent = reviewCount > 0 && Number.isFinite(rating) ? rating.toLocaleString("de-DE",{minimumFractionDigits:1,maximumFractionDigits:1}) : "–";
+    });
+    document.querySelectorAll("[data-community-visits-wrap],[data-community-visits-separator]").forEach(node => { node.hidden = false; });
+    document.querySelectorAll("[data-community-rating-wrap],[data-community-rating-separator]").forEach(node => { node.hidden = reviewCount === 0; });
+
+    const list = document.querySelector("[data-community-review-list]");
+    if (!list) return;
+    const reviews = Array.isArray(data?.reviews) ? data.reviews.filter(item => item && item.comment) : [];
+    if (communityRotateTimer) clearInterval(communityRotateTimer);
+
+    if (!reviews.length) {
+      list.replaceChildren();
+      const empty = document.createElement("article");
+      empty.className = "community-review-empty";
+      const strong = document.createElement("strong");
+      strong.textContent = "Noch keine freigegebenen Bewertungen.";
+      const p = document.createElement("p");
+      p.textContent = "Du kannst die erste echte Bewertung einreichen.";
+      empty.append(strong,p);
+      list.append(empty);
+      return;
+    }
+
+    let offset = 0;
+    const paint = () => {
+      list.replaceChildren();
+      const count = Math.min(3,reviews.length);
+      for (let i=0;i<count;i+=1) {
+        const item = reviews[(offset+i)%reviews.length];
+        const card = document.createElement("article");
+        card.className = "community-review-card";
+        const head = document.createElement("div");
+        const name = document.createElement("strong");
+        name.textContent = item.name || "Anonym";
+        const stars = document.createElement("span");
+        const score = Math.max(1,Math.min(5,Number(item.rating)||0));
+        stars.textContent = "★".repeat(score) + "☆".repeat(5-score);
+        stars.setAttribute("aria-label", score + " von 5 Sternen");
+        head.append(name,stars);
+        const quote = document.createElement("p");
+        quote.textContent = item.comment;
+        card.append(head,quote);
+        if (item.createdAt) {
+          const time = document.createElement("time");
+          const date = new Date(item.createdAt);
+          if (!Number.isNaN(date.getTime())) {
+            time.dateTime = date.toISOString();
+            time.textContent = new Intl.DateTimeFormat("de-DE",{dateStyle:"medium"}).format(date);
+            card.append(time);
+          }
+        }
+        list.append(card);
+      }
+    };
+    paint();
+    if (reviews.length > 3) {
+      communityRotateTimer = setInterval(() => { offset = (offset + 1) % reviews.length; paint(); }, 7000);
+    }
+  };
+
+  const loadCommunity = async () => {
+    if (!document.querySelector("[data-community-visits], [data-community-root]")) return;
+    let counted = false;
+    try { counted = sessionStorage.getItem("angebotslotse-community-visit-v1") === "1"; } catch {}
+    try {
+      let data;
+      if (!counted) {
+        try {
+          data = await postIntake({ kind:"visit", source:"website" });
+          try { sessionStorage.setItem("angebotslotse-community-visit-v1","1"); } catch {}
+        } catch {
+          data = await getCommunitySnapshot();
+        }
+      } else {
+        data = await getCommunitySnapshot();
+      }
+      renderCommunitySnapshot(data);
+    } catch {
+      document.querySelectorAll("[data-community-visits-wrap],[data-community-rating-wrap],[data-community-visits-separator],[data-community-rating-separator]").forEach(node => { node.hidden = true; });
+    }
+  };
+  loadCommunity();
+
+  const communityReviewForm = document.querySelector("[data-community-review-form]");
+  communityReviewForm?.addEventListener("submit", async event => {
+    event.preventDefault();
+    const status = communityReviewForm.querySelector("[data-community-review-status]");
+    const submit = communityReviewForm.querySelector('button[type="submit"]');
+    const fd = new FormData(communityReviewForm);
+    submit?.setAttribute("disabled","");
+    setStatus(status,"Bewertung wird gesendet …","info");
+    try {
+      const data = await postIntake({
+        kind:"review",
+        rating:Number(fd.get("rating")),
+        displayName:String(fd.get("displayName")||""),
+        comment:String(fd.get("comment")||""),
+        source:"website-home",
+        website:String(fd.get("website")||""),
+      });
+      const duplicate = data.state === "already_submitted" || data.state === "already_approved";
+      setStatus(status,duplicate
+        ? "Diese Bewertung wurde bereits eingereicht."
+        : "Danke! Deine Bewertung wurde gespeichert und erscheint nach kurzer Prüfung.","success");
+      if (!duplicate) communityReviewForm.reset();
+    } catch(error) {
+      const message=String(error?.message||"");
+      setStatus(status,
+        message.includes("rate_limited")
+          ? "Zu viele Bewertungen in kurzer Zeit. Bitte später erneut versuchen."
+          : "Bewertung konnte gerade nicht gespeichert werden. Bitte später erneut versuchen.",
+        "error"
+      );
+    } finally { submit?.removeAttribute("disabled"); }
+  });
 
   const dialog=document.querySelector("[data-report-dialog]");
   const openReport=()=>{

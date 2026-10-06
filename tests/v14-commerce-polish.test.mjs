@@ -17,5 +17,5 @@ test("V14 behebt die sichtbaren Commerce- und Branding-Probleme", () => {
   assert.match(build, /footer-brand-lockup/);
   assert.doesNotMatch(build, /class="footer-wordmark"/);
   assert.match(build, /Partnerangebot öffnen/);
-  assert.match(build, /site\.css\?v=43/);
+  assert.match(build, /site\.css\?v=44/);
 });
