@@ -36,11 +36,21 @@ test("PWA-App-Icons sind echte PNGs mit Store-tauglichen Größen", () => {
     assert.equal(data.readUInt32BE(20), height);
   }
   const build = fs.readFileSync("scripts/build.mjs", "utf8");
-  assert.match(build, /apple-touch-icon\.png/);
-  assert.match(build, /app-icon-192\.png/);
-  assert.match(build, /app-icon-512\.png/);
-  assert.match(build, /app-icon-maskable-512\.png/);
+  const faviconSvg = fs.readFileSync("public/favicon.svg", "utf8");
+  const sw = fs.readFileSync("public/sw.js", "utf8");
+
+  assert.match(build, /apple-touch-icon\.png\?v=4/);
+  assert.match(build, /app-icon-192\.png\?v=4/);
+  assert.match(build, /app-icon-512\.png\?v=4/);
+  assert.match(build, /app-icon-maskable-512\.png\?v=4/);
+  assert.match(build, /favicon-32\.png\?v=4/);
+  assert.match(build, /favicon\.ico\?v=4/);
   assert.match(build, /purpose:"maskable"/);
+  assert.match(faviconSvg, /Joel271997 \/ J0JOEL Logo/);
+  assert.doesNotMatch(faviconSvg, /#175d48|#d9f05b/);
+  assert.match(sw, /angebotslotse-shell-v17/);
+  assert.match(sw, /app-icon-192\.png\?v=4/);
+  assert.doesNotMatch(sw, /icon: local\("favicon\.svg"\)/);
 });
 
 test("Startseite bietet einen gerätegerechten PWA-Installationsweg", () => {

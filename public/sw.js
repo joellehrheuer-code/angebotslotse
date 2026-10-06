@@ -1,11 +1,13 @@
-const CACHE = "angebotslotse-shell-v16";
+const CACHE = "angebotslotse-shell-v17";
 const scope = self.registration.scope;
 const local = path => new URL(path, scope).href;
 const SHELL = [
   local("./"),
   local("site.css"),
   local("app.js"),
-  local("favicon.svg"),
+  local("joel-logo.svg?v=4"),
+  local("favicon-32.png?v=4"),
+  local("app-icon-192.png?v=4"),
   local("offline.html")
 ];
 
@@ -84,8 +86,8 @@ self.addEventListener("push", event => {
   const target = new URL(String(payload.url || "konto.html"), scope).href;
   const options = {
     body: String(payload.body || "Es gibt eine neue Meldung zu deinen Angeboten."),
-    icon: local("favicon.svg"),
-    badge: local("favicon.svg"),
+    icon: local("app-icon-192.png?v=4"),
+    badge: local("app-icon-192.png?v=4"),
     tag: String(payload.tag || "angebotslotse-alert"),
     renotify: false,
     data: { url: target }
