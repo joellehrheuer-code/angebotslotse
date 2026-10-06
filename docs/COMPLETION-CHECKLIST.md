@@ -179,3 +179,11 @@ Status „offen“ bedeutet: noch kein vollständiger Einzelnachweis für alle A
 - Alarm-Feed im Kontoclient erhält einen 15-Sekunden-Timeout einschließlich Antwortkörper. Keine automatische Wiederholung. Drei Verhaltenstests hinzugefügt; Client-URL bekommt Cache-Version 2.
 - FreeLLMAPI-Connector verfügbar, aber Healthcheck und Inferenz am 5. Oktober um ca. 21:16–21:18 Uhr MESZ mit HTTP 429 / UNAVAILABLE abgelehnt. Keine erfolgreiche Modell-Ausführung behauptet; unabhängige Prüfung fortgesetzt.
 - Validierung dieser Runde: 260 Tests bestanden, Integrität/Build/Seitenvalidierung/SEO/Sicherheitsprüfung erfolgreich. Veröffentlichung wird anschließend kontrolliert.
+
+## Storage-Migrationsabgleich und Partnerstatus – 6. Oktober 2026
+
+- Der strengere Live-Vertrag für `user-assets` ist jetzt in einer eigenen, idempotenten Folgemigration versioniert: privater Bucket, 5 MiB je Datei, maximal 20 Dateien im eigenen Nutzerordner und INSERT nur über `can_upload_user_asset()`.
+- Regressionstests prüfen Limit, Quotenfunktion, nutzergebundene Policy und eingeschränkte Funktionsrechte. Die ältere Ausgangsmigration bleibt unverändert; der finale Sollzustand ergibt sich reproduzierbar aus der geordneten Migrationskette.
+- Coolblue hat die erneute Prüfung am 06.10.2026 ausdrücklich abgelehnt; Werbelinks bleiben gesperrt und neue Ansprache ist ausgeschlossen. SportSpar ist `needs-info`; es werden keine Traffic- oder Sales-Zahlen ohne belegbare Analytics-Daten versendet.
+- FreeLLMAPI-Healthcheck am 06.10.2026: `UNAVAILABLE` wegen HTTP 404 am Tunnel. Keine Modellausführung erfolgt; unabhängige Arbeiten wurden fortgesetzt.
+- Validierung: 261 Tests, Integrität, Build mit 555 HTML-Seiten, Seitenvalidierung, SEO-Audit und Sicherheitsprüfung erfolgreich.
