@@ -41,12 +41,12 @@ test("V13 nutzt eigene Designschicht und frische Cache-Version",()=>{
   const html=fs.readFileSync("dist/index.html","utf8");
   const css=fs.readFileSync("public/v13.css","utf8");
   const sw=fs.readFileSync("public/sw.js","utf8");
-  assert.match(html,/site\.css\?v=35/);
+  assert.match(html,/site\.css\?v=39/);
   assert.match(css,/\.creator-top-dock\{/);
   assert.match(css,/\.creator-world\{/);
   assert.match(css,/\.owned-showcase\{/);
   assert.match(css,/\.deal-rail\{/);
-  assert.match(sw,/angebotslotse-shell-v16/);
+  assert.match(sw,/angebotslotse-shell-v17/);
 });
 
 
