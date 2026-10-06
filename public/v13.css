@@ -3942,3 +3942,176 @@ body{
     height:36px!important;
   }
 }
+
+
+/* V20 CREATOR MEDIA + REVIEW NUDGE */
+.creator-video-rail{
+  display:grid!important;
+  grid-auto-flow:column!important;
+  grid-auto-columns:minmax(280px,31%)!important;
+  gap:12px!important;
+  overflow-x:auto!important;
+  overscroll-behavior-inline:contain!important;
+  scroll-snap-type:x mandatory!important;
+  scroll-behavior:smooth!important;
+  padding:4px 2px 14px!important;
+}
+.creator-video-rail .creator-video-card{
+  scroll-snap-align:start!important;
+}
+.creator-video-rail::-webkit-scrollbar{height:8px!important}
+.creator-video-rail::-webkit-scrollbar-thumb{background:#2c3548!important;border-radius:999px!important}
+
+.creator-media-card{
+  position:relative!important;
+}
+.creator-media-logo{
+  width:48px!important;
+  height:48px!important;
+  object-fit:contain!important;
+  margin-bottom:8px!important;
+}
+.creator-media-actions{
+  display:flex!important;
+  flex-wrap:wrap!important;
+  gap:8px!important;
+  margin-top:12px!important;
+}
+.creator-media-actions .button{
+  min-height:42px!important;
+  flex:1 1 160px!important;
+}
+.creator-embed-host{
+  grid-column:1/-1!important;
+  width:100%!important;
+  margin-top:12px!important;
+  border-radius:14px!important;
+  overflow:hidden!important;
+  background:#0b0f16!important;
+}
+.creator-embed-host iframe{
+  display:block!important;
+  width:100%!important;
+  min-height:352px!important;
+  border:0!important;
+}
+.creator-twitch-preview{
+  display:block!important;
+  margin-top:10px!important;
+  border-radius:12px!important;
+  overflow:hidden!important;
+}
+.creator-twitch-preview img{
+  display:block!important;
+  width:100%!important;
+  aspect-ratio:16/9!important;
+  object-fit:cover!important;
+}
+
+.review-nudge{
+  width:min(520px,calc(100vw - 28px))!important;
+  max-width:none!important;
+  margin:auto auto 20px!important;
+  padding:0!important;
+  border:1px solid #354058!important;
+  border-radius:22px!important;
+  background:#10151f!important;
+  color:#fff!important;
+  box-shadow:0 28px 80px rgba(0,0,0,.55)!important;
+}
+.review-nudge::backdrop{
+  background:rgba(3,6,12,.56)!important;
+  backdrop-filter:blur(4px)!important;
+}
+.review-nudge form{
+  position:relative!important;
+  padding:22px!important;
+}
+.review-nudge h2{
+  margin:7px 0 8px!important;
+  font-size:clamp(24px,3vw,34px)!important;
+  line-height:1.05!important;
+}
+.review-nudge p{
+  margin:0 0 15px!important;
+  color:#9ca7ba!important;
+  line-height:1.55!important;
+}
+.review-nudge-close{
+  position:absolute!important;
+  top:12px!important;
+  right:12px!important;
+  width:38px!important;
+  height:38px!important;
+  border:1px solid #313a4e!important;
+  border-radius:999px!important;
+  background:#171d29!important;
+  color:#fff!important;
+  cursor:pointer!important;
+}
+.review-nudge-stars{
+  display:flex!important;
+  gap:7px!important;
+  margin:10px 0 16px!important;
+}
+.review-nudge-stars button{
+  width:46px!important;
+  height:46px!important;
+  border:1px solid #3a4357!important;
+  border-radius:11px!important;
+  background:#171d29!important;
+  color:#ffd166!important;
+  font-size:24px!important;
+  cursor:pointer!important;
+}
+.review-nudge-stars button:hover,
+.review-nudge-stars button:focus-visible{
+  transform:translateY(-2px)!important;
+  border-color:#a28649!important;
+  background:#211d15!important;
+}
+.review-nudge-actions{
+  display:grid!important;
+  grid-template-columns:1fr auto!important;
+  gap:8px!important;
+}
+.review-nudge-actions .button{
+  min-height:44px!important;
+}
+
+@media(max-width:1050px){
+  .creator-video-rail{
+    grid-auto-columns:minmax(270px,44%)!important;
+  }
+}
+@media(max-width:760px){
+  .creator-video-rail{
+    grid-auto-columns:min(84vw,310px)!important;
+  }
+  .creator-media-actions{
+    display:grid!important;
+    grid-template-columns:1fr!important;
+  }
+  .creator-embed-host iframe{
+    min-height:300px!important;
+  }
+  .review-nudge{
+    margin:auto 14px 14px!important;
+    width:calc(100vw - 28px)!important;
+    border-radius:18px!important;
+  }
+  .review-nudge form{
+    padding:18px!important;
+  }
+  .review-nudge-stars{
+    justify-content:space-between!important;
+  }
+  .review-nudge-stars button{
+    width:calc((100vw - 92px)/5)!important;
+    max-width:48px!important;
+    min-width:40px!important;
+  }
+  .review-nudge-actions{
+    grid-template-columns:1fr!important;
+  }
+}
