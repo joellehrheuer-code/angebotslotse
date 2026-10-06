@@ -187,3 +187,4 @@ Status „offen“ bedeutet: noch kein vollständiger Einzelnachweis für alle A
 - Coolblue hat die erneute Prüfung am 06.10.2026 ausdrücklich abgelehnt; Werbelinks bleiben gesperrt und neue Ansprache ist ausgeschlossen. SportSpar ist `needs-info`; es werden keine Traffic- oder Sales-Zahlen ohne belegbare Analytics-Daten versendet.
 - FreeLLMAPI-Healthcheck am 06.10.2026: `UNAVAILABLE` wegen HTTP 404 am Tunnel. Keine Modellausführung erfolgt; unabhängige Arbeiten wurden fortgesetzt.
 - Validierung: 261 Tests, Integrität, Build mit 555 HTML-Seiten, Seitenvalidierung, SEO-Audit und Sicherheitsprüfung erfolgreich.
+- Der Supabase-Sicherheitsberater beanstandete die öffentlich aufrufbare `SECURITY DEFINER`-Quotenfunktion. Eine Folgemigration stellt sie auf `SECURITY INVOKER`; die nutzergebundene Storage-SELECT-Policy begrenzt die Zählung weiterhin auf den eigenen Ordner.
