@@ -1,13 +1,13 @@
 [
   {
-    "code": "20OFF",
-    "discountText": "Sichere dir jetzt 20% Rabatt auf (fast) alles bei EMP ab einem Mindestbestellwert von 59,99 € und entdecke deine neuen Lieblingsstyles für die Saison.",
+    "code": "MIDWEEK",
+    "discountText": "Herbstlook oder Halloween-Outfit? Bei uns wirst du fündig und kannst dir nur heute ganze 22% Rabatt auf deine nächste Bestellung ab 59,99€ sichern! Und da sag doch jemand, dass der Mittwoch der schlimmste Tag der Woche sei...",
     "discountPercent": null,
-    "validFrom": "2026-09-30T22:00:00.000Z",
-    "validUntil": "2026-10-06T21:59:00.000Z",
+    "validFrom": "2026-10-06T22:00:00.000Z",
+    "validUntil": "2026-10-07T21:59:00.000Z",
     "merchant": "EMP DE",
     "landingUrl": "https://www.awin1.com/cread.php?awinmid=14172&awinaffid=3045061&ued=https%3A%2F%2Fwww.emp.de%2Fbekleidung-accessoires%2F",
-    "terms": "*Nur online. Gilt ab einem Kauf ab mindestens 59,99€. Weitere Ausschlüsse der Aktion findest du hier: https://www.emp.de/global-exclusions/. Nach Codeeingabe wird der Rabatt automatisch am Ende der Bestellung abgezogen. Nicht mit anderen Aktionscodes kombinierbar. Gültig bis einschließlich 06.10.2026",
+    "terms": "Nur online. Gilt ab einem Kauf ab mindestens 59,99€. Weitere Ausschlüsse der Aktion findest du hier: https://www.emp.de/global-exclusions/. Nach Codeeingabe wird der Rabatt automatisch am Ende der Bestellung abgezogen. Nicht mit anderen Aktionscodes kombinierbar. Gültig am 07.10.2026.",
     "source": "awin",
     "isCommunityExclusive": false,
     "creatorCode": null,

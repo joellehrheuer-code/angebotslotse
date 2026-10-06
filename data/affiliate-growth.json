@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-06T21:20:12.911Z",
+  "generatedAt": "2026-10-06T23:49:35.815Z",
   "market": "DE",
   "publisherId": 3045061,
   "awin": {
@@ -8,9 +8,9 @@
       "pending": 3,
       "suspended": 1,
       "rejected": 2,
-      "notjoined": 2617
+      "notjoined": 2620
     },
-    "totalProgramsEvaluated": 2628,
+    "totalProgramsEvaluated": 2631,
     "reportedPrograms": 200,
     "programs": [
       {
@@ -2395,9 +2395,9 @@
         "advertiserId": 14611,
         "status": "notjoined",
         "category": "Technik & Computer",
-        "score": 54,
+        "score": 48,
         "priority": "mittel",
-        "activeDiscoveryOffers": 4,
+        "activeDiscoveryOffers": 3,
         "offerExamples": [
           "15 € Rabatt beim OFFICE Partner Deal of the Week:  CHERRY Xtrfy G80-3000N RGB Wired Tastatur - Schwarz CHERRY  MX Silent Red, DE-Layout QWER",
           "10 € Rabatt beim OFFICE Partner Deal of the Week:  CHERRY Stream Desktop Ultimate Wireless kabelloses Desktop-Set - QWERTZ DE -",
@@ -2417,10 +2417,10 @@
         },
         "reasons": [
           "passt zu Technik & Computer",
-          "4 aktive DE-Aktionen"
+          "3 aktive DE-Aktionen"
         ],
         "applicationRequired": true,
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Office-partner DE redaktionell passend im Bereich Technik & Computer einbinden. Bei Awin sind aktuell 4 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Office-partner DE redaktionell passend im Bereich Technik & Computer einbinden. Bei Awin sind aktuell 3 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
         "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
         "automationState": "ready-for-review"
       },

@@ -1,6 +1,22 @@
 {
-  "updatedAt": "2026-10-06T21:20:12.823Z",
+  "updatedAt": "2026-10-06T23:49:35.725Z",
   "items": [
+    {
+      "id": "d3cd3625c64f9312",
+      "slug": "20-fur-die-neue-saison-d3cd3625",
+      "title": "20% für die neue Saison!",
+      "advertiser": "EMP DE",
+      "source": "awin",
+      "productId": null,
+      "category": "sonstiges",
+      "lastPrice": null,
+      "currency": "EUR",
+      "firstSeen": "2026-09-29T11:12:13.000Z",
+      "lastSeen": "2026-10-06T21:20:12.605Z",
+      "endDate": "2026-10-06T21:59:00.000Z",
+      "archivedAt": "2026-10-06T23:49:35.725Z",
+      "reason": "expired"
+    },
     {
       "id": "1f776453ae004a2d",
       "slug": "deals-deals-deals-1f776453",
