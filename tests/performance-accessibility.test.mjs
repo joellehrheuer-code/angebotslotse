@@ -16,15 +16,12 @@ test("Lighthouse-Fixes reduzieren Hero-Asset und benennen Creator-Links", () => 
   const sourceCss = `${fs.readFileSync("public/styles.css", "utf8")}\n\n${fs.readFileSync("public/enhancements.css", "utf8")}\n\n${fs.readFileSync("public/v13.css", "utf8")}`;
   const sourceApp = fs.readFileSync("public/app.js", "utf8");
   const privacy = fs.readFileSync("dist/datenschutz.html", "utf8");
-  const hero = fs.statSync("dist/brand-hero.jpg");
-
-  assert.ok(hero.size < 100_000, "Optimiertes Hero-Bild sollte deutlich unter 100 KB bleiben.");
-  assert.match(home, /brand-hero\.jpg/);
+  assert.doesNotMatch(home, /hero-logo-stage[^>]*>[\s\S]*?brand-hero\.jpg/);
+  assert.match(home, /hero-logo-stage/);
+  assert.match(home, /joel-logo\.svg\?v=4/);
   assert.match(home, /header-brand-picture/);
-  assert.match(home, /joel-logo\.svg/);
   assert.match(home, /creator-profile-image/);
-  assert.match(home, /joel-logo\.svg/);
-  assert.match(home, /width="720" height="378"/);
+  assert.doesNotMatch(home, /hero-logo-stage[^>]*>[\s\S]*?width="720" height="378"/);
   assert.doesNotMatch(home, /<img[^>]+src="[^"]*\/og\.png"/);
   assert.match(home, /creator-video-media[^>]+aria-label=/);
   assert.match(home, /data-ig-banner-load/);
@@ -38,7 +35,7 @@ test("Lighthouse-Fixes reduzieren Hero-Asset und benennen Creator-Links", () => 
   assert.ok(app.length < sourceApp.length, "Produktions-JS muss kleiner als die lesbare Quelle sein.");
   assert.doesNotMatch(css, /\/\* V12 NIGHT MARKET/);
   assert.equal((home.match(/rel="stylesheet"/g) || []).length, 1);
-  assert.match(home, /site\.css\?v=39/);
+  assert.match(home, /site\.css\?v=40/);
   assert.match(home, /app\.js\?v=20/);
   assert.doesNotMatch(home, /styles\.css\?v=8|enhancements\.css\?v=8/);
   assert.match(home, /cdn\.shopify\.com[^"]*width=640|cdn\.shopify\.com[^"]*width%3D640/);

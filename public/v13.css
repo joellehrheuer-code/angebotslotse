@@ -2074,3 +2074,319 @@ body{
     font-size:19px!important;
   }
 }
+
+
+/* V15 HOME COMMERCE POLISH — calmer rhythm, wider cards, unified Joel branding */
+.portal-hero{
+  grid-template-columns:minmax(0,1.08fr) minmax(360px,.92fr)!important;
+  gap:34px!important;
+  padding:clamp(30px,4vw,56px)!important;
+}
+.portal-brand-panel{
+  min-height:430px!important;
+  padding:20px!important;
+}
+.hero-visual-brand{
+  display:grid!important;
+  justify-items:center!important;
+  gap:8px!important;
+  margin-top:14px!important;
+  text-align:center!important;
+}
+.hero-logo-stage{
+  display:grid!important;
+  place-items:center!important;
+  width:96px!important;
+  height:96px!important;
+  padding:6px!important;
+  border:1px solid #31394c!important;
+  border-radius:24px!important;
+  background:#10151f!important;
+  box-shadow:0 16px 34px rgba(0,0,0,.26)!important;
+}
+.hero-logo-stage img{
+  width:84px!important;
+  height:84px!important;
+  max-width:none!important;
+  max-height:none!important;
+  object-fit:contain!important;
+  border-radius:18px!important;
+  filter:none!important;
+}
+.hero-visual-brand>strong{
+  color:#fff!important;
+  font-size:18px!important;
+  line-height:1!important;
+}
+.hero-visual-brand>span{
+  max-width:300px!important;
+  color:#909bad!important;
+  font-size:10px!important;
+  line-height:1.45!important;
+}
+.hero-product-stack{
+  gap:10px!important;
+}
+.hero-product-card{
+  min-width:0!important;
+  border-radius:16px!important;
+}
+.hero-product-card strong{
+  display:-webkit-box!important;
+  -webkit-line-clamp:2!important;
+  -webkit-box-orient:vertical!important;
+  overflow:hidden!important;
+}
+
+/* Main home sections */
+.deal-section,
+.categories,
+.directory-section,
+.trust-quality,
+.newsletter-live,
+.creator-videos,
+.creator-media,
+.creator-updates,
+.owned-showcase,
+.partner-section{
+  scroll-margin-top:120px!important;
+}
+.deal-section{
+  padding-top:42px!important;
+  padding-bottom:18px!important;
+}
+.deal-section+.deal-section{
+  padding-top:34px!important;
+}
+.deal-section .section-head,
+.categories .section-head,
+.directory-section .section-head{
+  padding-bottom:12px!important;
+  border-bottom:1px solid #1e2532!important;
+}
+.section-head h2{
+  max-width:940px!important;
+  font-size:clamp(34px,3.6vw,54px)!important;
+  line-height:1!important;
+}
+.section-head p{
+  max-width:760px!important;
+  margin-top:8px!important;
+  line-height:1.55!important;
+}
+
+/* Deal rails: fewer, wider cards instead of squeezed six-column rows */
+.deal-rail{
+  grid-auto-columns:clamp(278px,21vw,322px)!important;
+  gap:14px!important;
+  padding:6px 4px 16px!important;
+  scroll-padding-inline:4px!important;
+}
+.deal-card{
+  min-width:0!important;
+  border-radius:20px!important;
+  background:#11151f!important;
+  border-color:#293144!important;
+  box-shadow:0 12px 30px rgba(0,0,0,.16)!important;
+}
+.deal-card:hover{
+  transform:translateY(-4px)!important;
+  border-color:#414b63!important;
+  box-shadow:0 20px 42px rgba(0,0,0,.26)!important;
+}
+.deal-card .media-wrap{
+  background:#f4f5f8!important;
+}
+.deal-card .product-image,
+.deal-card .product-image.has-media{
+  height:206px!important;
+  min-height:206px!important;
+  aspect-ratio:auto!important;
+  background:#f4f5f8!important;
+}
+.deal-card .product-image img{
+  width:100%!important;
+  height:100%!important;
+  padding:10px!important;
+  object-fit:contain!important;
+}
+.deal-card .deal-content{
+  min-height:300px!important;
+  padding:16px!important;
+}
+.deal-card .card-top{
+  gap:8px!important;
+}
+.deal-card h3{
+  min-height:0!important;
+  margin:9px 0 7px!important;
+  font-size:15px!important;
+  line-height:1.35!important;
+  -webkit-line-clamp:3!important;
+}
+.deal-card .merchant{
+  min-height:0!important;
+  margin-bottom:12px!important;
+}
+.deal-card .price strong{
+  font-size:24px!important;
+}
+.deal-card .sparkline{
+  min-height:34px!important;
+  margin:9px 0 5px!important;
+}
+.deal-card .card-cta{
+  min-height:46px!important;
+  border-radius:12px!important;
+  font-size:14px!important;
+}
+.deal-card .ad-label{
+  margin-top:7px!important;
+  text-align:center!important;
+}
+
+/* Make information directories useful without large empty bands */
+.directory-section{
+  padding-top:34px!important;
+  padding-bottom:8px!important;
+}
+.directory-link-grid{
+  grid-template-columns:repeat(4,minmax(0,1fr))!important;
+  gap:10px!important;
+}
+.directory-link-grid>a{
+  min-height:92px!important;
+  padding:14px 15px!important;
+  justify-content:center!important;
+  border-radius:16px!important;
+}
+.directory-link-grid>a strong{
+  font-size:15px!important;
+}
+.directory-link-grid>a span{
+  font-size:10px!important;
+}
+
+/* Trust block: readable, less oversized */
+.trust-quality{
+  margin-top:40px!important;
+  padding:24px!important;
+}
+.trust-quality-head h2{
+  font-size:clamp(34px,3.8vw,56px)!important;
+}
+.trust-quality-grid{
+  grid-template-columns:repeat(4,minmax(0,1fr))!important;
+  gap:10px!important;
+}
+.trust-quality-grid article{
+  min-height:205px!important;
+  padding:17px!important;
+}
+.review-policy{
+  margin-top:10px!important;
+  padding:18px!important;
+}
+
+/* Daily deal should feel like a feature, not a giant billboard */
+.daily-deal{
+  grid-template-columns:minmax(0,.92fr) minmax(360px,1.08fr)!important;
+  min-height:0!important;
+  border:1px solid #283043!important;
+  border-radius:24px!important;
+  background:#10141d!important;
+  box-shadow:0 18px 45px rgba(0,0,0,.2)!important;
+}
+.daily-media{
+  min-height:340px!important;
+}
+.daily-copy{
+  padding:clamp(26px,4vw,48px)!important;
+}
+.daily-copy h2{
+  font-size:clamp(32px,3vw,46px)!important;
+}
+.daily-title{
+  font-size:clamp(22px,2vw,30px)!important;
+}
+
+@media(max-width:1180px){
+  .portal-hero{
+    grid-template-columns:1fr!important;
+  }
+  .portal-brand-panel{
+    min-height:0!important;
+  }
+  .deal-rail{
+    grid-auto-columns:clamp(270px,30vw,310px)!important;
+  }
+  .directory-link-grid,
+  .trust-quality-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  }
+}
+@media(max-width:760px){
+  .portal-hero{
+    gap:20px!important;
+    padding:22px 16px!important;
+  }
+  .portal-brand-panel{
+    padding:15px!important;
+  }
+  .hero-logo-stage{
+    width:78px!important;
+    height:78px!important;
+    border-radius:20px!important;
+  }
+  .hero-logo-stage img{
+    width:68px!important;
+    height:68px!important;
+    border-radius:15px!important;
+  }
+  .deal-section{
+    padding-top:30px!important;
+    padding-bottom:10px!important;
+  }
+  .deal-section .section-head,
+  .categories .section-head,
+  .directory-section .section-head{
+    padding-bottom:10px!important;
+  }
+  .section-head h2{
+    font-size:clamp(28px,8vw,38px)!important;
+  }
+  .deal-rail{
+    grid-auto-columns:min(84vw,310px)!important;
+    gap:11px!important;
+  }
+  .deal-card .product-image,
+  .deal-card .product-image.has-media{
+    height:180px!important;
+    min-height:180px!important;
+  }
+  .deal-card .deal-content{
+    min-height:0!important;
+  }
+  .directory-link-grid,
+  .trust-quality-grid{
+    grid-template-columns:1fr 1fr!important;
+  }
+  .daily-deal{
+    grid-template-columns:1fr!important;
+  }
+  .daily-media{
+    min-height:240px!important;
+  }
+  .daily-copy{
+    padding:22px 18px!important;
+  }
+}
+@media(max-width:430px){
+  .deal-rail{
+    grid-auto-columns:min(88vw,300px)!important;
+  }
+  .directory-link-grid,
+  .trust-quality-grid{
+    grid-template-columns:1fr!important;
+  }
+}

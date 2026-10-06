@@ -18,7 +18,7 @@ test("V12.2 applies one premium architecture to the main subpages", () => {
     assert.ok(fs.existsSync(file), "missing built page: "+file);
     const html=fs.readFileSync(file,"utf8");
     assert.match(html,/class="[^"]*subpage-hero/,"missing premium subpage hero in "+file);
-    assert.match(html,/site\.css\?v=39/,"stale CSS cache version in "+file);
+    assert.match(html,/site\.css\?v=40/,"stale CSS cache version in "+file);
   }
 
   const categoryFiles = [
