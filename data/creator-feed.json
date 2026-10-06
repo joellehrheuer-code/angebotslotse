@@ -1,8 +1,58 @@
 {
   "version": 1,
   "source": "social-distributor",
-  "updatedAt": "2026-10-06T10:20:25.851Z",
+  "updatedAt": "2026-10-06T11:16:55.217Z",
   "items": [
+    {
+      "id": "facebook-673c8406-4bb9-4152-9c2f-3d741fa3578a",
+      "type": "video",
+      "title": "Manchmal sieht man einem Menschen nicht an, was wirklich in ihm vorgeht.",
+      "summary": null,
+      "platform": "Facebook",
+      "publicUrl": "https://www.facebook.com/reel/2354535491955809",
+      "thumbnailUrl": null,
+      "publishedAt": "2026-10-06T10:27:19.512Z"
+    },
+    {
+      "id": "instagram-2653bbd4-8054-4514-bc62-e8a979e5acec",
+      "type": "video",
+      "title": "Mein Herz gehört nur dir ❤️",
+      "summary": "Manchmal braucht Liebe keine langen Erklärungen. Ein einziger Mensch kann sich wie Zuhause anfühlen. #Liebe #Beziehung #Romantik",
+      "platform": "Instagram",
+      "publicUrl": "https://www.instagram.com/reel/DeJkCdUgRfN/",
+      "thumbnailUrl": null,
+      "publishedAt": "2026-10-06T10:25:26.477Z"
+    },
+    {
+      "id": "tiktok-c3cc8027-f9e2-4275-984c-0e993ff600ad",
+      "type": "video",
+      "title": "Mein Herz gehört nur dir ❤️",
+      "summary": "Manchmal braucht Liebe keine langen Erklärungen. Ein einziger Mensch kann sich wie Zuhause anfühlen. #Liebe #Beziehung #Romantik",
+      "platform": "TikTok",
+      "publicUrl": "https://www.tiktok.com/@joel.27.1997/video/7693498758537039137?utm_campaign=tt4d_open_api&utm_source=aw219jxv8gd20yz9",
+      "thumbnailUrl": null,
+      "publishedAt": "2026-10-06T10:25:22.307Z"
+    },
+    {
+      "id": "youtube-c3169041-7069-4e97-b161-2edb88ae9c51",
+      "type": "video",
+      "title": "Mein Herz gehört nur dir ❤️",
+      "summary": "Manchmal braucht Liebe keine langen Erklärungen. Ein einziger Mensch kann sich wie Zuhause anfühlen. #Liebe #Beziehung #Romantik",
+      "platform": "YouTube",
+      "publicUrl": "https://www.youtube.com/shorts/s-fuwjMA7Do",
+      "thumbnailUrl": "https://i.ytimg.com/vi/s-fuwjMA7Do/hqdefault.jpg",
+      "publishedAt": "2026-10-06T10:24:35.903Z"
+    },
+    {
+      "id": "facebook-c8582b0f-fa20-4489-940f-738ae912abc6",
+      "type": "video",
+      "title": "Mein Herz gehört nur dir ❤️",
+      "summary": "Manchmal braucht Liebe keine langen Erklärungen. Ein einziger Mensch kann sich wie Zuhause anfühlen. #Liebe #Beziehung #Romantik",
+      "platform": "Facebook",
+      "publicUrl": "https://www.facebook.com/reel/1444895124195996",
+      "thumbnailUrl": null,
+      "publishedAt": "2026-10-06T10:24:23.383Z"
+    },
     {
       "id": "instagram-b353e2b6-2887-4826-8158-22ea247d6a3b",
       "type": "video",
