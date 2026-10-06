@@ -1034,3 +1034,17 @@ body{
   line-height:1.4!important;
   text-align:center;
 }
+
+/* Secondary wishlist actions must remain legible in the dark theme. */
+.watch-actions .button{
+  background:var(--v13-surface-2)!important;
+  color:var(--v13-ink)!important;
+  border:1px solid var(--v13-line)!important;
+  min-height:44px!important;
+}
+.watch-actions button{
+  background:linear-gradient(135deg,var(--v13-pink),var(--v13-violet))!important;
+  color:#fff!important;
+  border-color:transparent!important;
+  min-height:44px!important;
+}
