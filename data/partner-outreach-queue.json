@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-06T15:24:21.231Z",
+  "generatedAt": "2026-10-06T15:45:44.946Z",
   "dailyNewContactLimit": 8,
   "safeguards": {
     "dedupeAgainst": "report/partner-outreach-status.json",
@@ -165,13 +165,6 @@
       "lastContactAt": "2026-09-02T19:43:09+02:00"
     },
     {
-      "brand": "Samsung Shop DE",
-      "reason": "existing-status:pending",
-      "relatedBrand": null,
-      "status": "pending",
-      "lastContactAt": "2026-09-29T13:36:00+02:00"
-    },
-    {
       "brand": "Ankerkraut DE",
       "reason": "existing-status:pending",
       "relatedBrand": null,
@@ -184,6 +177,13 @@
       "relatedBrand": null,
       "status": "pending",
       "lastContactAt": "2026-09-29T13:40:00+02:00"
+    },
+    {
+      "brand": "BSTN DACH",
+      "reason": "existing-status:pending",
+      "relatedBrand": null,
+      "status": "pending",
+      "lastContactAt": "2026-09-30T02:05:00+02:00"
     }
   ]
 }
