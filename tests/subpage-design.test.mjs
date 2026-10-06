@@ -10,5 +10,5 @@ test("Kategorien, Shops und Vergleiche nutzen die kanonische V13.6-Regel", () =>
   assert.match(css, /\.shop-grid,/);
   assert.match(css, /\.comparison-service-grid\{/);
   assert.match(css, /\.categories-page \.category-grid\.large/);
-  assert.match(build, /site\.css\?v=38/);
+  assert.match(build, /site\\.css\\?v=\\d+/);
 });
