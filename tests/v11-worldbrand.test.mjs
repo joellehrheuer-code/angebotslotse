@@ -23,7 +23,7 @@ test("V11 premium system keeps the real brand, search and footer architecture", 
   const css = fs.readFileSync("dist/enhancements.css", "utf8");
   const app = fs.readFileSync("public/app.js", "utf8");
   assert.match(html, /class="hero-logo-stage"/);
-  assert.match(html, /brand-hero\.jpg/);
+  assert.match(html, /joel-logo\.svg\?v=4/);
   assert.match(html, /global-search-suggestions/);
   assert.match(html, /data-footer-group/);
   assert.match(html, /Joel271997 \/ J0JOEL/);
