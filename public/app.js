@@ -362,6 +362,19 @@ document.querySelectorAll(".header-links a, #main-nav a, .mobile-bottom-nav a, .
 const menuButton = document.querySelector(".menu-toggle");
 const mainNav = document.querySelector("#main-nav");
 const siteHeader = document.querySelector(".site-header");
+// Measure the header after wrapping, font loading and viewport changes.
+const syncHeaderGeometry = () => {
+  if (!siteHeader) return;
+  const top = Number.parseFloat(getComputedStyle(siteHeader).top) || 0;
+  const bottom = Math.ceil(top + siteHeader.offsetHeight);
+  document.documentElement.style.setProperty("--header-overlay-top", bottom + "px");
+};
+syncHeaderGeometry();
+if (siteHeader && typeof ResizeObserver !== "undefined") {
+  new ResizeObserver(syncHeaderGeometry).observe(siteHeader);
+}
+addEventListener("resize", syncHeaderGeometry);
+
 const menuLabel = menuButton?.querySelector(".sr-only");
 const closeMenu = ({focus=false} = {}) => {
   menuButton?.setAttribute("aria-expanded", "false");

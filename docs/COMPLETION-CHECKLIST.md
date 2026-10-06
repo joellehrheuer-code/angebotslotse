@@ -189,3 +189,15 @@ Status „offen“ bedeutet: noch kein vollständiger Einzelnachweis für alle A
 - Validierung: 261 Tests, Integrität, Build mit 555 HTML-Seiten, Seitenvalidierung, SEO-Audit und Sicherheitsprüfung erfolgreich.
 - Der Supabase-Sicherheitsberater beanstandete die öffentlich aufrufbare `SECURITY DEFINER`-Quotenfunktion. Eine Folgemigration stellt sie auf `SECURITY INVOKER`; die nutzergebundene Storage-SELECT-Policy begrenzt die Zählung weiterhin auf den eigenen Ordner.
 - GitHub Actions nutzt im Update-Workflow nun `contents: read` als Standard. Nur der getrennte Commit-Job erhält `contents: write`; geprüfte generierte Dateien werden über ein kurzlebiges internes Artifact übergeben. Deployment wartet auf Validierung und Commit-Job.
+
+## 06.10.2026 – Mobile Lesbarkeit und Overlay-Position
+
+- Mobile Hinweise von 7–10 px auf 11–16 px angehoben; Formularfelder mindestens 16 px, zentrale Touch-Flächen mindestens 44 px.
+- Menü und mobile Suchvorschläge folgen der gemessenen Headerhöhe statt festen Pixelpositionen. ResizeObserver und Resize-Fallback berücksichtigen Umbruch und Schriftänderungen.
+- Suchvorschläge im mobilen Menü bleiben im Menüfluss; dessen Scrollbereich berücksichtigt die untere Navigation.
+- Produkt-Kaufbutton erhält die vorhandenen Pink/Violett-Markenfarben.
+- Drei Verhaltenstests prüfen Headerwachstum, Größenänderung ohne ResizeObserver und Seiten ohne Header.
+- Live-Browserprüfung des bestehenden Funktionsstands: Suche OutIn, kombinierter Preis-/Markenfilter, 0 Treffer mit Leerzustand, Zurücksetzen auf 256 Treffer; Produktbild und Preisverlauf-Zeitraumwechsel 7/90 Tage erfolgreich.
+- FreeLLMAPI-Healthcheck weiterhin UNAVAILABLE: MCP SSE probe HTTP 429. Unabhängige Schritte fortgesetzt.
+- Reale mobile Viewports, 200%-Textzoom sowie Safari/Firefox/Edge bleiben offen; diese Sitzung bietet keine dokumentierte Viewport-Umschaltung. Die CSS- und Verhaltenstests ersetzen diese Sichtprüfung nicht.
+- Veröffentlichung und Live-Prüfung dieser Änderung stehen zum Zeitpunkt dieser Notiz noch aus.
