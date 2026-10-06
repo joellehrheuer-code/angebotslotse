@@ -25,7 +25,7 @@ on:
     - cron: "23 2 * * *"
   workflow_dispatch:
 permissions:
-  contents: write
+  contents: read
 concurrency:
   group: angebotslotse-update-${{ github.ref }}
   cancel-in-progress: true
@@ -77,12 +77,48 @@ jobs:
           GOOGLE_SITE_VERIFICATION: ${{ vars.GOOGLE_SITE_VERIFICATION }}
       - uses: actions/upload-pages-artifact@v3
         with: { path: dist }
+      - name: Stage generated data for the write-scoped job
+        uses: actions/upload-artifact@v4
+        with:
+          name: generated-data
+          retention-days: 1
+          if-no-files-found: error
+          path: |
+            data/offers.json
+            data/offer-archive.json
+            data/status.json
+            data/price-history.json
+            data/coupons.json
+            data/affiliate-growth.json
+            data/program-opportunities.json
+            data/impact-opportunities.json
+            data/affiliate-opportunities.json
+            data/partner-outreach-queue.json
+            data/creator-feed.json
+            data/creator-videos.json
+            report/program-inventory.json
+            report/manual-actions.json
+            report/update-report.json
+            report/seo-report.json
+
+  commit:
+    needs: update
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Restore generated data
+        uses: actions/download-artifact@v4
+        with:
+          name: generated-data
+          path: .
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "chore(data): Angebote automatisch aktualisieren"
           file_pattern: "data/offers.json data/offer-archive.json data/status.json data/price-history.json data/coupons.json data/affiliate-growth.json data/program-opportunities.json data/impact-opportunities.json data/affiliate-opportunities.json data/partner-outreach-queue.json data/creator-feed.json data/creator-videos.json report/program-inventory.json report/manual-actions.json report/update-report.json report/seo-report.json"
   deploy:
-    needs: update
+    needs: [update, commit]
     permissions: { pages: write, id-token: write }
     environment:
       name: github-pages
