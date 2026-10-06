@@ -14,7 +14,7 @@ const build=()=>{
 test("V13 zeigt Joels Logo im Header und in der Creator-Welt",()=>{
   build();
   const html=fs.readFileSync("dist/index.html","utf8");
-  assert.match(html,/class="brand-logo"[^>]+joel-logo\.svg\?v=2/);
+  assert.match(html,/class="brand-logo"[^>]+joel-logo\.svg\?v=3/);
   assert.match(html,/class="creator-top-dock"/);
   assert.match(html,/class="creator-world reveal"/);
   assert.match(html,/class="creator-world-backdrop"/);
