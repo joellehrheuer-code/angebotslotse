@@ -20,12 +20,28 @@ test("V12.2 applies one premium architecture to the main subpages", () => {
     assert.match(html,/class="[^"]*subpage-hero/,"missing premium subpage hero in "+file);
     assert.match(html,/site\.css\?v=33/,"stale CSS cache version in "+file);
   }
-  const category=fs.readFileSync("dist/technik.html","utf8");
+
+  const categoryFiles = [
+    "gaming","technik","computer","audio-musik","zubehoer","smart-home","homeoffice",
+    "haushalt","garten","werkzeug","mode","sport-fitness","gesundheit","beauty",
+    "auto","tierbedarf","freizeit","sonstiges"
+  ].map(slug => `dist/${slug}.html`);
+  let activeCategoryCount = 0;
+  for (const file of categoryFiles) {
+    const html = fs.readFileSync(file,"utf8");
+    if (/class="deal-card\b/.test(html)) {
+      activeCategoryCount += 1;
+      assert.match(html,/listing-filters/,"active category misses listing filters in "+file);
+    } else {
+      assert.match(html,/0 aktive Angebote/,"empty category misses its explicit empty state in "+file);
+    }
+  }
+  assert.ok(activeCategoryCount > 0,"expected at least one active category in the current inventory");
+
   const shops=fs.readFileSync("dist/shops.html","utf8");
   const account=fs.readFileSync("dist/konto.html","utf8");
   const css=fs.readFileSync("public/enhancements.css","utf8");
   const sw=fs.readFileSync("dist/sw.js","utf8");
-  assert.match(category,/listing-filters/);
   assert.match(shops,/class="shop-grid"/);
   assert.match(account,/class="account-grid"/);
   assert.match(css,/V12\.2 SITEWIDE/);
