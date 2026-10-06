@@ -21,7 +21,7 @@ test("Lighthouse-Fixes reduzieren Hero-Asset und benennen Creator-Links", () => 
   assert.ok(hero.size < 100_000, "Optimiertes Hero-Bild sollte deutlich unter 100 KB bleiben.");
   assert.match(home, /brand-hero\.jpg/);
   assert.match(home, /header-brand-picture/);
-  assert.match(home, /favicon\.svg/);
+  assert.match(home, /joel-logo\.svg/);
   assert.match(home, /creator-profile-image/);
   assert.match(home, /joel-logo\.svg/);
   assert.match(home, /width="720" height="378"/);
@@ -38,8 +38,8 @@ test("Lighthouse-Fixes reduzieren Hero-Asset und benennen Creator-Links", () => 
   assert.ok(app.length < sourceApp.length, "Produktions-JS muss kleiner als die lesbare Quelle sein.");
   assert.doesNotMatch(css, /\/\* V12 NIGHT MARKET/);
   assert.equal((home.match(/rel="stylesheet"/g) || []).length, 1);
-  assert.match(home, /site\.css\?v=35/);
-  assert.match(home, /app\.js\?v=19/);
+  assert.match(home, /site\.css\?v=39/);
+  assert.match(home, /app\.js\?v=20/);
   assert.doesNotMatch(home, /styles\.css\?v=8|enhancements\.css\?v=8/);
   assert.match(home, /cdn\.shopify\.com[^"]*width=640|cdn\.shopify\.com[^"]*width%3D640/);
 });
