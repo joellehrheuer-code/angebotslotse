@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-10-06T01:19:16.176Z",
+  "generatedAt": "2026-10-06T10:20:41.747Z",
   "market": "DE",
   "publisherId": 3045061,
   "awin": {
     "counts": {
       "joined": 5,
-      "pending": 4,
+      "pending": 3,
       "suspended": 1,
-      "rejected": 1,
-      "notjoined": 2614
+      "rejected": 2,
+      "notjoined": 2613
     },
-    "totalProgramsEvaluated": 2625,
+    "totalProgramsEvaluated": 2624,
     "reportedPrograms": 200,
     "programs": [
       {
@@ -819,6 +819,28 @@
       {
         "network": "Awin",
         "relationship": "notjoined",
+        "advertiserId": 14223,
+        "name": "Babor DE",
+        "primarySector": "Health & Beauty",
+        "primaryRegion": {
+          "name": "Germany",
+          "countryCode": "DE"
+        }
+      },
+      {
+        "network": "Awin",
+        "relationship": "notjoined",
+        "advertiserId": 79932,
+        "name": "Bags CH",
+        "primarySector": "Clothing Accessories",
+        "primaryRegion": {
+          "name": "Germany",
+          "countryCode": "DE"
+        }
+      },
+      {
+        "network": "Awin",
+        "relationship": "notjoined",
         "advertiserId": 14964,
         "name": "bahn.de - Reise- und Mobilitätsportal",
         "primarySector": "Trains",
@@ -1196,17 +1218,6 @@
         "advertiserId": 48765,
         "name": "Blick-Store DE",
         "primarySector": "Electronic Accessories",
-        "primaryRegion": {
-          "name": "Germany",
-          "countryCode": "DE"
-        }
-      },
-      {
-        "network": "Awin",
-        "relationship": "notjoined",
-        "advertiserId": 28145,
-        "name": "Blissim DE",
-        "primarySector": "Health & Beauty",
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
@@ -2183,30 +2194,19 @@
       {
         "network": "Awin",
         "relationship": "notjoined",
+        "advertiserId": 23289,
+        "name": "Eins DE",
+        "primarySector": "Utilities",
+        "primaryRegion": {
+          "name": "Germany",
+          "countryCode": "DE"
+        }
+      },
+      {
+        "network": "Awin",
+        "relationship": "notjoined",
         "advertiserId": 122352,
         "name": "Eka Store DE",
-        "primarySector": "Home & Garden",
-        "primaryRegion": {
-          "name": "Germany",
-          "countryCode": "DE"
-        }
-      },
-      {
-        "network": "Awin",
-        "relationship": "notjoined",
-        "advertiserId": 129151,
-        "name": "ElectricSun Deutschland",
-        "primarySector": "Home & Garden",
-        "primaryRegion": {
-          "name": "Germany",
-          "countryCode": "DE"
-        }
-      },
-      {
-        "network": "Awin",
-        "relationship": "notjoined",
-        "advertiserId": 128587,
-        "name": "ELEMENTI (DE)",
         "primarySector": "Home & Garden",
         "primaryRegion": {
           "name": "Germany",
@@ -2218,6 +2218,42 @@
     "discoveryError": null,
     "detailsEnriched": 5,
     "opportunities": [
+      {
+        "brand": "Samsung Shop DE",
+        "network": "Awin",
+        "advertiserId": 14815,
+        "status": "notjoined",
+        "category": "Technik & Computer",
+        "score": 75,
+        "priority": "hoch",
+        "activeDiscoveryOffers": 10,
+        "offerExamples": [
+          "Jetzt ausgewählte Haushaltsgeräte zu tollen Aktionspreisen",
+          "Jetzt ausgewählte TV & Audio-Deals sichern.*",
+          "Jetzt Galaxy Book6-Serie entdecken"
+        ],
+        "productFeed": false,
+        "metrics": {
+          "awinIndex": null,
+          "epc": null,
+          "conversionRate": null,
+          "approvalPercentage": null,
+          "validationDays": null,
+          "averagePaymentTime": null,
+          "commissionMin": null,
+          "commissionMax": null,
+          "commissionTypes": []
+        },
+        "reasons": [
+          "passt zu Technik & Computer",
+          "strategisch relevante Marke",
+          "10 aktive DE-Aktionen"
+        ],
+        "applicationRequired": true,
+        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Samsung Shop DE redaktionell passend im Bereich Technik & Computer einbinden. Bei Awin sind aktuell 10 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+        "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+        "automationState": "ready-for-review"
+      },
       {
         "brand": "Anker DE",
         "network": "Awin",
@@ -2355,16 +2391,18 @@
         "automationState": "ready-for-review"
       },
       {
-        "brand": "Samsung Shop DE",
+        "brand": "Pollin Electronic DE",
         "network": "Awin",
-        "advertiserId": 14815,
+        "advertiserId": 15965,
         "status": "notjoined",
         "category": "Technik & Computer",
-        "score": 51,
+        "score": 60,
         "priority": "mittel",
-        "activeDiscoveryOffers": 1,
+        "activeDiscoveryOffers": 5,
         "offerExamples": [
-          "Samsung Week"
+          "Reduziertes Angebot: LED-Lichterkette, 720 LEDs, warmweiß, 230V~, IP44, Innen/Außen, silber/transparent, 24% reduziert - für nur 21,95€ stat",
+          "Reduziertes Angebot: OSRAM LED-Fluter, 26W, 6500K, 3000lm, kaltweiß, IP54, schwarz, 30% reduziert - für nur 55,95€ statt 79,95€",
+          "Reduziertes Angebot: HP AUTOZUBEHÖR Unterstellbock-Set 11115, 2 t, 13% reduziert - für nur 29,50€ statt UVP 33,80€"
         ],
         "productFeed": false,
         "metrics": {
@@ -2380,11 +2418,45 @@
         },
         "reasons": [
           "passt zu Technik & Computer",
-          "strategisch relevante Marke",
-          "1 aktive DE-Aktion"
+          "5 aktive DE-Aktionen"
         ],
         "applicationRequired": true,
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Samsung Shop DE redaktionell passend im Bereich Technik & Computer einbinden. Bei Awin sind aktuell 1 für Deutschland sichtbare Aktion dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Pollin Electronic DE redaktionell passend im Bereich Technik & Computer einbinden. Bei Awin sind aktuell 5 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+        "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+        "automationState": "ready-for-review"
+      },
+      {
+        "brand": "MacTrade - Apple Store DE",
+        "network": "Awin",
+        "advertiserId": 13737,
+        "status": "notjoined",
+        "category": "Technik & Computer",
+        "score": 48,
+        "priority": "mittel",
+        "activeDiscoveryOffers": 3,
+        "offerExamples": [
+          "Newsletter abonieren und € 10,- Gutschein sichern.",
+          "MacTrade: 100€ Rabatt¹ auf Restposten bei Finanzierung",
+          "3% Bildungsrabatt auf Mac und iPad"
+        ],
+        "productFeed": false,
+        "metrics": {
+          "awinIndex": null,
+          "epc": null,
+          "conversionRate": null,
+          "approvalPercentage": null,
+          "validationDays": null,
+          "averagePaymentTime": null,
+          "commissionMin": null,
+          "commissionMax": null,
+          "commissionTypes": []
+        },
+        "reasons": [
+          "passt zu Technik & Computer",
+          "3 aktive DE-Aktionen"
+        ],
+        "applicationRequired": true,
+        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten MacTrade - Apple Store DE redaktionell passend im Bereich Technik & Computer einbinden. Bei Awin sind aktuell 3 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
         "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
         "automationState": "ready-for-review"
       },
@@ -2943,68 +3015,6 @@
         ],
         "applicationRequired": true,
         "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Sony DE redaktionell passend im Bereich Technik & Computer einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-        "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-        "automationState": "ready-for-review"
-      },
-      {
-        "brand": "Sportspar DE",
-        "network": "Awin",
-        "advertiserId": 14366,
-        "status": "notjoined",
-        "category": "Mode & Sport",
-        "score": 45,
-        "priority": "mittel",
-        "activeDiscoveryOffers": 0,
-        "offerExamples": [],
-        "productFeed": false,
-        "metrics": {
-          "awinIndex": null,
-          "epc": null,
-          "conversionRate": null,
-          "approvalPercentage": null,
-          "validationDays": null,
-          "averagePaymentTime": null,
-          "commissionMin": null,
-          "commissionMax": null,
-          "commissionTypes": []
-        },
-        "reasons": [
-          "passt zu Mode & Sport",
-          "strategisch relevante Marke"
-        ],
-        "applicationRequired": true,
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Sportspar DE redaktionell passend im Bereich Mode & Sport einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-        "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-        "automationState": "ready-for-review"
-      },
-      {
-        "brand": "Xiaomi DE",
-        "network": "Awin",
-        "advertiserId": 23675,
-        "status": "notjoined",
-        "category": "Technik & Computer",
-        "score": 45,
-        "priority": "mittel",
-        "activeDiscoveryOffers": 0,
-        "offerExamples": [],
-        "productFeed": false,
-        "metrics": {
-          "awinIndex": null,
-          "epc": null,
-          "conversionRate": null,
-          "approvalPercentage": null,
-          "validationDays": null,
-          "averagePaymentTime": null,
-          "commissionMin": null,
-          "commissionMax": null,
-          "commissionTypes": []
-        },
-        "reasons": [
-          "passt zu Technik & Computer",
-          "strategisch relevante Marke"
-        ],
-        "applicationRequired": true,
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Xiaomi DE redaktionell passend im Bereich Technik & Computer einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
         "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
         "automationState": "ready-for-review"
       }

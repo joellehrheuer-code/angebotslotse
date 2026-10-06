@@ -45566,5 +45566,53 @@
     "timestamp": "2026-10-06T01:19:16.095Z",
     "price": 99,
     "currency": "EUR"
+  },
+  {
+    "offerId": "0f751d5d6ba3ced6",
+    "productId": "1002050093",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-10-06T10:20:41.674Z",
+    "price": 64.8,
+    "currency": "EUR"
+  },
+  {
+    "offerId": "3fd08ab0894a8e9d",
+    "productId": "191460004285",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-10-06T10:20:41.674Z",
+    "price": 64.8,
+    "currency": "EUR"
+  },
+  {
+    "offerId": "57a0ca74d71c9e70",
+    "productId": "191460004278",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-10-06T10:20:41.674Z",
+    "price": 63.2,
+    "currency": "EUR"
+  },
+  {
+    "offerId": "5c04a3e1742164ca",
+    "productId": "191460005336",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-10-06T10:20:41.674Z",
+    "price": 56,
+    "currency": "EUR"
+  },
+  {
+    "offerId": "2fe5e0de93345c0e",
+    "productId": "191460004384",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-10-06T10:20:41.674Z",
+    "price": 63.2,
+    "currency": "EUR"
+  },
+  {
+    "offerId": "064f9fca5159a01d",
+    "productId": "191460004377",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-10-06T10:20:41.674Z",
+    "price": 56,
+    "currency": "EUR"
   }
 ]

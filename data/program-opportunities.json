@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-06T01:19:16.156Z",
+  "generatedAt": "2026-10-06T10:20:41.727Z",
   "scope": "Automatisch aus Programminventar, DE-Angebotsabdeckung und verfügbaren Netzwerk-/Feed-Signalen erzeugt.",
   "automation": {
     "discovery": "automatic",
@@ -9,6 +9,42 @@
     "reason": "Programmbewerbungen können Vertragsbedingungen enthalten und werden nicht blind bestätigt."
   },
   "programs": [
+    {
+      "brand": "Samsung Shop DE",
+      "network": "Awin",
+      "advertiserId": 14815,
+      "status": "notjoined",
+      "category": "Technik & Computer",
+      "score": 75,
+      "priority": "hoch",
+      "activeDiscoveryOffers": 10,
+      "offerExamples": [
+        "Jetzt ausgewählte Haushaltsgeräte zu tollen Aktionspreisen",
+        "Jetzt ausgewählte TV & Audio-Deals sichern.*",
+        "Jetzt Galaxy Book6-Serie entdecken"
+      ],
+      "productFeed": false,
+      "metrics": {
+        "awinIndex": null,
+        "epc": null,
+        "conversionRate": null,
+        "approvalPercentage": null,
+        "validationDays": null,
+        "averagePaymentTime": null,
+        "commissionMin": null,
+        "commissionMax": null,
+        "commissionTypes": []
+      },
+      "reasons": [
+        "passt zu Technik & Computer",
+        "strategisch relevante Marke",
+        "10 aktive DE-Aktionen"
+      ],
+      "applicationRequired": true,
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Samsung Shop DE redaktionell passend im Bereich Technik & Computer einbinden. Bei Awin sind aktuell 10 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "automationState": "ready-for-review"
+    },
     {
       "brand": "Anker DE",
       "network": "Awin",
@@ -146,16 +182,18 @@
       "automationState": "ready-for-review"
     },
     {
-      "brand": "Samsung Shop DE",
+      "brand": "Pollin Electronic DE",
       "network": "Awin",
-      "advertiserId": 14815,
+      "advertiserId": 15965,
       "status": "notjoined",
       "category": "Technik & Computer",
-      "score": 51,
+      "score": 60,
       "priority": "mittel",
-      "activeDiscoveryOffers": 1,
+      "activeDiscoveryOffers": 5,
       "offerExamples": [
-        "Samsung Week"
+        "Reduziertes Angebot: LED-Lichterkette, 720 LEDs, warmweiß, 230V~, IP44, Innen/Außen, silber/transparent, 24% reduziert - für nur 21,95€ stat",
+        "Reduziertes Angebot: OSRAM LED-Fluter, 26W, 6500K, 3000lm, kaltweiß, IP54, schwarz, 30% reduziert - für nur 55,95€ statt 79,95€",
+        "Reduziertes Angebot: HP AUTOZUBEHÖR Unterstellbock-Set 11115, 2 t, 13% reduziert - für nur 29,50€ statt UVP 33,80€"
       ],
       "productFeed": false,
       "metrics": {
@@ -171,11 +209,45 @@
       },
       "reasons": [
         "passt zu Technik & Computer",
-        "strategisch relevante Marke",
-        "1 aktive DE-Aktion"
+        "5 aktive DE-Aktionen"
       ],
       "applicationRequired": true,
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Samsung Shop DE redaktionell passend im Bereich Technik & Computer einbinden. Bei Awin sind aktuell 1 für Deutschland sichtbare Aktion dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Pollin Electronic DE redaktionell passend im Bereich Technik & Computer einbinden. Bei Awin sind aktuell 5 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "automationState": "ready-for-review"
+    },
+    {
+      "brand": "MacTrade - Apple Store DE",
+      "network": "Awin",
+      "advertiserId": 13737,
+      "status": "notjoined",
+      "category": "Technik & Computer",
+      "score": 48,
+      "priority": "mittel",
+      "activeDiscoveryOffers": 3,
+      "offerExamples": [
+        "Newsletter abonieren und € 10,- Gutschein sichern.",
+        "MacTrade: 100€ Rabatt¹ auf Restposten bei Finanzierung",
+        "3% Bildungsrabatt auf Mac und iPad"
+      ],
+      "productFeed": false,
+      "metrics": {
+        "awinIndex": null,
+        "epc": null,
+        "conversionRate": null,
+        "approvalPercentage": null,
+        "validationDays": null,
+        "averagePaymentTime": null,
+        "commissionMin": null,
+        "commissionMax": null,
+        "commissionTypes": []
+      },
+      "reasons": [
+        "passt zu Technik & Computer",
+        "3 aktive DE-Aktionen"
+      ],
+      "applicationRequired": true,
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten MacTrade - Apple Store DE redaktionell passend im Bereich Technik & Computer einbinden. Bei Awin sind aktuell 3 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
       "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
       "automationState": "ready-for-review"
     },
@@ -862,50 +934,17 @@
       "automationState": "ready-for-review"
     },
     {
-      "brand": "Niche_Beauty",
+      "brand": "Rasendoktor DE",
       "network": "Awin",
-      "advertiserId": 12588,
+      "advertiserId": 26999,
       "status": "notjoined",
-      "category": "Gesundheit & Wellness",
+      "category": "Haushalt & Küche",
       "score": 42,
       "priority": "mittel",
       "activeDiscoveryOffers": 2,
       "offerExamples": [
-        "THE BEAUTY GIFT GUIDE EDIT - The Art of Gifting. Gifts worth giving. Beauty worth keeping. GOOD TASTE, WRAPPED.",
-        "ELEVATED SKINCARE BOX - Gratis zu Ihrer Bestellung ab 250€*"
-      ],
-      "productFeed": false,
-      "metrics": {
-        "awinIndex": null,
-        "epc": null,
-        "conversionRate": null,
-        "approvalPercentage": null,
-        "validationDays": null,
-        "averagePaymentTime": null,
-        "commissionMin": null,
-        "commissionMax": null,
-        "commissionTypes": []
-      },
-      "reasons": [
-        "passt zu Gesundheit & Wellness",
-        "2 aktive DE-Aktionen"
-      ],
-      "applicationRequired": true,
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Niche_Beauty redaktionell passend im Bereich Gesundheit & Wellness einbinden. Bei Awin sind aktuell 2 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "automationState": "ready-for-review"
-    },
-    {
-      "brand": "Bast Sauna DE",
-      "network": "Awin",
-      "advertiserId": 119243,
-      "status": "notjoined",
-      "category": "Haushalt & Küche",
-      "score": 36,
-      "priority": "niedrig",
-      "activeDiscoveryOffers": 1,
-      "offerExamples": [
-        "LETZTE CHANCE ZU DIESEM PREIS"
+        "14€ Rabatt auf das Jahresdüngungs-Paket \"ESSENTIAL\"!",
+        "Geschenkgutscheine im Wert von bis zu 100€!"
       ],
       "productFeed": false,
       "metrics": {
@@ -921,24 +960,58 @@
       },
       "reasons": [
         "passt zu Haushalt & Küche",
-        "1 aktive DE-Aktion"
+        "2 aktive DE-Aktionen"
       ],
       "applicationRequired": true,
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Bast Sauna DE redaktionell passend im Bereich Haushalt & Küche einbinden. Bei Awin sind aktuell 1 für Deutschland sichtbare Aktion dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Rasendoktor DE redaktionell passend im Bereich Haushalt & Küche einbinden. Bei Awin sind aktuell 2 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
       "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
       "automationState": "ready-for-review"
     },
     {
-      "brand": "Blissim DE",
+      "brand": "White Label by RoFa",
       "network": "Awin",
-      "advertiserId": 28145,
+      "advertiserId": 121044,
+      "status": "notjoined",
+      "category": "Mode & Sport",
+      "score": 42,
+      "priority": "mittel",
+      "activeDiscoveryOffers": 2,
+      "offerExamples": [
+        "GRATIS VERSAND FÜR SIE",
+        "10% Rabatt bei Newsletteranmeldung"
+      ],
+      "productFeed": false,
+      "metrics": {
+        "awinIndex": null,
+        "epc": null,
+        "conversionRate": null,
+        "approvalPercentage": null,
+        "validationDays": null,
+        "averagePaymentTime": null,
+        "commissionMin": null,
+        "commissionMax": null,
+        "commissionTypes": []
+      },
+      "reasons": [
+        "passt zu Mode & Sport",
+        "2 aktive DE-Aktionen"
+      ],
+      "applicationRequired": true,
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten White Label by RoFa redaktionell passend im Bereich Mode & Sport einbinden. Bei Awin sind aktuell 2 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "automationState": "ready-for-review"
+    },
+    {
+      "brand": "Babor DE",
+      "network": "Awin",
+      "advertiserId": 14223,
       "status": "notjoined",
       "category": "Gesundheit & Wellness",
       "score": 36,
       "priority": "niedrig",
       "activeDiscoveryOffers": 1,
       "offerExamples": [
-        "Das Tarte™ Make-up Duo geschenkt"
+        "Deine Haut, sichtbar straffer – Gratis Derma Filler Serum ab 90 EUR"
       ],
       "productFeed": false,
       "metrics": {
@@ -957,21 +1030,21 @@
         "1 aktive DE-Aktion"
       ],
       "applicationRequired": true,
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Blissim DE redaktionell passend im Bereich Gesundheit & Wellness einbinden. Bei Awin sind aktuell 1 für Deutschland sichtbare Aktion dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Babor DE redaktionell passend im Bereich Gesundheit & Wellness einbinden. Bei Awin sind aktuell 1 für Deutschland sichtbare Aktion dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
       "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
       "automationState": "ready-for-review"
     },
     {
-      "brand": "Boc 24 DE",
+      "brand": "Bags CH",
       "network": "Awin",
-      "advertiserId": 11383,
+      "advertiserId": 79932,
       "status": "notjoined",
       "category": "Mode & Sport",
       "score": 36,
       "priority": "niedrig",
       "activeDiscoveryOffers": 1,
       "offerExamples": [
-        "Sicher, sichtbar und warm durch die dunkle Jahreszeit"
+        "AWIN 25% bis 31.12.2026"
       ],
       "productFeed": false,
       "metrics": {
@@ -990,7 +1063,238 @@
         "1 aktive DE-Aktion"
       ],
       "applicationRequired": true,
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Boc 24 DE redaktionell passend im Bereich Mode & Sport einbinden. Bei Awin sind aktuell 1 für Deutschland sichtbare Aktion dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Bags CH redaktionell passend im Bereich Mode & Sport einbinden. Bei Awin sind aktuell 1 für Deutschland sichtbare Aktion dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "automationState": "ready-for-review"
+    },
+    {
+      "brand": "Gartenmoebel.de",
+      "network": "Awin",
+      "advertiserId": 102693,
+      "status": "notjoined",
+      "category": "Garten & Werkzeug",
+      "score": 36,
+      "priority": "niedrig",
+      "activeDiscoveryOffers": 1,
+      "offerExamples": [
+        "Herbst-Sale: -20 %"
+      ],
+      "productFeed": false,
+      "metrics": {
+        "awinIndex": null,
+        "epc": null,
+        "conversionRate": null,
+        "approvalPercentage": null,
+        "validationDays": null,
+        "averagePaymentTime": null,
+        "commissionMin": null,
+        "commissionMax": null,
+        "commissionTypes": []
+      },
+      "reasons": [
+        "passt zu Garten & Werkzeug",
+        "1 aktive DE-Aktion"
+      ],
+      "applicationRequired": true,
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Gartenmoebel.de redaktionell passend im Bereich Garten & Werkzeug einbinden. Bei Awin sind aktuell 1 für Deutschland sichtbare Aktion dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "automationState": "ready-for-review"
+    },
+    {
+      "brand": "Kinguin DE",
+      "network": "Awin",
+      "advertiserId": 9862,
+      "status": "notjoined",
+      "category": "Gaming",
+      "score": 36,
+      "priority": "niedrig",
+      "activeDiscoveryOffers": 1,
+      "offerExamples": [
+        "DER KING-WEG ZUR KI"
+      ],
+      "productFeed": false,
+      "metrics": {
+        "awinIndex": null,
+        "epc": null,
+        "conversionRate": null,
+        "approvalPercentage": null,
+        "validationDays": null,
+        "averagePaymentTime": null,
+        "commissionMin": null,
+        "commissionMax": null,
+        "commissionTypes": []
+      },
+      "reasons": [
+        "passt zu Gaming",
+        "1 aktive DE-Aktion"
+      ],
+      "applicationRequired": true,
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Kinguin DE redaktionell passend im Bereich Gaming einbinden. Bei Awin sind aktuell 1 für Deutschland sichtbare Aktion dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "automationState": "ready-for-review"
+    },
+    {
+      "brand": "KOFFER.COM DE",
+      "network": "Awin",
+      "advertiserId": 13731,
+      "status": "notjoined",
+      "category": "Mode & Sport",
+      "score": 36,
+      "priority": "niedrig",
+      "activeDiscoveryOffers": 1,
+      "offerExamples": [
+        "AWIN 20% bis 31.12.2026"
+      ],
+      "productFeed": false,
+      "metrics": {
+        "awinIndex": null,
+        "epc": null,
+        "conversionRate": null,
+        "approvalPercentage": null,
+        "validationDays": null,
+        "averagePaymentTime": null,
+        "commissionMin": null,
+        "commissionMax": null,
+        "commissionTypes": []
+      },
+      "reasons": [
+        "passt zu Mode & Sport",
+        "1 aktive DE-Aktion"
+      ],
+      "applicationRequired": true,
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten KOFFER.COM DE redaktionell passend im Bereich Mode & Sport einbinden. Bei Awin sind aktuell 1 für Deutschland sichtbare Aktion dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "automationState": "ready-for-review"
+    },
+    {
+      "brand": "Megabad DE",
+      "network": "Awin",
+      "advertiserId": 102421,
+      "status": "notjoined",
+      "category": "Haushalt & Küche",
+      "score": 36,
+      "priority": "niedrig",
+      "activeDiscoveryOffers": 1,
+      "offerExamples": [
+        "Herbst Deals bei MEGABAD: Bis zu 67% + versandkostenfreie Lieferung"
+      ],
+      "productFeed": false,
+      "metrics": {
+        "awinIndex": null,
+        "epc": null,
+        "conversionRate": null,
+        "approvalPercentage": null,
+        "validationDays": null,
+        "averagePaymentTime": null,
+        "commissionMin": null,
+        "commissionMax": null,
+        "commissionTypes": []
+      },
+      "reasons": [
+        "passt zu Haushalt & Küche",
+        "1 aktive DE-Aktion"
+      ],
+      "applicationRequired": true,
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Megabad DE redaktionell passend im Bereich Haushalt & Küche einbinden. Bei Awin sind aktuell 1 für Deutschland sichtbare Aktion dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "automationState": "ready-for-review"
+    },
+    {
+      "brand": "Niche Story Perfume DE",
+      "network": "Awin",
+      "advertiserId": 119271,
+      "status": "notjoined",
+      "category": "Gesundheit & Wellness",
+      "score": 36,
+      "priority": "niedrig",
+      "activeDiscoveryOffers": 1,
+      "offerExamples": [
+        "15% Off October Special"
+      ],
+      "productFeed": false,
+      "metrics": {
+        "awinIndex": null,
+        "epc": null,
+        "conversionRate": null,
+        "approvalPercentage": null,
+        "validationDays": null,
+        "averagePaymentTime": null,
+        "commissionMin": null,
+        "commissionMax": null,
+        "commissionTypes": []
+      },
+      "reasons": [
+        "passt zu Gesundheit & Wellness",
+        "1 aktive DE-Aktion"
+      ],
+      "applicationRequired": true,
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Niche Story Perfume DE redaktionell passend im Bereich Gesundheit & Wellness einbinden. Bei Awin sind aktuell 1 für Deutschland sichtbare Aktion dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "automationState": "ready-for-review"
+    },
+    {
+      "brand": "Polo-motorrad DE",
+      "network": "Awin",
+      "advertiserId": 11475,
+      "status": "notjoined",
+      "category": "Auto & Mobilität",
+      "score": 36,
+      "priority": "niedrig",
+      "activeDiscoveryOffers": 1,
+      "offerExamples": [
+        "15% Rabatt auf Aufbockvorrichtungen & Montageständer!"
+      ],
+      "productFeed": false,
+      "metrics": {
+        "awinIndex": null,
+        "epc": null,
+        "conversionRate": null,
+        "approvalPercentage": null,
+        "validationDays": null,
+        "averagePaymentTime": null,
+        "commissionMin": null,
+        "commissionMax": null,
+        "commissionTypes": []
+      },
+      "reasons": [
+        "passt zu Auto & Mobilität",
+        "1 aktive DE-Aktion"
+      ],
+      "applicationRequired": true,
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Polo-motorrad DE redaktionell passend im Bereich Auto & Mobilität einbinden. Bei Awin sind aktuell 1 für Deutschland sichtbare Aktion dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "automationState": "ready-for-review"
+    },
+    {
+      "brand": "WELOVEBAGS DE",
+      "network": "Awin",
+      "advertiserId": 19727,
+      "status": "notjoined",
+      "category": "Mode & Sport",
+      "score": 36,
+      "priority": "niedrig",
+      "activeDiscoveryOffers": 1,
+      "offerExamples": [
+        "AWIN 25% bis 31.12.2026"
+      ],
+      "productFeed": false,
+      "metrics": {
+        "awinIndex": null,
+        "epc": null,
+        "conversionRate": null,
+        "approvalPercentage": null,
+        "validationDays": null,
+        "averagePaymentTime": null,
+        "commissionMin": null,
+        "commissionMax": null,
+        "commissionTypes": []
+      },
+      "reasons": [
+        "passt zu Mode & Sport",
+        "1 aktive DE-Aktion"
+      ],
+      "applicationRequired": true,
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten WELOVEBAGS DE redaktionell passend im Bereich Mode & Sport einbinden. Bei Awin sind aktuell 1 für Deutschland sichtbare Aktion dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
       "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
       "automationState": "ready-for-review"
     },
@@ -1024,6 +1328,40 @@
       "applicationDraft": null,
       "nextAction": "Ausstehende Bewerbung weiter beobachten.",
       "automationState": "pending"
+    },
+    {
+      "brand": "POCO Onlineshop DE",
+      "network": "Awin",
+      "advertiserId": 16021,
+      "status": "notjoined",
+      "category": "Weitere",
+      "score": 34,
+      "priority": "niedrig",
+      "activeDiscoveryOffers": 4,
+      "offerExamples": [
+        "POCO -10% Rabatt¹ beim Kauf einer frei geplanten Küche!",
+        "POCO - Küchenlieferung & Montage für nur 99€¹!",
+        "Bis zu 68 % unter UVP + 10 % Extra-Rabatt in der App - Nur für kurze Zeit!¹"
+      ],
+      "productFeed": false,
+      "metrics": {
+        "awinIndex": null,
+        "epc": null,
+        "conversionRate": null,
+        "approvalPercentage": null,
+        "validationDays": null,
+        "averagePaymentTime": null,
+        "commissionMin": null,
+        "commissionMax": null,
+        "commissionTypes": []
+      },
+      "reasons": [
+        "4 aktive DE-Aktionen"
+      ],
+      "applicationRequired": true,
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten POCO Onlineshop DE redaktionell passend im Bereich Weitere einbinden. Bei Awin sind aktuell 4 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "automationState": "ready-for-review"
     },
     {
       "brand": "07eins",
@@ -1262,306 +1600,6 @@
       ],
       "applicationRequired": true,
       "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten 365Rider DE redaktionell passend im Bereich Mode & Sport einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "automationState": "ready-for-review"
-    },
-    {
-      "brand": "3D Jake DE",
-      "network": "Awin",
-      "advertiserId": 21761,
-      "status": "notjoined",
-      "category": "Technik & Computer",
-      "score": 30,
-      "priority": "niedrig",
-      "activeDiscoveryOffers": 0,
-      "offerExamples": [],
-      "productFeed": false,
-      "metrics": {
-        "awinIndex": null,
-        "epc": null,
-        "conversionRate": null,
-        "approvalPercentage": null,
-        "validationDays": null,
-        "averagePaymentTime": null,
-        "commissionMin": null,
-        "commissionMax": null,
-        "commissionTypes": []
-      },
-      "reasons": [
-        "passt zu Technik & Computer"
-      ],
-      "applicationRequired": true,
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten 3D Jake DE redaktionell passend im Bereich Technik & Computer einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "automationState": "ready-for-review"
-    },
-    {
-      "brand": "3DMakerpro (EU)",
-      "network": "Awin",
-      "advertiserId": 70050,
-      "status": "notjoined",
-      "category": "Technik & Computer",
-      "score": 30,
-      "priority": "niedrig",
-      "activeDiscoveryOffers": 0,
-      "offerExamples": [],
-      "productFeed": false,
-      "metrics": {
-        "awinIndex": null,
-        "epc": null,
-        "conversionRate": null,
-        "approvalPercentage": null,
-        "validationDays": null,
-        "averagePaymentTime": null,
-        "commissionMin": null,
-        "commissionMax": null,
-        "commissionTypes": []
-      },
-      "reasons": [
-        "passt zu Technik & Computer"
-      ],
-      "applicationRequired": true,
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten 3DMakerpro (EU) redaktionell passend im Bereich Technik & Computer einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "automationState": "ready-for-review"
-    },
-    {
-      "brand": "3pagen DE",
-      "network": "Awin",
-      "advertiserId": 14305,
-      "status": "notjoined",
-      "category": "Haushalt & Küche",
-      "score": 30,
-      "priority": "niedrig",
-      "activeDiscoveryOffers": 0,
-      "offerExamples": [],
-      "productFeed": false,
-      "metrics": {
-        "awinIndex": null,
-        "epc": null,
-        "conversionRate": null,
-        "approvalPercentage": null,
-        "validationDays": null,
-        "averagePaymentTime": null,
-        "commissionMin": null,
-        "commissionMax": null,
-        "commissionTypes": []
-      },
-      "reasons": [
-        "passt zu Haushalt & Küche"
-      ],
-      "applicationRequired": true,
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten 3pagen DE redaktionell passend im Bereich Haushalt & Küche einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "automationState": "ready-for-review"
-    },
-    {
-      "brand": "3ppp3 DE",
-      "network": "Awin",
-      "advertiserId": 11410,
-      "status": "notjoined",
-      "category": "Technik & Computer",
-      "score": 30,
-      "priority": "niedrig",
-      "activeDiscoveryOffers": 0,
-      "offerExamples": [],
-      "productFeed": false,
-      "metrics": {
-        "awinIndex": null,
-        "epc": null,
-        "conversionRate": null,
-        "approvalPercentage": null,
-        "validationDays": null,
-        "averagePaymentTime": null,
-        "commissionMin": null,
-        "commissionMax": null,
-        "commissionTypes": []
-      },
-      "reasons": [
-        "passt zu Technik & Computer"
-      ],
-      "applicationRequired": true,
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten 3ppp3 DE redaktionell passend im Bereich Technik & Computer einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "automationState": "ready-for-review"
-    },
-    {
-      "brand": "4 ELEMENTOS DE",
-      "network": "Awin",
-      "advertiserId": 124832,
-      "status": "notjoined",
-      "category": "Mode & Sport",
-      "score": 30,
-      "priority": "niedrig",
-      "activeDiscoveryOffers": 0,
-      "offerExamples": [],
-      "productFeed": false,
-      "metrics": {
-        "awinIndex": null,
-        "epc": null,
-        "conversionRate": null,
-        "approvalPercentage": null,
-        "validationDays": null,
-        "averagePaymentTime": null,
-        "commissionMin": null,
-        "commissionMax": null,
-        "commissionTypes": []
-      },
-      "reasons": [
-        "passt zu Mode & Sport"
-      ],
-      "applicationRequired": true,
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten 4 ELEMENTOS DE redaktionell passend im Bereich Mode & Sport einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "automationState": "ready-for-review"
-    },
-    {
-      "brand": "43einhalb DE",
-      "network": "Awin",
-      "advertiserId": 125690,
-      "status": "notjoined",
-      "category": "Mode & Sport",
-      "score": 30,
-      "priority": "niedrig",
-      "activeDiscoveryOffers": 0,
-      "offerExamples": [],
-      "productFeed": false,
-      "metrics": {
-        "awinIndex": null,
-        "epc": null,
-        "conversionRate": null,
-        "approvalPercentage": null,
-        "validationDays": null,
-        "averagePaymentTime": null,
-        "commissionMin": null,
-        "commissionMax": null,
-        "commissionTypes": []
-      },
-      "reasons": [
-        "passt zu Mode & Sport"
-      ],
-      "applicationRequired": true,
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten 43einhalb DE redaktionell passend im Bereich Mode & Sport einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "automationState": "ready-for-review"
-    },
-    {
-      "brand": "4Walls Escape - Online Escape Games DE",
-      "network": "Awin",
-      "advertiserId": 26727,
-      "status": "notjoined",
-      "category": "Gaming",
-      "score": 30,
-      "priority": "niedrig",
-      "activeDiscoveryOffers": 0,
-      "offerExamples": [],
-      "productFeed": false,
-      "metrics": {
-        "awinIndex": null,
-        "epc": null,
-        "conversionRate": null,
-        "approvalPercentage": null,
-        "validationDays": null,
-        "averagePaymentTime": null,
-        "commissionMin": null,
-        "commissionMax": null,
-        "commissionTypes": []
-      },
-      "reasons": [
-        "passt zu Gaming"
-      ],
-      "applicationRequired": true,
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten 4Walls Escape - Online Escape Games DE redaktionell passend im Bereich Gaming einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "automationState": "ready-for-review"
-    },
-    {
-      "brand": "50 ml DE",
-      "network": "Awin",
-      "advertiserId": 85743,
-      "status": "notjoined",
-      "category": "Gesundheit & Wellness",
-      "score": 30,
-      "priority": "niedrig",
-      "activeDiscoveryOffers": 0,
-      "offerExamples": [],
-      "productFeed": false,
-      "metrics": {
-        "awinIndex": null,
-        "epc": null,
-        "conversionRate": null,
-        "approvalPercentage": null,
-        "validationDays": null,
-        "averagePaymentTime": null,
-        "commissionMin": null,
-        "commissionMax": null,
-        "commissionTypes": []
-      },
-      "reasons": [
-        "passt zu Gesundheit & Wellness"
-      ],
-      "applicationRequired": true,
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten 50 ml DE redaktionell passend im Bereich Gesundheit & Wellness einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "automationState": "ready-for-review"
-    },
-    {
-      "brand": "7days DE",
-      "network": "Awin",
-      "advertiserId": 122900,
-      "status": "notjoined",
-      "category": "Mode & Sport",
-      "score": 30,
-      "priority": "niedrig",
-      "activeDiscoveryOffers": 0,
-      "offerExamples": [],
-      "productFeed": false,
-      "metrics": {
-        "awinIndex": null,
-        "epc": null,
-        "conversionRate": null,
-        "approvalPercentage": null,
-        "validationDays": null,
-        "averagePaymentTime": null,
-        "commissionMin": null,
-        "commissionMax": null,
-        "commissionTypes": []
-      },
-      "reasons": [
-        "passt zu Mode & Sport"
-      ],
-      "applicationRequired": true,
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten 7days DE redaktionell passend im Bereich Mode & Sport einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "automationState": "ready-for-review"
-    },
-    {
-      "brand": "7even DE",
-      "network": "Awin",
-      "advertiserId": 21065,
-      "status": "notjoined",
-      "category": "Technik & Computer",
-      "score": 30,
-      "priority": "niedrig",
-      "activeDiscoveryOffers": 0,
-      "offerExamples": [],
-      "productFeed": false,
-      "metrics": {
-        "awinIndex": null,
-        "epc": null,
-        "conversionRate": null,
-        "approvalPercentage": null,
-        "validationDays": null,
-        "averagePaymentTime": null,
-        "commissionMin": null,
-        "commissionMax": null,
-        "commissionTypes": []
-      },
-      "reasons": [
-        "passt zu Technik & Computer"
-      ],
-      "applicationRequired": true,
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten 7even DE redaktionell passend im Bereich Technik & Computer einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
       "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
       "automationState": "ready-for-review"
     }
