@@ -64,6 +64,11 @@ test("CI installiert gepinnte Account-Abhängigkeiten reproduzierbar", () => {
   assert.match(update, /npm ci/);
   assert.doesNotMatch(update, /node-version:\s*20/);
   assert.match(update, /node-version:\s*22/);
+  assert.match(update, /permissions:\s*\n\s*contents:\s*read/);
+  assert.match(update, /commit:\s*\n\s*needs:\s*update[\s\S]*?permissions:\s*\n\s*contents:\s*write/);
+  assert.match(update, /actions\/upload-artifact@v4/);
+  assert.match(update, /actions\/download-artifact@v4/);
+  assert.doesNotMatch(update, /^permissions:\s*\n\s*contents:\s*write/m);
   assert.match(integrity, /npm ci/);
   assert.match(integrity, /node-version:\s*22/);
 });
