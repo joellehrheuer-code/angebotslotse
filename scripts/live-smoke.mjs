@@ -98,8 +98,8 @@ for(let attempt=1;attempt<=attempts;attempt+=1){
 if(!live||stateErrors.length)throw new Error(`Live-Statusprüfung fehlgeschlagen: ${stateErrors.join("; ")}`);
 
 const criticalAssets=[
-  "/site.css?v=41",
-  "/app.js?v=20",
+  "/site.css?v=42",
+  "/app.js?v=21",
   "/favicon.ico?v=4",
   "/favicon-32.png?v=4",
   "/joel-logo.svg?v=4",

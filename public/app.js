@@ -148,6 +148,15 @@ const filterEmpty = document.querySelector("[data-no-filter-results]");
 const activeFilters = document.querySelector("[data-active-filters]");
 const activeFilterChips = document.querySelector("[data-active-filter-chips]");
 const clearAllFilters = document.querySelector("[data-filter-clear-all]");
+const mobileFilterToggle = document.querySelector("[data-filter-mobile-toggle]");
+const mobileFilterCount = document.querySelector("[data-filter-mobile-count]");
+const listingFilters = document.querySelector("[data-listing-filters]");
+mobileFilterToggle?.addEventListener("click", () => {
+  if (!listingFilters) return;
+  const open = listingFilters.classList.toggle("mobile-open");
+  mobileFilterToggle.setAttribute("aria-expanded", String(open));
+  if (open) listingFilters.querySelector("input,select,button")?.focus({preventScroll:true});
+});
 const forwardedSearch = params.get("suche");
 if (forwardedSearch && categorySearch) categorySearch.value = forwardedSearch;
 const filterOptionText = select => select?.selectedOptions?.[0]?.textContent?.trim() || "";
@@ -208,6 +217,7 @@ function updateCategoryListing() {
     sortGrid.append(row);
   }
   if (filterCount) filterCount.textContent = String(visible) + " Treffer";
+  if (mobileFilterCount) mobileFilterCount.textContent = String(visible) + (visible === 1 ? " Angebot" : " Angebote");
   if (filterEmpty) filterEmpty.hidden = visible > 0;
   syncActiveFilterChips();
 }
@@ -516,9 +526,19 @@ for (const card of document.querySelectorAll(".deal-card")) {
   card.addEventListener("keydown", event => { if (event.key === "Enter") target.click(); });
 }
 
-document.querySelectorAll("[data-copy-code]").forEach(link => link.addEventListener("click", async () => {
-  try { await navigator.clipboard.writeText(link.dataset.copyCode); }
-  catch { /* The affiliate destination still opens when clipboard access is unavailable. */ }
+document.querySelectorAll("[data-copy-code]").forEach(button => button.addEventListener("click", async () => {
+  const host = button.closest(".detail-voucher");
+  const status = host?.querySelector("[data-copy-code-status]");
+  const code = button.dataset.copyCode || "";
+  try {
+    await navigator.clipboard.writeText(code);
+    if (status) status.textContent = "Code kopiert.";
+    const previous = button.textContent;
+    button.textContent = "Kopiert ✓";
+    setTimeout(() => { button.textContent = previous; if (status) status.textContent = ""; }, 1800);
+  } catch {
+    if (status) status.textContent = "Kopieren war nicht möglich. Markiere den Code manuell.";
+  }
 }));
 
 
