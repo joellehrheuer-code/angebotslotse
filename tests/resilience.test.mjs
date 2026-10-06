@@ -30,7 +30,7 @@ test('PWA activation preserves other applications caches', async () => {
   let completion;
   handlers.activate({waitUntil:value=>{completion=value;}});
   await completion;
-  assert.deepEqual(deleted,['angebotslotse-shell-v15']);
+  assert.deepEqual(deleted,['angebotslotse-shell-v15','angebotslotse-shell-v16']);
 });
 
 test('cached images keep their delayed background refresh alive', async () => {
