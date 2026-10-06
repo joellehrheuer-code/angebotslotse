@@ -29,12 +29,12 @@ test("V12.2 applies one premium architecture to the main subpages", () => {
   let activeCategoryCount = 0;
   for (const file of categoryFiles) {
     const html = fs.readFileSync(file,"utf8");
-    if (/class="deal-card\b/.test(html)) {
-      activeCategoryCount += 1;
-      assert.match(html,/listing-filters/,"active category misses listing filters in "+file);
-    } else {
-      assert.match(html,/0 aktive Angebote/,"empty category misses its explicit empty state in "+file);
+    if (/0 aktive Angebote/.test(html)) {
+      continue;
     }
+    activeCategoryCount += 1;
+    assert.match(html,/class="deal-card\b/,"active category misses deal cards in "+file);
+    assert.match(html,/listing-filters/,"active category misses listing filters in "+file);
   }
   assert.ok(activeCategoryCount > 0,"expected at least one active category in the current inventory");
 
