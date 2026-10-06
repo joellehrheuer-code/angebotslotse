@@ -8,7 +8,7 @@ test("Header und Browser-Tab nutzen das bestätigte Angebotslotse-Branding", () 
 
   assert.match(build, /brand-name">Angebotslotse/);
   assert.match(build, /Joel271997 \/ J0JOEL/);
-  assert.match(build, /joel-logo\.svg\?v=3/);
+  assert.match(build, /joel-logo\.svg\?v=4/);
   assert.doesNotMatch(build, /<link rel="icon" href="\$\{url\("\/favicon\.svg"\)\}"/);
   assert.match(build, /site\.css\?v=\d+/);
   assert.match(v13, /V13\.4 CANONICAL BRAND HEADER/);
