@@ -10,5 +10,5 @@ test("Startseite, Deal-Karten und Mobile-Navigation nutzen die kanonische V13.5-
   assert.match(css, /\.deal-card \.deal-content\{/);
   assert.match(css, /\.mobile-bottom-nav\{/);
   assert.match(css, /@media\(max-width:420px\)/);
-  assert.match(build, /site\\.css\\?v=\\d+/);
+  assert.match(build, /site\.css\?v=\d+/);
 });
