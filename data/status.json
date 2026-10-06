@@ -1,29 +1,29 @@
 {
   "state": "ok",
-  "lastSuccessfulUpdate": "2026-10-05T19:21:46.196Z",
-  "activeOffers": 217,
-  "storedOffers": 484,
-  "publishableOffers": 217,
+  "lastSuccessfulUpdate": "2026-10-06T01:19:16.073Z",
+  "activeOffers": 255,
+  "storedOffers": 483,
+  "publishableOffers": 255,
   "awaitingMedia": 0,
   "blockedPublisherPromotions": 4,
   "quarantined": 130,
   "added": 0,
-  "removed": 0,
-  "archivedThisRun": 0,
-  "archivedTotal": 335,
+  "removed": 1,
+  "archivedThisRun": 1,
+  "archivedTotal": 336,
   "filteredForeignLocale": 0,
   "invalidLinks": 0,
   "apiErrors": 0,
   "sources": {
     "awin": {
       "state": "ok",
-      "count": 14,
+      "count": 12,
       "error": null,
       "audit": null
     },
     "awin-enhanced-feeds": {
       "state": "ok",
-      "count": 415,
+      "count": 455,
       "error": null,
       "audit": {
         "feeds": [
@@ -36,18 +36,6 @@
           {
             "advertiserId": 14172,
             "advertiserName": "EMP DE",
-            "locale": "en_DE",
-            "state": "not-found"
-          },
-          {
-            "advertiserId": 85171,
-            "advertiserName": "Coolblue DE",
-            "locale": "de_DE",
-            "state": "not-found"
-          },
-          {
-            "advertiserId": 85171,
-            "advertiserName": "Coolblue DE",
             "locale": "en_DE",
             "state": "not-found"
           },
@@ -102,12 +90,12 @@
             "advertiserName": "Hollyland DE",
             "locale": "en_DE",
             "state": "available",
-            "products": 200,
+            "products": 240,
             "rawProducts": 366,
-            "validProducts": 200,
-            "withPrice": 200,
-            "withImage": 200,
-            "withTracking": 200,
+            "validProducts": 240,
+            "withPrice": 240,
+            "withImage": 240,
+            "withTracking": 240,
             "rejected": 0,
             "rejectionReasons": {}
           }
@@ -185,6 +173,6 @@
     "error": null,
     "mode": "social"
   },
-  "stale": 249,
+  "stale": 210,
   "message": "Aktualisierung mit geschützten Bestandsdaten abgeschlossen."
 }

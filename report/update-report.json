@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-10-05T19:21:46.268Z",
+  "generatedAt": "2026-10-06T01:19:16.156Z",
   "newAwinPrograms": 0,
   "newImpactPrograms": 0,
   "newDaisyconPrograms": 0,
   "newWebgainsPrograms": 0,
-  "activeAwinPrograms": 6,
+  "activeAwinPrograms": 5,
   "activeImpactPrograms": 0,
   "applicationsSent": 0,
   "pendingApplications": 1,
@@ -14,44 +14,43 @@
   "applicationCandidates": 2597,
   "newMerchants": 0,
   "newProducts": 0,
-  "productsWithImage": 208,
+  "productsWithImage": 247,
   "productsWithVideo": 0,
-  "productsWithPrice": 208,
+  "productsWithPrice": 247,
   "productsWithOldPrice": 0,
   "productsWithDiscount": 0,
   "newCoupons": 0,
   "coupons": 5,
   "priceChanges": 0,
-  "expiredOffers": 0,
+  "expiredOffers": 1,
   "expiredCoupons": 0,
   "filteredForeignLocale": 0,
-  "totalProducts": 217,
+  "totalProducts": 255,
   "productsBySource": {
-    "Awin": 217
+    "Awin": 255
   },
   "officialImagesBySource": {
-    "Awin": 208
+    "Awin": 247
   },
   "missingMediaBySource": {},
   "productsByMerchant": {
-    "Hollyland DE": 97,
+    "Hollyland DE": 136,
     "ANTHBOT DE": 59,
     "Outin Germany": 55,
-    "EMP DE": 4,
+    "EMP DE": 3,
     "Imou DE": 1,
     "PDF Agile": 1
   },
   "productsByCategory": {
-    "audio-musik": 57,
+    "audio-musik": 88,
     "garten": 53,
     "haushalt": 53,
-    "zubehoer": 40,
+    "zubehoer": 49,
     "computer": 4,
-    "sonstiges": 4,
+    "sonstiges": 3,
     "werkzeug": 3,
     "freizeit": 1,
-    "smart-home": 1,
-    "technik": 1
+    "smart-home": 1
   },
   "awinEnhancedFeeds": [
     {
@@ -63,18 +62,6 @@
     {
       "advertiserId": 14172,
       "advertiserName": "EMP DE",
-      "locale": "en_DE",
-      "state": "not-found"
-    },
-    {
-      "advertiserId": 85171,
-      "advertiserName": "Coolblue DE",
-      "locale": "de_DE",
-      "state": "not-found"
-    },
-    {
-      "advertiserId": 85171,
-      "advertiserName": "Coolblue DE",
       "locale": "en_DE",
       "state": "not-found"
     },
@@ -129,23 +116,23 @@
       "advertiserName": "Hollyland DE",
       "locale": "en_DE",
       "state": "available",
-      "products": 200,
+      "products": 240,
       "rawProducts": 366,
-      "validProducts": 200,
-      "withPrice": 200,
-      "withImage": 200,
-      "withTracking": 200,
+      "validProducts": 240,
+      "withPrice": 240,
+      "withImage": 240,
+      "withTracking": 240,
       "rejected": 0,
       "rejectionReasons": {}
     }
   ],
   "awinEnhancedDedupe": {
-    "inputRows": 415,
-    "normalizedRows": 216,
+    "inputRows": 455,
+    "normalizedRows": 256,
     "filteredBeforeDedupe": 199,
-    "outputOffers": 208,
-    "dedupedRows": 8,
-    "collapsedRows": 207,
+    "outputOffers": 247,
+    "dedupedRows": 9,
+    "collapsedRows": 208,
     "byMerchant": [
       {
         "merchant": "ANTHBOT DE",
@@ -166,15 +153,15 @@
       },
       {
         "merchant": "Hollyland DE",
-        "inputRows": 200,
-        "normalizedRows": 100,
+        "inputRows": 240,
+        "normalizedRows": 140,
         "filteredBeforeDedupe": 100,
-        "outputOffers": 96,
-        "dedupedRows": 4,
-        "collapsedRows": 104,
-        "rowsWithGtin": 95,
-        "duplicateGtinExtras": 4,
-        "rowsWithMpn": 200,
+        "outputOffers": 135,
+        "dedupedRows": 5,
+        "collapsedRows": 105,
+        "rowsWithGtin": 135,
+        "duplicateGtinExtras": 5,
+        "rowsWithMpn": 240,
         "duplicateMpnExtras": 99,
         "duplicateSourceIdExtras": 0,
         "rejectionReasons": {
@@ -200,27 +187,26 @@
   },
   "quarantinedRecords": 130,
   "blockedPublisherPromotions": 4,
-  "dailyDeal": "c40f247f081913ba",
+  "dailyDeal": "0218eb3f0ddf604a",
   "dailyHighlights": [
+    "0218eb3f0ddf604a",
+    "8d46d086ba055b32",
     "c40f247f081913ba",
-    "0f751d5d6ba3ced6",
     "0a432f17c1a1c534",
-    "6b0f463fb47703de",
-    "ca56d808d3c14eb1"
+    "0055caa27aa9a32c"
   ],
   "weekDeals": [
-    "ca56d808d3c14eb1",
     "2a01a48be68aebb3",
     "d3cd3625c64f9312",
     "6b0f463fb47703de",
     "8d46d086ba055b32"
   ],
   "monthHighlights": [
-    "ca56d808d3c14eb1",
     "2a01a48be68aebb3",
     "10bb463f70696c2e",
     "0055caa27aa9a32c",
-    "0a432f17c1a1c534"
+    "0a432f17c1a1c534",
+    "2d494a434af99f92"
   ],
   "apiErrors": 0,
   "affiliateLinkErrors": 0

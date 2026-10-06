@@ -1,29 +1,18 @@
 {
-  "generatedAt": "2026-10-05T19:21:46.288Z",
+  "generatedAt": "2026-10-06T01:19:16.176Z",
   "market": "DE",
   "publisherId": 3045061,
   "awin": {
     "counts": {
-      "joined": 6,
+      "joined": 5,
       "pending": 4,
-      "suspended": 0,
+      "suspended": 1,
       "rejected": 1,
       "notjoined": 2614
     },
     "totalProgramsEvaluated": 2625,
     "reportedPrograms": 200,
     "programs": [
-      {
-        "network": "Awin",
-        "relationship": "joined",
-        "advertiserId": 85171,
-        "name": "Coolblue DE",
-        "primarySector": "Electronic Superstore",
-        "primaryRegion": {
-          "name": "Germany",
-          "countryCode": "DE"
-        }
-      },
       {
         "network": "Awin",
         "relationship": "notjoined",
@@ -151,6 +140,17 @@
         "advertiserId": 15402,
         "name": "beyerdynamic DE",
         "primarySector": "Electronic Accessories",
+        "primaryRegion": {
+          "name": "Germany",
+          "countryCode": "DE"
+        }
+      },
+      {
+        "network": "Awin",
+        "relationship": "suspended",
+        "advertiserId": 85171,
+        "name": "Coolblue DE",
+        "primarySector": "Electronic Superstore",
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
@@ -3013,7 +3013,7 @@
       {
         "source": "awin-enhanced-feeds",
         "state": "ok",
-        "count": 415,
+        "count": 455,
         "audit": {
           "feeds": [
             {
@@ -3025,18 +3025,6 @@
             {
               "advertiserId": 14172,
               "advertiserName": "EMP DE",
-              "locale": "en_DE",
-              "state": "not-found"
-            },
-            {
-              "advertiserId": 85171,
-              "advertiserName": "Coolblue DE",
-              "locale": "de_DE",
-              "state": "not-found"
-            },
-            {
-              "advertiserId": 85171,
-              "advertiserName": "Coolblue DE",
               "locale": "en_DE",
               "state": "not-found"
             },
@@ -3091,12 +3079,12 @@
               "advertiserName": "Hollyland DE",
               "locale": "en_DE",
               "state": "available",
-              "products": 200,
+              "products": 240,
               "rawProducts": 366,
-              "validProducts": 200,
-              "withPrice": 200,
-              "withImage": 200,
-              "withTracking": 200,
+              "validProducts": 240,
+              "withPrice": 240,
+              "withImage": 240,
+              "withTracking": 240,
               "rejected": 0,
               "rejectionReasons": {}
             }
@@ -3124,9 +3112,9 @@
     "marketplaceSearches": [
       {
         "category": "Audio & Creator",
-        "siteOffers": 57,
+        "siteOffers": 88,
         "joinedPrograms": 0,
-        "gapScore": 57,
+        "gapScore": 88,
         "searchTerms": [
           "audio",
           "music",
@@ -3151,6 +3139,20 @@
         "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
       },
       {
+        "category": "Technik & Computer",
+        "siteOffers": 53,
+        "joinedPrograms": 0,
+        "gapScore": 53,
+        "searchTerms": [
+          "electronics",
+          "computer",
+          "hardware",
+          "mobile",
+          "smart home"
+        ],
+        "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
+      },
+      {
         "category": "Haushalt & Küche",
         "siteOffers": 53,
         "joinedPrograms": 0,
@@ -3160,20 +3162,6 @@
           "appliances",
           "kitchen",
           "vacuum"
-        ],
-        "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
-      },
-      {
-        "category": "Technik & Computer",
-        "siteOffers": 45,
-        "joinedPrograms": 0,
-        "gapScore": 45,
-        "searchTerms": [
-          "electronics",
-          "computer",
-          "hardware",
-          "mobile",
-          "smart home"
         ],
         "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
       },
@@ -3215,7 +3203,7 @@
       {
         "network": "Daisycon",
         "category": "Audio & Musik",
-        "siteOffers": 57,
+        "siteOffers": 88,
         "priority": "hoch",
         "searchTerms": [
           "audio",
@@ -3245,8 +3233,8 @@
       {
         "network": "Daisycon",
         "category": "Technik & Computer",
-        "siteOffers": 45,
-        "priority": "mittel",
+        "siteOffers": 53,
+        "priority": "hoch",
         "searchTerms": [
           "electronics",
           "computer",
@@ -3279,7 +3267,7 @@
       {
         "network": "Tradedoubler",
         "category": "Audio & Musik",
-        "siteOffers": 57,
+        "siteOffers": 88,
         "priority": "hoch",
         "searchTerms": [
           "audio",
@@ -3309,8 +3297,8 @@
       {
         "network": "Tradedoubler",
         "category": "Technik & Computer",
-        "siteOffers": 45,
-        "priority": "mittel",
+        "siteOffers": 53,
+        "priority": "hoch",
         "searchTerms": [
           "electronics",
           "computer",
@@ -3348,7 +3336,7 @@
       {
         "network": "Webgains",
         "category": "Audio & Musik",
-        "siteOffers": 57,
+        "siteOffers": 88,
         "priority": "hoch",
         "searchTerms": [
           "audio",
@@ -3378,8 +3366,8 @@
       {
         "network": "Webgains",
         "category": "Technik & Computer",
-        "siteOffers": 45,
-        "priority": "mittel",
+        "siteOffers": 53,
+        "priority": "hoch",
         "searchTerms": [
           "electronics",
           "computer",
@@ -3410,15 +3398,15 @@
     "reason": "Webgains Memberships und Terms werden automatisch gelesen; accept_terms=true wird nur nach ausdrücklicher menschlicher Bestätigung des geprüften Terms-Stands verwendet."
   },
   "publication": {
-    "offers": 217,
+    "offers": 255,
     "concreteAwaitingMedia": 0,
     "blockedPublisherPromotions": 4,
     "partnerEntries": 219,
     "merchants": 6,
-    "products": 208,
-    "images": 208,
+    "products": 247,
+    "images": 247,
     "videos": 0,
-    "prices": 208,
+    "prices": 247,
     "discounts": 0,
     "coupons": 5
   },
