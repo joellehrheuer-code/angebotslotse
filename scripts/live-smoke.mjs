@@ -50,8 +50,8 @@ const validateState=({report,statusHtml,urls,homeHtml})=>{
   if(new Set(urls).size!==urls.length)errors.push("Sitemap enthält doppelte URLs");
   if(urls.some(url=>!url.startsWith(`${base}/`)&&url!==base))errors.push("Sitemap enthält fremde oder unerwartete URLs");
   const requiredHomeMarkers=[
-    'site.css?v=35',
-    'app.js?v=19',
+    'site.css?v=44',
+    'app.js?v=22',
     'id="aktuell-angebunden"',
     'class="top-social-links creator-dock-links"',
     'data-live-sort="deals"',
