@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-09-30T02:35:00+02:00",
+  "generatedAt": "2026-10-06T13:24:00+02:00",
   "purpose": "Deduplication and status tracking for Angebotslotse affiliate/partner outreach. No contracts are auto-accepted.",
   "statuses": [
     {
       "brand": "Coolblue DE",
       "network": "Awin",
-      "status": "reactivation-requested",
-      "lastContactAt": "2026-09-30T01:38:00+02:00",
+      "status": "rejected",
+      "lastContactAt": "2026-10-06T09:49:10+02:00",
       "contact": "affiliate@coolblue.de",
-      "nextAction": "Antwort von Anne Weitkämper abwarten; falls erforderlich Website im Awin-Konto als Property hinterlegen und danach erneut zur Prüfung melden.",
-      "notes": "Publisher-ID 3045061 und Live-URL des Angebotslotse erneut im bestehenden Thread gesendet. Coolblue-Links bis bestätigter Freigabe gesperrt lassen."
+      "nextAction": "Dauerhaft aus neuer Ansprache und Veröffentlichung ausschließen; nur bei ausdrücklicher neuer Einladung oder relevanter Programmänderung erneut prüfen.",
+      "notes": "Anne Weitkämper hat die Bewerbung nach Prüfung der Live-Seite am 06.10.2026 ausdrücklich abgelehnt, da Aufbau und Ausrichtung nicht zu den Affiliate-Anforderungen passen. Coolblue-Werbelinks bleiben gesperrt."
     },
     {
       "brand": "EcoFlow DE",
@@ -156,11 +156,11 @@
     {
       "brand": "Sportspar DE",
       "network": "Awin",
-      "status": "pending",
-      "lastContactAt": "2026-09-30T02:05:00+02:00",
+      "status": "needs-info",
+      "lastContactAt": "2026-10-05T21:44:40+02:00",
       "contact": "a.borisenko@sportspar.de",
-      "nextAction": "Antwort/Freischaltung abwarten; bei Freigabe Deal-Daten, Produktfeed und Deeplinks integrieren.",
-      "notes": "Offizieller Affiliate-Kontakt laut Awin; unverbindliche Publisher-Anfrage gesendet. Publisher-ID 3045061."
+      "nextAction": "Nur mit belegbaren Analytics-/Affiliate-Daten zu Trafficquellen, organischem Anteil, Kanälen, Deal-Ausspielung und bisherigen Ergebnissen antworten; keine Reichweite oder Sales schätzen.",
+      "notes": "SportSpar bewertet den thematischen Fokus grundsätzlich als passend und bittet vor Freischaltung um konkrete Traffic- und Sales-Nachweise. Antwort bleibt bis zu belastbaren Daten offen."
     },
     {
       "brand": "PremiumSIM DE",
