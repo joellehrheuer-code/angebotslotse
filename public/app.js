@@ -855,8 +855,21 @@ updateWatchIndicators();
       setStatus(status,data.state==="already_active"?"Diese Adresse ist bereits bestätigt.":"Fast geschafft: Bitte bestätige die E-Mail, die wir dir schicken.","success");
       newsletter.reset();
     } catch(error) {
-      const rate=String(error?.message||"").includes("rate_limited");
-      setStatus(status,rate?"Zu viele Versuche in kurzer Zeit. Bitte später erneut versuchen.":"Anmeldung konnte gerade nicht gespeichert werden.","error");
+      const message=String(error?.message||"");
+      const rate=message.includes("rate_limited");
+      const mailSetup=message.includes("email_not_configured");
+      const mailFailed=message.includes("confirmation_email_failed");
+      setStatus(
+        status,
+        rate
+          ?"Zu viele Versuche in kurzer Zeit. Bitte später erneut versuchen."
+          :mailSetup
+            ?"Der Newsletter-Mailversand wird gerade eingerichtet. Bitte später erneut versuchen."
+            :mailFailed
+              ?"Die Bestätigungsmail konnte gerade nicht versendet werden. Bitte später erneut versuchen."
+              :"Anmeldung konnte gerade nicht gespeichert werden.",
+        "error"
+      );
     } finally { submit?.removeAttribute("disabled"); }
   });
 })();
