@@ -18,5 +18,5 @@ test("V18 vereinheitlicht Merkliste und Konto-Oberfläche", () => {
   assert.match(build,/data-account-alerts-card/);
   assert.match(build,/data-account-push-card/);
   assert.match(build,/data-account-cashback-card/);
-  assert.match(build,/site\.css\?v=47/);
+  assert.match(build,/site\.css\?v=48/);
 });
