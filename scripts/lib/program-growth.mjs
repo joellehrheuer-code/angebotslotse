@@ -25,6 +25,25 @@ const finiteMetric = value => {
   return Number.isFinite(number) ? number : null;
 };
 
+const siteCategoryKeys = {
+  "Gaming": ["gaming"],
+  "Technik & Computer": ["technik","computer","zubehoer"],
+  "Smart Home": ["smart-home"],
+  "Audio & Creator": ["audio-musik"],
+  "Homeoffice": ["homeoffice"],
+  "Mode & Sport": ["mode","sport-fitness"],
+  "Gesundheit & Wellness": ["gesundheit"],
+  "Haushalt & Küche": ["haushalt"],
+  "Garten & Werkzeug": ["garten","werkzeug"],
+  "Auto & Mobilität": ["auto"],
+  "Tierbedarf": ["tierbedarf"],
+  "Beauty & Pflege": ["beauty"],
+  "Freizeit & Reisen": ["freizeit"]
+};
+export const categoryCoverage = (category, siteCategoryStats = {}) =>
+  (siteCategoryKeys[category] || []).reduce((sum,key)=>sum+(Number(siteCategoryStats[key])||0),0);
+
+
 export const summarizeAwinProgramDetail = detail => {
   const row = Array.isArray(detail) ? detail[0] : detail;
   const kpi = row?.kpi ?? {};
@@ -55,7 +74,7 @@ export const buildApplicationDraft = ({ name, primarySector, activeOffers = 0 })
   return `Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten ${name} redaktionell passend im Bereich ${category} einbinden. ${offerSentence}Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.`;
 };
 
-export function rankAwinOpportunities({ programs = [], discoveryOffers = [], feedAdvertiserIds = [], programDetails = {} } = {}) {
+export function rankAwinOpportunities({ programs = [], discoveryOffers = [], feedAdvertiserIds = [], programDetails = {}, siteCategoryStats = {} } = {}) {
   const feedIds = new Set([...feedAdvertiserIds].map(String));
   const detailMap = programDetails instanceof Map ? programDetails : new Map(Object.entries(programDetails ?? {}));
   const offerMap = new Map();
@@ -78,9 +97,14 @@ export function rankAwinOpportunities({ programs = [], discoveryOffers = [], fee
       const category = categoryForProgram(program);
       const hasFeed = feedIds.has(id);
       const metrics = summarizeAwinProgramDetail(detailMap.get(id));
+      const siteCoverage = categoryCoverage(category, siteCategoryStats);
       let score = 0;
       const reasons = [];
       if (category !== "Weitere") { score += 20; reasons.push(`passt zu ${category}`); }
+      if (category !== "Weitere") {
+        const breadthPoints = siteCoverage < 10 ? 15 : siteCoverage < 25 ? 10 : siteCoverage < 50 ? 5 : 0;
+        if (breadthPoints) { score += breadthPoints; reasons.push(`Sortimentslücke: erst ${siteCoverage} veröffentlichte Angebote in ${category}`); }
+      }
       if (isStrategicProgram(program)) { score += 15; reasons.push("strategisch relevante Marke"); }
       if (discovered.count) { const points = Math.min(30, discovered.count * 6); score += points; reasons.push(`${discovered.count} aktive DE-Aktion${discovered.count === 1 ? "" : "en"}`); }
       if (hasFeed) { score += 25; reasons.push("Produktfeed verfügbar"); }
@@ -106,6 +130,7 @@ export function rankAwinOpportunities({ programs = [], discoveryOffers = [], fee
         activeDiscoveryOffers: discovered.count,
         offerExamples: discovered.examples,
         productFeed: hasFeed,
+        siteCategoryCoverage: siteCoverage,
         metrics,
         reasons,
         applicationRequired,
