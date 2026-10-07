@@ -451,18 +451,18 @@ const authPublicConfig={
   webPushVapidPublicKey:config.supabase?.webPushVapidPublicKey||""
 };
 const accountBody=`<section class="listing account-page" data-account-root>
-  <header class="subpage-hero"><span class="eyebrow">Angebotslotse Konto</span>
-  <h1>Merkliste, Wunschpreise & Alarme überall dabei</h1>
-  <p class="category-intro">Ein Konto ist optional. Ohne Anmeldung bleibt deine lokale Merkliste erhalten. Mit Anmeldung kannst du sie sicher in deine persönliche Cloud-Merkliste übernehmen, Alarmregeln speichern und persönliche In-App-Meldungen zu Treffern erhalten.</p></header>
+  <header class="subpage-hero account-hero"><span class="eyebrow">Angebotslotse Konto</span>
+  <h1 data-account-hero-title>Willkommen bei Angebotslotse.</h1>
+  <p class="category-intro" data-account-hero-intro>Dein Konto ist optional. Ohne Anmeldung bleibt deine lokale Merkliste erhalten. Mit Anmeldung kannst du Merkliste, Wunschpreise, Alarme und Meldungen geräteübergreifend nutzen.</p></header>
   <div class="account-status" data-account-status aria-live="polite"></div>
   <div class="account-grid">
     <section class="account-card" data-account-signed-out>
-      <span class="eyebrow">Anmelden</span>
-      <h2>Login per E-Mail-Link</h2>
-      <p>Du bekommst einen einmaligen Anmeldelink. Angebotslotse speichert kein eigenes Passwort.</p>
+      <span class="eyebrow">Konto</span>
+      <h2>Konto erstellen oder anmelden</h2>
+      <p>Gib deine E-Mail-Adresse ein. Beim ersten Mal wird dein Konto erstellt, später meldest du dich über denselben sicheren Einmal-Link wieder an. Angebotslotse speichert kein eigenes Passwort.</p>
       <form data-email-login class="account-login-form">
         <label>E-Mail-Adresse<input type="email" data-email-input autocomplete="email" required placeholder="name@beispiel.de"></label>
-        <button class="button primary" type="submit">Anmeldelink senden</button>
+        <button class="button primary" type="submit">Weiter per E-Mail</button>
       </form>
       <button class="button account-google" type="button" data-google-login${authPublicConfig.googleAuthEnabled?"":" aria-disabled=\"true\""}>Mit Google anmelden</button>
       <small>${authPublicConfig.googleAuthEnabled?"Google-Login ist aktiv.":"Google-Login ist technisch vorbereitet und wird nach Einrichtung des Google-OAuth-Clients freigeschaltet."}</small>
@@ -563,7 +563,7 @@ const accountBody=`<section class="listing account-page" data-account-root>
     </section>
   </div>
   <script>globalThis.ANGEBOTSLOTSE_AUTH_CONFIG=${json(authPublicConfig)};<\/script>
-  <script src="${url("/account-client.js?v=2")}" defer><\/script>
+  <script src="${url("/account-client.js?v=3")}" defer><\/script>
 </section>`;
 await fs.writeFile(path.join(out,"konto.html"),page({title:"Konto & Preisalarme",description:"Optionales Angebotslotse-Konto für Cloud-Merkliste, Wunschpreise, Alarmregeln und persönliche In-App-Benachrichtigungen.",canonical:"/konto.html",indexable:false,body:accountBody}));
 

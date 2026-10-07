@@ -13,6 +13,9 @@ if (!root || !config.url || !config.publishableKey) {
 
   const WATCHLIST_KEY = "angebotslotse-watchlist-v1";
   const statusNode = root.querySelector("[data-account-status]");
+  const accountHeroTitle = root.querySelector("[data-account-hero-title]");
+  const accountHeroIntro = root.querySelector("[data-account-hero-intro]");
+
   const signedOut = root.querySelector("[data-account-signed-out]");
   const signedIn = root.querySelector("[data-account-signed-in]");
   const emailForm = root.querySelector("[data-email-login]");
@@ -449,6 +452,8 @@ if (!root || !config.url || !config.publishableKey) {
     if (cashbackCard) cashbackCard.hidden = !user;
     if (accountDataActions) accountDataActions.hidden = !user;
     if (!user) {
+      if (accountHeroTitle) accountHeroTitle.textContent = "Willkommen bei Angebotslotse.";
+      if (accountHeroIntro) accountHeroIntro.textContent = "Erstelle ein kostenloses Konto oder melde dich an, um Merkliste, Wunschpreise, Alarme und Meldungen geräteübergreifend zu nutzen. Ohne Konto bleibt deine lokale Merkliste weiterhin erhalten.";
       if (userEmail) userEmail.textContent = "";
       if (cloudCount) cloudCount.textContent = "0";
       if (alertList) alertList.replaceChildren();
@@ -467,6 +472,8 @@ if (!root || !config.url || !config.publishableKey) {
       }
       return;
     }
+    if (accountHeroTitle) accountHeroTitle.textContent = "Willkommen zurück.";
+    if (accountHeroIntro) accountHeroIntro.textContent = "Deine gespeicherten Angebote, Wunschpreise, Alarme und Meldungen werden jetzt mit deinem Konto geladen.";
     if (userEmail) userEmail.textContent = user.email || "Angemeldet";
 
     const accountLoaders = [
