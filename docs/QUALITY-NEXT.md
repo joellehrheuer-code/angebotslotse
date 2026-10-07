@@ -1,18 +1,12 @@
 # Angebotslotse – nächste Qualitätsaufgaben
 
-Generiert: 2026-10-07T13:51:34.769Z
-Gesamt: **10000** · offen: **9998** · erledigt: **2** · blockiert: **0**
+Generiert: 2026-10-07T13:55:58.290Z
+Gesamt: **10000** · offen: **9992** · erledigt: **8** · blockiert: **0**
 
 ## Nächste 100 offene Checks
 
 | ID | Prio | Themenblock | Prüfung |
 |---|---|---|---|
-| Q00570 | P0 | 007 Header | Barrierefreiheit, Semantik und zugängliche Namen prüfen — Desktop/Laptop 1366×768 |
-| Q00571 | P0 | 007 Header | Barrierefreiheit, Semantik und zugängliche Namen prüfen — Tablet 768 px |
-| Q00572 | P0 | 007 Header | Barrierefreiheit, Semantik und zugängliche Namen prüfen — Mobile 430 px |
-| Q00573 | P0 | 007 Header | Barrierefreiheit, Semantik und zugängliche Namen prüfen — Mobile 390 px |
-| Q00574 | P0 | 007 Header | Barrierefreiheit, Semantik und zugängliche Namen prüfen — Mobile 360 px |
-| Q00576 | P0 | 007 Header | Barrierefreiheit, Semantik und zugängliche Namen prüfen — Reduced Motion, langsames Netz und Teilfehler |
 | Q00601 | P0 | 007 Header | Fehlerfälle, Timeouts und Wiederherstellung prüfen — Desktop 1920×1080 |
 | Q00602 | P0 | 007 Header | Fehlerfälle, Timeouts und Wiederherstellung prüfen — Desktop/Laptop 1366×768 |
 | Q00603 | P0 | 007 Header | Fehlerfälle, Timeouts und Wiederherstellung prüfen — Tablet 768 px |
@@ -107,5 +101,11 @@ Gesamt: **10000** · offen: **9998** · erledigt: **2** · blockiert: **0**
 | Q01540 | P0 | 018 Deal-Karte | Barrierefreiheit, Semantik und zugängliche Namen prüfen — Mobile 430 px |
 | Q01541 | P0 | 018 Deal-Karte | Barrierefreiheit, Semantik und zugängliche Namen prüfen — Mobile 390 px |
 | Q01542 | P0 | 018 Deal-Karte | Barrierefreiheit, Semantik und zugängliche Namen prüfen — Mobile 360 px |
+| Q01543 | P0 | 018 Deal-Karte | Barrierefreiheit, Semantik und zugängliche Namen prüfen — Tastatur/Screenreader |
+| Q01544 | P0 | 018 Deal-Karte | Barrierefreiheit, Semantik und zugängliche Namen prüfen — Reduced Motion, langsames Netz und Teilfehler |
+| Q01569 | P0 | 018 Deal-Karte | Fehlerfälle, Timeouts und Wiederherstellung prüfen — Desktop 1920×1080 |
+| Q01570 | P0 | 018 Deal-Karte | Fehlerfälle, Timeouts und Wiederherstellung prüfen — Desktop/Laptop 1366×768 |
+| Q01571 | P0 | 018 Deal-Karte | Fehlerfälle, Timeouts und Wiederherstellung prüfen — Tablet 768 px |
+| Q01572 | P0 | 018 Deal-Karte | Fehlerfälle, Timeouts und Wiederherstellung prüfen — Mobile 430 px |
 
 Statusänderungen werden in `data/quality-progress.json` geführt; der 10.000-Punkte-Backlog wird daraus reproduzierbar erzeugt.

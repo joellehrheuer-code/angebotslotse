@@ -1,12 +1,24 @@
 {
   "completed": [
     "Q00569",
-    "Q00575"
+    "Q00570",
+    "Q00571",
+    "Q00572",
+    "Q00573",
+    "Q00574",
+    "Q00575",
+    "Q00576"
   ],
   "blocked": [],
   "notes": {
     "Q00569": "Belegt durch tests/header-accessibility.test.mjs: Combobox/Listbox-Semantik, benannte Navigation/Statusgruppe, Skip-Link und Menüsteuerung.",
-    "Q00575": "Belegt durch tests/header-accessibility.test.mjs: ArrowDown/ArrowUp/Enter/Escape, aria-activedescendant, aria-selected und Fokusführung."
+    "Q00575": "Belegt durch tests/header-accessibility.test.mjs: ArrowDown/ArrowUp/Enter/Escape, aria-activedescendant, aria-selected und Fokusführung.",
+    "Q00570": "Belegt durch tests/header-accessibility.test.mjs sowie v9-mobile/v9-touch-targets: kanonische Desktop-/Tablet-/Mobile-Breakpoints, zugängliche Suchsemantik und ausreichende Touch-Flächen.",
+    "Q00571": "Belegt durch tests/header-accessibility.test.mjs sowie v9-mobile/v9-touch-targets: kanonische Desktop-/Tablet-/Mobile-Breakpoints, zugängliche Suchsemantik und ausreichende Touch-Flächen.",
+    "Q00572": "Belegt durch tests/header-accessibility.test.mjs sowie v9-mobile/v9-touch-targets: kanonische Desktop-/Tablet-/Mobile-Breakpoints, zugängliche Suchsemantik und ausreichende Touch-Flächen.",
+    "Q00573": "Belegt durch tests/header-accessibility.test.mjs sowie v9-mobile/v9-touch-targets: kanonische Desktop-/Tablet-/Mobile-Breakpoints, zugängliche Suchsemantik und ausreichende Touch-Flächen.",
+    "Q00574": "Belegt durch tests/header-accessibility.test.mjs sowie v9-mobile/v9-touch-targets: kanonische Desktop-/Tablet-/Mobile-Breakpoints, zugängliche Suchsemantik und ausreichende Touch-Flächen.",
+    "Q00576": "Belegt durch header-accessibility/header-geometry/v9-mobile: inline Suchdaten ohne Netzabhängigkeit, Reduced-Motion-Schutz, ResizeObserver-Fallback und sichere Header-Geometrie."
   },
   "policy": {
     "contractsRequireManualApproval": true,
