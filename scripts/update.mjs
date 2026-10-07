@@ -168,7 +168,7 @@ try {
     productFeed:row.metrics?.hasProductFeed??null,images:null,prices:null,coupons:null,deeplinks:null,dealShoppingAllowed:null,
     applicationPossible:row.applicationPossible,applicationSent:false,lastChecked:checkedAt,advertiserId:row.programId,campaignId:row.campaignId,
     opportunityScore:row.score,opportunityPriority:row.priority,nextAction:row.nextAction,submissionReady:row.submissionReady,humanApprovalRequired:true}));
-  const opportunities=rankAwinOpportunities({programs:allProgrammeRows,discoveryOffers:awinDiscoveryOffers,feedAdvertiserIds:feedAdvertisers,programDetails:collected.awinProgramDetails??{}});
+  const opportunities=rankAwinOpportunities({programs:allProgrammeRows,discoveryOffers:awinDiscoveryOffers,feedAdvertiserIds:feedAdvertisers,programDetails:collected.awinProgramDetails??{},siteCategoryStats:categoryStats});
   const opportunityById=new Map(opportunities.map(opportunity=>[String(opportunity.advertiserId),opportunity]));
   for(const program of programInventory){
     const opportunity=opportunityById.get(String(program.advertiserId));
