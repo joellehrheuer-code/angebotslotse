@@ -1,6 +1,14 @@
 name: Angebotslotse Qualitätsloop
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/quality-loop.yml"
+      - "scripts/generate-quality-backlog.mjs"
+      - "data/quality-progress.json"
+      - "docs/COMPLETION-CHECKLIST.md"
+      - "tests/quality-backlog.test.mjs"
   schedule:
     - cron: "47 */6 * * *"
   workflow_dispatch:
