@@ -4615,3 +4615,35 @@ body{
     grid-column:auto!important;
   }
 }
+
+
+/* Header/search media failure recovery */
+.header-brand-picture .soft-media-fallback{
+  width:42px!important;
+  height:42px!important;
+  display:grid!important;
+  place-items:center!important;
+  border:1px solid #384156!important;
+  border-radius:13px!important;
+  background:#171d29!important;
+  color:#ff83c7!important;
+  font-size:11px!important;
+  font-weight:950!important;
+  letter-spacing:.04em!important;
+}
+.search-suggest-item .soft-media-fallback{
+  width:54px!important;
+  height:54px!important;
+  flex:0 0 54px!important;
+  display:grid!important;
+  place-items:center!important;
+  padding:6px!important;
+  border:1px solid #30394d!important;
+  border-radius:10px!important;
+  background:#171d29!important;
+  color:#8894a8!important;
+  font-size:8px!important;
+  font-weight:800!important;
+  line-height:1.2!important;
+  text-align:center!important;
+}
