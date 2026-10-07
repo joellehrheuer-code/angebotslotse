@@ -45,6 +45,6 @@ test("V12.6 erzwingt frische Assets und PWA-Cache-Version",()=>{
   const html=fs.readFileSync("dist/index.html","utf8");
   const sw=fs.readFileSync("public/sw.js","utf8");
   assert.match(html,/site\.css\?v=48/);
-  assert.match(html,/app\.js\?v=23/);
+  assert.match(html,/app\.js\?v=24/);
   assert.match(sw,/angebotslotse-shell-v17/);
 });

@@ -15,7 +15,7 @@ test("V19 zeigt nur echte Community-Daten und moderierte Bewertungen", () => {
   assert.match(build,/data-community-review-form/);
   assert.match(build,/ECHTE COMMUNITY · KEINE FAKE-STIMMEN/);
   assert.match(build,/site\.css\?v=48/);
-  assert.match(build,/app\.js\?v=23/);
+  assert.match(build,/app\.js\?v=24/);
   assert.doesNotMatch(build,/\b4[.,]9\b[^\n]*Bewertung/);
 
   assert.match(app,/sessionStorage\.getItem\("angebotslotse-community-visit-v1"\)/);
