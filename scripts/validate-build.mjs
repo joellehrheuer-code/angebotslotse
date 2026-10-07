@@ -25,10 +25,39 @@ const ensureLocalAsset = (value,pageUrl,file,label) => {
     errors.push(`Ungültige ${label}-URL in ${file}: ${value}`);
   }
 };
+const plainText = value => String(value||"")
+  .replace(/<svg\b[\s\S]*?<\/svg>/gi,"")
+  .replace(/<[^>]+>/g,"")
+  .replace(/&(?:[a-z]+|#\d+|#x[\da-f]+);/gi," ")
+  .trim();
+const hasAccessibleName = (attributes,body="") =>
+  /\baria-(?:label|labelledby)\s*=/i.test(attributes) || plainText(body).length > 0 || /<img\b[^>]*\balt=(['"])[^'"]+\1/i.test(body);
+const escapeRegExp = value => String(value).replace(/[.*+?^${}()|[\]\\]/g,"\\$&");
 function walk(dir) { for (const entry of fs.readdirSync(dir,{withFileTypes:true})) { const p=path.join(dir,entry.name); if(entry.isDirectory()) walk(p); else if(p.endsWith(".html")) htmlFiles.push(p); } }
 walk("dist");
 for (const file of htmlFiles) {
   const html = fs.readFileSync(file,"utf8");
+  if (!/<html\b[^>]*\blang=(['"])de(?:-DE)?\1/i.test(html)) errors.push(`Deutsche Seitensprache fehlt: ${file}`);
+  if ((html.match(/<main\b/gi)||[]).length !== 1) errors.push(`Genau ein main-Landmark erforderlich: ${file}`);
+  if ((html.match(/<h1\b/gi)||[]).length !== 1) errors.push(`Genau eine H1 erforderlich: ${file}`);
+  const ids = [...html.matchAll(/(?:\s|<)id=(['"])(.*?)\1/gi)].map(match=>match[2]);
+  const duplicateIds = [...new Set(ids.filter((id,index)=>ids.indexOf(id)!==index))];
+  if (duplicateIds.length) errors.push(`Doppelte IDs in ${file}: ${duplicateIds.join(", ")}`);
+  for (const match of html.matchAll(/<button\b([^>]*)>([\s\S]*?)<\/button>/gi)) {
+    if (!hasAccessibleName(match[1],match[2])) errors.push(`Button ohne zugänglichen Namen: ${file}`);
+  }
+  for (const match of html.matchAll(/<a\b([^>]*)>([\s\S]*?)<\/a>/gi)) {
+    if (!hasAccessibleName(match[1],match[2])) errors.push(`Link ohne zugänglichen Namen: ${file}`);
+  }
+  for (const match of html.matchAll(/<(input|select|textarea)\b([^>]*)>/gi)) {
+    const attributes = match[2];
+    if (/type=(['"])(?:hidden|submit|button|reset)\1/i.test(attributes) || /\baria-hidden=(['"])true\1/i.test(attributes) || /\baria-(?:label|labelledby)\s*=/i.test(attributes)) continue;
+    const id = attributes.match(/\bid=(['"])(.*?)\1/i)?.[2];
+    if (id && new RegExp(`<label\\b[^>]*\\bfor=(['"])${escapeRegExp(id)}\\1`,"i").test(html)) continue;
+    const before = html.slice(0,match.index);
+    if (before.lastIndexOf("<label") > before.lastIndexOf("</label>")) continue;
+    errors.push(`Formularfeld ohne zugängliche Beschriftung in ${file}: ${match[1]}`);
+  }
   if (!html.includes('<meta name="viewport"')) errors.push(`Viewport fehlt: ${file}`);
   if (!html.includes('<link rel="canonical"')) errors.push(`Canonical fehlt: ${file}`);
   if (!html.includes('<meta name="robots"')) errors.push(`Robots-Meta fehlt: ${file}`);
