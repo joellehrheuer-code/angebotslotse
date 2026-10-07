@@ -1,0 +1,79 @@
+name: Angebotslotse Qualitätsloop
+
+on:
+  schedule:
+    - cron: "47 */6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: angebotslotse-quality-loop
+  cancel-in-progress: true
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: 10.000-Punkte-Backlog erzeugen
+        run: npm run quality:backlog
+
+      - name: Tests
+        run: npm test
+
+      - name: Integrität
+        run: npm run check
+
+      - name: Build
+        run: npm run build
+        env:
+          SITE_URL: https://joellehrheuer-code.github.io/angebotslotse
+          CONTACT_EMAIL: joellehrheuer@gmail.com
+          LEGAL_NAME: Joel Leroy Lehrheuer
+          LEGAL_ADDRESS: Rathausstraße 4, 52072 Aachen, Deutschland
+          GOOGLE_SITE_VERIFICATION: ${{ vars.GOOGLE_SITE_VERIFICATION }}
+
+      - name: Seitenvalidierung
+        run: npm run validate
+
+      - name: SEO-Audit
+        run: npm run seo
+        env:
+          SITE_URL: https://joellehrheuer-code.github.io/angebotslotse
+
+      - name: Security-Audit
+        run: npm run security
+
+      - name: Nächste Aufgaben im Repo aktualisieren
+        shell: bash
+        run: |
+          if ! git diff --quiet -- docs/QUALITY-NEXT.md; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add docs/QUALITY-NEXT.md
+            git commit -m "chore(quality): nächste Angebotslotse-Prüfungen aktualisieren"
+            git push
+          fi
+
+      - name: Qualitätsberichte sichern
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: quality-loop-${{ github.run_id }}
+          retention-days: 14
+          if-no-files-found: warn
+          path: |
+            report/quality-backlog.json
+            docs/QUALITY-NEXT.md
+            report/seo-report.json

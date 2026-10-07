@@ -6,3 +6,5 @@ dist/
 data/private/
 *.log
 public/account-client.js
+report/quality-backlog.json
+report/quality-loop-status.json

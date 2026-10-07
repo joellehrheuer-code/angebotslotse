@@ -1,0 +1,11 @@
+{
+  "completed": [],
+  "blocked": [],
+  "notes": {},
+  "policy": {
+    "contractsRequireManualApproval": true,
+    "noFakeReviewsOrVisitorCounts": true,
+    "noPaidCommitmentsWithoutApproval": true,
+    "singleSourceOfTruth": "docs/COMPLETION-CHECKLIST.md"
+  }
+}
