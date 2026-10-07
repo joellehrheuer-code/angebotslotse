@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-07T05:58:29.082Z",
+  "generatedAt": "2026-10-07T08:54:43.295Z",
   "market": "DE",
   "publisherId": 3045061,
   "awin": {
@@ -8,9 +8,9 @@
       "pending": 3,
       "suspended": 1,
       "rejected": 2,
-      "notjoined": 2620
+      "notjoined": 2619
     },
-    "totalProgramsEvaluated": 2631,
+    "totalProgramsEvaluated": 2630,
     "reportedPrograms": 200,
     "programs": [
       {
@@ -1050,6 +1050,17 @@
       {
         "network": "Awin",
         "relationship": "notjoined",
+        "advertiserId": 25012,
+        "name": "Berliner Kaffeeroesterei DE",
+        "primarySector": "FMCG",
+        "primaryRegion": {
+          "name": "Germany",
+          "countryCode": "DE"
+        }
+      },
+      {
+        "network": "Awin",
+        "relationship": "notjoined",
         "advertiserId": 118519,
         "name": "Bernstein DE",
         "primarySector": "Home & Garden",
@@ -1831,6 +1842,17 @@
       {
         "network": "Awin",
         "relationship": "notjoined",
+        "advertiserId": 11783,
+        "name": "DELIFE EU",
+        "primarySector": "Furniture & Soft Furnishings",
+        "primaryRegion": {
+          "name": "Germany",
+          "countryCode": "DE"
+        }
+      },
+      {
+        "network": "Awin",
+        "relationship": "notjoined",
         "advertiserId": 22915,
         "name": "Delonghi DE",
         "primarySector": "Home & Garden",
@@ -2190,34 +2212,48 @@
           "name": "Germany",
           "countryCode": "DE"
         }
-      },
-      {
-        "network": "Awin",
-        "relationship": "notjoined",
-        "advertiserId": 129151,
-        "name": "ElectricSun Deutschland",
-        "primarySector": "Home & Garden",
-        "primaryRegion": {
-          "name": "Germany",
-          "countryCode": "DE"
-        }
-      },
-      {
-        "network": "Awin",
-        "relationship": "notjoined",
-        "advertiserId": 128587,
-        "name": "ELEMENTI (DE)",
-        "primarySector": "Home & Garden",
-        "primaryRegion": {
-          "name": "Germany",
-          "countryCode": "DE"
-        }
       }
     ],
     "discoveryOffers": 200,
     "discoveryError": null,
     "detailsEnriched": 5,
     "opportunities": [
+      {
+        "brand": "Samsung Shop DE",
+        "network": "Awin",
+        "advertiserId": 14815,
+        "status": "notjoined",
+        "category": "Technik & Computer",
+        "score": 69,
+        "priority": "mittel",
+        "activeDiscoveryOffers": 4,
+        "offerExamples": [
+          "Galaxy Tab S12-Serie + Gratis Book Cover Keyboard",
+          "Jetzt die neue Galaxy Tab S12-Serie mit Mobilfunkvertrag kaufen.*",
+          "Die neue Galaxy Tab S12-Serie"
+        ],
+        "productFeed": false,
+        "metrics": {
+          "awinIndex": null,
+          "epc": null,
+          "conversionRate": null,
+          "approvalPercentage": null,
+          "validationDays": null,
+          "averagePaymentTime": null,
+          "commissionMin": null,
+          "commissionMax": null,
+          "commissionTypes": []
+        },
+        "reasons": [
+          "passt zu Technik & Computer",
+          "strategisch relevante Marke",
+          "4 aktive DE-Aktionen"
+        ],
+        "applicationRequired": true,
+        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Samsung Shop DE redaktionell passend im Bereich Technik & Computer einbinden. Bei Awin sind aktuell 4 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+        "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+        "automationState": "ready-for-review"
+      },
       {
         "brand": "Anker DE",
         "network": "Awin",
@@ -2917,37 +2953,6 @@
         "automationState": "ready-for-review"
       },
       {
-        "brand": "Samsung Shop DE",
-        "network": "Awin",
-        "advertiserId": 14815,
-        "status": "notjoined",
-        "category": "Technik & Computer",
-        "score": 45,
-        "priority": "mittel",
-        "activeDiscoveryOffers": 0,
-        "offerExamples": [],
-        "productFeed": false,
-        "metrics": {
-          "awinIndex": null,
-          "epc": null,
-          "conversionRate": null,
-          "approvalPercentage": null,
-          "validationDays": null,
-          "averagePaymentTime": null,
-          "commissionMin": null,
-          "commissionMax": null,
-          "commissionTypes": []
-        },
-        "reasons": [
-          "passt zu Technik & Computer",
-          "strategisch relevante Marke"
-        ],
-        "applicationRequired": true,
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Samsung Shop DE redaktionell passend im Bereich Technik & Computer einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-        "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-        "automationState": "ready-for-review"
-      },
-      {
         "brand": "Sony DE",
         "network": "Awin",
         "advertiserId": 34015,
@@ -3103,12 +3108,9 @@
     ]
   },
   "impact": {
-    "state": "disabled",
+    "state": "error",
     "publishableOffers": 0,
-    "inventory": {
-      "reason": "Impact sync reserved for the dedicated daily workflow window",
-      "cadenceHours": 24
-    },
+    "inventory": null,
     "opportunities": [],
     "marketplaceSearches": [
       {
