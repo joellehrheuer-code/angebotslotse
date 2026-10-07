@@ -527,8 +527,8 @@ if (!root || !config.url || !config.publishableKey) {
     if (reviewModerationCard) reviewModerationCard.hidden = true;
     if (accountDataActions) accountDataActions.hidden = !user;
     if (!user) {
-      if (accountHeroTitle) accountHeroTitle.textContent = "Willkommen bei Angebotslotse.";
-      if (accountHeroIntro) accountHeroIntro.textContent = "Erstelle ein kostenloses Konto oder melde dich an, um Merkliste, Wunschpreise, Alarme und Meldungen geräteübergreifend zu nutzen. Ohne Konto bleibt deine lokale Merkliste weiterhin erhalten.";
+      if (accountHeroTitle) accountHeroTitle.textContent = "Dein Angebotslotse-Konto.";
+      if (accountHeroIntro) accountHeroIntro.textContent = "Nutze Angebotslotse auch ohne Konto. Mit Anmeldung werden Merkliste, Wunschpreise, Preisalarme und Meldungen sicher zwischen deinen Geräten synchronisiert.";
       if (userEmail) userEmail.textContent = "";
       if (cloudCount) cloudCount.textContent = "0";
       if (alertList) alertList.replaceChildren();
@@ -549,8 +549,8 @@ if (!root || !config.url || !config.publishableKey) {
       }
       return;
     }
-    if (accountHeroTitle) accountHeroTitle.textContent = "Willkommen zurück.";
-    if (accountHeroIntro) accountHeroIntro.textContent = "Deine gespeicherten Angebote, Wunschpreise, Alarme und Meldungen werden jetzt mit deinem Konto geladen.";
+    if (accountHeroTitle) accountHeroTitle.textContent = "Schön, dass du wieder da bist.";
+    if (accountHeroIntro) accountHeroIntro.textContent = "Deine gespeicherten Angebote, Wunschpreise, Preisalarme und Meldungen sind hier an einem Ort.";
     if (userEmail) userEmail.textContent = user.email || "Angemeldet";
 
     const accountLoaders = [
