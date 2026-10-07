@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-07T11:11:37.617Z",
+  "generatedAt": "2026-10-07T11:43:53.477Z",
   "newAwinPrograms": 0,
   "newImpactPrograms": 0,
   "newDaisyconPrograms": 0,
@@ -205,6 +205,6 @@
     "0a432f17c1a1c534",
     "2d494a434af99f92"
   ],
-  "apiErrors": 0,
+  "apiErrors": 1,
   "affiliateLinkErrors": 0
 }
