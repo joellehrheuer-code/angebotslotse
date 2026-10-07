@@ -664,8 +664,29 @@ function readWatchlist() {
   } catch { return {}; }
 }
 function writeWatchlist(items) {
-  try { localStorage.setItem(WATCHLIST_KEY, JSON.stringify(items)); } catch {}
+  let stored = false;
+  try {
+    localStorage.setItem(WATCHLIST_KEY, JSON.stringify(items));
+    stored = true;
+  } catch {}
   updateWatchIndicators(items);
+  return stored;
+}
+function showUiToast(message, kind = "info") {
+  let toast = document.querySelector("[data-ui-toast]");
+  if (!toast) {
+    toast = document.createElement("div");
+    toast.className = "ui-toast";
+    toast.dataset.uiToast = "";
+    toast.setAttribute("role", "status");
+    toast.setAttribute("aria-live", "polite");
+    document.body.append(toast);
+  }
+  toast.textContent = message;
+  toast.dataset.kind = kind;
+  toast.classList.add("show");
+  clearTimeout(showUiToast.timer);
+  showUiToast.timer = setTimeout(() => toast.classList.remove("show"), 2200);
 }
 function watchItemFromElement(element) {
   const price = Number(element.dataset.watchPrice);
@@ -708,9 +729,15 @@ document.querySelectorAll("[data-watch-toggle]").forEach(button => button.addEve
   const items = readWatchlist();
   const id = button.dataset.watchId;
   if (!id) return;
-  if (items[id]) delete items[id];
+  const wasSaved = Boolean(items[id]);
+  if (wasSaved) delete items[id];
   else items[id] = watchItemFromElement(button);
-  writeWatchlist(items);
+  const stored = writeWatchlist(items);
+  if (!stored) {
+    showUiToast("Merkliste konnte in diesem Browser nicht gespeichert werden.", "error");
+    return;
+  }
+  showUiToast(wasSaved ? "Aus der Merkliste entfernt." : "Zur Merkliste hinzugefügt.", wasSaved ? "info" : "success");
 }));
 document.querySelectorAll("[data-watch-panel]").forEach(panel => {
   const save = panel.querySelector("[data-watch-save]");
