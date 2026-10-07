@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-07T08:54:43.295Z",
+  "generatedAt": "2026-10-07T10:58:36.037Z",
   "market": "DE",
   "publisherId": 3045061,
   "awin": {
@@ -8,9 +8,9 @@
       "pending": 3,
       "suspended": 1,
       "rejected": 2,
-      "notjoined": 2619
+      "notjoined": 2618
     },
-    "totalProgramsEvaluated": 2630,
+    "totalProgramsEvaluated": 2629,
     "reportedPrograms": 200,
     "programs": [
       {
@@ -3108,9 +3108,12 @@
     ]
   },
   "impact": {
-    "state": "error",
+    "state": "disabled",
     "publishableOffers": 0,
-    "inventory": null,
+    "inventory": {
+      "reason": "Impact sync reserved for the dedicated daily workflow window",
+      "cadenceHours": 24
+    },
     "opportunities": [],
     "marketplaceSearches": [
       {

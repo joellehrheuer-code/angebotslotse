@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-07T08:54:43.269Z",
-  "newAwinPrograms": 2,
+  "generatedAt": "2026-10-07T10:58:36.018Z",
+  "newAwinPrograms": 0,
   "newImpactPrograms": 0,
   "newDaisyconPrograms": 0,
   "newWebgainsPrograms": 0,
@@ -11,7 +11,7 @@
   "manualApplications": 8,
   "networkReviewActions": 6,
   "awinDiscoveryOffers": 200,
-  "applicationCandidates": 2602,
+  "applicationCandidates": 2601,
   "newMerchants": 0,
   "newProducts": 0,
   "productsWithImage": 247,
@@ -205,6 +205,6 @@
     "0a432f17c1a1c534",
     "2d494a434af99f92"
   ],
-  "apiErrors": 1,
+  "apiErrors": 0,
   "affiliateLinkErrors": 0
 }
