@@ -34,6 +34,9 @@ input?.addEventListener("input",filter); filter();
 const quickSearchDataNode=document.querySelector("#quick-search-data");
 let quickSearchData={products:[],shops:[],categories:[]};
 try{quickSearchData=JSON.parse(quickSearchDataNode?.textContent||"{}");}catch{}
+const QUICK_SEARCH_RECENT_KEY="angebotslotse-search-recent-v1";
+const readRecentSearches=()=>{try{const rows=JSON.parse(localStorage.getItem(QUICK_SEARCH_RECENT_KEY)||"[]");return Array.isArray(rows)?rows.filter(Boolean).slice(0,5):[];}catch{return [];}};
+const rememberSearch=value=>{const q=String(value||"").trim();if(q.length<2)return;try{const next=[q,...readRecentSearches().filter(item=>normalizeSearch(item)!==normalizeSearch(q))].slice(0,5);localStorage.setItem(QUICK_SEARCH_RECENT_KEY,JSON.stringify(next));}catch{}};
 const moneyQuick=(value,currency="EUR")=>new Intl.NumberFormat("de-DE",{style:"currency",currency,maximumFractionDigits:2}).format(Number(value));
 const makeSuggestion=(tag,className)=>{const el=document.createElement(tag);el.className=className;return el;};
 function renderSmartSearch(form){
@@ -66,10 +69,11 @@ function renderSmartSearch(form){
   };
   const render=()=>{
     const q=field.value.trim();
-    if(q.length<2){close();return;}
-    const products=(quickSearchData.products||[]).filter(row=>searchMatches([row.title,row.brand,row.merchant,row.category].join(" "),q)).slice(0,4);
-    const shops=(quickSearchData.shops||[]).filter(row=>searchMatches(row.name,q)).slice(0,3);
-    const categories=(quickSearchData.categories||[]).filter(row=>searchMatches(row.name,q)).slice(0,3);
+    const recent=readRecentSearches();
+    if(q.length<2&&q.length>0){close();return;}
+    const products=q.length>=2?(quickSearchData.products||[]).filter(row=>searchMatches([row.title,row.brand,row.merchant,row.category].join(" "),q)).slice(0,4);
+    const shops=q.length>=2?(quickSearchData.shops||[]).filter(row=>searchMatches(row.name,q)).slice(0,3):[];
+    const categories=q.length>=2?(quickSearchData.categories||[]).filter(row=>searchMatches(row.name,q)).slice(0,3):(quickSearchData.categories||[]).slice().sort((a,b)=>(Number(b.count)||0)-(Number(a.count)||0)).slice(0,4);
     panel.replaceChildren();
     let optionIndex=0;
     const addGroup=(title,rows,kind)=>{
@@ -85,9 +89,11 @@ function renderSmartSearch(form){
         link.id=(panel.id||"search-panel")+"-option-"+optionIndex++;
         if(kind==="product"&&row.imageUrl){const img=document.createElement("img");img.src=row.imageUrl;img.alt="";img.loading="lazy";img.decoding="async";img.referrerPolicy="no-referrer";img.dataset.softFallback="product";link.append(img);}
         const copy=makeSuggestion("span","search-suggest-copy");
+        const badge=makeSuggestion("span","search-suggest-kind");badge.textContent=kind==="product"?"Produkt":kind==="shop"?"Shop":kind==="category"?"Kategorie":"Suche";copy.append(badge);
         const name=makeSuggestion("b","");name.textContent=kind==="product"?row.title:row.name;copy.append(name);
         const meta=makeSuggestion("small","");
-        if(kind==="product")meta.textContent=[row.brand,row.merchant].filter(Boolean).join(" · ");
+        if(kind==="product")meta.textContent=[row.brand,row.merchant,row.category].filter(Boolean).join(" · ");
+        else if(kind==="recent")meta.textContent="Erneut suchen";
         else meta.textContent=String(row.count||0)+(kind==="shop"?" Deals":" Angebote");
         copy.append(meta);link.append(copy);
         if(kind==="product"&&row.price!=null){const price=makeSuggestion("em","");price.textContent=moneyQuick(row.price,row.currency);link.append(price);}
@@ -95,16 +101,20 @@ function renderSmartSearch(form){
       });
       panel.append(section);
     };
+    if(q.length<2&&recent.length){
+      addGroup("Zuletzt gesucht",recent.map(name=>({name,url:form.action+"?suche="+encodeURIComponent(name)})),"recent");
+    }
     addGroup("Produkte",products,"product");
     addGroup("Shops",shops,"shop");
-    addGroup("Kategorien",categories,"category");
-    if(!panel.childElementCount){const empty=makeSuggestion("p","search-suggest-empty");empty.textContent="Keine direkte Empfehlung – Enter zeigt dir die vollständige Suche.";panel.append(empty);}
+    addGroup(q.length<2?"Beliebte Kategorien":"Kategorien",categories,"category");
+    if(!panel.childElementCount){const empty=makeSuggestion("p","search-suggest-empty");empty.textContent="Keine direkte Empfehlung – Enter zeigt dir alle passenden Treffer.";panel.append(empty);}
     activeIndex=-1;
     field.removeAttribute("aria-activedescendant");
     panel.hidden=false;field.setAttribute("aria-expanded","true");
   };
   field.addEventListener("input",render);
-  field.addEventListener("focus",()=>{if(field.value.trim().length>=2)render();});
+  field.addEventListener("focus",render);
+  form.addEventListener("submit",()=>rememberSearch(field.value));
   field.addEventListener("keydown",event=>{
     if(event.key==="Escape"){close();return;}
     if(event.key==="ArrowDown"){
