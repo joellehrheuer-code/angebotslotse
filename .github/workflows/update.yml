@@ -22,7 +22,6 @@ on:
       - "report/partner-outreach-status.json"
   schedule:
     - cron: "17 */4 * * *"
-    - cron: "23 2 * * *"
   workflow_dispatch:
 permissions:
   contents: read
@@ -48,8 +47,8 @@ jobs:
           AWIN_DATAFEED_API_KEY: ${{ secrets.AWIN_DATAFEED_API_KEY }}
           IMPACT_ACCOUNT_SID: ${{ secrets.IMPACT_ACCOUNT_SID || vars.IMPACT_ACCOUNT_SID }}
           IMPACT_AUTH_TOKEN: ${{ secrets.IMPACT_AUTH_TOKEN }}
-          IMPACT_SYNC_ENABLED: ${{ github.event_name == 'schedule' && github.event.schedule == '23 2 * * *' && '1' || '0' }}
-          FORCE_IMPACT_SYNC: ${{ github.event_name == 'schedule' && github.event.schedule == '23 2 * * *' && '1' || '0' }}
+          IMPACT_SYNC_ENABLED: ${{ github.event_name == 'schedule' && '1' || '0' }}
+          FORCE_IMPACT_SYNC: "0"
           IMPACT_SYNC_EVERY_HOURS: 24
           SOURCE_TOTAL_TIMEOUT_MS: 45000
           AMAZON_CREATORS_CREDENTIAL_ID: ${{ secrets.AMAZON_CREATORS_CREDENTIAL_ID }}

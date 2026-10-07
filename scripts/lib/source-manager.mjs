@@ -79,11 +79,35 @@ export async function runSourceWithRetry(run, { attempts = 2, baseDelayMs = 400,
   }, { timeoutMs, label });
 }
 
+export function shouldSyncImpact({ enabled=true, force=false, cadenceHours=12, nowMs=Date.now(), lastSyncMs=NaN } = {}) {
+  if (!enabled && !force) return false;
+  if (force) return true;
+  const cadence=Math.min(24,Math.max(4,Number(cadenceHours)||12))*60*60*1000;
+  return !Number.isFinite(lastSyncMs) || Math.max(0,Number(nowMs)-Number(lastSyncMs))>=cadence;
+}
+
 export async function collectSources(env = process.env) {
   const impactCadenceHours=Math.min(24,Math.max(4,Number(env.IMPACT_SYNC_EVERY_HOURS)||12));
-  const syncHour=Number.isFinite(Number(env.SOURCE_SYNC_UTC_HOUR))?Number(env.SOURCE_SYNC_UTC_HOUR):new Date().getUTCHours();
   const impactExplicitlyDisabled=env.IMPACT_SYNC_ENABLED==="0" && env.FORCE_IMPACT_SYNC!=="1";
-  const impactDue=!impactExplicitlyDisabled && (env.FORCE_IMPACT_SYNC==="1" || syncHour % impactCadenceHours===0);
+  const impactNowMs=Number.isFinite(Date.parse(String(env.SOURCE_SYNC_NOW||""))) ? Date.parse(String(env.SOURCE_SYNC_NOW)) : Date.now();
+  let impactLastSyncMs=Number.isFinite(Date.parse(String(env.IMPACT_LAST_SYNC_AT||""))) ? Date.parse(String(env.IMPACT_LAST_SYNC_AT)) : NaN;
+  if(!Number.isFinite(impactLastSyncMs)){
+    try{
+      const snapshot=JSON.parse(await fs.readFile("data/offers.json","utf8"));
+      const timestamps=(Array.isArray(snapshot)?snapshot:[])
+        .filter(offer=>String(offer?.source||"").toLowerCase()==="impact")
+        .map(offer=>Date.parse(String(offer?.lastSeen||offer?.updatedAt||"")))
+        .filter(Number.isFinite);
+      if(timestamps.length)impactLastSyncMs=Math.max(...timestamps);
+    }catch{/* no previous inventory yet: Impact should be eligible */}
+  }
+  const impactDue=shouldSyncImpact({
+    enabled:!impactExplicitlyDisabled,
+    force:env.FORCE_IMPACT_SYNC==="1",
+    cadenceHours:impactCadenceHours,
+    nowMs:impactNowMs,
+    lastSyncMs:impactLastSyncMs
+  });
   const sourceTotalTimeoutMs=Math.min(120_000,Math.max(5_000,Number(env.SOURCE_TOTAL_TIMEOUT_MS)||45_000));
   const impactLinkPolicy = JSON.parse(await fs.readFile("data/impact-link-policy.json", "utf8").catch(() => "{}"));
   const amazonDefinitions = JSON.parse(await fs.readFile("data/amazon-products.json", "utf8").catch(() => '{"items":[]}' ));
@@ -177,8 +201,8 @@ export async function collectSources(env = process.env) {
   const results = await Promise.all(definitions.map(async ([name, run]) => {
     if (name === "awin" && (!env.AWIN_PUBLISHER_ID || !env.AWIN_API_TOKEN)) { const names = [!env.AWIN_PUBLISHER_ID && "AWIN_PUBLISHER_ID", !env.AWIN_API_TOKEN && "AWIN_API_TOKEN"].filter(Boolean); return { name, state: "disabled", rows: [], audit:{reason:`${names.join(", ")} missing – Awin API sync skipped`} }; }
     if (name === "impact" && (!env.IMPACT_ACCOUNT_SID || !env.IMPACT_AUTH_TOKEN)) { const names = [!env.IMPACT_ACCOUNT_SID && "IMPACT_ACCOUNT_SID", !env.IMPACT_AUTH_TOKEN && "IMPACT_AUTH_TOKEN"].filter(Boolean); return { name, state: "disabled", rows: [], audit:{reason:`${names.join(", ")} missing – Impact API sync skipped`} }; }
-    if (name === "impact" && impactExplicitlyDisabled) return { name, state: "disabled", rows: [], audit:{reason:"Impact sync reserved for the dedicated daily workflow window", cadenceHours:24} };
-    if (name === "impact" && !impactDue) return { name, state: "disabled", rows: [], audit:{reason:`Impact rate-limit cooldown – next scheduled window every ${impactCadenceHours}h`, cadenceHours:impactCadenceHours} };
+    if (name === "impact" && impactExplicitlyDisabled) return { name, state: "disabled", rows: [], audit:{reason:"Impact sync is disabled for non-scheduled workflow runs", cadenceHours:impactCadenceHours} };
+    if (name === "impact" && !impactDue) return { name, state: "disabled", rows: [], audit:{reason:`Impact rate-limit cooldown – last successful data is younger than ${impactCadenceHours}h`, cadenceHours:impactCadenceHours,lastSyncAt:Number.isFinite(impactLastSyncMs)?new Date(impactLastSyncMs).toISOString():null} };
     if (name === "amazon" && (!env.AMAZON_CREATORS_CREDENTIAL_ID || !env.AMAZON_CREATORS_CREDENTIAL_SECRET || !env.AMAZON_PARTNER_TAG)) { const names = [!env.AMAZON_CREATORS_CREDENTIAL_ID && "AMAZON_CREATORS_CREDENTIAL_ID", !env.AMAZON_CREATORS_CREDENTIAL_SECRET && "AMAZON_CREATORS_CREDENTIAL_SECRET", !env.AMAZON_PARTNER_TAG && "AMAZON_PARTNER_TAG"].filter(Boolean); return { name, state: "disabled", rows: [], audit:{reason:`${names.join(", ")} missing – Amazon Creators API sync skipped`} }; }
     if (name === "awin-product-feeds" && !env.AWIN_DATAFEED_API_KEY) return { name, state: "disabled", rows: [], audit:{reason:"AWIN_DATAFEED_API_KEY missing – Awin Product Feed sync skipped"} };
     if (name === "awin-enhanced-feeds") {

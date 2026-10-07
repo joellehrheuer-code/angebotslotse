@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { collectSources, runSourceWithRetry, runSourceWithTimeout, awinEnhancedFeedGate, createTimedFetch } from "../scripts/lib/source-manager.mjs";
+import { collectSources, runSourceWithRetry, runSourceWithTimeout, awinEnhancedFeedGate, createTimedFetch, shouldSyncImpact } from "../scripts/lib/source-manager.mjs";
 
 test("fehlende Secrets deaktivieren nur die betroffenen Quellen und legen keine Werte offen", async () => {
   const { sources } = await collectSources({});
@@ -66,17 +66,38 @@ test("HTTP 501 gilt nicht als transienter Retry-Fehler", async () => {
   assert.equal(calls, 1);
 });
 
-test("Impact kann zwischen 4h-Website-Updates rate-limit-schonend ausgesetzt werden", async () => {
+test("Impact-Cadence richtet sich nach dem letzten echten Datenzeitpunkt statt nach der Startstunde", () => {
+  const now=Date.parse("2026-10-07T12:00:00Z");
+  assert.equal(shouldSyncImpact({
+    enabled:true,
+    cadenceHours:24,
+    nowMs:now,
+    lastSyncMs:Date.parse("2026-10-07T10:00:00Z")
+  }),false);
+  assert.equal(shouldSyncImpact({
+    enabled:true,
+    cadenceHours:24,
+    nowMs:now,
+    lastSyncMs:Date.parse("2026-10-06T06:00:00Z")
+  }),true);
+  assert.equal(shouldSyncImpact({enabled:false,cadenceHours:24,nowMs:now,lastSyncMs:0}),false);
+  assert.equal(shouldSyncImpact({enabled:false,force:true,cadenceHours:24,nowMs:now,lastSyncMs:now}),true);
+});
+
+test("Impact kann bei frischen Daten rate-limit-schonend ausgesetzt werden", async () => {
   const { sources } = await collectSources({
     IMPACT_ACCOUNT_SID: "SID_VALUE",
     IMPACT_AUTH_TOKEN: "token_value",
-    IMPACT_SYNC_EVERY_HOURS: "12",
-    SOURCE_SYNC_UTC_HOUR: "4"
+    IMPACT_SYNC_ENABLED: "1",
+    IMPACT_SYNC_EVERY_HOURS: "24",
+    SOURCE_SYNC_NOW: "2026-10-07T12:00:00Z",
+    IMPACT_LAST_SYNC_AT: "2026-10-07T10:00:00Z"
   });
   const impact = sources.find(source => source.name === "impact");
   assert.equal(impact.state, "disabled");
   assert.equal(impact.rows.length, 0);
-  assert.equal(impact.audit.cadenceHours, 12);
+  assert.equal(impact.audit.cadenceHours, 24);
+  assert.equal(impact.audit.lastSyncAt, "2026-10-07T10:00:00.000Z");
   assert.match(impact.audit.reason, /rate-limit cooldown/i);
 });
 
@@ -97,7 +118,7 @@ test("Impact kann für normale Push- und 4h-Läufe vollständig deaktiviert werd
   });
   const impact = sources.find(source => source.name === "impact");
   assert.equal(impact.state, "disabled");
-  assert.match(impact.audit.reason, /dedicated daily workflow window/i);
+  assert.match(impact.audit.reason, /disabled for non-scheduled workflow runs/i);
 });
 
 
