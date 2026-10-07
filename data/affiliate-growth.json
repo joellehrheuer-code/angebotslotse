@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-07T11:01:34.540Z",
+  "generatedAt": "2026-10-07T11:11:37.637Z",
   "market": "DE",
   "publisherId": 3045061,
   "awin": {
@@ -3111,7 +3111,7 @@
     "state": "disabled",
     "publishableOffers": 0,
     "inventory": {
-      "reason": "Impact sync reserved for the dedicated daily workflow window",
+      "reason": "Impact sync is disabled for non-scheduled workflow runs",
       "cadenceHours": 24
     },
     "opportunities": [],
