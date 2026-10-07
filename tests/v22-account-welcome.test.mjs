@@ -15,5 +15,5 @@ test("Konto erklärt Erstellung und Rückkehr eindeutig", () => {
   assert.match(src,/accountHeroTitle/);
   assert.match(src,/Dein Angebotslotse-Konto\./);
   assert.match(src,/Schön, dass du wieder da bist\./);
-  assert.match(src,/geräteübergreifend/);
+  assert.match(src,/zwischen deinen Geräten synchronisiert/);
 });
