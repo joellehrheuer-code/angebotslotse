@@ -4,7 +4,7 @@ import fs from "node:fs";
 
 test("V13 live smoke prüft die aktuelle Produktionsarchitektur",()=>{
   const smoke=fs.readFileSync("scripts/live-smoke.mjs","utf8");
-  assert.match(smoke,/site\.css\?v=45/);
+  assert.match(smoke,/site\.css\?v=46/);
   assert.match(smoke,/app\.js\?v=23/);
   assert.match(smoke,/class="top-social-links creator-dock-links"/);
   assert.match(smoke,/class="creator-top-dock"/);

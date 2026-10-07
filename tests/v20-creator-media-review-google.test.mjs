@@ -13,7 +13,7 @@ test("V20 verbindet Creator-Media, Bewertungs-Nudge und Google-Identität", () =
   assert.match(build,/data-review-nudge/);
   assert.match(build,/"@type":"Organization"/);
   assert.match(build,/sameAs:officialSameAs/);
-  assert.match(build,/site\.css\?v=45/);
+  assert.match(build,/site\.css\?v=46/);
   assert.match(build,/app\.js\?v=23/);
 
   assert.match(app,/angebotslotse-review-complete-v1/);
@@ -26,6 +26,6 @@ test("V20 verbindet Creator-Media, Bewertungs-Nudge und Google-Identität", () =
   assert.match(css,/\.creator-video-rail\{/);
   assert.match(css,/\.review-nudge\{/);
 
-  assert.match(smoke,/site\.css\?v=45/);
+  assert.match(smoke,/site\.css\?v=46/);
   assert.match(smoke,/app\.js\?v=23/);
 });
