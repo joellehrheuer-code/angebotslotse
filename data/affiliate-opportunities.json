@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-06T23:49:35.794Z",
+  "generatedAt": "2026-10-07T05:58:29.069Z",
   "total": 62,
   "highPriority": 9,
   "byNetwork": {
@@ -88,43 +88,24 @@
     {
       "rank": 5,
       "network": "Awin",
-      "brand": "DOTBLUE eBIKE DE",
-      "reference": 115541,
-      "advertiserId": 115541,
+      "brand": "YesStyle DE",
+      "reference": 15443,
+      "advertiserId": 15443,
       "programId": null,
       "campaignId": null,
-      "category": "Mode & Sport",
+      "category": "Gesundheit & Wellness",
       "priority": "mittel",
       "score": 60,
       "kind": "application",
       "status": "notjoined",
       "actionType": "application-review",
       "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten DOTBLUE eBIKE DE redaktionell passend im Bereich Mode & Sport einbinden. Bei Awin sind aktuell 5 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten YesStyle DE redaktionell passend im Bereich Gesundheit & Wellness einbinden. Bei Awin sind aktuell 20 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
       "submissionReady": false,
       "humanApprovalRequired": true
     },
     {
       "rank": 6,
-      "network": "Awin",
-      "brand": "Office-partner DE",
-      "reference": 14611,
-      "advertiserId": 14611,
-      "programId": null,
-      "campaignId": null,
-      "category": "Technik & Computer",
-      "priority": "mittel",
-      "score": 48,
-      "kind": "application",
-      "status": "notjoined",
-      "actionType": "application-review",
-      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Office-partner DE redaktionell passend im Bereich Technik & Computer einbinden. Bei Awin sind aktuell 3 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-      "submissionReady": false,
-      "humanApprovalRequired": true
-    },
-    {
-      "rank": 7,
       "network": "Awin",
       "brand": "Anker Solix DE",
       "reference": 32623,
@@ -143,7 +124,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 8,
+      "rank": 7,
       "network": "Awin",
       "brand": "Ankerkraut DE",
       "reference": 127917,
@@ -162,7 +143,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 9,
+      "rank": 8,
       "network": "Awin",
       "brand": "Bosch Hausgeräte DE",
       "reference": 102205,
@@ -181,7 +162,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 10,
+      "rank": 9,
       "network": "Awin",
       "brand": "bosch Tiernahrung DE",
       "reference": 84955,
@@ -200,7 +181,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 11,
+      "rank": 10,
       "network": "Awin",
       "brand": "BSTN DACH",
       "reference": 104975,
@@ -219,7 +200,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 12,
+      "rank": 11,
       "network": "Awin",
       "brand": "cyberport DE",
       "reference": 11657,
@@ -238,7 +219,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 13,
+      "rank": 12,
       "network": "Awin",
       "brand": "DECATHLON DE",
       "reference": 14353,
@@ -257,7 +238,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 14,
+      "rank": 13,
       "network": "Awin",
       "brand": "Dyson DE",
       "reference": 12802,
@@ -276,7 +257,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 15,
+      "rank": 14,
       "network": "Awin",
       "brand": "Ecovacs DE",
       "reference": 30763,
@@ -295,7 +276,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 16,
+      "rank": 15,
       "network": "Awin",
       "brand": "Fressnapf AT",
       "reference": 68692,
@@ -314,7 +295,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 17,
+      "rank": 16,
       "network": "Awin",
       "brand": "Fressnapf-Online-Shop DE",
       "reference": 14757,
@@ -333,7 +314,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 18,
+      "rank": 17,
       "network": "Awin",
       "brand": "INTERSPORT DE",
       "reference": 14050,
@@ -352,7 +333,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 19,
+      "rank": 18,
       "network": "Awin",
       "brand": "LG Electronics DE",
       "reference": 63126,
@@ -371,7 +352,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 20,
+      "rank": 19,
       "network": "Awin",
       "brand": "MSI DE",
       "reference": 130771,
@@ -386,6 +367,25 @@
       "actionType": "application-review",
       "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
       "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten MSI DE redaktionell passend im Bereich Technik & Computer einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "submissionReady": false,
+      "humanApprovalRequired": true
+    },
+    {
+      "rank": 20,
+      "network": "Awin",
+      "brand": "notebooksbilliger DE/AT",
+      "reference": 11348,
+      "advertiserId": 11348,
+      "programId": null,
+      "campaignId": null,
+      "category": "Technik & Computer",
+      "priority": "mittel",
+      "score": 45,
+      "kind": "application",
+      "status": "notjoined",
+      "actionType": "application-review",
+      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten notebooksbilliger DE/AT redaktionell passend im Bereich Technik & Computer einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
       "submissionReady": false,
       "humanApprovalRequired": true
     }
@@ -470,43 +470,24 @@
     {
       "rank": 5,
       "network": "Awin",
-      "brand": "DOTBLUE eBIKE DE",
-      "reference": 115541,
-      "advertiserId": 115541,
+      "brand": "YesStyle DE",
+      "reference": 15443,
+      "advertiserId": 15443,
       "programId": null,
       "campaignId": null,
-      "category": "Mode & Sport",
+      "category": "Gesundheit & Wellness",
       "priority": "mittel",
       "score": 60,
       "kind": "application",
       "status": "notjoined",
       "actionType": "application-review",
       "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten DOTBLUE eBIKE DE redaktionell passend im Bereich Mode & Sport einbinden. Bei Awin sind aktuell 5 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten YesStyle DE redaktionell passend im Bereich Gesundheit & Wellness einbinden. Bei Awin sind aktuell 20 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
       "submissionReady": false,
       "humanApprovalRequired": true
     },
     {
       "rank": 6,
-      "network": "Awin",
-      "brand": "Office-partner DE",
-      "reference": 14611,
-      "advertiserId": 14611,
-      "programId": null,
-      "campaignId": null,
-      "category": "Technik & Computer",
-      "priority": "mittel",
-      "score": 48,
-      "kind": "application",
-      "status": "notjoined",
-      "actionType": "application-review",
-      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Office-partner DE redaktionell passend im Bereich Technik & Computer einbinden. Bei Awin sind aktuell 3 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-      "submissionReady": false,
-      "humanApprovalRequired": true
-    },
-    {
-      "rank": 7,
       "network": "Awin",
       "brand": "Anker Solix DE",
       "reference": 32623,
@@ -525,7 +506,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 8,
+      "rank": 7,
       "network": "Awin",
       "brand": "Ankerkraut DE",
       "reference": 127917,
@@ -544,7 +525,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 9,
+      "rank": 8,
       "network": "Awin",
       "brand": "Bosch Hausgeräte DE",
       "reference": 102205,
@@ -563,7 +544,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 10,
+      "rank": 9,
       "network": "Awin",
       "brand": "bosch Tiernahrung DE",
       "reference": 84955,
@@ -582,7 +563,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 11,
+      "rank": 10,
       "network": "Awin",
       "brand": "BSTN DACH",
       "reference": 104975,
@@ -601,7 +582,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 12,
+      "rank": 11,
       "network": "Awin",
       "brand": "cyberport DE",
       "reference": 11657,
@@ -616,6 +597,25 @@
       "actionType": "application-review",
       "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
       "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten cyberport DE redaktionell passend im Bereich Technik & Computer einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "submissionReady": false,
+      "humanApprovalRequired": true
+    },
+    {
+      "rank": 12,
+      "network": "Awin",
+      "brand": "DECATHLON DE",
+      "reference": 14353,
+      "advertiserId": 14353,
+      "programId": null,
+      "campaignId": null,
+      "category": "Mode & Sport",
+      "priority": "mittel",
+      "score": 45,
+      "kind": "application",
+      "status": "notjoined",
+      "actionType": "application-review",
+      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten DECATHLON DE redaktionell passend im Bereich Mode & Sport einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
       "submissionReady": false,
       "humanApprovalRequired": true
     }
@@ -1115,35 +1115,17 @@
     },
     {
       "network": "Awin",
-      "brand": "DOTBLUE eBIKE DE",
-      "category": "Mode & Sport",
+      "brand": "YesStyle DE",
+      "category": "Gesundheit & Wellness",
       "priority": "mittel",
       "score": 60,
       "status": "notjoined",
       "kind": "application",
       "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten DOTBLUE eBIKE DE redaktionell passend im Bereich Mode & Sport einbinden. Bei Awin sind aktuell 5 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-      "reason": "passt zu Mode & Sport, 5 aktive DE-Aktionen",
-      "reference": 115541,
-      "advertiserId": 115541,
-      "programId": null,
-      "campaignId": null,
-      "submissionReady": false,
-      "humanApprovalRequired": true
-    },
-    {
-      "network": "Awin",
-      "brand": "Office-partner DE",
-      "category": "Technik & Computer",
-      "priority": "mittel",
-      "score": 48,
-      "status": "notjoined",
-      "kind": "application",
-      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Office-partner DE redaktionell passend im Bereich Technik & Computer einbinden. Bei Awin sind aktuell 3 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-      "reason": "passt zu Technik & Computer, 3 aktive DE-Aktionen",
-      "reference": 14611,
-      "advertiserId": 14611,
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten YesStyle DE redaktionell passend im Bereich Gesundheit & Wellness einbinden. Bei Awin sind aktuell 20 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "reason": "passt zu Gesundheit & Wellness, 20 aktive DE-Aktionen",
+      "reference": 15443,
+      "advertiserId": 15443,
       "programId": null,
       "campaignId": null,
       "submissionReady": false,
@@ -1583,24 +1565,6 @@
     },
     {
       "network": "Awin",
-      "brand": "alsa-hundewelt DE",
-      "category": "Tierbedarf",
-      "priority": "niedrig",
-      "score": 36,
-      "status": "notjoined",
-      "kind": "application",
-      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten alsa-hundewelt DE redaktionell passend im Bereich Tierbedarf einbinden. Bei Awin sind aktuell 1 für Deutschland sichtbare Aktion dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-      "reason": "passt zu Tierbedarf, 1 aktive DE-Aktion",
-      "reference": 13683,
-      "advertiserId": 13683,
-      "programId": null,
-      "campaignId": null,
-      "submissionReady": false,
-      "humanApprovalRequired": true
-    },
-    {
-      "network": "Awin",
       "brand": "eschuhe",
       "category": "Mode & Sport",
       "priority": "niedrig",
@@ -1655,17 +1619,17 @@
     },
     {
       "network": "Awin",
-      "brand": "Snipes EU",
-      "category": "Mode & Sport",
+      "brand": "Stylevana DE",
+      "category": "Gesundheit & Wellness",
       "priority": "niedrig",
       "score": 36,
       "status": "notjoined",
       "kind": "application",
       "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Snipes EU redaktionell passend im Bereich Mode & Sport einbinden. Bei Awin sind aktuell 1 für Deutschland sichtbare Aktion dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-      "reason": "passt zu Mode & Sport, 1 aktive DE-Aktion",
-      "reference": 122628,
-      "advertiserId": 122628,
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Stylevana DE redaktionell passend im Bereich Gesundheit & Wellness einbinden. Bei Awin sind aktuell 1 für Deutschland sichtbare Aktion dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "reason": "passt zu Gesundheit & Wellness, 1 aktive DE-Aktion",
+      "reference": 25546,
+      "advertiserId": 25546,
       "programId": null,
       "campaignId": null,
       "submissionReady": false,
@@ -1936,6 +1900,42 @@
       "reason": "passt zu Mode & Sport",
       "reference": 125690,
       "advertiserId": 125690,
+      "programId": null,
+      "campaignId": null,
+      "submissionReady": false,
+      "humanApprovalRequired": true
+    },
+    {
+      "network": "Awin",
+      "brand": "4Walls Escape - Online Escape Games DE",
+      "category": "Gaming",
+      "priority": "niedrig",
+      "score": 30,
+      "status": "notjoined",
+      "kind": "application",
+      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten 4Walls Escape - Online Escape Games DE redaktionell passend im Bereich Gaming einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "reason": "passt zu Gaming",
+      "reference": 26727,
+      "advertiserId": 26727,
+      "programId": null,
+      "campaignId": null,
+      "submissionReady": false,
+      "humanApprovalRequired": true
+    },
+    {
+      "network": "Awin",
+      "brand": "50 ml DE",
+      "category": "Gesundheit & Wellness",
+      "priority": "niedrig",
+      "score": 30,
+      "status": "notjoined",
+      "kind": "application",
+      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten 50 ml DE redaktionell passend im Bereich Gesundheit & Wellness einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "reason": "passt zu Gesundheit & Wellness",
+      "reference": 85743,
+      "advertiserId": 85743,
       "programId": null,
       "campaignId": null,
       "submissionReady": false,

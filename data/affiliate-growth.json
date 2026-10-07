@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-06T23:49:35.815Z",
+  "generatedAt": "2026-10-07T05:58:29.082Z",
   "market": "DE",
   "publisherId": 3045061,
   "awin": {
@@ -566,17 +566,6 @@
       {
         "network": "Awin",
         "relationship": "notjoined",
-        "advertiserId": 13683,
-        "name": "alsa-hundewelt DE",
-        "primarySector": "Pets & Pet Care",
-        "primaryRegion": {
-          "name": "Germany",
-          "countryCode": "DE"
-        }
-      },
-      {
-        "network": "Awin",
-        "relationship": "notjoined",
         "advertiserId": 11731,
         "name": "Alternate DE",
         "primarySector": "Electronic Superstore",
@@ -800,17 +789,6 @@
         "advertiserId": 11908,
         "name": "AsVIVA DE",
         "primarySector": "Sports Equipment",
-        "primaryRegion": {
-          "name": "Germany",
-          "countryCode": "DE"
-        }
-      },
-      {
-        "network": "Awin",
-        "relationship": "notjoined",
-        "advertiserId": 13747,
-        "name": "Atelier Goldner DE/AT",
-        "primarySector": "Womenswear",
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
@@ -2212,6 +2190,28 @@
           "name": "Germany",
           "countryCode": "DE"
         }
+      },
+      {
+        "network": "Awin",
+        "relationship": "notjoined",
+        "advertiserId": 129151,
+        "name": "ElectricSun Deutschland",
+        "primarySector": "Home & Garden",
+        "primaryRegion": {
+          "name": "Germany",
+          "countryCode": "DE"
+        }
+      },
+      {
+        "network": "Awin",
+        "relationship": "notjoined",
+        "advertiserId": 128587,
+        "name": "ELEMENTI (DE)",
+        "primarySector": "Home & Garden",
+        "primaryRegion": {
+          "name": "Germany",
+          "countryCode": "DE"
+        }
       }
     ],
     "discoveryOffers": 200,
@@ -2355,18 +2355,18 @@
         "automationState": "ready-for-review"
       },
       {
-        "brand": "DOTBLUE eBIKE DE",
+        "brand": "YesStyle DE",
         "network": "Awin",
-        "advertiserId": 115541,
+        "advertiserId": 15443,
         "status": "notjoined",
-        "category": "Mode & Sport",
+        "category": "Gesundheit & Wellness",
         "score": 60,
         "priority": "mittel",
-        "activeDiscoveryOffers": 5,
+        "activeDiscoveryOffers": 20,
         "offerExamples": [
-          "Blaupunkt Minna Klappbares E-Trike – Geprüfte Rückläufer zum Vorteilspreis",
-          "Blaupunkt Enno Klapp E-Bike – Geprüfte Rückläufer zum Vorteilspreis",
-          "Blaupunkt Enno Klapp E-Bike – Herbst-/Winter-Deal"
+          "YUNJAC 20% OFF - Stay Put, Look Fresh",
+          "Heart Percent 30% OFF - Plump Lips, Zero Filler",
+          "Centellian24 30% OFF - Redness Begone"
         ],
         "productFeed": false,
         "metrics": {
@@ -2381,46 +2381,11 @@
           "commissionTypes": []
         },
         "reasons": [
-          "passt zu Mode & Sport",
-          "5 aktive DE-Aktionen"
+          "passt zu Gesundheit & Wellness",
+          "20 aktive DE-Aktionen"
         ],
         "applicationRequired": true,
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten DOTBLUE eBIKE DE redaktionell passend im Bereich Mode & Sport einbinden. Bei Awin sind aktuell 5 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-        "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-        "automationState": "ready-for-review"
-      },
-      {
-        "brand": "Office-partner DE",
-        "network": "Awin",
-        "advertiserId": 14611,
-        "status": "notjoined",
-        "category": "Technik & Computer",
-        "score": 48,
-        "priority": "mittel",
-        "activeDiscoveryOffers": 3,
-        "offerExamples": [
-          "15 € Rabatt beim OFFICE Partner Deal of the Week:  CHERRY Xtrfy G80-3000N RGB Wired Tastatur - Schwarz CHERRY  MX Silent Red, DE-Layout QWER",
-          "10 € Rabatt beim OFFICE Partner Deal of the Week:  CHERRY Stream Desktop Ultimate Wireless kabelloses Desktop-Set - QWERTZ DE -",
-          "5 € Rabatt beim OFFICE Partner Deal of the Week:  DICOTA Eco Slim Case Plus BASE 13-15.6 Notebook-Hülle"
-        ],
-        "productFeed": false,
-        "metrics": {
-          "awinIndex": null,
-          "epc": null,
-          "conversionRate": null,
-          "approvalPercentage": null,
-          "validationDays": null,
-          "averagePaymentTime": null,
-          "commissionMin": null,
-          "commissionMax": null,
-          "commissionTypes": []
-        },
-        "reasons": [
-          "passt zu Technik & Computer",
-          "3 aktive DE-Aktionen"
-        ],
-        "applicationRequired": true,
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Office-partner DE redaktionell passend im Bereich Technik & Computer einbinden. Bei Awin sind aktuell 3 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten YesStyle DE redaktionell passend im Bereich Gesundheit & Wellness einbinden. Bei Awin sind aktuell 20 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
         "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
         "automationState": "ready-for-review"
       },
@@ -3010,6 +2975,37 @@
         ],
         "applicationRequired": true,
         "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Sony DE redaktionell passend im Bereich Technik & Computer einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+        "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+        "automationState": "ready-for-review"
+      },
+      {
+        "brand": "Sportspar DE",
+        "network": "Awin",
+        "advertiserId": 14366,
+        "status": "notjoined",
+        "category": "Mode & Sport",
+        "score": 45,
+        "priority": "mittel",
+        "activeDiscoveryOffers": 0,
+        "offerExamples": [],
+        "productFeed": false,
+        "metrics": {
+          "awinIndex": null,
+          "epc": null,
+          "conversionRate": null,
+          "approvalPercentage": null,
+          "validationDays": null,
+          "averagePaymentTime": null,
+          "commissionMin": null,
+          "commissionMax": null,
+          "commissionTypes": []
+        },
+        "reasons": [
+          "passt zu Mode & Sport",
+          "strategisch relevante Marke"
+        ],
+        "applicationRequired": true,
+        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Sportspar DE redaktionell passend im Bereich Mode & Sport einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
         "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
         "automationState": "ready-for-review"
       }
