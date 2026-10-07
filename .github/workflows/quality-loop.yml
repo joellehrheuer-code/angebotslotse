@@ -5,10 +5,13 @@ on:
     branches: [main]
     paths:
       - ".github/workflows/quality-loop.yml"
+      - "src/**"
+      - "public/**"
+      - "scripts/build.mjs"
       - "scripts/generate-quality-backlog.mjs"
+      - "tests/**"
       - "data/quality-progress.json"
       - "docs/COMPLETION-CHECKLIST.md"
-      - "tests/quality-backlog.test.mjs"
   schedule:
     - cron: "47 */6 * * *"
   workflow_dispatch:
