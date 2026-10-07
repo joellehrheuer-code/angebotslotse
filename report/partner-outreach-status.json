@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-06T13:24:00+02:00",
+  "generatedAt": "2026-10-07T13:48:00+02:00",
   "purpose": "Deduplication and status tracking for Angebotslotse affiliate/partner outreach. No contracts are auto-accepted.",
   "statuses": [
     {
@@ -10,6 +10,15 @@
       "contact": "affiliate@coolblue.de",
       "nextAction": "Dauerhaft aus neuer Ansprache und Veröffentlichung ausschließen; nur bei ausdrücklicher neuer Einladung oder relevanter Programmänderung erneut prüfen.",
       "notes": "Anne Weitkämper hat die Bewerbung nach Prüfung der Live-Seite am 06.10.2026 ausdrücklich abgelehnt, da Aufbau und Ausrichtung nicht zu den Affiliate-Anforderungen passen. Coolblue-Werbelinks bleiben gesperrt."
+    },
+    {
+      "brand": "ASMC DE",
+      "network": "Awin",
+      "status": "rejected",
+      "lastContactAt": "2026-10-06T07:11:45+02:00",
+      "contact": "Awin-Programmnachricht",
+      "nextAction": "Dauerhaft aus neuer Ansprache ausschließen; nur bei ausdrücklicher neuer Einladung oder relevanter Programmänderung erneut prüfen.",
+      "notes": "Awin-Programm ASMC DE (AID 14718) hat Publisher 3045061 am 06.10.2026 abgelehnt: Die Website ergänze die Marke des Advertisers nicht. Keine erneute Routinebewerbung."
     },
     {
       "brand": "EcoFlow DE",
@@ -30,10 +39,11 @@
     {
       "brand": "ECOVACS DE",
       "network": "Awin",
-      "status": "pending",
-      "lastContactAt": "2026-09-29T13:25:00+02:00",
+      "status": "rejected",
+      "lastContactAt": "2026-10-06",
       "contact": "partner@affprogramhub.com",
-      "nextAction": "Antwort/Freischaltung überwachen; bei Freigabe Produktfeed, Promotions und Creatives integrieren."
+      "nextAction": "Dauerhaft aus neuer Ansprache ausschließen; nur bei ausdrücklicher neuer Einladung oder relevanter Programmänderung erneut prüfen.",
+      "notes": "ECOVACS hat Angebotslotse am 06.10.2026 ausdrücklich abgelehnt, weil die Website nicht als Deal-/Coupon-Website akzeptiert wurde, und auf eine eigene Domain verwiesen. Keine erneute Routineansprache."
     },
     {
       "brand": "Samsung Shop DE",
@@ -138,11 +148,11 @@
     {
       "brand": "INTERSPORT DE",
       "network": "Awin",
-      "status": "pending",
-      "lastContactAt": "2026-09-30T02:05:00+02:00",
+      "status": "needs-info",
+      "lastContactAt": "2026-10-06",
       "contact": "mara.wieland@intersport.de",
-      "nextAction": "Antwort/Freischaltung abwarten; bei Freigabe Produktfeed, Deeplinks und Aktionen integrieren.",
-      "notes": "Offizieller Affiliate-Kontakt laut Awin-Profil; unverbindliche Publisher-Anfrage gesendet. Publisher-ID 3045061."
+      "nextAction": "Angebotslotse als eigene Website im Awin-Publisherprofil ergänzen; erst danach die INTERSPORT-Programmbewerbung manuell einreichen. Keine AGB automatisch bestätigen.",
+      "notes": "INTERSPORT meldete am 06.10.2026 zurück, dass im Awin-Profil derzeit nur Instagram hinterlegt ist. Für die Prüfung muss die Angebotslotse-Website zuerst als Werbefläche ergänzt werden; danach ist eine manuelle Programmbewerbung nötig."
     },
     {
       "brand": "BSTN DACH",
