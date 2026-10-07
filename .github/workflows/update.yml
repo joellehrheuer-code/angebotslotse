@@ -47,7 +47,7 @@ jobs:
           AWIN_DATAFEED_API_KEY: ${{ secrets.AWIN_DATAFEED_API_KEY }}
           IMPACT_ACCOUNT_SID: ${{ secrets.IMPACT_ACCOUNT_SID || vars.IMPACT_ACCOUNT_SID }}
           IMPACT_AUTH_TOKEN: ${{ secrets.IMPACT_AUTH_TOKEN }}
-          IMPACT_SYNC_ENABLED: ${{ github.event_name == 'schedule' && '1' || '0' }}
+          IMPACT_SYNC_ENABLED: "1"
           FORCE_IMPACT_SYNC: "0"
           IMPACT_SYNC_EVERY_HOURS: 24
           SOURCE_TOTAL_TIMEOUT_MS: 45000
