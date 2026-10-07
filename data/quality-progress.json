@@ -1,7 +1,13 @@
 {
-  "completed": [],
+  "completed": [
+    "Q00569",
+    "Q00575"
+  ],
   "blocked": [],
-  "notes": {},
+  "notes": {
+    "Q00569": "Belegt durch tests/header-accessibility.test.mjs: Combobox/Listbox-Semantik, benannte Navigation/Statusgruppe, Skip-Link und Menüsteuerung.",
+    "Q00575": "Belegt durch tests/header-accessibility.test.mjs: ArrowDown/ArrowUp/Enter/Escape, aria-activedescendant, aria-selected und Fokusführung."
+  },
   "policy": {
     "contractsRequireManualApproval": true,
     "noFakeReviewsOrVisitorCounts": true,
