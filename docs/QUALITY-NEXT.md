@@ -1,6 +1,6 @@
 # Angebotslotse – nächste Qualitätsaufgaben
 
-Generiert: 2026-10-07T13:55:58.290Z
+Generiert: 2026-10-07T15:34:07.714Z
 Gesamt: **10000** · offen: **9992** · erledigt: **8** · blockiert: **0**
 
 ## Nächste 100 offene Checks
