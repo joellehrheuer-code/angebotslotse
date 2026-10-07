@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { buildApplicationDraft, categoryForProgram, rankAwinOpportunities, isBlockedPartnerProgram, isStrategicProgram } from "../scripts/lib/program-growth.mjs";
+import { buildApplicationDraft, categoryForProgram, categoryCoverage, rankAwinOpportunities, isBlockedPartnerProgram, isStrategicProgram } from "../scripts/lib/program-growth.mjs";
 
 test("ordnet Affiliate-Programme passenden Angebotslotse-Kategorien zu", () => {
   assert.equal(categoryForProgram({name:"Samsung Shop DE",primarySector:"Electronic Superstore"}), "Technik & Computer");
@@ -67,3 +67,21 @@ test("INTERSPORT und ONE werden als strategische breite Sortimente erkannt", () 
   assert.equal(isStrategicProgram({name:"Shop Apotheke DE"}),false);
 });
 
+
+
+test("Awin-Ranking bevorzugt echte Sortimentslücken", () => {
+  const programs=[
+    {relationship:"notjoined",advertiserId:1,name:"Pet Shop DE",primarySector:"Pets & Pet Care"},
+    {relationship:"notjoined",advertiserId:2,name:"Computer Shop DE",primarySector:"Computers"}
+  ];
+  const rows=rankAwinOpportunities({
+    programs,
+    siteCategoryStats:{tierbedarf:2,technik:40,computer:35,zubehoer:20}
+  });
+  const pet=rows.find(row=>row.advertiserId===1);
+  const computer=rows.find(row=>row.advertiserId===2);
+  assert.equal(categoryCoverage("Tierbedarf",{tierbedarf:2}),2);
+  assert.equal(pet.siteCategoryCoverage,2);
+  assert.ok(pet.reasons.some(reason=>reason.includes("Sortimentslücke")));
+  assert.ok(pet.score>computer.score);
+});
