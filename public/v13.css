@@ -4647,3 +4647,45 @@ body{
   line-height:1.2!important;
   text-align:center!important;
 }
+
+
+/* V22 WATCHLIST FEEDBACK */
+.ui-toast{
+  position:fixed!important;
+  left:50%!important;
+  bottom:24px!important;
+  z-index:10000!important;
+  max-width:min(440px,calc(100vw - 28px))!important;
+  padding:11px 14px!important;
+  border:1px solid #394258!important;
+  border-radius:13px!important;
+  background:rgba(16,21,31,.96)!important;
+  color:#f4f6fb!important;
+  box-shadow:0 18px 50px rgba(0,0,0,.38)!important;
+  backdrop-filter:blur(14px)!important;
+  font-size:12px!important;
+  font-weight:800!important;
+  line-height:1.4!important;
+  opacity:0!important;
+  transform:translate(-50%,16px)!important;
+  pointer-events:none!important;
+  transition:opacity .18s ease,transform .18s ease!important;
+}
+.ui-toast.show{
+  opacity:1!important;
+  transform:translate(-50%,0)!important;
+}
+.ui-toast[data-kind="success"]{
+  border-color:#2f6b59!important;
+  color:#8ff0c8!important;
+}
+.ui-toast[data-kind="error"]{
+  border-color:#6c3542!important;
+  color:#ff9aaa!important;
+}
+@media(max-width:760px){
+  .ui-toast{
+    bottom:calc(82px + env(safe-area-inset-bottom))!important;
+    font-size:11px!important;
+  }
+}
