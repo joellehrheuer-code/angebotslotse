@@ -83,7 +83,7 @@ function renderSmartSearch(form){
         link.setAttribute("role","option");
         link.setAttribute("aria-selected","false");
         link.id=(panel.id||"search-panel")+"-option-"+optionIndex++;
-        if(kind==="product"&&row.imageUrl){const img=document.createElement("img");img.src=row.imageUrl;img.alt="";img.loading="lazy";img.decoding="async";img.referrerPolicy="no-referrer";link.append(img);}
+        if(kind==="product"&&row.imageUrl){const img=document.createElement("img");img.src=row.imageUrl;img.alt="";img.loading="lazy";img.decoding="async";img.referrerPolicy="no-referrer";img.dataset.softFallback="product";link.append(img);}
         const copy=makeSuggestion("span","search-suggest-copy");
         const name=makeSuggestion("b","");name.textContent=kind==="product"?row.title:row.name;copy.append(name);
         const meta=makeSuggestion("small","");
@@ -1157,7 +1157,7 @@ updateWatchIndicators();
 
 /* Angebotslotse: robuster Medien-Fallback */
 (() => {
-  const mediaImages=document.querySelectorAll('img[data-soft-fallback], img.partner-creative, .creator-update-card img');
+  const mediaImages=document.querySelectorAll('img[data-soft-fallback], img.partner-creative, .creator-update-card img, .search-suggest-item img');
   mediaImages.forEach(img=>{
     const replaceBroken=()=>{
       if(img.dataset.fallbackApplied==="1")return;
@@ -1165,7 +1165,7 @@ updateWatchIndicators();
       const fallback=document.createElement("span");
       fallback.className="soft-media-fallback";
       const type=img.dataset.softFallback || (img.classList.contains("partner-creative")?"partner":"video");
-      fallback.textContent=type==="video"?"▶ Beitrag":type==="partner"?"Partner-Angebot":"Angebotslotse";
+      fallback.textContent=type==="video"?"▶ Beitrag":type==="partner"?"Partner-Angebot":type==="product"?"Bild nicht verfügbar":type==="brand"?"AL":"Angebotslotse";
       img.replaceWith(fallback);
     };
     if(img.complete&&img.naturalWidth===0)replaceBroken();
