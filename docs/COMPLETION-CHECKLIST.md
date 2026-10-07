@@ -201,3 +201,12 @@ Status „offen“ bedeutet: noch kein vollständiger Einzelnachweis für alle A
 - FreeLLMAPI-Healthcheck weiterhin UNAVAILABLE: MCP SSE probe HTTP 429. Unabhängige Schritte fortgesetzt.
 - Reale mobile Viewports, 200%-Textzoom sowie Safari/Firefox/Edge bleiben offen; diese Sitzung bietet keine dokumentierte Viewport-Umschaltung. Die CSS- und Verhaltenstests ersetzen diese Sichtprüfung nicht.
 - Veröffentlichung und Live-Prüfung dieser Änderung stehen zum Zeitpunkt dieser Notiz noch aus.
+
+## 07.10.2026 – Dokumentsemantik, Moderations-Cloud und Partnerstatus
+
+- Die Build-Validierung prüft alle 555 erzeugten HTML-Seiten zusätzlich auf deutsche Seitensprache, genau ein `main`, genau eine H1, eindeutige IDs, benannte Links/Buttons sowie beschriftete Formularfelder. Diese reproduzierbare Abnahme ergänzt, ersetzt aber keine reale Screenreader- oder Cross-Browser-Prüfung.
+- Die Supabase-Funktion `review-moderation` ist aktiv und verlangt JWT. `review_moderators` existiert mit RLS und enthält keinen automatisch eingesetzten Moderator; eine Kontoberechtigung bleibt daher ausdrücklich offen.
+- 16 neue Code-Integritätsmeldungen wurden an den Report-Posteingang gespiegelt und triagiert. `broken_link`, `wrong_price` oder `missing_image` waren nicht darunter.
+- ASMC und ECOVACS sind nach ausdrücklicher Ablehnung als `rejected` gesperrt. INTERSPORT ist `needs-info`, bis Angebotslotse als Website im Awin-Publisherprofil hinterlegt und die Bewerbung manuell eingereicht wurde. Kein neuer Routine-Outreach, da kein Queue-Eintrag beide Automatikbedingungen erfüllte.
+- FreeLLMAPI-Healthcheck am 07.10.2026 erfolgreich: vier gesunde Provider und 53 Modelle. Eine bereinigte Checklist-Analyse wurde ausgeführt; die Antwort erreichte das Längenlimit und wurde deshalb nur als Hinweis, nicht als Abnahmenachweis verwendet.
+- Branch-Validation, Merge, Produktion und Live-Smoke dieser Runde werden erst nach erfolgreichem Lauf als abgeschlossen markiert.

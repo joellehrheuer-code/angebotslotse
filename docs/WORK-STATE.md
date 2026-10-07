@@ -1,18 +1,18 @@
 # Angebotslotse – aktueller Arbeitsstand
 
-Stand: 6. Oktober 2026. V13.2 ist bereits in main; die früheren V12.5/V12.6-To-dos waren veraltet.
+Stand: 7. Oktober 2026. `main` enthält die V23-Bewertungsmoderation und die datenaltergesteuerte Impact-Aktualisierung; die früheren V12.5/V12.6-Branch-To-dos sind historisch.
 
 ## Aktuelle Runde
-Branch: `work/storage-contract-reconciliation-20261006`.
+Branch: `work/document-semantics-partner-status-20261007`.
 Abschlussliste: `docs/COMPLETION-CHECKLIST.md`.
-Storage-Vertrag wird mit einer idempotenten Folgemigration an den strengeren Live-Stand angeglichen; vollständige Validierung und Veröffentlichung stehen für diesen Branch noch aus.
+Die Build-Validierung prüft nun für alle erzeugten HTML-Seiten zusätzlich Seitensprache, genau ein `main`, genau eine H1, eindeutige IDs sowie zugängliche Namen und Beschriftungen für Links, Buttons und Formularfelder. Partnerantworten von ASMC, ECOVACS und INTERSPORT werden im kanonischen Statusbestand nachgeführt. Vollständige Validierung und Veröffentlichung stehen für diesen Branch noch aus.
 
-Behoben: Timeout bei öffentlichen Formularen, korrekte Partnerlink-Kennzahl, PWA-Cache-Isolation, Cache-Schreibvorgänge und dokumentierter Storage-Migrationsabgleich. JS v18 / Shell v16.
+Cloud-Stand: `review-moderation` ist aktiv und verlangt JWT; `review_moderators` existiert mit RLS und ohne automatisch eingesetzten Moderator. Ohne ausdrücklich zugewiesenes Konto wird daher keine Moderationsberechtigung behauptet.
 
 ## Fortsetzen nach Abbruch
 1. Abschlussliste lesen.
 2. aktuellen main-Commit und letzten Produktionsworkflow prüfen.
-3. Erst Veröffentlichung dieser Runde bestätigen, dann offene visuelle und funktionale Abnahmen durchführen.
+3. Erst Branch-Validation, Merge, Produktion und Live-Smoke dieser Runde bestätigen, dann offene visuelle und funktionale Abnahmen durchführen.
 4. Blockierte Integrationen separat führen; keine Zustimmung zu Programmbedingungen vortäuschen.
 5. Keine Behauptung „fertig“ oder „live“ ohne passenden Nachweis.
 
