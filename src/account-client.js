@@ -56,6 +56,9 @@ if (!root || !config.url || !config.publishableKey) {
   const cashbackPending = root.querySelector("[data-cashback-pending]");
   const cashbackStatus = root.querySelector("[data-cashback-status]");
   const cashbackList = root.querySelector("[data-cashback-list]");
+  const reviewModerationCard = root.querySelector("[data-account-review-moderation-card]");
+  const reviewModerationStatus = root.querySelector("[data-review-moderation-status]");
+  const reviewModerationList = root.querySelector("[data-review-moderation-list]");
 
   let notificationChannel = null;
 
@@ -441,6 +444,77 @@ if (!root || !config.url || !config.publishableKey) {
     if (pushStatus) pushStatus.textContent = "Push-Einstellungen gespeichert.";
   }
 
+  const renderReviewModeration = reviews => {
+    if (!reviewModerationList) return;
+    reviewModerationList.replaceChildren();
+    if (!Array.isArray(reviews) || !reviews.length) {
+      const empty = document.createElement("p");
+      empty.className = "account-review-empty";
+      empty.textContent = "Keine offenen Bewertungen. Alles geprüft.";
+      reviewModerationList.append(empty);
+      return;
+    }
+    for (const review of reviews) {
+      const article = document.createElement("article");
+      article.className = "account-review-item";
+      article.dataset.reviewId = String(review.id || "");
+
+      const head = document.createElement("div");
+      head.className = "account-review-head";
+      const name = document.createElement("strong");
+      name.textContent = review.display_name || "Anonym";
+      const stars = document.createElement("span");
+      const rating = Math.max(1, Math.min(5, Number(review.rating) || 0));
+      stars.textContent = "★".repeat(rating) + "☆".repeat(5 - rating);
+      stars.setAttribute("aria-label", rating + " von 5 Sternen");
+      head.append(name, stars);
+
+      const comment = document.createElement("p");
+      comment.textContent = review.comment || "";
+
+      const meta = document.createElement("small");
+      const created = new Date(review.created_at || "");
+      meta.textContent = Number.isNaN(created.getTime())
+        ? "Eingereichte Bewertung"
+        : new Intl.DateTimeFormat("de-DE", { dateStyle: "medium", timeStyle: "short" }).format(created);
+
+      const actions = document.createElement("div");
+      actions.className = "account-review-actions";
+      const approve = document.createElement("button");
+      approve.className = "button primary";
+      approve.type = "button";
+      approve.dataset.reviewAction = "approve";
+      approve.textContent = "Freigeben";
+      const reject = document.createElement("button");
+      reject.className = "button";
+      reject.type = "button";
+      reject.dataset.reviewAction = "reject";
+      reject.textContent = "Ablehnen";
+      actions.append(approve, reject);
+
+      article.append(head, comment, meta, actions);
+      reviewModerationList.append(article);
+    }
+  };
+
+  async function loadReviewModeration() {
+    if (!reviewModerationCard) return false;
+    const { data, error } = await supabase.functions.invoke("review-moderation", {
+      body: { action: "list" }
+    });
+    if (error || !data?.ok) {
+      reviewModerationCard.hidden = true;
+      return false;
+    }
+    reviewModerationCard.hidden = false;
+    renderReviewModeration(data.reviews || []);
+    if (reviewModerationStatus) {
+      const count = Array.isArray(data.reviews) ? data.reviews.length : 0;
+      reviewModerationStatus.textContent = count === 1 ? "1 Bewertung wartet auf Prüfung." : count + " Bewertungen warten auf Prüfung.";
+    }
+    return true;
+  }
+
   async function renderSession(session) {
     const user = session?.user || null;
     signedOut.hidden = Boolean(user);
@@ -450,6 +524,7 @@ if (!root || !config.url || !config.publishableKey) {
     if (notificationsCard) notificationsCard.hidden = !user;
     if (pushCard) pushCard.hidden = !user;
     if (cashbackCard) cashbackCard.hidden = !user;
+    if (reviewModerationCard) reviewModerationCard.hidden = true;
     if (accountDataActions) accountDataActions.hidden = !user;
     if (!user) {
       if (accountHeroTitle) accountHeroTitle.textContent = "Willkommen bei Angebotslotse.";
@@ -460,6 +535,8 @@ if (!root || !config.url || !config.publishableKey) {
       if (matchesNode) matchesNode.replaceChildren();
       if (notificationList) notificationList.replaceChildren();
       if (cashbackList) cashbackList.replaceChildren();
+      if (reviewModerationList) reviewModerationList.replaceChildren();
+      if (reviewModerationStatus) reviewModerationStatus.textContent = "";
       if (cashbackConfirmed) cashbackConfirmed.textContent = "0,00 €";
       if (cashbackPending) cashbackPending.textContent = "0,00 €";
       if (pushPreferences) pushPreferences.hidden = true;
@@ -500,6 +577,12 @@ if (!root || !config.url || !config.publishableKey) {
         console.error("Konto-Bereich konnte nicht geladen werden:", accountLoaders[index][0], result.reason);
       }
     });
+
+    try {
+      await loadReviewModeration();
+    } catch {
+      if (reviewModerationCard) reviewModerationCard.hidden = true;
+    }
 
     try {
       await subscribeNotifications(user.id);
@@ -728,6 +811,32 @@ if (!root || !config.url || !config.publishableKey) {
       }
     });
   }
+
+  reviewModerationList?.addEventListener("click", async event => {
+    const button = event.target.closest("[data-review-action]");
+    const item = button?.closest("[data-review-id]");
+    const action = button?.dataset.reviewAction;
+    const id = item?.dataset.reviewId;
+    if (!button || !id || !["approve", "reject"].includes(action)) return;
+
+    const buttons = item.querySelectorAll("button");
+    buttons.forEach(node => { node.disabled = true; });
+    if (reviewModerationStatus) {
+      reviewModerationStatus.textContent = action === "approve"
+        ? "Bewertung wird freigegeben …"
+        : "Bewertung wird abgelehnt …";
+    }
+    try {
+      const { data, error } = await supabase.functions.invoke("review-moderation", {
+        body: { id, action }
+      });
+      if (error || !data?.ok) throw error || new Error("Moderation fehlgeschlagen.");
+      await loadReviewModeration();
+    } catch (error) {
+      buttons.forEach(node => { node.disabled = false; });
+      if (reviewModerationStatus) reviewModerationStatus.textContent = error?.message || "Moderation fehlgeschlagen.";
+    }
+  });
 
   exportAccountButton?.addEventListener("click", async () => {
     exportAccountButton.disabled = true;

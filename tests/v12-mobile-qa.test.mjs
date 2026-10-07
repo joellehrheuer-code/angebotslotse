@@ -19,6 +19,6 @@ test("V12.3 fixes mobile category sizing and primary touch targets", () => {
   assert.match(css,/\.watch-button\{[\s\S]*?min-height:44px!important/);
   assert.match(css,/\.live-store-strip>div a\{[\s\S]*?min-height:44px!important/);
   assert.match(css,/@media\(max-width:480px\)\{[\s\S]*?\.category-grid\{[\s\S]*?grid-template-columns:1fr!important/);
-  assert.match(html,/site\.css\?v=46/);
+  assert.match(html,/site\.css\?v=47/);
   assert.match(sw,/angebotslotse-shell-v17/);
 });

@@ -9,7 +9,7 @@ test("V21 vereinheitlicht Header und globale Suche", () => {
   assert.match(build,/global-search-icon/);
   assert.match(build,/global-search-submit/);
   assert.match(build,/Produkte, Marken oder Shops durchsuchen/);
-  assert.match(build,/site\.css\?v=46/);
+  assert.match(build,/site\.css\?v=47/);
 
   assert.match(css,/V21 HEADER \+ SEARCH REFINEMENT/);
   assert.match(css,/grid-template-columns:minmax\(178px,auto\) minmax\(340px,1fr\) auto auto 44px/);

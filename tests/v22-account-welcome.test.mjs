@@ -10,7 +10,7 @@ test("Konto erklärt Erstellung und Rückkehr eindeutig", () => {
   assert.match(build,/Konto erstellen oder anmelden/);
   assert.match(build,/Beim ersten Mal wird dein Konto erstellt/);
   assert.match(build,/Weiter per E-Mail/);
-  assert.match(build,/account-client\.js\?v=3/);
+  assert.match(build,/account-client\.js\?v=4/);
 
   assert.match(src,/accountHeroTitle/);
   assert.match(src,/Willkommen bei Angebotslotse\./);
