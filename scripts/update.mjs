@@ -29,6 +29,17 @@ const oldOffers = await readJson("data/offers.json", "[]");
 const oldStatus = await readJson("data/status.json", "{}");
 const partnerOutreachStatus = await readJson("report/partner-outreach-status.json", '{"statuses":[]}');
 const partnerContactDirectory = await readJson("data/partner-contact-directory.json", '{"contacts":[]}');
+const partnerLifecycle = await readJson("data/partner-lifecycle.json", '{"partners":[]}');
+const lifecycleStatusRows = (partnerLifecycle.partners ?? []).flatMap(row => {
+  const normalizedStatus = row.status === "declined" ? "rejected"
+    : row.status === "active-contact" ? "contacted"
+    : row.status === "invited" && row.outreachSentAt ? "contacted"
+    : row.status;
+  const base = { brand: row.brand, status: normalizedStatus, lastContactAt: row.outreachSentAt ?? row.confirmedAt ?? null };
+  return row.legalEntity && row.legalEntity !== row.brand
+    ? [base, { ...base, brand: row.legalEntity }]
+    : [base];
+});
 const oldHistory = await readJson("data/price-history.json", "[]");
 const oldArchive = await readJson("data/offer-archive.json", '{"items":[]}');
 const oldProgramInventory = await readJson("report/program-inventory.json", '{"programs":[]}');
@@ -219,7 +230,7 @@ try {
     generatedAt:checkedAt
   });
   await fs.writeFile("data/affiliate-opportunities.json",`${JSON.stringify(affiliateOpportunityReport,null,2)}\n`);
-  const partnerOutreachQueue=buildPartnerOutreachQueue({opportunities:affiliateOpportunityReport.actionNow,statusRows:partnerOutreachStatus.statuses??[],contactDirectory:partnerContactDirectory.contacts??[],generatedAt:checkedAt,dailyLimit:8});
+  const partnerOutreachQueue=buildPartnerOutreachQueue({opportunities:affiliateOpportunityReport.actionNow,statusRows:[...(partnerOutreachStatus.statuses??[]),...lifecycleStatusRows],contactDirectory:partnerContactDirectory.contacts??[],generatedAt:checkedAt,dailyLimit:8});
   await fs.writeFile("data/partner-outreach-queue.json",`${JSON.stringify(partnerOutreachQueue,null,2)}\n`);
   const manualActions=[];
   if(!process.env.AWIN_PUBLISHER_ID||!process.env.AWIN_API_TOKEN)manualActions.push({id:"awin-api-credentials",platform:"Awin",action:"AWIN_PUBLISHER_ID und AWIN_API_TOKEN als sichere Runtime-/GitHub-Secrets konfigurieren.",reason:"Ohne Publisher-ID und API-Token können aktive Awin-Programme und Enhanced Feeds nicht aktualisiert werden."});
