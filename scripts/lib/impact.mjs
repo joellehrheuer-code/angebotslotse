@@ -104,8 +104,15 @@ export async function fetchImpactOffers({ accountSid, authToken, fetchImpl = fet
     const signal = program && programSignals.get(String(program.CampaignId));
     if (signal) signal[key] += 1;
   };
-  const audit = {apiVersion:VERSION,programs:programs.length,ads:0,promotions:0,deals:0,products:0,catalogs:null,stores:null,quarantinedAdvertisers:(policy.quarantinedAdvertisers??[]).length,
+  const audit = {apiVersion:VERSION,programs:programs.length,ads:0,promotions:0,deals:0,products:0,catalogs:null,stores:null,errors:{},quarantinedAdvertisers:(policy.quarantinedAdvertisers??[]).length,
     programInventory:programs.map(program=>({name:program.CampaignName,advertiserName:program.AdvertiserName,advertiserId:program.AdvertiserId,campaignId:program.CampaignId,status:program.ContractStatus,countries:list(program.ShippingRegions?.ShippingRegion??program.ShippingRegions),deeplinks:Boolean(program.AllowsDeeplinking),trackingLinkAvailable:Boolean(program.TrackingLink),logoAvailable:Boolean(program.CampaignLogoUri),publicTermsAvailable:Boolean(program.PublicTermsUri)}))};
+  const safePages = async (key, pathname, names, params = {}) => {
+    try { return await api.pages(pathname, names, params); }
+    catch (error) {
+      audit.errors[key] = String(error?.message ?? error).slice(0, 180);
+      return [];
+    }
+  };
 
   for (const program of programs) {
     const rule = quarantineFor(program, policy);
@@ -116,7 +123,18 @@ export async function fetchImpactOffers({ accountSid, authToken, fetchImpl = fet
       category: "sonstiges", type: "promotion" });
   }
 
-  const ads = await api.pages(`/Mediapartners/${account}/Ads`, ["Ads"]);
+  const [ads, promotions, products, dealGroups] = await Promise.all([
+    safePages("ads", `/Mediapartners/${account}/Ads`, ["Ads"]),
+    safePages("promotions", `/Mediapartners/${account}/Promotions`, ["Promotions"]),
+    safePages("products", `/Mediapartners/${account}/Catalogs/ItemSearch`, ["Items", "CatalogItems", "Records"]),
+    Promise.all(programs.map(async program => ({
+      program,
+      deals: trackingUrlAllowed(program.TrackingLink, policy, quarantineFor(program, policy))
+        ? await safePages(`deals:${program.CampaignId}`, `/Mediapartners/${account}/Campaigns/${encodeURIComponent(program.CampaignId)}/Deals`, ["Deals"], { State: "ACTIVE" })
+        : []
+    })))
+  ]);
+
   audit.ads=ads.length;
   for (const ad of ads) {
     const program = byCampaign.get(String(ad.CampaignId));
@@ -130,7 +148,6 @@ export async function fetchImpactOffers({ accountSid, authToken, fetchImpl = fet
       voucher: ad.DealDefaultPromoCode ? { code: ad.DealDefaultPromoCode } : undefined });
   }
 
-  const promotions = await api.pages(`/Mediapartners/${account}/Promotions`, ["Promotions"]);
   audit.promotions=promotions.length;
   for (const promotion of promotions) {
     const program = byAdvertiser.get(String(promotion.AdvertiserId));
@@ -145,9 +162,7 @@ export async function fetchImpactOffers({ accountSid, authToken, fetchImpl = fet
       voucher: promotion.GenericRedemptionCode ? { code: promotion.GenericRedemptionCode } : undefined });
   }
 
-  for (const program of programs) {
-    if (!trackingUrlAllowed(program.TrackingLink, policy, quarantineFor(program, policy))) continue;
-    const deals = await api.pages(`/Mediapartners/${account}/Campaigns/${encodeURIComponent(program.CampaignId)}/Deals`, ["Deals"], { State: "ACTIVE" });
+  for (const { program, deals } of dealGroups) {
     audit.deals+=deals.length;
     for (const deal of deals) {
       if (String(deal.State).toUpperCase() !== "ACTIVE" || !deal.Name) continue;
@@ -159,7 +174,6 @@ export async function fetchImpactOffers({ accountSid, authToken, fetchImpl = fet
     }
   }
 
-  const products = await api.pages(`/Mediapartners/${account}/Catalogs/ItemSearch`, ["Items", "CatalogItems", "Records"]);
   audit.products=products.length;
   for (const product of products) {
     const program = byCampaign.get(String(product.CampaignId));
