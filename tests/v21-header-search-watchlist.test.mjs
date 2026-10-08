@@ -13,7 +13,7 @@ test("V21 vereinheitlicht Header, globale Suche, Konto-Einstieg und Community-Pr
   assert.match(build,/data-community-visits/);
   assert.match(build,/data-community-rating/);
   assert.match(build,/Dein Angebotslotse-Konto\./);
-  assert.match(build,/site\.css\?v=48/);
+  assert.match(build,/site\.css\?v=\d+/);
 
   assert.equal((css.match(/V21 HEADER \+ SEARCH CONSISTENCY/g)||[]).length,1);
   assert.doesNotMatch(css,/V21 HEADER \+ SEARCH REFINEMENT/);

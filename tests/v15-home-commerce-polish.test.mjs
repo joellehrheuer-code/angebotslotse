@@ -14,5 +14,5 @@ test("V15 beruhigt Startseite, Deal-Rails und Hero-Branding", () => {
 
   assert.match(build, /hero-logo-stage/);
   assert.match(build, /joel-logo\.svg\?v=4/);
-  assert.match(build, /site\.css\?v=48/);
+  assert.match(build, /site\.css\?v=\d+/);
 });

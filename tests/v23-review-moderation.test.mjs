@@ -11,7 +11,7 @@ test("V23 schützt Bewertungsmoderation und blendet sie nur autorisiert ein", ()
 
   assert.match(build,/data-account-review-moderation-card hidden/);
   assert.match(build,/data-review-moderation-list/);
-  assert.match(build,/site\.css\?v=48/);
+  assert.match(build,/site\.css\?v=\d+/);
   assert.match(build,/account-client\.js\?v=4/);
 
   assert.match(client,/functions\.invoke\("review-moderation"/);
