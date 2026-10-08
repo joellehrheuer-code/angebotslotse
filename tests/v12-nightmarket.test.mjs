@@ -40,7 +40,7 @@ test("V12 smart search exposes grouped real products shops and categories",()=>{
   assert.match(html,/data-search-panel/);
   assert.match(app,/addGroup\("Produkte"/);
   assert.match(app,/addGroup\("Shops"/);
-  assert.match(app,/addGroup\("Kategorien"/);
+  assert.match(app,/addGroup\(q\.length<2\?"Beliebte Kategorien":"Kategorien"/);
   assert.match(app,/searchMatches\(/);
 });
 

@@ -54,7 +54,7 @@ test("V12.5 Qualitätsgates prüfen lokale Assets und Live-Kernressourcen", () =
   assert.match(validator,/Fehlendes lokales/);
   assert.match(validator,/Alt-Attribut fehlt/);
   assert.match(smoke,/criticalAssets/);
-  assert.match(smoke,/site\.css\?v=\d+/);
-  assert.match(smoke,/app\.js\?v=\d+/);
+  assert.match(smoke,/cssAsset=homeHtml\.match/);
+  assert.match(smoke,/appAsset=homeHtml\.match/);
   assert.match(smoke,/id="vertrauen"/);
 });
