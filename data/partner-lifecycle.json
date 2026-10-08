@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-08T19:17:00Z",
+  "generatedAt": "2026-10-08T19:22:00Z",
   "source": "verified-email-and-network-status",
   "partners": [
     {
@@ -94,6 +94,30 @@
       "status": "contacted",
       "contact": "marketing@ankerkraut.de",
       "outreachSentAt": "2026-10-08T19:16:00Z",
+      "feedRequested": true
+    },
+    {
+      "brand": "BSTN DACH",
+      "network": "Awin",
+      "status": "contacted",
+      "contact": "michael.dorsch@bstn.com",
+      "outreachSentAt": "2026-10-08T19:22:00Z",
+      "feedRequested": true
+    },
+    {
+      "brand": "Sportspar DE",
+      "network": "Awin",
+      "status": "contacted",
+      "contact": "a.borisenko@sportspar.de",
+      "outreachSentAt": "2026-10-08T19:22:00Z",
+      "feedRequested": true
+    },
+    {
+      "brand": "PremiumSIM DE",
+      "network": "Awin",
+      "status": "contacted",
+      "contact": "partner@drillisch-online.de",
+      "outreachSentAt": "2026-10-08T19:22:00Z",
       "feedRequested": true
     }
   ]
