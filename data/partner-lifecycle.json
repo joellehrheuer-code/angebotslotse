@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-08T19:24:00Z",
+  "generatedAt": "2026-10-08T19:35:00Z",
   "source": "verified-email-and-network-status",
   "partners": [
     {
@@ -127,6 +127,14 @@
       "contact": "elv@sunnysales.de",
       "outreachSentAt": "2026-10-08T19:24:00Z",
       "feedRequested": true
+    },
+    {
+      "brand": "Razer",
+      "network": "Impact",
+      "status": "not-suitable",
+      "confirmedAt": "2026-10-08T19:35:00Z",
+      "termsReviewRequired": false,
+      "notes": "Official Razer affiliate terms state the program does not work with websites focused on bargains, discounts or cheap offers; suppress automatic application/outreach for Angebotslotse."
     }
   ]
 }
