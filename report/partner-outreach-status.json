@@ -1,7 +1,20 @@
 {
-  "generatedAt": "2026-10-07T13:48:00+02:00",
+  "generatedAt": "2026-10-08T13:27:00+02:00",
   "purpose": "Deduplication and status tracking for Angebotslotse affiliate/partner outreach. No contracts are auto-accepted.",
   "statuses": [
+    {
+      "brand": "Verivox",
+      "network": "direct/comparison",
+      "status": "interested",
+      "lastContactAt": "2026-10-08T13:27:00+02:00",
+      "contact": [
+        "fabian.grasme@verivox.com",
+        "victoria.herrmann@verivox.com",
+        "partner@verivox.de"
+      ],
+      "nextAction": "Schriftliche Empfehlung für Energie, DSL und Versicherungen sowie iFrame-/Textlink-Einbindung abwarten; keine Registrierung, Programmbedingungen oder Termine automatisch bestätigen.",
+      "notes": "Verivox bestätigte am 08.10.2026 die kostenlose Teilnahme ohne Gebühren und die Zulässigkeit einer privaten Registrierung. Die Live-Domain wurde im bestehenden Thread übermittelt; der vorgeschlagene Telefontermin wurde nicht verbindlich bestätigt."
+    },
     {
       "brand": "Coolblue DE",
       "network": "Awin",
