@@ -37,3 +37,17 @@ test("verifizierte Partner-Lifecycle-Stati verhindern doppelten Erstkontakt", ()
   assert.ok(queue.excluded.some(row=>row.brand==="Chime Mattress"&&row.reason.includes("rejected")));
   assert.ok(queue.excluded.some(row=>row.brand==="Alternate DE"&&row.reason.includes("contacted")));
 });
+
+
+test("terminaler Netzwerkstatus gewinnt gegen späteren Direktkontakt", () => {
+  const queue=buildPartnerOutreachQueue({
+    opportunities:[{brand:"Alternate DE",network:"Awin",score:90,applicationPossible:true}],
+    statusRows:[
+      {brand:"Alternate DE",status:"rejected",lastContactAt:"2026-10-01T00:00:00Z"},
+      {brand:"Alternate DE",status:"contacted",lastContactAt:"2026-10-08T00:00:00Z"}
+    ],
+    contactDirectory:[]
+  });
+  assert.equal(queue.nextBatch.length,0);
+  assert.equal(queue.excluded[0].status,"rejected");
+});

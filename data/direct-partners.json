@@ -58,7 +58,8 @@
     "category": "gaming",
     "trackingUrl": "https://razer.a9yw.net/GbkYQm",
     "destinationUrl": "https://razer.a9yw.net/GbkYQm",
-    "enabled": true
+    "enabled": false,
+    "disabledReason": "Offizielles Razer-Affiliateprogramm ist laut Programmbedingungen nicht für Webseiten mit Schwerpunkt Schnäppchen/Rabatte geeignet."
   },
   {
     "id": "gearup-mobile-impact",
@@ -109,7 +110,8 @@
     "contentType": "partner-link",
     "trackingUrl": "https://www.awin1.com/awclick.php?gid=609021&mid=127821&awinaffid=3045061&linkid=4891199&clickref=",
     "destinationUrl": "https://www.awin1.com/awclick.php?gid=609021&mid=127821&awinaffid=3045061&linkid=4891199&clickref=",
-    "enabled": true
+    "enabled": false,
+    "disabledReason": "Kampagne laut Awin-Partner-Mail am 30.09.2026 beendet."
   },
   {
     "id": "awin-outin-nano-traveler-creative",
@@ -120,7 +122,8 @@
     "contentType": "partner-link",
     "trackingUrl": "https://www.awin1.com/awclick.php?gid=609021&mid=127821&awinaffid=3045061&linkid=4891195&clickref=",
     "destinationUrl": "https://www.awin1.com/awclick.php?gid=609021&mid=127821&awinaffid=3045061&linkid=4891195&clickref=",
-    "enabled": true
+    "enabled": false,
+    "disabledReason": "Kampagne laut Awin-Partner-Mail am 30.09.2026 beendet."
   },
   {
     "id": "awin-imou-creative",
@@ -180,5 +183,63 @@
     "trackingUrl": null,
     "destinationUrl": null,
     "enabled": false
+  },
+  {
+    "id": "awin-emp-dark-season-15off",
+    "name": "EMP DE",
+    "title": "15% auf (fast) alles bei EMP ab 59,99 €",
+    "description": "Dark Season Aktion von EMP. 15% Rabatt auf teilnehmende Artikel ab 59,99 € Mindestbestellwert.",
+    "category": "mode",
+    "contentType": "partner-promotion",
+    "trackingUrl": "https://www.awin1.com/cread.php?awinmid=14172&awinaffid=3045061&campaign=&ued=https%3A%2F%2Fwww.emp.de%2Fbekleidung-accessoires%2F",
+    "destinationUrl": "https://www.awin1.com/cread.php?awinmid=14172&awinaffid=3045061&campaign=&ued=https%3A%2F%2Fwww.emp.de%2Fbekleidung-accessoires%2F",
+    "voucherCode": "15OFF",
+    "startDate": "2026-10-08T00:00:00+02:00",
+    "endDate": "2026-10-13T23:59:59+02:00",
+    "terms": "Nur online. Mindestbestellwert 59,99 €. Weitere Ausschlüsse laut EMP-Aktionsbedingungen. Nicht mit anderen Aktionscodes kombinierbar. Gültig bis einschließlich 13.10.2026.",
+    "enabled": true
+  },
+  {
+    "id": "awin-emp-extended-deals-october",
+    "name": "EMP DE",
+    "title": "EMP Deals – ausgewähltes Sortiment reduziert",
+    "description": "Aktuelle EMP-Sale-Aktion mit bereits reduzierten Artikeln, solange der Vorrat reicht.",
+    "category": "mode",
+    "contentType": "partner-promotion",
+    "trackingUrl": "https://www.awin1.com/cread.php?awinmid=14172&awinaffid=3045061&campaign=&ued=https%3A%2F%2Fwww.emp.de%2Fsale%2F%3Fpmin%3D40",
+    "destinationUrl": "https://www.awin1.com/cread.php?awinmid=14172&awinaffid=3045061&campaign=&ued=https%3A%2F%2Fwww.emp.de%2Fsale%2F%3Fpmin%3D40",
+    "startDate": "2026-10-06T00:00:00+02:00",
+    "endDate": "2026-10-13T23:59:59+02:00",
+    "terms": "Nur online, ausgewähltes Sortiment. Produkte sind bereits reduziert; Aktionsrabatt bezieht sich auf die UVP. Nur solange der Vorrat reicht.",
+    "enabled": true
+  },
+  {
+    "id": "awin-emp-shirts-1499",
+    "name": "EMP DE",
+    "title": "Hunderte EMP Shirts für 14,99 €",
+    "description": "Ausgewählte Merch-Shirts bei EMP zum Aktionspreis von 14,99 €, solange der Vorrat reicht.",
+    "category": "mode",
+    "contentType": "partner-promotion",
+    "trackingUrl": "https://www.awin1.com/cread.php?awinmid=14172&awinaffid=3045061&campaign=&ued=https%3A%2F%2Fwww.emp.de%2Fexclusive-deal%2F",
+    "destinationUrl": "https://www.awin1.com/cread.php?awinmid=14172&awinaffid=3045061&campaign=&ued=https%3A%2F%2Fwww.emp.de%2Fexclusive-deal%2F",
+    "startDate": "2026-09-15T00:00:00+02:00",
+    "endDate": "2026-10-11T23:59:59+02:00",
+    "terms": "Nur online und für ausgewähltes Sortiment. Bereits reduzierte Produkte; nur solange der Vorrat reicht.",
+    "enabled": true,
+    "currentPrice": 14.99,
+    "currency": "EUR"
+  },
+  {
+    "id": "awin-imou-aff5",
+    "name": "Imou DE",
+    "title": "5% Affiliate-Rabatt bei IMOU",
+    "description": "Dauerhafter exklusiver Affiliate-Rabatt für teilnehmende IMOU-Produkte.",
+    "category": "smart-home",
+    "contentType": "partner-promotion",
+    "trackingUrl": "https://www.awin1.com/cread.php?awinmid=125816&awinaffid=3045061",
+    "destinationUrl": "https://www.awin1.com/cread.php?awinmid=125816&awinaffid=3045061",
+    "voucherCode": "IMOUAFF5",
+    "terms": "5% Affiliate-Rabatt laut IMOU-Affiliate-Mitteilung; dauerhaft gültig. Verfügbarkeit und Ausschlüsse beim Anbieter prüfen.",
+    "enabled": true
   }
 ]

@@ -7,10 +7,22 @@ const groupKey=value=>{
 };
 const blockedAdult=/\b(?:adult|erotic|erotik|sexshop|sexspielzeug|sex\s?toy|vibrator|dildo|porn(?:o|ografie|ography)?|bdsm|lovense|satisfyer)\b/i;
 const activeOrClosedStatuses=new Set(["pending","needs-info","approved","rejected","bounced","do-not-contact","pending-termination","reactivation-requested","review-requested","interested","joined","active","contacted","application-sent"]);
+const statusPriority=new Map([
+  ["do-not-contact",120],["rejected",115],["approved",110],["joined",110],["active",110],["pending-termination",105],
+  ["application-sent",90],["pending",85],["reactivation-requested",80],["review-requested",75],["interested",70],
+  ["needs-info",65],["contacted",50],["bounced",45]
+]);
+const statusRank=row=>statusPriority.get(key(row?.status).replace(/ /g,"-"))??0;
 
 export function buildPartnerOutreachQueue({opportunities=[],statusRows=[],contactDirectory=[],generatedAt=new Date().toISOString(),dailyLimit=8}={}){
   const limit=Math.min(8,Math.max(1,Number(dailyLimit)||8));
-  const statusByGroup=new Map(statusRows.map(row=>[groupKey(row.brand),row]).filter(([brand])=>brand));
+  const statusByGroup=new Map();
+  for(const row of statusRows){
+    const familyKey=groupKey(row?.brand);
+    if(!familyKey)continue;
+    const current=statusByGroup.get(familyKey);
+    if(!current||statusRank(row)>=statusRank(current))statusByGroup.set(familyKey,row);
+  }
   const contactByBrand=new Map(contactDirectory.map(row=>[key(row.brand),row]).filter(([brand])=>brand));
   const seen=new Set();
   const eligible=[];

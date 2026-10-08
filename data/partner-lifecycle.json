@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-08T19:35:00Z",
+  "generatedAt": "2026-10-08T19:41:00Z",
   "source": "verified-email-and-network-status",
   "partners": [
     {
@@ -135,6 +135,35 @@
       "confirmedAt": "2026-10-08T19:35:00Z",
       "termsReviewRequired": false,
       "notes": "Official Razer affiliate terms state the program does not work with websites focused on bargains, discounts or cheap offers; suppress automatic application/outreach for Angebotslotse."
+    },
+    {
+      "brand": "YesStyle",
+      "network": "Awin",
+      "status": "contacted",
+      "contact": "ys-affiliates@yesstyle.com",
+      "outreachSentAt": "2026-10-08T19:40:00Z",
+      "feedRequested": true,
+      "notes": "Beauty/Mode assortment-gap outreach; requested DE/Awin product feed, current promotions and approved assets."
+    },
+    {
+      "brand": "bosch Tiernahrung",
+      "network": "Direct inquiry",
+      "status": "contacted",
+      "contact": "partnerservice@bosch-tiernahrung.de",
+      "outreachSentAt": "2026-10-08T19:40:00Z",
+      "feedRequested": true,
+      "notes": "Asked for affiliate/partner program, product feed/API/CSV and approved assets for Tierbedarf."
+    },
+    {
+      "brand": "Fressnapf-Online-Shop DE",
+      "network": "Awin",
+      "advertiserId": 14757,
+      "status": "contacted",
+      "contact": "fressnapf.affiliate@avantgarde-pmc.de",
+      "outreachSentAt": "2026-10-08T19:41:00Z",
+      "feedRequested": true,
+      "termsReviewRequired": true,
+      "notes": "Official Awin profile confirms product data feed and affiliate program; requested feed/integration guidance without accepting program terms."
     }
   ]
 }

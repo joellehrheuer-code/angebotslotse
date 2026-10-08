@@ -107,15 +107,29 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
       - name: Restore generated data
         uses: actions/download-artifact@v4
         with:
           name: generated-data
           path: .
-      - uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: "chore(data): Angebote automatisch aktualisieren"
-          file_pattern: "data/offers.json data/offer-archive.json data/status.json data/price-history.json data/coupons.json data/affiliate-growth.json data/program-opportunities.json data/impact-opportunities.json data/affiliate-opportunities.json data/partner-outreach-queue.json data/creator-feed.json data/creator-videos.json report/program-inventory.json report/manual-actions.json report/update-report.json report/seo-report.json"
+      - name: Commit generated data onto latest main
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/offers.json data/offer-archive.json data/status.json data/price-history.json data/coupons.json data/affiliate-growth.json data/program-opportunities.json data/impact-opportunities.json data/affiliate-opportunities.json data/partner-outreach-queue.json data/creator-feed.json data/creator-videos.json report/program-inventory.json report/manual-actions.json report/update-report.json report/seo-report.json
+          if git diff --cached --quiet; then
+            echo "Keine geänderten generierten Daten."
+            exit 0
+          fi
+          git commit -m "chore(data): Angebote automatisch aktualisieren"
+          git fetch origin main
+          git rebase origin/main
+          git push origin HEAD:main
   deploy:
     needs: [update, commit]
     permissions: { pages: write, id-token: write }
