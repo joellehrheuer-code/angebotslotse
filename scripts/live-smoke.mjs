@@ -49,9 +49,9 @@ const validateState=({report,statusHtml,urls,homeHtml})=>{
   if(urls.length===0)errors.push("Sitemap enthält keine URLs");
   if(new Set(urls).size!==urls.length)errors.push("Sitemap enthält doppelte URLs");
   if(urls.some(url=>!url.startsWith(`${base}/`)&&url!==base))errors.push("Sitemap enthält fremde oder unerwartete URLs");
+  if(!/site\.css\?v=\d+/.test(homeHtml))errors.push("Startseite ohne versioniertes site.css");
+  if(!/app\.js\?v=\d+/.test(homeHtml))errors.push("Startseite ohne versioniertes app.js");
   const requiredHomeMarkers=[
-    'site.css?v=48',
-    'app.js?v=24',
     'id="aktuell-angebunden"',
     'class="top-social-links creator-dock-links"',
     'data-live-sort="deals"',
@@ -97,9 +97,11 @@ for(let attempt=1;attempt<=attempts;attempt+=1){
 }
 if(!live||stateErrors.length)throw new Error(`Live-Statusprüfung fehlgeschlagen: ${stateErrors.join("; ")}`);
 
+const cssAsset=homeHtml.match(/href="([^"]*site\.css\?v=\d+)"/)?.[1]??"/site.css";
+const appAsset=homeHtml.match(/src="([^"]*app\.js\?v=\d+)"/)?.[1]??"/app.js";
 const criticalAssets=[
-  "/site.css?v=48",
-  "/app.js?v=24",
+  cssAsset,
+  appAsset,
   "/favicon.ico?v=4",
   "/favicon-32.png?v=4",
   "/joel-logo.svg?v=4",
@@ -114,8 +116,11 @@ const criticalAssets=[
 ];
 const assetFailures=[];
 await Promise.all(criticalAssets.map(async asset=>{
-  try{await fetchOk(`${base}${asset}${asset.includes("?")?"&":"?"}smoke=${Date.now()}`);}
-  catch(error){assetFailures.push({asset,error:String(error?.message??error)});}
+  try{
+    const target=new URL(asset,base+"/");
+    target.searchParams.set("smoke",String(Date.now()));
+    await fetchOk(target.href);
+  }catch(error){assetFailures.push({asset,error:String(error?.message??error)});}
 }));
 if(assetFailures.length)throw new Error(`Kritische Live-Assets fehlen: ${JSON.stringify(assetFailures)}`);
 
