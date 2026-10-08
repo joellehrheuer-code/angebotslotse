@@ -1,20 +1,21 @@
 # Angebotslotse – aktueller Arbeitsstand
 
-Stand: 7. Oktober 2026. `main` enthält die V23-Bewertungsmoderation und die datenaltergesteuerte Impact-Aktualisierung; die früheren V12.5/V12.6-Branch-To-dos sind historisch.
+Stand: 8. Oktober 2026. Der aktuelle Hauptzweig enthält den reparierten Smart-Search-Client und weitere unabhängige Qualitätsänderungen. Diese Runde ergänzt einen dauerhaften Syntax-Regressionstest und führt die bestätigte Verivox-Antwort im kanonischen Partnerstatus nach.
 
 ## Aktuelle Runde
-Branch: `work/document-semantics-partner-status-20261007`.
+Branch: `work/client-syntax-verivox-20261008`.
 Abschlussliste: `docs/COMPLETION-CHECKLIST.md`.
-Die Build-Validierung prüft nun für alle erzeugten HTML-Seiten zusätzlich Seitensprache, genau ein `main`, genau eine H1, eindeutige IDs sowie zugängliche Namen und Beschriftungen für Links, Buttons und Formularfelder. Partnerantworten von ASMC, ECOVACS und INTERSPORT werden im kanonischen Statusbestand nachgeführt. Vollständige Validierung und Veröffentlichung stehen für diesen Branch noch aus.
 
-Cloud-Stand: `review-moderation` ist aktiv und verlangt JWT; `review_moderators` existiert mit RLS und ohne automatisch eingesetzten Moderator. Ohne ausdrücklich zugewiesenes Konto wird daher keine Moderationsberechtigung behauptet.
+Der zuvor reproduzierte Buildabbruch in `public/app.js` ist im aktuellen Hauptzweig behoben. Ein eigener Test kompiliert den gesamten Browser-Client mit esbuild und verhindert, dass ein unvollständiger ternärer Ausdruck erneut unbemerkt bleibt. Lokal bestanden 289 Tests sowie der Integritätscheck mit 256 veröffentlichungsreifen Angeboten.
+
+Verivox hat eine kostenlose Teilnahme und private Registrierung bestätigt. Die Live-Domain wurde übermittelt; eine schriftliche Integrations-Empfehlung ist angefragt. Weder ein Telefontermin noch Bedingungen wurden verbindlich angenommen.
 
 ## Fortsetzen nach Abbruch
-1. Abschlussliste lesen.
-2. aktuellen main-Commit und letzten Produktionsworkflow prüfen.
-3. Erst Branch-Validation, Merge, Produktion und Live-Smoke dieser Runde bestätigen, dann offene visuelle und funktionale Abnahmen durchführen.
-4. Blockierte Integrationen separat führen; keine Zustimmung zu Programmbedingungen vortäuschen.
-5. Keine Behauptung „fertig“ oder „live“ ohne passenden Nachweis.
+1. Abschlussliste, aktuellen main-Commit, offene PRs und letzte Workflows prüfen.
+2. PR dieser Runde erst nach grüner Branch-Validation mergen.
+3. Produktion und Live-Smoke nach Merge bestätigen; erst danach den Release als live markieren.
+4. Integritätsmeldungen nur nach Abgleich mit bewusst geprüften GitHub-Änderungen schließen.
+5. Blockierte Partnerzugänge getrennt führen; keine Zustimmung zu Bedingungen vortäuschen.
 
 ## Historischer Stand (teilweise überholt)
 
