@@ -4790,3 +4790,151 @@ body{
     min-height:58px!important;
   }
 }
+
+
+/* V25 CANONICAL UI SCALE — one hierarchy for home modules and header controls */
+:root{
+  --v25-section-title:clamp(34px,3.35vw,50px);
+  --v25-section-title-mobile:clamp(29px,8vw,36px);
+  --v25-control-height:44px;
+  --v25-control-radius:12px;
+}
+
+/* Keep the hero exceptional; all content modules share one headline scale. */
+.section-head h2,
+.trust-quality-head h2,
+.community-proof-head h2,
+.creator-world-copy h2,
+.partner-section#partner>h2{
+  font-size:var(--v25-section-title)!important;
+  line-height:1.02!important;
+  letter-spacing:-.035em!important;
+  margin-top:6px!important;
+  margin-bottom:8px!important;
+}
+.section-head{
+  align-items:end!important;
+  gap:18px!important;
+}
+.section-head>div{
+  min-width:0!important;
+}
+.section-head>div>p{
+  max-width:760px!important;
+}
+.section-head>a,
+.section-head .rail-actions>a{
+  flex:0 0 auto!important;
+  font-size:12px!important;
+  font-weight:850!important;
+}
+
+/* Header actions use the same dimensions and interaction language. */
+.header-links{
+  align-items:center!important;
+  gap:5px!important;
+}
+.header-links a,
+.header-utility-link,
+.menu-toggle{
+  min-height:var(--v25-control-height)!important;
+  height:var(--v25-control-height)!important;
+  border:1px solid transparent!important;
+  border-radius:var(--v25-control-radius)!important;
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:7px!important;
+  padding:0 13px!important;
+  background:transparent!important;
+  color:#aeb7c8!important;
+  font-size:11px!important;
+  font-weight:850!important;
+  line-height:1!important;
+  text-decoration:none!important;
+  transition:border-color .16s ease,background .16s ease,color .16s ease,transform .16s ease!important;
+}
+.header-links a:hover,
+.header-utility-link:hover,
+.menu-toggle:hover{
+  border-color:#30394d!important;
+  background:#151b27!important;
+  color:#fff!important;
+  transform:translateY(-1px)!important;
+}
+.header-links a[aria-current="page"],
+.header-links a.is-active{
+  border-color:#6b3558!important;
+  background:#251625!important;
+  color:#ff8dcb!important;
+}
+.header-utility-link{
+  border-color:#2c3548!important;
+  background:#121722!important;
+}
+.header-utility-link .header-icon,
+.menu-toggle .menu-icon{
+  flex:0 0 auto!important;
+}
+.global-search{
+  min-height:var(--v25-control-height)!important;
+  border-radius:14px!important;
+}
+.global-search input{
+  min-height:var(--v25-control-height)!important;
+}
+.global-search-submit{
+  min-width:104px!important;
+  height:calc(var(--v25-control-height) - 6px)!important;
+  margin-right:3px!important;
+  border-radius:11px!important;
+}
+
+/* Home content sections keep the same vertical rhythm. */
+.deal-section,
+.categories,
+.directory-section,
+.creator-videos,
+.creator-media,
+.creator-updates,
+.partner-section{
+  padding-top:38px!important;
+  padding-bottom:12px!important;
+}
+.owned-showcase,
+.community-proof,
+.trust-quality{
+  margin-top:38px!important;
+}
+.section-head{
+  margin-bottom:14px!important;
+}
+
+@media(max-width:760px){
+  .section-head h2,
+  .trust-quality-head h2,
+  .community-proof-head h2,
+  .creator-world-copy h2,
+  .partner-section#partner>h2{
+    font-size:var(--v25-section-title-mobile)!important;
+    line-height:1.04!important;
+  }
+  .section-head{
+    align-items:start!important;
+  }
+  .header-utility-link,
+  .menu-toggle{
+    width:42px!important;
+    min-width:42px!important;
+    padding:0!important;
+  }
+  .deal-section,
+  .categories,
+  .directory-section,
+  .creator-videos,
+  .creator-media,
+  .creator-updates,
+  .partner-section{
+    padding-top:30px!important;
+  }
+}
