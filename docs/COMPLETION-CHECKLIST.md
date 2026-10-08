@@ -210,3 +210,12 @@ Status „offen“ bedeutet: noch kein vollständiger Einzelnachweis für alle A
 - ASMC und ECOVACS sind nach ausdrücklicher Ablehnung als `rejected` gesperrt. INTERSPORT ist `needs-info`, bis Angebotslotse als Website im Awin-Publisherprofil hinterlegt und die Bewerbung manuell eingereicht wurde. Kein neuer Routine-Outreach, da kein Queue-Eintrag beide Automatikbedingungen erfüllte.
 - FreeLLMAPI-Healthcheck am 07.10.2026 erfolgreich: vier gesunde Provider und 53 Modelle. Eine bereinigte Checklist-Analyse wurde ausgeführt; die Antwort erreichte das Längenlimit und wurde deshalb nur als Hinweis, nicht als Abnahmenachweis verwendet.
 - Branch-Validation, Merge, Produktion und Live-Smoke dieser Runde werden erst nach erfolgreichem Lauf als abgeschlossen markiert.
+
+## 08.10.2026 – Browser-Client-Build und Partnerstatus
+
+- Der Smart-Search-Syntaxfehler ist im aktuellen Hauptzweig behoben. Ein neuer esbuild-Test kompiliert `public/app.js` direkt und schützt diese Fehlerklasse dauerhaft.
+- Veraltete Asset-Erwartungen wurden gegen den aktuellen Produktionsvertrag geprüft; lokale Gesamtvalidierung: 289/289 Tests und Integritätscheck mit 256 veröffentlichungsreifen Angeboten erfolgreich.
+- Verivox ist nach schriftlicher Bestätigung der kostenlosen Teilnahme und privaten Registrierung als `interested` dokumentiert. Domain übermittelt; keine Registrierung, Bedingungen oder Terminbestätigung automatisiert.
+- Neun bereits versendete Website-Report-Kopien wurden in AgentMail eindeutig nachgewiesen. Der Supabase-Schreibstatus bleibt bis zu einer separat bestätigten Datenbankantwort offen; es wurden keine Mails doppelt versendet.
+- Branch-Validation, Merge, Produktionsworkflow und Live-Smoke werden erst nach erfolgreichem Nachweis abgehakt.
+
