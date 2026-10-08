@@ -216,6 +216,6 @@ Status „offen“ bedeutet: noch kein vollständiger Einzelnachweis für alle A
 - Der Smart-Search-Syntaxfehler ist im aktuellen Hauptzweig behoben. Ein neuer esbuild-Test kompiliert `public/app.js` direkt und schützt diese Fehlerklasse dauerhaft.
 - Veraltete Asset-Erwartungen wurden gegen den aktuellen Produktionsvertrag geprüft; lokale Gesamtvalidierung: 289/289 Tests und Integritätscheck mit 256 veröffentlichungsreifen Angeboten erfolgreich.
 - Verivox ist nach schriftlicher Bestätigung der kostenlosen Teilnahme und privaten Registrierung als `interested` dokumentiert. Domain übermittelt; keine Registrierung, Bedingungen oder Terminbestätigung automatisiert.
-- Neun bereits versendete Website-Report-Kopien wurden in AgentMail eindeutig nachgewiesen. Der Supabase-Schreibstatus bleibt bis zu einer separat bestätigten Datenbankantwort offen; es wurden keine Mails doppelt versendet.
+- Neun bereits versendete Website-Report-Kopien wurden in AgentMail eindeutig nachgewiesen und anschließend in Supabase als `triaged` sowie `mail_synced_at` markiert; es wurden keine Mails doppelt versendet.
 - Branch-Validation, Merge, Produktionsworkflow und Live-Smoke werden erst nach erfolgreichem Nachweis abgehakt.
 
