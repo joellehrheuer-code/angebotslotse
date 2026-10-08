@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-30T02:35:00+02:00",
+  "generatedAt": "2026-10-08T19:17:00Z",
   "purpose": "Verified official contact routes for routine Angebotslotse partner outreach. sendAllowed=false means research/review is still required before sending.",
   "contacts": [
     {
@@ -154,6 +154,24 @@
       "verifiedAt": "2026-09-30",
       "sendAllowed": false,
       "notes": "Official iHerb affiliate page explicitly accepts shopping comparison publishers and provides an application/promotions contact, but the address is Cloudflare-protected in public HTML. Do not guess the email; verify interactively before sending."
+    },
+    {
+      "brand": "Hey Happiness",
+      "contact": "tannya@heyhappiness.com",
+      "contactType": "verified-program-invitation",
+      "sourceUrl": "gmail:1a11bbaa9f2b5f1d",
+      "verifiedAt": "2026-10-08",
+      "sendAllowed": false,
+      "notes": "Awin invitation received; outreach sent asking for feed/assets. Program terms must be reviewed before acceptance."
+    },
+    {
+      "brand": "ProtoArc",
+      "contact": "max@mccpartner.com",
+      "contactType": "verified-impact-affiliate",
+      "sourceUrl": "gmail:1a1148fe8dea0626",
+      "verifiedAt": "2026-10-08",
+      "sendAllowed": false,
+      "notes": "Verified campaign contact. Oct 6–7 campaign expired; current feed/offers requested."
     }
   ]
 }
