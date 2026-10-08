@@ -55,6 +55,25 @@ test("Impact nutzt Media-Partner-API und Basic Auth", async () => {
   assert.equal(rows.audit.programSignals[0].products, 0);
 });
 
+test("Impact behält Teilresultate wenn ein optionaler Endpoint ausfällt", async () => {
+  const fetchImpl = async url => {
+    const pathname = new URL(url).pathname;
+    if (pathname.endsWith("/Catalogs/ItemSearch")) throw new Error("catalog timeout");
+    let payload = {"@numpages":1};
+    if (pathname.endsWith("/Campaigns")) payload.Campaigns=[{CampaignId:"42",CampaignName:"Gaming",AdvertiserId:"7",AdvertiserName:"Shop",AdvertiserUrl:"https://shop.example",ContractStatus:"Active",ShippingRegions:["GERMANY"],TrackingLink:"https://track.example/program"}];
+    else if (pathname.endsWith("/Ads")) payload.Ads=[{Id:"9",Name:"Gaming Aktion",CampaignId:"42",AdvertiserId:"7",TrackingLink:"https://track.example/ad",LandingPageUrl:"https://shop.example/deal"}];
+    else if (pathname.endsWith("/Promotions")) payload.Promotions=[];
+    else if (pathname.endsWith("/Deals")) payload.Deals=[];
+    else if (pathname.endsWith("/Catalogs")) payload.Catalogs=[];
+    else if (pathname.endsWith("/Stores")) payload.Stores=[];
+    return {ok:true,json:async()=>payload};
+  };
+  const rows = await fetchImpactOffers({accountSid:"SID",authToken:"TOKEN",fetchImpl});
+  assert.deepEqual(rows.map(row=>row.id),["program-42","ad-9"]);
+  assert.match(rows.audit.errors.products,/catalog timeout/);
+  assert.equal(rows.audit.products,0);
+});
+
 test("Impact veröffentlicht quarantänisierte Ads nicht ohne abweichenden offiziellen Trackinglink", async () => {
   const fetchImpl = async url => {
     const pathname = new URL(url).pathname;
