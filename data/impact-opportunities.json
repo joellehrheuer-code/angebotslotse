@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-07T11:43:53.477Z",
+  "generatedAt": "2026-10-08T19:50:44.812Z",
   "status": "error",
   "joinedPrograms": 0,
   "automation": {
@@ -54,9 +54,9 @@
     },
     {
       "category": "Haushalt & Küche",
-      "siteOffers": 53,
+      "siteOffers": 52,
       "joinedPrograms": 0,
-      "gapScore": 53,
+      "gapScore": 52,
       "searchTerms": [
         "home",
         "appliances",

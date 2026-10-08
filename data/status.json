@@ -1,29 +1,29 @@
 {
   "state": "degraded",
-  "lastSuccessfulUpdate": "2026-10-07T11:43:53.395Z",
-  "activeOffers": 256,
+  "lastSuccessfulUpdate": "2026-10-08T19:50:44.746Z",
+  "activeOffers": 255,
   "storedOffers": 484,
-  "publishableOffers": 256,
+  "publishableOffers": 255,
   "awaitingMedia": 0,
   "blockedPublisherPromotions": 4,
   "quarantined": 130,
-  "added": 0,
-  "removed": 0,
-  "archivedThisRun": 0,
-  "archivedTotal": 337,
+  "added": 6,
+  "removed": 6,
+  "archivedThisRun": 6,
+  "archivedTotal": 343,
   "filteredForeignLocale": 0,
   "invalidLinks": 0,
   "apiErrors": 1,
   "sources": {
     "awin": {
       "state": "ok",
-      "count": 13,
+      "count": 11,
       "error": null,
       "audit": null
     },
     "awin-enhanced-feeds": {
       "state": "ok",
-      "count": 455,
+      "count": 456,
       "error": null,
       "audit": {
         "feeds": [
@@ -70,12 +70,12 @@
             "advertiserName": "Outin Germany",
             "locale": "de_DE",
             "state": "available",
-            "products": 54,
-            "rawProducts": 54,
-            "validProducts": 54,
-            "withPrice": 54,
-            "withImage": 54,
-            "withTracking": 54,
+            "products": 55,
+            "rawProducts": 55,
+            "validProducts": 55,
+            "withPrice": 55,
+            "withImage": 55,
+            "withTracking": 55,
             "rejected": 0,
             "rejectionReasons": {}
           },
@@ -112,7 +112,7 @@
     },
     "direct": {
       "state": "ok",
-      "count": 14,
+      "count": 15,
       "error": null,
       "audit": null
     },
@@ -164,10 +164,10 @@
     }
   },
   "creatorFeed": {
-    "state": "stale",
+    "state": "ok",
     "count": 9,
     "videos": 9,
-    "error": "Creator social feed: HTTP 503",
+    "error": null,
     "mode": "social"
   },
   "stale": 210,

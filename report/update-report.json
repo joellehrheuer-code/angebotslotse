@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-07T11:43:53.477Z",
-  "newAwinPrograms": 0,
+  "generatedAt": "2026-10-08T19:50:44.812Z",
+  "newAwinPrograms": 3,
   "newImpactPrograms": 0,
   "newDaisyconPrograms": 0,
   "newWebgainsPrograms": 0,
@@ -11,32 +11,32 @@
   "manualApplications": 8,
   "networkReviewActions": 6,
   "awinDiscoveryOffers": 200,
-  "applicationCandidates": 2601,
-  "newMerchants": 0,
-  "newProducts": 0,
-  "productsWithImage": 247,
+  "applicationCandidates": 2607,
+  "newMerchants": 2,
+  "newProducts": 1,
+  "productsWithImage": 248,
   "productsWithVideo": 0,
-  "productsWithPrice": 247,
+  "productsWithPrice": 248,
   "productsWithOldPrice": 0,
   "productsWithDiscount": 0,
-  "newCoupons": 0,
-  "coupons": 5,
+  "newCoupons": 1,
+  "coupons": 3,
   "priceChanges": 0,
-  "expiredOffers": 0,
-  "expiredCoupons": 0,
+  "expiredOffers": 3,
+  "expiredCoupons": 3,
   "filteredForeignLocale": 0,
-  "totalProducts": 256,
+  "totalProducts": 255,
   "productsBySource": {
-    "Awin": 256
+    "Awin": 255
   },
   "officialImagesBySource": {
-    "Awin": 247
+    "Awin": 248
   },
   "missingMediaBySource": {},
   "productsByMerchant": {
     "Hollyland DE": 136,
     "ANTHBOT DE": 59,
-    "Outin Germany": 55,
+    "Outin Germany": 54,
     "EMP DE": 4,
     "Imou DE": 1,
     "PDF Agile": 1
@@ -44,7 +44,7 @@
   "productsByCategory": {
     "audio-musik": 88,
     "garten": 53,
-    "haushalt": 53,
+    "haushalt": 52,
     "zubehoer": 49,
     "computer": 4,
     "sonstiges": 4,
@@ -96,12 +96,12 @@
       "advertiserName": "Outin Germany",
       "locale": "de_DE",
       "state": "available",
-      "products": 54,
-      "rawProducts": 54,
-      "validProducts": 54,
-      "withPrice": 54,
-      "withImage": 54,
-      "withTracking": 54,
+      "products": 55,
+      "rawProducts": 55,
+      "validProducts": 55,
+      "withPrice": 55,
+      "withImage": 55,
+      "withTracking": 55,
       "rejected": 0,
       "rejectionReasons": {}
     },
@@ -127,10 +127,10 @@
     }
   ],
   "awinEnhancedDedupe": {
-    "inputRows": 455,
-    "normalizedRows": 256,
+    "inputRows": 456,
+    "normalizedRows": 257,
     "filteredBeforeDedupe": 199,
-    "outputOffers": 247,
+    "outputOffers": 248,
     "dedupedRows": 9,
     "collapsedRows": 208,
     "byMerchant": [
@@ -170,15 +170,15 @@
       },
       {
         "merchant": "Outin Germany",
-        "inputRows": 54,
-        "normalizedRows": 54,
+        "inputRows": 55,
+        "normalizedRows": 55,
         "filteredBeforeDedupe": 0,
-        "outputOffers": 53,
+        "outputOffers": 54,
         "dedupedRows": 1,
         "collapsedRows": 1,
         "rowsWithGtin": 10,
         "duplicateGtinExtras": 1,
-        "rowsWithMpn": 54,
+        "rowsWithMpn": 55,
         "duplicateMpnExtras": 0,
         "duplicateSourceIdExtras": 0,
         "rejectionReasons": {}
@@ -190,17 +190,19 @@
   "dailyDeal": "6b0f463fb47703de",
   "dailyHighlights": [
     "6b0f463fb47703de",
-    "1b895aba6a169e65",
-    "184e20dfcb590e15",
-    "2120ca7e652cd83f",
-    "05919befd8808188"
+    "1da747bdb3b4cdf5",
+    "0a432f17c1a1c534",
+    "052fe5582f93e7a5",
+    "0a16e63f96d3c7c3"
   ],
   "weekDeals": [
+    "77685b2726a733e6",
+    "680d3dc112c1c7d7",
     "eb7d93caffb6eb7d"
   ],
   "monthHighlights": [
+    "77685b2726a733e6",
     "2a01a48be68aebb3",
-    "10bb463f70696c2e",
     "0055caa27aa9a32c",
     "0a432f17c1a1c534",
     "2d494a434af99f92"

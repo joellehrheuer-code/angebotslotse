@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-07T11:43:53.477Z",
+  "generatedAt": "2026-10-08T19:50:44.812Z",
   "dailyNewContactLimit": 8,
   "safeguards": {
     "dedupeAgainst": "report/partner-outreach-status.json",
@@ -17,8 +17,8 @@
       "programId": null,
       "campaignId": null,
       "category": "Mode & Sport",
-      "priority": "mittel",
-      "score": 66,
+      "priority": "hoch",
+      "score": 81,
       "networkStatus": "notjoined",
       "actionType": "application-review",
       "contact": null,
@@ -56,29 +56,6 @@
       "reason": "Routine-Outreach darf nur an verifizierte offizielle Kontakte vorbereitet/versendet werden; Vertragsbedingungen, AGB, Exklusivität oder kostenpflichtige Verpflichtungen werden nicht automatisch akzeptiert."
     },
     {
-      "id": "awin-15443",
-      "network": "Awin",
-      "brand": "YesStyle DE",
-      "advertiserId": 15443,
-      "programId": null,
-      "campaignId": null,
-      "category": "Gesundheit & Wellness",
-      "priority": "mittel",
-      "score": 60,
-      "networkStatus": "notjoined",
-      "actionType": "application-review",
-      "contact": null,
-      "contactType": null,
-      "contactSource": null,
-      "contactState": "official-contact-research-required",
-      "routineOutreachAllowed": false,
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten YesStyle DE redaktionell passend im Bereich Gesundheit & Wellness einbinden. Bei Awin sind aktuell 20 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "networkApplicationNextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "contractualSubmissionAllowed": false,
-      "reason": "Routine-Outreach darf nur an verifizierte offizielle Kontakte vorbereitet/versendet werden; Vertragsbedingungen, AGB, Exklusivität oder kostenpflichtige Verpflichtungen werden nicht automatisch akzeptiert."
-    },
-    {
       "id": "awin-84955",
       "network": "Awin",
       "brand": "bosch Tiernahrung DE",
@@ -87,7 +64,7 @@
       "campaignId": null,
       "category": "Tierbedarf",
       "priority": "mittel",
-      "score": 45,
+      "score": 60,
       "networkStatus": "notjoined",
       "actionType": "application-review",
       "contact": "info@bosch-tiernahrung.de",
@@ -102,15 +79,15 @@
       "reason": "Routine-Outreach darf nur an verifizierte offizielle Kontakte vorbereitet/versendet werden; Vertragsbedingungen, AGB, Exklusivität oder kostenpflichtige Verpflichtungen werden nicht automatisch akzeptiert."
     },
     {
-      "id": "awin-11657",
+      "id": "awin-68692",
       "network": "Awin",
-      "brand": "cyberport DE",
-      "advertiserId": 11657,
+      "brand": "Fressnapf AT",
+      "advertiserId": 68692,
       "programId": null,
       "campaignId": null,
-      "category": "Technik & Computer",
+      "category": "Tierbedarf",
       "priority": "mittel",
-      "score": 45,
+      "score": 60,
       "networkStatus": "notjoined",
       "actionType": "application-review",
       "contact": null,
@@ -118,8 +95,31 @@
       "contactSource": null,
       "contactState": "official-contact-research-required",
       "routineOutreachAllowed": false,
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten cyberport DE redaktionell passend im Bereich Technik & Computer einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Fressnapf AT redaktionell passend im Bereich Tierbedarf einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
       "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "networkApplicationNextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "contractualSubmissionAllowed": false,
+      "reason": "Routine-Outreach darf nur an verifizierte offizielle Kontakte vorbereitet/versendet werden; Vertragsbedingungen, AGB, Exklusivität oder kostenpflichtige Verpflichtungen werden nicht automatisch akzeptiert."
+    },
+    {
+      "id": "awin-19810",
+      "network": "Awin",
+      "brand": "SharkNinja DE",
+      "advertiserId": 19810,
+      "programId": null,
+      "campaignId": null,
+      "category": "Haushalt & Küche",
+      "priority": "mittel",
+      "score": 60,
+      "networkStatus": "notjoined",
+      "actionType": "application-review",
+      "contact": null,
+      "contactType": "official-program-no-direct-email",
+      "contactSource": "https://ui.awin.com/merchant-profile/19810",
+      "contactState": "verified-contact-manual-review",
+      "routineOutreachAllowed": false,
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten SharkNinja DE redaktionell passend im Bereich Haushalt & Küche einbinden. Bei Awin sind aktuell 6 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "nextAction": "Official Awin program verified with comparison/deal publisher commissions and full data feed advertised. No dedicated German affiliate email was verified; keep manual review.",
       "networkApplicationNextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
       "contractualSubmissionAllowed": false,
       "reason": "Routine-Outreach darf nur an verifizierte offizielle Kontakte vorbereitet/versendet werden; Vertragsbedingungen, AGB, Exklusivität oder kostenpflichtige Verpflichtungen werden nicht automatisch akzeptiert."
@@ -127,13 +127,6 @@
   ],
   "backlog": [],
   "excluded": [
-    {
-      "brand": "Samsung Shop DE",
-      "reason": "existing-status:pending",
-      "relatedBrand": null,
-      "status": "pending",
-      "lastContactAt": "2026-09-29T13:36:00+02:00"
-    },
     {
       "brand": "Anker DE",
       "reason": "existing-status:pending",
@@ -149,25 +142,39 @@
       "lastContactAt": "2026-09-02T19:43:09+02:00"
     },
     {
-      "brand": "Ankerkraut DE",
-      "reason": "existing-status:pending",
-      "relatedBrand": null,
-      "status": "pending",
-      "lastContactAt": "2026-09-30T01:41:00+02:00"
-    },
-    {
-      "brand": "Bosch Hausgeräte DE",
-      "reason": "existing-status:pending",
-      "relatedBrand": null,
-      "status": "pending",
-      "lastContactAt": "2026-09-29T13:40:00+02:00"
-    },
-    {
       "brand": "BSTN DACH",
       "reason": "existing-status:pending",
       "relatedBrand": null,
       "status": "pending",
       "lastContactAt": "2026-09-30T02:05:00+02:00"
+    },
+    {
+      "brand": "DECATHLON DE",
+      "reason": "existing-status:pending",
+      "relatedBrand": null,
+      "status": "pending",
+      "lastContactAt": "2026-09-29T13:45:00+02:00"
+    },
+    {
+      "brand": "Ecovacs DE",
+      "reason": "existing-status:rejected",
+      "relatedBrand": null,
+      "status": "rejected",
+      "lastContactAt": "2026-10-06"
+    },
+    {
+      "brand": "Fressnapf-Online-Shop DE",
+      "reason": "existing-status:contacted",
+      "relatedBrand": null,
+      "status": "contacted",
+      "lastContactAt": "2026-10-08T19:41:00Z"
+    },
+    {
+      "brand": "INTERSPORT DE",
+      "reason": "existing-status:needs-info",
+      "relatedBrand": null,
+      "status": "needs-info",
+      "lastContactAt": "2026-10-06"
     }
   ]
 }
