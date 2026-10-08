@@ -97,8 +97,8 @@ for(let attempt=1;attempt<=attempts;attempt+=1){
 }
 if(!live||stateErrors.length)throw new Error(`Live-Statusprüfung fehlgeschlagen: ${stateErrors.join("; ")}`);
 
-const cssAsset=homeHtml.match(/href="([^"]*site\.css\?v=\d+)"/)?.[1]??"/site.css";
-const appAsset=homeHtml.match(/src="([^"]*app\.js\?v=\d+)"/)?.[1]??"/app.js";
+const cssAsset=live.homeHtml.match(/href="([^"]*site\.css\?v=\d+)"/)?.[1]??"/site.css";
+const appAsset=live.homeHtml.match(/src="([^"]*app\.js\?v=\d+)"/)?.[1]??"/app.js";
 const criticalAssets=[
   cssAsset,
   appAsset,
