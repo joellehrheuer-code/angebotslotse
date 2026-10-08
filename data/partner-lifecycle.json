@@ -1,0 +1,100 @@
+{
+  "generatedAt": "2026-10-08T19:17:00Z",
+  "source": "verified-email-and-network-status",
+  "partners": [
+    {
+      "brand": "EMP DE",
+      "network": "Awin",
+      "status": "approved",
+      "confirmedAt": "2026-09-30T19:15:37Z",
+      "feedRequested": false,
+      "notes": "Awin application approved; creatives available in Awin."
+    },
+    {
+      "brand": "Hey Happiness",
+      "legalEntity": "Sparkle GmbH",
+      "network": "Awin",
+      "status": "invited",
+      "confirmedAt": "2026-10-08T13:36:19Z",
+      "contact": "tannya@heyhappiness.com",
+      "termsReviewRequired": true,
+      "outreachSentAt": "2026-10-08T19:16:00Z",
+      "notes": "10% invitation; editorial, price comparison and shopping-directory types allowed; only approved materials/codes may be used."
+    },
+    {
+      "brand": "ProtoArc",
+      "network": "Impact",
+      "status": "active-contact",
+      "impactId": "56905",
+      "campaignStatus": "expired",
+      "campaignEndedAt": "2026-10-07T23:59:59Z",
+      "contact": "max@mccpartner.com",
+      "outreachSentAt": "2026-10-08T19:16:00Z",
+      "notes": "Prime Big Deal Days creative was explicitly approved for website/deal use, but campaign ended Oct 7; current feed/offers requested."
+    },
+    {
+      "brand": "Millia Ella Cosmetics",
+      "network": "Impact",
+      "status": "marketplace-candidate",
+      "confirmedAt": "2026-10-08T15:00:28Z",
+      "commissionHint": "20% limited-time marketing offer",
+      "termsReviewRequired": true,
+      "notes": "Marketplace promotion email; does not itself prove active joined status."
+    },
+    {
+      "brand": "Chime Mattress",
+      "network": "Impact",
+      "status": "declined",
+      "confirmedAt": "2026-09-29T14:28:34Z",
+      "notes": "Impact partnership application declined."
+    },
+    {
+      "brand": "Alternate DE",
+      "network": "Awin",
+      "status": "contacted",
+      "contact": "awin@alternate.de",
+      "outreachSentAt": "2026-10-08T19:16:00Z",
+      "feedRequested": true
+    },
+    {
+      "brand": "tink DE",
+      "network": "Awin",
+      "status": "contacted",
+      "contact": "affiliate@tink.io",
+      "outreachSentAt": "2026-10-08T19:16:00Z",
+      "feedRequested": true
+    },
+    {
+      "brand": "Pollin Electronic DE",
+      "network": "Awin",
+      "status": "contacted",
+      "contact": "partnerprogramm@pollin.de",
+      "outreachSentAt": "2026-10-08T19:16:00Z",
+      "feedRequested": true
+    },
+    {
+      "brand": "INTERSPORT DE",
+      "network": "Awin",
+      "status": "contacted",
+      "contact": "mara.wieland@intersport.de",
+      "outreachSentAt": "2026-10-08T19:16:00Z",
+      "feedRequested": true
+    },
+    {
+      "brand": "One DE",
+      "network": "Awin",
+      "status": "contacted",
+      "contact": "affiliate@one.de",
+      "outreachSentAt": "2026-10-08T19:16:00Z",
+      "feedRequested": true
+    },
+    {
+      "brand": "Ankerkraut DE",
+      "network": "Awin",
+      "status": "contacted",
+      "contact": "marketing@ankerkraut.de",
+      "outreachSentAt": "2026-10-08T19:16:00Z",
+      "feedRequested": true
+    }
+  ]
+}
