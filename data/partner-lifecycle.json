@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-08T19:22:00Z",
+  "generatedAt": "2026-10-08T19:24:00Z",
   "source": "verified-email-and-network-status",
   "partners": [
     {
@@ -118,6 +118,14 @@
       "status": "contacted",
       "contact": "partner@drillisch-online.de",
       "outreachSentAt": "2026-10-08T19:22:00Z",
+      "feedRequested": true
+    },
+    {
+      "brand": "ELV DE",
+      "network": "Awin",
+      "status": "contacted",
+      "contact": "elv@sunnysales.de",
+      "outreachSentAt": "2026-10-08T19:24:00Z",
       "feedRequested": true
     }
   ]
