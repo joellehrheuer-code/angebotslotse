@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-09T13:53:43.820Z",
+  "generatedAt": "2026-10-09T15:20:25.732Z",
   "market": "DE",
   "publisherId": 3045061,
   "awin": {
@@ -8,9 +8,9 @@
       "pending": 4,
       "suspended": 1,
       "rejected": 2,
-      "notjoined": 2626
+      "notjoined": 2628
     },
-    "totalProgramsEvaluated": 2638,
+    "totalProgramsEvaluated": 2640,
     "reportedPrograms": 200,
     "programs": [
       {
@@ -2219,46 +2219,6 @@
     "detailsEnriched": 5,
     "opportunities": [
       {
-        "brand": "Anker DE",
-        "network": "Awin",
-        "advertiserId": 30691,
-        "status": "notjoined",
-        "category": "Technik & Computer",
-        "score": 98,
-        "priority": "hoch",
-        "activeDiscoveryOffers": 17,
-        "offerExamples": [
-          "eufyCam S3 Pro zusätzliche Sicherheitskamera (2er-Pack) - €289(€210off) w/Code: WS24T81622",
-          "eufyCam Solo S340 und HomeBase™ S380 - €239(€140.98off) w/Code: WS24T8170T8030",
-          "Anker eufy Flutlichtkamera E340 und HomeBase™ S380 - €259(€140off) w/Code: WS24T8425T8030"
-        ],
-        "productFeed": false,
-        "siteCategoryCoverage": 53,
-        "metrics": {
-          "awinIndex": 64.79,
-          "epc": 0.99,
-          "conversionRate": 3.23,
-          "approvalPercentage": 86.22,
-          "validationDays": 26,
-          "averagePaymentTime": "73",
-          "commissionMin": null,
-          "commissionMax": null,
-          "commissionTypes": []
-        },
-        "reasons": [
-          "passt zu Technik & Computer",
-          "strategisch relevante Marke",
-          "17 aktive DE-Aktionen",
-          "Awin Index 64.79",
-          "Approval 86.22%",
-          "EPC 0.99"
-        ],
-        "applicationRequired": true,
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Anker DE redaktionell passend im Bereich Technik & Computer einbinden. Bei Awin sind aktuell 17 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-        "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-        "automationState": "ready-for-review"
-      },
-      {
         "brand": "adidas DE",
         "network": "Awin",
         "advertiserId": 77004,
@@ -2328,6 +2288,41 @@
         ],
         "applicationRequired": true,
         "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Radwelt-shop DE redaktionell passend im Bereich Mode & Sport einbinden. Bei Awin sind aktuell 5 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+        "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+        "automationState": "ready-for-review"
+      },
+      {
+        "brand": "Anker DE",
+        "network": "Awin",
+        "advertiserId": 30691,
+        "status": "notjoined",
+        "category": "Technik & Computer",
+        "score": 68,
+        "priority": "mittel",
+        "activeDiscoveryOffers": 0,
+        "offerExamples": [],
+        "productFeed": false,
+        "siteCategoryCoverage": 53,
+        "metrics": {
+          "awinIndex": 64.79,
+          "epc": 0.99,
+          "conversionRate": 3.23,
+          "approvalPercentage": 86.22,
+          "validationDays": 26,
+          "averagePaymentTime": "73",
+          "commissionMin": null,
+          "commissionMax": null,
+          "commissionTypes": []
+        },
+        "reasons": [
+          "passt zu Technik & Computer",
+          "strategisch relevante Marke",
+          "Awin Index 64.79",
+          "Approval 86.22%",
+          "EPC 0.99"
+        ],
+        "applicationRequired": true,
+        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Anker DE redaktionell passend im Bereich Technik & Computer einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
         "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
         "automationState": "ready-for-review"
       },
@@ -2732,42 +2727,6 @@
         "automationState": "ready-for-review"
       },
       {
-        "brand": "SIXTY8 DE",
-        "network": "Awin",
-        "advertiserId": 131239,
-        "status": "notjoined",
-        "category": "Gesundheit & Wellness",
-        "score": 57,
-        "priority": "mittel",
-        "activeDiscoveryOffers": 2,
-        "offerExamples": [
-          "10€ GESCHENKT",
-          "6G GRATIS BEI JEDER BESTELLUNG"
-        ],
-        "productFeed": false,
-        "siteCategoryCoverage": 0,
-        "metrics": {
-          "awinIndex": null,
-          "epc": null,
-          "conversionRate": null,
-          "approvalPercentage": null,
-          "validationDays": null,
-          "averagePaymentTime": null,
-          "commissionMin": null,
-          "commissionMax": null,
-          "commissionTypes": []
-        },
-        "reasons": [
-          "passt zu Gesundheit & Wellness",
-          "Sortimentslücke: erst 0 veröffentlichte Angebote in Gesundheit & Wellness",
-          "2 aktive DE-Aktionen"
-        ],
-        "applicationRequired": true,
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten SIXTY8 DE redaktionell passend im Bereich Gesundheit & Wellness einbinden. Bei Awin sind aktuell 2 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-        "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-        "automationState": "ready-for-review"
-      },
-      {
         "brand": "SharkNinja DE",
         "network": "Awin",
         "advertiserId": 19810,
@@ -2941,6 +2900,42 @@
         ],
         "applicationRequired": true,
         "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten GHD DE redaktionell passend im Bereich Technik & Computer einbinden. Bei Awin sind aktuell 3 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+        "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+        "automationState": "ready-for-review"
+      },
+      {
+        "brand": "Honor DE",
+        "network": "Awin",
+        "advertiserId": 28525,
+        "status": "notjoined",
+        "category": "Technik & Computer",
+        "score": 48,
+        "priority": "mittel",
+        "activeDiscoveryOffers": 3,
+        "offerExamples": [
+          "€100 Rabatt HONOR Magic V5",
+          "€100 Rabatt HONOR Pad 20 Pro",
+          "€200 Rabatt HONOR CHOICE Folding E-BIKE ADO Air 20 Pro"
+        ],
+        "productFeed": false,
+        "siteCategoryCoverage": 53,
+        "metrics": {
+          "awinIndex": null,
+          "epc": null,
+          "conversionRate": null,
+          "approvalPercentage": null,
+          "validationDays": null,
+          "averagePaymentTime": null,
+          "commissionMin": null,
+          "commissionMax": null,
+          "commissionTypes": []
+        },
+        "reasons": [
+          "passt zu Technik & Computer",
+          "3 aktive DE-Aktionen"
+        ],
+        "applicationRequired": true,
+        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Honor DE redaktionell passend im Bereich Technik & Computer einbinden. Bei Awin sind aktuell 3 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
         "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
         "automationState": "ready-for-review"
       },
