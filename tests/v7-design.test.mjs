@@ -111,7 +111,7 @@ test("SEO konsolidiert Produktvarianten auf eine Angebots-URL", () => {
   assert.match(offerHtml, /class="deal-check"/);
   assert.match(offerHtml, /Daten statt Werbeversprechen/);
   assert.match(offerHtml, /class="price-history"/);
-  if (target.imageUrl && target.imageSource) assert.match(offerHtml, /Offizielles Partnerbild/);
+  if (target.imageUrl && target.imageSource) assert.match(offerHtml, /Offizielle(?:s|) Partnerbild(?:er)?/);
   assert.ok(legacyHtml.includes('rel="canonical" href="' + canonicalUrl + '"'));
   assert.ok(sitemap.includes("/angebote/" + target.slug + ".html"));
   assert.doesNotMatch(sitemap, /\/produkt\//);
