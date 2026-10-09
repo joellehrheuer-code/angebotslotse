@@ -109,6 +109,7 @@ export async function collectSources(env = process.env) {
     lastSyncMs:impactLastSyncMs
   });
   const sourceTotalTimeoutMs=Math.min(120_000,Math.max(5_000,Number(env.SOURCE_TOTAL_TIMEOUT_MS)||45_000));
+  const impactTotalTimeoutMs=Math.min(120_000,Math.max(sourceTotalTimeoutMs,Number(env.IMPACT_TOTAL_TIMEOUT_MS)||90_000));
   const impactLinkPolicy = JSON.parse(await fs.readFile("data/impact-link-policy.json", "utf8").catch(() => "{}"));
   const amazonDefinitions = JSON.parse(await fs.readFile("data/amazon-products.json", "utf8").catch(() => '{"items":[]}' ));
   let awinPrograms=null;
@@ -215,7 +216,7 @@ export async function collectSources(env = process.env) {
     if (name === "webgains" && !env.WEBGAINS_FEED_URLS) return {name,state:"disabled",rows:[],audit:{reason:"WEBGAINS_FEED_URLS missing – Webgains feed sync skipped"}};
     try {
       const rows = name==="impact"
-        ? await runSourceWithTimeout(run,{timeoutMs:sourceTotalTimeoutMs,label:name})
+        ? await runSourceWithRetry(run,{attempts:Number(env.IMPACT_RETRY_ATTEMPTS)||2,baseDelayMs:Number(env.SOURCE_RETRY_BASE_DELAY_MS)||400,timeoutMs:impactTotalTimeoutMs,label:name})
         : await runSourceWithRetry(run,{attempts:Number(env.SOURCE_RETRY_ATTEMPTS)||2,baseDelayMs:Number(env.SOURCE_RETRY_BASE_DELAY_MS)||400,timeoutMs:sourceTotalTimeoutMs,label:name});
       return { name, state: "ok", rows, audit:rows.audit??null };
     }
