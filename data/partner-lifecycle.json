@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-08T19:41:00Z",
+  "generatedAt": "2026-10-09T13:50:00Z",
   "source": "verified-email-and-network-status",
   "partners": [
     {
@@ -164,6 +164,96 @@
       "feedRequested": true,
       "termsReviewRequired": true,
       "notes": "Official Awin profile confirms product data feed and affiliate program; requested feed/integration guidance without accepting program terms."
+    },
+    {
+      "brand": "Zooplus DE",
+      "network": "Awin",
+      "status": "contacted",
+      "contact": "affiliate@zooplus.de",
+      "outreachSentAt": "2026-10-09",
+      "feedRequested": true,
+      "notes": "Two identical outgoing messages detected; no further routine outreach."
+    },
+    {
+      "brand": "Douglas DE",
+      "network": "Awin",
+      "status": "contacted",
+      "contact": "affiliate_team@douglas.de",
+      "outreachSentAt": "2026-10-09",
+      "feedRequested": true,
+      "notes": "Two identical outgoing messages detected; no further routine outreach."
+    },
+    {
+      "brand": "Hoffmann-Germany DE",
+      "network": "Awin",
+      "status": "contacted",
+      "contact": "hoffmann-germany-affiliate@more-fire.com",
+      "outreachSentAt": "2026-10-09",
+      "feedRequested": true,
+      "notes": "Affiliate/product-feed enquiry sent; do not repeat."
+    },
+    {
+      "brand": "APOfit DE",
+      "network": "Awin",
+      "status": "contacted",
+      "contact": "apofit@jobfuerzwei.de",
+      "outreachSentAt": "2026-10-09",
+      "feedRequested": true,
+      "notes": "Two identical outgoing messages detected; no further routine outreach."
+    },
+    {
+      "brand": "Freikopf DE",
+      "network": "Awin",
+      "status": "contacted",
+      "contact": "freikopf@jobfuerzwei.de",
+      "outreachSentAt": "2026-10-09",
+      "feedRequested": true,
+      "notes": "Affiliate/product-feed enquiry sent; do not repeat."
+    },
+    {
+      "brand": "GERMENS DE",
+      "network": "Awin",
+      "status": "contacted",
+      "contact": "affiliate@marketing-strategen.com",
+      "outreachSentAt": "2026-10-09",
+      "feedRequested": true,
+      "notes": "Affiliate/product-feed enquiry sent; do not repeat."
+    },
+    {
+      "brand": "Ophelis DE",
+      "network": "Awin",
+      "status": "contacted",
+      "contact": "ophelis@jobfuerzwei.de",
+      "outreachSentAt": "2026-10-09",
+      "feedRequested": true,
+      "notes": "Affiliate/product-feed enquiry sent; do not repeat."
+    },
+    {
+      "brand": "Wow Pet DE",
+      "network": "Awin",
+      "status": "contacted",
+      "contact": "Wow.pet@jobfuerzwei.de",
+      "outreachSentAt": "2026-10-09",
+      "feedRequested": true,
+      "notes": "Affiliate/product-feed enquiry sent; do not repeat."
+    },
+    {
+      "brand": "Magita DE",
+      "network": "Awin",
+      "status": "bounced",
+      "contact": "magita@jobfuerzwei.de",
+      "outreachSentAt": "2026-10-09",
+      "feedRequested": false,
+      "notes": "Delivery failure confirmed: message blocked. Never resend to the same address without a newly verified route."
+    },
+    {
+      "brand": "Franzis DE",
+      "network": "Awin",
+      "status": "contacted",
+      "contact": "Franzis@jobfuerzwei.de",
+      "outreachSentAt": "2026-10-09",
+      "feedRequested": true,
+      "notes": "Affiliate/product-feed enquiry sent from Angebotslotse AgentMail; do not repeat."
     }
   ]
 }
