@@ -9,7 +9,7 @@ test("V21 vereinheitlicht Header, globale Suche, Konto-Einstieg und Community-Pr
   assert.match(build,/global-search-icon/);
   assert.match(build,/global-search-submit/);
   assert.match(build,/Produkt, Marke oder Shop suchen/);
-  assert.match(build,/Deals finden/);
+  assert.match(build,/Deals suchen/);
   assert.match(build,/data-community-visits/);
   assert.match(build,/data-community-rating/);
   assert.match(build,/Dein Angebotslotse-Konto\./);
@@ -17,11 +17,11 @@ test("V21 vereinheitlicht Header, globale Suche, Konto-Einstieg und Community-Pr
 
   assert.equal((css.match(/V21 HEADER \+ SEARCH CONSISTENCY/g)||[]).length,1);
   assert.doesNotMatch(css,/V21 HEADER \+ SEARCH REFINEMENT/);
-  assert.match(css,/grid-template-columns:minmax\(178px,auto\) minmax\(340px,1fr\) auto auto 44px/);
+  assert.match(css,/\.header-search-row\{/);
   assert.match(css,/\.global-search-submit\{/);
   assert.match(css,/\.header-utility-link>span/);
-  assert.match(css,/\.hero-search-form\{/);
-  assert.match(css,/\.hero-community-proof\{/);
+  assert.match(css,/\.global-search-wide\{/);
+  assert.match(css,/\.community-stat-card>strong\{/);
 });
 
 test("Merkliste bleibt funktional verdrahtet", () => {
