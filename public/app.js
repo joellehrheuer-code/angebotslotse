@@ -1172,6 +1172,36 @@ updateWatchIndicators();
   });
 })();
 
+/* Angebotslotse: Light / Auto / Black */
+(() => {
+  const KEY="angebotslotse-theme-v1";
+  const choices=["light","auto","black"];
+  const root=document.documentElement;
+  const buttons=[...document.querySelectorAll("[data-theme-choice]")];
+  const getStored=()=>{try{const value=localStorage.getItem(KEY);return choices.includes(value)?value:"auto";}catch{return "auto";}};
+  const resolved=mode=>mode==="auto"?(matchMedia("(prefers-color-scheme: light)").matches?"light":"medium"):mode;
+  const apply=mode=>{
+    const next=choices.includes(mode)?mode:"auto";
+    root.dataset.theme=next;
+    try{localStorage.setItem(KEY,next);}catch{}
+    buttons.forEach(button=>{
+      const active=button.dataset.themeChoice===next;
+      button.classList.toggle("active",active);
+      button.setAttribute("aria-pressed",String(active));
+    });
+    const meta=document.querySelector('meta[name="theme-color"]');
+    if(meta){
+      const actual=resolved(next);
+      meta.setAttribute("content",actual==="light"?"#f4f6fb":actual==="black"?"#05070a":"#0d1119");
+    }
+  };
+  apply(getStored());
+  buttons.forEach(button=>button.addEventListener("click",()=>apply(button.dataset.themeChoice)));
+  const media=matchMedia("(prefers-color-scheme: light)");
+  const onSystemChange=()=>{if(root.dataset.theme==="auto")apply("auto");};
+  media.addEventListener?.("change",onSystemChange);
+})();
+
 /* Angebotslotse: echte Produktbild-Galerien */
 (() => {
   document.querySelectorAll("[data-product-gallery]").forEach(gallery=>{
