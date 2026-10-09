@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-09T09:20:36.124Z",
+  "generatedAt": "2026-10-09T12:09:44.410Z",
   "purpose": "Verified official contact routes for routine Angebotslotse partner outreach. sendAllowed=false means research/review is still required before sending.",
   "contacts": [
     {
@@ -181,6 +181,69 @@
       "verifiedAt": "2026-10-09",
       "sendAllowed": false,
       "notes": "YesStyle confirmed the Awin DE datafeed is updated 4x daily and includes beauty products, discounted prices, stock, descriptions and images; coupons/promotions update weekly. They asked us to apply with Awin publisher ID 3045061 and then notify them for prompt approval. Program terms still require manual review/acceptance."
+    },
+    {
+      "brand": "Zooplus DE",
+      "contact": "affiliate@zooplus.de",
+      "contactType": "verified-awin-affiliate",
+      "sourceUrl": "https://ui.awin.com/merchant-profile/11330",
+      "verifiedAt": "2026-10-09",
+      "sendAllowed": false,
+      "notes": "Official Awin affiliate contact verified; Angebotslotse product-feed inquiry sent 2026-10-09."
+    },
+    {
+      "brand": "Douglas DE",
+      "contact": "affiliate_team@douglas.de",
+      "contactType": "verified-awin-affiliate",
+      "sourceUrl": "https://ui.awin.com/merchant-profile/10076",
+      "verifiedAt": "2026-10-09",
+      "sendAllowed": false,
+      "notes": "Official Awin affiliate contact verified; Angebotslotse product-feed inquiry sent 2026-10-09."
+    },
+    {
+      "brand": "Hoffmann-Germany DE",
+      "contact": "hoffmann-germany-affiliate@more-fire.com",
+      "contactType": "verified-awin-affiliate",
+      "sourceUrl": "https://ui.awin.com/merchant-profile/31493",
+      "verifiedAt": "2026-10-09",
+      "sendAllowed": false,
+      "notes": "Official Awin affiliate contact verified; Angebotslotse product-feed inquiry sent 2026-10-09."
+    },
+    {
+      "brand": "APOfit DE",
+      "contact": "apofit@jobfuerzwei.de",
+      "contactType": "verified-awin-affiliate",
+      "sourceUrl": "https://ui.awin.com/merchant-profile/116287",
+      "verifiedAt": "2026-10-09",
+      "sendAllowed": false,
+      "notes": "Official Awin affiliate contact verified; Angebotslotse product-feed inquiry sent 2026-10-09."
+    },
+    {
+      "brand": "Freikopf DE",
+      "contact": "freikopf@jobfuerzwei.de",
+      "contactType": "verified-awin-affiliate",
+      "sourceUrl": "https://ui.awin.com/merchant-profile/101479",
+      "verifiedAt": "2026-10-09",
+      "sendAllowed": true,
+      "notes": "Official Awin affiliate contact verified; outreach prepared and queued, not yet sent."
+    },
+    {
+      "brand": "GERMENS DE",
+      "contact": "affiliate@marketing-strategen.com",
+      "contactType": "verified-awin-affiliate",
+      "sourceUrl": "https://ui.awin.com/merchant-profile/73818",
+      "verifiedAt": "2026-10-09",
+      "sendAllowed": true,
+      "notes": "Official Awin affiliate contact verified; outreach prepared and queued, not yet sent."
+    },
+    {
+      "brand": "Franzis DE",
+      "contact": "Franzis@jobfuerzwei.de",
+      "contactType": "verified-awin-affiliate",
+      "sourceUrl": "https://ui.awin.com/merchant-profile/14730",
+      "verifiedAt": "2026-10-09",
+      "sendAllowed": true,
+      "notes": "Official Awin affiliate contact verified; outreach prepared and queued, not yet sent."
     }
   ]
 }
