@@ -4938,3 +4938,163 @@ body{
     padding-top:30px!important;
   }
 }
+
+
+/* V25 PRODUCT GALLERY + BOOK PREVIEWS */
+.detail-media .product-image.has-gallery{
+  min-height:420px!important;
+}
+.image-gallery{
+  display:grid!important;
+  grid-auto-flow:column!important;
+  grid-auto-columns:96px!important;
+  gap:8px!important;
+  margin-top:10px!important;
+  padding:2px 0 6px!important;
+  overflow-x:auto!important;
+  overscroll-behavior-inline:contain!important;
+  scroll-snap-type:x proximity!important;
+}
+.image-gallery-thumb{
+  width:96px!important;
+  height:74px!important;
+  padding:5px!important;
+  border:1px solid #303a4e!important;
+  border-radius:11px!important;
+  background:#f4f5f8!important;
+  cursor:pointer!important;
+  scroll-snap-align:start!important;
+}
+.image-gallery-thumb img{
+  width:100%!important;
+  height:100%!important;
+  object-fit:contain!important;
+}
+.image-gallery-thumb.active,
+.image-gallery-thumb[aria-pressed="true"]{
+  border-color:#a86cff!important;
+  box-shadow:0 0 0 2px rgba(168,108,255,.18)!important;
+}
+
+.book-preview{
+  min-width:0!important;
+  padding:12px!important;
+  background:linear-gradient(145deg,#0d1119,#121725)!important;
+  border-bottom:1px solid #293247!important;
+}
+.book-preview-rail{
+  display:grid!important;
+  grid-auto-flow:column!important;
+  grid-auto-columns:100%!important;
+  overflow-x:auto!important;
+  scroll-snap-type:x mandatory!important;
+  scrollbar-width:none!important;
+  border-radius:14px!important;
+}
+.book-preview-rail::-webkit-scrollbar{display:none!important}
+.book-mock{
+  min-height:210px!important;
+  padding:20px!important;
+  display:flex!important;
+  flex-direction:column!important;
+  justify-content:flex-end!important;
+  scroll-snap-align:start!important;
+  border-radius:14px!important;
+  color:#fff!important;
+  position:relative!important;
+  overflow:hidden!important;
+}
+.book-mock::before{
+  content:""!important;
+  position:absolute!important;
+  inset:0!important;
+  background:radial-gradient(circle at 80% 12%,rgba(255,255,255,.12),transparent 30%)!important;
+  pointer-events:none!important;
+}
+.book-front{
+  background:linear-gradient(145deg,#4c173f,#1a1025)!important;
+  box-shadow:inset -12px 0 20px rgba(0,0,0,.22)!important;
+}
+.book-2 .book-front{
+  background:linear-gradient(145deg,#273a68,#1a173d)!important;
+}
+.book-spine{
+  background:linear-gradient(90deg,#21101c,#65214e 18%,#291329 82%,#120b14)!important;
+  align-items:center!important;
+  justify-content:center!important;
+  text-align:center!important;
+}
+.book-2 .book-spine{
+  background:linear-gradient(90deg,#15162e,#33487b 18%,#211c4b 82%,#0d1020)!important;
+}
+.book-back{
+  background:linear-gradient(145deg,#211522,#11131b)!important;
+}
+.book-mock>span,
+.book-mock>em{
+  position:relative!important;
+  z-index:1!important;
+  color:#ff86c9!important;
+  font-size:9px!important;
+  font-weight:900!important;
+  font-style:normal!important;
+  letter-spacing:.08em!important;
+  text-transform:uppercase!important;
+}
+.book-mock>strong{
+  position:relative!important;
+  z-index:1!important;
+  margin:8px 0!important;
+  max-width:13ch!important;
+  font-size:clamp(27px,2.4vw,38px)!important;
+  line-height:.94!important;
+}
+.book-mock>p,
+.book-mock>small{
+  position:relative!important;
+  z-index:1!important;
+  color:#d7dce7!important;
+  line-height:1.5!important;
+}
+.book-preview-controls{
+  display:grid!important;
+  grid-template-columns:auto 1fr auto!important;
+  gap:8px!important;
+  align-items:center!important;
+  margin-top:8px!important;
+}
+.book-preview-controls span{
+  text-align:center!important;
+  color:#7f8a9d!important;
+  font-size:9px!important;
+  text-transform:uppercase!important;
+  letter-spacing:.08em!important;
+}
+.book-preview-controls button{
+  width:36px!important;
+  height:34px!important;
+  border:1px solid #30394d!important;
+  border-radius:9px!important;
+  background:#161c28!important;
+  color:#fff!important;
+  cursor:pointer!important;
+}
+.book-preview-controls button:hover{
+  border-color:#a86cff!important;
+}
+
+@media(max-width:760px){
+  .detail-media .product-image.has-gallery{
+    min-height:260px!important;
+  }
+  .image-gallery{
+    grid-auto-columns:82px!important;
+  }
+  .image-gallery-thumb{
+    width:82px!important;
+    height:64px!important;
+  }
+  .book-mock{
+    min-height:185px!important;
+  }
+}
