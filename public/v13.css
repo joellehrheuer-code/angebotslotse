@@ -5372,3 +5372,209 @@ html[data-theme="light"] .review-nudge h2{color:#182033!important}
     grid-template-columns:repeat(3,30px)!important;
   }
 }
+
+
+/* V27 THEME COVERAGE — interactive and secondary surfaces */
+html[data-theme="light"] .listing-tools.listing-filters,
+html[data-theme="light"] .active-filter-chip,
+html[data-theme="light"] .active-filter-clear,
+html[data-theme="light"] .filter-count,
+html[data-theme="light"] .filter-check,
+html[data-theme="light"] .category-tile,
+html[data-theme="light"] .shop-card,
+html[data-theme="light"] .brand-card,
+html[data-theme="light"] .comparison>div>a,
+html[data-theme="light"] .detail-commerce-facts>div,
+html[data-theme="light"] .deal-facts>div,
+html[data-theme="light"] .account-alert-list>article,
+html[data-theme="light"] .account-match-list>article,
+html[data-theme="light"] .account-notification-list>article,
+html[data-theme="light"] .account-cashback-list>article,
+html[data-theme="light"] .account-cashback-summary>div,
+html[data-theme="light"] .account-push-preferences label,
+html[data-theme="light"] .creator-channel-strip a,
+html[data-theme="light"] .creator-social-card,
+html[data-theme="light"] .search-suggest-item,
+html[data-theme="light"] .sticky-offer-bar,
+html[data-theme="light"] .mobile-bottom-nav,
+html[data-theme="light"] #main-nav,
+html[data-theme="light"] .nav-panel,
+html[data-theme="light"] .report-dialog,
+html[data-theme="light"] .detail-voucher{
+  background:#fff!important;
+  border-color:#d7deea!important;
+  color:#182033!important;
+}
+html[data-theme="light"] .listing-tools.listing-filters{
+  box-shadow:0 10px 26px rgba(26,35,52,.06)!important;
+}
+html[data-theme="light"] .active-filter-chip,
+html[data-theme="light"] .active-filter-clear,
+html[data-theme="light"] .filter-check,
+html[data-theme="light"] .account-push-preferences label{
+  background:#f7f9fc!important;
+}
+html[data-theme="light"] .category-tile-copy span,
+html[data-theme="light"] .category-tile-copy small,
+html[data-theme="light"] .creator-social-card small,
+html[data-theme="light"] .comparison span,
+html[data-theme="light"] .detail-commerce-facts span,
+html[data-theme="light"] .deal-facts span{
+  color:#667085!important;
+}
+html[data-theme="light"] .category-tile-copy b,
+html[data-theme="light"] .creator-social-card b,
+html[data-theme="light"] .comparison strong,
+html[data-theme="light"] .detail-commerce-facts strong,
+html[data-theme="light"] .deal-facts strong,
+html[data-theme="light"] .sticky-offer-bar strong{
+  color:#172033!important;
+}
+html[data-theme="light"] .search-suggest-panel,
+html[data-theme="light"] #main-nav,
+html[data-theme="light"] .nav-panel{
+  background:#fbfcfe!important;
+  border-color:#d8dfea!important;
+}
+html[data-theme="light"] .search-suggest-item:hover,
+html[data-theme="light"] .search-suggest-item[aria-selected="true"]{
+  background:#eef2f7!important;
+  border-color:#cfd7e4!important;
+}
+html[data-theme="light"] .search-suggest-copy b,
+html[data-theme="light"] .nav-panel a,
+html[data-theme="light"] .nav-panel strong{
+  color:#172033!important;
+}
+html[data-theme="light"] .search-suggest-copy small,
+html[data-theme="light"] .search-suggest-heading{
+  color:#6f7a8e!important;
+}
+html[data-theme="light"] .price-history svg,
+html[data-theme="light"] .sparkline svg{
+  color:#7650bd!important;
+}
+html[data-theme="light"] .history-panel dl>div{
+  background:#f6f8fb!important;
+  border-color:#d9e0ea!important;
+}
+html[data-theme="light"] .pill,
+html[data-theme="light"] .new-badge,
+html[data-theme="light"] .code-badge,
+html[data-theme="light"] .media-discount{
+  border-color:#d9c3d1!important;
+}
+html[data-theme="light"] .pill{
+  background:#eef2f7!important;
+  color:#4f5b6f!important;
+}
+html[data-theme="light"] .code-badge,
+html[data-theme="light"] .media-discount{
+  background:#f8e7f1!important;
+  color:#9d2e70!important;
+}
+html[data-theme="light"] .new-badge{
+  background:#e9f7f0!important;
+  color:#216b50!important;
+}
+html[data-theme="light"] .countdown{
+  color:#9d2e70!important;
+}
+html[data-theme="light"] .detail-voucher{
+  background:#faf1f7!important;
+  border-color:#e3c9d8!important;
+}
+html[data-theme="light"] .detail-voucher code,
+html[data-theme="light"] .detail-voucher button{
+  background:#fff!important;
+  color:#7d285c!important;
+  border-color:#d9bfd0!important;
+}
+html[data-theme="light"] .image-gallery-thumb{
+  background:#fff!important;
+  border-color:#d3dae6!important;
+}
+html[data-theme="light"] .image-gallery-thumb.active{
+  border-color:#8f61d6!important;
+}
+html[data-theme="light"] .report-dialog::backdrop{
+  background:rgba(37,45,60,.28)!important;
+}
+html[data-theme="light"] .report-dialog input,
+html[data-theme="light"] .report-dialog select,
+html[data-theme="light"] .report-dialog textarea{
+  background:#f7f9fc!important;
+  color:#182033!important;
+  border-color:#d5dce8!important;
+}
+html[data-theme="light"] .mobile-bottom-nav{
+  box-shadow:0 -8px 24px rgba(24,32,51,.08)!important;
+}
+html[data-theme="light"] .mobile-bottom-nav a{
+  color:#5f6b7f!important;
+}
+html[data-theme="light"] .mobile-bottom-nav a:hover,
+html[data-theme="light"] .mobile-bottom-nav a[aria-current="page"]{
+  color:#9c2e70!important;
+}
+html[data-theme="light"] .creator-video-rail::-webkit-scrollbar-thumb{
+  background:#cbd3df!important;
+}
+html[data-theme="light"] .creator-embed-host{
+  background:#eef1f7!important;
+}
+html[data-theme="light"] .sticky-offer-bar{
+  box-shadow:0 -10px 32px rgba(25,34,52,.10)!important;
+}
+
+/* Black: keep secondary surfaces truly dark instead of graphite */
+html[data-theme="black"] .listing-tools.listing-filters,
+html[data-theme="black"] .search-suggest-panel,
+html[data-theme="black"] .nav-panel,
+html[data-theme="black"] #main-nav,
+html[data-theme="black"] .report-dialog,
+html[data-theme="black"] .mobile-bottom-nav,
+html[data-theme="black"] .sticky-offer-bar,
+html[data-theme="black"] .watch-panel,
+html[data-theme="black"] .deal-check,
+html[data-theme="black"] .price-history,
+html[data-theme="black"] .comparison,
+html[data-theme="black"] .share-tools{
+  background:#080b10!important;
+  border-color:#232a38!important;
+}
+html[data-theme="black"] .active-filter-chip,
+html[data-theme="black"] .active-filter-clear,
+html[data-theme="black"] .filter-check,
+html[data-theme="black"] .account-push-preferences label,
+html[data-theme="black"] .comparison>div>a,
+html[data-theme="black"] .detail-commerce-facts>div,
+html[data-theme="black"] .deal-facts>div{
+  background:#0c1016!important;
+  border-color:#252d3c!important;
+}
+
+/* Auto medium-dark keeps secondary surfaces slightly lighter than Black */
+@media(prefers-color-scheme:dark){
+  html[data-theme="auto"] .listing-tools.listing-filters,
+  html[data-theme="auto"] .search-suggest-panel,
+  html[data-theme="auto"] .nav-panel,
+  html[data-theme="auto"] #main-nav,
+  html[data-theme="auto"] .report-dialog,
+  html[data-theme="auto"] .mobile-bottom-nav,
+  html[data-theme="auto"] .sticky-offer-bar{
+    background:#111722!important;
+    border-color:#2c3548!important;
+  }
+}
+
+@media(prefers-reduced-motion:reduce){
+  .theme-switch button,
+  .image-gallery-thumb,
+  .ui-toast,
+  .review-nudge,
+  .sticky-offer-bar{
+    transition:none!important;
+    scroll-behavior:auto!important;
+  }
+}
