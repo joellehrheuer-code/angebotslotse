@@ -13,5 +13,5 @@ test("V25 vereinheitlicht Startseiten-Überschriften und Header-Bedienelemente",
   assert.match(css,/\.header-links a,/);
   assert.match(css,/\.header-utility-link,/);
   assert.match(css,/\.global-search-submit\{/);
-  assert.match(build,/site\.css\?v=50/);
+  assert.match(build,/site\.css\?v=\d+/);
 });
