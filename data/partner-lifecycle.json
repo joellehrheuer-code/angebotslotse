@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-09T13:50:00Z",
+  "generatedAt": "2026-10-10",
   "source": "verified-email-and-network-status",
   "partners": [
     {
@@ -254,6 +254,24 @@
       "outreachSentAt": "2026-10-09",
       "feedRequested": true,
       "notes": "Affiliate/product-feed enquiry sent from Angebotslotse AgentMail; do not repeat."
+    },
+    {
+      "brand": "Birkholz Perfume Manufacture DE",
+      "network": "Awin",
+      "status": "contacted",
+      "contact": "affiliate@birkholz-perfumes.com",
+      "outreachSentAt": "2026-10-10",
+      "feedRequested": true,
+      "notes": "Verified official Awin program contact. Asked for approved beauty/perfume images, current product feed, tracking links, conditions for deal/comparison publishers. No application or contract accepted."
+    },
+    {
+      "brand": "Profisockelleisten.de",
+      "network": "Awin",
+      "status": "contacted",
+      "contact": "profisockelleisten@jobfuerzwei.de",
+      "outreachSentAt": "2026-10-10",
+      "feedRequested": true,
+      "notes": "Verified official Awin contact. Requested home/DIY product feed, approved assets and publisher suitability. No application or contract accepted."
     }
   ]
 }

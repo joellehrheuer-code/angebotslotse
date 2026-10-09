@@ -956,7 +956,7 @@ updateWatchIndicators();
     let offset = 0;
     const paint = () => {
       list.replaceChildren();
-      const count = Math.min(3,reviews.length);
+      const count = Math.min(5,reviews.length);
       for (let i=0;i<count;i+=1) {
         const item = reviews[(offset+i)%reviews.length];
         const card = document.createElement("article");
@@ -985,7 +985,7 @@ updateWatchIndicators();
       }
     };
     paint();
-    if (reviews.length > 3) {
+    if (reviews.length > 5) {
       communityRotateTimer = setInterval(() => { offset = (offset + 1) % reviews.length; paint(); }, 7000);
     }
   };
