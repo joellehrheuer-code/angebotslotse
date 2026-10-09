@@ -1,15 +1,15 @@
 {
   "state": "degraded",
-  "lastSuccessfulUpdate": "2026-10-08T19:50:44.746Z",
+  "lastSuccessfulUpdate": "2026-10-09T13:44:10.298Z",
   "activeOffers": 255,
   "storedOffers": 484,
   "publishableOffers": 255,
   "awaitingMedia": 0,
   "blockedPublisherPromotions": 4,
   "quarantined": 130,
-  "added": 6,
-  "removed": 6,
-  "archivedThisRun": 6,
+  "added": 0,
+  "removed": 0,
+  "archivedThisRun": 0,
   "archivedTotal": 343,
   "filteredForeignLocale": 0,
   "invalidLinks": 0,
@@ -127,7 +127,7 @@
     "impact": {
       "state": "error",
       "count": 0,
-      "error": "impact timed out after 45000ms",
+      "error": "impact timed out after 90000ms",
       "audit": null
     },
     "daisycon": {
