@@ -83,7 +83,9 @@ if(creatorSocialFeedUrl){
 }
 let status;
 try {
+  console.info("[update] Quellenabfrage gestartet.");
   const collected = await collectSources();
+  console.info("[update] Quellenabfrage abgeschlossen:", collected.sources.map(source => `${source.name}=${source.state}(${source.rows.length})`).join(", "));
   const sources = collected.sources;
   const failed = new Set(sources.filter(s => s.state === "error").map(s => s.name));
   const fresh = sources.flatMap(s => s.rows);
@@ -308,3 +310,8 @@ try {
   throw error;
 }
 await fs.writeFile("data/status.json", `${JSON.stringify(status, null, 2)}\n`);
+// A timed-out source can leave detached network requests alive after its result is discarded.
+// The update is a dedicated CLI process: all data writes are awaited above, so exit now
+// rather than let orphaned HTTP work block the downstream build/deploy jobs.
+await new Promise(resolve => process.stdout.write(`[update] Fertig: ${status.publishableOffers ?? status.activeOffers ?? 0} veröffentlichungsfähige Angebote.\n`, resolve));
+process.exit(0);
