@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-08T19:17:00Z",
+  "generatedAt": "2026-10-09T09:20:36.124Z",
   "purpose": "Verified official contact routes for routine Angebotslotse partner outreach. sendAllowed=false means research/review is still required before sending.",
   "contacts": [
     {
@@ -160,9 +160,9 @@
       "contact": "tannya@heyhappiness.com",
       "contactType": "verified-program-invitation",
       "sourceUrl": "gmail:1a11bbaa9f2b5f1d",
-      "verifiedAt": "2026-10-08",
+      "verifiedAt": "2026-10-09",
       "sendAllowed": false,
-      "notes": "Awin invitation received; outreach sent asking for feed/assets. Program terms must be reviewed before acceptance."
+      "notes": "Awin invitation with 10% commission. Terms reviewed: product/price comparison, shopping directories, editorial/community/creator placements are allowed. Only discount codes issued directly through this affiliate program may be promoted; third-party/newsletter/other-affiliate codes are prohibited. Manual program acceptance required."
     },
     {
       "brand": "ProtoArc",
@@ -172,6 +172,15 @@
       "verifiedAt": "2026-10-08",
       "sendAllowed": false,
       "notes": "Verified campaign contact. Oct 6–7 campaign expired; current feed/offers requested."
+    },
+    {
+      "brand": "YesStyle DE",
+      "contact": "ys-affiliates@yesstyle.com",
+      "contactType": "verified-awin-affiliate",
+      "sourceUrl": "gmail:1a11e7c82a1e171e",
+      "verifiedAt": "2026-10-09",
+      "sendAllowed": false,
+      "notes": "YesStyle confirmed the Awin DE datafeed is updated 4x daily and includes beauty products, discounted prices, stock, descriptions and images; coupons/promotions update weekly. They asked us to apply with Awin publisher ID 3045061 and then notify them for prompt approval. Program terms still require manual review/acceptance."
     }
   ]
 }
