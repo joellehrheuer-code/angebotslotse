@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-09T12:09:44.410Z",
+  "generatedAt": "2026-10-09T12:09:59.891Z",
   "purpose": "Verified official contact routes for routine Angebotslotse partner outreach. sendAllowed=false means research/review is still required before sending.",
   "contacts": [
     {
@@ -241,6 +241,69 @@
       "contact": "Franzis@jobfuerzwei.de",
       "contactType": "verified-awin-affiliate",
       "sourceUrl": "https://ui.awin.com/merchant-profile/14730",
+      "verifiedAt": "2026-10-09",
+      "sendAllowed": true,
+      "notes": "Official Awin affiliate contact verified; outreach prepared and queued, not yet sent."
+    },
+    {
+      "brand": "my-brand.shop DE",
+      "contact": "my-brand.shop@jobfuerzwei.de",
+      "contactType": "verified-awin-affiliate",
+      "sourceUrl": "https://ui.awin.com/merchant-profile/114260",
+      "verifiedAt": "2026-10-09",
+      "sendAllowed": true,
+      "notes": "Official Awin affiliate contact verified; outreach prepared and queued, not yet sent."
+    },
+    {
+      "brand": "Ophelis DE",
+      "contact": "ophelis@jobfuerzwei.de",
+      "contactType": "verified-awin-affiliate",
+      "sourceUrl": "https://ui.awin.com/merchant-profile/109436",
+      "verifiedAt": "2026-10-09",
+      "sendAllowed": true,
+      "notes": "Official Awin affiliate contact verified; outreach prepared and queued, not yet sent."
+    },
+    {
+      "brand": "Wow Pet DE",
+      "contact": "Wow.pet@jobfuerzwei.de",
+      "contactType": "verified-awin-affiliate",
+      "sourceUrl": "https://ui.awin.com/merchant-profile/119923",
+      "verifiedAt": "2026-10-09",
+      "sendAllowed": true,
+      "notes": "Official Awin affiliate contact verified; outreach prepared and queued, not yet sent."
+    },
+    {
+      "brand": "Magita DE",
+      "contact": "magita@jobfuerzwei.de",
+      "contactType": "verified-awin-affiliate",
+      "sourceUrl": "https://ui.awin.com/merchant-profile/11401",
+      "verifiedAt": "2026-10-09",
+      "sendAllowed": true,
+      "notes": "Official Awin affiliate contact verified; outreach prepared and queued, not yet sent."
+    },
+    {
+      "brand": "Betriebseinrichtung DE",
+      "contact": "betriebseinrichtung@jobfuerzwei.de",
+      "contactType": "verified-awin-affiliate",
+      "sourceUrl": "https://ui.awin.com/merchant-profile/115150",
+      "verifiedAt": "2026-10-09",
+      "sendAllowed": true,
+      "notes": "Official Awin affiliate contact verified; outreach prepared and queued, not yet sent."
+    },
+    {
+      "brand": "Profisockelleisten.de",
+      "contact": "profisockelleisten@jobfuerzwei.de",
+      "contactType": "verified-awin-affiliate",
+      "sourceUrl": "https://ui.awin.com/merchant-profile/14251",
+      "verifiedAt": "2026-10-09",
+      "sendAllowed": true,
+      "notes": "Official Awin affiliate contact verified; outreach prepared and queued, not yet sent."
+    },
+    {
+      "brand": "Birkholz Perfume Manufacture DE",
+      "contact": "affiliate@birkholz-perfumes.com",
+      "contactType": "verified-awin-affiliate",
+      "sourceUrl": "https://ui.awin.com/merchant-profile/57175",
       "verifiedAt": "2026-10-09",
       "sendAllowed": true,
       "notes": "Official Awin affiliate contact verified; outreach prepared and queued, not yet sent."
