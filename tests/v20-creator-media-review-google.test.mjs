@@ -26,6 +26,6 @@ test("V20 verbindet Creator-Media, Bewertungs-Nudge und Google-Identität", () =
   assert.match(css,/\.creator-video-rail\{/);
   assert.match(css,/\.review-nudge\{/);
 
-  assert.match(smoke,/cssAsset=homeHtml\.match/);
-  assert.match(smoke,/appAsset=homeHtml\.match/);
+  assert.match(smoke,/cssAsset=live\.homeHtml\.match/);
+  assert.match(smoke,/appAsset=live\.homeHtml\.match/);
 });
