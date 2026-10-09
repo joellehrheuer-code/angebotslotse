@@ -1,1 +1,25 @@
-import test from "node:test";\nimport assert from "node:assert/strict";\nimport fs from "node:fs";\n\ntest("V28 platziert Suche sowie echte Besucher und Bewertungen prominent", () => {\n  const build=fs.readFileSync("scripts/build.mjs","utf8");\n  const css=fs.readFileSync("public/v13.css","utf8");\n\n  assert.match(build,/header-search-row/);\n  assert.match(build,/global-search-wide/);\n  assert.match(build,/Was möchtest du finden\? Produkt, Marke oder Shop/);\n  assert.doesNotMatch(build,/hero-search-form smart-search-form/);\n\n  assert.match(build,/So viele Menschen waren schon hier\./);\n  assert.match(build,/community-stat-card visits/);\n  assert.match(build,/community-stat-card rating/);\n  assert.match(build,/data-community-review-list/);\n  assert.match(build,/data-community-visits/);\n  assert.match(build,/data-community-review-count/);\n\n  assert.match(css,/V28 SEARCH \+ COMMUNITY IMPACT/);\n  assert.match(css,/\.global-search-wide\{/);\n  assert.match(css,/\.community-stat-card>strong\{/);\n  assert.match(css,/\.community-review-list\{/);\n});\n
+import test from "node:test";
+import assert from "node:assert/strict";
+import fs from "node:fs";
+
+test("V28 platziert Suche sowie echte Besucher und Bewertungen prominent", () => {
+  const build=fs.readFileSync("scripts/build.mjs","utf8");
+  const css=fs.readFileSync("public/v13.css","utf8");
+
+  assert.match(build,/header-search-row/);
+  assert.match(build,/global-search-wide/);
+  assert.match(build,/Was möchtest du finden\? Produkt, Marke oder Shop/);
+  assert.doesNotMatch(build,/hero-search-form smart-search-form/);
+
+  assert.match(build,/So viele Menschen waren schon hier\./);
+  assert.match(build,/community-stat-card visits/);
+  assert.match(build,/community-stat-card rating/);
+  assert.match(build,/data-community-review-list/);
+  assert.match(build,/data-community-visits/);
+  assert.match(build,/data-community-review-count/);
+
+  assert.match(css,/V28 SEARCH \+ COMMUNITY IMPACT/);
+  assert.match(css,/\.global-search-wide\{/);
+  assert.match(css,/\.community-stat-card>strong\{/);
+  assert.match(css,/\.community-review-list\{/);
+});
