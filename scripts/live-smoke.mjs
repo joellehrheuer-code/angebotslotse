@@ -117,7 +117,9 @@ const criticalAssets=[
 const assetFailures=[];
 await Promise.all(criticalAssets.map(async asset=>{
   try{
-    const target=new URL(asset,base+"/");
+    // A leading slash in this list denotes the project-site root, not the origin root.
+    // GitHub Pages hosts Angebotslotse below /angebotslotse/, so resolve there.
+    const target=new URL(asset.startsWith("/") ? asset.slice(1) : asset,base+"/");
     target.searchParams.set("smoke",String(Date.now()));
     await fetchOk(target.href);
   }catch(error){assetFailures.push({asset,error:String(error?.message??error)});}
