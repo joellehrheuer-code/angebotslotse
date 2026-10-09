@@ -76,7 +76,21 @@ jobs:
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
             git add docs/QUALITY-NEXT.md
             git commit -m "chore(quality): nächste Angebotslotse-Prüfungen aktualisieren"
-            git push
+            # main may advance while tests and audits are running. Rebase instead
+            # of failing the entire quality check on a non-fast-forward push.
+            for attempt in 1 2 3; do
+              git fetch origin main
+              if ! git rebase origin/main; then
+                git rebase --abort || true
+                echo "::warning::Qualitätsbericht konnte nicht konfliktfrei übernommen werden. Das Actions-Artefakt bleibt erhalten."
+                exit 0
+              fi
+              if git push origin HEAD:main; then
+                exit 0
+              fi
+              sleep 2
+            done
+            echo "::warning::Qualitätsbericht konnte nach drei Versuchen nicht geschrieben werden. Das Actions-Artefakt bleibt erhalten."
           fi
 
       - name: Qualitätsberichte sichern
