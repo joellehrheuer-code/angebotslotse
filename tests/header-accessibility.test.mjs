@@ -7,7 +7,7 @@ test("Header-Suche besitzt vollständige Combobox/Listbox-Semantik", () => {
   assert.match(build,/id="global-search"[^>]*role="combobox"[^>]*aria-expanded="false"[^>]*aria-controls="global-search-panel"/);
   assert.match(build,/id="global-search-panel"[^>]*role="listbox"[^>]*aria-label="Suchvorschläge"/);
   assert.match(build,/id="mobile-nav-search"[^>]*role="combobox"/);
-  assert.match(build,/id="hero-search"[^>]*role="combobox"/);
+  assert.match(build,/class="global-search smart-search-form global-search-wide"/);
   assert.match(build,/class="menu-toggle"[^>]*aria-expanded="false"[^>]*aria-controls="main-nav"/);
   assert.match(build,/class="skip-link" href="#main-content"/);
   assert.match(build,/live-top-status" role="group" aria-label="Aktueller Angebotslotse-Status"/);
@@ -32,7 +32,7 @@ test("Header bleibt an Desktop-, Tablet- und Mobile-Breakpoints zugänglich", ()
   assert.match(css, /@media\(max-width:760px\)/);
   assert.match(css, /\.header-utility-link\{[\s\S]*?min-height:40px/);
   assert.match(css, /\.menu-toggle\{[\s\S]*?min-height:42px/);
-  assert.match(css, /\.hero-search-form>button\{[\s\S]*?min-height:44px/);
+  assert.match(css, /\.global-search-wide \.global-search-submit\{[\s\S]*?height:46px/);
   assert.match(css, /\.global-search\{[\s\S]*?grid-template-columns:auto minmax\(0,1fr\) auto/);
 });
 
