@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-09T15:20:25.732Z",
+  "generatedAt": "2026-10-09T20:55:52.672Z",
   "market": "DE",
   "publisherId": 3045061,
   "awin": {
@@ -8,9 +8,9 @@
       "pending": 4,
       "suspended": 1,
       "rejected": 2,
-      "notjoined": 2628
+      "notjoined": 2627
     },
-    "totalProgramsEvaluated": 2640,
+    "totalProgramsEvaluated": 2639,
     "reportedPrograms": 200,
     "programs": [
       {
