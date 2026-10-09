@@ -1172,6 +1172,21 @@ updateWatchIndicators();
   });
 })();
 
+/* Angebotslotse: echte Produktbild-Galerien */
+(() => {
+  document.querySelectorAll("[data-product-gallery]").forEach(gallery=>{
+    const main=gallery.querySelector("[data-gallery-main]");
+    const thumbs=gallery.parentElement?.querySelectorAll("[data-gallery-thumb]")||[];
+    if(!main||!thumbs.length)return;
+    thumbs.forEach(button=>button.addEventListener("click",()=>{
+      const src=button.dataset.gallerySrc;
+      if(!src)return;
+      main.src=src;
+      thumbs.forEach(other=>{other.classList.toggle("active",other===button);other.setAttribute("aria-pressed",String(other===button));});
+    }));
+  });
+})();
+
 /* Angebotslotse: externe Creator-Player erst nach Klick laden */
 (() => {
   document.querySelectorAll("[data-spotify-player-load]").forEach(button=>button.addEventListener("click",()=>{
