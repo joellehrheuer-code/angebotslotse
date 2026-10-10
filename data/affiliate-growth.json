@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-10T09:10:39.408Z",
+  "generatedAt": "2026-10-10T10:54:34.466Z",
   "market": "DE",
   "publisherId": 3045061,
   "awin": {
@@ -679,28 +679,6 @@
         "advertiserId": 128145,
         "name": "AOSU DA",
         "primarySector": "Electronic Accessories",
-        "primaryRegion": {
-          "name": "Germany",
-          "countryCode": "DE"
-        }
-      },
-      {
-        "network": "Awin",
-        "relationship": "notjoined",
-        "advertiserId": 25679,
-        "name": "apo.com DE",
-        "primarySector": "Pharmaceuticals",
-        "primaryRegion": {
-          "name": "Germany",
-          "countryCode": "DE"
-        }
-      },
-      {
-        "network": "Awin",
-        "relationship": "notjoined",
-        "advertiserId": 21216,
-        "name": "apodiscounter DE",
-        "primarySector": "Pharmaceuticals",
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
@@ -2208,6 +2186,28 @@
         "advertiserId": 46703,
         "name": "Edelstahl-Tuerklingel DE",
         "primarySector": "Home & Garden",
+        "primaryRegion": {
+          "name": "Germany",
+          "countryCode": "DE"
+        }
+      },
+      {
+        "network": "Awin",
+        "relationship": "notjoined",
+        "advertiserId": 24666,
+        "name": "Egret DE",
+        "primarySector": "Electronic Superstore",
+        "primaryRegion": {
+          "name": "Germany",
+          "countryCode": "DE"
+        }
+      },
+      {
+        "network": "Awin",
+        "relationship": "notjoined",
+        "advertiserId": 11642,
+        "name": "eibmarkt DE",
+        "primarySector": "Electronic Superstore",
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
