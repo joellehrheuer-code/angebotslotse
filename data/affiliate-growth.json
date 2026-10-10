@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-10T14:29:01.728Z",
+  "generatedAt": "2026-10-10T20:05:16.580Z",
   "market": "DE",
   "publisherId": 3045061,
   "awin": {
@@ -687,17 +687,6 @@
       {
         "network": "Awin",
         "relationship": "notjoined",
-        "advertiserId": 28603,
-        "name": "apotheke.de",
-        "primarySector": "Pharmaceuticals",
-        "primaryRegion": {
-          "name": "Germany",
-          "countryCode": "DE"
-        }
-      },
-      {
-        "network": "Awin",
-        "relationship": "notjoined",
         "advertiserId": 54199,
         "name": "Arena Sport",
         "primarySector": "Sportswear",
@@ -1262,17 +1251,6 @@
         "advertiserId": 11873,
         "name": "Blue Tomato DE",
         "primarySector": "Sports Equipment",
-        "primaryRegion": {
-          "name": "Germany",
-          "countryCode": "DE"
-        }
-      },
-      {
-        "network": "Awin",
-        "relationship": "notjoined",
-        "advertiserId": 15470,
-        "name": "Bluebella DE/EU",
-        "primarySector": "Lingerie",
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
@@ -1996,6 +1974,17 @@
       {
         "network": "Awin",
         "relationship": "notjoined",
+        "advertiserId": 48745,
+        "name": "Drestige DE",
+        "primarySector": "Clothing",
+        "primaryRegion": {
+          "name": "Germany",
+          "countryCode": "DE"
+        }
+      },
+      {
+        "network": "Awin",
+        "relationship": "notjoined",
         "advertiserId": 126649,
         "name": "Drinklang DE",
         "primarySector": "Home & Garden",
@@ -2212,6 +2201,17 @@
           "name": "Germany",
           "countryCode": "DE"
         }
+      },
+      {
+        "network": "Awin",
+        "relationship": "notjoined",
+        "advertiserId": 122352,
+        "name": "Eka Store DE",
+        "primarySector": "Home & Garden",
+        "primaryRegion": {
+          "name": "Germany",
+          "countryCode": "DE"
+        }
       }
     ],
     "discoveryOffers": 200,
@@ -2398,6 +2398,42 @@
         ],
         "applicationRequired": true,
         "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Acer DE redaktionell passend im Bereich Technik & Computer einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+        "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+        "automationState": "ready-for-review"
+      },
+      {
+        "brand": "expert DE",
+        "network": "Awin",
+        "advertiserId": 30007,
+        "status": "notjoined",
+        "category": "Technik & Computer",
+        "score": 60,
+        "priority": "mittel",
+        "activeDiscoveryOffers": 22,
+        "offerExamples": [
+          "Weekend-Deals - BAUKNECHT FHTKB 6B S FF Waschmaschine für nur 498,90 EUR (Inkl. Versand)",
+          "Weekend-Deals - Soundcore AeroFit Pro dynamic black Open-Ear Sport-Earbuds (IP55, Bluetooth, Mikrofon, Steuerung per App, Headsetfunktion) f",
+          "Weekend-Deals - Shokz OpenDots ONE schwarz Open-Ear Kopfhörer für nur 99,00 EUR (Inkl. Versand)"
+        ],
+        "productFeed": false,
+        "siteCategoryCoverage": 53,
+        "metrics": {
+          "awinIndex": null,
+          "epc": null,
+          "conversionRate": null,
+          "approvalPercentage": null,
+          "validationDays": null,
+          "averagePaymentTime": null,
+          "commissionMin": null,
+          "commissionMax": null,
+          "commissionTypes": []
+        },
+        "reasons": [
+          "passt zu Technik & Computer",
+          "22 aktive DE-Aktionen"
+        ],
+        "applicationRequired": true,
+        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten expert DE redaktionell passend im Bereich Technik & Computer einbinden. Bei Awin sind aktuell 22 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
         "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
         "automationState": "ready-for-review"
       },
@@ -2803,6 +2839,41 @@
         "automationState": "ready-for-review"
       },
       {
+        "brand": "Drestige DE",
+        "network": "Awin",
+        "advertiserId": 48745,
+        "status": "notjoined",
+        "category": "Mode & Sport",
+        "score": 51,
+        "priority": "mittel",
+        "activeDiscoveryOffers": 1,
+        "offerExamples": [
+          "Extra 10% OFF Sitewide | Use Code WL10"
+        ],
+        "productFeed": false,
+        "siteCategoryCoverage": 0,
+        "metrics": {
+          "awinIndex": null,
+          "epc": null,
+          "conversionRate": null,
+          "approvalPercentage": null,
+          "validationDays": null,
+          "averagePaymentTime": null,
+          "commissionMin": null,
+          "commissionMax": null,
+          "commissionTypes": []
+        },
+        "reasons": [
+          "passt zu Mode & Sport",
+          "Sortimentslücke: erst 0 veröffentlichte Angebote in Mode & Sport",
+          "1 aktive DE-Aktion"
+        ],
+        "applicationRequired": true,
+        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Drestige DE redaktionell passend im Bereich Mode & Sport einbinden. Bei Awin sind aktuell 1 für Deutschland sichtbare Aktion dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+        "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+        "automationState": "ready-for-review"
+      },
+      {
         "brand": "Speedo DE",
         "network": "Awin",
         "advertiserId": 10926,
@@ -3002,70 +3073,6 @@
         ],
         "applicationRequired": true,
         "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten 11teamsports DE & AT redaktionell passend im Bereich Mode & Sport einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-        "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-        "automationState": "ready-for-review"
-      },
-      {
-        "brand": "12-Travel DE",
-        "network": "Awin",
-        "advertiserId": 9146,
-        "status": "notjoined",
-        "category": "Freizeit & Reisen",
-        "score": 45,
-        "priority": "mittel",
-        "activeDiscoveryOffers": 0,
-        "offerExamples": [],
-        "productFeed": false,
-        "siteCategoryCoverage": 1,
-        "metrics": {
-          "awinIndex": null,
-          "epc": null,
-          "conversionRate": null,
-          "approvalPercentage": null,
-          "validationDays": null,
-          "averagePaymentTime": null,
-          "commissionMin": null,
-          "commissionMax": null,
-          "commissionTypes": []
-        },
-        "reasons": [
-          "passt zu Freizeit & Reisen",
-          "Sortimentslücke: erst 1 veröffentlichte Angebote in Freizeit & Reisen"
-        ],
-        "applicationRequired": true,
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten 12-Travel DE redaktionell passend im Bereich Freizeit & Reisen einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-        "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-        "automationState": "ready-for-review"
-      },
-      {
-        "brand": "360GradFitness DE",
-        "network": "Awin",
-        "advertiserId": 113554,
-        "status": "notjoined",
-        "category": "Mode & Sport",
-        "score": 45,
-        "priority": "mittel",
-        "activeDiscoveryOffers": 0,
-        "offerExamples": [],
-        "productFeed": false,
-        "siteCategoryCoverage": 0,
-        "metrics": {
-          "awinIndex": null,
-          "epc": null,
-          "conversionRate": null,
-          "approvalPercentage": null,
-          "validationDays": null,
-          "averagePaymentTime": null,
-          "commissionMin": null,
-          "commissionMax": null,
-          "commissionTypes": []
-        },
-        "reasons": [
-          "passt zu Mode & Sport",
-          "Sortimentslücke: erst 0 veröffentlichte Angebote in Mode & Sport"
-        ],
-        "applicationRequired": true,
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten 360GradFitness DE redaktionell passend im Bereich Mode & Sport einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
         "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
         "automationState": "ready-for-review"
       }
