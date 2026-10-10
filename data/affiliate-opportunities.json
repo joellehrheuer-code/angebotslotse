@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-10T05:52:40.135Z",
+  "generatedAt": "2026-10-10T09:10:39.391Z",
   "total": 62,
-  "highPriority": 10,
+  "highPriority": 11,
   "byNetwork": {
     "Daisycon": 4,
     "Tradedoubler": 4,
@@ -11,6 +11,25 @@
   "reviewQueue": [
     {
       "rank": 1,
+      "network": "Awin",
+      "brand": "Anker DE",
+      "reference": 30691,
+      "advertiserId": 30691,
+      "programId": null,
+      "campaignId": null,
+      "category": "Technik & Computer",
+      "priority": "hoch",
+      "score": 98,
+      "kind": "application",
+      "status": "notjoined",
+      "actionType": "application-review",
+      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Anker DE redaktionell passend im Bereich Technik & Computer einbinden. Bei Awin sind aktuell 6 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "submissionReady": false,
+      "humanApprovalRequired": true
+    },
+    {
+      "rank": 2,
       "network": "Awin",
       "brand": "adidas DE",
       "reference": 77004,
@@ -29,7 +48,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 2,
+      "rank": 3,
       "network": "Awin",
       "brand": "Parfumdreams DE",
       "reference": 84317,
@@ -48,45 +67,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 3,
-      "network": "Awin",
-      "brand": "Radwelt-shop DE",
-      "reference": 15088,
-      "advertiserId": 15088,
-      "programId": null,
-      "campaignId": null,
-      "category": "Mode & Sport",
-      "priority": "mittel",
-      "score": 69,
-      "kind": "application",
-      "status": "notjoined",
-      "actionType": "application-review",
-      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Radwelt-shop DE redaktionell passend im Bereich Mode & Sport einbinden. Bei Awin sind aktuell 4 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-      "submissionReady": false,
-      "humanApprovalRequired": true
-    },
-    {
       "rank": 4,
-      "network": "Awin",
-      "brand": "Anker DE",
-      "reference": 30691,
-      "advertiserId": 30691,
-      "programId": null,
-      "campaignId": null,
-      "category": "Technik & Computer",
-      "priority": "mittel",
-      "score": 68,
-      "kind": "application",
-      "status": "notjoined",
-      "actionType": "application-review",
-      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Anker DE redaktionell passend im Bereich Technik & Computer einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-      "submissionReady": false,
-      "humanApprovalRequired": true
-    },
-    {
-      "rank": 5,
       "network": "Awin",
       "brand": "Alternate DE",
       "reference": 11731,
@@ -105,7 +86,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 6,
+      "rank": 5,
       "network": "Awin",
       "brand": "Acer DE",
       "reference": 12591,
@@ -124,7 +105,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 7,
+      "rank": 6,
       "network": "Awin",
       "brand": "bosch Tiernahrung DE",
       "reference": 84955,
@@ -143,7 +124,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 8,
+      "rank": 7,
       "network": "Awin",
       "brand": "BSTN DACH",
       "reference": 104975,
@@ -162,7 +143,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 9,
+      "rank": 8,
       "network": "Awin",
       "brand": "DECATHLON DE",
       "reference": 14353,
@@ -181,7 +162,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 10,
+      "rank": 9,
       "network": "Awin",
       "brand": "Ecovacs DE",
       "reference": 30763,
@@ -200,7 +181,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 11,
+      "rank": 10,
       "network": "Awin",
       "brand": "Fressnapf AT",
       "reference": 68692,
@@ -219,7 +200,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 12,
+      "rank": 11,
       "network": "Awin",
       "brand": "Fressnapf-Online-Shop DE",
       "reference": 14757,
@@ -238,7 +219,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 13,
+      "rank": 12,
       "network": "Awin",
       "brand": "INTERSPORT DE",
       "reference": 14050,
@@ -257,7 +238,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 14,
+      "rank": 13,
       "network": "Awin",
       "brand": "SharkNinja DE",
       "reference": 19810,
@@ -276,7 +257,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 15,
+      "rank": 14,
       "network": "Awin",
       "brand": "Sportspar DE",
       "reference": 14366,
@@ -295,7 +276,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 16,
+      "rank": 15,
       "network": "Awin",
       "brand": "Zooplus DE",
       "reference": 11330,
@@ -314,7 +295,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 17,
+      "rank": 16,
       "network": "Awin",
       "brand": "zooplus RO",
       "reference": 10306,
@@ -333,26 +314,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 18,
-      "network": "Awin",
-      "brand": "ab-in-den-urlaub DE",
-      "reference": 9369,
-      "advertiserId": 9369,
-      "programId": null,
-      "campaignId": null,
-      "category": "Freizeit & Reisen",
-      "priority": "mittel",
-      "score": 51,
-      "kind": "application",
-      "status": "notjoined",
-      "actionType": "application-review",
-      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten ab-in-den-urlaub DE redaktionell passend im Bereich Freizeit & Reisen einbinden. Bei Awin sind aktuell 1 für Deutschland sichtbare Aktion dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-      "submissionReady": false,
-      "humanApprovalRequired": true
-    },
-    {
-      "rank": 19,
+      "rank": 17,
       "network": "Awin",
       "brand": "Bears with Benefits DE",
       "reference": 109766,
@@ -371,7 +333,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 20,
+      "rank": 18,
       "network": "Awin",
       "brand": "Speedo DE",
       "reference": 10926,
@@ -388,11 +350,68 @@
       "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Speedo DE redaktionell passend im Bereich Mode & Sport einbinden. Bei Awin sind aktuell 1 für Deutschland sichtbare Aktion dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
       "submissionReady": false,
       "humanApprovalRequired": true
+    },
+    {
+      "rank": 19,
+      "network": "Awin",
+      "brand": "GHD DE",
+      "reference": 10553,
+      "advertiserId": 10553,
+      "programId": null,
+      "campaignId": null,
+      "category": "Technik & Computer",
+      "priority": "mittel",
+      "score": 48,
+      "kind": "application",
+      "status": "notjoined",
+      "actionType": "application-review",
+      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten GHD DE redaktionell passend im Bereich Technik & Computer einbinden. Bei Awin sind aktuell 3 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "submissionReady": false,
+      "humanApprovalRequired": true
+    },
+    {
+      "rank": 20,
+      "network": "Awin",
+      "brand": "Honor DE",
+      "reference": 28525,
+      "advertiserId": 28525,
+      "programId": null,
+      "campaignId": null,
+      "category": "Technik & Computer",
+      "priority": "mittel",
+      "score": 48,
+      "kind": "application",
+      "status": "notjoined",
+      "actionType": "application-review",
+      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Honor DE redaktionell passend im Bereich Technik & Computer einbinden. Bei Awin sind aktuell 3 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "submissionReady": false,
+      "humanApprovalRequired": true
     }
   ],
   "actionNow": [
     {
       "rank": 1,
+      "network": "Awin",
+      "brand": "Anker DE",
+      "reference": 30691,
+      "advertiserId": 30691,
+      "programId": null,
+      "campaignId": null,
+      "category": "Technik & Computer",
+      "priority": "hoch",
+      "score": 98,
+      "kind": "application",
+      "status": "notjoined",
+      "actionType": "application-review",
+      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Anker DE redaktionell passend im Bereich Technik & Computer einbinden. Bei Awin sind aktuell 6 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "submissionReady": false,
+      "humanApprovalRequired": true
+    },
+    {
+      "rank": 2,
       "network": "Awin",
       "brand": "adidas DE",
       "reference": 77004,
@@ -411,7 +430,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 2,
+      "rank": 3,
       "network": "Awin",
       "brand": "Parfumdreams DE",
       "reference": 84317,
@@ -430,45 +449,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 3,
-      "network": "Awin",
-      "brand": "Radwelt-shop DE",
-      "reference": 15088,
-      "advertiserId": 15088,
-      "programId": null,
-      "campaignId": null,
-      "category": "Mode & Sport",
-      "priority": "mittel",
-      "score": 69,
-      "kind": "application",
-      "status": "notjoined",
-      "actionType": "application-review",
-      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Radwelt-shop DE redaktionell passend im Bereich Mode & Sport einbinden. Bei Awin sind aktuell 4 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-      "submissionReady": false,
-      "humanApprovalRequired": true
-    },
-    {
       "rank": 4,
-      "network": "Awin",
-      "brand": "Anker DE",
-      "reference": 30691,
-      "advertiserId": 30691,
-      "programId": null,
-      "campaignId": null,
-      "category": "Technik & Computer",
-      "priority": "mittel",
-      "score": 68,
-      "kind": "application",
-      "status": "notjoined",
-      "actionType": "application-review",
-      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Anker DE redaktionell passend im Bereich Technik & Computer einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-      "submissionReady": false,
-      "humanApprovalRequired": true
-    },
-    {
-      "rank": 5,
       "network": "Awin",
       "brand": "Alternate DE",
       "reference": 11731,
@@ -487,7 +468,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 6,
+      "rank": 5,
       "network": "Awin",
       "brand": "Acer DE",
       "reference": 12591,
@@ -506,7 +487,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 7,
+      "rank": 6,
       "network": "Awin",
       "brand": "bosch Tiernahrung DE",
       "reference": 84955,
@@ -525,7 +506,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 8,
+      "rank": 7,
       "network": "Awin",
       "brand": "BSTN DACH",
       "reference": 104975,
@@ -544,7 +525,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 9,
+      "rank": 8,
       "network": "Awin",
       "brand": "DECATHLON DE",
       "reference": 14353,
@@ -563,7 +544,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 10,
+      "rank": 9,
       "network": "Awin",
       "brand": "Ecovacs DE",
       "reference": 30763,
@@ -582,7 +563,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 11,
+      "rank": 10,
       "network": "Awin",
       "brand": "Fressnapf AT",
       "reference": 68692,
@@ -601,7 +582,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 12,
+      "rank": 11,
       "network": "Awin",
       "brand": "Fressnapf-Online-Shop DE",
       "reference": 14757,
@@ -616,6 +597,25 @@
       "actionType": "application-review",
       "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
       "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Fressnapf-Online-Shop DE redaktionell passend im Bereich Tierbedarf einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "submissionReady": false,
+      "humanApprovalRequired": true
+    },
+    {
+      "rank": 12,
+      "network": "Awin",
+      "brand": "INTERSPORT DE",
+      "reference": 14050,
+      "advertiserId": 14050,
+      "programId": null,
+      "campaignId": null,
+      "category": "Mode & Sport",
+      "priority": "mittel",
+      "score": 60,
+      "kind": "application",
+      "status": "notjoined",
+      "actionType": "application-review",
+      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten INTERSPORT DE redaktionell passend im Bereich Mode & Sport einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
       "submissionReady": false,
       "humanApprovalRequired": true
     }
@@ -914,6 +914,24 @@
       "humanApprovalRequired": false
     },
     {
+      "network": "Awin",
+      "brand": "Anker DE",
+      "category": "Technik & Computer",
+      "priority": "hoch",
+      "score": 98,
+      "status": "notjoined",
+      "kind": "application",
+      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Anker DE redaktionell passend im Bereich Technik & Computer einbinden. Bei Awin sind aktuell 6 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "reason": "passt zu Technik & Computer, strategisch relevante Marke, 6 aktive DE-Aktionen, Awin Index 64.79, Approval 86.22%, EPC 0.99",
+      "reference": 30691,
+      "advertiserId": 30691,
+      "programId": null,
+      "campaignId": null,
+      "submissionReady": false,
+      "humanApprovalRequired": true
+    },
+    {
       "network": "Daisycon",
       "brand": "Daisycon Marketplace",
       "category": "Haushalt & Alltag",
@@ -1052,42 +1070,6 @@
       "reason": "passt zu Gesundheit & Wellness, Sortimentslücke: erst 0 veröffentlichte Angebote in Gesundheit & Wellness, 4 aktive DE-Aktionen",
       "reference": 84317,
       "advertiserId": 84317,
-      "programId": null,
-      "campaignId": null,
-      "submissionReady": false,
-      "humanApprovalRequired": true
-    },
-    {
-      "network": "Awin",
-      "brand": "Radwelt-shop DE",
-      "category": "Mode & Sport",
-      "priority": "mittel",
-      "score": 69,
-      "status": "notjoined",
-      "kind": "application",
-      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Radwelt-shop DE redaktionell passend im Bereich Mode & Sport einbinden. Bei Awin sind aktuell 4 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-      "reason": "passt zu Mode & Sport, Sortimentslücke: erst 0 veröffentlichte Angebote in Mode & Sport, 4 aktive DE-Aktionen",
-      "reference": 15088,
-      "advertiserId": 15088,
-      "programId": null,
-      "campaignId": null,
-      "submissionReady": false,
-      "humanApprovalRequired": true
-    },
-    {
-      "network": "Awin",
-      "brand": "Anker DE",
-      "category": "Technik & Computer",
-      "priority": "mittel",
-      "score": 68,
-      "status": "notjoined",
-      "kind": "application",
-      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Anker DE redaktionell passend im Bereich Technik & Computer einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-      "reason": "passt zu Technik & Computer, strategisch relevante Marke, Awin Index 64.79, Approval 86.22%, EPC 0.99",
-      "reference": 30691,
-      "advertiserId": 30691,
       "programId": null,
       "campaignId": null,
       "submissionReady": false,
@@ -1322,24 +1304,6 @@
       "reason": "passt zu Tierbedarf, Sortimentslücke: erst 0 veröffentlichte Angebote in Tierbedarf, strategisch relevante Marke",
       "reference": 10306,
       "advertiserId": 10306,
-      "programId": null,
-      "campaignId": null,
-      "submissionReady": false,
-      "humanApprovalRequired": true
-    },
-    {
-      "network": "Awin",
-      "brand": "ab-in-den-urlaub DE",
-      "category": "Freizeit & Reisen",
-      "priority": "mittel",
-      "score": 51,
-      "status": "notjoined",
-      "kind": "application",
-      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten ab-in-den-urlaub DE redaktionell passend im Bereich Freizeit & Reisen einbinden. Bei Awin sind aktuell 1 für Deutschland sichtbare Aktion dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-      "reason": "passt zu Freizeit & Reisen, Sortimentslücke: erst 1 veröffentlichte Angebote in Freizeit & Reisen, 1 aktive DE-Aktion",
-      "reference": 9369,
-      "advertiserId": 9369,
       "programId": null,
       "campaignId": null,
       "submissionReady": false,
@@ -1653,6 +1617,24 @@
     },
     {
       "network": "Awin",
+      "brand": "ab-in-den-urlaub DE",
+      "category": "Freizeit & Reisen",
+      "priority": "mittel",
+      "score": 45,
+      "status": "notjoined",
+      "kind": "application",
+      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten ab-in-den-urlaub DE redaktionell passend im Bereich Freizeit & Reisen einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "reason": "passt zu Freizeit & Reisen, Sortimentslücke: erst 1 veröffentlichte Angebote in Freizeit & Reisen",
+      "reference": 9369,
+      "advertiserId": 9369,
+      "programId": null,
+      "campaignId": null,
+      "submissionReady": false,
+      "humanApprovalRequired": true
+    },
+    {
+      "network": "Awin",
       "brand": "Academy of Sports DE",
       "category": "Mode & Sport",
       "priority": "mittel",
@@ -1916,6 +1898,24 @@
       "reason": "passt zu Tierbedarf, Sortimentslücke: erst 0 veröffentlichte Angebote in Tierbedarf",
       "reference": 57033,
       "advertiserId": 57033,
+      "programId": null,
+      "campaignId": null,
+      "submissionReady": false,
+      "humanApprovalRequired": true
+    },
+    {
+      "network": "Awin",
+      "brand": "AktivWinter DE",
+      "category": "Mode & Sport",
+      "priority": "mittel",
+      "score": 45,
+      "status": "notjoined",
+      "kind": "application",
+      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten AktivWinter DE redaktionell passend im Bereich Mode & Sport einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "reason": "passt zu Mode & Sport, Sortimentslücke: erst 0 veröffentlichte Angebote in Mode & Sport",
+      "reference": 25879,
+      "advertiserId": 25879,
       "programId": null,
       "campaignId": null,
       "submissionReady": false,

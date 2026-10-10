@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-10T05:52:40.135Z",
+  "generatedAt": "2026-10-10T09:10:39.391Z",
   "newAwinPrograms": 0,
   "newImpactPrograms": 0,
   "newDaisyconPrograms": 0,
@@ -14,9 +14,9 @@
   "applicationCandidates": 2610,
   "newMerchants": 0,
   "newProducts": 0,
-  "productsWithImage": 248,
+  "productsWithImage": 245,
   "productsWithVideo": 0,
-  "productsWithPrice": 248,
+  "productsWithPrice": 245,
   "productsWithOldPrice": 0,
   "productsWithDiscount": 0,
   "newCoupons": 0,
@@ -25,17 +25,17 @@
   "expiredOffers": 0,
   "expiredCoupons": 0,
   "filteredForeignLocale": 0,
-  "totalProducts": 255,
+  "totalProducts": 252,
   "productsBySource": {
-    "Awin": 255
+    "Awin": 252
   },
   "officialImagesBySource": {
-    "Awin": 248
+    "Awin": 245
   },
   "missingMediaBySource": {},
   "productsByMerchant": {
     "Hollyland DE": 136,
-    "ANTHBOT DE": 59,
+    "ANTHBOT DE": 56,
     "Outin Germany": 54,
     "EMP DE": 4,
     "Imou DE": 1,
@@ -43,8 +43,8 @@
   },
   "productsByCategory": {
     "audio-musik": 88,
-    "garten": 53,
     "haushalt": 52,
+    "garten": 50,
     "zubehoer": 49,
     "computer": 4,
     "sonstiges": 4,
@@ -128,27 +128,27 @@
   ],
   "awinEnhancedDedupe": {
     "inputRows": 456,
-    "normalizedRows": 257,
-    "filteredBeforeDedupe": 199,
-    "outputOffers": 248,
+    "normalizedRows": 254,
+    "filteredBeforeDedupe": 202,
+    "outputOffers": 245,
     "dedupedRows": 9,
-    "collapsedRows": 208,
+    "collapsedRows": 211,
     "byMerchant": [
       {
         "merchant": "ANTHBOT DE",
         "inputRows": 161,
-        "normalizedRows": 62,
-        "filteredBeforeDedupe": 99,
-        "outputOffers": 59,
+        "normalizedRows": 59,
+        "filteredBeforeDedupe": 102,
+        "outputOffers": 56,
         "dedupedRows": 3,
-        "collapsedRows": 102,
+        "collapsedRows": 105,
         "rowsWithGtin": 6,
         "duplicateGtinExtras": 3,
         "rowsWithMpn": 158,
         "duplicateMpnExtras": 105,
         "duplicateSourceIdExtras": 0,
         "rejectionReasons": {
-          "blocked-non-merchandise": 99
+          "blocked-non-merchandise": 102
         }
       },
       {
@@ -187,9 +187,9 @@
   },
   "quarantinedRecords": 130,
   "blockedPublisherPromotions": 4,
-  "dailyDeal": "0218eb3f0ddf604a",
+  "dailyDeal": "039a1ca39383f7b6",
   "dailyHighlights": [
-    "0218eb3f0ddf604a",
+    "039a1ca39383f7b6",
     "04b0eab2f2c77729",
     "24fcf0e0d7084d48",
     "0a432f17c1a1c534",

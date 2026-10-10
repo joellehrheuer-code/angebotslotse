@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-10T05:52:40.135Z",
+  "generatedAt": "2026-10-10T09:10:39.391Z",
   "status": "disabled",
   "joinedPrograms": 0,
   "automation": {
@@ -26,19 +26,6 @@
       "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
     },
     {
-      "category": "Garten & Werkzeug",
-      "siteOffers": 56,
-      "joinedPrograms": 0,
-      "gapScore": 56,
-      "searchTerms": [
-        "garden",
-        "mower",
-        "tools",
-        "DIY"
-      ],
-      "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
-    },
-    {
       "category": "Technik & Computer",
       "siteOffers": 53,
       "joinedPrograms": 0,
@@ -49,6 +36,19 @@
         "hardware",
         "mobile",
         "smart home"
+      ],
+      "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
+    },
+    {
+      "category": "Garten & Werkzeug",
+      "siteOffers": 53,
+      "joinedPrograms": 0,
+      "gapScore": 53,
+      "searchTerms": [
+        "garden",
+        "mower",
+        "tools",
+        "DIY"
       ],
       "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
     },
