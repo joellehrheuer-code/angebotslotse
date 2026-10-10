@@ -182,10 +182,19 @@ export async function fetchImpactOffers({ accountSid, authToken, fetchImpl = fet
   }
 
   audit.products=products.length;
+  audit.productDiagnostics={
+    fields:products[0]&&typeof products[0]==="object"?Object.keys(products[0]).slice(0,35):[],
+    missingApprovedProgram:0,missingTrackingLink:0,missingName:0,outOfStock:0,accepted:0
+  };
   for (const product of products) {
-    const program = byCampaign.get(String(product.CampaignId));
-    const trackingUrl = product.TrackingLink || product.UrlTracking;
-    if (!program || !trackingUrlAllowed(trackingUrl, policy, quarantineFor(program, policy)) || !product.Name || String(product.StockAvailability).toLowerCase() === "outofstock") continue;
+    const program = byCampaign.get(String(product.CampaignId)) ||
+      byAdvertiser.get(String(product.AdvertiserId ?? product.AdvertiserID));
+    const trackingUrl = product.TrackingLink || product.TrackingURL || product.UrlTracking;
+    if(!program){audit.productDiagnostics.missingApprovedProgram+=1;continue;}
+    if(!trackingUrlAllowed(trackingUrl,policy,quarantineFor(program,policy))){audit.productDiagnostics.missingTrackingLink+=1;continue;}
+    if(!product.Name){audit.productDiagnostics.missingName+=1;continue;}
+    if(String(product.StockAvailability).toLowerCase()==="outofstock"){audit.productDiagnostics.outOfStock+=1;continue;}
+    audit.productDiagnostics.accepted+=1;
     bump(program, "products");
     rows.push({ ...common(program), id: `product-${product.CatalogId}-${product.CatalogItemId}`, title: product.Name,
       description: product.Description, url: product.Url || trackingUrl, urlTracking: trackingUrl, type: "promotion",
