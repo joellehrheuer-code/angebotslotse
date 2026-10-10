@@ -643,6 +643,22 @@ spreadshopButton?.addEventListener("click", () => {
   document.body.append(script);
 });
 
+// Copy only the literal official voucher code. Numbers in codes do not imply a discount percentage.
+document.addEventListener("click",async event=>{
+  const button=event.target.closest?.("[data-copy-voucher]");
+  if(!button)return;
+  const code=String(button.dataset.copyVoucher||"").trim();
+  if(!/^[A-Za-z0-9][A-Za-z0-9_-]{3,31}$/.test(code))return;
+  const status=button.closest(".verified-voucher")?.querySelector(".voucher-copy-status");
+  try {
+    if(!navigator.clipboard?.writeText)throw new Error("clipboard-unavailable");
+    await navigator.clipboard.writeText(code);
+    if(status)status.textContent="Rabattcode kopiert. Bedingungen beim Händler prüfen.";
+  }catch{
+    if(status)status.textContent="Kopieren nicht verfügbar. Bitte Code markieren und manuell kopieren.";
+  }
+});
+
 const instantGamingLoad = document.querySelector("[data-ig-banner-load]");
 instantGamingLoad?.addEventListener("click", () => {
   const host = document.querySelector("[data-ig-banner-host]");
@@ -652,6 +668,7 @@ instantGamingLoad?.addEventListener("click", () => {
   instantGamingLoad.dataset.loaded = "true";
   instantGamingLoad.disabled = true;
   host.hidden = false;
+  host.querySelector("[data-ig-placeholder]")?.remove();
   if (note) note.textContent = "Instant-Gaming-Partnerbanner wird geladen …";
   window.igBannerConfig = { lang: "de", igr, banners: ["my-banner"] };
   const script = document.createElement("script");
@@ -664,7 +681,10 @@ instantGamingLoad?.addEventListener("click", () => {
   script.addEventListener("error", () => {
     instantGamingLoad.dataset.loaded = "false";
     instantGamingLoad.disabled = false;
-    host.hidden = true;
+    const placeholder=document.createElement("div");
+    placeholder.className="instant-gaming-embed-placeholder";
+    placeholder.textContent="Der externe Partnerbanner ist momentan nicht erreichbar. Der Händlerlink bleibt verfügbar.";
+    host.replaceChildren(placeholder);
     if (note) note.textContent = "Der Partnerbanner konnte nicht geladen werden. Der direkte Affiliate-Link bleibt verfügbar.";
   }, {once:true});
   document.body.append(script);
@@ -934,8 +954,10 @@ updateWatchIndicators();
     document.querySelectorAll("[data-community-visits]").forEach(node => { node.textContent = number.format(visits); });
     document.querySelectorAll("[data-community-review-count]").forEach(node => { node.textContent = number.format(reviewCount); });
     document.querySelectorAll("[data-community-rating]").forEach(node => {
-      node.textContent = reviewCount > 0 && Number.isFinite(rating) ? rating.toLocaleString("de-DE",{minimumFractionDigits:1,maximumFractionDigits:1}) : "–";
+      node.textContent = reviewCount > 0 && Number.isFinite(rating) ? rating.toLocaleString("de-DE",{minimumFractionDigits:1,maximumFractionDigits:1}) : "Noch keine Freigabe";
+      node.closest(".community-rating-summary")?.classList.toggle("has-rating",reviewCount>0);
     });
+    document.querySelectorAll("[data-community-rating-scale]").forEach(node => { node.hidden = reviewCount === 0; });
     document.querySelectorAll("[data-community-visits-wrap],[data-community-visits-separator]").forEach(node => { node.hidden = false; });
     document.querySelectorAll("[data-community-rating-wrap],[data-community-rating-separator]").forEach(node => { node.hidden = reviewCount === 0; });
 
@@ -949,9 +971,9 @@ updateWatchIndicators();
       const empty = document.createElement("article");
       empty.className = "community-review-empty";
       const strong = document.createElement("strong");
-      strong.textContent = "Noch keine freigegebenen Bewertungen.";
+      strong.textContent = "Eingereichte Bewertungen werden geprüft.";
       const p = document.createElement("p");
-      p.textContent = "Du kannst die erste echte Bewertung einreichen.";
+      p.textContent = "Nach der Freigabe werden echte Bewertungen hier angezeigt – auch kritische. Du kannst weiter ehrliches Feedback einreichen.";
       empty.append(strong,p);
       list.append(empty);
       return;
