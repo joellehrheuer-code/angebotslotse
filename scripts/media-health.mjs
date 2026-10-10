@@ -10,10 +10,12 @@ export async function probeImage(url,fetchImpl=fetch,timeoutMs=8000){
   const attempt=async method=>{
     const response=await fetchImpl(url,{
       method,redirect:"follow",
-      headers:{Accept:"image/avif,image/webp,image/*"},
+      headers:{Accept:"image/avif,image/webp,image/*",...(method==="GET"?{Range:"bytes=0-0"}:{})},
       signal:AbortSignal.timeout(timeoutMs)
     });
-    return {status:response.status,type:String(response.headers?.get?.("content-type")||"").split(";")[0].toLowerCase()};
+    const result={status:response.status,type:String(response.headers?.get?.("content-type")||"").split(";")[0].toLowerCase()};
+    await response.body?.cancel?.().catch(()=>{});
+    return result;
   };
   let result=null,failed=null;
   for(const method of ["HEAD","GET"]){
