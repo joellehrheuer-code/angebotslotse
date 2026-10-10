@@ -331,7 +331,7 @@ const homeTechUnique=takeUniqueHomepage(homepageTech,10);
 const homeEverydayUnique=takeUniqueHomepage(homepageEveryday,10);
 const homeCouponsUnique=takeUniqueHomepage(diversifyOffers(coupons,{limit:10,maxPerBrand:2,maxPerMerchant:2,maxPerCategory:3}),10);
 const heroCandidates=[homepage.dailyDeal,...homepage.dailyHighlights,...homepage.newest].filter(Boolean);
-const isHeroProduct=item=>Boolean(item?.imageUrl && hasPrice(item) && !/\\b(?:4g[- ]service|shipping protection|package protection)\\b/i.test(item.title||""));
+const isHeroProduct=item=>Boolean(item?.imageUrl && hasPrice(item) && !/(?:4g[- ]service|shipping protection|package protection)/i.test(item.title||""));
 const heroProductPool=[...heroCandidates.filter(isHeroProduct),...offers.filter(isHeroProduct).sort((a,b)=>qualityScore(b)-qualityScore(a))];
 const heroItems=[...new Map(heroProductPool.map(item=>[item.id,item])).values()].slice(0,3);
 const heroCopy=[
