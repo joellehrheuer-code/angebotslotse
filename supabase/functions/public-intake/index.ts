@@ -122,33 +122,80 @@ async function sendNewsletterConfirmation(emailAddress: string, confirmToken: st
 }
 
 async function rateLimit(req: Request, kind: string, origin: string) {
-  const forwarded = req.headers.get("x-forwarded-for")?.split(",")[0]?.trim()
-    || req.headers.get("cf-connecting-ip")
+  // This fingerprint is a deterrent, not a verified user identity. Upstream
+  // proxies must normalize forwarded headers; do not trust it as authentication.
+  const forwarded = req.headers.get("cf-connecting-ip")
+    || req.headers.get("x-forwarded-for")?.split(",")[0]?.trim()
     || "unknown";
   const ua = (req.headers.get("user-agent") || "").slice(0, 250);
   const bucket = Math.floor(Date.now() / (10 * 60 * 1000));
   const key = await sha256(`${kind}|${bucket}|${forwarded}|${ua}`);
   const now = new Date().toISOString();
-  const { data } = await admin.from("site_intake_rate").select("request_count,window_start").eq("key", key).maybeSingle();
-  // Page views include repeat reloads; keep a bounded anti-abuse cap per anonymous request bucket.
   const limit = kind === "visit" ? 60 : kind === "review" ? 3 : kind === "report" ? 8 : kind === "partner" ? 3 : 5;
-  if (data && Number(data.request_count) >= limit) {
-    return json({ ok: false, error: "rate_limited" }, 429, origin);
+
+  // Optimistic compare-and-swap avoids the lost-update race of separate
+  // SELECT and UPDATE calls under concurrent anonymous submissions.
+  for (let attempt = 0; attempt < 6; attempt++) {
+    const { data, error } = await admin.from("site_intake_rate")
+      .select("request_count").eq("key", key).maybeSingle();
+    if (error) {
+      console.error("Intake throttle read failed", error.message);
+      return json({ ok:false, error:"temporarily_unavailable" }, 503, origin);
+    }
+    if (data && Number(data.request_count) >= limit)
+      return json({ ok:false, error:"rate_limited" }, 429, origin);
+
+    if (data) {
+      const count = Number(data.request_count);
+      const { data: updated, error: writeError } = await admin.from("site_intake_rate")
+        .update({ request_count:count+1, updated_at:now })
+        .eq("key", key).eq("request_count", count)
+        .select("key").maybeSingle();
+      if (writeError) {
+        console.error("Intake throttle update failed", writeError.message);
+        return json({ ok:false, error:"temporarily_unavailable" }, 503, origin);
+      }
+      if (updated) return null;
+    } else {
+      const { error: insertError } = await admin.from("site_intake_rate")
+        .insert({ key, window_start:now, request_count:1, updated_at:now });
+      if (!insertError) return null;
+      if (insertError.code !== "23505") {
+        console.error("Intake throttle insert failed", insertError.message);
+        return json({ ok:false, error:"temporarily_unavailable" }, 503, origin);
+      }
+    }
   }
-  if (data) {
-    await admin.from("site_intake_rate").update({
-      request_count: Number(data.request_count) + 1,
-      updated_at: now,
-    }).eq("key", key);
-  } else {
-    await admin.from("site_intake_rate").insert({
-      key,
-      window_start: now,
-      request_count: 1,
-      updated_at: now,
-    });
+  // Fail closed if this anonymous bucket receives a sustained parallel burst.
+  return json({ ok:false, error:"rate_limited" }, 429, origin);
+}
+
+async function readJsonBody(req: Request, maxBytes = 20_000):
+  Promise<{ body: Record<string, unknown> | null; tooLarge: boolean }> {
+  const reader = req.body?.getReader();
+  if (!reader) return { body:null, tooLarge:false };
+  const decoder = new TextDecoder("utf-8",{ fatal:true });
+  let raw = "";
+  let bytes = 0;
+  try {
+    while (true) {
+      const { value, done } = await reader.read();
+      if (done) break;
+      bytes += value.byteLength;
+      if (bytes > maxBytes) {
+        await reader.cancel().catch(() => {});
+        return { body:null, tooLarge:true };
+      }
+      raw += decoder.decode(value,{stream:true});
+    }
+    const parsed: unknown = JSON.parse(raw + decoder.decode());
+    return { body: parsed !== null && typeof parsed === "object" && !Array.isArray(parsed)
+      ? parsed as Record<string, unknown> : null, tooLarge:false };
+  } catch {
+    return { body:null, tooLarge:false };
+  } finally {
+    try { reader.releaseLock(); } catch {}
   }
-  return null;
 }
 
 async function communitySnapshot() {
@@ -246,8 +293,10 @@ Deno.serve(async (req: Request) => {
   const contentLength = Number(req.headers.get("content-length") || "0");
   if (contentLength > 20000) return json({ ok: false, error: "payload_too_large" }, 413, origin);
 
-  let body: Record<string, unknown>;
-  try { body = await req.json(); } catch { return json({ ok: false, error: "invalid_json" }, 400, origin); }
+  const incoming = await readJsonBody(req);
+  if (incoming.tooLarge) return json({ ok: false, error:"payload_too_large" }, 413, origin);
+  if (!incoming.body) return json({ ok: false, error:"invalid_json" }, 400, origin);
+  const body = incoming.body;
 
   if (clean(body.website, 200)) return json({ ok: true }, 200, origin);
 
