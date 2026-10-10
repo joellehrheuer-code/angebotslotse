@@ -48,7 +48,7 @@ test("PWA-App-Icons sind echte PNGs mit Store-tauglichen Größen", () => {
   assert.match(build, /purpose:"maskable"/);
   assert.match(faviconSvg, /Joel271997 \/ J0JOEL Logo/);
   assert.doesNotMatch(faviconSvg, /#175d48|#d9f05b/);
-  assert.match(sw, /angebotslotse-shell-v17/);
+  assert.match(sw, /angebotslotse-shell-v18/);
   assert.match(sw, /app-icon-192\.png\?v=4/);
   assert.doesNotMatch(sw, /icon: local\("favicon\.svg"\)/);
 });
