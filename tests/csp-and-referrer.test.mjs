@@ -13,9 +13,10 @@ test("GitHub Pages generated HTML gets a CSP before any executable inline script
   assert.match(build,/meta name="referrer" content="strict-origin-when-cross-origin"/);
   const firstPageHead=build.indexOf('<head><meta charset="utf-8"><meta name="viewport"');
   assert.ok(firstPageHead>=0);
-  const fragment=build.slice(firstPageHead,firstPageHead+850);
-  assert.ok(fragment.indexOf('${SITE_CSP_META}')>0);
-  assert.ok(fragment.indexOf('${SITE_CSP_META}')<fragment.indexOf('<script>'));
+  const inlineScriptAt=build.indexOf('<script>',firstPageHead);
+  assert.ok(inlineScriptAt>firstPageHead);
+  const fragment=build.slice(firstPageHead,inlineScriptAt);
+  assert.ok(fragment.includes('${SITE_CSP_META}'));
 });
 test("explicit third-party partners only load scripts from named hosts",()=>{
   const build=fs.readFileSync("scripts/build.mjs","utf8");
