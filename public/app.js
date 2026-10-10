@@ -1239,6 +1239,33 @@ updateWatchIndicators();
   });
 })();
 
+/* Öffentliche YouTube-Shorts nur nach bewusster Zustimmung auf der Seite abspielen. */
+document.addEventListener("click",event=>{
+  const button=event.target.closest?.("[data-inline-youtube]");
+  if(!button)return;
+  const id=String(button.dataset.inlineYoutube||"");
+  if(!/^[A-Za-z0-9_-]{6,20}$/.test(id))return;
+  const card=button.closest(".creator-video-card");
+  const host=card?.querySelector("[data-video-embed-host]");
+  if(!host)return;
+  // Only one third-party player remains active at a time.
+  document.querySelectorAll("[data-video-embed-host]").forEach(other=>{
+    if(other!==host){other.replaceChildren();other.hidden=true;
+      const previous=other.closest(".creator-video-card")?.querySelector("[data-inline-youtube]");
+      if(previous){previous.hidden=false;previous.disabled=false;}}
+  });
+  const frame=document.createElement("iframe");
+  frame.src="https://www.youtube-nocookie.com/embed/"+encodeURIComponent(id)+"?rel=0";
+  frame.title="YouTube-Short auf Angebotslotse abspielen";
+  frame.loading="lazy";
+  frame.referrerPolicy="strict-origin-when-cross-origin";
+  frame.allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; web-share";
+  frame.allowFullscreen=true;
+  host.replaceChildren(frame);
+  host.hidden=false;
+  button.hidden=true;
+});
+
 /* Angebotslotse: externe Creator-Player erst nach Klick laden */
 (() => {
   document.querySelectorAll("[data-spotify-player-load]").forEach(button=>button.addEventListener("click",()=>{
