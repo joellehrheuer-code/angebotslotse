@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-09T20:55:52.657Z",
+  "generatedAt": "2026-10-09T23:59:36.659Z",
   "topActions": [
     {
       "rank": 1,
@@ -42,6 +42,25 @@
     {
       "rank": 3,
       "network": "Awin",
+      "brand": "Parfumdreams DE",
+      "reference": 84317,
+      "advertiserId": 84317,
+      "programId": null,
+      "campaignId": null,
+      "category": "Gesundheit & Wellness",
+      "priority": "mittel",
+      "score": 69,
+      "kind": "application",
+      "status": "notjoined",
+      "actionType": "application-review",
+      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Parfumdreams DE redaktionell passend im Bereich Gesundheit & Wellness einbinden. Bei Awin sind aktuell 4 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "submissionReady": false,
+      "humanApprovalRequired": true
+    },
+    {
+      "rank": 4,
+      "network": "Awin",
       "brand": "Anker DE",
       "reference": 30691,
       "advertiserId": 30691,
@@ -59,7 +78,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 4,
+      "rank": 5,
       "network": "Awin",
       "brand": "Alternate DE",
       "reference": 11731,
@@ -78,7 +97,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 5,
+      "rank": 6,
       "network": "Awin",
       "brand": "Acer DE",
       "reference": 12591,
@@ -97,7 +116,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 6,
+      "rank": 7,
       "network": "Awin",
       "brand": "bosch Tiernahrung DE",
       "reference": 84955,
@@ -116,7 +135,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 7,
+      "rank": 8,
       "network": "Awin",
       "brand": "BSTN DACH",
       "reference": 104975,
@@ -135,7 +154,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 8,
+      "rank": 9,
       "network": "Awin",
       "brand": "DECATHLON DE",
       "reference": 14353,
@@ -154,7 +173,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 9,
+      "rank": 10,
       "network": "Awin",
       "brand": "Ecovacs DE",
       "reference": 30763,
@@ -173,7 +192,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 10,
+      "rank": 11,
       "network": "Awin",
       "brand": "Fressnapf AT",
       "reference": 68692,
@@ -192,7 +211,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 11,
+      "rank": 12,
       "network": "Awin",
       "brand": "Fressnapf-Online-Shop DE",
       "reference": 14757,
@@ -207,25 +226,6 @@
       "actionType": "application-review",
       "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
       "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Fressnapf-Online-Shop DE redaktionell passend im Bereich Tierbedarf einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-      "submissionReady": false,
-      "humanApprovalRequired": true
-    },
-    {
-      "rank": 12,
-      "network": "Awin",
-      "brand": "INTERSPORT DE",
-      "reference": 14050,
-      "advertiserId": 14050,
-      "programId": null,
-      "campaignId": null,
-      "category": "Mode & Sport",
-      "priority": "mittel",
-      "score": 60,
-      "kind": "application",
-      "status": "notjoined",
-      "actionType": "application-review",
-      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten INTERSPORT DE redaktionell passend im Bereich Mode & Sport einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
       "submissionReady": false,
       "humanApprovalRequired": true
     }
@@ -494,6 +494,13 @@
       "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Radwelt-shop DE redaktionell passend im Bereich Mode & Sport einbinden. Bei Awin sind aktuell 5 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung."
     },
     {
+      "id": "awin-apply-84317",
+      "platform": "Awin",
+      "action": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "reason": "Automatisch priorisiert (69 Punkte): passt zu Gesundheit & Wellness, Sortimentslücke: erst 0 veröffentlichte Angebote in Gesundheit & Wellness, 4 aktive DE-Aktionen. Keine automatische Zustimmung zu Vertragsbedingungen.",
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Parfumdreams DE redaktionell passend im Bereich Gesundheit & Wellness einbinden. Bei Awin sind aktuell 4 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung."
+    },
+    {
       "id": "awin-apply-30691",
       "platform": "Awin",
       "action": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
@@ -515,25 +522,18 @@
       "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Acer DE redaktionell passend im Bereich Technik & Computer einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung."
     },
     {
+      "id": "awin-apply-19810",
+      "platform": "Awin",
+      "action": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "reason": "Automatisch priorisiert (60 Punkte): passt zu Haushalt & Küche, 5 aktive DE-Aktionen. Keine automatische Zustimmung zu Vertragsbedingungen.",
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten SharkNinja DE redaktionell passend im Bereich Haushalt & Küche einbinden. Bei Awin sind aktuell 5 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung."
+    },
+    {
       "id": "awin-apply-84955",
       "platform": "Awin",
       "action": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
       "reason": "Automatisch priorisiert (60 Punkte): passt zu Tierbedarf, Sortimentslücke: erst 0 veröffentlichte Angebote in Tierbedarf, strategisch relevante Marke. Keine automatische Zustimmung zu Vertragsbedingungen.",
       "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten bosch Tiernahrung DE redaktionell passend im Bereich Tierbedarf einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung."
-    },
-    {
-      "id": "awin-apply-104975",
-      "platform": "Awin",
-      "action": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "reason": "Automatisch priorisiert (60 Punkte): passt zu Mode & Sport, Sortimentslücke: erst 0 veröffentlichte Angebote in Mode & Sport, strategisch relevante Marke. Keine automatische Zustimmung zu Vertragsbedingungen.",
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten BSTN DACH redaktionell passend im Bereich Mode & Sport einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung."
-    },
-    {
-      "id": "awin-apply-14353",
-      "platform": "Awin",
-      "action": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "reason": "Automatisch priorisiert (60 Punkte): passt zu Mode & Sport, Sortimentslücke: erst 0 veröffentlichte Angebote in Mode & Sport, strategisch relevante Marke. Keine automatische Zustimmung zu Vertragsbedingungen.",
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten DECATHLON DE redaktionell passend im Bereich Mode & Sport einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung."
     },
     {
       "id": "daisycon-connect",
