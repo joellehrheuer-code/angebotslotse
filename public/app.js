@@ -306,7 +306,7 @@ resetFilters?.addEventListener("click", () => {
 updateCategoryListing();
 
 document.querySelectorAll("[data-slider]").forEach(slider => {
-  const section = slider.closest(".deal-section");
+  const section = slider.closest(".deal-section, .creator-videos, .book-preview");
   const step = () => Math.max(260, slider.clientWidth * .82);
   section?.querySelector("[data-slider-prev]")?.addEventListener("click", () => slider.scrollBy({left:-step(),behavior:"smooth"}));
   section?.querySelector("[data-slider-next]")?.addEventListener("click", () => slider.scrollBy({left:step(),behavior:"smooth"}));
