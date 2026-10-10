@@ -12,8 +12,9 @@ test("V14 behebt die sichtbaren Commerce- und Branding-Probleme", () => {
   assert.match(css, /\.footer-brand-lockup\{/);
   assert.match(css, /\.product-image\.placeholder\{/);
 
-  assert.match(build, /placeholder-symbol/);
-  assert.match(build, /Kein Produktfoto verfügbar/);
+  assert.match(build, /product-media-note/);
+  assert.match(build, /placeholders\//);
+  assert.match(build, /Kategorieillustration/);
   assert.match(build, /footer-brand-lockup/);
   assert.doesNotMatch(build, /class="footer-wordmark"/);
   assert.match(build, /Partnerangebot öffnen/);
