@@ -1,0 +1,48 @@
+name: Angebotslotse Sicherheits-Audit
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/security-audit.yml"
+      - ".github/dependabot.yml"
+      - "package.json"
+      - "package-lock.json"
+      - "scripts/security-check.mjs"
+      - "scripts/lib/secret-patterns.mjs"
+      - "supabase/functions/**"
+      - "tests/security-public-intake.test.mjs"
+      - "tests/secret-patterns.test.mjs"
+  schedule:
+    - cron: "41 6 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: angebotslotse-security-audit
+  cancel-in-progress: false
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Reproduzierbare Installation
+        run: npm ci
+      - name: Sicherheitslücken in produktiven npm-Abhängigkeiten
+        run: npm audit --omit=dev --audit-level=high
+      - name: Gezielt auf Formularschutz und öffentliche Zugangsdaten testen
+        run: node --test tests/security-public-intake.test.mjs tests/secret-patterns.test.mjs
+      - name: Produktionsseite bauen
+        run: npm run build
+        env:
+          SITE_URL: https://joellehrheuer-code.github.io/angebotslotse
+      - name: Keine privaten Schlüssel im Website-Build
+        run: npm run security
