@@ -995,19 +995,14 @@ updateWatchIndicators();
   };
 
   const loadCommunity = async () => {
+    // A genuine page load is counted once on every page, including reloads and later visits.
+    // This is a page-view counter, NOT unique users or simultaneous visitors.
     if (!document.querySelector("[data-community-visits], [data-community-root]")) return;
-    let counted = false;
-    try { counted = sessionStorage.getItem("angebotslotse-community-visit-v1") === "1"; } catch {}
     try {
       let data;
-      if (!counted) {
-        try {
-          data = await postIntake({ kind:"visit", source:"website" });
-          try { sessionStorage.setItem("angebotslotse-community-visit-v1","1"); } catch {}
-        } catch {
-          data = await getCommunitySnapshot();
-        }
-      } else {
+      try {
+        data = await postIntake({ kind:"visit", source:"website-pageview" });
+      } catch {
         data = await getCommunitySnapshot();
       }
       renderCommunitySnapshot(data);

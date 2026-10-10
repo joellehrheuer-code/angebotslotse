@@ -5789,3 +5789,13 @@ html[data-theme="black"] .creator-media-card p{color:#c2cbdd!important}
 @media(max-width:850px){.community-review-list{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
 @media(max-width:620px){.community-review-list{grid-template-columns:1fr!important}.creator-dock-links a{flex:0 0 32px!important}.creator-media-card{padding:18px!important}}
 @media(prefers-reduced-motion:reduce){.creator-dock-links a,.creator-dock-links a:hover,.creator-dock-links a:focus-visible{transition:none!important;transform:none!important}}
+
+/* V31: truthful site-wide page-view count and accessible visitor/review copy */
+.live-pageview-counter{display:inline-flex!important;align-items:center!important;gap:5px!important;white-space:nowrap!important;font-size:11px!important;font-weight:750!important;color:#b6c5dd!important;font-variant-numeric:tabular-nums!important}
+.live-pageview-counter b{color:#f4a6dd!important;font-weight:900!important}
+html[data-theme="light"] .live-pageview-counter{color:#33415b!important}
+html[data-theme="light"] .live-pageview-counter b{color:#9c2e70!important}
+html[data-theme="black"] .live-pageview-counter{color:#d1d9e6!important}
+.community-review-form-copy p{font-size:clamp(12px,1vw,14px)!important;line-height:1.6!important}
+.community-comment-field textarea{min-height:125px!important}
+@media(max-width:560px){.live-pageview-counter{font-size:10px!important;gap:4px!important}.live-pageview-counter b{font-size:11px!important}}
