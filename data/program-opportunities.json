@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-10T00:59:29.730Z",
+  "generatedAt": "2026-10-10T05:52:40.135Z",
   "scope": "Automatisch aus Programminventar, DE-Angebotsabdeckung und verfügbaren Netzwerk-/Feed-Signalen erzeugt.",
   "automation": {
     "discovery": "automatic",
@@ -46,43 +46,6 @@
       "automationState": "ready-for-review"
     },
     {
-      "brand": "Radwelt-shop DE",
-      "network": "Awin",
-      "advertiserId": 15088,
-      "status": "notjoined",
-      "category": "Mode & Sport",
-      "score": 75,
-      "priority": "hoch",
-      "activeDiscoveryOffers": 5,
-      "offerExamples": [
-        "Radwelt: Großer Abverkauf – das Hercules Lyon R7 545 Wh Damen grün 2026 für nur 1.699 Euro statt 2.699 Euro!",
-        "Radwelt: Großer Abverkauf – das KTM Cento 10 600 Wh Damen Trapez blau 2026  für nur 2.999 Euro statt 3.599 Euro!",
-        "Radwelt: Großer Abverkauf – das Kalkhoff Image 3.B Excite RT 625 Wh Damen schwarz 2025 für nur 2.499 Euro statt 3.999 Euro!"
-      ],
-      "productFeed": false,
-      "siteCategoryCoverage": 0,
-      "metrics": {
-        "awinIndex": null,
-        "epc": null,
-        "conversionRate": null,
-        "approvalPercentage": null,
-        "validationDays": null,
-        "averagePaymentTime": null,
-        "commissionMin": null,
-        "commissionMax": null,
-        "commissionTypes": []
-      },
-      "reasons": [
-        "passt zu Mode & Sport",
-        "Sortimentslücke: erst 0 veröffentlichte Angebote in Mode & Sport",
-        "5 aktive DE-Aktionen"
-      ],
-      "applicationRequired": true,
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Radwelt-shop DE redaktionell passend im Bereich Mode & Sport einbinden. Bei Awin sind aktuell 5 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "automationState": "ready-for-review"
-    },
-    {
       "brand": "Parfumdreams DE",
       "network": "Awin",
       "advertiserId": 84317,
@@ -116,6 +79,43 @@
       ],
       "applicationRequired": true,
       "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Parfumdreams DE redaktionell passend im Bereich Gesundheit & Wellness einbinden. Bei Awin sind aktuell 4 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "automationState": "ready-for-review"
+    },
+    {
+      "brand": "Radwelt-shop DE",
+      "network": "Awin",
+      "advertiserId": 15088,
+      "status": "notjoined",
+      "category": "Mode & Sport",
+      "score": 69,
+      "priority": "mittel",
+      "activeDiscoveryOffers": 4,
+      "offerExamples": [
+        "Radwelt: Großer Abverkauf – das Hercules Lyon R7 545 Wh Damen grün 2026 für nur 1.699 Euro statt 2.699 Euro!",
+        "Radwelt: Großer Abverkauf – das KTM Cento 10 600 Wh Damen Trapez blau 2026  für nur 2.999 Euro statt 3.599 Euro!",
+        "Radwelt: Großer Abverkauf – das Kalkhoff Image 3.B Excite RT 625 Wh Damen schwarz 2025 für nur 2.499 Euro statt 3.999 Euro!"
+      ],
+      "productFeed": false,
+      "siteCategoryCoverage": 0,
+      "metrics": {
+        "awinIndex": null,
+        "epc": null,
+        "conversionRate": null,
+        "approvalPercentage": null,
+        "validationDays": null,
+        "averagePaymentTime": null,
+        "commissionMin": null,
+        "commissionMax": null,
+        "commissionTypes": []
+      },
+      "reasons": [
+        "passt zu Mode & Sport",
+        "Sortimentslücke: erst 0 veröffentlichte Angebote in Mode & Sport",
+        "4 aktive DE-Aktionen"
+      ],
+      "applicationRequired": true,
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Radwelt-shop DE redaktionell passend im Bereich Mode & Sport einbinden. Bei Awin sind aktuell 4 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
       "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
       "automationState": "ready-for-review"
     },
