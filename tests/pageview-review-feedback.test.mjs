@@ -18,6 +18,6 @@ test("anonymous review requests concrete improvements and keeps an honest averag
   assert.match(build,/Bitte schreibe auch Verbesserungsvorschläge für die Website/);
   assert.match(build,/Ehrliche Kritik ist willkommen/);
   assert.match(build,/Deine Erfahrung und Verbesserungsvorschläge/);
-  assert.match(app,/data\.ratingAverage/);
+  assert.match(app,/data\?\.ratingAverage/);
   assert.doesNotMatch(app,/rating\s*\*\s*20/);
 });
