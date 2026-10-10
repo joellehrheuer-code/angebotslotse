@@ -44,6 +44,6 @@ test("Lighthouse-Fixes reduzieren Hero-Asset und benennen Creator-Links", () => 
 test("Brand-Links und Instant-Gaming-Loader bleiben zugänglich", () => {
   const build = fs.readFileSync("scripts/build.mjs", "utf8");
   assert.match(build, /aria-label="Angebotslotse Startseite"/);
-  assert.match(build, /Partnerbanner laden/);
-  assert.match(build, /Externer Inhalt bleibt bis zum Klick deaktiviert/);
+  assert.match(build, /Aktuelle Gaming-Angebote hier anzeigen/);
+  assert.match(build, /Externe Inhalte werden erst nach Klick geladen/);
 });
