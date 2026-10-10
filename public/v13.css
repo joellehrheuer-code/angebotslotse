@@ -5815,3 +5815,85 @@ html[data-theme="light"] .volunteer-tester-tasks{border-color:#c8d1de!important}
 html[data-theme="light"] .volunteer-tester-tasks summary{color:#89235f!important}
 html[data-theme="black"] .volunteer-tester-section{background:#080b10!important;border-color:#293343!important}
 @media(max-width:800px){.volunteer-tester-section{grid-template-columns:minmax(0,1fr)!important;padding:18px!important}}
+
+/* V33: compressed editorial home, functional swipeable top deals and on-site creator embeds */
+#aktuelle-deals.deal-section{position:relative!important;max-width:100%!important;margin-block:14px 24px!important;padding:18px!important;border:1px solid #30394d!important;border-radius:20px!important;background:#111723!important}
+#aktuelle-deals .section-head{display:flex!important;align-items:end!important;justify-content:space-between!important;gap:12px!important;margin-bottom:14px!important}
+#aktuelle-deals .section-head h2{font-size:clamp(22px,2.4vw,30px)!important;letter-spacing:-.02em!important;line-height:1.2!important}
+#aktuelle-deals .section-head .eyebrow{font-size:12px!important;line-height:1.35!important}
+#aktuelle-deals .deal-rail{display:flex!important;grid-template-columns:none!important;gap:12px!important;overflow-x:auto!important;overflow-y:hidden!important;scroll-snap-type:x mandatory!important;scroll-padding-inline:4px!important;overscroll-behavior-x:contain!important;padding:4px 4px 12px!important;scrollbar-width:thin!important}
+#aktuelle-deals .deal-card{flex:0 0 clamp(205px,23vw,258px)!important;width:clamp(205px,23vw,258px)!important;min-width:0!important;max-width:none!important;scroll-snap-align:start!important;border-radius:15px!important;overflow:hidden!important}
+#aktuelle-deals .deal-card .media-wrap{height:155px!important;min-height:0!important}
+#aktuelle-deals .deal-card .product-image{height:100%!important;min-height:0!important}
+#aktuelle-deals .deal-card .deal-content{padding:11px 12px!important;gap:6px!important}
+#aktuelle-deals .deal-card h3{font-size:14px!important;line-height:1.38!important;display:-webkit-box!important;-webkit-line-clamp:2!important;-webkit-box-orient:vertical!important;overflow:hidden!important}
+#aktuelle-deals .deal-card .brandline,
+#aktuelle-deals .deal-card .merchant{font-size:11px!important}
+#aktuelle-deals .deal-card .sparkline{margin-block:5px!important}
+#aktuelle-deals .deal-card .card-cta{min-height:38px!important;font-size:12px!important}
+#aktuelle-deals .rail-actions{display:flex!important;flex-wrap:wrap!important;align-items:center!important;gap:7px!important}
+#aktuelle-deals .rail-actions button{min-width:36px!important;min-height:36px!important}
+.premium-hero.portal-hero{margin-bottom:12px!important}
+.portal-hero .hero-redesign-copy>p{max-width:52ch!important;line-height:1.55!important}
+.portal-bento-grid,.live-network,.categories,.deal-section,.creator-videos,.instant-gaming-module{max-width:100%!important}
+.creator-videos{margin-block:20px!important;padding:18px!important;border:1px solid #30394d!important;border-radius:20px!important}
+.creator-videos .section-head{margin-bottom:12px!important;gap:12px!important}
+.creator-videos .section-head h2{font-size:clamp(21px,2.3vw,29px)!important;line-height:1.2!important}
+.creator-video-rail{display:flex!important;gap:14px!important;overflow-x:auto!important;scroll-snap-type:x mandatory!important;scroll-padding-inline:3px!important;padding-bottom:10px!important}
+.creator-video-card{flex:0 0 clamp(240px,30vw,350px)!important;scroll-snap-align:start!important;min-width:0!important}
+.creator-video-card .creator-video-media{max-height:180px!important;overflow:hidden!important}
+.creator-video-card h3{font-size:15px!important;line-height:1.45!important}
+.creator-video-inline-button{font-size:12px!important;padding:9px 12px!important;min-height:38px!important;margin-top:9px!important}
+.creator-video-embed-host{margin-top:9px!important;border-radius:12px!important;overflow:hidden!important;aspect-ratio:9/16!important;max-height:430px!important;max-width:280px!important;background:#05070d!important}
+.creator-video-embed-host iframe{border:0!important;display:block!important;width:100%!important;height:100%!important}
+.instant-gaming-showcase{display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr)!important;align-items:center!important;gap:20px!important;margin:18px 0 24px!important;padding:22px!important;border:1px solid #343756!important;border-radius:20px!important;background:#111627!important}
+.instant-gaming-showcase-copy{min-width:0!important}
+.instant-gaming-showcase h2{font-size:clamp(23px,2.4vw,31px)!important;line-height:1.2!important;letter-spacing:-.02em!important}
+.instant-gaming-showcase p{font-size:13px!important;line-height:1.6!important}
+.instant-gaming-showcase .instant-gaming-actions{display:flex!important;flex-wrap:wrap!important;gap:8px!important;margin-block:13px!important}
+.instant-gaming-showcase .instant-gaming-actions .button{min-height:40px!important;font-size:12px!important}
+.instant-gaming-embed-stage{min-width:0!important;min-height:165px!important;border:1px solid #404662!important;border-radius:15px!important;overflow:hidden!important;background:#0b1020!important}
+.instant-gaming-embed-stage .my-banner{max-width:100%!important;min-height:165px!important}
+.instant-gaming-embed-stage img,.instant-gaming-embed-stage iframe{max-width:100%!important}
+.instant-gaming-embed-placeholder{display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;gap:9px!important;min-height:165px!important;text-align:center!important;padding:18px!important;color:#dee6f8!important}
+.instant-gaming-embed-placeholder strong{font-size:20px!important}
+.instant-gaming-embed-placeholder small{font-size:12px!important;line-height:1.45!important;color:#aebdd5!important}
+.instant-gaming-controller{font-size:36px!important}
+.verified-voucher{padding:9px!important;background:rgba(128,134,170,.08)!important;border:1px dashed #626b86!important;border-radius:10px!important;min-width:0!important}
+.verified-voucher>span:first-child{display:block!important;font-size:11px!important;font-weight:800!important;margin-bottom:5px!important}
+.verified-voucher-row{display:flex!important;align-items:center!important;gap:5px!important;min-width:0!important;flex-wrap:wrap!important}
+.verified-voucher-row code{font-size:12px!important;overflow-wrap:anywhere!important;font-weight:800!important;min-width:0!important}
+.verified-voucher-row button{cursor:pointer!important;border:1px solid #9da9c5!important;border-radius:7px!important;padding:5px 8px!important;background:transparent!important;color:inherit!important;font:inherit!important;font-size:11px!important}
+.verified-voucher-row button:focus-visible{outline:2px solid #df7ab6!important;outline-offset:2px!important}
+.verified-voucher small,.voucher-copy-status{display:block!important;font-size:10px!important;line-height:1.4!important;opacity:.9!important;margin-top:5px!important}
+.community-rating-summary{display:flex!important;gap:6px!important;flex-wrap:wrap!important;align-items:baseline!important}
+.community-rating-summary:not(.has-rating) b{font-size:clamp(13px,1.4vw,17px)!important;letter-spacing:0!important;line-height:1.35!important;white-space:normal!important;overflow-wrap:normal!important}
+.community-rating-summary.has-rating b{font-size:clamp(24px,2.5vw,38px)!important}
+html[data-theme="light"] #aktuelle-deals.deal-section,
+html[data-theme="light"] .creator-videos,
+html[data-theme="light"] .instant-gaming-showcase{background:#f6f7fb!important;border-color:#cbd3df!important}
+html[data-theme="light"] .instant-gaming-showcase h2{color:#15243b!important}
+html[data-theme="light"] .instant-gaming-showcase p{color:#40516c!important}
+html[data-theme="light"] .instant-gaming-embed-stage{background:#e9edf6!important;border-color:#b4c2d6!important}
+html[data-theme="light"] .instant-gaming-embed-placeholder{color:#22334e!important}
+html[data-theme="light"] .instant-gaming-embed-placeholder small{color:#40516c!important}
+html[data-theme="black"] #aktuelle-deals.deal-section,
+html[data-theme="black"] .creator-videos,
+html[data-theme="black"] .instant-gaming-showcase{background:#070a11!important;border-color:#293144!important}
+@media(min-width:1000px){
+ .premium-hero.portal-hero{padding:clamp(24px,2.5vw,38px)!important;min-height:0!important}
+ .portal-hero .hero-redesign-copy h1{font-size:clamp(44px,4.1vw,70px)!important;line-height:1.06!important}
+}
+@media(max-width:760px){
+ #aktuelle-deals.deal-section,.creator-videos{padding:12px!important;margin-block:12px!important}
+ #aktuelle-deals .deal-card{flex-basis:220px!important;width:220px!important}
+ .creator-video-card{flex-basis:min(83vw,330px)!important}
+ .instant-gaming-showcase{grid-template-columns:minmax(0,1fr)!important;padding:17px!important;margin-block:14px!important}
+ .instant-gaming-embed-stage{min-height:160px!important}
+}
+@media(max-width:440px){
+ #aktuelle-deals .section-head h2{font-size:21px!important}
+ #aktuelle-deals .deal-card{flex-basis:202px!important;width:202px!important}
+ .creator-video-rail .creator-video-card{flex-basis:82vw!important}
+ .instant-gaming-showcase .instant-gaming-actions .button{width:100%!important;justify-content:center!important}
+}
