@@ -1,0 +1,35 @@
+name: Offizielle Produktbilder prüfen
+
+on:
+  schedule:
+    - cron: "37 8 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: angebotslotse-media-health
+  cancel-in-progress: false
+
+jobs:
+  verify-product-images:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Bildprüfung (kleine tägliche Stichprobe)
+        run: node scripts/media-health.mjs
+        env:
+          MEDIA_AUDIT_LIMIT: "30"
+      - name: Prüfergebnisse herunterladen können
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: angebotslotse-media-health
+          path: report/media-health.json
+          if-no-files-found: warn
+          retention-days: 30
