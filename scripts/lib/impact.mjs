@@ -1,7 +1,9 @@
 const API = "https://api.impact.com";
 const VERSION = "16";
 const PAGE_SIZE = 100;
-const MAX_RETRIES = 3;
+const MAX_RETRIES = 1;
+const MAX_ENDPOINT_PAGES = Math.min(10,Math.max(1,Number(process.env.IMPACT_MAX_ENDPOINT_PAGES)||3));
+const MAX_DEAL_CAMPAIGNS = Math.min(30,Math.max(1,Number(process.env.IMPACT_MAX_DEAL_CAMPAIGNS)||8));
 const HTTP_TIMEOUT_MS = Math.min(60_000, Math.max(5_000, Number(process.env.SOURCE_HTTP_TIMEOUT_MS) || 12_000));
 
 const list = value => Array.isArray(value) ? value : value == null ? [] : [value];
@@ -32,8 +34,10 @@ function client(accountSid, authToken, fetchImpl) {
   };
   const pages = async (pathname, keys, params = {}) => {
     const rows = [];
-    for (let page = 1; page <= 20; page += 1) {
-      const payload = await request(pathname, { ...params, Page: page, PageSize: PAGE_SIZE });
+    for (let page = 1; page <= MAX_ENDPOINT_PAGES; page += 1) {
+      let payload;
+      try { payload = await request(pathname, { ...params, Page: page, PageSize: PAGE_SIZE }); }
+      catch(error) { if(rows.length)break; throw error; }
       rows.push(...first(payload, keys));
       const total = Number(payload?.["@numpages"] ?? payload?.TotalPages ?? 1);
       if (page >= total) break;
@@ -105,6 +109,7 @@ export async function fetchImpactOffers({ accountSid, authToken, fetchImpl = fet
     if (signal) signal[key] += 1;
   };
   const audit = {apiVersion:VERSION,programs:programs.length,ads:0,promotions:0,deals:0,products:0,catalogs:null,stores:null,errors:{},quarantinedAdvertisers:(policy.quarantinedAdvertisers??[]).length,
+    endpointPageLimit:MAX_ENDPOINT_PAGES,dealCampaignLimit:MAX_DEAL_CAMPAIGNS,
     programInventory:programs.map(program=>({name:program.CampaignName,advertiserName:program.AdvertiserName,advertiserId:program.AdvertiserId,campaignId:program.CampaignId,status:program.ContractStatus,countries:list(program.ShippingRegions?.ShippingRegion??program.ShippingRegions),deeplinks:Boolean(program.AllowsDeeplinking),trackingLinkAvailable:Boolean(program.TrackingLink),logoAvailable:Boolean(program.CampaignLogoUri),publicTermsAvailable:Boolean(program.PublicTermsUri)}))};
   const safePages = async (key, pathname, names, params = {}) => {
     try { return await api.pages(pathname, names, params); }
@@ -123,15 +128,17 @@ export async function fetchImpactOffers({ accountSid, authToken, fetchImpl = fet
       category: "sonstiges", type: "promotion" });
   }
 
+  const eligibleDealPrograms=programs.filter(program=>trackingUrlAllowed(program.TrackingLink,policy,quarantineFor(program,policy)));
+  const rotationStart=eligibleDealPrograms.length ? (Math.floor(Date.now()/21600000)*MAX_DEAL_CAMPAIGNS)%eligibleDealPrograms.length : 0;
+  const dealBatch=[...eligibleDealPrograms.slice(rotationStart),...eligibleDealPrograms.slice(0,rotationStart)].slice(0,MAX_DEAL_CAMPAIGNS);
+  audit.dealBatch={totalEligible:eligibleDealPrograms.length,processed:dealBatch.length,rotationStart};
   const [ads, promotions, products, dealGroups] = await Promise.all([
     safePages("ads", `/Mediapartners/${account}/Ads`, ["Ads"]),
     safePages("promotions", `/Mediapartners/${account}/Promotions`, ["Promotions"]),
     safePages("products", `/Mediapartners/${account}/Catalogs/ItemSearch`, ["Items", "CatalogItems", "Records"]),
-    Promise.all(programs.map(async program => ({
+    Promise.all(dealBatch.map(async program => ({
       program,
-      deals: trackingUrlAllowed(program.TrackingLink, policy, quarantineFor(program, policy))
-        ? await safePages(`deals:${program.CampaignId}`, `/Mediapartners/${account}/Campaigns/${encodeURIComponent(program.CampaignId)}/Deals`, ["Deals"], { State: "ACTIVE" })
-        : []
+      deals: await safePages(`deals:${program.CampaignId}`, `/Mediapartners/${account}/Campaigns/${encodeURIComponent(program.CampaignId)}/Deals`, ["Deals"], { State: "ACTIVE" })
     })))
   ]);
 
