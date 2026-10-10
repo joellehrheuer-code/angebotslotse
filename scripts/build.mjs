@@ -331,7 +331,9 @@ const homeTechUnique=takeUniqueHomepage(homepageTech,10);
 const homeEverydayUnique=takeUniqueHomepage(homepageEveryday,10);
 const homeCouponsUnique=takeUniqueHomepage(diversifyOffers(coupons,{limit:10,maxPerBrand:2,maxPerMerchant:2,maxPerCategory:3}),10);
 const heroCandidates=[homepage.dailyDeal,...homepage.dailyHighlights,...homepage.newest].filter(Boolean);
-const heroItems=[...new Map(heroCandidates.map(item=>[item.id,item])).values()].slice(0,3);
+const isHeroProduct=item=>Boolean(item?.imageUrl && hasPrice(item) && !/\\b(?:4g[- ]service|shipping protection|package protection)\\b/i.test(item.title||""));
+const heroProductPool=[...heroCandidates.filter(isHeroProduct),...offers.filter(isHeroProduct).sort((a,b)=>qualityScore(b)-qualityScore(a))];
+const heroItems=[...new Map(heroProductPool.map(item=>[item.id,item])).values()].slice(0,3);
 const heroCopy=[
   ["Gute Angebote. Klar eingeordnet.","Echte Produktdaten, offizielle Medien und nachvollziehbare Preise – ohne erfundene Rabatte."],
   ["Dein nächster guter Kauf.","Entdecke aktuelle Produkte mit großen Bildern und dem direkten Weg zum Anbieter."],
