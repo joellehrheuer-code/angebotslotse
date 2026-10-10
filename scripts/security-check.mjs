@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
+import {detectHighRiskCredential,isPotentiallySensitivePublicFilename} from "./lib/secret-patterns.mjs";
 
 const secrets = [
   process.env.AWIN_API_TOKEN,
@@ -20,7 +21,13 @@ function walk(dir) {
     else {
       const content=fs.readFileSync(p);
       if(secrets.some(secret => content.includes(Buffer.from(secret)))) errors.push(`Secretwert gefunden: ${p}`);
-      if((p.startsWith(`dist${path.sep}`)||p.startsWith(`public${path.sep}`)) && forbiddenPublicNames.test(content.toString("utf8"))) errors.push(`Secretname im öffentlichen Build: ${p}`);
+      const publiclyReachable=p.startsWith(`dist${path.sep}`)||p.startsWith(`public${path.sep}`);
+      if(publiclyReachable) {
+        const visible=content.toString("utf8");
+        if(forbiddenPublicNames.test(visible)) errors.push(`Secretname im öffentlichen Build: ${p}`);
+        for(const type of detectHighRiskCredential(visible)) errors.push(`Öffentliches ${type}-Geheimnis gefunden: ${p}`);
+        if(isPotentiallySensitivePublicFilename(p)) errors.push(`Geheime Dateiendung im öffentlichen Build: ${p}`);
+      }
     }
   }
 }
