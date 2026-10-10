@@ -20,6 +20,8 @@ test("startpage shows swipeable top deals, creator videos and Instant Gaming bef
   assert.equal(home.split("${creatorVideoModule}").length-1,1);
   assert.equal(home.split("${instantGamingModule}").length-1,1);
   assert.match(css(),/#aktuelle-deals \.deal-rail\{/);
+  assert.match(b, /\["Alle Angebote","\/suche\.html"\]/);
+  assert.match(b, /homeMixedUnique,12,"\/suche\.html"\)/);
   assert.match(css(),/scroll-snap-type:x mandatory/);
 });
 test("review state never pretends unapproved submissions have public star ratings",()=>{
@@ -52,4 +54,11 @@ test("gaming partner area is embedded in the site, not only an outbound button",
   assert.match(b,/data-ig-banner-load/);
   assert.match(app,/instantGamingLoad\?\.addEventListener\("click"/);
   assert.match(app,/host\.querySelector\("\[data-ig-placeholder\]"\)\?\.remove\(\)/);
+});
+
+test("creator video and book-preview arrows use the same scrolling controls as offer rails",()=>{
+  const a=js();
+  assert.match(a,/slider\.closest\("\.deal-section, \.creator-videos, \.book-preview"\)/);
+  assert.match(a,/\[data-slider-prev\]/);
+  assert.match(a,/\[data-slider-next\]/);
 });
