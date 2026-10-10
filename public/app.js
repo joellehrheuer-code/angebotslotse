@@ -402,21 +402,25 @@ document.querySelectorAll("[data-media]").forEach(image=>{
   const done=()=>wrap?.classList.add("loaded");
   const fallback=()=>{
     const src=image.dataset.fallbackSrc;
-    if(src && image.src!==src){
+    const target=src?new URL(src,document.baseURI).href:"";
+    if(target && image.src!==target){
       image.dataset.fallbackUsed="true";
-      image.src=src;
       image.removeAttribute("referrerpolicy");
       wrap?.classList.add("media-fallback");
+      image.src=target;
       return;
     }
-    done();
+    wrap?.classList.add("media-fallback","loaded");
+    const note=document.createElement("span");
+    note.className="soft-media-fallback";
+    note.setAttribute("role","img");
+    note.setAttribute("aria-label","Kein Original-Produktfoto verfügbar");
+    note.textContent="Produktbild beim Händler ansehen";
+    image.replaceWith(note);
   };
-  if(image.complete){
-    if(image.naturalWidth>0)done(); else fallback();
-  }else{
-    image.addEventListener("load",done,{once:true});
-    image.addEventListener("error",fallback,{once:true});
-  }
+  image.addEventListener("load",done);
+  image.addEventListener("error",fallback);
+  if(image.complete){if(image.naturalWidth>0)done();else fallback();}
 });
 
 document.querySelectorAll("[data-history-range]").forEach(button=>button.addEventListener("click",()=>{
@@ -1211,6 +1215,7 @@ updateWatchIndicators();
     thumbs.forEach(button=>button.addEventListener("click",()=>{
       const src=button.dataset.gallerySrc;
       if(!src)return;
+      main.closest(".has-media")?.classList.remove("media-fallback");
       main.src=src;
       thumbs.forEach(other=>{other.classList.toggle("active",other===button);other.setAttribute("aria-pressed",String(other===button));});
     }));
