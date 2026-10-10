@@ -1,20 +1,194 @@
 {
-  "generatedAt": "2026-10-09T23:59:36.659Z",
-  "status": "error",
-  "joinedPrograms": 0,
+  "generatedAt": "2026-10-10T00:09:22.780Z",
+  "status": "ok",
+  "joinedPrograms": 6,
   "automation": {
     "joinedProgramScoring": "automatic",
     "marketplaceGapDetection": "automatic",
     "contactDrafts": "automatic",
     "marketplaceSubmission": "human-review-required"
   },
-  "programs": [],
+  "programs": [
+    {
+      "brand": "Martinic - martinic",
+      "campaign": "Martinic Audio",
+      "advertiserId": "255547",
+      "campaignId": "4482",
+      "category": "Audio & Creator",
+      "score": 39,
+      "priority": "mittel",
+      "assets": {
+        "products": 0,
+        "promotions": 0,
+        "deals": 1,
+        "ads": 0
+      },
+      "capabilities": {
+        "deeplinks": true,
+        "trackingLink": true,
+        "publicTerms": true,
+        "logo": true
+      },
+      "reasons": [
+        "passt zu Audio & Creator",
+        "1 aktiver Deal",
+        "Deeplinks erlaubt",
+        "Trackinglink verfügbar",
+        "öffentliche Programmbedingungen"
+      ],
+      "nextAction": "Aktuelle Aktionen und Codes prominent einbinden; Produktfeed beim Brand-Team erfragen.",
+      "contactDraft": "Hallo Martinic - martinic-Team, Angebotslotse ist ein deutsches Deal-, Preisvergleichs- und Discovery-Portal. Wir sind über impact.com bereits mit eurem Programm verbunden und möchten die Zusammenarbeit im Bereich Weitere stärker ausbauen. Besonders interessant sind für uns aktuelle Produktkataloge, zeitlich begrenzte Aktionen, Gutscheincodes und offizielle Medien, die wir transparent und mit korrekter Werbekennzeichnung darstellen können. Wenn für Publisher zusätzliche Feeds, Creatives oder aktuelle Kampagnen verfügbar sind, freuen wir uns über einen Hinweis direkt über impact.com."
+    },
+    {
+      "brand": "GearUP Portal Pte Ltd",
+      "campaign": "GearUP for Mobile",
+      "advertiserId": "6117213",
+      "campaignId": "53368",
+      "category": "Technik & Computer",
+      "score": 34,
+      "priority": "mittel",
+      "assets": {
+        "products": 0,
+        "promotions": 0,
+        "deals": 0,
+        "ads": 0
+      },
+      "capabilities": {
+        "deeplinks": true,
+        "trackingLink": true,
+        "publicTerms": true,
+        "logo": true
+      },
+      "reasons": [
+        "passt zu Technik & Computer",
+        "Deeplinks erlaubt",
+        "Trackinglink verfügbar",
+        "öffentliche Programmbedingungen"
+      ],
+      "nextAction": "Über impact.com nach Produktfeed, Promotions, Codes und Publisher-Creatives fragen.",
+      "contactDraft": "Hallo GearUP Portal Pte Ltd-Team, Angebotslotse ist ein deutsches Deal-, Preisvergleichs- und Discovery-Portal. Wir sind über impact.com bereits mit eurem Programm verbunden und möchten die Zusammenarbeit im Bereich Weitere stärker ausbauen. Besonders interessant sind für uns aktuelle Produktkataloge, zeitlich begrenzte Aktionen, Gutscheincodes und offizielle Medien, die wir transparent und mit korrekter Werbekennzeichnung darstellen können. Wenn für Publisher zusätzliche Feeds, Creatives oder aktuelle Kampagnen verfügbar sind, freuen wir uns über einen Hinweis direkt über impact.com."
+    },
+    {
+      "brand": "Belkin",
+      "campaign": "Belkin DE",
+      "advertiserId": "165682",
+      "campaignId": "3770",
+      "category": "Weitere",
+      "score": 26,
+      "priority": "niedrig",
+      "assets": {
+        "products": 0,
+        "promotions": 0,
+        "deals": 1,
+        "ads": 1
+      },
+      "capabilities": {
+        "deeplinks": true,
+        "trackingLink": true,
+        "publicTerms": true,
+        "logo": true
+      },
+      "reasons": [
+        "1 aktiver Deal",
+        "1 Creative",
+        "Deeplinks erlaubt",
+        "Trackinglink verfügbar",
+        "öffentliche Programmbedingungen"
+      ],
+      "nextAction": "Aktuelle Aktionen und Codes prominent einbinden; Produktfeed beim Brand-Team erfragen.",
+      "contactDraft": "Hallo Belkin-Team, Angebotslotse ist ein deutsches Deal-, Preisvergleichs- und Discovery-Portal. Wir sind über impact.com bereits mit eurem Programm verbunden und möchten die Zusammenarbeit im Bereich Weitere stärker ausbauen. Besonders interessant sind für uns aktuelle Produktkataloge, zeitlich begrenzte Aktionen, Gutscheincodes und offizielle Medien, die wir transparent und mit korrekter Werbekennzeichnung darstellen können. Wenn für Publisher zusätzliche Feeds, Creatives oder aktuelle Kampagnen verfügbar sind, freuen wir uns über einen Hinweis direkt über impact.com."
+    },
+    {
+      "brand": "GearUP Portal Pte Ltd",
+      "campaign": "GearUP",
+      "advertiserId": "6117213",
+      "campaignId": "40222",
+      "category": "Weitere",
+      "score": 19,
+      "priority": "niedrig",
+      "assets": {
+        "products": 0,
+        "promotions": 0,
+        "deals": 0,
+        "ads": 0
+      },
+      "capabilities": {
+        "deeplinks": true,
+        "trackingLink": true,
+        "publicTerms": true,
+        "logo": true
+      },
+      "reasons": [
+        "Deeplinks erlaubt",
+        "Trackinglink verfügbar",
+        "öffentliche Programmbedingungen"
+      ],
+      "nextAction": "Über impact.com nach Produktfeed, Promotions, Codes und Publisher-Creatives fragen.",
+      "contactDraft": "Hallo GearUP Portal Pte Ltd-Team, Angebotslotse ist ein deutsches Deal-, Preisvergleichs- und Discovery-Portal. Wir sind über impact.com bereits mit eurem Programm verbunden und möchten die Zusammenarbeit im Bereich Weitere stärker ausbauen. Besonders interessant sind für uns aktuelle Produktkataloge, zeitlich begrenzte Aktionen, Gutscheincodes und offizielle Medien, die wir transparent und mit korrekter Werbekennzeichnung darstellen können. Wenn für Publisher zusätzliche Feeds, Creatives oder aktuelle Kampagnen verfügbar sind, freuen wir uns über einen Hinweis direkt über impact.com."
+    },
+    {
+      "brand": "ProtoArc",
+      "campaign": "ProtoArc",
+      "advertiserId": "7605257",
+      "campaignId": "56905",
+      "category": "Weitere",
+      "score": 19,
+      "priority": "niedrig",
+      "assets": {
+        "products": 0,
+        "promotions": 0,
+        "deals": 0,
+        "ads": 0
+      },
+      "capabilities": {
+        "deeplinks": true,
+        "trackingLink": true,
+        "publicTerms": true,
+        "logo": true
+      },
+      "reasons": [
+        "Deeplinks erlaubt",
+        "Trackinglink verfügbar",
+        "öffentliche Programmbedingungen"
+      ],
+      "nextAction": "Über impact.com nach Produktfeed, Promotions, Codes und Publisher-Creatives fragen.",
+      "contactDraft": "Hallo ProtoArc-Team, Angebotslotse ist ein deutsches Deal-, Preisvergleichs- und Discovery-Portal. Wir sind über impact.com bereits mit eurem Programm verbunden und möchten die Zusammenarbeit im Bereich Weitere stärker ausbauen. Besonders interessant sind für uns aktuelle Produktkataloge, zeitlich begrenzte Aktionen, Gutscheincodes und offizielle Medien, die wir transparent und mit korrekter Werbekennzeichnung darstellen können. Wenn für Publisher zusätzliche Feeds, Creatives oder aktuelle Kampagnen verfügbar sind, freuen wir uns über einen Hinweis direkt über impact.com."
+    },
+    {
+      "brand": "Razer (Asia Pacific) Pte Ltd",
+      "campaign": "Razer Affiliate Program",
+      "advertiserId": "1723018",
+      "campaignId": "10229",
+      "category": "Weitere",
+      "score": 19,
+      "priority": "niedrig",
+      "assets": {
+        "products": 0,
+        "promotions": 0,
+        "deals": 0,
+        "ads": 0
+      },
+      "capabilities": {
+        "deeplinks": true,
+        "trackingLink": true,
+        "publicTerms": true,
+        "logo": true
+      },
+      "reasons": [
+        "Deeplinks erlaubt",
+        "Trackinglink verfügbar",
+        "öffentliche Programmbedingungen"
+      ],
+      "nextAction": "Über impact.com nach Produktfeed, Promotions, Codes und Publisher-Creatives fragen.",
+      "contactDraft": "Hallo Razer (Asia Pacific) Pte Ltd-Team, Angebotslotse ist ein deutsches Deal-, Preisvergleichs- und Discovery-Portal. Wir sind über impact.com bereits mit eurem Programm verbunden und möchten die Zusammenarbeit im Bereich Weitere stärker ausbauen. Besonders interessant sind für uns aktuelle Produktkataloge, zeitlich begrenzte Aktionen, Gutscheincodes und offizielle Medien, die wir transparent und mit korrekter Werbekennzeichnung darstellen können. Wenn für Publisher zusätzliche Feeds, Creatives oder aktuelle Kampagnen verfügbar sind, freuen wir uns über einen Hinweis direkt über impact.com."
+    }
+  ],
   "marketplaceSearches": [
     {
       "category": "Audio & Creator",
       "siteOffers": 88,
-      "joinedPrograms": 0,
-      "gapScore": 88,
+      "joinedPrograms": 1,
+      "gapScore": 78,
       "searchTerms": [
         "audio",
         "music",
@@ -39,20 +213,6 @@
       "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
     },
     {
-      "category": "Technik & Computer",
-      "siteOffers": 53,
-      "joinedPrograms": 0,
-      "gapScore": 53,
-      "searchTerms": [
-        "electronics",
-        "computer",
-        "hardware",
-        "mobile",
-        "smart home"
-      ],
-      "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
-    },
-    {
       "category": "Haushalt & Küche",
       "siteOffers": 52,
       "joinedPrograms": 0,
@@ -62,6 +222,20 @@
         "appliances",
         "kitchen",
         "vacuum"
+      ],
+      "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
+    },
+    {
+      "category": "Technik & Computer",
+      "siteOffers": 53,
+      "joinedPrograms": 1,
+      "gapScore": 43,
+      "searchTerms": [
+        "electronics",
+        "computer",
+        "hardware",
+        "mobile",
+        "smart home"
       ],
       "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
     },
