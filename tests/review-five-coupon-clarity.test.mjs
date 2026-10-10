@@ -10,5 +10,8 @@ test("die Community zeigt bis zu fünf echte freigegebene Bewertungen", () => {
 });
 test("Gutscheincode wird als Händler-Rabattcode erklärt", () => {
   const build=readFileSync("scripts/build.mjs","utf8");
-  assert.ok(build.includes('Rabattcode: <code>${esc(o.voucherCode)}</code> <small>(beim Händler eingeben)</small>'));
+  assert.match(build,/const hasDisplayVoucher=o=>/);
+  assert.match(build,/Rabattcode für den Händler/);
+  assert.match(build,/data-copy-voucher/);
+  assert.match(build,/Die Ziffern im Code sind kein garantierter Rabatt/);
 });
