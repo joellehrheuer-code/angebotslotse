@@ -18,7 +18,8 @@ test("V19 zeigt nur echte Community-Daten und moderierte Bewertungen", () => {
   assert.match(build,/app\.js\?v=\d+/);
   assert.doesNotMatch(build,/\b4[.,]9\b[^\n]*Bewertung/);
 
-  assert.match(app,/sessionStorage\.getItem\("angebotslotse-community-visit-v1"\)/);
+  assert.doesNotMatch(app,/sessionStorage\.getItem\("angebotslotse-community-visit-v1"\)/);
+  assert.match(app,/kind:"visit", source:"website-pageview"/);
   assert.match(app,/kind:"visit"/);
   assert.match(app,/kind:"review"/);
   assert.match(app,/erscheint nach kurzer Prüfung/);

@@ -11,7 +11,7 @@ test("V28 platziert Suche sowie echte Besucher und Bewertungen prominent", () =>
   assert.match(build,/Was möchtest du finden\? Produkt, Marke oder Shop/);
   assert.doesNotMatch(build,/hero-search-form smart-search-form/);
 
-  assert.match(build,/So viele Menschen waren schon hier\./);
+  assert.match(build,/So häufig wurde Angebotslotse schon aufgerufen\./);
   assert.match(build,/community-stat-card visits/);
   assert.match(build,/community-stat-card rating/);
   assert.match(build,/data-community-review-list/);

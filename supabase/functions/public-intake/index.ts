@@ -130,7 +130,8 @@ async function rateLimit(req: Request, kind: string, origin: string) {
   const key = await sha256(`${kind}|${bucket}|${forwarded}|${ua}`);
   const now = new Date().toISOString();
   const { data } = await admin.from("site_intake_rate").select("request_count,window_start").eq("key", key).maybeSingle();
-  const limit = kind === "visit" ? 2 : kind === "review" ? 3 : kind === "report" ? 8 : kind === "partner" ? 3 : 5;
+  // Page views include repeat reloads; keep a bounded anti-abuse cap per anonymous request bucket.
+  const limit = kind === "visit" ? 60 : kind === "review" ? 3 : kind === "report" ? 8 : kind === "partner" ? 3 : 5;
   if (data && Number(data.request_count) >= limit) {
     return json({ ok: false, error: "rate_limited" }, 429, origin);
   }

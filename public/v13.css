@@ -5799,3 +5799,19 @@ html[data-theme="black"] .live-pageview-counter{color:#d1d9e6!important}
 .community-review-form-copy p{font-size:clamp(12px,1vw,14px)!important;line-height:1.6!important}
 .community-comment-field textarea{min-height:125px!important}
 @media(max-width:560px){.live-pageview-counter{font-size:10px!important;gap:4px!important}.live-pageview-counter b{font-size:11px!important}}
+
+/* V32: low-pressure, fully voluntary UX tester invitation */
+.volunteer-tester-section{display:grid!important;grid-template-columns:minmax(0,1.4fr) minmax(250px,1fr)!important;gap:22px!important;align-items:center!important;margin:22px 0!important;padding:24px!important;border:1px solid #30394a!important;border-radius:22px!important;background:#111723!important;color:#eef2f9!important}
+.volunteer-tester-copy h2{font-size:clamp(23px,2.3vw,32px)!important;line-height:1.2!important;max-width:22ch!important;margin:8px 0!important;color:#f6f7fc!important}
+.volunteer-tester-copy p,.volunteer-tester-tasks p{font-size:13px!important;line-height:1.65!important;color:#c0cadd!important;max-width:68ch!important}
+.volunteer-tester-actions{display:flex!important;gap:10px!important;flex-wrap:wrap!important;margin-top:15px!important}
+.volunteer-tester-tasks{border:1px solid #364156!important;border-radius:14px!important;padding:16px!important;min-width:0!important}
+.volunteer-tester-tasks summary{cursor:pointer!important;font-weight:850!important;color:#f9d0e8!important}
+.volunteer-tester-tasks li{margin:9px 0!important;line-height:1.5!important;font-size:13px!important}
+html[data-theme="light"] .volunteer-tester-section{background:#f5f6fa!important;border-color:#ccd4e0!important;color:#192439!important}
+html[data-theme="light"] .volunteer-tester-copy h2{color:#192439!important}
+html[data-theme="light"] .volunteer-tester-copy p,html[data-theme="light"] .volunteer-tester-tasks p{color:#435168!important}
+html[data-theme="light"] .volunteer-tester-tasks{border-color:#c8d1de!important}
+html[data-theme="light"] .volunteer-tester-tasks summary{color:#89235f!important}
+html[data-theme="black"] .volunteer-tester-section{background:#080b10!important;border-color:#293343!important}
+@media(max-width:800px){.volunteer-tester-section{grid-template-columns:minmax(0,1fr)!important;padding:18px!important}}
