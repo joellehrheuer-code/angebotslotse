@@ -132,10 +132,11 @@ export async function fetchImpactOffers({ accountSid, authToken, fetchImpl = fet
   const rotationStart=eligibleDealPrograms.length ? (Math.floor(Date.now()/21600000)*MAX_DEAL_CAMPAIGNS)%eligibleDealPrograms.length : 0;
   const dealBatch=[...eligibleDealPrograms.slice(rotationStart),...eligibleDealPrograms.slice(0,rotationStart)].slice(0,MAX_DEAL_CAMPAIGNS);
   audit.dealBatch={totalEligible:eligibleDealPrograms.length,processed:dealBatch.length,rotationStart};
-  const [ads, promotions, products, dealGroups] = await Promise.all([
+  const [ads, promotions, products, catalogs, dealGroups] = await Promise.all([
     safePages("ads", `/Mediapartners/${account}/Ads`, ["Ads"]),
     safePages("promotions", `/Mediapartners/${account}/Promotions`, ["Promotions"]),
     safePages("products", `/Mediapartners/${account}/Catalogs/ItemSearch`, ["Items", "CatalogItems", "Records"]),
+    safePages("catalogs", `/Mediapartners/${account}/Catalogs`, ["Catalogs"]),
     Promise.all(dealBatch.map(async program => ({
       program,
       deals: await safePages(`deals:${program.CampaignId}`, `/Mediapartners/${account}/Campaigns/${encodeURIComponent(program.CampaignId)}/Deals`, ["Deals"], { State: "ACTIVE" })
@@ -181,14 +182,24 @@ export async function fetchImpactOffers({ accountSid, authToken, fetchImpl = fet
     }
   }
 
+  audit.catalogs=catalogs.length;
+  // The ItemSearch API may identify items solely by CatalogId rather than by
+  // advertiser/campaign. Resolve only catalogs owned by actually joined campaigns.
+  const programsByCatalog=new Map(catalogs
+    .filter(catalog=>!catalog.Status || String(catalog.Status).toUpperCase()==="ACTIVE")
+    .map(catalog=>[String(catalog.Id ?? catalog.CatalogId),
+      byCampaign.get(String(catalog.CampaignId)) || byAdvertiser.get(String(catalog.AdvertiserId))])
+    .filter(([id,program])=>id!=="undefined" && Boolean(program)));
   audit.products=products.length;
   audit.productDiagnostics={
     fields:products[0]&&typeof products[0]==="object"?Object.keys(products[0]).slice(0,35):[],
-    missingApprovedProgram:0,missingTrackingLink:0,missingName:0,outOfStock:0,accepted:0
+    missingApprovedProgram:0,matchedViaCatalog:0,missingTrackingLink:0,missingName:0,outOfStock:0,accepted:0
   };
   for (const product of products) {
-    const program = byCampaign.get(String(product.CampaignId)) ||
+    const directProgram=byCampaign.get(String(product.CampaignId)) ||
       byAdvertiser.get(String(product.AdvertiserId ?? product.AdvertiserID));
+    const program=directProgram || programsByCatalog.get(String(product.CatalogId));
+    if(program && !directProgram)audit.productDiagnostics.matchedViaCatalog+=1;
     const trackingUrl = product.TrackingLink || product.TrackingURL || product.UrlTracking;
     if(!program){audit.productDiagnostics.missingApprovedProgram+=1;continue;}
     if(!trackingUrlAllowed(trackingUrl,policy,quarantineFor(program,policy))){audit.productDiagnostics.missingTrackingLink+=1;continue;}
@@ -210,7 +221,7 @@ export async function fetchImpactOffers({ accountSid, authToken, fetchImpl = fet
       productId: product.Gtin ?? product.GTIN ?? product.Ean ?? product.EAN ?? product.Mpn ?? product.CatalogItemId });
   }
 
-  for(const [key,pathname,names] of [["catalogs",`/Mediapartners/${account}/Catalogs`,["Catalogs"]],["stores",`/Mediapartners/${account}/Stores`,["Stores"]]]){
+  for(const [key,pathname,names] of [["stores",`/Mediapartners/${account}/Stores`,["Stores"]]]){
     try{audit[key]=(await api.pages(pathname,names)).length;}catch{audit[key]="unavailable";}
   }
   audit.programSignals=[...programSignals.values()].sort((a,b)=>(b.products+b.promotions+b.deals+b.ads)-(a.products+a.promotions+a.deals+a.ads)||String(a.name).localeCompare(String(b.name),"de"));
