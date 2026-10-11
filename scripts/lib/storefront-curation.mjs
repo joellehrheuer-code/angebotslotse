@@ -16,7 +16,9 @@ export const polishOfferTitle=title=>{
 export const isSpotlightProduct=offer=>{
   const title=String(offer?.title||"");
   const price=Number(offer?.currentPrice);
-  if(!offer||offer.type==="promotion"||offer.voucherCode||
+  // Awin normalizes even real products to type="promotion". The product ID,
+  // image, price and authorized tracking link prove this is a real product.
+  if(!offer||!offer.productId||offer.voucherCode||
     !offer.imageUrl||!offer.trackingUrl||!Number.isFinite(price)||
     price<49||price>3000)return false;
   if(["zubehoer","sonstiges"].includes(String(offer.category||"")))return false;
