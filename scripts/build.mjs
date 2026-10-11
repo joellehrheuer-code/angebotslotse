@@ -359,7 +359,7 @@ const takeUniqueHomepage=(items,limit,minItems=Math.min(4,limit))=>{
   }
   return selected;
 };
-const homeMixedUnique=takeUniqueHomepage(homepageMixed,12);
+const homeMixedUnique=takeUniqueHomepage(spotlightProducts,12,0);
 const homeNewestUnique=takeUniqueHomepage(homepageNewest,10);
 const homeTopDiscountsUnique=takeUniqueHomepage(homepageTopDiscounts,10);
 const homeTechUnique=takeUniqueHomepage(homepageTech,10);
