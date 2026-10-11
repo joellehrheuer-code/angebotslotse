@@ -948,11 +948,13 @@ updateWatchIndicators();
   const renderCommunitySnapshot = data => {
     const visits = Math.max(0, Number(data?.visits || 0));
     const reviewCount = Math.max(0, Number(data?.reviewCount || 0));
+    const pendingCount = Math.max(0, Number(data?.pendingReviewCount || 0));
     const rating = Number(data?.ratingAverage);
     const number = new Intl.NumberFormat("de-DE");
 
     document.querySelectorAll("[data-community-visits]").forEach(node => { node.textContent = number.format(visits); });
     document.querySelectorAll("[data-community-review-count]").forEach(node => { node.textContent = number.format(reviewCount); });
+    document.querySelectorAll("[data-community-pending]").forEach(node => { node.hidden = pendingCount === 0; node.textContent = pendingCount > 0 ? "· " + number.format(pendingCount) + " eingegangene " + (pendingCount === 1 ? "Bewertung wartet" : "Bewertungen warten") + " auf Prüfung" : ""; });
     document.querySelectorAll("[data-community-rating]").forEach(node => {
       node.textContent = reviewCount > 0 && Number.isFinite(rating) ? rating.toLocaleString("de-DE",{minimumFractionDigits:1,maximumFractionDigits:1}) : "Noch keine Freigabe";
       node.closest(".community-rating-summary")?.classList.toggle("has-rating",reviewCount>0);
