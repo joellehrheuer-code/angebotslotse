@@ -41,12 +41,30 @@ export function selectSpotlightProducts(offers,limit=12){
   if(!Number.isInteger(limit)||limit<=0)return[];
   const ranked=offers.filter(isSpotlightProduct).sort((a,b)=>
     score(b)-score(a)||String(a.id||a.slug).localeCompare(String(b.id||b.slug),"de"));
-  const selected=[],ids=new Set(),merchants=new Set(),categories=new Set();
-  const key=offer=>String(offer.id||offer.slug||offer.title);
-  const take=offer=>{const k=key(offer);if(ids.has(k))return;selected.push(offer);ids.add(k);merchants.add(offer.advertiser);categories.add(offer.category);};
-  // The hero should represent different merchants before repeating the same brand.
-  for(const offer of ranked){if(selected.length>=limit)break;if(!merchants.has(offer.advertiser))take(offer);}
-  for(const offer of ranked){if(selected.length>=limit)break;if(!categories.has(offer.category))take(offer);}
-  for(const offer of ranked){if(selected.length>=limit)break;take(offer);}
+  const selected=[];
+  const queues=new Map();
+  for(const offer of ranked){
+    const merchant=String(offer.advertiser||"Unbekannter Händler");
+    if(!queues.has(merchant))queues.set(merchant,[]);
+    queues.get(merchant).push(offer);
+  }
+  const merchantPools=[...queues.values()];
+  const seen=new Set();
+  // Round-robin keeps the first carousel tiles useful and prevents one joined
+  // Awin retailer from taking over the page when its feed is very large.
+  for(let index=0;selected.length<limit;index++){
+    let available=false;
+    for(const pool of merchantPools){
+      const offer=pool[index];
+      if(!offer)continue;
+      available=true;
+      const id=String(offer.id||offer.slug||offer.title);
+      if(seen.has(id))continue;
+      seen.add(id);
+      selected.push(offer);
+      if(selected.length>=limit)break;
+    }
+    if(!available)break;
+  }
   return selected;
 }
