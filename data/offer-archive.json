@@ -1,6 +1,38 @@
 {
-  "updatedAt": "2026-10-11T20:17:32.751Z",
+  "updatedAt": "2026-10-11T23:43:24.061Z",
   "items": [
+    {
+      "id": "e983835a0f9d79e0",
+      "slug": "hunderte-shirts-fur-14-99-e983835a",
+      "title": "Hunderte Shirts für 14,99€!",
+      "advertiser": "EMP DE",
+      "source": "awin",
+      "productId": null,
+      "category": "sonstiges",
+      "lastPrice": null,
+      "currency": "EUR",
+      "firstSeen": "2026-09-15T10:05:22.000Z",
+      "lastSeen": "2026-10-11T20:17:32.546Z",
+      "endDate": "2026-10-11T21:59:00.000Z",
+      "archivedAt": "2026-10-11T23:43:24.061Z",
+      "reason": "expired"
+    },
+    {
+      "id": "279146763c81ca05",
+      "slug": "hunderte-emp-shirts-fur-14-99-27914676",
+      "title": "Hunderte EMP Shirts für 14,99 €",
+      "advertiser": "EMP DE",
+      "source": "direct",
+      "productId": null,
+      "category": "mode",
+      "lastPrice": 14.99,
+      "currency": "EUR",
+      "firstSeen": "2026-10-08T19:50:44.048Z",
+      "lastSeen": "2026-10-11T20:17:32.546Z",
+      "endDate": "2026-10-11T21:59:59.000Z",
+      "archivedAt": "2026-10-11T23:43:24.061Z",
+      "reason": "expired"
+    },
     {
       "id": "bda0425daa7051b1",
       "slug": "mittwoch-geht-doch-22-rabatt-fur-dich-nur-heute-bda0425d",

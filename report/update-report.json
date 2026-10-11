@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-11T20:17:32.832Z",
-  "newAwinPrograms": 1,
+  "generatedAt": "2026-10-11T23:43:24.130Z",
+  "newAwinPrograms": 0,
   "newImpactPrograms": 0,
   "newDaisyconPrograms": 0,
   "newWebgainsPrograms": 0,
@@ -22,12 +22,12 @@
   "newCoupons": 0,
   "coupons": 3,
   "priceChanges": 0,
-  "expiredOffers": 0,
+  "expiredOffers": 2,
   "expiredCoupons": 0,
   "filteredForeignLocale": 0,
-  "totalProducts": 252,
+  "totalProducts": 251,
   "productsBySource": {
-    "Awin": 252
+    "Awin": 251
   },
   "officialImagesBySource": {
     "Awin": 245
@@ -37,7 +37,7 @@
     "Hollyland DE": 136,
     "ANTHBOT DE": 56,
     "Outin Germany": 54,
-    "EMP DE": 4,
+    "EMP DE": 3,
     "Imou DE": 1,
     "PDF Agile": 1
   },
@@ -47,7 +47,7 @@
     "garten": 50,
     "zubehoer": 49,
     "computer": 4,
-    "sonstiges": 4,
+    "sonstiges": 3,
     "werkzeug": 3,
     "freizeit": 1,
     "smart-home": 1

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-11T20:17:32.853Z",
+  "generatedAt": "2026-10-11T23:43:24.146Z",
   "market": "DE",
   "publisherId": 3045061,
   "awin": {
@@ -3460,10 +3460,10 @@
     "reason": "Webgains Memberships und Terms werden automatisch gelesen; accept_terms=true wird nur nach ausdrücklicher menschlicher Bestätigung des geprüften Terms-Stands verwendet."
   },
   "publication": {
-    "offers": 252,
+    "offers": 251,
     "concreteAwaitingMedia": 0,
     "blockedPublisherPromotions": 4,
-    "partnerEntries": 220,
+    "partnerEntries": 219,
     "merchants": 6,
     "products": 245,
     "images": 245,
