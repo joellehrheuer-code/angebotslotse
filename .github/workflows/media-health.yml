@@ -1,6 +1,11 @@
 name: Offizielle Produktbilder prüfen
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/media-health.yml"
+      - "scripts/media-health.mjs"
   schedule:
     - cron: "37 8 * * *"
   workflow_dispatch:
