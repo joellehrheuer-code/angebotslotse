@@ -80,7 +80,7 @@ const isQuarantined = offer => (linkPolicy.quarantinedAdvertisers ?? []).some(ru
 const now = new Date();
 const offers = storedOffers
   .filter(o => !isQuarantined(o) && !isBlockedAdultOffer(o) && !isBlockedNonMerchandiseOffer(o) && !isSuppressedAdvertiserOffer(o, config) && isMarketCompatibleTitle(o.title, config.marketCountry) && (!o.endDate || new Date(o.endDate) > now) && isPublicationReady(o))
-  .map(o => ({...o,category:refineOfferCategory(o,config),title:polishOfferTitle(o.title)}))
+  .map(o => ({...o,category:refineOfferCategory(o,config),title:polishOfferTitle(o.title),imageAlt:o.imageAlt?polishOfferTitle(o.imageAlt):o.imageAlt}))
   .map(o => Number.isFinite(o.currentPrice) && o.currentPrice > 0 ? o : {...o,currentPrice:null,previousPrice:null});
 const hasPrice = o => Number.isFinite(o.currentPrice) && o.currentPrice > 0;
 const isDeal = o => Boolean(o.endDate || o.voucherCode || (hasPrice(o) && o.previousPrice > o.currentPrice) || o.source !== "direct");
