@@ -6,6 +6,7 @@ import { transform } from "esbuild";
 import { historyFor } from "./lib/price-history.mjs";
 import { isPublicationReady, isAwaitingMediaOffer, isPublisherPromotion, refineOfferCategory, isMarketCompatibleTitle, isBlockedAdultOffer, isBlockedNonMerchandiseOffer, isSuppressedAdvertiserOffer } from "./lib/normalize.mjs";
 import { selectHomepageOffers } from "./lib/homepage-selection.mjs";
+import { selectSpotlightProducts, isSpotlightProduct, polishOfferTitle } from "./lib/storefront-curation.mjs";
 import { sanitizeCreatorVideos } from "./lib/creator-videos.mjs";
 import { sanitizeCreatorFeedItems } from "./lib/creator-feed.mjs";
 
@@ -79,7 +80,7 @@ const isQuarantined = offer => (linkPolicy.quarantinedAdvertisers ?? []).some(ru
 const now = new Date();
 const offers = storedOffers
   .filter(o => !isQuarantined(o) && !isBlockedAdultOffer(o) && !isBlockedNonMerchandiseOffer(o) && !isSuppressedAdvertiserOffer(o, config) && isMarketCompatibleTitle(o.title, config.marketCountry) && (!o.endDate || new Date(o.endDate) > now) && isPublicationReady(o))
-  .map(o => ({...o,category:refineOfferCategory(o,config)}))
+  .map(o => ({...o,category:refineOfferCategory(o,config),title:polishOfferTitle(o.title)}))
   .map(o => Number.isFinite(o.currentPrice) && o.currentPrice > 0 ? o : {...o,currentPrice:null,previousPrice:null});
 const hasPrice = o => Number.isFinite(o.currentPrice) && o.currentPrice > 0;
 const isDeal = o => Boolean(o.endDate || o.voucherCode || (hasPrice(o) && o.previousPrice > o.currentPrice) || o.source !== "direct");
@@ -332,9 +333,10 @@ let instantGamingIgr="";
 if(instantGamingPartner){try{instantGamingIgr=new URL(instantGamingPartner.trackingUrl).searchParams.get("igr")||"";}catch{}}
 const instantGamingModule=instantGamingPartner?`<section class="partner-section instant-gaming-module instant-gaming-showcase reveal" id="instant-gaming" aria-labelledby="ig-heading"><div class="instant-gaming-showcase-copy"><span class="eyebrow">GAMING · OFFIZIELLER AFFILIATE-PARTNER</span><h2 id="ig-heading">Spiele-Angebote von Instant Gaming</h2><p>Entdecke den offiziellen Partnerbereich direkt auf Angebotslotse. Nach deiner Zustimmung wird das aktuelle Werbebanner von Instant Gaming hier eingeblendet; Preise und Verfügbarkeit stammen vom Händler.</p><div class="instant-gaming-actions">${instantGamingIgr?`<button class="button primary" type="button" data-ig-banner-load data-igr="${esc(instantGamingIgr)}">▶ Aktuelle Gaming-Angebote hier anzeigen</button>`:""}<a class="button" href="${esc(instantGamingPartner.trackingUrl)}" rel="sponsored noopener" target="_blank">Zum Händler ↗</a></div><p class="instant-gaming-note" data-ig-banner-note role="status">Externe Inhalte werden erst nach Klick geladen. Dabei wird eine Verbindung zu Instant Gaming hergestellt.</p></div><div class="instant-gaming-embed-stage">${instantGamingIgr?`<div class="my-banner" data-ig-banner-host aria-label="Offizieller Instant-Gaming-Partnerbanner"><div class="instant-gaming-embed-placeholder" data-ig-placeholder><span class="instant-gaming-controller" aria-hidden="true">🎮</span><strong>Gaming-Highlights</strong><small>Aktueller Partnerinhalt erscheint hier nach deiner Zustimmung.</small></div></div>`:`<p>Ein direkter Gaming-Partnerbereich ist noch nicht freigegeben.</p>`}</div></section>`:"";
 const updated=status.lastSuccessfulUpdate?new Intl.DateTimeFormat("de-DE",{dateStyle:"medium",timeStyle:"short"}).format(new Date(status.lastSuccessfulUpdate)):"ausstehend";
-const qualityScore=o=>(discount(o)||0)*1000+dropFor(o)*100+(hasPrice(o)?80:0)+(o.endDate?50:0)+(o.voucherCode?30:0)+(o.imageUrl?25:0)+(o.brand?10:0)+(o.gtin||o.ean||o.mpn?10:0);
+const qualityScore=o=>(discount(o)||0)*1000+dropFor(o)*100+(hasPrice(o)?80:0)+(o.endDate?50:0)+(o.voucherCode?30:0)+(o.imageUrl?25:0)+(o.brand?10:0)+(o.gtin||o.ean||o.mpn?10:0)+(isSpotlightProduct(o)?320:0);
 const homepage=selectHomepageOffers(offers,{now,score:qualityScore});
-const homepageMixed=diversifyOffers([...homepage.dailyHighlights,...homepage.newest,...topDiscounts,...priceDrops,...offers],{limit:12,maxPerBrand:1,maxPerMerchant:2,maxPerCategory:3});
+const spotlightProducts=selectSpotlightProducts(offers,18);
+const homepageMixed=diversifyOffers([...spotlightProducts,...homepage.dailyHighlights,...homepage.newest,...topDiscounts,...priceDrops,...offers],{limit:12,maxPerBrand:1,maxPerMerchant:2,maxPerCategory:3});
 const homepageNewest=diversifyOffers(homepage.newest,{limit:10,maxPerBrand:1,maxPerMerchant:2,maxPerCategory:3});
 const homepageTopDiscounts=diversifyOffers(topDiscounts,{limit:10,maxPerBrand:2,maxPerMerchant:2,maxPerCategory:3});
 const homepageTech=diversifyOffers(offers.filter(o=>["gaming","technik","computer","audio-musik","zubehoer","smart-home","homeoffice"].includes(o.category)).sort((a,b)=>qualityScore(b)-qualityScore(a)),{limit:10,maxPerBrand:2,maxPerMerchant:2,maxPerCategory:3});
@@ -366,7 +368,8 @@ const homeCouponsUnique=takeUniqueHomepage(diversifyOffers(coupons,{limit:10,max
 const heroCandidates=[homepage.dailyDeal,...homepage.dailyHighlights,...homepage.newest].filter(Boolean);
 const isHeroProduct=item=>Boolean(item?.imageUrl && hasPrice(item) && !/(?:4g[- ]service|shipping protection|package protection)/i.test(item.title||""));
 const heroProductPool=[...heroCandidates.filter(isHeroProduct),...offers.filter(isHeroProduct).sort((a,b)=>qualityScore(b)-qualityScore(a))];
-const heroItems=[...new Map(heroProductPool.map(item=>[item.id,item])).values()].slice(0,3);
+const heroSpotlight=selectSpotlightProducts(offers,3);
+const heroItems=heroSpotlight.length?heroSpotlight:[...new Map(heroProductPool.map(item=>[item.id,item])).values()].slice(0,3);
 const heroCopy=[
   ["Aktuelle Angebote auf einen Blick.","Echte Produktdaten, offizielle Bilder und nachvollziehbare Preise – ohne erfundene Rabatte."],
   ["Dein nächster guter Kauf.","Entdecke aktuelle Produkte mit großen Bildern und dem direkten Weg zum Anbieter."],
