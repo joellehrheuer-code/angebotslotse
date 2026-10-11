@@ -51,3 +51,22 @@ test("build applies safe polish and selected spotlight to the public homepage",(
   assert.match(b,/spotlightProducts=selectSpotlightProducts\(offers,18\)/);
   assert.match(b,/heroSpotlight=selectSpotlightProducts\(offers,3\)/);
 });
+
+test("real published Awin inventory supplies three full hero products from distinct merchants",()=>{
+  const raw=JSON.parse(fs.readFileSync("data/offers.json","utf8"));
+  const config=JSON.parse(fs.readFileSync("config.json","utf8"));
+  const {quarantinedAdvertisers=[]}=JSON.parse(fs.readFileSync("data/impact-link-policy.json","utf8"));
+  const eligible=raw.filter(o=>{
+    if(o.isStale||!o.imageUrl||!o.trackingUrl||!o.productId)return false;
+    if(o.endDate && new Date(o.endDate)<=new Date())return false;
+    if(quarantinedAdvertisers.some(rule=>
+      String(rule.advertiserId||"")===String(o.advertiserId||"")||
+      String(rule.advertiserName||"").toLowerCase()===String(o.advertiser||"").toLowerCase()))return false;
+    return true;
+  });
+  const curated=selectSpotlightProducts(eligible,3);
+  assert.equal(curated.length,3,"Actual approved Awin feed must contain three complete products for the hero");
+  assert.equal(new Set(curated.map(o=>o.advertiser)).size,3);
+  assert.ok(curated.every(isSpotlightProduct));
+  assert.ok(curated.every(o=>!/(?:geschenkkarte|verlängerungskabel|\bpin\b)/i.test(o.title)));
+});
