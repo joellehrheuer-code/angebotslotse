@@ -392,7 +392,7 @@ const newsletterModule=`<section class="newsletter newsletter-live reveal" id="n
   </div>
   <div class="community-proof-stats">
     <article class="community-stat-card visits"><span>Seitenaufrufe</span><strong data-community-visits>–</strong><small>inklusive wiederholter Besuche · ohne Hochrechnung; zuvor wurde je Sitzung gezählt</small></article>
-    <article class="community-stat-card rating"><span>Community-Bewertung</span><strong class="community-rating-summary"><b data-community-rating>Noch keine Freigabe</b><em data-community-rating-scale hidden>/5</em></strong><small><b data-community-review-count>0</b> freigegebene Bewertungen · Einsendungen werden geprüft</small></article>
+    <article class="community-stat-card rating"><span>Community-Bewertung</span><strong class="community-rating-summary"><b data-community-rating>Noch keine Freigabe</b><em data-community-rating-scale hidden>/5</em></strong><small><b data-community-review-count>0</b> freigegebene Bewertungen <span data-community-pending hidden></span></small></article>
   </div>
   <div class="community-review-list" data-community-review-list aria-live="polite">
     <article class="community-review-empty"><strong>Noch keine freigegebenen Bewertungen.</strong><p>Du kannst die erste echte Bewertung einreichen.</p></article>
