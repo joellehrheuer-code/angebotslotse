@@ -49,7 +49,7 @@ test("build applies safe polish and selected spotlight to the public homepage",(
   const b=fs.readFileSync("scripts/build.mjs","utf8");
   assert.match(b,/title:polishOfferTitle\(o\.title\)/);
   assert.match(b,/spotlightProducts=selectSpotlightProducts\(offers,18\)/);
-  assert.match(b,/homeMixedUnique=takeUniqueHomepage\(spotlightProducts,12,0\)/);
+  assert.match(b,/homeMixedUnique=selectSpotlightProducts\(offers,12\)/);
   assert.doesNotMatch(b,/homeMixedUnique=takeUniqueHomepage\(homepageMixed,12\)/);
   assert.match(b,/heroSpotlight=selectSpotlightProducts\(offers,3\)/);
 });
@@ -71,4 +71,14 @@ test("real published Awin inventory supplies three full hero products from disti
   assert.equal(new Set(curated.map(o=>o.advertiser)).size,3);
   assert.ok(curated.every(isSpotlightProduct));
   assert.ok(curated.every(o=>!/(?:geschenkkarte|verlängerungskabel|\bpin\b)/i.test(o.title)));
+});
+
+test("spotlight refuses one-shop domination when three approved merchants have stock",()=>{
+  const merch=["ANTHBOT","OutIn","Hollyland"];
+  const titles=["ANTHBOT Genie 800 Mähroboter","OutIn Nano 2 Espressomaschine","Hollyland Lark Funkmikrofon"];
+  const offers=Array.from({length:18},(_,i)=>product("rotate-"+i,titles[i%3],merch[i%3],i%3===0?"garten":i%3===1?"haushalt":"audio-musik",299+i));
+  const picked=selectSpotlightProducts(offers,12);
+  assert.equal(picked.length,12);
+  const counts=Object.fromEntries(merch.map(name=>[name,picked.filter(x=>x.advertiser===name).length]));
+  assert.deepEqual(counts,{ANTHBOT:4,OutIn:4,Hollyland:4});
 });
