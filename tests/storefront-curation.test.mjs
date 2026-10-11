@@ -49,6 +49,8 @@ test("build applies safe polish and selected spotlight to the public homepage",(
   const b=fs.readFileSync("scripts/build.mjs","utf8");
   assert.match(b,/title:polishOfferTitle\(o\.title\)/);
   assert.match(b,/spotlightProducts=selectSpotlightProducts\(offers,18\)/);
+  assert.match(b,/homeMixedUnique=takeUniqueHomepage\(spotlightProducts,12,0\)/);
+  assert.doesNotMatch(b,/homeMixedUnique=takeUniqueHomepage\(homepageMixed,12\)/);
   assert.match(b,/heroSpotlight=selectSpotlightProducts\(offers,3\)/);
 });
 
