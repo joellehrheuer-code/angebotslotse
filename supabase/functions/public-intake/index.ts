@@ -199,7 +199,7 @@ async function readJsonBody(req: Request, maxBytes = 20_000):
 }
 
 async function communitySnapshot() {
-  const [{ data: traffic }, { data: ratings }, { data: reviews }] = await Promise.all([
+  const [{ data: traffic }, { data: ratings }, { data: reviews }, { count: pendingReviewCount }] = await Promise.all([
     admin.from("site_traffic").select("visits,started_at").eq("singleton", 1).maybeSingle(),
     admin.from("site_reviews").select("rating").eq("status", "approved").limit(1000),
     admin.from("site_reviews")
@@ -207,6 +207,7 @@ async function communitySnapshot() {
       .eq("status", "approved")
       .order("created_at", { ascending: false })
       .limit(8),
+    admin.from("site_reviews").select("id", { count: "exact", head: true }).eq("status", "pending"),
   ]);
 
   const ratingValues = (ratings || [])
@@ -220,6 +221,7 @@ async function communitySnapshot() {
     visits: Number(traffic?.visits || 0),
     visitsStartedAt: traffic?.started_at || null,
     reviewCount: ratingValues.length,
+    pendingReviewCount: Math.max(0, Number(pendingReviewCount || 0)),
     ratingAverage,
     reviews: (reviews || []).map(row => ({
       name: clean(row.display_name, 60) || "Anonym",
