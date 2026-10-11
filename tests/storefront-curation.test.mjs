@@ -26,6 +26,8 @@ test("homepage spotlight excludes small accessories, voucher promotions and unpr
   assert.equal(isSpotlightProduct(promo),false);
   assert.equal(isSpotlightProduct({...normal,imageUrl:null}),false);
   assert.equal(isSpotlightProduct(normal),true);
+  assert.equal(isSpotlightProduct({...normal,type:"promotion",contentType:"product-offer"}),true,"Real Awin feed goods are normalized as promotion by the existing importer");
+  assert.equal(isSpotlightProduct({...normal,productId:null,type:"promotion"}),false,"A text-only promotion must not enter product hero");
 });
 test("spotlight rotates real hero products across joined merchants",()=>{
   const offers=[
