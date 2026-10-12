@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-11T23:43:24.130Z",
+  "generatedAt": "2026-10-12T05:57:44.789Z",
   "newAwinPrograms": 0,
-  "newImpactPrograms": 0,
+  "newImpactPrograms": 6,
   "newDaisyconPrograms": 0,
   "newWebgainsPrograms": 0,
   "activeAwinPrograms": 5,
-  "activeImpactPrograms": 0,
+  "activeImpactPrograms": 6,
   "applicationsSent": 0,
   "pendingApplications": 1,
   "manualApplications": 8,
@@ -22,7 +22,7 @@
   "newCoupons": 0,
   "coupons": 3,
   "priceChanges": 0,
-  "expiredOffers": 2,
+  "expiredOffers": 0,
   "expiredCoupons": 0,
   "filteredForeignLocale": 0,
   "totalProducts": 251,
@@ -186,14 +186,14 @@
     ]
   },
   "quarantinedRecords": 130,
-  "blockedPublisherPromotions": 4,
-  "dailyDeal": "77685b2726a733e6",
+  "blockedPublisherPromotions": 5,
+  "dailyDeal": "12f05c88bb4138a2",
   "dailyHighlights": [
-    "77685b2726a733e6",
-    "0a16e63f96d3c7c3",
-    "254c425f2d38824b",
-    "184e20dfcb590e15",
-    "0f5ae8ec0dfce134"
+    "12f05c88bb4138a2",
+    "064f9fca5159a01d",
+    "134153f06aa7013c",
+    "242d4a7e4d7b95bf",
+    "19cb096fb7066176"
   ],
   "weekDeals": [
     "77685b2726a733e6",
