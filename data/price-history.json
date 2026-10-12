@@ -57462,5 +57462,29 @@
     "timestamp": "2026-10-12T05:57:44.748Z",
     "price": 99,
     "currency": "EUR"
+  },
+  {
+    "offerId": "e5ba678a66412730",
+    "productId": "M5PRO-MGV04-EU",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-10-12T17:54:36.267Z",
+    "price": 1099,
+    "currency": "EUR"
+  },
+  {
+    "offerId": "e1e33b35070b2aa5",
+    "productId": "M9PRO-MGV04-EU",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-10-12T17:54:36.267Z",
+    "price": 1399,
+    "currency": "EUR"
+  },
+  {
+    "offerId": "4bccf1aeb97b5a82",
+    "productId": "67641310970169",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-10-12T17:54:36.267Z",
+    "price": 50,
+    "currency": "EUR"
   }
 ]

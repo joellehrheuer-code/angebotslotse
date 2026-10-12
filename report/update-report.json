@@ -1,22 +1,22 @@
 {
-  "generatedAt": "2026-10-12T05:57:44.789Z",
-  "newAwinPrograms": 0,
-  "newImpactPrograms": 6,
+  "generatedAt": "2026-10-12T17:54:36.308Z",
+  "newAwinPrograms": 6,
+  "newImpactPrograms": 0,
   "newDaisyconPrograms": 0,
   "newWebgainsPrograms": 0,
   "activeAwinPrograms": 5,
-  "activeImpactPrograms": 6,
+  "activeImpactPrograms": 0,
   "applicationsSent": 0,
   "pendingApplications": 1,
   "manualApplications": 8,
   "networkReviewActions": 6,
   "awinDiscoveryOffers": 200,
-  "applicationCandidates": 2610,
-  "newMerchants": 0,
-  "newProducts": 0,
-  "productsWithImage": 245,
+  "applicationCandidates": 2602,
+  "newMerchants": 1,
+  "newProducts": 1,
+  "productsWithImage": 246,
   "productsWithVideo": 0,
-  "productsWithPrice": 245,
+  "productsWithPrice": 246,
   "productsWithOldPrice": 0,
   "productsWithDiscount": 0,
   "newCoupons": 0,
@@ -25,17 +25,17 @@
   "expiredOffers": 0,
   "expiredCoupons": 0,
   "filteredForeignLocale": 0,
-  "totalProducts": 251,
+  "totalProducts": 252,
   "productsBySource": {
-    "Awin": 251
+    "Awin": 252
   },
   "officialImagesBySource": {
-    "Awin": 245
+    "Awin": 246
   },
   "missingMediaBySource": {},
   "productsByMerchant": {
     "Hollyland DE": 136,
-    "ANTHBOT DE": 56,
+    "ANTHBOT DE": 57,
     "Outin Germany": 54,
     "EMP DE": 3,
     "Imou DE": 1,
@@ -44,7 +44,7 @@
   "productsByCategory": {
     "audio-musik": 88,
     "haushalt": 52,
-    "garten": 50,
+    "garten": 51,
     "zubehoer": 49,
     "computer": 4,
     "sonstiges": 3,
@@ -70,12 +70,12 @@
       "advertiserName": "ANTHBOT DE",
       "locale": "de_DE",
       "state": "available",
-      "products": 161,
-      "rawProducts": 161,
-      "validProducts": 161,
-      "withPrice": 161,
-      "withImage": 161,
-      "withTracking": 161,
+      "products": 162,
+      "rawProducts": 162,
+      "validProducts": 162,
+      "withPrice": 162,
+      "withImage": 162,
+      "withTracking": 162,
       "rejected": 0,
       "rejectionReasons": {}
     },
@@ -127,19 +127,19 @@
     }
   ],
   "awinEnhancedDedupe": {
-    "inputRows": 456,
-    "normalizedRows": 254,
+    "inputRows": 457,
+    "normalizedRows": 255,
     "filteredBeforeDedupe": 202,
-    "outputOffers": 245,
+    "outputOffers": 246,
     "dedupedRows": 9,
     "collapsedRows": 211,
     "byMerchant": [
       {
         "merchant": "ANTHBOT DE",
-        "inputRows": 161,
-        "normalizedRows": 59,
+        "inputRows": 162,
+        "normalizedRows": 60,
         "filteredBeforeDedupe": 102,
-        "outputOffers": 56,
+        "outputOffers": 57,
         "dedupedRows": 3,
         "collapsedRows": 105,
         "rowsWithGtin": 6,
@@ -186,23 +186,24 @@
     ]
   },
   "quarantinedRecords": 130,
-  "blockedPublisherPromotions": 5,
-  "dailyDeal": "12f05c88bb4138a2",
+  "blockedPublisherPromotions": 4,
+  "dailyDeal": "10bb463f70696c2e",
   "dailyHighlights": [
-    "12f05c88bb4138a2",
+    "10bb463f70696c2e",
     "064f9fca5159a01d",
     "134153f06aa7013c",
     "242d4a7e4d7b95bf",
     "19cb096fb7066176"
   ],
   "weekDeals": [
+    "4bccf1aeb97b5a82",
     "77685b2726a733e6",
     "680d3dc112c1c7d7",
     "eb7d93caffb6eb7d"
   ],
   "monthHighlights": [
+    "4bccf1aeb97b5a82",
     "77685b2726a733e6",
-    "2a01a48be68aebb3",
     "0055caa27aa9a32c",
     "0a432f17c1a1c534",
     "2d494a434af99f92"
