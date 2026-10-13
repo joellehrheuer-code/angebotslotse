@@ -14,7 +14,7 @@ export function parseCsv(source, delimiter = ",") {
 }
 
 const pick=(row,...names)=>names.map(name=>row[name]).find(value=>String(value??"").trim())||null;
-const joined=row=>/joined|beigetreten|active/i.test(pick(row,"Membership Status","membership_status")||"");
+const joined=row=>/^(?:joined|active|beigetreten)$/i.test(String(pick(row,"Membership Status","membership_status")||"").trim());
 const german=row=>/^(de|germany|deutschland)$/i.test(pick(row,"Primary Region","primary_region")||"")||/german|deutsch/i.test(pick(row,"Language","language")||"");
 
 const allowedAwinFeedUrl=(value,mode="download")=>{
