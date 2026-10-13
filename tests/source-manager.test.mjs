@@ -10,7 +10,7 @@ test("fehlende Secrets deaktivieren nur die betroffenen Quellen und legen keine 
   assert.match(byName.awin.audit.reason, /AWIN_PUBLISHER_ID.*AWIN_API_TOKEN.*missing/);
   assert.match(byName.impact.audit.reason, /IMPACT_ACCOUNT_SID.*IMPACT_AUTH_TOKEN.*missing/);
   assert.match(byName.amazon.audit.reason, /AMAZON_CREATORS_CREDENTIAL_ID.*AMAZON_CREATORS_CREDENTIAL_SECRET.*AMAZON_PARTNER_TAG.*missing/);
-  assert.match(byName["awin-product-feeds"].audit.reason, /AWIN_DATAFEED_API_KEY missing/);
+  assert.match(byName["awin-product-feeds"].audit.reason, /No Awin legacy feed download URL configured/);
   assert.match(byName.daisycon.audit.reason, /DAISYCON_PUBLISHER_ID \/ DAISYCON_ACCESS_TOKEN missing/);
   assert.match(byName.tradedoubler.audit.reason, /TRADEDOUBLER_PRODUCTS_TOKEN \/ TRADEDOUBLER_FEED_URLS missing/);
   assert.match(byName["tradedoubler-vouchers"].audit.reason, /TRADEDOUBLER_VOUCHERS_TOKEN missing/);
