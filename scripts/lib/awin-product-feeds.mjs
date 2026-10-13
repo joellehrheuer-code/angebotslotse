@@ -17,11 +17,41 @@ const pick=(row,...names)=>names.map(name=>row[name]).find(value=>String(value??
 const joined=row=>/joined|beigetreten|active/i.test(pick(row,"Membership Status","membership_status")||"");
 const german=row=>/^(de|germany|deutschland)$/i.test(pick(row,"Primary Region","primary_region")||"")||/german|deutsch/i.test(pick(row,"Language","language")||"");
 
-export async function fetchAwinProductFeeds({ apiKey, fetchImpl=fetch, maxFeeds=6, maxProducts=500 }) {
-  if(!apiKey)return[];
-  const listResponse=await timedFetch(fetchImpl, `${FEED_LIST}/${encodeURIComponent(apiKey)}`);
-  if(!listResponse.ok)throw new Error(`Awin Product Feed List: HTTP ${listResponse.status}`);
-  const feedRows=parseCsv(await listResponse.text()).filter(row=>joined(row)&&german(row)&&pick(row,"URL","url")).slice(0,maxFeeds);
+const allowedAwinFeedUrl=(value,mode="download")=>{
+  try{
+    const url=new URL(value);
+    if(url.protocol!=="https:"||url.username||url.password)return null;
+    const path=url.pathname.toLowerCase();
+    if(mode==="list")return url.hostname==="productdata.awin.com"
+      && /^\\/datafeed\\/list\\/apikey\\/[^/]+/.test(path)?url.href:null;
+    return ["datafeed.api.productserve.com","productdata.awin.com"].includes(url.hostname)
+      && /^\\/datafeed\\/download\\/apikey\\/[^/]+/.test(path)?url.href:null;
+  }catch{return null;}
+};
+const parseConfiguredUrls=value=>String(value||"").split(/[;\\n\\r]+/).map(x=>x.trim()).filter(Boolean);
+
+// Awin confirmed classic/legacy feeds must be downloaded by complete account
+// URLs from Toolbox > Create-a-Feed, NOT with the Enhanced Feed API token.
+export async function fetchAwinProductFeeds({ apiKey, feedListUrl, feedUrls, joinedAdvertiserIds=[], fetchImpl=fetch, maxFeeds=6, maxProducts=500 }) {
+  const explicit=parseConfiguredUrls(feedUrls);
+  if(explicit.length>0 && explicit.some(url=>!allowedAwinFeedUrl(url)))
+    throw new Error("Untrusted Awin legacy download host or path");
+  const authorizedIds=new Set(joinedAdvertiserIds.map(String));
+  let feedRows=[];
+  if(explicit.length>0){
+    // Direct feed links are always limited to joined advertisers.
+    if(authorizedIds.size===0)return[];
+    feedRows=explicit.slice(0,maxFeeds).map((url,index)=>({URL:url,"Feed ID":`direct-${index+1}`}));
+  }else{
+    const listUrl=feedListUrl?allowedAwinFeedUrl(feedListUrl,"list"):apiKey?`${FEED_LIST}/${encodeURIComponent(apiKey)}`:null;
+    if(!listUrl) { if(feedListUrl)throw new Error("Untrusted Awin feed-list URL"); return []; }
+    const listResponse=await timedFetch(fetchImpl,listUrl);
+    if(!listResponse.ok)throw new Error(`Awin Product Feed List: HTTP ${listResponse.status}`);
+    feedRows=parseCsv(await listResponse.text())
+      .filter(row=>joined(row)&&german(row)&&allowedAwinFeedUrl(pick(row,"URL","url")))
+      .filter(row=>authorizedIds.size===0||authorizedIds.has(String(pick(row,"Advertiser ID","advertiser_id","merchant_id"))))
+      .slice(0,maxFeeds);
+  }
   const products=[];
   for(const feed of feedRows){
     if(products.length>=maxProducts)break;
@@ -30,6 +60,7 @@ export async function fetchAwinProductFeeds({ apiKey, fetchImpl=fetch, maxFeeds=
     const bytes=Buffer.from(await response.arrayBuffer());
     let text; try{text=gunzipSync(bytes).toString("utf8");}catch{text=bytes.toString("utf8");}
     for(const row of parseCsv(text).slice(0,maxProducts-products.length)){
+      if(authorizedIds.size && !authorizedIds.has(String(pick(row,"merchant_id","Advertiser ID","advertiser_id"))))continue;
       const tracking=pick(row,"aw_deep_link","deep_link"); const destination=pick(row,"merchant_deep_link","deep_link", "aw_deep_link");
       if(!tracking||!destination)continue;
       products.push({source:"awin",id:`feed-${pick(feed,"Feed ID","feed_id")}-${pick(row,"aw_product_id","product_id","merchant_product_id")}`,title:pick(row,"product_name","name"),description:pick(row,"product_short_description","description"),url:destination,urlTracking:tracking,advertiserName:pick(row,"merchant_name","Advertiser Name"),advertiserId:pick(row,"merchant_id","Advertiser ID"),regions:{list:[{countryCode:"DE"}]},type:"promotion",imageUrl:pick(row,"aw_image_url","large_image","merchant_image_url","image_url"),imageAlt:pick(row,"product_name","name"),imageSource:pick(row,"aw_image_url")?"Awin Image Resize & Caching":"Awin Product Feed",imageRightsNote:"Vom freigegebenen Advertiser im Awin-Produktfeed bereitgestellt; Awin-Cache wird bevorzugt, wenn verfügbar.",currentPrice:pick(row,"search_price","price"),previousPrice:pick(row,"rrp_price","product_price_old"),currency:pick(row,"currency")||"EUR",brand:pick(row,"brand_name"),productId:pick(row,"product_GTIN","ean","mpn","aw_product_id","product_id"),gtin:pick(row,"product_GTIN"),ean:pick(row,"ean"),mpn:pick(row,"mpn"),availability:pick(row,"stock_status","in_stock"),category:undefined});
