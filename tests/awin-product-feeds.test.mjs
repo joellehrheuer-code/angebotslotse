@@ -5,7 +5,7 @@ import { parseCsv, fetchAwinProductFeeds, fetchAwinEnhancedFeeds } from "../scri
 test("parst korrekt gequotete Feed-CSV-Felder",()=>{const rows=parseCsv('Name,Description\r\n"Produkt, Eins","Text mit ""Zitat"""');assert.equal(rows[0].Name,"Produkt, Eins");assert.equal(rows[0].Description,'Text mit "Zitat"');});
 
 test("importiert nur beigetretene deutsche Awin-Feeds mit offiziellen Medien",async()=>{
-  const list='Advertiser ID,Advertiser Name,Primary Region,Membership Status,Feed ID,Feed Name,Language,Vertical,Last Imported,URL\n1,Shop,DE,Joined,9,Default,German,,2026-09-01,https://feed.example/9';
+  const list='Advertiser ID,Advertiser Name,Primary Region,Membership Status,Feed ID,Feed Name,Language,Vertical,Last Imported,URL\n1,Shop,DE,Joined,9,Default,German,,2026-09-01,https://datafeed.api.productserve.com/datafeed/download/apikey/fixture-token/fid/9/format/csv';
   const products='aw_deep_link,merchant_deep_link,product_name,merchant_name,merchant_id,search_price,currency,large_image,aw_product_id,brand_name\nhttps://awin.example/t,https://shop.example/p,Kopfhörer,Shop,1,99.95,EUR,https://img.example/p.jpg,P1,Marke';
   const fetchImpl=async url=>({ok:true,text:async()=>list,arrayBuffer:async()=>Buffer.from(products)});
   const rows=await fetchAwinProductFeeds({apiKey:"secret",fetchImpl});
@@ -29,7 +29,7 @@ test("importiert Enhanced-Feeds fair von allen Advertisern",async()=>{
 
 
 test("bevorzugt Awins offiziellen Bild-Cache vor Merchant-Bildern",async()=>{
-  const list='Advertiser ID,Advertiser Name,Primary Region,Membership Status,Feed ID,Feed Name,Language,Vertical,Last Imported,URL\n1,Shop,DE,Joined,9,Default,German,,2026-09-01,https://feed.example/9';
+  const list='Advertiser ID,Advertiser Name,Primary Region,Membership Status,Feed ID,Feed Name,Language,Vertical,Last Imported,URL\n1,Shop,DE,Joined,9,Default,German,,2026-09-01,https://datafeed.api.productserve.com/datafeed/download/apikey/fixture-token/fid/9/format/csv';
   const products='aw_deep_link,merchant_deep_link,product_name,merchant_name,merchant_id,search_price,currency,aw_image_url,large_image,merchant_image_url,aw_product_id\nhttps://awin.example/t,https://shop.example/p,Monitor,Shop,1,199.95,EUR,https://images.awin.com/cache.jpg,https://merchant.example/large.jpg,https://merchant.example/raw.jpg,P2';
   const fetchImpl=async()=>({ok:true,text:async()=>list,arrayBuffer:async()=>Buffer.from(products)});
   const rows=await fetchAwinProductFeeds({apiKey:"secret",fetchImpl});
