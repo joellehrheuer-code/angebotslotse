@@ -57,7 +57,7 @@ const trackingUrlAllowed = (value, policy, rule = null) => {
 
 // impact.com documents the "u" parameter for brand-approved partner deeplinks.
 // Never turn an unapproved product URL into a direct (untracked) merchant link.
-const allowsDeeplinking = value => value === true || value === 1 || String(value).toLowerCase() === "true";
+const allowsDeeplinking = value => value === true || value === 1 || ["true","1"].includes(String(value).trim().toLowerCase());
 const validWebsiteUrl = value => {
   try {
     const url = new URL(value);
@@ -130,7 +130,7 @@ export async function fetchImpactOffers({ accountSid, authToken, fetchImpl = fet
     advertiserName: program.AdvertiserName,
     advertiserId: program.AdvertiserId,
     campaignId: program.CampaignId,
-    deeplinks: Boolean(program.AllowsDeeplinking),
+    deeplinks: allowsDeeplinking(program.AllowsDeeplinking),
     trackingLinkAvailable: Boolean(program.TrackingLink),
     logoAvailable: Boolean(program.CampaignLogoUri),
     publicTermsAvailable: Boolean(program.PublicTermsUri),
@@ -145,7 +145,7 @@ export async function fetchImpactOffers({ accountSid, authToken, fetchImpl = fet
   };
   const audit = {apiVersion:VERSION,programs:programs.length,ads:0,promotions:0,deals:0,products:0,catalogs:null,stores:null,errors:{},quarantinedAdvertisers:(policy.quarantinedAdvertisers??[]).length,
     endpointPageLimit:MAX_ENDPOINT_PAGES,dealCampaignLimit:MAX_DEAL_CAMPAIGNS,
-    programInventory:programs.map(program=>({name:program.CampaignName,advertiserName:program.AdvertiserName,advertiserId:program.AdvertiserId,campaignId:program.CampaignId,status:program.ContractStatus,countries:list(program.ShippingRegions?.ShippingRegion??program.ShippingRegions),deeplinks:Boolean(program.AllowsDeeplinking),trackingLinkAvailable:Boolean(program.TrackingLink),logoAvailable:Boolean(program.CampaignLogoUri),publicTermsAvailable:Boolean(program.PublicTermsUri)}))};
+    programInventory:programs.map(program=>({name:program.CampaignName,advertiserName:program.AdvertiserName,advertiserId:program.AdvertiserId,campaignId:program.CampaignId,status:program.ContractStatus,countries:list(program.ShippingRegions?.ShippingRegion??program.ShippingRegions),deeplinks:allowsDeeplinking(program.AllowsDeeplinking),trackingLinkAvailable:Boolean(program.TrackingLink),logoAvailable:Boolean(program.CampaignLogoUri),publicTermsAvailable:Boolean(program.PublicTermsUri)}))};
   const safePages = async (key, pathname, names, params = {}) => {
     try { return await api.pages(pathname, names, params); }
     catch (error) {
