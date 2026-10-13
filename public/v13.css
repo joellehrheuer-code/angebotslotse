@@ -5897,3 +5897,86 @@ html[data-theme="black"] .instant-gaming-showcase{background:#070a11!important;b
  .creator-video-rail .creator-video-card{flex-basis:82vw!important}
  .instant-gaming-showcase .instant-gaming-actions .button{width:100%!important;justify-content:center!important}
 }
+
+
+/* V34 — human tester feedback: readable Light mode + creator video controls.
+   The hero intentionally remains a dark editorial island across all themes;
+   ensure global light-theme h1/p/small selectors cannot make text dark-on-dark. */
+html[data-theme="light"] .premium-hero.portal-hero,
+html[data-theme="light"] .premium-hero.portal-hero .hero-redesign-copy{
+  color:#f8f9fd!important;
+}
+html[data-theme="light"] .premium-hero.portal-hero .hero-redesign-copy h1,
+html[data-theme="light"] .premium-hero.portal-hero .hero-redesign-copy h2,
+html[data-theme="light"] .premium-hero.portal-hero .hero-kicker,
+html[data-theme="light"] .premium-hero.portal-hero .portal-brand-panel h2,
+html[data-theme="light"] .premium-hero.portal-hero .portal-brand-panel strong{
+  color:#f8f9fd!important;
+}
+html[data-theme="light"] .premium-hero.portal-hero .hero-redesign-copy>p,
+html[data-theme="light"] .premium-hero.portal-hero .hero-trust-grid small,
+html[data-theme="light"] .premium-hero.portal-hero .portal-brand-panel p,
+html[data-theme="light"] .premium-hero.portal-hero .portal-brand-panel small{
+  color:#d5ddea!important;
+}
+html[data-theme="light"] .premium-hero.portal-hero .hero-redesign-copy h1 em{
+  color:transparent!important;
+}
+/* The separate, consent-first YouTube button must be legible on the
+   dark default theme as well as on white cards in Light mode. */
+.creator-video-card .creator-video-inline-button{
+  background:#24314b!important;
+  border:1px solid #7086ab!important;
+  color:#fff!important;
+  font-weight:800!important;
+  opacity:1!important;
+}
+.creator-video-card .creator-video-inline-button:hover,
+.creator-video-card .creator-video-inline-button:focus-visible{
+  background:#334466!important;
+  color:#fff!important;
+  outline:2px solid #ed8dcc!important;
+  outline-offset:2px!important;
+}
+html[data-theme="light"] .creator-video-card .creator-video-inline-button{
+  background:#273b60!important;
+  border-color:#273b60!important;
+  color:#fff!important;
+}
+html[data-theme="light"] .creator-video-card .creator-video-inline-button:hover,
+html[data-theme="light"] .creator-video-card .creator-video-inline-button:focus-visible{
+  background:#172946!important;
+  color:#fff!important;
+}
+html[data-theme="light"] .creator-videos .section-head h2,
+html[data-theme="light"] #aktuelle-deals .section-head h2,
+html[data-theme="light"] .creator-video-card h3{
+  color:#162439!important;
+}
+html[data-theme="light"] .creator-videos .section-head p,
+html[data-theme="light"] .creator-video-card .creator-video-caption,
+html[data-theme="light"] .creator-video-card small,
+html[data-theme="light"] #aktuelle-deals .section-head p{
+  color:#40516b!important;
+}
+html[data-theme="light"] .creator-video-card .creator-platform-links a,
+html[data-theme="light"] .creator-video-card a:not(.button){
+  color:#7b2259!important;
+}
+html[data-theme="light"] .creator-video-card .creator-platform-links a:hover{
+  color:#57123d!important;
+}
+html[data-theme="light"] .instant-gaming-showcase .instant-gaming-actions .button:not(.primary){
+  background:#fff!important;
+  border-color:#a1b1c9!important;
+  color:#273a5a!important;
+}
+html[data-theme="light"] .instant-gaming-showcase .instant-gaming-actions .button.primary{
+  color:#fff!important;
+}
+html[data-theme="light"] .live-pageview-counter,
+html[data-theme="light"] .live-top-status span,
+html[data-theme="light"] .live-status-link{
+  color:#33435d!important;
+}
+html[data-theme="light"] .live-pageview-counter b{color:#852450!important}
