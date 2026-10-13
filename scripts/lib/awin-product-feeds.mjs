@@ -23,12 +23,15 @@ const allowedAwinFeedUrl=(value,mode="download")=>{
     if(url.protocol!=="https:"||url.username||url.password)return null;
     const path=url.pathname.toLowerCase();
     if(mode==="list")return url.hostname==="productdata.awin.com"
-      && /^\\/datafeed\\/list\\/apikey\\/[^/]+/.test(path)?url.href:null;
+      && path.startsWith("/datafeed/list/apikey/")
+      && path.length>"/datafeed/list/apikey/".length?url.href:null;
     return ["datafeed.api.productserve.com","productdata.awin.com"].includes(url.hostname)
-      && /^\\/datafeed\\/download\\/apikey\\/[^/]+/.test(path)?url.href:null;
+      && path.startsWith("/datafeed/download/apikey/")
+      && path.length>"/datafeed/download/apikey/".length?url.href:null;
   }catch{return null;}
 };
-const parseConfiguredUrls=value=>String(value||"").split(/[;\\n\\r]+/).map(x=>x.trim()).filter(Boolean);
+// Semicolon-delimited secret values; feed URLs themselves may contain encoded commas.
+const parseConfiguredUrls=value=>String(value||"").split(";").map(x=>x.trim()).filter(Boolean);
 
 // Awin confirmed classic/legacy feeds must be downloaded by complete account
 // URLs from Toolbox > Create-a-Feed, NOT with the Enhanced Feed API token.
