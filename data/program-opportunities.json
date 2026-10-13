@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-13T19:18:11.750Z",
+  "generatedAt": "2026-10-13T23:45:23.684Z",
   "scope": "Automatisch aus Programminventar, DE-Angebotsabdeckung und verfügbaren Netzwerk-/Feed-Signalen erzeugt.",
   "automation": {
     "discovery": "automatic",
@@ -599,21 +599,19 @@
       "automationState": "ready-for-review"
     },
     {
-      "brand": "ALLPOWERS DE",
+      "brand": "eschuhe",
       "network": "Awin",
-      "advertiserId": 67914,
+      "advertiserId": 10881,
       "status": "notjoined",
-      "category": "Haushalt & Küche",
-      "score": 48,
+      "category": "Mode & Sport",
+      "score": 51,
       "priority": "mittel",
-      "activeDiscoveryOffers": 3,
+      "activeDiscoveryOffers": 1,
       "offerExamples": [
-        "Buy 2, Get 11% Off",
-        "12% OFF Orders Over €1200",
-        "Storewide 10% Off"
+        "GOLDEN DEALS BIS ZU -30% ab 79 €, auf ausgewählte Produkte gültig bis 20.10. du erhältst immer 10% bei MODIVOclub gold Code: DEALS"
       ],
       "productFeed": false,
-      "siteCategoryCoverage": 52,
+      "siteCategoryCoverage": 0,
       "metrics": {
         "awinIndex": null,
         "epc": null,
@@ -626,11 +624,47 @@
         "commissionTypes": []
       },
       "reasons": [
-        "passt zu Haushalt & Küche",
-        "3 aktive DE-Aktionen"
+        "passt zu Mode & Sport",
+        "Sortimentslücke: erst 0 veröffentlichte Angebote in Mode & Sport",
+        "1 aktive DE-Aktion"
       ],
       "applicationRequired": true,
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten ALLPOWERS DE redaktionell passend im Bereich Haushalt & Küche einbinden. Bei Awin sind aktuell 3 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten eschuhe redaktionell passend im Bereich Mode & Sport einbinden. Bei Awin sind aktuell 1 für Deutschland sichtbare Aktion dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "automationState": "ready-for-review"
+    },
+    {
+      "brand": "SportScheck DE",
+      "network": "Awin",
+      "advertiserId": 14607,
+      "status": "notjoined",
+      "category": "Mode & Sport",
+      "score": 51,
+      "priority": "mittel",
+      "activeDiscoveryOffers": 1,
+      "offerExamples": [
+        "Mid-Season Sale ausgewählte Artikel bis zu -30% reduziert"
+      ],
+      "productFeed": false,
+      "siteCategoryCoverage": 0,
+      "metrics": {
+        "awinIndex": null,
+        "epc": null,
+        "conversionRate": null,
+        "approvalPercentage": null,
+        "validationDays": null,
+        "averagePaymentTime": null,
+        "commissionMin": null,
+        "commissionMax": null,
+        "commissionTypes": []
+      },
+      "reasons": [
+        "passt zu Mode & Sport",
+        "Sortimentslücke: erst 0 veröffentlichte Angebote in Mode & Sport",
+        "1 aktive DE-Aktion"
+      ],
+      "applicationRequired": true,
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten SportScheck DE redaktionell passend im Bereich Mode & Sport einbinden. Bei Awin sind aktuell 1 für Deutschland sichtbare Aktion dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
       "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
       "automationState": "ready-for-review"
     },
@@ -1623,38 +1657,6 @@
       ],
       "applicationRequired": true,
       "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Alliwava DE redaktionell passend im Bereich Gaming einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "automationState": "ready-for-review"
-    },
-    {
-      "brand": "Allright DE",
-      "network": "Awin",
-      "advertiserId": 125158,
-      "status": "notjoined",
-      "category": "Tierbedarf",
-      "score": 45,
-      "priority": "mittel",
-      "activeDiscoveryOffers": 0,
-      "offerExamples": [],
-      "productFeed": false,
-      "siteCategoryCoverage": 0,
-      "metrics": {
-        "awinIndex": null,
-        "epc": null,
-        "conversionRate": null,
-        "approvalPercentage": null,
-        "validationDays": null,
-        "averagePaymentTime": null,
-        "commissionMin": null,
-        "commissionMax": null,
-        "commissionTypes": []
-      },
-      "reasons": [
-        "passt zu Tierbedarf",
-        "Sortimentslücke: erst 0 veröffentlichte Angebote in Tierbedarf"
-      ],
-      "applicationRequired": true,
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Allright DE redaktionell passend im Bereich Tierbedarf einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
       "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
       "automationState": "ready-for-review"
     }
