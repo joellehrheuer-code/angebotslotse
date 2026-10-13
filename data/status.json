@@ -1,6 +1,6 @@
 {
   "state": "ok",
-  "lastSuccessfulUpdate": "2026-10-13T18:32:57.476Z",
+  "lastSuccessfulUpdate": "2026-10-13T18:44:53.259Z",
   "activeOffers": 252,
   "storedOffers": 483,
   "publishableOffers": 252,
@@ -107,7 +107,7 @@
       "count": 0,
       "error": null,
       "audit": {
-        "reason": "AWIN_DATAFEED_API_KEY missing – Awin Product Feed sync skipped"
+        "reason": "No Awin legacy feed download URL configured – use AWIN_FEED_LIST_URL or AWIN_LEGACY_FEED_URLS from Toolbox / Create-a-Feed"
       }
     },
     "direct": {
