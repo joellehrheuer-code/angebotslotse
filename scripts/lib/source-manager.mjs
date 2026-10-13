@@ -190,7 +190,7 @@ export async function collectSources(env = process.env) {
   const definitions = [
     ["awin", () => fetchAwinOffers({ publisherId: env.AWIN_PUBLISHER_ID, token: env.AWIN_API_TOKEN })],
     ["awin-enhanced-feeds", async()=>{const result=await fetchAwinEnhancedFeeds({publisherId:env.AWIN_PUBLISHER_ID,token:env.AWIN_API_TOKEN,advertisers:joined,maxProducts:1200});const rows=result.products;Object.defineProperty(rows,"audit",{value:{feeds:result.feeds},enumerable:false});return rows;}],
-    ["awin-product-feeds", () => fetchAwinProductFeeds({ apiKey: env.AWIN_DATAFEED_API_KEY, maxProducts: 1000 })],
+    ["awin-product-feeds", () => fetchAwinProductFeeds({ apiKey: env.AWIN_DATAFEED_API_KEY, feedListUrl:env.AWIN_FEED_LIST_URL, feedUrls:env.AWIN_LEGACY_FEED_URLS, joinedAdvertiserIds:joined.map(program=>program.id), maxProducts: 1000 })],
     ["direct", () => fetchDirectOffers()],
     ["amazon", () => fetchAmazonCreatorItems({ credentialId: env.AMAZON_CREATORS_CREDENTIAL_ID, credentialSecret: env.AMAZON_CREATORS_CREDENTIAL_SECRET, partnerTag: env.AMAZON_PARTNER_TAG, definitions: amazonDefinitions.items ?? [] })],
     ["impact", () => fetchImpactOffers({ accountSid: env.IMPACT_ACCOUNT_SID, authToken: env.IMPACT_AUTH_TOKEN, linkPolicy: impactLinkPolicy })],
@@ -205,7 +205,7 @@ export async function collectSources(env = process.env) {
     if (name === "impact" && impactExplicitlyDisabled) return { name, state: "disabled", rows: [], audit:{reason:"Impact sync is disabled for non-scheduled workflow runs", cadenceHours:impactCadenceHours} };
     if (name === "impact" && !impactDue) return { name, state: "disabled", rows: [], audit:{reason:`Impact rate-limit cooldown – last successful data is younger than ${impactCadenceHours}h`, cadenceHours:impactCadenceHours,lastSyncAt:Number.isFinite(impactLastSyncMs)?new Date(impactLastSyncMs).toISOString():null} };
     if (name === "amazon" && (!env.AMAZON_CREATORS_CREDENTIAL_ID || !env.AMAZON_CREATORS_CREDENTIAL_SECRET || !env.AMAZON_PARTNER_TAG)) { const names = [!env.AMAZON_CREATORS_CREDENTIAL_ID && "AMAZON_CREATORS_CREDENTIAL_ID", !env.AMAZON_CREATORS_CREDENTIAL_SECRET && "AMAZON_CREATORS_CREDENTIAL_SECRET", !env.AMAZON_PARTNER_TAG && "AMAZON_PARTNER_TAG"].filter(Boolean); return { name, state: "disabled", rows: [], audit:{reason:`${names.join(", ")} missing – Amazon Creators API sync skipped`} }; }
-    if (name === "awin-product-feeds" && !env.AWIN_DATAFEED_API_KEY) return { name, state: "disabled", rows: [], audit:{reason:"AWIN_DATAFEED_API_KEY missing – Awin Product Feed sync skipped"} };
+    if (name === "awin-product-feeds" && !env.AWIN_DATAFEED_API_KEY && !env.AWIN_FEED_LIST_URL && !env.AWIN_LEGACY_FEED_URLS) return { name, state: "disabled", rows: [], audit:{reason:"No Awin legacy feed download URL configured – use AWIN_FEED_LIST_URL or AWIN_LEGACY_FEED_URLS from Toolbox / Create-a-Feed"} };
     if (name === "awin-enhanced-feeds") {
       const gate=awinEnhancedFeedGate({hasPublisherId:Boolean(env.AWIN_PUBLISHER_ID),hasToken:Boolean(env.AWIN_API_TOKEN),programError:awinProgramError,joinedCount:joined.length});
       if(gate)return{name,rows:[],...gate};
