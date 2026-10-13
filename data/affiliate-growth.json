@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-12T17:54:36.322Z",
+  "generatedAt": "2026-10-13T02:01:47.904Z",
   "market": "DE",
   "publisherId": 3045061,
   "awin": {
@@ -2007,17 +2007,6 @@
       {
         "network": "Awin",
         "relationship": "notjoined",
-        "advertiserId": 10076,
-        "name": "Douglas_DE",
-        "primarySector": "Health & Beauty",
-        "primaryRegion": {
-          "name": "Germany",
-          "countryCode": "DE"
-        }
-      },
-      {
-        "network": "Awin",
-        "relationship": "notjoined",
         "advertiserId": 117193,
         "name": "DREO",
         "primarySector": "Home & Garden",
@@ -2212,6 +2201,17 @@
           "name": "Germany",
           "countryCode": "DE"
         }
+      },
+      {
+        "network": "Awin",
+        "relationship": "notjoined",
+        "advertiserId": 46703,
+        "name": "Edelstahl-Tuerklingel DE",
+        "primarySector": "Home & Garden",
+        "primaryRegion": {
+          "name": "Germany",
+          "countryCode": "DE"
+        }
       }
     ],
     "discoveryOffers": 200,
@@ -2226,7 +2226,7 @@
         "category": "Technik & Computer",
         "score": 98,
         "priority": "hoch",
-        "activeDiscoveryOffers": 18,
+        "activeDiscoveryOffers": 7,
         "offerExamples": [
           "P1i - €339.99(€60off) w/Code: WS24D2200FPD261",
           "P1 - €699.99(€100off) w/Code: WS24D2431FPD261",
@@ -2248,13 +2248,13 @@
         "reasons": [
           "passt zu Technik & Computer",
           "strategisch relevante Marke",
-          "18 aktive DE-Aktionen",
+          "7 aktive DE-Aktionen",
           "Awin Index 64.79",
           "Approval 86.22%",
           "EPC 0.99"
         ],
         "applicationRequired": true,
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Anker DE redaktionell passend im Bereich Technik & Computer einbinden. Bei Awin sind aktuell 18 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Anker DE redaktionell passend im Bereich Technik & Computer einbinden. Bei Awin sind aktuell 7 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
         "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
         "automationState": "ready-for-review"
       },
@@ -2767,41 +2767,6 @@
         "automationState": "ready-for-review"
       },
       {
-        "brand": "Douglas_DE",
-        "network": "Awin",
-        "advertiserId": 10076,
-        "status": "notjoined",
-        "category": "Gesundheit & Wellness",
-        "score": 51,
-        "priority": "mittel",
-        "activeDiscoveryOffers": 1,
-        "offerExamples": [
-          "Dein Geschenk: GRATIS: 10 Proben"
-        ],
-        "productFeed": false,
-        "siteCategoryCoverage": 0,
-        "metrics": {
-          "awinIndex": null,
-          "epc": null,
-          "conversionRate": null,
-          "approvalPercentage": null,
-          "validationDays": null,
-          "averagePaymentTime": null,
-          "commissionMin": null,
-          "commissionMax": null,
-          "commissionTypes": []
-        },
-        "reasons": [
-          "passt zu Gesundheit & Wellness",
-          "Sortimentslücke: erst 0 veröffentlichte Angebote in Gesundheit & Wellness",
-          "1 aktive DE-Aktion"
-        ],
-        "applicationRequired": true,
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Douglas_DE redaktionell passend im Bereich Gesundheit & Wellness einbinden. Bei Awin sind aktuell 1 für Deutschland sichtbare Aktion dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-        "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-        "automationState": "ready-for-review"
-      },
-      {
         "brand": "Eveline Cosmetics DE",
         "network": "Awin",
         "advertiserId": 112208,
@@ -3078,6 +3043,38 @@
         ],
         "applicationRequired": true,
         "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Rameder DE/AT redaktionell passend im Bereich Auto & Mobilität einbinden. Bei Awin sind aktuell 1 für Deutschland sichtbare Aktion dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+        "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+        "automationState": "ready-for-review"
+      },
+      {
+        "brand": "07eins",
+        "network": "Awin",
+        "advertiserId": 128971,
+        "status": "notjoined",
+        "category": "Auto & Mobilität",
+        "score": 45,
+        "priority": "mittel",
+        "activeDiscoveryOffers": 0,
+        "offerExamples": [],
+        "productFeed": false,
+        "siteCategoryCoverage": 0,
+        "metrics": {
+          "awinIndex": null,
+          "epc": null,
+          "conversionRate": null,
+          "approvalPercentage": null,
+          "validationDays": null,
+          "averagePaymentTime": null,
+          "commissionMin": null,
+          "commissionMax": null,
+          "commissionTypes": []
+        },
+        "reasons": [
+          "passt zu Auto & Mobilität",
+          "Sortimentslücke: erst 0 veröffentlichte Angebote in Auto & Mobilität"
+        ],
+        "applicationRequired": true,
+        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten 07eins redaktionell passend im Bereich Auto & Mobilität einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
         "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
         "automationState": "ready-for-review"
       }
