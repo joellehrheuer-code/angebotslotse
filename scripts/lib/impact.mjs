@@ -55,6 +55,41 @@ const trackingUrlAllowed = (value, policy, rule = null) => {
   } catch { return false; }
 };
 
+// impact.com documents the "u" parameter for brand-approved partner deeplinks.
+// Never turn an unapproved product URL into a direct (untracked) merchant link.
+const allowsDeeplinking = value => value === true || value === 1 || String(value).toLowerCase() === "true";
+const validWebsiteUrl = value => {
+  try {
+    const url = new URL(value);
+    return url.protocol === "https:" && !url.username && !url.password
+      && !["localhost","127.0.0.1","0.0.0.0"].includes(url.hostname)
+      && !url.hostname.endsWith(".localhost") ? url : null;
+  } catch { return null; }
+};
+const sameMerchantHost = (productUrl, program) => {
+  const websites = [program.AdvertiserUrl, program.CampaignUrl]
+    .map(validWebsiteUrl).filter(Boolean);
+  // Catalog-supplied product URLs are only deep-linked when the program's
+  // merchant domain is confirmed. No trust on first use from arbitrary hosts.
+  return websites.some(site => productUrl.hostname === site.hostname
+    || productUrl.hostname.endsWith("." + site.hostname)
+    || site.hostname.endsWith("." + productUrl.hostname));
+};
+const approvedProductTrackingLink = (product, program, policy) => {
+  const rule = quarantineFor(program, policy);
+  const direct = product.TrackingLink || product.TrackingURL || product.UrlTracking;
+  if (trackingUrlAllowed(direct,policy,rule)) return { url:direct, origin:"product" };
+  const target = validWebsiteUrl(product.Url || product.MobileUrl);
+  if (!allowsDeeplinking(program.AllowsDeeplinking)
+    || !target || !sameMerchantHost(target,program)
+    || !trackingUrlAllowed(program.TrackingLink,policy,rule)) return null;
+  const base = new URL(program.TrackingLink);
+  if (base.searchParams.has("u")) return null;
+  base.searchParams.set("u",target.href);
+  const tracked=base.href;
+  return trackingUrlAllowed(tracked,policy,rule)?{url:tracked,origin:"approved-deeplink"}:null;
+};
+
 const quarantineFor = (program, policy) => (policy.quarantinedAdvertisers ?? []).find(rule =>
   (rule.advertiserId && String(rule.advertiserId) === String(program.AdvertiserId)) ||
   (rule.advertiserName && String(rule.advertiserName).toLowerCase() === String(program.AdvertiserName).toLowerCase()));
@@ -193,16 +228,18 @@ export async function fetchImpactOffers({ accountSid, authToken, fetchImpl = fet
   audit.products=products.length;
   audit.productDiagnostics={
     fields:products[0]&&typeof products[0]==="object"?Object.keys(products[0]).slice(0,35):[],
-    missingApprovedProgram:0,matchedViaCatalog:0,missingTrackingLink:0,missingName:0,outOfStock:0,accepted:0
+    missingApprovedProgram:0,matchedViaCatalog:0,missingTrackingLink:0,deeplinkFromApprovedProgram:0,missingName:0,outOfStock:0,accepted:0
   };
   for (const product of products) {
     const directProgram=byCampaign.get(String(product.CampaignId)) ||
       byAdvertiser.get(String(product.AdvertiserId ?? product.AdvertiserID));
     const program=directProgram || programsByCatalog.get(String(product.CatalogId));
     if(program && !directProgram)audit.productDiagnostics.matchedViaCatalog+=1;
-    const trackingUrl = product.TrackingLink || product.TrackingURL || product.UrlTracking;
     if(!program){audit.productDiagnostics.missingApprovedProgram+=1;continue;}
-    if(!trackingUrlAllowed(trackingUrl,policy,quarantineFor(program,policy))){audit.productDiagnostics.missingTrackingLink+=1;continue;}
+    const resolvedTracking=approvedProductTrackingLink(product,program,policy);
+    if(!resolvedTracking){audit.productDiagnostics.missingTrackingLink+=1;continue;}
+    const trackingUrl=resolvedTracking.url;
+    if(resolvedTracking.origin==="approved-deeplink")audit.productDiagnostics.deeplinkFromApprovedProgram+=1;
     if(!product.Name){audit.productDiagnostics.missingName+=1;continue;}
     if(String(product.StockAvailability).toLowerCase()==="outofstock"){audit.productDiagnostics.outOfStock+=1;continue;}
     audit.productDiagnostics.accepted+=1;
