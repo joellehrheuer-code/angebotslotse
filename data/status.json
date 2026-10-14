@@ -1,6 +1,6 @@
 {
-  "state": "ok",
-  "lastSuccessfulUpdate": "2026-10-14T18:06:09.411Z",
+  "state": "degraded",
+  "lastSuccessfulUpdate": "2026-10-14T20:14:19.011Z",
   "activeOffers": 252,
   "storedOffers": 481,
   "publishableOffers": 252,
@@ -168,12 +168,12 @@
     }
   },
   "creatorFeed": {
-    "state": "ok",
+    "state": "stale",
     "count": 9,
     "videos": 9,
-    "error": null,
+    "error": "fetch timed out after 30000ms",
     "mode": "social"
   },
   "stale": 213,
-  "message": "Aktualisierung mit geschützten Bestandsdaten abgeschlossen."
+  "message": "Aktualisierung teilweise eingeschränkt; bestehende geprüfte Daten bleiben geschützt."
 }
