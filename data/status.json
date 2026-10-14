@@ -1,16 +1,16 @@
 {
-  "state": "degraded",
-  "lastSuccessfulUpdate": "2026-10-14T20:37:46.258Z",
+  "state": "ok",
+  "lastSuccessfulUpdate": "2026-10-14T23:14:53.713Z",
   "activeOffers": 252,
   "storedOffers": 481,
   "publishableOffers": 252,
   "awaitingMedia": 0,
   "blockedPublisherPromotions": 4,
   "quarantined": 130,
-  "added": 0,
-  "removed": 0,
-  "archivedThisRun": 0,
-  "archivedTotal": 348,
+  "added": 1,
+  "removed": 1,
+  "archivedThisRun": 1,
+  "archivedTotal": 349,
   "filteredForeignLocale": 0,
   "invalidLinks": 0,
   "apiErrors": 0,
@@ -168,12 +168,12 @@
     }
   },
   "creatorFeed": {
-    "state": "stale",
+    "state": "ok",
     "count": 9,
     "videos": 9,
-    "error": "fetch timed out after 30000ms",
+    "error": null,
     "mode": "social"
   },
   "stale": 213,
-  "message": "Aktualisierung teilweise eingeschränkt; bestehende geprüfte Daten bleiben geschützt."
+  "message": "Aktualisierung mit geschützten Bestandsdaten abgeschlossen."
 }

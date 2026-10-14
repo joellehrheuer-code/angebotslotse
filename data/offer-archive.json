@@ -1,6 +1,22 @@
 {
-  "updatedAt": "2026-10-14T20:37:46.258Z",
+  "updatedAt": "2026-10-14T23:14:53.713Z",
   "items": [
+    {
+      "id": "900603b70dd28ae3",
+      "slug": "midweek-madness-17-fur-die-dark-season-900603b7",
+      "title": "Midweek Madness: 17% für die Dark Season!",
+      "advertiser": "EMP DE",
+      "source": "awin",
+      "productId": null,
+      "category": "sonstiges",
+      "lastPrice": null,
+      "currency": "EUR",
+      "firstSeen": "2026-10-06T13:02:19.000Z",
+      "lastSeen": "2026-10-14T20:37:46.078Z",
+      "endDate": "2026-10-14T21:59:00.000Z",
+      "archivedAt": "2026-10-14T23:14:53.713Z",
+      "reason": "expired"
+    },
     {
       "id": "680d3dc112c1c7d7",
       "slug": "dark-season-15-sparen-680d3dc1",

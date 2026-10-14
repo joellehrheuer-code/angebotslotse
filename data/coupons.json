@@ -1,13 +1,13 @@
 [
   {
-    "code": "MIDWEEK",
-    "discountText": "Die dunkle Jahreszeit ist da! Sichere dir jetzt 17% Rabatt auf (fast) alles bei EMP ab 59,99 € Mindestbestellwert und entdecke deine neuen Herbst-Favoriten.",
+    "code": "SAVE15",
+    "discountText": "Sichere dir 15% Rabatt auf (fast) alles bei EMP ab 59,99€ Mindestbestellwert. Perfekt für kühle Tage und lange Nächte.",
     "discountPercent": null,
-    "validFrom": "2026-10-13T22:00:00.000Z",
-    "validUntil": "2026-10-14T21:59:00.000Z",
+    "validFrom": "2026-10-14T22:00:00.000Z",
+    "validUntil": "2026-10-20T21:59:00.000Z",
     "merchant": "EMP DE",
     "landingUrl": "https://www.awin1.com/cread.php?awinmid=14172&awinaffid=3045061&ued=https%3A%2F%2Fwww.emp.de%2Fbekleidung-accessoires%2F",
-    "terms": "Nur online. Gilt ab einem Kauf ab mindestens 59,99€. Weitere Ausschlüsse der Aktion findest du hier: https://www.emp.de/global-exclusions/. Nach Codeeingabe wird der Rabatt automatisch am Ende der Bestellung abgezogen. Nicht mit anderen Aktionscodes kombinierbar. Gültig am 07.10.2026.",
+    "terms": "*Nur online. Gilt ab einem Kauf ab mindestens 59,99€. Nach Codeeingabe wird der Rabatt automatisch am Ende der Bestellung abgezogen. Von der Reduzierung ausgeschlossen sind Bücher, Medien, Tickets, Rammstein, (Till) Lindemann, Böhse Onkelz, Broilers, Die Ärzte, Die Toten Hosen, Metality, Gutscheine & Artikel, die einen Spendenbeitrag beinhalten. Nicht mit anderen Aktionscodes kombinierbar. Gültig bis einschließlich 20.10.2026.",
     "source": "awin",
     "isCommunityExclusive": false,
     "creatorCode": null,
