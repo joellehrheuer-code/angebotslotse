@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-14T13:45:42.110Z",
+  "generatedAt": "2026-10-14T18:06:09.492Z",
   "scope": "Automatisch aus Programminventar, DE-Angebotsabdeckung und verfügbaren Netzwerk-/Feed-Signalen erzeugt.",
   "automation": {
     "discovery": "automatic",
@@ -221,43 +221,6 @@
       ],
       "applicationRequired": true,
       "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Eskute DE redaktionell passend im Bereich Mode & Sport einbinden. Bei Awin sind aktuell 3 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "automationState": "ready-for-review"
-    },
-    {
-      "brand": "iHoverboard DE",
-      "network": "Awin",
-      "advertiserId": 110026,
-      "status": "notjoined",
-      "category": "Mode & Sport",
-      "score": 63,
-      "priority": "mittel",
-      "activeDiscoveryOffers": 3,
-      "offerExamples": [
-        "EB5Max E-Bike Jetzt 10% Rabatt sichern!",
-        "EB3 E-Mountainbike – Jetzt 10 % Rabatt sichern!",
-        "iK3Pro Kinder E-Scooter Jetzt 8% Rabatt sichern!"
-      ],
-      "productFeed": false,
-      "siteCategoryCoverage": 0,
-      "metrics": {
-        "awinIndex": null,
-        "epc": null,
-        "conversionRate": null,
-        "approvalPercentage": null,
-        "validationDays": null,
-        "averagePaymentTime": null,
-        "commissionMin": null,
-        "commissionMax": null,
-        "commissionTypes": []
-      },
-      "reasons": [
-        "passt zu Mode & Sport",
-        "Sortimentslücke: erst 0 veröffentlichte Angebote in Mode & Sport",
-        "3 aktive DE-Aktionen"
-      ],
-      "applicationRequired": true,
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten iHoverboard DE redaktionell passend im Bereich Mode & Sport einbinden. Bei Awin sind aktuell 3 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
       "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
       "automationState": "ready-for-review"
     },
@@ -663,6 +626,41 @@
       "automationState": "ready-for-review"
     },
     {
+      "brand": "Gymondo DE",
+      "network": "Awin",
+      "advertiserId": 10642,
+      "status": "notjoined",
+      "category": "Tierbedarf",
+      "score": 51,
+      "priority": "mittel",
+      "activeDiscoveryOffers": 1,
+      "offerExamples": [
+        "12 Monate Gymondo Plus"
+      ],
+      "productFeed": false,
+      "siteCategoryCoverage": 0,
+      "metrics": {
+        "awinIndex": null,
+        "epc": null,
+        "conversionRate": null,
+        "approvalPercentage": null,
+        "validationDays": null,
+        "averagePaymentTime": null,
+        "commissionMin": null,
+        "commissionMax": null,
+        "commissionTypes": []
+      },
+      "reasons": [
+        "passt zu Tierbedarf",
+        "Sortimentslücke: erst 0 veröffentlichte Angebote in Tierbedarf",
+        "1 aktive DE-Aktion"
+      ],
+      "applicationRequired": true,
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Gymondo DE redaktionell passend im Bereich Tierbedarf einbinden. Bei Awin sind aktuell 1 für Deutschland sichtbare Aktion dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "automationState": "ready-for-review"
+    },
+    {
       "brand": "isinwheel.DE",
       "network": "Awin",
       "advertiserId": 80731,
@@ -834,42 +832,6 @@
       ],
       "applicationRequired": true,
       "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Stylevana DE redaktionell passend im Bereich Gesundheit & Wellness einbinden. Bei Awin sind aktuell 1 für Deutschland sichtbare Aktion dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "automationState": "ready-for-review"
-    },
-    {
-      "brand": "Berliner Kaffeeroesterei DE",
-      "network": "Awin",
-      "advertiserId": 25012,
-      "status": "notjoined",
-      "category": "Haushalt & Küche",
-      "score": 48,
-      "priority": "mittel",
-      "activeDiscoveryOffers": 3,
-      "offerExamples": [
-        "Neu: Berlin TEA ACADEMY \"Only Sinensis\"!",
-        "Kaffee-Adventskalender!",
-        "Schnäppchenjäger aufgepasst! Bis zu 30% Rabatt!"
-      ],
-      "productFeed": false,
-      "siteCategoryCoverage": 52,
-      "metrics": {
-        "awinIndex": null,
-        "epc": null,
-        "conversionRate": null,
-        "approvalPercentage": null,
-        "validationDays": null,
-        "averagePaymentTime": null,
-        "commissionMin": null,
-        "commissionMax": null,
-        "commissionTypes": []
-      },
-      "reasons": [
-        "passt zu Haushalt & Küche",
-        "3 aktive DE-Aktionen"
-      ],
-      "applicationRequired": true,
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Berliner Kaffeeroesterei DE redaktionell passend im Bereich Haushalt & Küche einbinden. Bei Awin sind aktuell 3 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
       "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
       "automationState": "ready-for-review"
     },
@@ -1672,192 +1634,50 @@
       "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten AIRTUNE GmbH redaktionell passend im Bereich Auto & Mobilität einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
       "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
       "automationState": "ready-for-review"
+    },
+    {
+      "brand": "AKAD Bildungsgesellschaft DE",
+      "network": "Awin",
+      "advertiserId": 11668,
+      "status": "notjoined",
+      "category": "Tierbedarf",
+      "score": 45,
+      "priority": "mittel",
+      "activeDiscoveryOffers": 0,
+      "offerExamples": [],
+      "productFeed": false,
+      "siteCategoryCoverage": 0,
+      "metrics": {
+        "awinIndex": null,
+        "epc": null,
+        "conversionRate": null,
+        "approvalPercentage": null,
+        "validationDays": null,
+        "averagePaymentTime": null,
+        "commissionMin": null,
+        "commissionMax": null,
+        "commissionTypes": []
+      },
+      "reasons": [
+        "passt zu Tierbedarf",
+        "Sortimentslücke: erst 0 veröffentlichte Angebote in Tierbedarf"
+      ],
+      "applicationRequired": true,
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten AKAD Bildungsgesellschaft DE redaktionell passend im Bereich Tierbedarf einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "automationState": "ready-for-review"
     }
   ],
   "impact": {
-    "status": "ok",
-    "joinedPrograms": 6,
-    "opportunities": [
-      {
-        "brand": "Martinic - martinic",
-        "campaign": "Martinic Audio",
-        "advertiserId": "255547",
-        "campaignId": "4482",
-        "category": "Audio & Creator",
-        "score": 39,
-        "priority": "mittel",
-        "assets": {
-          "products": 0,
-          "promotions": 0,
-          "deals": 1,
-          "ads": 0
-        },
-        "capabilities": {
-          "deeplinks": true,
-          "trackingLink": true,
-          "publicTerms": true,
-          "logo": true
-        },
-        "reasons": [
-          "passt zu Audio & Creator",
-          "1 aktiver Deal",
-          "Deeplinks erlaubt",
-          "Trackinglink verfügbar",
-          "öffentliche Programmbedingungen"
-        ],
-        "nextAction": "Aktuelle Aktionen und Codes prominent einbinden; Produktfeed beim Brand-Team erfragen.",
-        "contactDraft": "Hallo Martinic - martinic-Team, Angebotslotse ist ein deutsches Deal-, Preisvergleichs- und Discovery-Portal. Wir sind über impact.com bereits mit eurem Programm verbunden und möchten die Zusammenarbeit im Bereich Weitere stärker ausbauen. Besonders interessant sind für uns aktuelle Produktkataloge, zeitlich begrenzte Aktionen, Gutscheincodes und offizielle Medien, die wir transparent und mit korrekter Werbekennzeichnung darstellen können. Wenn für Publisher zusätzliche Feeds, Creatives oder aktuelle Kampagnen verfügbar sind, freuen wir uns über einen Hinweis direkt über impact.com."
-      },
-      {
-        "brand": "GearUP Portal Pte Ltd",
-        "campaign": "GearUP for Mobile",
-        "advertiserId": "6117213",
-        "campaignId": "53368",
-        "category": "Technik & Computer",
-        "score": 34,
-        "priority": "mittel",
-        "assets": {
-          "products": 0,
-          "promotions": 0,
-          "deals": 0,
-          "ads": 0
-        },
-        "capabilities": {
-          "deeplinks": true,
-          "trackingLink": true,
-          "publicTerms": true,
-          "logo": true
-        },
-        "reasons": [
-          "passt zu Technik & Computer",
-          "Deeplinks erlaubt",
-          "Trackinglink verfügbar",
-          "öffentliche Programmbedingungen"
-        ],
-        "nextAction": "Über impact.com nach Produktfeed, Promotions, Codes und Publisher-Creatives fragen.",
-        "contactDraft": "Hallo GearUP Portal Pte Ltd-Team, Angebotslotse ist ein deutsches Deal-, Preisvergleichs- und Discovery-Portal. Wir sind über impact.com bereits mit eurem Programm verbunden und möchten die Zusammenarbeit im Bereich Weitere stärker ausbauen. Besonders interessant sind für uns aktuelle Produktkataloge, zeitlich begrenzte Aktionen, Gutscheincodes und offizielle Medien, die wir transparent und mit korrekter Werbekennzeichnung darstellen können. Wenn für Publisher zusätzliche Feeds, Creatives oder aktuelle Kampagnen verfügbar sind, freuen wir uns über einen Hinweis direkt über impact.com."
-      },
-      {
-        "brand": "Belkin",
-        "campaign": "Belkin DE",
-        "advertiserId": "165682",
-        "campaignId": "3770",
-        "category": "Weitere",
-        "score": 26,
-        "priority": "niedrig",
-        "assets": {
-          "products": 0,
-          "promotions": 0,
-          "deals": 1,
-          "ads": 1
-        },
-        "capabilities": {
-          "deeplinks": true,
-          "trackingLink": true,
-          "publicTerms": true,
-          "logo": true
-        },
-        "reasons": [
-          "1 aktiver Deal",
-          "1 Creative",
-          "Deeplinks erlaubt",
-          "Trackinglink verfügbar",
-          "öffentliche Programmbedingungen"
-        ],
-        "nextAction": "Aktuelle Aktionen und Codes prominent einbinden; Produktfeed beim Brand-Team erfragen.",
-        "contactDraft": "Hallo Belkin-Team, Angebotslotse ist ein deutsches Deal-, Preisvergleichs- und Discovery-Portal. Wir sind über impact.com bereits mit eurem Programm verbunden und möchten die Zusammenarbeit im Bereich Weitere stärker ausbauen. Besonders interessant sind für uns aktuelle Produktkataloge, zeitlich begrenzte Aktionen, Gutscheincodes und offizielle Medien, die wir transparent und mit korrekter Werbekennzeichnung darstellen können. Wenn für Publisher zusätzliche Feeds, Creatives oder aktuelle Kampagnen verfügbar sind, freuen wir uns über einen Hinweis direkt über impact.com."
-      },
-      {
-        "brand": "GearUP Portal Pte Ltd",
-        "campaign": "GearUP",
-        "advertiserId": "6117213",
-        "campaignId": "40222",
-        "category": "Weitere",
-        "score": 19,
-        "priority": "niedrig",
-        "assets": {
-          "products": 0,
-          "promotions": 0,
-          "deals": 0,
-          "ads": 0
-        },
-        "capabilities": {
-          "deeplinks": true,
-          "trackingLink": true,
-          "publicTerms": true,
-          "logo": true
-        },
-        "reasons": [
-          "Deeplinks erlaubt",
-          "Trackinglink verfügbar",
-          "öffentliche Programmbedingungen"
-        ],
-        "nextAction": "Über impact.com nach Produktfeed, Promotions, Codes und Publisher-Creatives fragen.",
-        "contactDraft": "Hallo GearUP Portal Pte Ltd-Team, Angebotslotse ist ein deutsches Deal-, Preisvergleichs- und Discovery-Portal. Wir sind über impact.com bereits mit eurem Programm verbunden und möchten die Zusammenarbeit im Bereich Weitere stärker ausbauen. Besonders interessant sind für uns aktuelle Produktkataloge, zeitlich begrenzte Aktionen, Gutscheincodes und offizielle Medien, die wir transparent und mit korrekter Werbekennzeichnung darstellen können. Wenn für Publisher zusätzliche Feeds, Creatives oder aktuelle Kampagnen verfügbar sind, freuen wir uns über einen Hinweis direkt über impact.com."
-      },
-      {
-        "brand": "ProtoArc",
-        "campaign": "ProtoArc",
-        "advertiserId": "7605257",
-        "campaignId": "56905",
-        "category": "Weitere",
-        "score": 19,
-        "priority": "niedrig",
-        "assets": {
-          "products": 0,
-          "promotions": 0,
-          "deals": 0,
-          "ads": 0
-        },
-        "capabilities": {
-          "deeplinks": true,
-          "trackingLink": true,
-          "publicTerms": true,
-          "logo": true
-        },
-        "reasons": [
-          "Deeplinks erlaubt",
-          "Trackinglink verfügbar",
-          "öffentliche Programmbedingungen"
-        ],
-        "nextAction": "Über impact.com nach Produktfeed, Promotions, Codes und Publisher-Creatives fragen.",
-        "contactDraft": "Hallo ProtoArc-Team, Angebotslotse ist ein deutsches Deal-, Preisvergleichs- und Discovery-Portal. Wir sind über impact.com bereits mit eurem Programm verbunden und möchten die Zusammenarbeit im Bereich Weitere stärker ausbauen. Besonders interessant sind für uns aktuelle Produktkataloge, zeitlich begrenzte Aktionen, Gutscheincodes und offizielle Medien, die wir transparent und mit korrekter Werbekennzeichnung darstellen können. Wenn für Publisher zusätzliche Feeds, Creatives oder aktuelle Kampagnen verfügbar sind, freuen wir uns über einen Hinweis direkt über impact.com."
-      },
-      {
-        "brand": "Razer (Asia Pacific) Pte Ltd",
-        "campaign": "Razer Affiliate Program",
-        "advertiserId": "1723018",
-        "campaignId": "10229",
-        "category": "Weitere",
-        "score": 19,
-        "priority": "niedrig",
-        "assets": {
-          "products": 0,
-          "promotions": 0,
-          "deals": 0,
-          "ads": 0
-        },
-        "capabilities": {
-          "deeplinks": true,
-          "trackingLink": true,
-          "publicTerms": true,
-          "logo": true
-        },
-        "reasons": [
-          "Deeplinks erlaubt",
-          "Trackinglink verfügbar",
-          "öffentliche Programmbedingungen"
-        ],
-        "nextAction": "Über impact.com nach Produktfeed, Promotions, Codes und Publisher-Creatives fragen.",
-        "contactDraft": "Hallo Razer (Asia Pacific) Pte Ltd-Team, Angebotslotse ist ein deutsches Deal-, Preisvergleichs- und Discovery-Portal. Wir sind über impact.com bereits mit eurem Programm verbunden und möchten die Zusammenarbeit im Bereich Weitere stärker ausbauen. Besonders interessant sind für uns aktuelle Produktkataloge, zeitlich begrenzte Aktionen, Gutscheincodes und offizielle Medien, die wir transparent und mit korrekter Werbekennzeichnung darstellen können. Wenn für Publisher zusätzliche Feeds, Creatives oder aktuelle Kampagnen verfügbar sind, freuen wir uns über einen Hinweis direkt über impact.com."
-      }
-    ],
+    "status": "disabled",
+    "joinedPrograms": 0,
+    "opportunities": [],
     "marketplaceSearches": [
       {
         "category": "Audio & Creator",
         "siteOffers": 88,
-        "joinedPrograms": 1,
-        "gapScore": 78,
+        "joinedPrograms": 0,
+        "gapScore": 88,
         "searchTerms": [
           "audio",
           "music",
@@ -1882,6 +1702,20 @@
         "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
       },
       {
+        "category": "Technik & Computer",
+        "siteOffers": 53,
+        "joinedPrograms": 0,
+        "gapScore": 53,
+        "searchTerms": [
+          "electronics",
+          "computer",
+          "hardware",
+          "mobile",
+          "smart home"
+        ],
+        "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
+      },
+      {
         "category": "Haushalt & Küche",
         "siteOffers": 52,
         "joinedPrograms": 0,
@@ -1891,20 +1725,6 @@
           "appliances",
           "kitchen",
           "vacuum"
-        ],
-        "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
-      },
-      {
-        "category": "Technik & Computer",
-        "siteOffers": 53,
-        "joinedPrograms": 1,
-        "gapScore": 43,
-        "searchTerms": [
-          "electronics",
-          "computer",
-          "hardware",
-          "mobile",
-          "smart home"
         ],
         "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
       },
