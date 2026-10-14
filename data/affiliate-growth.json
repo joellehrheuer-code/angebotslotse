@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-10-14T20:14:19.129Z",
+  "generatedAt": "2026-10-14T20:37:46.366Z",
   "market": "DE",
   "publisherId": 3045061,
   "awin": {
     "counts": {
       "joined": 5,
-      "pending": 4,
+      "pending": 3,
       "suspended": 1,
-      "rejected": 2,
+      "rejected": 3,
       "notjoined": 2621
     },
     "totalProgramsEvaluated": 2633,
@@ -1042,17 +1042,6 @@
         "advertiserId": 12557,
         "name": "Bergzeit DE / AT",
         "primarySector": "Sports Equipment",
-        "primaryRegion": {
-          "name": "Germany",
-          "countryCode": "DE"
-        }
-      },
-      {
-        "network": "Awin",
-        "relationship": "notjoined",
-        "advertiserId": 25012,
-        "name": "Berliner Kaffeeroesterei DE",
-        "primarySector": "FMCG",
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
@@ -2207,6 +2196,17 @@
         "relationship": "notjoined",
         "advertiserId": 122352,
         "name": "Eka Store DE",
+        "primarySector": "Home & Garden",
+        "primaryRegion": {
+          "name": "Germany",
+          "countryCode": "DE"
+        }
+      },
+      {
+        "network": "Awin",
+        "relationship": "notjoined",
+        "advertiserId": 129151,
+        "name": "ElectricSun Deutschland",
         "primarySector": "Home & Garden",
         "primaryRegion": {
           "name": "Germany",
