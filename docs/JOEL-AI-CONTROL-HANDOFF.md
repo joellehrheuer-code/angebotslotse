@@ -52,3 +52,10 @@ Priorität P0: reproduzierbaren visuellen und interaktiven End-to-End-Test etabl
 Priorität P1: Karten/Karussell/Filter/Themes sowie Code-Anzeige und Sterne validieren.
 Priorität P2: weitere Partnerdaten mit ausdrücklicher Freigabe und stabilen Feeds ergänzen.
 Für jedes Thema ein Statusfeld offen/in Arbeit/geprüft/blockiert und einen Beleg (Testprotokoll, Screenshot, Commit).
+
+## Sprachumschalter (14.10.2026)
+- Erste Implementierung in public/i18n.js, eingebunden für alle generierten Seiten über scripts/build.mjs.
+- Auswahl: Deutsch (de, Standard), Englisch (en), Französisch (fr), Spanisch (es), Japanisch (ja), Russisch (ru).
+- Speicherung pro Browser in localStorage: angebotslotse-language-v1.
+- Derzeit Basisübersetzungen für häufige Navigation, Suche, Sortierung und Buttons; Produktdaten, lange redaktionelle Texte und dynamisch gerenderte Inhalte sind noch nicht vollständig lokalisiert.
+- Nächster Schritt: alle UI-Strings strukturieren, sprachspezifische Seitenmetadaten, Fehlermeldungen und Tests für sechs Sprachen. Kein Anspruch auf vollständige Internationalisierung, bis die QA abgeschlossen wurde.
