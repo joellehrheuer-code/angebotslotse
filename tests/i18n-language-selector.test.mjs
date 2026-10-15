@@ -9,6 +9,7 @@ test("all six supported website languages are wired into every generated page", 
   for(const lang of ["de","en","fr","es","ja","ru"]) {
     assert.match(code,new RegExp(lang+":"));
   }
+  assert.match(build,/readFile\\("public\\/i18n\\.js"\\)/);
   assert.match(code,/localStorage\.setItem\(key,language\)/);
   assert.match(code,/document\.documentElement\.lang = language/);
   assert.match(code,/addEventListener\("change"/);
