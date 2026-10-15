@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-15T07:15:52.805Z",
+  "generatedAt": "2026-10-15T08:10:53.438Z",
   "market": "DE",
   "publisherId": 3045061,
   "awin": {
@@ -2833,16 +2833,16 @@
         "automationState": "ready-for-review"
       },
       {
-        "brand": "Modivo DE",
+        "brand": "Kind DE",
         "network": "Awin",
-        "advertiserId": 24270,
+        "advertiserId": 37700,
         "status": "notjoined",
-        "category": "Mode & Sport",
+        "category": "Gesundheit & Wellness",
         "score": 51,
         "priority": "mittel",
         "activeDiscoveryOffers": 1,
         "offerExamples": [
-          "GOLDEN DEALS BIS ZU -30%"
+          "+67% mehr Provision bei KIND ????"
         ],
         "productFeed": false,
         "siteCategoryCoverage": 0,
@@ -2858,12 +2858,47 @@
           "commissionTypes": []
         },
         "reasons": [
-          "passt zu Mode & Sport",
-          "Sortimentslücke: erst 0 veröffentlichte Angebote in Mode & Sport",
+          "passt zu Gesundheit & Wellness",
+          "Sortimentslücke: erst 0 veröffentlichte Angebote in Gesundheit & Wellness",
           "1 aktive DE-Aktion"
         ],
         "applicationRequired": true,
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Modivo DE redaktionell passend im Bereich Mode & Sport einbinden. Bei Awin sind aktuell 1 für Deutschland sichtbare Aktion dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Kind DE redaktionell passend im Bereich Gesundheit & Wellness einbinden. Bei Awin sind aktuell 1 für Deutschland sichtbare Aktion dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+        "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+        "automationState": "ready-for-review"
+      },
+      {
+        "brand": "Orthomol Shop DE",
+        "network": "Awin",
+        "advertiserId": 125260,
+        "status": "notjoined",
+        "category": "Gesundheit & Wellness",
+        "score": 51,
+        "priority": "mittel",
+        "activeDiscoveryOffers": 1,
+        "offerExamples": [
+          "15er Packung Orthomol Neuro gratis"
+        ],
+        "productFeed": false,
+        "siteCategoryCoverage": 0,
+        "metrics": {
+          "awinIndex": null,
+          "epc": null,
+          "conversionRate": null,
+          "approvalPercentage": null,
+          "validationDays": null,
+          "averagePaymentTime": null,
+          "commissionMin": null,
+          "commissionMax": null,
+          "commissionTypes": []
+        },
+        "reasons": [
+          "passt zu Gesundheit & Wellness",
+          "Sortimentslücke: erst 0 veröffentlichte Angebote in Gesundheit & Wellness",
+          "1 aktive DE-Aktion"
+        ],
+        "applicationRequired": true,
+        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Orthomol Shop DE redaktionell passend im Bereich Gesundheit & Wellness einbinden. Bei Awin sind aktuell 1 für Deutschland sichtbare Aktion dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
         "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
         "automationState": "ready-for-review"
       },
@@ -3026,45 +3061,13 @@
         "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten 360GradFitness DE redaktionell passend im Bereich Mode & Sport einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
         "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
         "automationState": "ready-for-review"
-      },
-      {
-        "brand": "365Rider DE",
-        "network": "Awin",
-        "advertiserId": 30677,
-        "status": "notjoined",
-        "category": "Mode & Sport",
-        "score": 45,
-        "priority": "mittel",
-        "activeDiscoveryOffers": 0,
-        "offerExamples": [],
-        "productFeed": false,
-        "siteCategoryCoverage": 0,
-        "metrics": {
-          "awinIndex": null,
-          "epc": null,
-          "conversionRate": null,
-          "approvalPercentage": null,
-          "validationDays": null,
-          "averagePaymentTime": null,
-          "commissionMin": null,
-          "commissionMax": null,
-          "commissionTypes": []
-        },
-        "reasons": [
-          "passt zu Mode & Sport",
-          "Sortimentslücke: erst 0 veröffentlichte Angebote in Mode & Sport"
-        ],
-        "applicationRequired": true,
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten 365Rider DE redaktionell passend im Bereich Mode & Sport einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-        "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-        "automationState": "ready-for-review"
       }
     ],
     "feeds": [
       {
         "source": "awin-enhanced-feeds",
         "state": "ok",
-        "count": 457,
+        "count": 447,
         "audit": {
           "feeds": [
             {
@@ -3084,12 +3087,12 @@
               "advertiserName": "ANTHBOT DE",
               "locale": "de_DE",
               "state": "available",
-              "products": 162,
-              "rawProducts": 162,
-              "validProducts": 162,
-              "withPrice": 162,
-              "withImage": 162,
-              "withTracking": 162,
+              "products": 152,
+              "rawProducts": 152,
+              "validProducts": 152,
+              "withPrice": 152,
+              "withImage": 152,
+              "withTracking": 152,
               "rejected": 0,
               "rejectionReasons": {}
             },
@@ -3178,19 +3181,6 @@
         "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
       },
       {
-        "category": "Garten & Werkzeug",
-        "siteOffers": 54,
-        "joinedPrograms": 0,
-        "gapScore": 54,
-        "searchTerms": [
-          "garden",
-          "mower",
-          "tools",
-          "DIY"
-        ],
-        "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
-      },
-      {
         "category": "Technik & Computer",
         "siteOffers": 53,
         "joinedPrograms": 0,
@@ -3214,6 +3204,19 @@
           "appliances",
           "kitchen",
           "vacuum"
+        ],
+        "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
+      },
+      {
+        "category": "Garten & Werkzeug",
+        "siteOffers": 47,
+        "joinedPrograms": 0,
+        "gapScore": 47,
+        "searchTerms": [
+          "garden",
+          "mower",
+          "tools",
+          "DIY"
         ],
         "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
       },
@@ -3450,15 +3453,15 @@
     "reason": "Webgains Memberships und Terms werden automatisch gelesen; accept_terms=true wird nur nach ausdrücklicher menschlicher Bestätigung des geprüften Terms-Stands verwendet."
   },
   "publication": {
-    "offers": 252,
+    "offers": 245,
     "concreteAwaitingMedia": 0,
     "blockedPublisherPromotions": 4,
     "partnerEntries": 217,
     "merchants": 6,
-    "products": 246,
-    "images": 246,
+    "products": 239,
+    "images": 239,
     "videos": 0,
-    "prices": 246,
+    "prices": 239,
     "discounts": 0,
     "coupons": 3
   },

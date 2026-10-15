@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-15T07:15:52.782Z",
+  "generatedAt": "2026-10-15T08:10:53.417Z",
   "newAwinPrograms": 0,
   "newImpactPrograms": 0,
   "newDaisyconPrograms": 0,
@@ -14,9 +14,9 @@
   "applicationCandidates": 2605,
   "newMerchants": 0,
   "newProducts": 0,
-  "productsWithImage": 246,
+  "productsWithImage": 239,
   "productsWithVideo": 0,
-  "productsWithPrice": 246,
+  "productsWithPrice": 239,
   "productsWithOldPrice": 0,
   "productsWithDiscount": 0,
   "newCoupons": 0,
@@ -25,18 +25,18 @@
   "expiredOffers": 0,
   "expiredCoupons": 0,
   "filteredForeignLocale": 0,
-  "totalProducts": 252,
+  "totalProducts": 245,
   "productsBySource": {
-    "Awin": 252
+    "Awin": 245
   },
   "officialImagesBySource": {
-    "Awin": 246
+    "Awin": 239
   },
   "missingMediaBySource": {},
   "productsByMerchant": {
     "Hollyland DE": 136,
-    "ANTHBOT DE": 57,
     "Outin Germany": 54,
+    "ANTHBOT DE": 50,
     "EMP DE": 3,
     "Imou DE": 1,
     "PDF Agile": 1
@@ -44,8 +44,8 @@
   "productsByCategory": {
     "audio-musik": 88,
     "haushalt": 52,
-    "garten": 51,
     "zubehoer": 49,
+    "garten": 44,
     "computer": 4,
     "sonstiges": 3,
     "werkzeug": 3,
@@ -70,12 +70,12 @@
       "advertiserName": "ANTHBOT DE",
       "locale": "de_DE",
       "state": "available",
-      "products": 162,
-      "rawProducts": 162,
-      "validProducts": 162,
-      "withPrice": 162,
-      "withImage": 162,
-      "withTracking": 162,
+      "products": 152,
+      "rawProducts": 152,
+      "validProducts": 152,
+      "withPrice": 152,
+      "withImage": 152,
+      "withTracking": 152,
       "rejected": 0,
       "rejectionReasons": {}
     },
@@ -127,25 +127,25 @@
     }
   ],
   "awinEnhancedDedupe": {
-    "inputRows": 457,
-    "normalizedRows": 255,
+    "inputRows": 447,
+    "normalizedRows": 245,
     "filteredBeforeDedupe": 202,
-    "outputOffers": 246,
-    "dedupedRows": 9,
-    "collapsedRows": 211,
+    "outputOffers": 239,
+    "dedupedRows": 6,
+    "collapsedRows": 208,
     "byMerchant": [
       {
         "merchant": "ANTHBOT DE",
-        "inputRows": 162,
-        "normalizedRows": 60,
+        "inputRows": 152,
+        "normalizedRows": 50,
         "filteredBeforeDedupe": 102,
-        "outputOffers": 57,
-        "dedupedRows": 3,
-        "collapsedRows": 105,
-        "rowsWithGtin": 6,
-        "duplicateGtinExtras": 3,
-        "rowsWithMpn": 158,
-        "duplicateMpnExtras": 105,
+        "outputOffers": 50,
+        "dedupedRows": 0,
+        "collapsedRows": 102,
+        "rowsWithGtin": 3,
+        "duplicateGtinExtras": 0,
+        "rowsWithMpn": 148,
+        "duplicateMpnExtras": 102,
         "duplicateSourceIdExtras": 0,
         "rejectionReasons": {
           "blocked-non-merchandise": 102

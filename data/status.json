@@ -1,9 +1,9 @@
 {
   "state": "ok",
-  "lastSuccessfulUpdate": "2026-10-15T07:15:52.700Z",
-  "activeOffers": 252,
+  "lastSuccessfulUpdate": "2026-10-15T08:10:53.338Z",
+  "activeOffers": 245,
   "storedOffers": 481,
-  "publishableOffers": 252,
+  "publishableOffers": 245,
   "awaitingMedia": 0,
   "blockedPublisherPromotions": 4,
   "quarantined": 130,
@@ -23,7 +23,7 @@
     },
     "awin-enhanced-feeds": {
       "state": "ok",
-      "count": 457,
+      "count": 447,
       "error": null,
       "audit": {
         "feeds": [
@@ -44,12 +44,12 @@
             "advertiserName": "ANTHBOT DE",
             "locale": "de_DE",
             "state": "available",
-            "products": 162,
-            "rawProducts": 162,
-            "validProducts": 162,
-            "withPrice": 162,
-            "withImage": 162,
-            "withTracking": 162,
+            "products": 152,
+            "rawProducts": 152,
+            "validProducts": 152,
+            "withPrice": 152,
+            "withImage": 152,
+            "withTracking": 152,
             "rejected": 0,
             "rejectionReasons": {}
           },
@@ -174,6 +174,6 @@
     "error": null,
     "mode": "social"
   },
-  "stale": 213,
+  "stale": 220,
   "message": "Aktualisierung mit geschützten Bestandsdaten abgeschlossen."
 }
