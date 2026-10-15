@@ -6026,3 +6026,31 @@ html[data-theme="black"] .menu-toggle{background:#161b26!important;border-color:
 .community-review-disclosure>summary:focus-visible{outline:3px solid #ffaf65;outline-offset:-3px}
 .community-review-disclosure[open] .community-review-form{margin:0!important;padding:18px!important}
 @media(max-width:620px){.community-proof-compact{padding:10px 12px!important;margin:8px 10px!important}.community-proof-compact .community-proof-head{align-items:flex-start}.community-proof-compact .community-review-list>article:nth-child(n+2){display:none}.community-proof-compact .community-stat-card small{font-size:10px}}
+
+
+/* V30 — Above-the-fold product-first landing layout */
+.portal-hero{
+  min-height:0!important;margin:10px auto 12px!important;
+  padding:clamp(17px,2.5vw,34px)!important;
+  grid-template-columns:minmax(0,1fr) minmax(300px,.95fr)!important;
+  gap:clamp(16px,2vw,32px)!important
+}
+.hero-redesign-copy h1{font-size:clamp(30px,3.1vw,49px)!important;line-height:1.05!important;margin:12px 0!important;letter-spacing:-.04em!important}
+.hero-redesign-copy>p{font-size:clamp(13px,1.2vw,16px)!important;line-height:1.45!important;margin:8px 0 14px!important}
+.portal-hero .hero-trust-grid{margin-top:12px!important}
+.portal-hero .hero-brand-panel,.portal-hero .portal-brand-panel{min-height:0!important}
+.portal-hero .hero-kicker{font-size:11px!important}
+#aktuelle-deals{scroll-margin-top:110px}
+#aktuelle-deals .section-head{margin-bottom:14px!important}
+@media(max-width:900px){
+  .portal-hero{grid-template-columns:minmax(0,1fr)!important;padding:18px!important;margin:8px auto!important;gap:12px!important}
+  .portal-hero .hero-brand-panel,.portal-hero .portal-brand-panel{display:none!important}
+  .hero-redesign-copy h1{font-size:clamp(27px,6vw,40px)!important}
+  .portal-hero .hero-trust-grid{display:none!important}
+}
+@media(max-width:620px){
+  .portal-hero{width:calc(100% - 20px)!important;border-radius:18px!important;padding:14px!important}
+  .hero-redesign-copy>p{font-size:13px!important}
+  .portal-hero .portal-hero-actions{gap:8px!important;margin-top:8px!important}
+  #aktuelle-deals{padding-top:20px!important}
+}
