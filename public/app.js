@@ -1305,3 +1305,16 @@ document.addEventListener("click",event=>{
     else img.addEventListener("error",replaceBroken,{once:true});
   });
 })();
+
+
+/* Open the compact review form when navigating directly to it. */
+document.querySelectorAll('[data-community-expand-form]').forEach(link=>{
+  link.addEventListener("click",()=>{
+    const details=document.querySelector("#bewertung-abgeben");
+    if(details instanceof HTMLDetailsElement)details.open=true;
+  });
+});
+if(location.hash==="#bewertung-abgeben"){
+  const details=document.querySelector("#bewertung-abgeben");
+  if(details instanceof HTMLDetailsElement)details.open=true;
+}
