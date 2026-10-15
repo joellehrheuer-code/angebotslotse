@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-15T16:14:25.823Z",
+  "generatedAt": "2026-10-15T19:55:16.890Z",
   "market": "DE",
   "publisherId": 3045061,
   "awin": {
@@ -8,9 +8,9 @@
       "pending": 3,
       "suspended": 1,
       "rejected": 3,
-      "notjoined": 2622
+      "notjoined": 2623
     },
-    "totalProgramsEvaluated": 2634,
+    "totalProgramsEvaluated": 2635,
     "reportedPrograms": 200,
     "programs": [
       {
@@ -2440,7 +2440,7 @@
         "category": "Technik & Computer",
         "score": 60,
         "priority": "mittel",
-        "activeDiscoveryOffers": 8,
+        "activeDiscoveryOffers": 5,
         "offerExamples": [
           "Gemeinsam Hotpot genießen! Alles für Hotpot an einem Ort.",
           "Baby-Vorratsecke Baby & Haushalt: bis zu 60% Rabatt",
@@ -2461,10 +2461,10 @@
         },
         "reasons": [
           "passt zu Technik & Computer",
-          "8 aktive DE-Aktionen"
+          "5 aktive DE-Aktionen"
         ],
         "applicationRequired": true,
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Joybuy DE redaktionell passend im Bereich Technik & Computer einbinden. Bei Awin sind aktuell 8 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Joybuy DE redaktionell passend im Bereich Technik & Computer einbinden. Bei Awin sind aktuell 5 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
         "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
         "automationState": "ready-for-review"
       },
@@ -2802,42 +2802,6 @@
         "automationState": "ready-for-review"
       },
       {
-        "brand": "Pollin Electronic DE - CLOSED 13.10.2026",
-        "network": "Awin",
-        "advertiserId": 15965,
-        "status": "notjoined",
-        "category": "Technik & Computer",
-        "score": 54,
-        "priority": "mittel",
-        "activeDiscoveryOffers": 4,
-        "offerExamples": [
-          "Reduziertes Angebot: FUJITSU Notebook Lifebook E5411, 35,56 cm (14\"), 8GB, 256GB, Win11Pro, gebraucht, 10% reduziert - für nur 179,00€ statt",
-          "Reduziertes Angebot: LED-Clusterlichterkette, 384 LEDs, kaltweiß, 230 V~, schwarz, Innen/Außen, 6 m, Timer, 20% reduziert - für nur 9,95€ st",
-          "Reduziertes Angebot: DAYTOOLS Tür- und Plattenheber schwenkbar, 35% reduziert - für nur 12,99€ statt UVP 19,95€"
-        ],
-        "productFeed": false,
-        "siteCategoryCoverage": 53,
-        "metrics": {
-          "awinIndex": null,
-          "epc": null,
-          "conversionRate": null,
-          "approvalPercentage": null,
-          "validationDays": null,
-          "averagePaymentTime": null,
-          "commissionMin": null,
-          "commissionMax": null,
-          "commissionTypes": []
-        },
-        "reasons": [
-          "passt zu Technik & Computer",
-          "4 aktive DE-Aktionen"
-        ],
-        "applicationRequired": true,
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Pollin Electronic DE - CLOSED 13.10.2026 redaktionell passend im Bereich Technik & Computer einbinden. Bei Awin sind aktuell 4 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-        "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-        "automationState": "ready-for-review"
-      },
-      {
         "brand": "BasicLab DE",
         "network": "Awin",
         "advertiserId": 120085,
@@ -3079,6 +3043,41 @@
         ],
         "applicationRequired": true,
         "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Orthomol Shop DE redaktionell passend im Bereich Gesundheit & Wellness einbinden. Bei Awin sind aktuell 1 für Deutschland sichtbare Aktion dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+        "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+        "automationState": "ready-for-review"
+      },
+      {
+        "brand": "Ribble Cycles (DE)",
+        "network": "Awin",
+        "advertiserId": 10008,
+        "status": "notjoined",
+        "category": "Mode & Sport",
+        "score": 51,
+        "priority": "mittel",
+        "activeDiscoveryOffers": 1,
+        "offerExamples": [
+          "End of Season Sale – nur für begrenzte Zeit: Rennräder und Gravelbikes"
+        ],
+        "productFeed": false,
+        "siteCategoryCoverage": 0,
+        "metrics": {
+          "awinIndex": null,
+          "epc": null,
+          "conversionRate": null,
+          "approvalPercentage": null,
+          "validationDays": null,
+          "averagePaymentTime": null,
+          "commissionMin": null,
+          "commissionMax": null,
+          "commissionTypes": []
+        },
+        "reasons": [
+          "passt zu Mode & Sport",
+          "Sortimentslücke: erst 0 veröffentlichte Angebote in Mode & Sport",
+          "1 aktive DE-Aktion"
+        ],
+        "applicationRequired": true,
+        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Ribble Cycles (DE) redaktionell passend im Bereich Mode & Sport einbinden. Bei Awin sind aktuell 1 für Deutschland sichtbare Aktion dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
         "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
         "automationState": "ready-for-review"
       }
