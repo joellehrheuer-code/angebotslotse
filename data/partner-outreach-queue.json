@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-15T08:10:53.417Z",
+  "generatedAt": "2026-10-15T16:00:08.235Z",
   "dailyNewContactLimit": 8,
   "safeguards": {
     "dedupeAgainst": "report/partner-outreach-status.json",
@@ -28,6 +28,29 @@
       "routineOutreachAllowed": false,
       "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten adidas DE redaktionell passend im Bereich Mode & Sport einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
       "nextAction": "Official Awin program verified and explicitly welcomes shopping/editorial platforms. Program terms are referenced in Awin Documents; keep manual review before application/outreach.",
+      "networkApplicationNextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "contractualSubmissionAllowed": false,
+      "reason": "Routine-Outreach darf nur an verifizierte offizielle Kontakte vorbereitet/versendet werden; Vertragsbedingungen, AGB, Exklusivität oder kostenpflichtige Verpflichtungen werden nicht automatisch akzeptiert."
+    },
+    {
+      "id": "awin-19056",
+      "network": "Awin",
+      "brand": "Biotikon DE",
+      "advertiserId": 19056,
+      "programId": null,
+      "campaignId": null,
+      "category": "Gesundheit & Wellness",
+      "priority": "mittel",
+      "score": 69,
+      "networkStatus": "notjoined",
+      "actionType": "application-review",
+      "contact": null,
+      "contactType": null,
+      "contactSource": null,
+      "contactState": "official-contact-research-required",
+      "routineOutreachAllowed": false,
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Biotikon DE redaktionell passend im Bereich Gesundheit & Wellness einbinden. Bei Awin sind aktuell 4 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
       "networkApplicationNextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
       "contractualSubmissionAllowed": false,
       "reason": "Routine-Outreach darf nur an verifizierte offizielle Kontakte vorbereitet/versendet werden; Vertragsbedingungen, AGB, Exklusivität oder kostenpflichtige Verpflichtungen werden nicht automatisch akzeptiert."
@@ -100,29 +123,6 @@
       "networkApplicationNextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
       "contractualSubmissionAllowed": false,
       "reason": "Routine-Outreach darf nur an verifizierte offizielle Kontakte vorbereitet/versendet werden; Vertragsbedingungen, AGB, Exklusivität oder kostenpflichtige Verpflichtungen werden nicht automatisch akzeptiert."
-    },
-    {
-      "id": "awin-123926",
-      "network": "Awin",
-      "brand": "Joybuy DE",
-      "advertiserId": 123926,
-      "programId": null,
-      "campaignId": null,
-      "category": "Technik & Computer",
-      "priority": "mittel",
-      "score": 60,
-      "networkStatus": "notjoined",
-      "actionType": "application-review",
-      "contact": null,
-      "contactType": null,
-      "contactSource": null,
-      "contactState": "official-contact-research-required",
-      "routineOutreachAllowed": false,
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Joybuy DE redaktionell passend im Bereich Technik & Computer einbinden. Bei Awin sind aktuell 8 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "networkApplicationNextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "contractualSubmissionAllowed": false,
-      "reason": "Routine-Outreach darf nur an verifizierte offizielle Kontakte vorbereitet/versendet werden; Vertragsbedingungen, AGB, Exklusivität oder kostenpflichtige Verpflichtungen werden nicht automatisch akzeptiert."
     }
   ],
   "backlog": [],
@@ -140,6 +140,13 @@
       "relatedBrand": null,
       "status": "rejected",
       "lastContactAt": "2026-09-02T19:43:09+02:00"
+    },
+    {
+      "brand": "Fressnapf-Online-Shop DE",
+      "reason": "existing-status:contacted",
+      "relatedBrand": null,
+      "status": "contacted",
+      "lastContactAt": "2026-10-08T19:41:00Z"
     },
     {
       "brand": "BSTN DACH",
@@ -161,13 +168,6 @@
       "relatedBrand": null,
       "status": "rejected",
       "lastContactAt": "2026-10-06"
-    },
-    {
-      "brand": "Fressnapf-Online-Shop DE",
-      "reason": "existing-status:contacted",
-      "relatedBrand": null,
-      "status": "contacted",
-      "lastContactAt": "2026-10-08T19:41:00Z"
     },
     {
       "brand": "INTERSPORT DE",
