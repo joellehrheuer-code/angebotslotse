@@ -9,6 +9,8 @@ test("volunteer tester section has explicit tasks and works with existing feedba
   assert.match(build,/5 kleine Testaufgaben anzeigen/);
   assert.match(build,/ehrliche Hinweise/);
   assert.match(build,/data-report-open>Bug melden/);
-  assert.match(build,/\$\{communityModule\}\$\{testerModule\}/);
+  const home=build.match(/const homeBody=`([^\n]+)`;/)?.[1] || "";
+  assert.ok(home.includes("${testerModule}"));
+  assert.ok(home.indexOf("${communityModule}") < home.indexOf("${testerModule}"));
   assert.match(css,/\.volunteer-tester-section/);
 });
