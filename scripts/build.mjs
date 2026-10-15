@@ -392,7 +392,7 @@ const newsletterModule=`<section class="newsletter newsletter-live reveal" id="n
     <a href="#bewertung-abgeben" data-community-expand-form>Bewertung schreiben →</a>
   </div>
   <div class="community-proof-stats">
-    <article class="community-stat-card visits"><span>Seitenaufrufe</span><strong data-community-visits>Lädt …</strong><small>jeder erfasste Seitenaufruf zählt</small></article>
+    <article class="community-stat-card visits"><span>Seitenaufrufe</span><strong data-community-visits>Lädt …</strong><small>inklusive wiederholter Besuche</small></article>
     <article class="community-stat-card rating"><span>Community-Bewertung</span><strong class="community-rating-summary"><b data-community-rating>Noch keine Freigabe</b><em data-community-rating-scale hidden>/5</em></strong><small><b data-community-review-count>0</b> freigegebene Bewertungen <span data-community-pending hidden></span></small></article>
   </div>
   <div class="community-review-list" data-community-review-list aria-live="polite">
