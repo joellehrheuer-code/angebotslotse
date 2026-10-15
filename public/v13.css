@@ -6006,3 +6006,23 @@ html[data-theme="black"] .menu-toggle{background:#161b26!important;border-color:
 .community-proof h2{overflow-wrap:anywhere}
 @media(max-width:620px){.menu-toggle{margin-left:auto!important}.community-proof{padding-inline:16px}}
 @media(prefers-reduced-motion:reduce){.menu-toggle>span{transition:none!important}}
+
+
+/* Compact above-the-fold community snapshot — deals should stay visible. */
+.community-proof-compact{padding:12px 18px!important;margin:14px auto 8px!important;max-width:1400px;display:grid;gap:9px!important}
+.community-proof-compact .community-proof-head{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.community-proof-compact .community-proof-head h2{font-size:clamp(16px,2vw,22px)!important;line-height:1.15;margin:2px 0!important}
+.community-proof-compact .community-proof-head .eyebrow{font-size:10px!important}
+.community-proof-compact .community-proof-head>a{font-size:13px;white-space:nowrap}
+.community-proof-compact .community-proof-stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.community-proof-compact .community-stat-card{padding:10px 14px!important;min-height:0!important}
+.community-proof-compact .community-stat-card strong{font-size:clamp(18px,2.5vw,27px)!important;line-height:1.2}
+.community-proof-compact .community-stat-card small{font-size:11px;line-height:1.3}
+.community-proof-compact .community-review-list{display:flex;gap:8px;overflow:hidden;max-height:96px;min-height:0}
+.community-proof-compact .community-review-list>article{flex:1 1 0;min-width:0;max-height:90px;overflow:hidden;padding:9px 12px!important}
+.community-proof-compact .community-review-list p{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;font-size:12px;margin:3px 0}
+.community-review-disclosure{border:1px solid var(--v13-line,#333b4b);border-radius:12px;overflow:hidden}
+.community-review-disclosure>summary{cursor:pointer;padding:11px 14px;font-weight:700;font-size:13px;list-style-position:inside}
+.community-review-disclosure>summary:focus-visible{outline:3px solid #ffaf65;outline-offset:-3px}
+.community-review-disclosure[open] .community-review-form{margin:0!important;padding:18px!important}
+@media(max-width:620px){.community-proof-compact{padding:10px 12px!important;margin:8px 10px!important}.community-proof-compact .community-proof-head{align-items:flex-start}.community-proof-compact .community-review-list>article:nth-child(n+2){display:none}.community-proof-compact .community-stat-card small{font-size:10px}}
