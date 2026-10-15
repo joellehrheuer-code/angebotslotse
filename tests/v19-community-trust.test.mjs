@@ -13,7 +13,8 @@ test("V19 zeigt nur echte Community-Daten und moderierte Bewertungen", () => {
   assert.match(build,/data-community-visits/);
   assert.match(build,/data-community-rating/);
   assert.match(build,/data-community-review-form/);
-  assert.match(build,/ECHTE COMMUNITY · LIVE ERFASST/);
+  assert.match(build,/UNSERE COMMUNITY/);
+  assert.match(build,/community-review-disclosure/);
   assert.match(build,/site\.css\?v=\d+/);
   assert.match(build,/app\.js\?v=\d+/);
   assert.doesNotMatch(build,/\b4[.,]9\b[^\n]*Bewertung/);
