@@ -166,7 +166,7 @@ const searchSuggestionValues=[...new Set([
 const globalSearchDatalist=`<datalist id="global-search-suggestions">${searchSuggestionValues.map(value=>`<option value="${esc(value)}"></option>`).join("")}</datalist>`;
 const new24hCount=offers.filter(o=>{const t=Date.parse(o.firstSeen||o.importTimestamp||o.dateAdded||"");return Number.isFinite(t)&&now.getTime()-t>=0&&now.getTime()-t<86400000;}).length;
 const quickSearchCatalog={
-  products:offers.filter(o=>o.slug).sort((a,b)=>String(b.updatedAt||b.importTimestamp||"").localeCompare(String(a.updatedAt||a.importTimestamp||""))).slice(0,120).map(o=>({title:o.title,brand:canonicalBrand(o.brand)||"",merchant:o.advertiser||"",category:labels[o.category]||o.category||"",price:hasPrice(o)?o.currentPrice:null,currency:o.currency||"EUR",url:url(`/angebote/${o.slug}.html`),imageUrl:o.imageUrl||""})),
+  products:offers.filter(o=>o.slug).sort((a,b)=>String(b.updatedAt||b.importTimestamp||"").localeCompare(String(a.updatedAt||a.importTimestamp||""))).map(o=>({title:o.title,brand:canonicalBrand(o.brand)||"",merchant:o.advertiser||"",category:labels[o.category]||o.category||"",price:hasPrice(o)?o.currentPrice:null,currency:o.currency||"EUR",url:url(`/angebote/${o.slug}.html`),imageUrl:o.imageUrl||""})),
   shops:shopGroups.slice(0,40).map(([name,rows])=>({name,count:rows.length,url:url(`/shops/${shopPageByName.get(name)}.html`)})),
   categories:categories.map(category=>({name:labels[category]||category,count:offers.filter(o=>o.category===category).length,url:url(`/${category}.html`)})).filter(row=>row.count>0)
 };
