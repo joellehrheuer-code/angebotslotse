@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-16T10:31:50.587Z",
+  "generatedAt": "2026-10-16T13:16:38.367Z",
   "market": "DE",
   "publisherId": 3045061,
   "awin": {
@@ -8,9 +8,9 @@
       "pending": 3,
       "suspended": 1,
       "rejected": 3,
-      "notjoined": 2622
+      "notjoined": 2623
     },
-    "totalProgramsEvaluated": 2634,
+    "totalProgramsEvaluated": 2635,
     "reportedPrograms": 200,
     "programs": [
       {
@@ -525,17 +525,6 @@
         "advertiserId": 10546,
         "name": "All4cycling DE",
         "primarySector": "Sportswear",
-        "primaryRegion": {
-          "name": "Germany",
-          "countryCode": "DE"
-        }
-      },
-      {
-        "network": "Awin",
-        "relationship": "notjoined",
-        "advertiserId": 125612,
-        "name": "allane Leasing DE",
-        "primarySector": "Car Rental",
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
@@ -1952,17 +1941,6 @@
       {
         "network": "Awin",
         "relationship": "notjoined",
-        "advertiserId": 13954,
-        "name": "Die Weinbörse DE",
-        "primarySector": "Wine, Spirits & Tobacco",
-        "primaryRegion": {
-          "name": "Germany",
-          "countryCode": "DE"
-        }
-      },
-      {
-        "network": "Awin",
-        "relationship": "notjoined",
         "advertiserId": 65908,
         "name": "Direct Running DE",
         "primarySector": "Sports Equipment",
@@ -1988,17 +1966,6 @@
         "advertiserId": 21087,
         "name": "Djoser Reisen DE",
         "primarySector": "Travel Agencies",
-        "primaryRegion": {
-          "name": "Germany",
-          "countryCode": "DE"
-        }
-      },
-      {
-        "network": "Awin",
-        "relationship": "notjoined",
-        "advertiserId": 14931,
-        "name": "Dorint Hotels & Resorts DE",
-        "primarySector": "Hotels & Accommodation",
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
@@ -2208,6 +2175,39 @@
         "advertiserId": 14676,
         "name": "Eddie Bauer DE / AT",
         "primarySector": "Sportswear",
+        "primaryRegion": {
+          "name": "Germany",
+          "countryCode": "DE"
+        }
+      },
+      {
+        "network": "Awin",
+        "relationship": "notjoined",
+        "advertiserId": 14013,
+        "name": "Edelnice Trachtenmode DE",
+        "primarySector": "Clothing",
+        "primaryRegion": {
+          "name": "Germany",
+          "countryCode": "DE"
+        }
+      },
+      {
+        "network": "Awin",
+        "relationship": "notjoined",
+        "advertiserId": 46703,
+        "name": "Edelstahl-Tuerklingel DE",
+        "primarySector": "Home & Garden",
+        "primaryRegion": {
+          "name": "Germany",
+          "countryCode": "DE"
+        }
+      },
+      {
+        "network": "Awin",
+        "relationship": "notjoined",
+        "advertiserId": 24666,
+        "name": "Egret DE",
+        "primarySector": "Electronic Superstore",
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
@@ -2690,42 +2690,6 @@
         "automationState": "ready-for-review"
       },
       {
-        "brand": "Ankerkraut DE",
-        "network": "Awin",
-        "advertiserId": 127917,
-        "status": "notjoined",
-        "category": "Haushalt & Küche",
-        "score": 57,
-        "priority": "mittel",
-        "activeDiscoveryOffers": 2,
-        "offerExamples": [
-          "Exklusive Affiliate-Aktion: 15 % Halloween-Rabatt",
-          "Halloween-Glücksrad"
-        ],
-        "productFeed": false,
-        "siteCategoryCoverage": 52,
-        "metrics": {
-          "awinIndex": null,
-          "epc": null,
-          "conversionRate": null,
-          "approvalPercentage": null,
-          "validationDays": null,
-          "averagePaymentTime": null,
-          "commissionMin": null,
-          "commissionMax": null,
-          "commissionTypes": []
-        },
-        "reasons": [
-          "passt zu Haushalt & Küche",
-          "strategisch relevante Marke",
-          "2 aktive DE-Aktionen"
-        ],
-        "applicationRequired": true,
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Ankerkraut DE redaktionell passend im Bereich Haushalt & Küche einbinden. Bei Awin sind aktuell 2 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-        "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-        "automationState": "ready-for-review"
-      },
-      {
         "brand": "Narwal DE",
         "network": "Awin",
         "advertiserId": 80048,
@@ -2758,6 +2722,42 @@
         ],
         "applicationRequired": true,
         "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Narwal DE redaktionell passend im Bereich Haushalt & Küche einbinden. Bei Awin sind aktuell 4 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+        "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+        "automationState": "ready-for-review"
+      },
+      {
+        "brand": "SharkNinja DE",
+        "network": "Awin",
+        "advertiserId": 19810,
+        "status": "notjoined",
+        "category": "Haushalt & Küche",
+        "score": 54,
+        "priority": "mittel",
+        "activeDiscoveryOffers": 4,
+        "offerExamples": [
+          "Bis zu 15% Staffelrabatt auf das SharkNinja Sortiment",
+          "50€ Rabatt auf Shark StainStriker Fleckenreiniger – Blau PX200EU",
+          "30€ Extra-Rabatt auf Ninja Kaltentsafter mit Anti-Verstopfungs-Filter JC152EU"
+        ],
+        "productFeed": false,
+        "siteCategoryCoverage": 52,
+        "metrics": {
+          "awinIndex": null,
+          "epc": null,
+          "conversionRate": null,
+          "approvalPercentage": null,
+          "validationDays": null,
+          "averagePaymentTime": null,
+          "commissionMin": null,
+          "commissionMax": null,
+          "commissionTypes": []
+        },
+        "reasons": [
+          "passt zu Haushalt & Küche",
+          "4 aktive DE-Aktionen"
+        ],
+        "applicationRequired": true,
+        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten SharkNinja DE redaktionell passend im Bereich Haushalt & Küche einbinden. Bei Awin sind aktuell 4 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
         "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
         "automationState": "ready-for-review"
       },
@@ -3042,16 +3042,16 @@
         "automationState": "ready-for-review"
       },
       {
-        "brand": "Manfieldschuhe DE",
+        "brand": "Petlibro DE Affiliate Program",
         "network": "Awin",
-        "advertiserId": 16123,
+        "advertiserId": 77942,
         "status": "notjoined",
-        "category": "Mode & Sport",
+        "category": "Tierbedarf",
         "score": 51,
         "priority": "mittel",
         "activeDiscoveryOffers": 1,
         "offerExamples": [
-          "Autumn Days - Up to 50% off"
+          "160 € sparen bei der Luma Intelligente Selbstreinigende Katzentoilette"
         ],
         "productFeed": false,
         "siteCategoryCoverage": 0,
@@ -3067,12 +3067,12 @@
           "commissionTypes": []
         },
         "reasons": [
-          "passt zu Mode & Sport",
-          "Sortimentslücke: erst 0 veröffentlichte Angebote in Mode & Sport",
+          "passt zu Tierbedarf",
+          "Sortimentslücke: erst 0 veröffentlichte Angebote in Tierbedarf",
           "1 aktive DE-Aktion"
         ],
         "applicationRequired": true,
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Manfieldschuhe DE redaktionell passend im Bereich Mode & Sport einbinden. Bei Awin sind aktuell 1 für Deutschland sichtbare Aktion dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Petlibro DE Affiliate Program redaktionell passend im Bereich Tierbedarf einbinden. Bei Awin sind aktuell 1 für Deutschland sichtbare Aktion dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
         "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
         "automationState": "ready-for-review"
       }
