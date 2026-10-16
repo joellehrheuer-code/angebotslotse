@@ -6054,3 +6054,29 @@ html[data-theme="black"] .menu-toggle{background:#161b26!important;border-color:
   .portal-hero .portal-hero-actions{gap:8px!important;margin-top:8px!important}
   #aktuelle-deals{padding-top:20px!important}
 }
+
+
+/* V31 — consistent, accessible offer cards and action controls */
+.deal-grid,.deal-rail{align-items:stretch}
+.deal-card{height:100%;box-shadow:0 7px 24px rgba(0,0,0,.14)!important}
+.deal-card .deal-content{min-height:0!important;flex:1 1 auto}
+.deal-card h3{font-family:var(--sans)!important;font-weight:750!important;line-height:1.35!important}
+.deal-card .button,.deal-card a.button,.listing-tools button,.listing-tools select,
+.category-grid a,.portal-hero-actions .button{
+  font-family:var(--sans)!important;
+  transition:background-color .2s ease,border-color .2s ease,color .2s ease,transform .2s ease,box-shadow .2s ease;
+}
+.deal-card .button,.deal-card a.button{min-height:44px;display:inline-flex;align-items:center;justify-content:center;text-align:center}
+.deal-card :is(a,button):focus-visible,.deal-rail :is(a,button):focus-visible,
+.listing-tools :is(input,button,select):focus-visible{
+  outline:3px solid #ffbd78!important;outline-offset:3px!important;
+}
+.deal-card .media-wrap img,.deal-card .product-image img{max-width:100%;object-fit:contain}
+.deal-card h3,.deal-card .merchant,.deal-card .brandline{overflow-wrap:anywhere}
+@media(hover:none){.deal-card:hover{transform:none!important}}
+@media(prefers-reduced-motion:reduce){
+  .deal-card,.deal-card:hover,.deal-card .button,.deal-card a.button,
+  .listing-tools button,.listing-tools select,.category-grid a,.portal-hero-actions .button{
+    animation:none!important;transition:none!important;transform:none!important;
+  }
+}
