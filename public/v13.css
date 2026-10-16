@@ -6118,3 +6118,26 @@ html[data-theme="light"] .header-utilities .language-picker select{background:#f
 html[data-theme="light"] .deal-card .media-wrap,html[data-theme="light"] .deal-card .product-image{background:#f4f6f9!important}
 @media(hover:none){.deal-card:hover{transform:none!important}}
 @media(prefers-reduced-motion:reduce){.deal-card,.deal-card:hover{transform:none!important;transition:none!important}}
+
+
+/* V35 — Angebotslotse identity: functional commerce with its own warm orange signature */
+:root{--lotse-accent:#ffad52;--lotse-accent-strong:#ff8e2e;--lotse-focus:#ffd087}
+.commerce-type-nav>a{position:relative;border-radius:13px!important}
+.commerce-type-nav>a:hover,.commerce-type-nav>a:focus-visible{border-color:var(--lotse-accent)!important}
+.commerce-type-nav>a:hover{background:rgba(255,173,82,.11)!important}
+.deal-card{border-radius:18px!important}
+.deal-card:hover{border-color:rgba(255,173,82,.58)!important}
+.deal-card .media-wrap,.deal-card .product-image{overflow:hidden}
+.deal-card .price{font-variant-numeric:tabular-nums}
+.deal-card :is(a,button):focus-visible,.commerce-type-nav>a:focus-visible{outline:3px solid var(--lotse-focus)!important;outline-offset:2px!important}
+#aktuelle-deals .section-head .eyebrow,.community-proof-compact .eyebrow{color:var(--lotse-accent)!important}
+.community-proof-compact{border-radius:16px!important}
+.community-review-disclosure>summary:hover{color:var(--lotse-accent)}
+@media(hover:hover) and (prefers-reduced-motion:no-preference){
+  .deal-card .media-wrap img,.deal-card .product-image img{transition:transform .22s ease}
+  .deal-card:hover .media-wrap img,.deal-card:hover .product-image img{transform:scale(1.025)}
+}
+@media(prefers-reduced-motion:reduce){.deal-card .media-wrap img,.deal-card .product-image img{transition:none!important;transform:none!important}}
+html[data-theme="light"] .commerce-type-nav>a:hover{background:#fff4e6!important;color:#813f0b!important}
+html[data-theme="light"] #aktuelle-deals .section-head .eyebrow,
+html[data-theme="light"] .community-proof-compact .eyebrow{color:#a94d06!important}
