@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-16T09:52:54.371Z",
+  "generatedAt": "2026-10-16T10:17:42.839Z",
   "market": "DE",
   "publisherId": 3045061,
   "awin": {
@@ -2726,6 +2726,42 @@
         "automationState": "ready-for-review"
       },
       {
+        "brand": "Narwal DE",
+        "network": "Awin",
+        "advertiserId": 80048,
+        "status": "notjoined",
+        "category": "Haushalt & Küche",
+        "score": 54,
+        "priority": "mittel",
+        "activeDiscoveryOffers": 4,
+        "offerExamples": [
+          "Narwal Halloween-Angebote: €120 Rabatt ab €1.299 Einkaufswert",
+          "Narwal Halloween-Angebote: €80 Rabatt ab €999 Einkaufswert",
+          "Narwal Halloween-Angebote: €50 Rabatt ab €699 Einkaufswert"
+        ],
+        "productFeed": false,
+        "siteCategoryCoverage": 52,
+        "metrics": {
+          "awinIndex": null,
+          "epc": null,
+          "conversionRate": null,
+          "approvalPercentage": null,
+          "validationDays": null,
+          "averagePaymentTime": null,
+          "commissionMin": null,
+          "commissionMax": null,
+          "commissionTypes": []
+        },
+        "reasons": [
+          "passt zu Haushalt & Küche",
+          "4 aktive DE-Aktionen"
+        ],
+        "applicationRequired": true,
+        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Narwal DE redaktionell passend im Bereich Haushalt & Küche einbinden. Bei Awin sind aktuell 4 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+        "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+        "automationState": "ready-for-review"
+      },
+      {
         "brand": "Babbel DE",
         "network": "Awin",
         "advertiserId": 14010,
@@ -3037,41 +3073,6 @@
         ],
         "applicationRequired": true,
         "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Manfieldschuhe DE redaktionell passend im Bereich Mode & Sport einbinden. Bei Awin sind aktuell 1 für Deutschland sichtbare Aktion dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-        "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-        "automationState": "ready-for-review"
-      },
-      {
-        "brand": "S.Oliver DE",
-        "network": "Awin",
-        "advertiserId": 20651,
-        "status": "notjoined",
-        "category": "Mode & Sport",
-        "score": 51,
-        "priority": "mittel",
-        "activeDiscoveryOffers": 1,
-        "offerExamples": [
-          "Kostenfreier Versand bei s.Oliver"
-        ],
-        "productFeed": false,
-        "siteCategoryCoverage": 0,
-        "metrics": {
-          "awinIndex": null,
-          "epc": null,
-          "conversionRate": null,
-          "approvalPercentage": null,
-          "validationDays": null,
-          "averagePaymentTime": null,
-          "commissionMin": null,
-          "commissionMax": null,
-          "commissionTypes": []
-        },
-        "reasons": [
-          "passt zu Mode & Sport",
-          "Sortimentslücke: erst 0 veröffentlichte Angebote in Mode & Sport",
-          "1 aktive DE-Aktion"
-        ],
-        "applicationRequired": true,
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten S.Oliver DE redaktionell passend im Bereich Mode & Sport einbinden. Bei Awin sind aktuell 1 für Deutschland sichtbare Aktion dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
         "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
         "automationState": "ready-for-review"
       }
