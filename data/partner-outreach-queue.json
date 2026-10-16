@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-16T09:28:43.780Z",
+  "generatedAt": "2026-10-16T09:40:24.877Z",
   "dailyNewContactLimit": 8,
   "safeguards": {
     "dedupeAgainst": "report/partner-outreach-status.json",
@@ -119,13 +119,6 @@
       "lastContactAt": "2026-09-02T19:43:09+02:00"
     },
     {
-      "brand": "Fressnapf-Online-Shop DE",
-      "reason": "existing-status:contacted",
-      "relatedBrand": null,
-      "status": "contacted",
-      "lastContactAt": "2026-10-08T19:41:00Z"
-    },
-    {
       "brand": "BSTN DACH",
       "reason": "existing-status:pending",
       "relatedBrand": null,
@@ -145,6 +138,13 @@
       "relatedBrand": null,
       "status": "rejected",
       "lastContactAt": "2026-10-06"
+    },
+    {
+      "brand": "Fressnapf-Online-Shop DE",
+      "reason": "existing-status:contacted",
+      "relatedBrand": null,
+      "status": "contacted",
+      "lastContactAt": "2026-10-08T19:41:00Z"
     },
     {
       "brand": "INTERSPORT DE",
