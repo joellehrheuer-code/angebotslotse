@@ -71,8 +71,8 @@ function renderSmartSearch(form){
     const q=field.value.trim();
     const recent=readRecentSearches();
     if(q.length<2&&q.length>0){close();return;}
-    const products=q.length>=2?(quickSearchData.products||[]).filter(row=>searchMatches([row.title,row.brand,row.merchant,row.category].join(" "),q)).slice(0,4):[];
-    const shops=q.length>=2?(quickSearchData.shops||[]).filter(row=>searchMatches(row.name,q)).slice(0,3):[];
+    const products=q.length>=2?(quickSearchData.products||[]).filter(row=>searchMatches([row.title,row.brand,row.merchant,row.category].join(" "),q)).slice(0,8):[];
+    const shops=q.length>=2?(quickSearchData.shops||[]).filter(row=>searchMatches(row.name,q)).slice(0,10):[];
     const categories=q.length>=2?(quickSearchData.categories||[]).filter(row=>searchMatches(row.name,q)).slice(0,3):(quickSearchData.categories||[]).slice().sort((a,b)=>(Number(b.count)||0)-(Number(a.count)||0)).slice(0,4);
     panel.replaceChildren();
     let optionIndex=0;
@@ -114,7 +114,10 @@ function renderSmartSearch(form){
   };
   field.addEventListener("input",render);
   field.addEventListener("focus",render);
-  form.addEventListener("submit",()=>rememberSearch(field.value));
+  form.addEventListener("submit",event=>{
+    if(!field.value.trim()){event.preventDefault();render();field.focus();return;}
+    rememberSearch(field.value);
+  });
   field.addEventListener("keydown",event=>{
     if(event.key==="Escape"){close();return;}
     if(event.key==="ArrowDown"){
