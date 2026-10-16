@@ -6099,3 +6099,22 @@ html[data-theme="light"] .commerce-type-nav>a{background:#fff;color:#16243a;bord
 html[data-theme="light"] .header-utilities .language-picker select{background:#fff!important;color:#16243a!important;border-color:#9eacc3!important}
 @media(max-width:760px){.commerce-type-nav{flex-wrap:nowrap;overflow-x:auto;justify-content:flex-start;scroll-snap-type:x proximity;padding:2px 1px 8px}.commerce-type-nav>a{flex:0 0 auto;scroll-snap-align:start}.header-utilities .language-picker{max-width:116px}.header-utilities .language-picker select{font-size:12px!important}}
 @media(prefers-reduced-motion:reduce){.commerce-type-nav>a{transition:none!important}.commerce-type-nav>a:hover{transform:none!important}}
+
+
+/* V34 — restrained shopping-card refinements based on product listing UX research */
+.deal-card{border-radius:17px!important;box-shadow:0 6px 22px rgba(0,0,0,.11)!important}
+.deal-card:hover{transform:translateY(-3px)!important;box-shadow:0 12px 32px rgba(0,0,0,.2)!important}
+.deal-card .media-wrap,.deal-card .product-image{background:#f7f8fa!important;border-radius:12px 12px 0 0}
+.deal-card .media-wrap img,.deal-card .product-image img{object-fit:contain!important;padding:10px}
+.deal-card .deal-content{padding:14px 15px 15px!important;gap:5px}
+.deal-card .brandline{font-size:11px!important;letter-spacing:.01em!important;text-transform:none!important;margin-top:3px!important}
+.deal-card h3,.deal-card h3 a{font-size:15px!important;font-weight:750!important;line-height:1.4!important;letter-spacing:-.01em!important}
+.deal-card .price{font-size:clamp(20px,2vw,25px)!important;line-height:1.12!important;font-weight:850!important}
+.deal-card .merchant{font-size:12px!important;opacity:.85}
+.deal-card .pill,.deal-card .new-badge,.deal-card .code-badge{font-size:11px!important;font-weight:750!important;letter-spacing:0!important;border-radius:7px!important}
+.deal-card :is(.button,a.button){border-radius:10px!important;min-height:44px!important;font-size:13px!important;font-weight:750!important}
+.deal-grid{gap:clamp(10px,1.6vw,18px)!important}
+.deal-rail{gap:14px!important}
+html[data-theme="light"] .deal-card .media-wrap,html[data-theme="light"] .deal-card .product-image{background:#f4f6f9!important}
+@media(hover:none){.deal-card:hover{transform:none!important}}
+@media(prefers-reduced-motion:reduce){.deal-card,.deal-card:hover{transform:none!important;transition:none!important}}
