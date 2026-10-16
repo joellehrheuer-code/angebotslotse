@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-16T09:40:24.898Z",
+  "generatedAt": "2026-10-16T09:44:54.568Z",
   "market": "DE",
   "publisherId": 3045061,
   "awin": {
@@ -3041,16 +3041,16 @@
         "automationState": "ready-for-review"
       },
       {
-        "brand": "Navee Germany",
+        "brand": "S.Oliver DE",
         "network": "Awin",
-        "advertiserId": 116245,
+        "advertiserId": 20651,
         "status": "notjoined",
         "category": "Mode & Sport",
         "score": 51,
         "priority": "mittel",
         "activeDiscoveryOffers": 1,
         "offerExamples": [
-          "Limited-Time Deal: Save 6% on the NAVEE UT5 Max + K100 Bundle!"
+          "Kostenfreier Versand bei s.Oliver"
         ],
         "productFeed": false,
         "siteCategoryCoverage": 0,
@@ -3071,7 +3071,7 @@
           "1 aktive DE-Aktion"
         ],
         "applicationRequired": true,
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Navee Germany redaktionell passend im Bereich Mode & Sport einbinden. Bei Awin sind aktuell 1 für Deutschland sichtbare Aktion dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten S.Oliver DE redaktionell passend im Bereich Mode & Sport einbinden. Bei Awin sind aktuell 1 für Deutschland sichtbare Aktion dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
         "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
         "automationState": "ready-for-review"
       }
