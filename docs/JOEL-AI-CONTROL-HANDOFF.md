@@ -59,3 +59,13 @@ Für jedes Thema ein Statusfeld offen/in Arbeit/geprüft/blockiert und einen Bel
 - Speicherung pro Browser in localStorage: angebotslotse-language-v1.
 - Derzeit Basisübersetzungen für häufige Navigation, Suche, Sortierung und Buttons; Produktdaten, lange redaktionelle Texte und dynamisch gerenderte Inhalte sind noch nicht vollständig lokalisiert.
 - Nächster Schritt: alle UI-Strings strukturieren, sprachspezifische Seitenmetadaten, Fehlermeldungen und Tests für sechs Sprachen. Kein Anspruch auf vollständige Internationalisierung, bis die QA abgeschlossen wurde.
+
+## Verivox und neue Navigationsrubrik – 16.10.2026
+- Der Navigationspunkt „🎵 Events & Konzerte“ wurde ergänzt. Vorläufiger Zielbereich ist die vorhandene Freizeit-Kategorie; kein erfundener Ticketbestand und keine behauptete Ticketpartner-Freigabe.
+- Verivox-Kontakt: Fabian Grasmé bestätigte in E-Mail vom 16.10.2026 nach dem Gespräch die nächsten Schritte.
+- Registrierung auf https://www.verivox.de/partnerprogramm/ ist zunächst durch den Kontoinhaber abzuschließen.
+- Danach laut Verivox Freischaltung durch Vicky aus der bestehenden E-Mail-Korrespondenz und Bestätigungsmail.
+- Erst dann Zugriff auf freigegebene Werbemittel und Einbindung in Angebotslotse; keine Platzhalter-Trackinglinks als echt darstellen.
+- Separate Abstimmung für Social Media mit Rebecca und Jonas erforderlich; keine automatische Gleichsetzung mit Website-Freigabe.
+- Abfrage des Postfachs am 16.10.2026: keine separat gefundene Registrierungs-/Bestätigungsmail für Verivox.
+- Nächste Schritte: Konto-Registrierung/Bestätigung, konkrete Werbemittel prüfen, Einbindungsform und Tracking validieren, Datenschutzhinweise/Partnerkennzeichnung prüfen, Build- und Browser-Tests.
