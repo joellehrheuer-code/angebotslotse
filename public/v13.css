@@ -6204,3 +6204,9 @@ html[data-theme="light"] .community-proof-compact .eyebrow{color:#a94d06!importa
  .site-header .global-search-wide .global-search-submit{min-width:92px!important;padding:0 10px!important;font-size:12px!important}
  .site-header .header-search-row .global-search-wide .search-suggest-panel:not([hidden]){max-height:290px!important}
 }
+
+
+/* V38 — Search results affordance inside the expanded search field */
+.site-header .search-suggest-all{display:flex;align-items:center;justify-content:center;min-height:45px;padding:10px 15px;margin:6px 4px 3px;border:1px solid var(--lotse-accent,#ffad52);border-radius:10px;background:rgba(255,173,82,.11);color:inherit;font:750 13px/1.35 var(--sans);text-align:center;text-decoration:none}
+.site-header .search-suggest-all:hover{background:rgba(255,173,82,.21)}
+.site-header .search-suggest-all:focus-visible{outline:3px solid var(--lotse-focus,#ffd087);outline-offset:2px}
