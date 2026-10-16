@@ -107,6 +107,12 @@ function renderSmartSearch(form){
     addGroup("Produkte",products,"product");
     addGroup("Shops",shops,"shop");
     addGroup(q.length<2?"Beliebte Kategorien":"Kategorien",categories,"category");
+    if(q.length>=2){
+      const all=makeSuggestion("a","search-suggest-all");
+      all.href=form.action+"?suche="+encodeURIComponent(q);
+      all.textContent="Alle Ergebnisse für „"+q+"“ anzeigen →";
+      panel.append(all);
+    }
     if(!panel.childElementCount){const empty=makeSuggestion("p","search-suggest-empty");empty.textContent="Keine direkte Empfehlung – Enter zeigt dir alle passenden Treffer.";panel.append(empty);}
     activeIndex=-1;
     field.removeAttribute("aria-activedescendant");
