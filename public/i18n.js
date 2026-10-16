@@ -9,7 +9,7 @@
     ru: {"Angebote":"Предложения","Alle Angebote":"Все предложения","Shops":"Магазины","Shops & Händler":"Магазины и продавцы","Kategorien":"Категории","Suche":"Поиск","Suchen":"Найти","Merkliste":"Избранное","Konto":"Аккаунт","Startseite":"Главная","Start":"Главная","Mehr erfahren":"Подробнее","Mehr anzeigen":"Показать ещё","Filter":"Фильтры","Sortieren":"Сортировка","Aktuell":"Новые","Preis aufsteigend":"По возрастанию цены","Größter Rabatt":"Максимальная скидка","Endet bald":"Скоро завершится","Keine passenden Treffer":"Ничего не найдено","Zum Inhalt springen":"Перейти к содержимому","Zurück":"Назад","Alle Shops":"Все магазины","Produkt oder Marke":"Товар или бренд"}
   };
   const codes = ["de","en","fr","es","ja","ru"];
-  const names = {de:"Deutsch",en:"English",fr:"Français",es:"Español",ja:"日本語",ru:"Русский"};
+  const names = {de:"🇩🇪 Deutsch",en:"🇬🇧 English",fr:"🇫🇷 Français",es:"🇪🇸 Español",ja:"🇯🇵 日本語",ru:"🇷🇺 Русский"};
   const key = "angebotslotse-language-v1";
   const stored = (() => { try {return localStorage.getItem(key);} catch {return null;} })();
   let language = codes.includes(stored) ? stored : "de";
@@ -56,8 +56,9 @@
       translate();
     });
     wrap.append(select);
-    const place=document.querySelector("header nav") || document.querySelector("header") || document.body;
-    place.append(wrap);
+    const place=document.querySelector(".header-utilities") || document.querySelector("header nav") || document.querySelector("header") || document.body;
+    const menu=place.querySelector(".menu-toggle");
+    if(menu)menu.before(wrap);else place.append(wrap);
     const style=document.createElement("style");
     style.textContent=".language-picker{display:inline-flex;align-items:center;margin:.3rem;z-index:12}.language-picker select{max-width:138px;min-height:38px;padding:6px 26px 6px 8px;border-radius:8px;border:1px solid var(--border,#888);background:var(--surface,#fff);color:var(--text,#111);font:inherit;font-size:13px}.language-picker select:focus-visible{outline:3px solid #f39b36;outline-offset:2px}";
     document.head.append(style);
