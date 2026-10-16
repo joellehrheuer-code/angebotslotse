@@ -13,6 +13,8 @@ jobs:
     name: quality
     runs-on: ubuntu-latest
     timeout-minutes: 20
+    env:
+      SITE_URL: https://joellehrheuer-code.github.io/angebotslotse
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -25,8 +27,6 @@ jobs:
         run: npm test
       - name: Build without production secrets
         run: npm run build
-        env:
-          SITE_URL: https://joellehrheuer-code.github.io/angebotslotse
       - name: Validate generated website
         run: npm run validate
       - name: Security scan for exposed secrets
