@@ -6260,3 +6260,14 @@ html[data-theme="light"] .community-proof-compact .eyebrow{color:#a94d06!importa
   .instant-gaming-showcase.partner-section>.instant-gaming-showcase-copy{max-width:none!important}
   .instant-gaming-showcase.partner-section>.instant-gaming-embed-stage{min-height:170px!important}
 }
+
+
+/* V40 — compact honest live statistics, less scrolling before product content */
+.live-network{width:min(1330px,calc(100% - 32px))!important;margin:20px auto!important;padding:clamp(16px,2vw,26px)!important;border-radius:20px!important}
+.live-network .live-network-head{gap:12px!important;margin-bottom:16px!important}
+.live-network .live-network-head h2{font-size:clamp(24px,3vw,36px)!important;line-height:1.2!important;margin:6px 0!important}
+.live-network .live-network-head p{font-size:13px!important;line-height:1.5!important}
+.live-network .live-stat-grid{gap:12px!important}
+.live-network .live-stat-grid>*,.live-network .live-stat-grid>div{padding:clamp(12px,1.8vw,19px)!important;min-height:0!important;border-radius:14px!important}
+.live-network .live-stat-grid strong,.live-network .live-stat-grid b{font-variant-numeric:tabular-nums}
+@media(max-width:680px){.live-network{width:calc(100% - 20px)!important;padding:14px!important;margin-block:14px!important}.live-network .live-stat-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important}.live-network .live-network-head{align-items:flex-start!important}}
