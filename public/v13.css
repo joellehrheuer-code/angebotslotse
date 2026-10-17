@@ -6271,3 +6271,18 @@ html[data-theme="light"] .community-proof-compact .eyebrow{color:#a94d06!importa
 .live-network .live-stat-grid>*,.live-network .live-stat-grid>div{padding:clamp(12px,1.8vw,19px)!important;min-height:0!important;border-radius:14px!important}
 .live-network .live-stat-grid strong,.live-network .live-stat-grid b{font-variant-numeric:tabular-nums}
 @media(max-width:680px){.live-network{width:calc(100% - 20px)!important;padding:14px!important;margin-block:14px!important}.live-network .live-stat-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important}.live-network .live-network-head{align-items:flex-start!important}}
+
+
+/* V41 — footer branding: calm compact mark and consistent link rhythm */
+.site-footer{width:min(1330px,calc(100% - 32px))!important;max-width:1330px!important;margin:30px auto 0!important;padding:32px clamp(16px,3vw,36px)!important;gap:clamp(18px,3vw,36px)!important}
+.site-footer .footer-brand-block{min-width:0!important;max-width:520px!important}
+.site-footer .footer-brand-lockup{display:inline-flex!important;align-items:center!important;gap:12px!important;max-width:100%!important;text-decoration:none!important}
+.site-footer .footer-brand-lockup img{flex:none!important;width:46px!important;height:46px!important;object-fit:contain!important;padding:4px!important;border-radius:12px!important}
+.site-footer .footer-brand-lockup span{display:flex!important;flex-direction:column!important;gap:2px!important;min-width:0!important}
+.site-footer .footer-brand-lockup strong{font:800 clamp(17px,1.8vw,21px)/1.2 var(--sans)!important;letter-spacing:-.025em!important}
+.site-footer .footer-brand-lockup small{font:650 11px/1.4 var(--sans)!important;letter-spacing:.01em!important}
+.site-footer .footer-brand-block>p{font:400 13px/1.6 var(--sans)!important;max-width:45ch!important;margin:13px 0!important}
+.site-footer .footer-social{display:flex!important;flex-wrap:wrap!important;align-items:center!important;gap:7px!important;margin-top:13px!important}
+.site-footer .footer-social a{min-width:40px!important;min-height:40px!important;display:inline-flex!important;align-items:center!important;justify-content:center!important;border-radius:10px!important}
+.site-footer a:focus-visible{outline:3px solid var(--lotse-focus,#ffd087)!important;outline-offset:3px!important}
+@media(max-width:680px){.site-footer{width:calc(100% - 20px)!important;margin-top:20px!important;padding:22px 16px!important}.site-footer .footer-brand-lockup img{width:42px!important;height:42px!important}}
