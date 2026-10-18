@@ -6286,3 +6286,38 @@ html[data-theme="light"] .community-proof-compact .eyebrow{color:#a94d06!importa
 .site-footer .footer-social a{min-width:40px!important;min-height:40px!important;display:inline-flex!important;align-items:center!important;justify-content:center!important;border-radius:10px!important}
 .site-footer a:focus-visible{outline:3px solid var(--lotse-focus,#ffd087)!important;outline-offset:3px!important}
 @media(max-width:680px){.site-footer{width:calc(100% - 20px)!important;margin-top:20px!important;padding:22px 16px!important}.site-footer .footer-brand-lockup img{width:42px!important;height:42px!important}}
+
+
+/* V42: compact feedback/tester and balanced daily deal sections */
+.volunteer-tester-section{
+ width:min(1280px,calc(100% - 32px))!important;max-width:1280px!important;
+ margin:20px auto!important;padding:clamp(18px,2.5vw,30px)!important;
+ display:grid!important;grid-template-columns:minmax(0,1fr) minmax(260px,.8fr)!important;
+ align-items:center!important;gap:clamp(16px,3vw,40px)!important;
+}
+.volunteer-tester-copy{max-width:610px!important;min-width:0!important}
+.volunteer-tester-copy h2{font-size:clamp(22px,2.35vw,30px)!important;line-height:1.17!important;max-width:28ch!important}
+.volunteer-tester-copy p{font-size:13px!important;line-height:1.6!important;max-width:65ch!important}
+.volunteer-tester-actions{display:flex!important;flex-wrap:wrap!important;align-items:center!important;gap:10px!important;margin-top:16px!important}
+.volunteer-tester-actions .button{display:inline-flex!important;align-items:center!important;justify-content:center!important;min-height:44px!important;width:auto!important;padding:10px 16px!important;color:#fff!important;background:#17243a!important;border:1px solid #526078!important;border-radius:11px!important;font-size:13px!important;font-weight:700!important;opacity:1!important}
+.volunteer-tester-actions .button.primary{background:#0c5845!important;border-color:#158366!important;color:#fff!important}
+.volunteer-tester-actions .button:hover{filter:brightness(1.12)!important}
+.volunteer-tester-tasks{width:100%!important;max-width:520px!important;min-width:0!important;justify-self:end!important;border-radius:13px!important}
+.volunteer-tester-tasks summary{padding:15px 17px!important;cursor:pointer!important;font-size:13px!important;font-weight:750!important}
+.volunteer-tester-tasks[open]{align-self:start!important}
+.daily-deal{width:min(1280px,calc(100% - 32px))!important;max-width:1280px!important;margin:20px auto!important;padding:clamp(18px,2.4vw,28px)!important;display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;align-items:center!important;gap:clamp(18px,3.5vw,46px)!important}
+.daily-deal .daily-media{min-width:0!important;min-height:0!important;max-height:360px!important;display:flex!important;align-items:center!important;justify-content:center!important;overflow:hidden!important}
+.daily-deal .daily-media img{max-width:100%!important;max-height:340px!important;height:auto!important;object-fit:contain!important}
+.daily-deal .daily-copy{min-width:0!important;padding:8px!important}
+.daily-deal .daily-copy h2{font-size:clamp(25px,3vw,36px)!important;line-height:1.15!important}
+.daily-deal .daily-title{overflow-wrap:anywhere!important;font-size:clamp(17px,2vw,23px)!important;line-height:1.3!important}
+@media(max-width:800px){
+ .volunteer-tester-section,.daily-deal{grid-template-columns:minmax(0,1fr)!important}
+ .volunteer-tester-tasks{justify-self:stretch!important;max-width:none!important}
+ .daily-deal .daily-media{max-height:270px!important}
+ .daily-deal .daily-media img{max-height:250px!important}
+}
+@media(max-width:480px){
+ .volunteer-tester-section,.daily-deal{width:calc(100% - 20px)!important;padding:16px!important}
+ .volunteer-tester-actions .button{flex:1 1 150px!important}
+}
