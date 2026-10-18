@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-17T22:18:18.890Z",
+  "generatedAt": "2026-10-18T04:32:33.746Z",
   "scope": "Automatisch aus Programminventar, DE-Angebotsabdeckung und verfügbaren Netzwerk-/Feed-Signalen erzeugt.",
   "automation": {
     "discovery": "automatic",
@@ -477,290 +477,6 @@
       ],
       "applicationRequired": true,
       "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten zooplus RO redaktionell passend im Bereich Tierbedarf einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "automationState": "ready-for-review"
-    },
-    {
-      "brand": "Denimfy.de",
-      "network": "Awin",
-      "advertiserId": 14100,
-      "status": "notjoined",
-      "category": "Mode & Sport",
-      "score": 57,
-      "priority": "mittel",
-      "activeDiscoveryOffers": 2,
-      "offerExamples": [
-        "20% Code: SHOP20 (MBW 120 €)",
-        "10% Code: SHOP10 (MBW 70 €)"
-      ],
-      "productFeed": false,
-      "siteCategoryCoverage": 0,
-      "metrics": {
-        "awinIndex": null,
-        "epc": null,
-        "conversionRate": null,
-        "approvalPercentage": null,
-        "validationDays": null,
-        "averagePaymentTime": null,
-        "commissionMin": null,
-        "commissionMax": null,
-        "commissionTypes": []
-      },
-      "reasons": [
-        "passt zu Mode & Sport",
-        "Sortimentslücke: erst 0 veröffentlichte Angebote in Mode & Sport",
-        "2 aktive DE-Aktionen"
-      ],
-      "applicationRequired": true,
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Denimfy.de redaktionell passend im Bereich Mode & Sport einbinden. Bei Awin sind aktuell 2 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "automationState": "ready-for-review"
-    },
-    {
-      "brand": "Lastminute DE",
-      "network": "Awin",
-      "advertiserId": 14940,
-      "status": "notjoined",
-      "category": "Freizeit & Reisen",
-      "score": 57,
-      "priority": "mittel",
-      "activeDiscoveryOffers": 2,
-      "offerExamples": [
-        "6% off on Hotel",
-        "6% off on Flight + Hotel"
-      ],
-      "productFeed": false,
-      "siteCategoryCoverage": 1,
-      "metrics": {
-        "awinIndex": null,
-        "epc": null,
-        "conversionRate": null,
-        "approvalPercentage": null,
-        "validationDays": null,
-        "averagePaymentTime": null,
-        "commissionMin": null,
-        "commissionMax": null,
-        "commissionTypes": []
-      },
-      "reasons": [
-        "passt zu Freizeit & Reisen",
-        "Sortimentslücke: erst 1 veröffentlichte Angebote in Freizeit & Reisen",
-        "2 aktive DE-Aktionen"
-      ],
-      "applicationRequired": true,
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Lastminute DE redaktionell passend im Bereich Freizeit & Reisen einbinden. Bei Awin sind aktuell 2 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "automationState": "ready-for-review"
-    },
-    {
-      "brand": "LOOKFANTASTIC DACH",
-      "network": "Awin",
-      "advertiserId": 7624,
-      "status": "notjoined",
-      "category": "Gesundheit & Wellness",
-      "score": 57,
-      "priority": "mittel",
-      "activeDiscoveryOffers": 2,
-      "offerExamples": [
-        "THE BEAUTY VAULT EDIT",
-        "25% off!"
-      ],
-      "productFeed": false,
-      "siteCategoryCoverage": 0,
-      "metrics": {
-        "awinIndex": null,
-        "epc": null,
-        "conversionRate": null,
-        "approvalPercentage": null,
-        "validationDays": null,
-        "averagePaymentTime": null,
-        "commissionMin": null,
-        "commissionMax": null,
-        "commissionTypes": []
-      },
-      "reasons": [
-        "passt zu Gesundheit & Wellness",
-        "Sortimentslücke: erst 0 veröffentlichte Angebote in Gesundheit & Wellness",
-        "2 aktive DE-Aktionen"
-      ],
-      "applicationRequired": true,
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten LOOKFANTASTIC DACH redaktionell passend im Bereich Gesundheit & Wellness einbinden. Bei Awin sind aktuell 2 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "automationState": "ready-for-review"
-    },
-    {
-      "brand": "Liquid-Life DE",
-      "network": "Awin",
-      "advertiserId": 13793,
-      "status": "notjoined",
-      "category": "Mode & Sport",
-      "score": 51,
-      "priority": "mittel",
-      "activeDiscoveryOffers": 1,
-      "offerExamples": [
-        "Black Friday Early Access"
-      ],
-      "productFeed": false,
-      "siteCategoryCoverage": 0,
-      "metrics": {
-        "awinIndex": null,
-        "epc": null,
-        "conversionRate": null,
-        "approvalPercentage": null,
-        "validationDays": null,
-        "averagePaymentTime": null,
-        "commissionMin": null,
-        "commissionMax": null,
-        "commissionTypes": []
-      },
-      "reasons": [
-        "passt zu Mode & Sport",
-        "Sortimentslücke: erst 0 veröffentlichte Angebote in Mode & Sport",
-        "1 aktive DE-Aktion"
-      ],
-      "applicationRequired": true,
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Liquid-Life DE redaktionell passend im Bereich Mode & Sport einbinden. Bei Awin sind aktuell 1 für Deutschland sichtbare Aktion dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "automationState": "ready-for-review"
-    },
-    {
-      "brand": "Petlibro DE Affiliate Program",
-      "network": "Awin",
-      "advertiserId": 77942,
-      "status": "notjoined",
-      "category": "Tierbedarf",
-      "score": 51,
-      "priority": "mittel",
-      "activeDiscoveryOffers": 1,
-      "offerExamples": [
-        "160 € sparen bei der Luma Intelligente Selbstreinigende Katzentoilette"
-      ],
-      "productFeed": false,
-      "siteCategoryCoverage": 0,
-      "metrics": {
-        "awinIndex": null,
-        "epc": null,
-        "conversionRate": null,
-        "approvalPercentage": null,
-        "validationDays": null,
-        "averagePaymentTime": null,
-        "commissionMin": null,
-        "commissionMax": null,
-        "commissionTypes": []
-      },
-      "reasons": [
-        "passt zu Tierbedarf",
-        "Sortimentslücke: erst 0 veröffentlichte Angebote in Tierbedarf",
-        "1 aktive DE-Aktion"
-      ],
-      "applicationRequired": true,
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Petlibro DE Affiliate Program redaktionell passend im Bereich Tierbedarf einbinden. Bei Awin sind aktuell 1 für Deutschland sichtbare Aktion dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "automationState": "ready-for-review"
-    },
-    {
-      "brand": "PureNature DE",
-      "network": "Awin",
-      "advertiserId": 129197,
-      "status": "notjoined",
-      "category": "Gesundheit & Wellness",
-      "score": 51,
-      "priority": "mittel",
-      "activeDiscoveryOffers": 1,
-      "offerExamples": [
-        "Weihnachtliche Geschenkideen bei PureNature"
-      ],
-      "productFeed": false,
-      "siteCategoryCoverage": 0,
-      "metrics": {
-        "awinIndex": null,
-        "epc": null,
-        "conversionRate": null,
-        "approvalPercentage": null,
-        "validationDays": null,
-        "averagePaymentTime": null,
-        "commissionMin": null,
-        "commissionMax": null,
-        "commissionTypes": []
-      },
-      "reasons": [
-        "passt zu Gesundheit & Wellness",
-        "Sortimentslücke: erst 0 veröffentlichte Angebote in Gesundheit & Wellness",
-        "1 aktive DE-Aktion"
-      ],
-      "applicationRequired": true,
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten PureNature DE redaktionell passend im Bereich Gesundheit & Wellness einbinden. Bei Awin sind aktuell 1 für Deutschland sichtbare Aktion dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "automationState": "ready-for-review"
-    },
-    {
-      "brand": "Zero DE",
-      "network": "Awin",
-      "advertiserId": 19924,
-      "status": "notjoined",
-      "category": "Mode & Sport",
-      "score": 51,
-      "priority": "mittel",
-      "activeDiscoveryOffers": 1,
-      "offerExamples": [
-        "Autumn Special 20% Rabatt"
-      ],
-      "productFeed": false,
-      "siteCategoryCoverage": 0,
-      "metrics": {
-        "awinIndex": null,
-        "epc": null,
-        "conversionRate": null,
-        "approvalPercentage": null,
-        "validationDays": null,
-        "averagePaymentTime": null,
-        "commissionMin": null,
-        "commissionMax": null,
-        "commissionTypes": []
-      },
-      "reasons": [
-        "passt zu Mode & Sport",
-        "Sortimentslücke: erst 0 veröffentlichte Angebote in Mode & Sport",
-        "1 aktive DE-Aktion"
-      ],
-      "applicationRequired": true,
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Zero DE redaktionell passend im Bereich Mode & Sport einbinden. Bei Awin sind aktuell 1 für Deutschland sichtbare Aktion dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "automationState": "ready-for-review"
-    },
-    {
-      "brand": "Narwal DE",
-      "network": "Awin",
-      "advertiserId": 80048,
-      "status": "notjoined",
-      "category": "Haushalt & Küche",
-      "score": 48,
-      "priority": "mittel",
-      "activeDiscoveryOffers": 3,
-      "offerExamples": [
-        "Narwal Halloween-Angebote: €120 Rabatt ab €1.299 Einkaufswert",
-        "Narwal Halloween-Angebote: €80 Rabatt ab €999 Einkaufswert",
-        "Narwal Halloween-Angebote: €50 Rabatt ab €699 Einkaufswert"
-      ],
-      "productFeed": false,
-      "siteCategoryCoverage": 52,
-      "metrics": {
-        "awinIndex": null,
-        "epc": null,
-        "conversionRate": null,
-        "approvalPercentage": null,
-        "validationDays": null,
-        "averagePaymentTime": null,
-        "commissionMin": null,
-        "commissionMax": null,
-        "commissionTypes": []
-      },
-      "reasons": [
-        "passt zu Haushalt & Küche",
-        "3 aktive DE-Aktionen"
-      ],
-      "applicationRequired": true,
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Narwal DE redaktionell passend im Bereich Haushalt & Küche einbinden. Bei Awin sind aktuell 3 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
       "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
       "automationState": "ready-for-review"
     },
@@ -1657,6 +1373,262 @@
       ],
       "applicationRequired": true,
       "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten AKKO DE redaktionell passend im Bereich Gaming einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "automationState": "ready-for-review"
+    },
+    {
+      "brand": "Aktion Mensch DE",
+      "network": "Awin",
+      "advertiserId": 57033,
+      "status": "notjoined",
+      "category": "Tierbedarf",
+      "score": 45,
+      "priority": "mittel",
+      "activeDiscoveryOffers": 0,
+      "offerExamples": [],
+      "productFeed": false,
+      "siteCategoryCoverage": 0,
+      "metrics": {
+        "awinIndex": null,
+        "epc": null,
+        "conversionRate": null,
+        "approvalPercentage": null,
+        "validationDays": null,
+        "averagePaymentTime": null,
+        "commissionMin": null,
+        "commissionMax": null,
+        "commissionTypes": []
+      },
+      "reasons": [
+        "passt zu Tierbedarf",
+        "Sortimentslücke: erst 0 veröffentlichte Angebote in Tierbedarf"
+      ],
+      "applicationRequired": true,
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Aktion Mensch DE redaktionell passend im Bereich Tierbedarf einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "automationState": "ready-for-review"
+    },
+    {
+      "brand": "AktivWinter DE",
+      "network": "Awin",
+      "advertiserId": 25879,
+      "status": "notjoined",
+      "category": "Mode & Sport",
+      "score": 45,
+      "priority": "mittel",
+      "activeDiscoveryOffers": 0,
+      "offerExamples": [],
+      "productFeed": false,
+      "siteCategoryCoverage": 0,
+      "metrics": {
+        "awinIndex": null,
+        "epc": null,
+        "conversionRate": null,
+        "approvalPercentage": null,
+        "validationDays": null,
+        "averagePaymentTime": null,
+        "commissionMin": null,
+        "commissionMax": null,
+        "commissionTypes": []
+      },
+      "reasons": [
+        "passt zu Mode & Sport",
+        "Sortimentslücke: erst 0 veröffentlichte Angebote in Mode & Sport"
+      ],
+      "applicationRequired": true,
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten AktivWinter DE redaktionell passend im Bereich Mode & Sport einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "automationState": "ready-for-review"
+    },
+    {
+      "brand": "All4cycling DE",
+      "network": "Awin",
+      "advertiserId": 10546,
+      "status": "notjoined",
+      "category": "Mode & Sport",
+      "score": 45,
+      "priority": "mittel",
+      "activeDiscoveryOffers": 0,
+      "offerExamples": [],
+      "productFeed": false,
+      "siteCategoryCoverage": 0,
+      "metrics": {
+        "awinIndex": null,
+        "epc": null,
+        "conversionRate": null,
+        "approvalPercentage": null,
+        "validationDays": null,
+        "averagePaymentTime": null,
+        "commissionMin": null,
+        "commissionMax": null,
+        "commissionTypes": []
+      },
+      "reasons": [
+        "passt zu Mode & Sport",
+        "Sortimentslücke: erst 0 veröffentlichte Angebote in Mode & Sport"
+      ],
+      "applicationRequired": true,
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten All4cycling DE redaktionell passend im Bereich Mode & Sport einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "automationState": "ready-for-review"
+    },
+    {
+      "brand": "Alliwava DE",
+      "network": "Awin",
+      "advertiserId": 118891,
+      "status": "notjoined",
+      "category": "Gaming",
+      "score": 45,
+      "priority": "mittel",
+      "activeDiscoveryOffers": 0,
+      "offerExamples": [],
+      "productFeed": false,
+      "siteCategoryCoverage": 0,
+      "metrics": {
+        "awinIndex": null,
+        "epc": null,
+        "conversionRate": null,
+        "approvalPercentage": null,
+        "validationDays": null,
+        "averagePaymentTime": null,
+        "commissionMin": null,
+        "commissionMax": null,
+        "commissionTypes": []
+      },
+      "reasons": [
+        "passt zu Gaming",
+        "Sortimentslücke: erst 0 veröffentlichte Angebote in Gaming"
+      ],
+      "applicationRequired": true,
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Alliwava DE redaktionell passend im Bereich Gaming einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "automationState": "ready-for-review"
+    },
+    {
+      "brand": "Allright DE",
+      "network": "Awin",
+      "advertiserId": 125158,
+      "status": "notjoined",
+      "category": "Tierbedarf",
+      "score": 45,
+      "priority": "mittel",
+      "activeDiscoveryOffers": 0,
+      "offerExamples": [],
+      "productFeed": false,
+      "siteCategoryCoverage": 0,
+      "metrics": {
+        "awinIndex": null,
+        "epc": null,
+        "conversionRate": null,
+        "approvalPercentage": null,
+        "validationDays": null,
+        "averagePaymentTime": null,
+        "commissionMin": null,
+        "commissionMax": null,
+        "commissionTypes": []
+      },
+      "reasons": [
+        "passt zu Tierbedarf",
+        "Sortimentslücke: erst 0 veröffentlichte Angebote in Tierbedarf"
+      ],
+      "applicationRequired": true,
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Allright DE redaktionell passend im Bereich Tierbedarf einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "automationState": "ready-for-review"
+    },
+    {
+      "brand": "alpha spirit Hunde- und Katzenfutter DE",
+      "network": "Awin",
+      "advertiserId": 22101,
+      "status": "notjoined",
+      "category": "Tierbedarf",
+      "score": 45,
+      "priority": "mittel",
+      "activeDiscoveryOffers": 0,
+      "offerExamples": [],
+      "productFeed": false,
+      "siteCategoryCoverage": 0,
+      "metrics": {
+        "awinIndex": null,
+        "epc": null,
+        "conversionRate": null,
+        "approvalPercentage": null,
+        "validationDays": null,
+        "averagePaymentTime": null,
+        "commissionMin": null,
+        "commissionMax": null,
+        "commissionTypes": []
+      },
+      "reasons": [
+        "passt zu Tierbedarf",
+        "Sortimentslücke: erst 0 veröffentlichte Angebote in Tierbedarf"
+      ],
+      "applicationRequired": true,
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten alpha spirit Hunde- und Katzenfutter DE redaktionell passend im Bereich Tierbedarf einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "automationState": "ready-for-review"
+    },
+    {
+      "brand": "alphazoo DE",
+      "network": "Awin",
+      "advertiserId": 22411,
+      "status": "notjoined",
+      "category": "Tierbedarf",
+      "score": 45,
+      "priority": "mittel",
+      "activeDiscoveryOffers": 0,
+      "offerExamples": [],
+      "productFeed": false,
+      "siteCategoryCoverage": 0,
+      "metrics": {
+        "awinIndex": null,
+        "epc": null,
+        "conversionRate": null,
+        "approvalPercentage": null,
+        "validationDays": null,
+        "averagePaymentTime": null,
+        "commissionMin": null,
+        "commissionMax": null,
+        "commissionTypes": []
+      },
+      "reasons": [
+        "passt zu Tierbedarf",
+        "Sortimentslücke: erst 0 veröffentlichte Angebote in Tierbedarf"
+      ],
+      "applicationRequired": true,
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten alphazoo DE redaktionell passend im Bereich Tierbedarf einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "automationState": "ready-for-review"
+    },
+    {
+      "brand": "Alpinulin DE",
+      "network": "Awin",
+      "advertiserId": 116577,
+      "status": "notjoined",
+      "category": "Gesundheit & Wellness",
+      "score": 45,
+      "priority": "mittel",
+      "activeDiscoveryOffers": 0,
+      "offerExamples": [],
+      "productFeed": false,
+      "siteCategoryCoverage": 0,
+      "metrics": {
+        "awinIndex": null,
+        "epc": null,
+        "conversionRate": null,
+        "approvalPercentage": null,
+        "validationDays": null,
+        "averagePaymentTime": null,
+        "commissionMin": null,
+        "commissionMax": null,
+        "commissionTypes": []
+      },
+      "reasons": [
+        "passt zu Gesundheit & Wellness",
+        "Sortimentslücke: erst 0 veröffentlichte Angebote in Gesundheit & Wellness"
+      ],
+      "applicationRequired": true,
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Alpinulin DE redaktionell passend im Bereich Gesundheit & Wellness einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
       "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
       "automationState": "ready-for-review"
     }
