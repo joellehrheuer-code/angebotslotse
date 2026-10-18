@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-18T18:40:33.048Z",
+  "generatedAt": "2026-10-18T22:26:52.268Z",
   "dailyNewContactLimit": 8,
   "safeguards": {
     "dedupeAgainst": "report/partner-outreach-status.json",
