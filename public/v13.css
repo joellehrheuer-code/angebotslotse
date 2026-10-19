@@ -6330,3 +6330,21 @@ html[data-theme="light"] .community-proof-compact .eyebrow{color:#a94d06!importa
 .verivox-partner-creative p{max-width:36ch;font-size:12px;line-height:1.5;color:var(--muted,#aeb5c5)}
 .verivox-partner-creative a:focus-visible{outline:3px solid #ffca77;outline-offset:4px}
 html[data-theme="light"] .verivox-partner-creative{background:#f7f9fc;border-color:#c7d2df}
+
+
+/* V44 — Verträge & Tarife: consistent browseable Verivox cards */
+.comparison-hub-page{width:min(1280px,calc(100% - 32px));margin:20px auto}
+.comparison-hub-hero{max-width:900px;margin:0 auto 24px;text-align:center}
+.comparison-hub-hero h1{font-size:clamp(29px,4vw,48px);line-height:1.13}
+.comparison-service-grid{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:16px!important;align-items:stretch}
+.comparison-service-grid>article{min-width:0!important;display:flex!important;flex-direction:column!important;align-items:flex-start!important;gap:10px!important;padding:clamp(18px,2vw,25px)!important;border:1px solid #313a51!important;border-radius:18px!important;background:#111725!important;min-height:258px!important}
+.comparison-service-grid .comparison-service-icon{width:56px!important;height:56px!important;display:grid!important;place-items:center!important;font-size:27px!important;line-height:1!important;border:1px solid #48516a!important;border-radius:15px!important;background:#1c2538!important}
+.comparison-service-grid h2{font-size:clamp(19px,2vw,23px)!important;line-height:1.25!important;margin:2px 0!important}
+.comparison-service-grid p{font-size:13px!important;line-height:1.55!important;flex:1 1 auto!important}
+.comparison-service-grid .comparison-service-state{display:flex!important;flex-wrap:wrap!important;gap:7px!important}
+.comparison-service-grid .comparison-service-link{display:inline-flex!important;align-items:center!important;justify-content:center!important;min-height:43px!important;padding:10px 14px!important;border-radius:10px!important;text-align:center!important;margin-top:auto!important}
+.comparison-service-grid .comparison-service-link:focus-visible{outline:3px solid #ffcf86!important;outline-offset:3px!important}
+@media(max-width:990px){.comparison-service-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+@media(max-width:620px){.comparison-hub-page{width:calc(100% - 20px)}.comparison-service-grid{grid-template-columns:minmax(0,1fr)!important;gap:12px!important}.comparison-service-grid>article{min-height:0!important}}
+html[data-theme="light"] .comparison-service-grid>article{background:#fff!important;border-color:#cbd5e1!important}
+html[data-theme="light"] .comparison-service-grid .comparison-service-icon{background:#eef3f9!important;border-color:#ccd6e5!important}
