@@ -6386,3 +6386,23 @@ html[data-theme="light"] .verivox-original-banners{background:#f2f6fa;border-col
 html[data-theme="light"] .verivox-original-banners .verivox-partner-creative{background:#fff;border-color:#cbd5e1}
 @media(prefers-reduced-motion:reduce){.verivox-original-banners .verivox-partner-creative a{transition:none}}
 @media(max-width:620px){.verivox-original-banners{padding:15px;margin-block:18px}}
+
+
+/* V48 — elegant illustrated tariff cards, with links to actual Verivox media */
+.comparison-service-grid>article{position:relative!important;isolation:isolate!important;overflow:hidden!important}
+.comparison-service-grid>article>*:not(.comparison-service-art){position:relative;z-index:1}
+.comparison-service-grid .comparison-service-art{position:absolute;right:-8px;top:16px;z-index:0;display:block;font-size:clamp(80px,9vw,132px);line-height:1;opacity:.13;transform:rotate(-14deg);pointer-events:none;filter:saturate(.55)}
+.comparison-service-grid>article#strom{background:linear-gradient(122deg,#182a35,#151b29)!important}
+.comparison-service-grid>article#gas{background:linear-gradient(122deg,#33211d,#181b27)!important}
+.comparison-service-grid>article#dsl{background:linear-gradient(122deg,#142d3d,#151b29)!important}
+.comparison-service-grid>article#mobilfunk{background:linear-gradient(122deg,#25213c,#151b29)!important}
+.comparison-service-grid>article#kfz{background:linear-gradient(122deg,#1c3238,#151b29)!important}
+.comparison-service-grid>article#versicherungen{background:linear-gradient(122deg,#202f3d,#151b29)!important}
+.comparison-service-grid>article#kredit{background:linear-gradient(122deg,#32263b,#151b29)!important}
+.comparison-service-grid .comparison-banner-jump{display:inline-block!important;margin-top:4px!important;font-size:12px!important;font-weight:700!important;color:#ffd099!important;text-underline-offset:3px!important}
+.verivox-partner-creative{scroll-margin-top:140px}
+.verivox-partner-creative:target{outline:2px solid #f0a751;outline-offset:5px}
+html[data-theme="light"] .comparison-service-grid>article{background:#fff!important}
+html[data-theme="light"] .comparison-service-grid .comparison-service-art{opacity:.09}
+html[data-theme="light"] .comparison-service-grid .comparison-banner-jump{color:#8b4a13!important}
+@media(max-width:620px){.comparison-service-grid .comparison-service-art{font-size:100px}}
