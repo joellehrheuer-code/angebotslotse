@@ -6406,3 +6406,13 @@ html[data-theme="light"] .comparison-service-grid>article{background:#fff!import
 html[data-theme="light"] .comparison-service-grid .comparison-service-art{opacity:.09}
 html[data-theme="light"] .comparison-service-grid .comparison-banner-jump{color:#8b4a13!important}
 @media(max-width:620px){.comparison-service-grid .comparison-service-art{font-size:100px}}
+
+
+/* V49 — approved Verivox credit landing-page creative */
+.verivox-credit-partner{width:min(100%,820px);margin:16px auto 26px;padding:22px;border:1px solid #46516d;border-radius:17px;background:#172036;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px}
+.verivox-credit-partner>strong{font-size:clamp(18px,2vw,23px)}
+.verivox-credit-partner>p{flex:1 1 260px;font-size:13px;line-height:1.5;color:#d1d8e7}
+.verivox-credit-partner>.button{min-height:44px;display:inline-flex;align-items:center;justify-content:center}
+html[data-theme="light"] .verivox-credit-partner{background:#f0f5fc;border-color:#b6c8df}
+html[data-theme="light"] .verivox-credit-partner>p{color:#384961}
+@media(max-width:620px){.verivox-credit-partner{padding:17px}.verivox-credit-partner>.button{width:100%}}
