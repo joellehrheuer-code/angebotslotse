@@ -1342,3 +1342,20 @@ if(location.hash==="#bewertung-abgeben"){
     buttons.forEach(b=>b.setAttribute("aria-pressed",String(b===button)));
   }));
 })();
+
+
+// Load approved third-party Verivox iframe only after the visitor clicks.
+document.querySelectorAll(".verivox-live-widget").forEach(section=>{
+  section.querySelector("[data-verivox-widget-load]")?.addEventListener("click",event=>{
+    const frame=section.querySelector("iframe[data-verivox-iframe-src]");
+    if(!frame)return;
+    const source=frame.dataset.verivoxIframeSrc;
+    try{
+      const url=new URL(source);
+      if(url.protocol!=="https:"||!/(^|\.)verivox\.de$/.test(url.hostname))return;
+      frame.src=url.href;
+      frame.parentElement.hidden=false;
+      event.currentTarget.hidden=true;
+    }catch{}
+  });
+});
