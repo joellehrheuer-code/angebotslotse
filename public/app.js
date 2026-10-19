@@ -1327,3 +1327,18 @@ if(location.hash==="#bewertung-abgeben"){
   const details=document.querySelector("#bewertung-abgeben");
   if(details instanceof HTMLDetailsElement)details.open=true;
 }
+
+
+/* Accessible household consumption helper; not a Verivox iframe or price quote. */
+(()=>{
+  const root=document.querySelector(".strom-rechner-preview");
+  if(!root)return;
+  const input=root.querySelector("#strom-verbrauch");
+  const buttons=[...root.querySelectorAll("[data-strom-personen]")];
+  const estimates={1:1500,2:2500,3:3500,4:4250};
+  buttons.forEach(button=>button.addEventListener("click",()=>{
+    const n=Number(button.dataset.stromPersonen);
+    input.value=String(estimates[n]??2500);
+    buttons.forEach(b=>b.setAttribute("aria-pressed",String(b===button)));
+  }));
+})();
