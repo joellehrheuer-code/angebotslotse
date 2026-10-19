@@ -6446,3 +6446,14 @@ html[data-theme="light"] .comparison-service-grid .tariff-quick-field label{colo
 html[data-theme="light"] .comparison-service-grid .tariff-quick-field :is(input,select){background:#fff;color:#162031;border-color:#a9b6c8}
 html[data-theme="light"] .comparison-service-grid .tariff-quick-inline>small{color:#46556b}
 @media(max-width:620px){.comparison-service-grid>article{min-height:0!important}}
+
+
+/* V52 — approved third-party tariff calculators, opt-in and responsive */
+.verivox-live-widget{width:min(100%,1080px);margin:20px auto;padding:clamp(16px,3vw,28px);background:#111d2e;border:1px solid #45526b;border-radius:18px}
+.verivox-live-widget h2{font-size:clamp(21px,2.7vw,30px);line-height:1.2}
+.verivox-live-widget p{font-size:13px;line-height:1.6}
+.verivox-live-widget .button{margin-top:12px;min-height:44px}
+.verivox-widget-frame{margin-top:16px;background:#fff;border-radius:12px;overflow:hidden}
+.verivox-widget-frame[hidden]{display:none!important}
+.verivox-widget-frame iframe{display:block;border:0;width:100%;min-height:600px}
+@media(max-width:620px){.verivox-widget-frame iframe{min-height:720px}}
