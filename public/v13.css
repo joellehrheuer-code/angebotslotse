@@ -6321,3 +6321,12 @@ html[data-theme="light"] .community-proof-compact .eyebrow{color:#a94d06!importa
  .volunteer-tester-section,.daily-deal{width:calc(100% - 20px)!important;padding:16px!important}
  .volunteer-tester-actions .button{flex:1 1 150px!important}
 }
+
+
+/* V43 — Verivox official banner: proportionate, centered, responsive */
+.verivox-partner-creative{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;width:min(100%,520px);margin:24px auto;padding:20px;border:1px solid #343b53;border-radius:18px;background:#101521;text-align:center}
+.verivox-partner-creative>a{display:block;width:min(100%,300px);line-height:0;border-radius:12px;overflow:hidden}
+.verivox-partner-creative img{display:block;width:100%;height:auto;aspect-ratio:6/5;object-fit:contain}
+.verivox-partner-creative p{max-width:36ch;font-size:12px;line-height:1.5;color:var(--muted,#aeb5c5)}
+.verivox-partner-creative a:focus-visible{outline:3px solid #ffca77;outline-offset:4px}
+html[data-theme="light"] .verivox-partner-creative{background:#f7f9fc;border-color:#c7d2df}
