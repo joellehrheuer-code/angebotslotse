@@ -6457,3 +6457,21 @@ html[data-theme="light"] .comparison-service-grid .tariff-quick-inline>small{col
 .verivox-widget-frame[hidden]{display:none!important}
 .verivox-widget-frame iframe{display:block;border:0;width:100%;min-height:600px}
 @media(max-width:620px){.verivox-widget-frame iframe{min-height:720px}}
+
+
+/* V53 — Verivox partner inventory, all fourteen verified portal categories */
+.verivox-inventory{width:min(100%,1180px);margin:30px auto;padding:clamp(18px,2.5vw,28px);border:1px solid #35435b;border-radius:20px;background:#111825}
+.verivox-inventory .section-head{margin-bottom:18px}
+.verivox-inventory .section-head h2{font-size:clamp(23px,2.8vw,32px);line-height:1.2}
+.verivox-inventory .section-head p{font-size:13px;line-height:1.55}
+.verivox-inventory-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.verivox-inventory-grid article{display:flex;gap:12px;min-width:0;padding:16px;border:1px solid #364158;border-radius:13px;background:#1b2433}
+.verivox-inventory-icon{font-size:24px;line-height:1.3;flex:0 0 32px}
+.verivox-inventory-grid h3{font-size:15px;line-height:1.3;margin:0 0 6px;overflow-wrap:anywhere}
+.verivox-inventory-grid p,.verivox-inventory-grid small{display:block;font-size:11px;line-height:1.5;margin:0 0 6px}
+.verivox-inventory-grid small{color:#efb36a}
+html[data-theme="light"] .verivox-inventory{background:#f1f5fa;border-color:#c6d1dd}
+html[data-theme="light"] .verivox-inventory-grid article{background:#fff;border-color:#d2dbe5}
+html[data-theme="light"] .verivox-inventory-grid small{color:#835018}
+@media(max-width:900px){.verivox-inventory-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.verivox-inventory-grid{grid-template-columns:1fr}}
