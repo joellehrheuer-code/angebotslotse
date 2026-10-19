@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-19T04:40:51.728Z",
+  "generatedAt": "2026-10-19T15:37:09.841Z",
   "dailyNewContactLimit": 8,
   "safeguards": {
     "dedupeAgainst": "report/partner-outreach-status.json",
@@ -33,6 +33,29 @@
       "reason": "Routine-Outreach darf nur an verifizierte offizielle Kontakte vorbereitet/versendet werden; Vertragsbedingungen, AGB, Exklusivität oder kostenpflichtige Verpflichtungen werden nicht automatisch akzeptiert."
     },
     {
+      "id": "awin-45579",
+      "network": "Awin",
+      "brand": "iScooter DE",
+      "advertiserId": 45579,
+      "programId": null,
+      "campaignId": null,
+      "category": "Mode & Sport",
+      "priority": "hoch",
+      "score": 75,
+      "networkStatus": "notjoined",
+      "actionType": "application-review",
+      "contact": null,
+      "contactType": null,
+      "contactSource": null,
+      "contactState": "official-contact-research-required",
+      "routineOutreachAllowed": false,
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten iScooter DE redaktionell passend im Bereich Mode & Sport einbinden. Bei Awin sind aktuell 11 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "networkApplicationNextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "contractualSubmissionAllowed": false,
+      "reason": "Routine-Outreach darf nur an verifizierte offizielle Kontakte vorbereitet/versendet werden; Vertragsbedingungen, AGB, Exklusivität oder kostenpflichtige Verpflichtungen werden nicht automatisch akzeptiert."
+    },
+    {
       "id": "awin-12591",
       "network": "Awin",
       "brand": "Acer DE",
@@ -51,6 +74,29 @@
       "routineOutreachAllowed": false,
       "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Acer DE redaktionell passend im Bereich Technik & Computer einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
       "nextAction": "Official Awin program verified. Program is relevant for computer/IT sites, but no dedicated German affiliate email was verified. Program terms require review before application.",
+      "networkApplicationNextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "contractualSubmissionAllowed": false,
+      "reason": "Routine-Outreach darf nur an verifizierte offizielle Kontakte vorbereitet/versendet werden; Vertragsbedingungen, AGB, Exklusivität oder kostenpflichtige Verpflichtungen werden nicht automatisch akzeptiert."
+    },
+    {
+      "id": "awin-11475",
+      "network": "Awin",
+      "brand": "Polo-motorrad DE",
+      "advertiserId": 11475,
+      "programId": null,
+      "campaignId": null,
+      "category": "Auto & Mobilität",
+      "priority": "mittel",
+      "score": 63,
+      "networkStatus": "notjoined",
+      "actionType": "application-review",
+      "contact": null,
+      "contactType": null,
+      "contactSource": null,
+      "contactState": "official-contact-research-required",
+      "routineOutreachAllowed": false,
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Polo-motorrad DE redaktionell passend im Bereich Auto & Mobilität einbinden. Bei Awin sind aktuell 3 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
       "networkApplicationNextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
       "contractualSubmissionAllowed": false,
       "reason": "Routine-Outreach darf nur an verifizierte offizielle Kontakte vorbereitet/versendet werden; Vertragsbedingungen, AGB, Exklusivität oder kostenpflichtige Verpflichtungen werden nicht automatisch akzeptiert."
@@ -119,6 +165,13 @@
       "lastContactAt": "2026-09-02T19:43:09+02:00"
     },
     {
+      "brand": "Douglas_DE",
+      "reason": "existing-status:contacted",
+      "relatedBrand": null,
+      "status": "contacted",
+      "lastContactAt": "2026-10-09"
+    },
+    {
       "brand": "BSTN DACH",
       "reason": "existing-status:pending",
       "relatedBrand": null,
@@ -138,27 +191,6 @@
       "relatedBrand": null,
       "status": "rejected",
       "lastContactAt": "2026-10-06"
-    },
-    {
-      "brand": "Fressnapf-Online-Shop DE",
-      "reason": "existing-status:contacted",
-      "relatedBrand": null,
-      "status": "contacted",
-      "lastContactAt": "2026-10-08T19:41:00Z"
-    },
-    {
-      "brand": "INTERSPORT DE",
-      "reason": "existing-status:needs-info",
-      "relatedBrand": null,
-      "status": "needs-info",
-      "lastContactAt": "2026-10-06"
-    },
-    {
-      "brand": "Sportspar DE",
-      "reason": "existing-status:needs-info",
-      "relatedBrand": null,
-      "status": "needs-info",
-      "lastContactAt": "2026-10-05T21:44:40+02:00"
     }
   ]
 }
