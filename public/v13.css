@@ -6371,3 +6371,18 @@ html[data-theme="light"] .comparison-service-grid .comparison-service-icon{backg
 .verivox-gas-leaderboard>a{width:min(100%,728px)!important;max-width:728px!important;overflow:hidden!important}
 .verivox-gas-leaderboard img{width:100%!important;height:auto!important;max-width:728px!important;max-height:none!important;aspect-ratio:728/90!important;object-fit:contain!important}
 @media(max-width:620px){.verivox-gas-leaderboard{padding:12px!important}.verivox-gas-leaderboard .eyebrow{font-size:10px!important}}
+
+
+/* V47 — feature the original Verivox creatives as a consistent, identifiable gallery */
+.verivox-original-banners{width:min(100%,1020px);margin:28px auto;padding:clamp(18px,2.5vw,28px);border:1px solid #303a50;border-radius:22px;background:#101622}
+.verivox-original-banners>.section-head{margin-bottom:18px}
+.verivox-original-banners .section-head h2{font-size:clamp(21px,2.4vw,30px);line-height:1.18;margin:8px 0}
+.verivox-original-banners .section-head p{font-size:13px;line-height:1.55}
+.verivox-original-banners .verivox-creative-grid{margin:0 auto 16px}
+.verivox-original-banners .verivox-partner-creative{background:#151d2e;border-color:#3a4861}
+.verivox-original-banners .verivox-partner-creative a{transition:transform .17s ease}
+.verivox-original-banners .verivox-partner-creative a:hover{transform:translateY(-3px)}
+html[data-theme="light"] .verivox-original-banners{background:#f2f6fa;border-color:#cbd5e1}
+html[data-theme="light"] .verivox-original-banners .verivox-partner-creative{background:#fff;border-color:#cbd5e1}
+@media(prefers-reduced-motion:reduce){.verivox-original-banners .verivox-partner-creative a{transition:none}}
+@media(max-width:620px){.verivox-original-banners{padding:15px;margin-block:18px}}
