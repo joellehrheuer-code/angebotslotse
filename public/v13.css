@@ -6416,3 +6416,19 @@ html[data-theme="light"] .comparison-service-grid .comparison-banner-jump{color:
 html[data-theme="light"] .verivox-credit-partner{background:#f0f5fc;border-color:#b6c8df}
 html[data-theme="light"] .verivox-credit-partner>p{color:#384961}
 @media(max-width:620px){.verivox-credit-partner{padding:17px}.verivox-credit-partner>.button{width:100%}}
+
+
+/* V50 — functional electricity estimate panel while official iframe is pending */
+.strom-rechner-preview{width:min(100%,1120px);margin:20px auto 28px;padding:clamp(18px,3vw,32px);border:1px solid #3c4a60;border-radius:22px;background:#121d2b;display:grid;grid-template-columns:minmax(0,1fr) minmax(290px,380px);gap:clamp(18px,4vw,52px);align-items:center}
+.strom-rechner-intro h2{font-size:clamp(25px,3vw,38px);line-height:1.17;margin:10px 0}
+.strom-rechner-intro p{font-size:14px;line-height:1.65;max-width:52ch}
+.strom-rechner-box{background:#fff;color:#1d2735;border-radius:15px;padding:22px;display:flex;flex-direction:column;gap:10px;box-shadow:0 12px 38px #0002}
+.strom-rechner-box label{font-size:13px;font-weight:750;color:#2c3038}
+.strom-personen-choices{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px}
+.strom-personen-choices button{min-height:46px;background:#f6f7f9;color:#1e2630;border:1px solid #aab0b8;border-radius:7px;font-weight:750;cursor:pointer}
+.strom-personen-choices button[aria-pressed="true"]{border:2px solid #ef6d14;background:#fff0e4;color:#b34808}
+.strom-rechner-box input{width:100%;min-height:46px;padding:10px;border:1px solid #9ba3ae;border-radius:7px;background:#fff;color:#151a21;font-size:16px}
+.strom-rechner-box .strom-rechner-note{font-size:11px;line-height:1.5;color:#54606b}
+.strom-rechner-box .strom-rechner-cta{display:flex;align-items:center;justify-content:center;min-height:47px;background:#f66c0b!important;color:#fff!important;font-weight:800;border-radius:8px;text-align:center}
+.strom-rechner-box button:focus-visible,.strom-rechner-box a:focus-visible,.strom-rechner-box input:focus-visible{outline:3px solid #f7a65a;outline-offset:3px}
+@media(max-width:780px){.strom-rechner-preview{grid-template-columns:minmax(0,1fr);padding:18px}.strom-rechner-box{max-width:480px;width:100%;margin:auto}}
