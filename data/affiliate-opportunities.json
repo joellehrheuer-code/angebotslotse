@@ -1,12 +1,13 @@
 {
-  "generatedAt": "2026-10-19T15:37:09.841Z",
-  "total": 62,
+  "generatedAt": "2026-10-19T20:06:23.969Z",
+  "total": 68,
   "highPriority": 12,
   "byNetwork": {
     "Daisycon": 4,
     "Tradedoubler": 4,
     "Webgains": 4,
-    "Awin": 50
+    "Awin": 50,
+    "Impact": 6
   },
   "reviewQueue": [
     {
@@ -107,25 +108,6 @@
     {
       "rank": 6,
       "network": "Awin",
-      "brand": "Douglas_DE",
-      "reference": 10076,
-      "advertiserId": 10076,
-      "programId": null,
-      "campaignId": null,
-      "category": "Gesundheit & Wellness",
-      "priority": "mittel",
-      "score": 63,
-      "kind": "application",
-      "status": "notjoined",
-      "actionType": "application-review",
-      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Douglas_DE redaktionell passend im Bereich Gesundheit & Wellness einbinden. Bei Awin sind aktuell 3 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-      "submissionReady": false,
-      "humanApprovalRequired": true
-    },
-    {
-      "rank": 7,
-      "network": "Awin",
       "brand": "Polo-motorrad DE",
       "reference": 11475,
       "advertiserId": 11475,
@@ -143,7 +125,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 8,
+      "rank": 7,
       "network": "Awin",
       "brand": "bosch Tiernahrung DE",
       "reference": 84955,
@@ -162,7 +144,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 9,
+      "rank": 8,
       "network": "Awin",
       "brand": "BSTN DACH",
       "reference": 104975,
@@ -181,7 +163,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 10,
+      "rank": 9,
       "network": "Awin",
       "brand": "DECATHLON DE",
       "reference": 14353,
@@ -200,7 +182,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 11,
+      "rank": 10,
       "network": "Awin",
       "brand": "Ecovacs DE",
       "reference": 30763,
@@ -219,7 +201,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 12,
+      "rank": 11,
       "network": "Awin",
       "brand": "Fressnapf AT",
       "reference": 68692,
@@ -238,7 +220,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 13,
+      "rank": 12,
       "network": "Awin",
       "brand": "Fressnapf-Online-Shop DE",
       "reference": 14757,
@@ -257,7 +239,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 14,
+      "rank": 13,
       "network": "Awin",
       "brand": "INTERSPORT DE",
       "reference": 14050,
@@ -276,7 +258,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 15,
+      "rank": 14,
       "network": "Awin",
       "brand": "Office-partner DE",
       "reference": 14611,
@@ -295,7 +277,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 16,
+      "rank": 15,
       "network": "Awin",
       "brand": "Sportspar DE",
       "reference": 14366,
@@ -314,7 +296,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 17,
+      "rank": 16,
       "network": "Awin",
       "brand": "Zooplus DE",
       "reference": 11330,
@@ -333,7 +315,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 18,
+      "rank": 17,
       "network": "Awin",
       "brand": "zooplus RO",
       "reference": 10306,
@@ -348,6 +330,25 @@
       "actionType": "application-review",
       "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
       "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten zooplus RO redaktionell passend im Bereich Tierbedarf einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "submissionReady": false,
+      "humanApprovalRequired": true
+    },
+    {
+      "rank": 18,
+      "network": "Awin",
+      "brand": "Douglas_DE",
+      "reference": 10076,
+      "advertiserId": 10076,
+      "programId": null,
+      "campaignId": null,
+      "category": "Gesundheit & Wellness",
+      "priority": "mittel",
+      "score": 57,
+      "kind": "application",
+      "status": "notjoined",
+      "actionType": "application-review",
+      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Douglas_DE redaktionell passend im Bereich Gesundheit & Wellness einbinden. Bei Awin sind aktuell 2 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
       "submissionReady": false,
       "humanApprovalRequired": true
     },
@@ -489,25 +490,6 @@
     {
       "rank": 6,
       "network": "Awin",
-      "brand": "Douglas_DE",
-      "reference": 10076,
-      "advertiserId": 10076,
-      "programId": null,
-      "campaignId": null,
-      "category": "Gesundheit & Wellness",
-      "priority": "mittel",
-      "score": 63,
-      "kind": "application",
-      "status": "notjoined",
-      "actionType": "application-review",
-      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Douglas_DE redaktionell passend im Bereich Gesundheit & Wellness einbinden. Bei Awin sind aktuell 3 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-      "submissionReady": false,
-      "humanApprovalRequired": true
-    },
-    {
-      "rank": 7,
-      "network": "Awin",
       "brand": "Polo-motorrad DE",
       "reference": 11475,
       "advertiserId": 11475,
@@ -525,7 +507,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 8,
+      "rank": 7,
       "network": "Awin",
       "brand": "bosch Tiernahrung DE",
       "reference": 84955,
@@ -544,7 +526,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 9,
+      "rank": 8,
       "network": "Awin",
       "brand": "BSTN DACH",
       "reference": 104975,
@@ -563,7 +545,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 10,
+      "rank": 9,
       "network": "Awin",
       "brand": "DECATHLON DE",
       "reference": 14353,
@@ -582,7 +564,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 11,
+      "rank": 10,
       "network": "Awin",
       "brand": "Ecovacs DE",
       "reference": 30763,
@@ -601,7 +583,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 12,
+      "rank": 11,
       "network": "Awin",
       "brand": "Fressnapf AT",
       "reference": 68692,
@@ -616,6 +598,25 @@
       "actionType": "application-review",
       "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
       "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Fressnapf AT redaktionell passend im Bereich Tierbedarf einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "submissionReady": false,
+      "humanApprovalRequired": true
+    },
+    {
+      "rank": 12,
+      "network": "Awin",
+      "brand": "Fressnapf-Online-Shop DE",
+      "reference": 14757,
+      "advertiserId": 14757,
+      "programId": null,
+      "campaignId": null,
+      "category": "Tierbedarf",
+      "priority": "mittel",
+      "score": 60,
+      "kind": "application",
+      "status": "notjoined",
+      "actionType": "application-review",
+      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Fressnapf-Online-Shop DE redaktionell passend im Bereich Tierbedarf einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
       "submissionReady": false,
       "humanApprovalRequired": true
     }
@@ -1113,24 +1114,6 @@
     },
     {
       "network": "Awin",
-      "brand": "Douglas_DE",
-      "category": "Gesundheit & Wellness",
-      "priority": "mittel",
-      "score": 63,
-      "status": "notjoined",
-      "kind": "application",
-      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Douglas_DE redaktionell passend im Bereich Gesundheit & Wellness einbinden. Bei Awin sind aktuell 3 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-      "reason": "passt zu Gesundheit & Wellness, Sortimentslücke: erst 0 veröffentlichte Angebote in Gesundheit & Wellness, 3 aktive DE-Aktionen",
-      "reference": 10076,
-      "advertiserId": 10076,
-      "programId": null,
-      "campaignId": null,
-      "submissionReady": false,
-      "humanApprovalRequired": true
-    },
-    {
-      "network": "Awin",
       "brand": "Polo-motorrad DE",
       "category": "Auto & Mobilität",
       "priority": "mittel",
@@ -1347,6 +1330,24 @@
     },
     {
       "network": "Awin",
+      "brand": "Douglas_DE",
+      "category": "Gesundheit & Wellness",
+      "priority": "mittel",
+      "score": 57,
+      "status": "notjoined",
+      "kind": "application",
+      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Douglas_DE redaktionell passend im Bereich Gesundheit & Wellness einbinden. Bei Awin sind aktuell 2 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "reason": "passt zu Gesundheit & Wellness, Sortimentslücke: erst 0 veröffentlichte Angebote in Gesundheit & Wellness, 2 aktive DE-Aktionen",
+      "reference": 10076,
+      "advertiserId": 10076,
+      "programId": null,
+      "campaignId": null,
+      "submissionReady": false,
+      "humanApprovalRequired": true
+    },
+    {
+      "network": "Awin",
       "brand": "Fritz Berger DE",
       "category": "Mode & Sport",
       "priority": "mittel",
@@ -1376,24 +1377,6 @@
       "reason": "passt zu Mode & Sport, Sortimentslücke: erst 0 veröffentlichte Angebote in Mode & Sport, 2 aktive DE-Aktionen",
       "reference": 14787,
       "advertiserId": 14787,
-      "programId": null,
-      "campaignId": null,
-      "submissionReady": false,
-      "humanApprovalRequired": true
-    },
-    {
-      "network": "Awin",
-      "brand": "Babor DE",
-      "category": "Gesundheit & Wellness",
-      "priority": "mittel",
-      "score": 51,
-      "status": "notjoined",
-      "kind": "application",
-      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Babor DE redaktionell passend im Bereich Gesundheit & Wellness einbinden. Bei Awin sind aktuell 1 für Deutschland sichtbare Aktion dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-      "reason": "passt zu Gesundheit & Wellness, Sortimentslücke: erst 0 veröffentlichte Angebote in Gesundheit & Wellness, 1 aktive DE-Aktion",
-      "reference": 14223,
-      "advertiserId": 14223,
       "programId": null,
       "campaignId": null,
       "submissionReady": false,
@@ -1502,6 +1485,24 @@
       "reason": "passt zu Mode & Sport, Sortimentslücke: erst 0 veröffentlichte Angebote in Mode & Sport, 1 aktive DE-Aktion",
       "reference": 37018,
       "advertiserId": 37018,
+      "programId": null,
+      "campaignId": null,
+      "submissionReady": false,
+      "humanApprovalRequired": true
+    },
+    {
+      "network": "Awin",
+      "brand": "UYN Sports DE",
+      "category": "Mode & Sport",
+      "priority": "mittel",
+      "score": 51,
+      "status": "notjoined",
+      "kind": "application",
+      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten UYN Sports DE redaktionell passend im Bereich Mode & Sport einbinden. Bei Awin sind aktuell 1 für Deutschland sichtbare Aktion dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "reason": "passt zu Mode & Sport, Sortimentslücke: erst 0 veröffentlichte Angebote in Mode & Sport, 1 aktive DE-Aktion",
+      "reference": 129427,
+      "advertiserId": 129427,
       "programId": null,
       "campaignId": null,
       "submissionReady": false,
@@ -1920,6 +1921,114 @@
       "campaignId": null,
       "submissionReady": false,
       "humanApprovalRequired": true
+    },
+    {
+      "network": "Impact",
+      "brand": "Martinic - martinic",
+      "category": "Audio & Creator",
+      "priority": "mittel",
+      "score": 39,
+      "status": "joined",
+      "kind": "partner-expansion",
+      "nextAction": "Aktuelle Aktionen und Codes prominent einbinden; Produktfeed beim Brand-Team erfragen.",
+      "applicationDraft": "Hallo Martinic - martinic-Team, Angebotslotse ist ein deutsches Deal-, Preisvergleichs- und Discovery-Portal. Wir sind über impact.com bereits mit eurem Programm verbunden und möchten die Zusammenarbeit im Bereich Weitere stärker ausbauen. Besonders interessant sind für uns aktuelle Produktkataloge, zeitlich begrenzte Aktionen, Gutscheincodes und offizielle Medien, die wir transparent und mit korrekter Werbekennzeichnung darstellen können. Wenn für Publisher zusätzliche Feeds, Creatives oder aktuelle Kampagnen verfügbar sind, freuen wir uns über einen Hinweis direkt über impact.com.",
+      "reason": "passt zu Audio & Creator, 1 aktiver Deal, Deeplinks erlaubt, Trackinglink verfügbar, öffentliche Programmbedingungen",
+      "reference": "4482",
+      "advertiserId": "255547",
+      "programId": null,
+      "campaignId": "4482",
+      "submissionReady": false,
+      "humanApprovalRequired": false
+    },
+    {
+      "network": "Impact",
+      "brand": "GearUP Portal Pte Ltd",
+      "category": "Technik & Computer",
+      "priority": "mittel",
+      "score": 34,
+      "status": "joined",
+      "kind": "partner-expansion",
+      "nextAction": "Über impact.com nach Produktfeed, Promotions, Codes und Publisher-Creatives fragen.",
+      "applicationDraft": "Hallo GearUP Portal Pte Ltd-Team, Angebotslotse ist ein deutsches Deal-, Preisvergleichs- und Discovery-Portal. Wir sind über impact.com bereits mit eurem Programm verbunden und möchten die Zusammenarbeit im Bereich Weitere stärker ausbauen. Besonders interessant sind für uns aktuelle Produktkataloge, zeitlich begrenzte Aktionen, Gutscheincodes und offizielle Medien, die wir transparent und mit korrekter Werbekennzeichnung darstellen können. Wenn für Publisher zusätzliche Feeds, Creatives oder aktuelle Kampagnen verfügbar sind, freuen wir uns über einen Hinweis direkt über impact.com.",
+      "reason": "passt zu Technik & Computer, Deeplinks erlaubt, Trackinglink verfügbar, öffentliche Programmbedingungen",
+      "reference": "53368",
+      "advertiserId": "6117213",
+      "programId": null,
+      "campaignId": "53368",
+      "submissionReady": false,
+      "humanApprovalRequired": false
+    },
+    {
+      "network": "Impact",
+      "brand": "Belkin",
+      "category": "Weitere",
+      "priority": "niedrig",
+      "score": 26,
+      "status": "joined",
+      "kind": "partner-expansion",
+      "nextAction": "Aktuelle Aktionen und Codes prominent einbinden; Produktfeed beim Brand-Team erfragen.",
+      "applicationDraft": "Hallo Belkin-Team, Angebotslotse ist ein deutsches Deal-, Preisvergleichs- und Discovery-Portal. Wir sind über impact.com bereits mit eurem Programm verbunden und möchten die Zusammenarbeit im Bereich Weitere stärker ausbauen. Besonders interessant sind für uns aktuelle Produktkataloge, zeitlich begrenzte Aktionen, Gutscheincodes und offizielle Medien, die wir transparent und mit korrekter Werbekennzeichnung darstellen können. Wenn für Publisher zusätzliche Feeds, Creatives oder aktuelle Kampagnen verfügbar sind, freuen wir uns über einen Hinweis direkt über impact.com.",
+      "reason": "1 aktiver Deal, 1 Creative, Deeplinks erlaubt, Trackinglink verfügbar, öffentliche Programmbedingungen",
+      "reference": "3770",
+      "advertiserId": "165682",
+      "programId": null,
+      "campaignId": "3770",
+      "submissionReady": false,
+      "humanApprovalRequired": false
+    },
+    {
+      "network": "Impact",
+      "brand": "GearUP Portal Pte Ltd",
+      "category": "Weitere",
+      "priority": "niedrig",
+      "score": 19,
+      "status": "joined",
+      "kind": "partner-expansion",
+      "nextAction": "Über impact.com nach Produktfeed, Promotions, Codes und Publisher-Creatives fragen.",
+      "applicationDraft": "Hallo GearUP Portal Pte Ltd-Team, Angebotslotse ist ein deutsches Deal-, Preisvergleichs- und Discovery-Portal. Wir sind über impact.com bereits mit eurem Programm verbunden und möchten die Zusammenarbeit im Bereich Weitere stärker ausbauen. Besonders interessant sind für uns aktuelle Produktkataloge, zeitlich begrenzte Aktionen, Gutscheincodes und offizielle Medien, die wir transparent und mit korrekter Werbekennzeichnung darstellen können. Wenn für Publisher zusätzliche Feeds, Creatives oder aktuelle Kampagnen verfügbar sind, freuen wir uns über einen Hinweis direkt über impact.com.",
+      "reason": "Deeplinks erlaubt, Trackinglink verfügbar, öffentliche Programmbedingungen",
+      "reference": "40222",
+      "advertiserId": "6117213",
+      "programId": null,
+      "campaignId": "40222",
+      "submissionReady": false,
+      "humanApprovalRequired": false
+    },
+    {
+      "network": "Impact",
+      "brand": "ProtoArc",
+      "category": "Weitere",
+      "priority": "niedrig",
+      "score": 19,
+      "status": "joined",
+      "kind": "partner-expansion",
+      "nextAction": "Über impact.com nach Produktfeed, Promotions, Codes und Publisher-Creatives fragen.",
+      "applicationDraft": "Hallo ProtoArc-Team, Angebotslotse ist ein deutsches Deal-, Preisvergleichs- und Discovery-Portal. Wir sind über impact.com bereits mit eurem Programm verbunden und möchten die Zusammenarbeit im Bereich Weitere stärker ausbauen. Besonders interessant sind für uns aktuelle Produktkataloge, zeitlich begrenzte Aktionen, Gutscheincodes und offizielle Medien, die wir transparent und mit korrekter Werbekennzeichnung darstellen können. Wenn für Publisher zusätzliche Feeds, Creatives oder aktuelle Kampagnen verfügbar sind, freuen wir uns über einen Hinweis direkt über impact.com.",
+      "reason": "Deeplinks erlaubt, Trackinglink verfügbar, öffentliche Programmbedingungen",
+      "reference": "56905",
+      "advertiserId": "7605257",
+      "programId": null,
+      "campaignId": "56905",
+      "submissionReady": false,
+      "humanApprovalRequired": false
+    },
+    {
+      "network": "Impact",
+      "brand": "Razer (Asia Pacific) Pte Ltd",
+      "category": "Weitere",
+      "priority": "niedrig",
+      "score": 19,
+      "status": "joined",
+      "kind": "partner-expansion",
+      "nextAction": "Über impact.com nach Produktfeed, Promotions, Codes und Publisher-Creatives fragen.",
+      "applicationDraft": "Hallo Razer (Asia Pacific) Pte Ltd-Team, Angebotslotse ist ein deutsches Deal-, Preisvergleichs- und Discovery-Portal. Wir sind über impact.com bereits mit eurem Programm verbunden und möchten die Zusammenarbeit im Bereich Weitere stärker ausbauen. Besonders interessant sind für uns aktuelle Produktkataloge, zeitlich begrenzte Aktionen, Gutscheincodes und offizielle Medien, die wir transparent und mit korrekter Werbekennzeichnung darstellen können. Wenn für Publisher zusätzliche Feeds, Creatives oder aktuelle Kampagnen verfügbar sind, freuen wir uns über einen Hinweis direkt über impact.com.",
+      "reason": "Deeplinks erlaubt, Trackinglink verfügbar, öffentliche Programmbedingungen",
+      "reference": "10229",
+      "advertiserId": "1723018",
+      "programId": null,
+      "campaignId": "10229",
+      "submissionReady": false,
+      "humanApprovalRequired": false
     },
     {
       "network": "Daisycon",
