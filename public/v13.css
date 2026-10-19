@@ -6348,3 +6348,19 @@ html[data-theme="light"] .verivox-partner-creative{background:#f7f9fc;border-col
 @media(max-width:620px){.comparison-hub-page{width:calc(100% - 20px)}.comparison-service-grid{grid-template-columns:minmax(0,1fr)!important;gap:12px!important}.comparison-service-grid>article{min-height:0!important}}
 html[data-theme="light"] .comparison-service-grid>article{background:#fff!important;border-color:#cbd5e1!important}
 html[data-theme="light"] .comparison-service-grid .comparison-service-icon{background:#eef3f9!important;border-color:#ccd6e5!important}
+
+
+/* V45 — Official Verivox creatives in equal-sized partner tiles */
+.verivox-creative-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;width:min(100%,780px);margin:22px auto 28px;align-items:stretch}
+.verivox-creative-grid .verivox-partner-creative{width:100%;height:100%;margin:0;min-width:0}
+.verivox-creative-grid .verivox-partner-creative>a{min-height:0}
+.verivox-creative-grid .verivox-partner-creative img{max-width:300px;max-height:250px;object-fit:contain}
+.verivox-creative-grid .verivox-partner-creative p{margin-top:auto}
+.comparison-service-grid>article#strom .comparison-service-icon{background:#2b2512!important;border-color:#8d7036!important}
+.comparison-service-grid>article#gas .comparison-service-icon{background:#321f1c!important;border-color:#a7654b!important}
+.comparison-service-grid>article#dsl .comparison-service-icon{background:#142b38!important;border-color:#407b92!important}
+.comparison-service-grid>article#mobilfunk .comparison-service-icon{background:#252044!important;border-color:#7565b4!important}
+.comparison-service-grid>article#kfz .comparison-service-icon{background:#1d3030!important;border-color:#537f81!important}
+.comparison-service-grid>article#versicherungen .comparison-service-icon{background:#222d3a!important;border-color:#566c90!important}
+.comparison-service-grid>article#kredit .comparison-service-icon{background:#2e2334!important;border-color:#8b608e!important}
+@media(max-width:620px){.verivox-creative-grid{grid-template-columns:minmax(0,1fr);gap:12px}}
