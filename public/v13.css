@@ -6364,3 +6364,10 @@ html[data-theme="light"] .comparison-service-grid .comparison-service-icon{backg
 .comparison-service-grid>article#versicherungen .comparison-service-icon{background:#222d3a!important;border-color:#566c90!important}
 .comparison-service-grid>article#kredit .comparison-service-icon{background:#2e2334!important;border-color:#8b608e!important}
 @media(max-width:620px){.verivox-creative-grid{grid-template-columns:minmax(0,1fr);gap:12px}}
+
+
+/* V46 — verified Gas leaderboard from Verivox partner creatives */
+.verivox-gas-leaderboard{width:min(100%,820px)!important;max-width:820px!important;margin:14px auto 28px!important;padding:15px!important;gap:8px!important}
+.verivox-gas-leaderboard>a{width:min(100%,728px)!important;max-width:728px!important;overflow:hidden!important}
+.verivox-gas-leaderboard img{width:100%!important;height:auto!important;max-width:728px!important;max-height:none!important;aspect-ratio:728/90!important;object-fit:contain!important}
+@media(max-width:620px){.verivox-gas-leaderboard{padding:12px!important}.verivox-gas-leaderboard .eyebrow{font-size:10px!important}}
