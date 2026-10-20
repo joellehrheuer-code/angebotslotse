@@ -6595,3 +6595,16 @@ html[data-theme="light"] .comparison-carousel .comparison-carousel-progress{colo
   .site-header .mobile-social-menu-row>.top-social-links a{flex-basis:32px!important;width:32px!important;min-width:32px!important}
   .site-header .mobile-social-menu-row{gap:8px!important}
 }
+
+
+/* V59 — visible Verivox CTA even when browser ad blockers hide original creatives */
+.verivox-partner-creative>a{display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;gap:10px!important;min-height:95px!important;text-decoration:none!important;color:#fff!important}
+.verivox-partner-creative>a .verivox-creative-fallback{display:inline-flex!important;align-items:center!important;justify-content:center!important;text-align:center!important;min-height:46px!important;width:min(100%,290px)!important;padding:11px 16px!important;border-radius:11px!important;background:#f47212!important;color:#fff!important;font-size:15px!important;font-weight:850!important;line-height:1.3!important;box-shadow:0 8px 22px #0002}
+.verivox-partner-creative>a:hover .verivox-creative-fallback{background:#da5d06!important}
+.verivox-partner-creative>a img{display:block;max-width:100%;height:auto}
+.verivox-gas-leaderboard>a .verivox-creative-fallback{width:min(100%,330px)!important}
+.verivox-credit-partner>.button{background:#f47212!important;color:#fff!important;border:1px solid #f47212!important;padding:12px 18px!important;font-size:14px!important;font-weight:850!important;line-height:1.35!important;text-decoration:none!important}
+.verivox-credit-partner>.button:hover{background:#dd5e06!important}
+.verivox-credit-partner>.button:focus-visible,.verivox-partner-creative>a:focus-visible{outline:3px solid #ffbd70!important;outline-offset:4px!important}
+html[data-theme="light"] .verivox-partner-creative>a .verivox-creative-fallback,html[data-theme="light"] .verivox-credit-partner>.button{color:#fff!important}
+@media(max-width:600px){.verivox-partner-creative>a .verivox-creative-fallback{font-size:14px!important}.verivox-credit-partner{flex-direction:column!important;align-items:stretch!important}}
