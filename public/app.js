@@ -1359,3 +1359,29 @@ document.querySelectorAll(".verivox-live-widget").forEach(section=>{
     }catch{}
   });
 });
+
+
+/* Comparison hub carousel: accessible arrows, category chips and touch swipes. */
+(()=>{
+ const root=document.querySelector(".comparison-carousel");if(!root)return;
+ const cards=[...root.querySelectorAll(".comparison-service-grid>article")];
+ const chips=[...root.querySelectorAll("[data-compare-select]")];
+ const progress=root.querySelector("[data-compare-progress]");
+ let active=0;let startX=null;
+ const render=()=>{
+   cards.forEach((card,i)=>{card.classList.toggle("is-active",i===active);card.setAttribute("aria-hidden",String(i!==active));card.inert=i!==active;});
+   chips.forEach((chip,i)=>{chip.setAttribute("aria-pressed",String(i===active));});
+   const track=root.querySelector(".comparison-service-grid");
+   if(track)track.style.setProperty("--active-slide",String(active));
+   if(progress)progress.textContent=`${active+1} von ${cards.length} · ${cards[active]?.querySelector("h2")?.textContent||""}`;
+ };
+ const set=n=>{active=(n+cards.length)%cards.length;render()};
+ root.querySelector("[data-compare-prev]")?.addEventListener("click",()=>set(active-1));
+ root.querySelector("[data-compare-next]")?.addEventListener("click",()=>set(active+1));
+ chips.forEach((chip,i)=>chip.addEventListener("click",()=>set(i)));
+ const viewport=root.querySelector(".comparison-carousel-window");
+ viewport?.addEventListener("touchstart",e=>{startX=e.touches[0]?.clientX??null},{passive:true});
+ viewport?.addEventListener("touchend",e=>{if(startX===null)return;const dx=(e.changedTouches[0]?.clientX??startX)-startX;startX=null;if(Math.abs(dx)>45)set(active+(dx<0?1:-1))},{passive:true});
+ viewport?.addEventListener("keydown",e=>{if(e.key==="ArrowRight"){e.preventDefault();set(active+1)}else if(e.key==="ArrowLeft"){e.preventDefault();set(active-1)}});
+ render();
+})();
