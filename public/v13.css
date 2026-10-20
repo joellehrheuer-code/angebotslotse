@@ -6544,3 +6544,25 @@ html[data-theme="light"] .comparison-carousel-progress{color:#43526a}
 @media(max-width:899px){.comparison-carousel .comparison-service-grid{transform:translateX(calc((100% - min(78vw, 640px))/2 - var(--active-slide) * (min(78vw, 640px) + 18px)))}}
 @media(max-width:560px){.comparison-carousel{padding:18px 9px}.comparison-carousel .comparison-service-grid>article{width:calc(100vw - 66px)!important;min-width:calc(100vw - 66px)!important;max-width:calc(100vw - 66px)!important;flex-basis:calc(100vw - 66px)!important}.comparison-carousel .comparison-service-grid{transform:translateX(calc((100% - (100vw - 66px))/2 - var(--active-slide) * ((100vw - 66px) + 18px)))}.comparison-carousel-chips{flex-wrap:nowrap;overflow-x:auto;justify-content:flex-start;padding:0 8px 10px}.comparison-carousel-chips button{white-space:nowrap;flex:0 0 auto}}
 @media(prefers-reduced-motion:reduce){.comparison-carousel .comparison-service-grid{transition:none!important}}
+
+
+/* V57 — readable tariff carousel typography and accessible inactive card contrast */
+.comparison-carousel .comparison-service-grid>article{color:#f8fafc!important}
+.comparison-carousel .comparison-service-grid>article h2{font-size:clamp(24px,2.5vw,30px)!important;line-height:1.28!important;color:#fff!important;letter-spacing:-.015em}
+.comparison-carousel .comparison-service-grid>article>p{font-size:clamp(15px,1.5vw,17px)!important;line-height:1.65!important;color:#e1e9f5!important}
+.comparison-carousel .comparison-service-grid>article>small{font-size:13px!important;letter-spacing:.035em;font-weight:800!important;color:#f9cb94!important}
+.comparison-carousel .comparison-service-grid .tariff-quick-field label{font-size:14px!important;color:#f1f5fa!important}
+.comparison-carousel .comparison-service-grid .tariff-quick-inline>small{font-size:12px!important;line-height:1.55!important;color:#d2dce9!important}
+.comparison-carousel .comparison-service-grid .tariff-quick-field :is(input,select){font-size:16px!important}
+.comparison-carousel .comparison-service-grid .comparison-service-link{font-size:16px!important;line-height:1.35!important}
+.comparison-carousel .comparison-service-grid>article:not(.is-active){opacity:.83!important}
+.comparison-carousel .comparison-carousel-chips button{font-size:14px!important;font-weight:750!important}
+.comparison-carousel .comparison-carousel-progress{font-size:13px!important;color:#e0e7f1!important}
+html[data-theme="light"] .comparison-carousel .comparison-service-grid>article{color:#182235!important}
+html[data-theme="light"] .comparison-carousel .comparison-service-grid>article h2{color:#142034!important}
+html[data-theme="light"] .comparison-carousel .comparison-service-grid>article>p{color:#31435d!important}
+html[data-theme="light"] .comparison-carousel .comparison-service-grid>article>small{color:#804414!important}
+html[data-theme="light"] .comparison-carousel .comparison-service-grid .tariff-quick-field label{color:#26364b!important}
+html[data-theme="light"] .comparison-carousel .comparison-service-grid .tariff-quick-inline>small{color:#40516a!important}
+html[data-theme="light"] .comparison-carousel .comparison-carousel-progress{color:#40516a!important}
+@media(max-width:560px){.comparison-carousel .comparison-service-grid>article h2{font-size:23px!important}.comparison-carousel .comparison-service-grid>article>p{font-size:15px!important}.comparison-carousel .comparison-service-grid>article{padding:20px!important}}
