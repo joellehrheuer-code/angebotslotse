@@ -6566,3 +6566,32 @@ html[data-theme="light"] .comparison-carousel .comparison-service-grid .tariff-q
 html[data-theme="light"] .comparison-carousel .comparison-service-grid .tariff-quick-inline>small{color:#40516a!important}
 html[data-theme="light"] .comparison-carousel .comparison-carousel-progress{color:#40516a!important}
 @media(max-width:560px){.comparison-carousel .comparison-service-grid>article h2{font-size:23px!important}.comparison-carousel .comparison-service-grid>article>p{font-size:15px!important}.comparison-carousel .comparison-service-grid>article{padding:20px!important}}
+
+
+/* V58 — mobile header: social shortcuts beside a generous menu trigger */
+.mobile-social-menu-row{display:flex;align-items:center;justify-content:flex-end;gap:10px}
+.mobile-social-menu-row>.top-social-links{display:none}
+@media(max-width:760px){
+  .site-header .header-row{display:flex!important;flex-wrap:wrap!important;align-items:center!important;gap:8px!important}
+  .site-header .mobile-social-menu-row{display:flex!important;order:10!important;flex:1 0 100%!important;min-width:0!important;justify-content:space-between!important;align-items:center!important;padding:4px 0 10px!important;gap:10px!important}
+  .site-header .mobile-social-menu-row>.top-social-links{display:flex!important;flex:1 1 auto!important;min-width:0!important;max-width:none!important;width:auto!important;align-items:center!important;justify-content:flex-start!important;flex-wrap:nowrap!important;gap:5px!important;padding:0!important;margin:0!important;overflow-x:auto!important;scrollbar-width:none!important}
+  .site-header .mobile-social-menu-row>.top-social-links::-webkit-scrollbar{display:none}
+  .site-header .mobile-social-menu-row>.top-social-links a{display:inline-flex!important;flex:0 0 35px!important;width:35px!important;height:43px!important;min-width:35px!important;min-height:43px!important;align-items:center!important;justify-content:center!important;padding:5px!important;border:1px solid #3a455d!important;border-radius:12px!important}
+  .site-header .mobile-social-menu-row>.top-social-links a img{width:23px!important;height:23px!important;max-width:23px!important}
+  .site-header .mobile-social-menu-row>.top-social-links a span{display:none!important}
+  .site-header .mobile-social-menu-row .menu-toggle{display:flex!important;position:relative!important;flex:0 0 60px!important;width:60px!important;min-width:60px!important;height:56px!important;min-height:56px!important;margin:0!important;border-radius:16px!important;border:2px solid #7589a9!important;align-items:center!important;justify-content:center!important}
+  .site-header .creator-top-dock{display:none!important}
+  #main-nav.open{width:100vw!important;max-width:100vw!important;left:0!important;right:0!important;max-height:calc(100dvh - var(--header-overlay-top,132px) - 12px)!important;overflow-y:auto!important}
+  #main-nav.open .nav-panel{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:14px!important;padding:18px 16px 110px!important}
+  #main-nav.open .nav-panel section{min-width:0!important;padding:14px!important;border-radius:13px!important;border:1px solid #3b465d!important}
+  #main-nav.open .nav-panel a{display:flex!important;align-items:center!important;min-height:43px!important;font-size:15px!important;line-height:1.35!important}
+  #main-nav.open .nav-panel strong{font-size:16px!important}
+  #main-nav.open .mobile-nav-search{padding:12px 16px!important}
+  .comparison-carousel .tariff-quick-inline>small{background:#162337!important;color:#e1eaf7!important;border:1px solid #506079!important;border-radius:9px!important;padding:11px!important}
+  html[data-theme="light"] .comparison-carousel .tariff-quick-inline>small{background:#edf3fa!important;color:#26364b!important;border-color:#bccbdb!important}
+}
+@media(max-width:440px){
+  #main-nav.open .nav-panel{grid-template-columns:1fr!important;gap:10px!important}
+  .site-header .mobile-social-menu-row>.top-social-links a{flex-basis:32px!important;width:32px!important;min-width:32px!important}
+  .site-header .mobile-social-menu-row{gap:8px!important}
+}
