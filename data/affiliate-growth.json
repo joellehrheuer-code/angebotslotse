@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-20T19:24:23.831Z",
+  "generatedAt": "2026-10-20T20:02:04.722Z",
   "market": "DE",
   "publisherId": 3045061,
   "awin": {
@@ -8,9 +8,9 @@
       "pending": 3,
       "suspended": 1,
       "rejected": 3,
-      "notjoined": 2628
+      "notjoined": 2627
     },
-    "totalProgramsEvaluated": 2640,
+    "totalProgramsEvaluated": 2639,
     "reportedPrograms": 200,
     "programs": [
       {
@@ -1116,17 +1116,6 @@
       {
         "network": "Awin",
         "relationship": "notjoined",
-        "advertiserId": 113882,
-        "name": "Biker-Zone Motorradbekleidung DE",
-        "primarySector": "Sports Equipment",
-        "primaryRegion": {
-          "name": "Germany",
-          "countryCode": "DE"
-        }
-      },
-      {
-        "network": "Awin",
-        "relationship": "notjoined",
         "advertiserId": 9296,
         "name": "Billigfluege DE",
         "primarySector": "Travel Agencies",
@@ -2207,6 +2196,17 @@
         "relationship": "notjoined",
         "advertiserId": 129151,
         "name": "ElectricSun Deutschland",
+        "primarySector": "Home & Garden",
+        "primaryRegion": {
+          "name": "Germany",
+          "countryCode": "DE"
+        }
+      },
+      {
+        "network": "Awin",
+        "relationship": "notjoined",
+        "advertiserId": 128587,
+        "name": "ELEMENTI (DE)",
         "primarySector": "Home & Garden",
         "primaryRegion": {
           "name": "Germany",
