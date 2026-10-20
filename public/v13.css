@@ -6475,3 +6475,25 @@ html[data-theme="light"] .verivox-inventory-grid article{background:#fff;border-
 html[data-theme="light"] .verivox-inventory-grid small{color:#835018}
 @media(max-width:900px){.verivox-inventory-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:600px){.verivox-inventory-grid{grid-template-columns:1fr}}
+
+
+/* V54 — welcoming comparison hub navigation and polished cards */
+.comparison-hub-page .comparison-hub-hero-refresh{position:relative;overflow:hidden;border-radius:24px;padding:clamp(24px,5vw,54px)!important;background:radial-gradient(circle at 90% 10%,#e98a302d,transparent 45%),linear-gradient(135deg,#202c40,#111827)!important;border:1px solid #455066}
+.comparison-hub-hero-refresh h1{max-width:740px;font-size:clamp(30px,4.3vw,53px);line-height:1.1;letter-spacing:-.03em;margin:12px 0 18px}
+.comparison-hub-hero-refresh>p{max-width:720px;font-size:clamp(14px,1.6vw,17px);line-height:1.7}
+.comparison-hero-shortcuts{display:flex;gap:9px;flex-wrap:wrap;margin-top:25px}
+.comparison-hero-shortcuts a{display:inline-flex;align-items:center;justify-content:center;min-height:40px;padding:9px 14px;background:#fff1;color:#fff!important;text-decoration:none;border:1px solid #ffffff48;border-radius:999px;font-size:13px;font-weight:750;transition:background .2s,border-color .2s,transform .2s}
+.comparison-hero-shortcuts a:hover{background:#f59b2a2d;border-color:#fbbf72;transform:translateY(-2px)}
+.comparison-hero-shortcuts a:focus-visible{outline:3px solid #ffb96c;outline-offset:2px}
+.comparison-service-grid{gap:17px!important}
+.comparison-service-grid>article{border:1px solid #ffffff2e!important;border-radius:21px!important;padding:clamp(20px,2vw,27px)!important;box-shadow:0 10px 35px #05070e28!important;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease!important;scroll-margin-top:110px}
+.comparison-service-grid>article:hover{transform:translateY(-4px);box-shadow:0 18px 48px #0004!important;border-color:#edac69a8!important}
+.comparison-service-grid>article h2{font-size:clamp(20px,2vw,25px);line-height:1.2;margin:8px 0}
+.comparison-service-grid>article .comparison-service-icon{display:inline-grid;place-items:center;width:58px;height:58px;border-radius:16px;background:#ffffff17;border:1px solid #ffffff24}
+.comparison-service-grid .comparison-service-link{min-height:46px;display:flex;align-items:center;justify-content:center;text-align:center;border-radius:11px!important;font-weight:800}
+html[data-theme="light"] .comparison-hub-hero-refresh{background:radial-gradient(circle at 90% 10%,#ffddbd80,transparent 42%),linear-gradient(130deg,#fffaf4,#edf2fb)!important;border-color:#ded5ca}
+html[data-theme="light"] .comparison-hero-shortcuts a{background:#fff;color:#29364a!important;border-color:#d3b99e}
+html[data-theme="light"] .comparison-hero-shortcuts a:hover{background:#fff0dc}
+html[data-theme="light"] .comparison-service-grid>article{border-color:#d2d9e5!important;box-shadow:0 10px 28px #24314214!important}
+@media(prefers-reduced-motion:reduce){.comparison-service-grid>article,.comparison-hero-shortcuts a{transition:none!important;transform:none!important}}
+@media(max-width:560px){.comparison-hero-shortcuts a{flex:1 1 auto}.comparison-hub-page .comparison-hub-hero-refresh{padding:24px 18px!important}}
