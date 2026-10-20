@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-20T13:35:03.822Z",
+  "generatedAt": "2026-10-20T18:39:52.638Z",
   "market": "DE",
   "publisherId": 3045061,
   "awin": {
@@ -8,9 +8,9 @@
       "pending": 3,
       "suspended": 1,
       "rejected": 3,
-      "notjoined": 2627
+      "notjoined": 2628
     },
-    "totalProgramsEvaluated": 2639,
+    "totalProgramsEvaluated": 2640,
     "reportedPrograms": 200,
     "programs": [
       {
@@ -1776,6 +1776,17 @@
       {
         "network": "Awin",
         "relationship": "notjoined",
+        "advertiserId": 26169,
+        "name": "Daniel Wellington DE/AT",
+        "primarySector": "Jewellery",
+        "primaryRegion": {
+          "name": "Germany",
+          "countryCode": "DE"
+        }
+      },
+      {
+        "network": "Awin",
+        "relationship": "notjoined",
         "advertiserId": 14059,
         "name": "Danto DE",
         "primarySector": "Home & Garden",
@@ -2196,17 +2207,6 @@
         "relationship": "notjoined",
         "advertiserId": 129151,
         "name": "ElectricSun Deutschland",
-        "primarySector": "Home & Garden",
-        "primaryRegion": {
-          "name": "Germany",
-          "countryCode": "DE"
-        }
-      },
-      {
-        "network": "Awin",
-        "relationship": "notjoined",
-        "advertiserId": 128587,
-        "name": "ELEMENTI (DE)",
         "primarySector": "Home & Garden",
         "primaryRegion": {
           "name": "Germany",
@@ -2799,6 +2799,42 @@
         "automationState": "ready-for-review"
       },
       {
+        "brand": "solebox",
+        "network": "Awin",
+        "advertiserId": 20964,
+        "status": "notjoined",
+        "category": "Mode & Sport",
+        "score": 57,
+        "priority": "mittel",
+        "activeDiscoveryOffers": 2,
+        "offerExamples": [
+          "JORDAN DEAL - Get 20% off!",
+          "GET EXTRA 20% OFF SALE*!"
+        ],
+        "productFeed": false,
+        "siteCategoryCoverage": 0,
+        "metrics": {
+          "awinIndex": null,
+          "epc": null,
+          "conversionRate": null,
+          "approvalPercentage": null,
+          "validationDays": null,
+          "averagePaymentTime": null,
+          "commissionMin": null,
+          "commissionMax": null,
+          "commissionTypes": []
+        },
+        "reasons": [
+          "passt zu Mode & Sport",
+          "Sortimentslücke: erst 0 veröffentlichte Angebote in Mode & Sport",
+          "2 aktive DE-Aktionen"
+        ],
+        "applicationRequired": true,
+        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten solebox redaktionell passend im Bereich Mode & Sport einbinden. Bei Awin sind aktuell 2 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+        "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+        "automationState": "ready-for-review"
+      },
+      {
         "brand": "Angelwelt Gerlinger DE",
         "network": "Awin",
         "advertiserId": 74620,
@@ -2869,6 +2905,41 @@
         "automationState": "ready-for-review"
       },
       {
+        "brand": "Le Col DE",
+        "network": "Awin",
+        "advertiserId": 113552,
+        "status": "notjoined",
+        "category": "Mode & Sport",
+        "score": 51,
+        "priority": "mittel",
+        "activeDiscoveryOffers": 1,
+        "offerExamples": [
+          "Shop 30% off during Members Week plus an additional exclusive 20% off"
+        ],
+        "productFeed": false,
+        "siteCategoryCoverage": 0,
+        "metrics": {
+          "awinIndex": null,
+          "epc": null,
+          "conversionRate": null,
+          "approvalPercentage": null,
+          "validationDays": null,
+          "averagePaymentTime": null,
+          "commissionMin": null,
+          "commissionMax": null,
+          "commissionTypes": []
+        },
+        "reasons": [
+          "passt zu Mode & Sport",
+          "Sortimentslücke: erst 0 veröffentlichte Angebote in Mode & Sport",
+          "1 aktive DE-Aktion"
+        ],
+        "applicationRequired": true,
+        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Le Col DE redaktionell passend im Bereich Mode & Sport einbinden. Bei Awin sind aktuell 1 für Deutschland sichtbare Aktion dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+        "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+        "automationState": "ready-for-review"
+      },
+      {
         "brand": "Orthomol Shop DE",
         "network": "Awin",
         "advertiserId": 125260,
@@ -2904,16 +2975,16 @@
         "automationState": "ready-for-review"
       },
       {
-        "brand": "solebox",
+        "brand": "Rameder DE/AT",
         "network": "Awin",
-        "advertiserId": 20964,
+        "advertiserId": 14188,
         "status": "notjoined",
-        "category": "Mode & Sport",
+        "category": "Auto & Mobilität",
         "score": 51,
         "priority": "mittel",
         "activeDiscoveryOffers": 1,
         "offerExamples": [
-          "GET EXTRA 20% OFF SALE*!"
+          "rameder | Bis zu 150€ Rabatt auf Montagekomplettpakete"
         ],
         "productFeed": false,
         "siteCategoryCoverage": 0,
@@ -2929,12 +3000,12 @@
           "commissionTypes": []
         },
         "reasons": [
-          "passt zu Mode & Sport",
-          "Sortimentslücke: erst 0 veröffentlichte Angebote in Mode & Sport",
+          "passt zu Auto & Mobilität",
+          "Sortimentslücke: erst 0 veröffentlichte Angebote in Auto & Mobilität",
           "1 aktive DE-Aktion"
         ],
         "applicationRequired": true,
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten solebox redaktionell passend im Bereich Mode & Sport einbinden. Bei Awin sind aktuell 1 für Deutschland sichtbare Aktion dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Rameder DE/AT redaktionell passend im Bereich Auto & Mobilität einbinden. Bei Awin sind aktuell 1 für Deutschland sichtbare Aktion dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
         "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
         "automationState": "ready-for-review"
       },
@@ -2974,17 +3045,21 @@
         "automationState": "ready-for-review"
       },
       {
-        "brand": "07eins",
+        "brand": "ElectricSun Deutschland",
         "network": "Awin",
-        "advertiserId": 128971,
+        "advertiserId": 129151,
         "status": "notjoined",
-        "category": "Auto & Mobilität",
-        "score": 45,
+        "category": "Haushalt & Küche",
+        "score": 48,
         "priority": "mittel",
-        "activeDiscoveryOffers": 0,
-        "offerExamples": [],
+        "activeDiscoveryOffers": 3,
+        "offerExamples": [
+          "Black Friday: 10 % Rabatt auf alle UV-Handtuchtrockner",
+          "Black Friday: 15-25 % Rabatt auf ausgewählte Elektrokamine",
+          "Black Friday: 10 % Rabatt auf ausgewählte Infrarotheizungen"
+        ],
         "productFeed": false,
-        "siteCategoryCoverage": 0,
+        "siteCategoryCoverage": 53,
         "metrics": {
           "awinIndex": null,
           "epc": null,
@@ -2997,75 +3072,11 @@
           "commissionTypes": []
         },
         "reasons": [
-          "passt zu Auto & Mobilität",
-          "Sortimentslücke: erst 0 veröffentlichte Angebote in Auto & Mobilität"
+          "passt zu Haushalt & Küche",
+          "3 aktive DE-Aktionen"
         ],
         "applicationRequired": true,
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten 07eins redaktionell passend im Bereich Auto & Mobilität einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-        "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-        "automationState": "ready-for-review"
-      },
-      {
-        "brand": "100percentpure DE/AT",
-        "network": "Awin",
-        "advertiserId": 13991,
-        "status": "notjoined",
-        "category": "Gesundheit & Wellness",
-        "score": 45,
-        "priority": "mittel",
-        "activeDiscoveryOffers": 0,
-        "offerExamples": [],
-        "productFeed": false,
-        "siteCategoryCoverage": 0,
-        "metrics": {
-          "awinIndex": null,
-          "epc": null,
-          "conversionRate": null,
-          "approvalPercentage": null,
-          "validationDays": null,
-          "averagePaymentTime": null,
-          "commissionMin": null,
-          "commissionMax": null,
-          "commissionTypes": []
-        },
-        "reasons": [
-          "passt zu Gesundheit & Wellness",
-          "Sortimentslücke: erst 0 veröffentlichte Angebote in Gesundheit & Wellness"
-        ],
-        "applicationRequired": true,
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten 100percentpure DE/AT redaktionell passend im Bereich Gesundheit & Wellness einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-        "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-        "automationState": "ready-for-review"
-      },
-      {
-        "brand": "11teamsports DE & AT",
-        "network": "Awin",
-        "advertiserId": 22165,
-        "status": "notjoined",
-        "category": "Mode & Sport",
-        "score": 45,
-        "priority": "mittel",
-        "activeDiscoveryOffers": 0,
-        "offerExamples": [],
-        "productFeed": false,
-        "siteCategoryCoverage": 0,
-        "metrics": {
-          "awinIndex": null,
-          "epc": null,
-          "conversionRate": null,
-          "approvalPercentage": null,
-          "validationDays": null,
-          "averagePaymentTime": null,
-          "commissionMin": null,
-          "commissionMax": null,
-          "commissionTypes": []
-        },
-        "reasons": [
-          "passt zu Mode & Sport",
-          "Sortimentslücke: erst 0 veröffentlichte Angebote in Mode & Sport"
-        ],
-        "applicationRequired": true,
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten 11teamsports DE & AT redaktionell passend im Bereich Mode & Sport einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten ElectricSun Deutschland redaktionell passend im Bereich Haushalt & Küche einbinden. Bei Awin sind aktuell 3 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
         "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
         "automationState": "ready-for-review"
       }
@@ -3074,7 +3085,7 @@
       {
         "source": "awin-enhanced-feeds",
         "state": "ok",
-        "count": 447,
+        "count": 448,
         "audit": {
           "feeds": [
             {
@@ -3120,12 +3131,12 @@
               "advertiserName": "Outin Germany",
               "locale": "de_DE",
               "state": "available",
-              "products": 55,
-              "rawProducts": 55,
-              "validProducts": 55,
-              "withPrice": 55,
-              "withImage": 55,
-              "withTracking": 55,
+              "products": 56,
+              "rawProducts": 56,
+              "validProducts": 56,
+              "withPrice": 56,
+              "withImage": 56,
+              "withTracking": 56,
               "rejected": 0,
               "rejectionReasons": {}
             },
@@ -3203,9 +3214,9 @@
       },
       {
         "category": "Haushalt & Küche",
-        "siteOffers": 52,
+        "siteOffers": 53,
         "joinedPrograms": 0,
-        "gapScore": 52,
+        "gapScore": 53,
         "searchTerms": [
           "home",
           "appliances",
@@ -3280,7 +3291,7 @@
       {
         "network": "Daisycon",
         "category": "Haushalt & Alltag",
-        "siteOffers": 55,
+        "siteOffers": 56,
         "priority": "hoch",
         "searchTerms": [
           "home",
@@ -3344,7 +3355,7 @@
       {
         "network": "Tradedoubler",
         "category": "Haushalt & Alltag",
-        "siteOffers": 55,
+        "siteOffers": 56,
         "priority": "hoch",
         "searchTerms": [
           "home",
@@ -3413,7 +3424,7 @@
       {
         "network": "Webgains",
         "category": "Haushalt & Alltag",
-        "siteOffers": 55,
+        "siteOffers": 56,
         "priority": "hoch",
         "searchTerms": [
           "home",
@@ -3460,15 +3471,15 @@
     "reason": "Webgains Memberships und Terms werden automatisch gelesen; accept_terms=true wird nur nach ausdrücklicher menschlicher Bestätigung des geprüften Terms-Stands verwendet."
   },
   "publication": {
-    "offers": 245,
+    "offers": 246,
     "concreteAwaitingMedia": 0,
     "blockedPublisherPromotions": 4,
     "partnerEntries": 217,
     "merchants": 6,
-    "products": 239,
-    "images": 239,
+    "products": 240,
+    "images": 240,
     "videos": 0,
-    "prices": 239,
+    "prices": 240,
     "discounts": 0,
     "coupons": 3
   },

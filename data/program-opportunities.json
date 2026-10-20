@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-20T13:35:03.802Z",
+  "generatedAt": "2026-10-20T18:39:52.616Z",
   "scope": "Automatisch aus Programminventar, DE-Angebotsabdeckung und verfügbaren Netzwerk-/Feed-Signalen erzeugt.",
   "automation": {
     "discovery": "automatic",
@@ -590,6 +590,42 @@
       "automationState": "ready-for-review"
     },
     {
+      "brand": "solebox",
+      "network": "Awin",
+      "advertiserId": 20964,
+      "status": "notjoined",
+      "category": "Mode & Sport",
+      "score": 57,
+      "priority": "mittel",
+      "activeDiscoveryOffers": 2,
+      "offerExamples": [
+        "JORDAN DEAL - Get 20% off!",
+        "GET EXTRA 20% OFF SALE*!"
+      ],
+      "productFeed": false,
+      "siteCategoryCoverage": 0,
+      "metrics": {
+        "awinIndex": null,
+        "epc": null,
+        "conversionRate": null,
+        "approvalPercentage": null,
+        "validationDays": null,
+        "averagePaymentTime": null,
+        "commissionMin": null,
+        "commissionMax": null,
+        "commissionTypes": []
+      },
+      "reasons": [
+        "passt zu Mode & Sport",
+        "Sortimentslücke: erst 0 veröffentlichte Angebote in Mode & Sport",
+        "2 aktive DE-Aktionen"
+      ],
+      "applicationRequired": true,
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten solebox redaktionell passend im Bereich Mode & Sport einbinden. Bei Awin sind aktuell 2 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "automationState": "ready-for-review"
+    },
+    {
       "brand": "Angelwelt Gerlinger DE",
       "network": "Awin",
       "advertiserId": 74620,
@@ -660,6 +696,41 @@
       "automationState": "ready-for-review"
     },
     {
+      "brand": "Le Col DE",
+      "network": "Awin",
+      "advertiserId": 113552,
+      "status": "notjoined",
+      "category": "Mode & Sport",
+      "score": 51,
+      "priority": "mittel",
+      "activeDiscoveryOffers": 1,
+      "offerExamples": [
+        "Shop 30% off during Members Week plus an additional exclusive 20% off"
+      ],
+      "productFeed": false,
+      "siteCategoryCoverage": 0,
+      "metrics": {
+        "awinIndex": null,
+        "epc": null,
+        "conversionRate": null,
+        "approvalPercentage": null,
+        "validationDays": null,
+        "averagePaymentTime": null,
+        "commissionMin": null,
+        "commissionMax": null,
+        "commissionTypes": []
+      },
+      "reasons": [
+        "passt zu Mode & Sport",
+        "Sortimentslücke: erst 0 veröffentlichte Angebote in Mode & Sport",
+        "1 aktive DE-Aktion"
+      ],
+      "applicationRequired": true,
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Le Col DE redaktionell passend im Bereich Mode & Sport einbinden. Bei Awin sind aktuell 1 für Deutschland sichtbare Aktion dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "automationState": "ready-for-review"
+    },
+    {
       "brand": "Orthomol Shop DE",
       "network": "Awin",
       "advertiserId": 125260,
@@ -695,16 +766,16 @@
       "automationState": "ready-for-review"
     },
     {
-      "brand": "solebox",
+      "brand": "Rameder DE/AT",
       "network": "Awin",
-      "advertiserId": 20964,
+      "advertiserId": 14188,
       "status": "notjoined",
-      "category": "Mode & Sport",
+      "category": "Auto & Mobilität",
       "score": 51,
       "priority": "mittel",
       "activeDiscoveryOffers": 1,
       "offerExamples": [
-        "GET EXTRA 20% OFF SALE*!"
+        "rameder | Bis zu 150€ Rabatt auf Montagekomplettpakete"
       ],
       "productFeed": false,
       "siteCategoryCoverage": 0,
@@ -720,12 +791,12 @@
         "commissionTypes": []
       },
       "reasons": [
-        "passt zu Mode & Sport",
-        "Sortimentslücke: erst 0 veröffentlichte Angebote in Mode & Sport",
+        "passt zu Auto & Mobilität",
+        "Sortimentslücke: erst 0 veröffentlichte Angebote in Auto & Mobilität",
         "1 aktive DE-Aktion"
       ],
       "applicationRequired": true,
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten solebox redaktionell passend im Bereich Mode & Sport einbinden. Bei Awin sind aktuell 1 für Deutschland sichtbare Aktion dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Rameder DE/AT redaktionell passend im Bereich Auto & Mobilität einbinden. Bei Awin sind aktuell 1 für Deutschland sichtbare Aktion dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
       "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
       "automationState": "ready-for-review"
     },
@@ -761,6 +832,42 @@
       ],
       "applicationRequired": true,
       "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Xtrons DE redaktionell passend im Bereich Auto & Mobilität einbinden. Bei Awin sind aktuell 1 für Deutschland sichtbare Aktion dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "automationState": "ready-for-review"
+    },
+    {
+      "brand": "ElectricSun Deutschland",
+      "network": "Awin",
+      "advertiserId": 129151,
+      "status": "notjoined",
+      "category": "Haushalt & Küche",
+      "score": 48,
+      "priority": "mittel",
+      "activeDiscoveryOffers": 3,
+      "offerExamples": [
+        "Black Friday: 10 % Rabatt auf alle UV-Handtuchtrockner",
+        "Black Friday: 15-25 % Rabatt auf ausgewählte Elektrokamine",
+        "Black Friday: 10 % Rabatt auf ausgewählte Infrarotheizungen"
+      ],
+      "productFeed": false,
+      "siteCategoryCoverage": 53,
+      "metrics": {
+        "awinIndex": null,
+        "epc": null,
+        "conversionRate": null,
+        "approvalPercentage": null,
+        "validationDays": null,
+        "averagePaymentTime": null,
+        "commissionMin": null,
+        "commissionMax": null,
+        "commissionTypes": []
+      },
+      "reasons": [
+        "passt zu Haushalt & Küche",
+        "3 aktive DE-Aktionen"
+      ],
+      "applicationRequired": true,
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten ElectricSun Deutschland redaktionell passend im Bereich Haushalt & Küche einbinden. Bei Awin sind aktuell 3 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
       "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
       "automationState": "ready-for-review"
     },
@@ -1563,102 +1670,6 @@
       "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten AIRTUNE GmbH redaktionell passend im Bereich Auto & Mobilität einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
       "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
       "automationState": "ready-for-review"
-    },
-    {
-      "brand": "AKAD Bildungsgesellschaft DE",
-      "network": "Awin",
-      "advertiserId": 11668,
-      "status": "notjoined",
-      "category": "Tierbedarf",
-      "score": 45,
-      "priority": "mittel",
-      "activeDiscoveryOffers": 0,
-      "offerExamples": [],
-      "productFeed": false,
-      "siteCategoryCoverage": 0,
-      "metrics": {
-        "awinIndex": null,
-        "epc": null,
-        "conversionRate": null,
-        "approvalPercentage": null,
-        "validationDays": null,
-        "averagePaymentTime": null,
-        "commissionMin": null,
-        "commissionMax": null,
-        "commissionTypes": []
-      },
-      "reasons": [
-        "passt zu Tierbedarf",
-        "Sortimentslücke: erst 0 veröffentlichte Angebote in Tierbedarf"
-      ],
-      "applicationRequired": true,
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten AKAD Bildungsgesellschaft DE redaktionell passend im Bereich Tierbedarf einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "automationState": "ready-for-review"
-    },
-    {
-      "brand": "akademie-herkert",
-      "network": "Awin",
-      "advertiserId": 118213,
-      "status": "notjoined",
-      "category": "Tierbedarf",
-      "score": 45,
-      "priority": "mittel",
-      "activeDiscoveryOffers": 0,
-      "offerExamples": [],
-      "productFeed": false,
-      "siteCategoryCoverage": 0,
-      "metrics": {
-        "awinIndex": null,
-        "epc": null,
-        "conversionRate": null,
-        "approvalPercentage": null,
-        "validationDays": null,
-        "averagePaymentTime": null,
-        "commissionMin": null,
-        "commissionMax": null,
-        "commissionTypes": []
-      },
-      "reasons": [
-        "passt zu Tierbedarf",
-        "Sortimentslücke: erst 0 veröffentlichte Angebote in Tierbedarf"
-      ],
-      "applicationRequired": true,
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten akademie-herkert redaktionell passend im Bereich Tierbedarf einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "automationState": "ready-for-review"
-    },
-    {
-      "brand": "AKKO DE",
-      "network": "Awin",
-      "advertiserId": 60241,
-      "status": "notjoined",
-      "category": "Gaming",
-      "score": 45,
-      "priority": "mittel",
-      "activeDiscoveryOffers": 0,
-      "offerExamples": [],
-      "productFeed": false,
-      "siteCategoryCoverage": 0,
-      "metrics": {
-        "awinIndex": null,
-        "epc": null,
-        "conversionRate": null,
-        "approvalPercentage": null,
-        "validationDays": null,
-        "averagePaymentTime": null,
-        "commissionMin": null,
-        "commissionMax": null,
-        "commissionTypes": []
-      },
-      "reasons": [
-        "passt zu Gaming",
-        "Sortimentslücke: erst 0 veröffentlichte Angebote in Gaming"
-      ],
-      "applicationRequired": true,
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten AKKO DE redaktionell passend im Bereich Gaming einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "automationState": "ready-for-review"
     }
   ],
   "impact": {
@@ -1697,9 +1708,9 @@
       },
       {
         "category": "Haushalt & Küche",
-        "siteOffers": 52,
+        "siteOffers": 53,
         "joinedPrograms": 0,
-        "gapScore": 52,
+        "gapScore": 53,
         "searchTerms": [
           "home",
           "appliances",
@@ -1777,7 +1788,7 @@
       {
         "network": "Daisycon",
         "category": "Haushalt & Alltag",
-        "siteOffers": 55,
+        "siteOffers": 56,
         "priority": "hoch",
         "searchTerms": [
           "home",
@@ -1841,7 +1852,7 @@
       {
         "network": "Tradedoubler",
         "category": "Haushalt & Alltag",
-        "siteOffers": 55,
+        "siteOffers": 56,
         "priority": "hoch",
         "searchTerms": [
           "home",
@@ -1910,7 +1921,7 @@
       {
         "network": "Webgains",
         "category": "Haushalt & Alltag",
-        "siteOffers": 55,
+        "siteOffers": 56,
         "priority": "hoch",
         "searchTerms": [
           "home",

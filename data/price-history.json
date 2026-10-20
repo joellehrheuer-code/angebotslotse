@@ -72950,5 +72950,13 @@
     "timestamp": "2026-10-20T04:50:49.295Z",
     "price": 99,
     "currency": "EUR"
+  },
+  {
+    "offerId": "836b8f268429f0ab",
+    "productId": "OTST-MOCG-TB",
+    "merchant": "Outin Germany",
+    "timestamp": "2026-10-20T18:39:52.551Z",
+    "price": 349.99,
+    "currency": "EUR"
   }
 ]

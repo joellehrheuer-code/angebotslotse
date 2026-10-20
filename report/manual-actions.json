@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-20T13:35:03.802Z",
+  "generatedAt": "2026-10-20T18:39:52.616Z",
   "topActions": [
     {
       "rank": 1,
@@ -298,7 +298,7 @@
       "campaignId": null,
       "category": "Haushalt & Alltag",
       "priority": "hoch",
-      "score": 85,
+      "score": 86,
       "kind": "marketplace-search",
       "status": "connection-required",
       "actionType": "connection-required",
@@ -317,7 +317,7 @@
       "campaignId": null,
       "category": "Haushalt & Alltag",
       "priority": "hoch",
-      "score": 85,
+      "score": 86,
       "kind": "marketplace-search",
       "status": "connection-required",
       "actionType": "connection-required",
@@ -336,7 +336,7 @@
       "campaignId": null,
       "category": "Haushalt & Alltag",
       "priority": "hoch",
-      "score": 85,
+      "score": 86,
       "kind": "marketplace-search",
       "status": "connection-required",
       "actionType": "connection-required",
