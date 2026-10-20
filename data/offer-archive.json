@@ -1,6 +1,22 @@
 {
-  "updatedAt": "2026-10-20T20:02:04.602Z",
+  "updatedAt": "2026-10-20T23:14:19.190Z",
   "items": [
+    {
+      "id": "8be2d7efc7f0cdcd",
+      "slug": "jetzt-15-sparen-und-herbst-styles-shoppen-8be2d7ef",
+      "title": "Jetzt 15% sparen und Herbst-Styles shoppen",
+      "advertiser": "EMP DE",
+      "source": "awin",
+      "productId": null,
+      "category": "sonstiges",
+      "lastPrice": null,
+      "currency": "EUR",
+      "firstSeen": "2026-10-13T11:52:18.000Z",
+      "lastSeen": "2026-10-20T20:02:04.389Z",
+      "endDate": "2026-10-20T21:59:00.000Z",
+      "archivedAt": "2026-10-20T23:14:19.190Z",
+      "reason": "expired"
+    },
     {
       "id": "900603b70dd28ae3",
       "slug": "midweek-madness-17-fur-die-dark-season-900603b7",
