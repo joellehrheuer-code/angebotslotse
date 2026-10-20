@@ -6516,3 +6516,31 @@ html[data-theme="light"] .comparison-service-grid>article{border-color:#d2d9e5!i
 .comparison-hub-page>.comparison-hub-hero-refresh .comparison-hero-shortcuts{width:100%;margin-top:22px!important}
 .comparison-hub-page>.strom-rechner-preview{margin-top:20px!important}
 @media(max-width:760px){.comparison-hub-page>.comparison-hub-hero-refresh{padding:24px 20px!important}.comparison-hub-page>.comparison-hub-hero-refresh h1{font-size:clamp(29px,7vw,40px)!important}}
+
+
+/* V56 — centered comparison swipe deck */
+.comparison-carousel{width:100%;max-width:100%;margin:24px auto 35px;padding:22px 18px;border:1px solid #36445e;border-radius:22px;background:linear-gradient(140deg,#111b2b,#171b2b);overflow:hidden}
+.comparison-carousel-heading{display:flex;justify-content:space-between;align-items:center;gap:18px;margin:0 auto 18px;max-width:900px}
+.comparison-carousel-heading h2{font-size:clamp(22px,3vw,32px);margin:5px 0}
+.comparison-carousel-arrows{display:flex;gap:8px}
+.comparison-carousel-arrows button{width:45px;height:45px;border-radius:50%;background:#2b3549;color:white;border:1px solid #66748b;cursor:pointer;font-size:22px}
+.comparison-carousel-arrows button:hover{background:#bf611d}
+.comparison-carousel-window{width:100%;overflow:hidden;touch-action:pan-y}
+.comparison-carousel-track{width:100%}
+.comparison-carousel .comparison-service-grid{--active-slide:0;display:flex!important;gap:18px!important;width:100%!important;max-width:none!important;margin:0!important;transform:translateX(calc(-1 * var(--active-slide) * (min(78vw, 640px) + 18px)));transition:transform .38s cubic-bezier(.2,.7,.2,1)}
+.comparison-carousel .comparison-service-grid>article{width:min(78vw,640px)!important;min-width:min(78vw,640px)!important;max-width:min(78vw,640px)!important;flex:0 0 min(78vw,640px)!important;margin:0!important;min-height:340px!important;transform:none!important}
+.comparison-carousel .comparison-service-grid>article.is-active{border-color:#ffae63!important;box-shadow:0 14px 48px #0006!important}
+.comparison-carousel .comparison-service-grid>article:not(.is-active){opacity:.55}
+.comparison-carousel .comparison-service-grid>article:not(.is-active) *{pointer-events:none}
+.comparison-carousel-chips{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:22px auto 6px}
+.comparison-carousel-chips button{min-height:41px;padding:9px 14px;border-radius:999px;border:1px solid #617087;background:#263149;color:#f3f6fa;font-size:13px;cursor:pointer}
+.comparison-carousel-chips button[aria-pressed="true"]{background:#fa7113;border-color:#fa7113;color:#fff;font-weight:800}
+.comparison-carousel-progress{text-align:center;font-size:12px;color:#c4cfdf;margin:11px 0 0}
+html[data-theme="light"] .comparison-carousel{background:#f5f8fd;border-color:#cbd4e2}
+html[data-theme="light"] .comparison-carousel-chips button{background:#fff;color:#25344a}
+html[data-theme="light"] .comparison-carousel-chips button[aria-pressed="true"]{background:#dc630c;color:#fff}
+html[data-theme="light"] .comparison-carousel-progress{color:#43526a}
+@media(min-width:900px){.comparison-carousel .comparison-service-grid{transform:translateX(calc((100% - 640px)/2 - var(--active-slide) * 658px))}.comparison-carousel .comparison-service-grid>article{width:640px!important;min-width:640px!important;max-width:640px!important;flex-basis:640px!important}}
+@media(max-width:899px){.comparison-carousel .comparison-service-grid{transform:translateX(calc((100% - min(78vw, 640px))/2 - var(--active-slide) * (min(78vw, 640px) + 18px)))}}
+@media(max-width:560px){.comparison-carousel{padding:18px 9px}.comparison-carousel .comparison-service-grid>article{width:calc(100vw - 66px)!important;min-width:calc(100vw - 66px)!important;max-width:calc(100vw - 66px)!important;flex-basis:calc(100vw - 66px)!important}.comparison-carousel .comparison-service-grid{transform:translateX(calc((100% - (100vw - 66px))/2 - var(--active-slide) * ((100vw - 66px) + 18px)))}.comparison-carousel-chips{flex-wrap:nowrap;overflow-x:auto;justify-content:flex-start;padding:0 8px 10px}.comparison-carousel-chips button{white-space:nowrap;flex:0 0 auto}}
+@media(prefers-reduced-motion:reduce){.comparison-carousel .comparison-service-grid{transition:none!important}}
