@@ -6608,3 +6608,20 @@ html[data-theme="light"] .comparison-carousel .comparison-carousel-progress{colo
 .verivox-credit-partner>.button:focus-visible,.verivox-partner-creative>a:focus-visible{outline:3px solid #ffbd70!important;outline-offset:4px!important}
 html[data-theme="light"] .verivox-partner-creative>a .verivox-creative-fallback,html[data-theme="light"] .verivox-credit-partner>.button{color:#fff!important}
 @media(max-width:600px){.verivox-partner-creative>a .verivox-creative-fallback{font-size:14px!important}.verivox-credit-partner{flex-direction:column!important;align-items:stretch!important}}
+
+
+/* V61 — improve small-screen tariff slider legibility and discoverability */
+.comparison-carousel{scroll-margin-top:120px}
+.comparison-carousel-window:focus-visible{outline:3px solid #ffae61;outline-offset:-3px;border-radius:14px}
+.comparison-carousel-help{max-width:70ch;margin:8px auto 0;text-align:center;font-size:13px;line-height:1.6;color:#e4eaf4}
+.comparison-carousel-chips{scroll-padding-inline:20px}
+.comparison-carousel-chips button{scroll-margin-inline:12px}
+.comparison-carousel-chips button:focus-visible,.comparison-carousel-arrows button:focus-visible{outline:3px solid #ffca86;outline-offset:3px}
+html[data-theme="light"] .comparison-carousel-help{color:#33445b}
+@media(max-width:600px){
+ .comparison-carousel-heading{align-items:flex-start}
+ .comparison-carousel-arrows button{min-width:44px;min-height:44px}
+ .comparison-carousel-help{font-size:12px;padding-inline:12px}
+ .comparison-carousel-chips{scroll-snap-type:x proximity}
+ .comparison-carousel-chips button{scroll-snap-align:center}
+}
