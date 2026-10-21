@@ -1375,7 +1375,8 @@ document.querySelectorAll(".verivox-live-widget").forEach(section=>{
    if(track)track.style.setProperty("--active-slide",String(active));
    if(progress)progress.textContent=`${active+1} von ${cards.length} · ${cards[active]?.querySelector("h2")?.textContent||""}`;
  };
- const set=n=>{active=(n+cards.length)%cards.length;render()};
+ const set=n=>{if(!cards.length)return;active=(n+cards.length)%cards.length;render()};
+ const selectHash=()=>{const id=decodeURIComponent(location.hash.slice(1));const match=cards.findIndex(card=>card.id===id);if(match>=0)set(match)};
  root.querySelector("[data-compare-prev]")?.addEventListener("click",()=>set(active-1));
  root.querySelector("[data-compare-next]")?.addEventListener("click",()=>set(active+1));
  chips.forEach((chip,i)=>chip.addEventListener("click",()=>set(i)));
@@ -1383,5 +1384,6 @@ document.querySelectorAll(".verivox-live-widget").forEach(section=>{
  viewport?.addEventListener("touchstart",e=>{startX=e.touches[0]?.clientX??null},{passive:true});
  viewport?.addEventListener("touchend",e=>{if(startX===null)return;const dx=(e.changedTouches[0]?.clientX??startX)-startX;startX=null;if(Math.abs(dx)>45)set(active+(dx<0?1:-1))},{passive:true});
  viewport?.addEventListener("keydown",e=>{if(e.key==="ArrowRight"){e.preventDefault();set(active+1)}else if(e.key==="ArrowLeft"){e.preventDefault();set(active-1)}});
- render();
+ window.addEventListener("hashchange",selectHash);
+ render();selectHash();
 })();
