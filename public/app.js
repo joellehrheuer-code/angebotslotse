@@ -1376,10 +1376,10 @@ document.querySelectorAll(".verivox-live-widget").forEach(section=>{
    if(progress)progress.textContent=`${active+1} von ${cards.length} · ${cards[active]?.querySelector("h2")?.textContent||""}`;
  };
  const set=n=>{if(!cards.length)return;active=(n+cards.length)%cards.length;render()};
- const selectHash=()=>{const id=decodeURIComponent(location.hash.slice(1));const match=cards.findIndex(card=>card.id===id);if(match>=0)set(match)};
+ const selectHash=()=>{let id="";try{id=decodeURIComponent(location.hash.slice(1))}catch{return}const match=cards.findIndex(card=>card.id===id);if(match>=0){set(match);root.scrollIntoView({block:"start",behavior:"instant"})}};
  root.querySelector("[data-compare-prev]")?.addEventListener("click",()=>set(active-1));
  root.querySelector("[data-compare-next]")?.addEventListener("click",()=>set(active+1));
- chips.forEach((chip,i)=>chip.addEventListener("click",()=>set(i)));
+ chips.forEach((chip,i)=>chip.addEventListener("click",()=>{set(i);chip.scrollIntoView({block:"nearest",inline:"nearest",behavior:window.matchMedia("(prefers-reduced-motion: reduce)").matches?"instant":"smooth"})}));
  const viewport=root.querySelector(".comparison-carousel-window");
  viewport?.addEventListener("touchstart",e=>{startX=e.touches[0]?.clientX??null},{passive:true});
  viewport?.addEventListener("touchend",e=>{if(startX===null)return;const dx=(e.changedTouches[0]?.clientX??startX)-startX;startX=null;if(Math.abs(dx)>45)set(active+(dx<0?1:-1))},{passive:true});
