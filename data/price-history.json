@@ -74878,5 +74878,13 @@
     "timestamp": "2026-10-21T04:46:13.461Z",
     "price": 99,
     "currency": "EUR"
+  },
+  {
+    "offerId": "ca56d808d3c14eb1",
+    "productId": "191460003394",
+    "merchant": "Hollyland DE",
+    "timestamp": "2026-10-21T13:48:58.954Z",
+    "price": 29.9,
+    "currency": "EUR"
   }
 ]

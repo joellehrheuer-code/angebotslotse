@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-21T11:08:31.004Z",
+  "generatedAt": "2026-10-21T13:48:59.014Z",
   "status": "disabled",
   "joinedPrograms": 0,
   "automation": {
@@ -12,9 +12,9 @@
   "marketplaceSearches": [
     {
       "category": "Audio & Creator",
-      "siteOffers": 88,
+      "siteOffers": 57,
       "joinedPrograms": 0,
-      "gapScore": 88,
+      "gapScore": 57,
       "searchTerms": [
         "audio",
         "music",
@@ -22,20 +22,6 @@
         "microphone",
         "recording",
         "creator"
-      ],
-      "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
-    },
-    {
-      "category": "Technik & Computer",
-      "siteOffers": 53,
-      "joinedPrograms": 0,
-      "gapScore": 53,
-      "searchTerms": [
-        "electronics",
-        "computer",
-        "hardware",
-        "mobile",
-        "smart home"
       ],
       "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
     },
@@ -62,6 +48,20 @@
         "mower",
         "tools",
         "DIY"
+      ],
+      "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
+    },
+    {
+      "category": "Technik & Computer",
+      "siteOffers": 45,
+      "joinedPrograms": 0,
+      "gapScore": 45,
+      "searchTerms": [
+        "electronics",
+        "computer",
+        "hardware",
+        "mobile",
+        "smart home"
       ],
       "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
     },

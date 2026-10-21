@@ -1,9 +1,9 @@
 {
   "state": "ok",
-  "lastSuccessfulUpdate": "2026-10-21T11:08:30.916Z",
-  "activeOffers": 246,
+  "lastSuccessfulUpdate": "2026-10-21T13:48:58.932Z",
+  "activeOffers": 207,
   "storedOffers": 482,
-  "publishableOffers": 246,
+  "publishableOffers": 207,
   "awaitingMedia": 0,
   "blockedPublisherPromotions": 4,
   "quarantined": 130,
@@ -23,7 +23,7 @@
     },
     "awin-enhanced-feeds": {
       "state": "ok",
-      "count": 448,
+      "count": 408,
       "error": null,
       "audit": {
         "feeds": [
@@ -36,6 +36,18 @@
           {
             "advertiserId": 14172,
             "advertiserName": "EMP DE",
+            "locale": "en_DE",
+            "state": "not-found"
+          },
+          {
+            "advertiserId": 14336,
+            "advertiserName": "OTTO DE",
+            "locale": "de_DE",
+            "state": "not-found"
+          },
+          {
+            "advertiserId": 14336,
+            "advertiserName": "OTTO DE",
             "locale": "en_DE",
             "state": "not-found"
           },
@@ -90,12 +102,12 @@
             "advertiserName": "Hollyland DE",
             "locale": "en_DE",
             "state": "available",
-            "products": 240,
+            "products": 200,
             "rawProducts": 366,
-            "validProducts": 240,
-            "withPrice": 240,
-            "withImage": 240,
-            "withTracking": 240,
+            "validProducts": 200,
+            "withPrice": 200,
+            "withImage": 200,
+            "withTracking": 200,
             "rejected": 0,
             "rejectionReasons": {}
           }
@@ -174,6 +186,6 @@
     "error": null,
     "mode": "social"
   },
-  "stale": 220,
+  "stale": 259,
   "message": "Aktualisierung mit geschützten Bestandsdaten abgeschlossen."
 }
