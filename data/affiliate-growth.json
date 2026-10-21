@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-21T13:48:59.035Z",
+  "generatedAt": "2026-10-21T20:11:25.124Z",
   "market": "DE",
   "publisherId": 3045061,
   "awin": {
@@ -1075,17 +1075,6 @@
         "advertiserId": 12557,
         "name": "Bergzeit DE / AT",
         "primarySector": "Sports Equipment",
-        "primaryRegion": {
-          "name": "Germany",
-          "countryCode": "DE"
-        }
-      },
-      {
-        "network": "Awin",
-        "relationship": "notjoined",
-        "advertiserId": 25012,
-        "name": "Berliner Kaffeeroesterei DE",
-        "primarySector": "FMCG",
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
@@ -2212,6 +2201,17 @@
           "name": "Germany",
           "countryCode": "DE"
         }
+      },
+      {
+        "network": "Awin",
+        "relationship": "notjoined",
+        "advertiserId": 129151,
+        "name": "ElectricSun Deutschland",
+        "primarySector": "Home & Garden",
+        "primaryRegion": {
+          "name": "Germany",
+          "countryCode": "DE"
+        }
       }
     ],
     "discoveryOffers": 200,
@@ -2841,6 +2841,41 @@
         "automationState": "ready-for-review"
       },
       {
+        "brand": "Equiva.de - Reitsportartikel und Reitbekleidung",
+        "network": "Awin",
+        "advertiserId": 13870,
+        "status": "notjoined",
+        "category": "Mode & Sport",
+        "score": 51,
+        "priority": "mittel",
+        "activeDiscoveryOffers": 1,
+        "offerExamples": [
+          "Geschenkideen und Spielwaren für Pferdeliebhaber bei EQUIVA"
+        ],
+        "productFeed": false,
+        "siteCategoryCoverage": 0,
+        "metrics": {
+          "awinIndex": null,
+          "epc": null,
+          "conversionRate": null,
+          "approvalPercentage": null,
+          "validationDays": null,
+          "averagePaymentTime": null,
+          "commissionMin": null,
+          "commissionMax": null,
+          "commissionTypes": []
+        },
+        "reasons": [
+          "passt zu Mode & Sport",
+          "Sortimentslücke: erst 0 veröffentlichte Angebote in Mode & Sport",
+          "1 aktive DE-Aktion"
+        ],
+        "applicationRequired": true,
+        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Equiva.de - Reitsportartikel und Reitbekleidung redaktionell passend im Bereich Mode & Sport einbinden. Bei Awin sind aktuell 1 für Deutschland sichtbare Aktion dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+        "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+        "automationState": "ready-for-review"
+      },
+      {
         "brand": "eschuhe",
         "network": "Awin",
         "advertiserId": 10881,
@@ -2876,6 +2911,41 @@
         "automationState": "ready-for-review"
       },
       {
+        "brand": "PureNature DE",
+        "network": "Awin",
+        "advertiserId": 129197,
+        "status": "notjoined",
+        "category": "Gesundheit & Wellness",
+        "score": 51,
+        "priority": "mittel",
+        "activeDiscoveryOffers": 1,
+        "offerExamples": [
+          "Glühwein- und Punschgetränke bei PureNature für die kalte Jahreszeit"
+        ],
+        "productFeed": false,
+        "siteCategoryCoverage": 0,
+        "metrics": {
+          "awinIndex": null,
+          "epc": null,
+          "conversionRate": null,
+          "approvalPercentage": null,
+          "validationDays": null,
+          "averagePaymentTime": null,
+          "commissionMin": null,
+          "commissionMax": null,
+          "commissionTypes": []
+        },
+        "reasons": [
+          "passt zu Gesundheit & Wellness",
+          "Sortimentslücke: erst 0 veröffentlichte Angebote in Gesundheit & Wellness",
+          "1 aktive DE-Aktion"
+        ],
+        "applicationRequired": true,
+        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten PureNature DE redaktionell passend im Bereich Gesundheit & Wellness einbinden. Bei Awin sind aktuell 1 für Deutschland sichtbare Aktion dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+        "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+        "automationState": "ready-for-review"
+      },
+      {
         "brand": "Schuback-Parfümerien DE",
         "network": "Awin",
         "advertiserId": 66754,
@@ -2907,41 +2977,6 @@
         ],
         "applicationRequired": true,
         "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Schuback-Parfümerien DE redaktionell passend im Bereich Gesundheit & Wellness einbinden. Bei Awin sind aktuell 1 für Deutschland sichtbare Aktion dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-        "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-        "automationState": "ready-for-review"
-      },
-      {
-        "brand": "Stylevana DE",
-        "network": "Awin",
-        "advertiserId": 25546,
-        "status": "notjoined",
-        "category": "Gesundheit & Wellness",
-        "score": 51,
-        "priority": "mittel",
-        "activeDiscoveryOffers": 1,
-        "offerExamples": [
-          "Halloween Sale"
-        ],
-        "productFeed": false,
-        "siteCategoryCoverage": 0,
-        "metrics": {
-          "awinIndex": null,
-          "epc": null,
-          "conversionRate": null,
-          "approvalPercentage": null,
-          "validationDays": null,
-          "averagePaymentTime": null,
-          "commissionMin": null,
-          "commissionMax": null,
-          "commissionTypes": []
-        },
-        "reasons": [
-          "passt zu Gesundheit & Wellness",
-          "Sortimentslücke: erst 0 veröffentlichte Angebote in Gesundheit & Wellness",
-          "1 aktive DE-Aktion"
-        ],
-        "applicationRequired": true,
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Stylevana DE redaktionell passend im Bereich Gesundheit & Wellness einbinden. Bei Awin sind aktuell 1 für Deutschland sichtbare Aktion dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
         "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
         "automationState": "ready-for-review"
       },
@@ -3043,39 +3078,6 @@
         ],
         "applicationRequired": true,
         "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Bosch Hausgeräte DE redaktionell passend im Bereich Technik & Computer einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-        "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-        "automationState": "ready-for-review"
-      },
-      {
-        "brand": "cyberport DE",
-        "network": "Awin",
-        "advertiserId": 11657,
-        "status": "notjoined",
-        "category": "Technik & Computer",
-        "score": 50,
-        "priority": "mittel",
-        "activeDiscoveryOffers": 0,
-        "offerExamples": [],
-        "productFeed": false,
-        "siteCategoryCoverage": 45,
-        "metrics": {
-          "awinIndex": null,
-          "epc": null,
-          "conversionRate": null,
-          "approvalPercentage": null,
-          "validationDays": null,
-          "averagePaymentTime": null,
-          "commissionMin": null,
-          "commissionMax": null,
-          "commissionTypes": []
-        },
-        "reasons": [
-          "passt zu Technik & Computer",
-          "Sortimentslücke: erst 45 veröffentlichte Angebote in Technik & Computer",
-          "strategisch relevante Marke"
-        ],
-        "applicationRequired": true,
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten cyberport DE redaktionell passend im Bereich Technik & Computer einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
         "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
         "automationState": "ready-for-review"
       }
