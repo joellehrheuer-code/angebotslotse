@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-22T13:48:56.332Z",
+  "generatedAt": "2026-10-22T20:07:51.024Z",
   "topActions": [
     {
       "rank": 1,
@@ -99,6 +99,25 @@
     {
       "rank": 6,
       "network": "Awin",
+      "brand": "Samsung Shop DE",
+      "reference": 14815,
+      "advertiserId": 14815,
+      "programId": null,
+      "campaignId": null,
+      "category": "Technik & Computer",
+      "priority": "mittel",
+      "score": 62,
+      "kind": "application",
+      "status": "notjoined",
+      "actionType": "application-review",
+      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Samsung Shop DE redaktionell passend im Bereich Technik & Computer einbinden. Bei Awin sind aktuell 2 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "submissionReady": false,
+      "humanApprovalRequired": true
+    },
+    {
+      "rank": 7,
+      "network": "Awin",
       "brand": "bosch Tiernahrung DE",
       "reference": 84955,
       "advertiserId": 84955,
@@ -116,7 +135,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 7,
+      "rank": 8,
       "network": "Awin",
       "brand": "BSTN DACH",
       "reference": 104975,
@@ -135,7 +154,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 8,
+      "rank": 9,
       "network": "Awin",
       "brand": "DECATHLON DE",
       "reference": 14353,
@@ -154,7 +173,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 9,
+      "rank": 10,
       "network": "Awin",
       "brand": "Ecovacs DE",
       "reference": 30763,
@@ -173,7 +192,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 10,
+      "rank": 11,
       "network": "Awin",
       "brand": "Fressnapf AT",
       "reference": 68692,
@@ -192,7 +211,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 11,
+      "rank": 12,
       "network": "Awin",
       "brand": "Fressnapf-Online-Shop DE",
       "reference": 14757,
@@ -207,25 +226,6 @@
       "actionType": "application-review",
       "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
       "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Fressnapf-Online-Shop DE redaktionell passend im Bereich Tierbedarf einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-      "submissionReady": false,
-      "humanApprovalRequired": true
-    },
-    {
-      "rank": 12,
-      "network": "Awin",
-      "brand": "INTERSPORT DE",
-      "reference": 14050,
-      "advertiserId": 14050,
-      "programId": null,
-      "campaignId": null,
-      "category": "Mode & Sport",
-      "priority": "mittel",
-      "score": 60,
-      "kind": "application",
-      "status": "notjoined",
-      "actionType": "application-review",
-      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten INTERSPORT DE redaktionell passend im Bereich Mode & Sport einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
       "submissionReady": false,
       "humanApprovalRequired": true
     }
@@ -515,6 +515,13 @@
       "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten iHoverboard DE redaktionell passend im Bereich Mode & Sport einbinden. Bei Awin sind aktuell 4 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung."
     },
     {
+      "id": "awin-apply-14815",
+      "platform": "Awin",
+      "action": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "reason": "Automatisch priorisiert (62 Punkte): passt zu Technik & Computer, Sortimentslücke: erst 45 veröffentlichte Angebote in Technik & Computer, strategisch relevante Marke, 2 aktive DE-Aktionen. Keine automatische Zustimmung zu Vertragsbedingungen.",
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Samsung Shop DE redaktionell passend im Bereich Technik & Computer einbinden. Bei Awin sind aktuell 2 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung."
+    },
+    {
       "id": "awin-apply-84955",
       "platform": "Awin",
       "action": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
@@ -527,13 +534,6 @@
       "action": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
       "reason": "Automatisch priorisiert (60 Punkte): passt zu Mode & Sport, Sortimentslücke: erst 0 veröffentlichte Angebote in Mode & Sport, strategisch relevante Marke. Keine automatische Zustimmung zu Vertragsbedingungen.",
       "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten BSTN DACH redaktionell passend im Bereich Mode & Sport einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung."
-    },
-    {
-      "id": "awin-apply-14353",
-      "platform": "Awin",
-      "action": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "reason": "Automatisch priorisiert (60 Punkte): passt zu Mode & Sport, Sortimentslücke: erst 0 veröffentlichte Angebote in Mode & Sport, strategisch relevante Marke. Keine automatische Zustimmung zu Vertragsbedingungen.",
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten DECATHLON DE redaktionell passend im Bereich Mode & Sport einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung."
     },
     {
       "id": "daisycon-connect",

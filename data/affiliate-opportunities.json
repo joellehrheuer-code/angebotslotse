@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-22T13:48:56.332Z",
+  "generatedAt": "2026-10-22T20:07:51.024Z",
   "total": 62,
   "highPriority": 10,
   "byNetwork": {
@@ -107,6 +107,25 @@
     {
       "rank": 6,
       "network": "Awin",
+      "brand": "Samsung Shop DE",
+      "reference": 14815,
+      "advertiserId": 14815,
+      "programId": null,
+      "campaignId": null,
+      "category": "Technik & Computer",
+      "priority": "mittel",
+      "score": 62,
+      "kind": "application",
+      "status": "notjoined",
+      "actionType": "application-review",
+      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Samsung Shop DE redaktionell passend im Bereich Technik & Computer einbinden. Bei Awin sind aktuell 2 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "submissionReady": false,
+      "humanApprovalRequired": true
+    },
+    {
+      "rank": 7,
+      "network": "Awin",
       "brand": "bosch Tiernahrung DE",
       "reference": 84955,
       "advertiserId": 84955,
@@ -124,7 +143,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 7,
+      "rank": 8,
       "network": "Awin",
       "brand": "BSTN DACH",
       "reference": 104975,
@@ -143,7 +162,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 8,
+      "rank": 9,
       "network": "Awin",
       "brand": "DECATHLON DE",
       "reference": 14353,
@@ -162,7 +181,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 9,
+      "rank": 10,
       "network": "Awin",
       "brand": "Ecovacs DE",
       "reference": 30763,
@@ -181,7 +200,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 10,
+      "rank": 11,
       "network": "Awin",
       "brand": "Fressnapf AT",
       "reference": 68692,
@@ -200,7 +219,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 11,
+      "rank": 12,
       "network": "Awin",
       "brand": "Fressnapf-Online-Shop DE",
       "reference": 14757,
@@ -219,7 +238,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 12,
+      "rank": 13,
       "network": "Awin",
       "brand": "INTERSPORT DE",
       "reference": 14050,
@@ -238,7 +257,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 13,
+      "rank": 14,
       "network": "Awin",
       "brand": "Sportspar DE",
       "reference": 14366,
@@ -257,7 +276,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 14,
+      "rank": 15,
       "network": "Awin",
       "brand": "Zooplus DE",
       "reference": 11330,
@@ -276,7 +295,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 15,
+      "rank": 16,
       "network": "Awin",
       "brand": "zooplus RO",
       "reference": 10306,
@@ -295,7 +314,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 16,
+      "rank": 17,
       "network": "Awin",
       "brand": "Pollin Electronic DE - CLOSED 13.10.2026",
       "reference": 15965,
@@ -314,7 +333,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 17,
+      "rank": 18,
       "network": "Awin",
       "brand": "FemBe DE",
       "reference": 129413,
@@ -333,7 +352,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 18,
+      "rank": 19,
       "network": "Awin",
       "brand": "Anker Solix DE",
       "reference": 32623,
@@ -352,7 +371,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 19,
+      "rank": 20,
       "network": "Awin",
       "brand": "cyberport DE",
       "reference": 11657,
@@ -367,25 +386,6 @@
       "actionType": "application-review",
       "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
       "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten cyberport DE redaktionell passend im Bereich Technik & Computer einbinden. Bei Awin sind aktuell 1 für Deutschland sichtbare Aktion dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-      "submissionReady": false,
-      "humanApprovalRequired": true
-    },
-    {
-      "rank": 20,
-      "network": "Awin",
-      "brand": "Achterhof DE",
-      "reference": 23631,
-      "advertiserId": 23631,
-      "programId": null,
-      "campaignId": null,
-      "category": "Gesundheit & Wellness",
-      "priority": "mittel",
-      "score": 51,
-      "kind": "application",
-      "status": "notjoined",
-      "actionType": "application-review",
-      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Achterhof DE redaktionell passend im Bereich Gesundheit & Wellness einbinden. Bei Awin sind aktuell 1 für Deutschland sichtbare Aktion dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
       "submissionReady": false,
       "humanApprovalRequired": true
     }
@@ -489,6 +489,25 @@
     {
       "rank": 6,
       "network": "Awin",
+      "brand": "Samsung Shop DE",
+      "reference": 14815,
+      "advertiserId": 14815,
+      "programId": null,
+      "campaignId": null,
+      "category": "Technik & Computer",
+      "priority": "mittel",
+      "score": 62,
+      "kind": "application",
+      "status": "notjoined",
+      "actionType": "application-review",
+      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Samsung Shop DE redaktionell passend im Bereich Technik & Computer einbinden. Bei Awin sind aktuell 2 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "submissionReady": false,
+      "humanApprovalRequired": true
+    },
+    {
+      "rank": 7,
+      "network": "Awin",
       "brand": "bosch Tiernahrung DE",
       "reference": 84955,
       "advertiserId": 84955,
@@ -506,7 +525,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 7,
+      "rank": 8,
       "network": "Awin",
       "brand": "BSTN DACH",
       "reference": 104975,
@@ -525,7 +544,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 8,
+      "rank": 9,
       "network": "Awin",
       "brand": "DECATHLON DE",
       "reference": 14353,
@@ -544,7 +563,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 9,
+      "rank": 10,
       "network": "Awin",
       "brand": "Ecovacs DE",
       "reference": 30763,
@@ -563,7 +582,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 10,
+      "rank": 11,
       "network": "Awin",
       "brand": "Fressnapf AT",
       "reference": 68692,
@@ -582,7 +601,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 11,
+      "rank": 12,
       "network": "Awin",
       "brand": "Fressnapf-Online-Shop DE",
       "reference": 14757,
@@ -597,25 +616,6 @@
       "actionType": "application-review",
       "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
       "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Fressnapf-Online-Shop DE redaktionell passend im Bereich Tierbedarf einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-      "submissionReady": false,
-      "humanApprovalRequired": true
-    },
-    {
-      "rank": 12,
-      "network": "Awin",
-      "brand": "INTERSPORT DE",
-      "reference": 14050,
-      "advertiserId": 14050,
-      "programId": null,
-      "campaignId": null,
-      "category": "Mode & Sport",
-      "priority": "mittel",
-      "score": 60,
-      "kind": "application",
-      "status": "notjoined",
-      "actionType": "application-review",
-      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten INTERSPORT DE redaktionell passend im Bereich Mode & Sport einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
       "submissionReady": false,
       "humanApprovalRequired": true
     }
@@ -1113,6 +1113,24 @@
     },
     {
       "network": "Awin",
+      "brand": "Samsung Shop DE",
+      "category": "Technik & Computer",
+      "priority": "mittel",
+      "score": 62,
+      "status": "notjoined",
+      "kind": "application",
+      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Samsung Shop DE redaktionell passend im Bereich Technik & Computer einbinden. Bei Awin sind aktuell 2 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "reason": "passt zu Technik & Computer, Sortimentslücke: erst 45 veröffentlichte Angebote in Technik & Computer, strategisch relevante Marke, 2 aktive DE-Aktionen",
+      "reference": 14815,
+      "advertiserId": 14815,
+      "programId": null,
+      "campaignId": null,
+      "submissionReady": false,
+      "humanApprovalRequired": true
+    },
+    {
+      "network": "Awin",
       "brand": "bosch Tiernahrung DE",
       "category": "Tierbedarf",
       "priority": "mittel",
@@ -1419,24 +1437,6 @@
     },
     {
       "network": "Awin",
-      "brand": "Equiva.de - Reitsportartikel und Reitbekleidung",
-      "category": "Mode & Sport",
-      "priority": "mittel",
-      "score": 51,
-      "status": "notjoined",
-      "kind": "application",
-      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Equiva.de - Reitsportartikel und Reitbekleidung redaktionell passend im Bereich Mode & Sport einbinden. Bei Awin sind aktuell 1 für Deutschland sichtbare Aktion dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-      "reason": "passt zu Mode & Sport, Sortimentslücke: erst 0 veröffentlichte Angebote in Mode & Sport, 1 aktive DE-Aktion",
-      "reference": 13870,
-      "advertiserId": 13870,
-      "programId": null,
-      "campaignId": null,
-      "submissionReady": false,
-      "humanApprovalRequired": true
-    },
-    {
-      "network": "Awin",
       "brand": "H3R LAB DE",
       "category": "Gesundheit & Wellness",
       "priority": "mittel",
@@ -1473,24 +1473,6 @@
     },
     {
       "network": "Awin",
-      "brand": "PureNature DE",
-      "category": "Gesundheit & Wellness",
-      "priority": "mittel",
-      "score": 51,
-      "status": "notjoined",
-      "kind": "application",
-      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten PureNature DE redaktionell passend im Bereich Gesundheit & Wellness einbinden. Bei Awin sind aktuell 1 für Deutschland sichtbare Aktion dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-      "reason": "passt zu Gesundheit & Wellness, Sortimentslücke: erst 0 veröffentlichte Angebote in Gesundheit & Wellness, 1 aktive DE-Aktion",
-      "reference": 129197,
-      "advertiserId": 129197,
-      "programId": null,
-      "campaignId": null,
-      "submissionReady": false,
-      "humanApprovalRequired": true
-    },
-    {
-      "network": "Awin",
       "brand": "Takko DE",
       "category": "Mode & Sport",
       "priority": "mittel",
@@ -1502,6 +1484,24 @@
       "reason": "passt zu Mode & Sport, Sortimentslücke: erst 0 veröffentlichte Angebote in Mode & Sport, 1 aktive DE-Aktion",
       "reference": 110230,
       "advertiserId": 110230,
+      "programId": null,
+      "campaignId": null,
+      "submissionReady": false,
+      "humanApprovalRequired": true
+    },
+    {
+      "network": "Awin",
+      "brand": "TUI Magic Life DE",
+      "category": "Freizeit & Reisen",
+      "priority": "mittel",
+      "score": 51,
+      "status": "notjoined",
+      "kind": "application",
+      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten TUI Magic Life DE redaktionell passend im Bereich Freizeit & Reisen einbinden. Bei Awin sind aktuell 1 für Deutschland sichtbare Aktion dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "reason": "passt zu Freizeit & Reisen, Sortimentslücke: erst 1 veröffentlichte Angebote in Freizeit & Reisen, 1 aktive DE-Aktion",
+      "reference": 15933,
+      "advertiserId": 15933,
       "programId": null,
       "campaignId": null,
       "submissionReady": false,
@@ -1628,24 +1628,6 @@
       "reason": "passt zu Technik & Computer, Sortimentslücke: erst 45 veröffentlichte Angebote in Technik & Computer, strategisch relevante Marke",
       "reference": 15013,
       "advertiserId": 15013,
-      "programId": null,
-      "campaignId": null,
-      "submissionReady": false,
-      "humanApprovalRequired": true
-    },
-    {
-      "network": "Awin",
-      "brand": "Samsung Shop DE",
-      "category": "Technik & Computer",
-      "priority": "mittel",
-      "score": 50,
-      "status": "notjoined",
-      "kind": "application",
-      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Samsung Shop DE redaktionell passend im Bereich Technik & Computer einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-      "reason": "passt zu Technik & Computer, Sortimentslücke: erst 45 veröffentlichte Angebote in Technik & Computer, strategisch relevante Marke",
-      "reference": 14815,
-      "advertiserId": 14815,
       "programId": null,
       "campaignId": null,
       "submissionReady": false,
@@ -1916,6 +1898,24 @@
       "reason": "passt zu Mode & Sport, Sortimentslücke: erst 0 veröffentlichte Angebote in Mode & Sport",
       "reference": 82131,
       "advertiserId": 82131,
+      "programId": null,
+      "campaignId": null,
+      "submissionReady": false,
+      "humanApprovalRequired": true
+    },
+    {
+      "network": "Awin",
+      "brand": "ab-in-den-urlaub DE",
+      "category": "Freizeit & Reisen",
+      "priority": "mittel",
+      "score": 45,
+      "status": "notjoined",
+      "kind": "application",
+      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten ab-in-den-urlaub DE redaktionell passend im Bereich Freizeit & Reisen einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "reason": "passt zu Freizeit & Reisen, Sortimentslücke: erst 1 veröffentlichte Angebote in Freizeit & Reisen",
+      "reference": 9369,
+      "advertiserId": 9369,
       "programId": null,
       "campaignId": null,
       "submissionReady": false,
