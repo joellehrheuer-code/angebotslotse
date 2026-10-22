@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-22T04:44:07.109Z",
+  "generatedAt": "2026-10-22T13:48:56.332Z",
   "dailyNewContactLimit": 8,
   "safeguards": {
     "dedupeAgainst": "report/partner-outreach-status.json",
@@ -33,29 +33,6 @@
       "reason": "Routine-Outreach darf nur an verifizierte offizielle Kontakte vorbereitet/versendet werden; Vertragsbedingungen, AGB, Exklusivität oder kostenpflichtige Verpflichtungen werden nicht automatisch akzeptiert."
     },
     {
-      "id": "awin-110026",
-      "network": "Awin",
-      "brand": "iHoverboard DE",
-      "advertiserId": 110026,
-      "programId": null,
-      "campaignId": null,
-      "category": "Mode & Sport",
-      "priority": "hoch",
-      "score": 75,
-      "networkStatus": "notjoined",
-      "actionType": "application-review",
-      "contact": null,
-      "contactType": null,
-      "contactSource": null,
-      "contactState": "official-contact-research-required",
-      "routineOutreachAllowed": false,
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten iHoverboard DE redaktionell passend im Bereich Mode & Sport einbinden. Bei Awin sind aktuell 8 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "networkApplicationNextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "contractualSubmissionAllowed": false,
-      "reason": "Routine-Outreach darf nur an verifizierte offizielle Kontakte vorbereitet/versendet werden; Vertragsbedingungen, AGB, Exklusivität oder kostenpflichtige Verpflichtungen werden nicht automatisch akzeptiert."
-    },
-    {
       "id": "awin-12591",
       "network": "Awin",
       "brand": "Acer DE",
@@ -79,15 +56,15 @@
       "reason": "Routine-Outreach darf nur an verifizierte offizielle Kontakte vorbereitet/versendet werden; Vertragsbedingungen, AGB, Exklusivität oder kostenpflichtige Verpflichtungen werden nicht automatisch akzeptiert."
     },
     {
-      "id": "awin-30007",
+      "id": "awin-110026",
       "network": "Awin",
-      "brand": "expert DE",
-      "advertiserId": 30007,
+      "brand": "iHoverboard DE",
+      "advertiserId": 110026,
       "programId": null,
       "campaignId": null,
-      "category": "Technik & Computer",
+      "category": "Mode & Sport",
       "priority": "mittel",
-      "score": 65,
+      "score": 69,
       "networkStatus": "notjoined",
       "actionType": "application-review",
       "contact": null,
@@ -95,7 +72,7 @@
       "contactSource": null,
       "contactState": "official-contact-research-required",
       "routineOutreachAllowed": false,
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten expert DE redaktionell passend im Bereich Technik & Computer einbinden. Bei Awin sind aktuell 7 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten iHoverboard DE redaktionell passend im Bereich Mode & Sport einbinden. Bei Awin sind aktuell 4 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
       "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
       "networkApplicationNextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
       "contractualSubmissionAllowed": false,
@@ -165,13 +142,6 @@
       "lastContactAt": "2026-09-02T19:43:09+02:00"
     },
     {
-      "brand": "Dyson DE",
-      "reason": "existing-status:needs-info",
-      "relatedBrand": null,
-      "status": "needs-info",
-      "lastContactAt": "2026-10-05T13:32:00+02:00"
-    },
-    {
       "brand": "BSTN DACH",
       "reason": "existing-status:pending",
       "relatedBrand": null,
@@ -190,6 +160,20 @@
       "reason": "existing-status:rejected",
       "relatedBrand": null,
       "status": "rejected",
+      "lastContactAt": "2026-10-06"
+    },
+    {
+      "brand": "Fressnapf-Online-Shop DE",
+      "reason": "existing-status:contacted",
+      "relatedBrand": null,
+      "status": "contacted",
+      "lastContactAt": "2026-10-08T19:41:00Z"
+    },
+    {
+      "brand": "INTERSPORT DE",
+      "reason": "existing-status:needs-info",
+      "relatedBrand": null,
+      "status": "needs-info",
       "lastContactAt": "2026-10-06"
     }
   ]
