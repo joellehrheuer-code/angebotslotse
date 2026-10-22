@@ -1,33 +1,33 @@
 {
-  "generatedAt": "2026-10-22T20:07:51.024Z",
-  "newAwinPrograms": 2,
-  "newImpactPrograms": 0,
+  "generatedAt": "2026-10-22T23:24:18.482Z",
+  "newAwinPrograms": 1,
+  "newImpactPrograms": 6,
   "newDaisyconPrograms": 0,
   "newWebgainsPrograms": 0,
   "activeAwinPrograms": 6,
-  "activeImpactPrograms": 0,
+  "activeImpactPrograms": 6,
   "applicationsSent": 0,
   "pendingApplications": 1,
   "manualApplications": 8,
   "networkReviewActions": 6,
   "awinDiscoveryOffers": 200,
   "applicationCandidates": 2611,
-  "newMerchants": 0,
+  "newMerchants": 1,
   "newProducts": 0,
   "productsWithImage": 201,
   "productsWithVideo": 0,
   "productsWithPrice": 201,
   "productsWithOldPrice": 0,
   "productsWithDiscount": 0,
-  "newCoupons": 0,
-  "coupons": 3,
+  "newCoupons": 1,
+  "coupons": 4,
   "priceChanges": 0,
   "expiredOffers": 0,
   "expiredCoupons": 0,
   "filteredForeignLocale": 0,
-  "totalProducts": 208,
+  "totalProducts": 209,
   "productsBySource": {
-    "Awin": 208
+    "Awin": 209
   },
   "officialImagesBySource": {
     "Awin": 201
@@ -37,7 +37,7 @@
     "Hollyland DE": 97,
     "Outin Germany": 55,
     "ANTHBOT DE": 50,
-    "EMP DE": 4,
+    "EMP DE": 5,
     "Imou DE": 1,
     "PDF Agile": 1
   },
@@ -46,8 +46,8 @@
     "haushalt": 53,
     "garten": 44,
     "zubehoer": 40,
+    "sonstiges": 5,
     "computer": 4,
-    "sonstiges": 4,
     "werkzeug": 3,
     "freizeit": 1,
     "smart-home": 1,
@@ -199,7 +199,7 @@
     ]
   },
   "quarantinedRecords": 130,
-  "blockedPublisherPromotions": 4,
+  "blockedPublisherPromotions": 5,
   "dailyDeal": "0218eb3f0ddf604a",
   "dailyHighlights": [
     "0218eb3f0ddf604a",
@@ -210,6 +210,7 @@
   ],
   "weekDeals": [
     "836b8f268429f0ab",
+    "77f8095abef1454e",
     "53cc668dd74e2a93",
     "ff91d2f4d8027497"
   ],
@@ -217,7 +218,7 @@
     "836b8f268429f0ab",
     "4bccf1aeb97b5a82",
     "ca56d808d3c14eb1",
-    "53cc668dd74e2a93",
+    "77f8095abef1454e",
     "cfdc2f58b29a6d49"
   ],
   "apiErrors": 0,
