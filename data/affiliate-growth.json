@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-23T13:27:16.012Z",
+  "generatedAt": "2026-10-23T19:59:13.370Z",
   "market": "DE",
   "publisherId": 3045061,
   "awin": {
@@ -547,17 +547,6 @@
         "advertiserId": 28945,
         "name": "ALLDREI DE",
         "primarySector": "Home & Garden",
-        "primaryRegion": {
-          "name": "Germany",
-          "countryCode": "DE"
-        }
-      },
-      {
-        "network": "Awin",
-        "relationship": "notjoined",
-        "advertiserId": 107177,
-        "name": "Allekabel DE",
-        "primarySector": "Electronic Superstore",
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
@@ -2208,6 +2197,17 @@
         "advertiserId": 128587,
         "name": "ELEMENTI (DE)",
         "primarySector": "Home & Garden",
+        "primaryRegion": {
+          "name": "Germany",
+          "countryCode": "DE"
+        }
+      },
+      {
+        "network": "Awin",
+        "relationship": "notjoined",
+        "advertiserId": 18832,
+        "name": "eleonto.com",
+        "primarySector": "Electronic Superstore",
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
