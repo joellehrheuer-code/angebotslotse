@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-23T23:09:59.960Z",
+  "generatedAt": "2026-10-24T04:36:56.609Z",
   "scope": "Automatisch aus Programminventar, DE-Angebotsabdeckung und verfügbaren Netzwerk-/Feed-Signalen erzeugt.",
   "automation": {
     "discovery": "automatic",
@@ -702,41 +702,6 @@
       "automationState": "ready-for-review"
     },
     {
-      "brand": "Douglas_DE",
-      "network": "Awin",
-      "advertiserId": 10076,
-      "status": "notjoined",
-      "category": "Gesundheit & Wellness",
-      "score": 51,
-      "priority": "mittel",
-      "activeDiscoveryOffers": 1,
-      "offerExamples": [
-        "Dein Geschenk: Vom 23.10. bis 25.10.2026 gibt es ein Molecule 01 + Ginger Duftmini (EdT/8,5 ml) von Escentric Molecules gratis zu deiner Bes"
-      ],
-      "productFeed": false,
-      "siteCategoryCoverage": 0,
-      "metrics": {
-        "awinIndex": null,
-        "epc": null,
-        "conversionRate": null,
-        "approvalPercentage": null,
-        "validationDays": null,
-        "averagePaymentTime": null,
-        "commissionMin": null,
-        "commissionMax": null,
-        "commissionTypes": []
-      },
-      "reasons": [
-        "passt zu Gesundheit & Wellness",
-        "Sortimentslücke: erst 0 veröffentlichte Angebote in Gesundheit & Wellness",
-        "1 aktive DE-Aktion"
-      ],
-      "applicationRequired": true,
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Douglas_DE redaktionell passend im Bereich Gesundheit & Wellness einbinden. Bei Awin sind aktuell 1 für Deutschland sichtbare Aktion dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "automationState": "ready-for-review"
-    },
-    {
       "brand": "LOOKFANTASTIC DACH",
       "network": "Awin",
       "advertiserId": 7624,
@@ -943,41 +908,6 @@
       ],
       "applicationRequired": true,
       "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten SportScheck DE redaktionell passend im Bereich Mode & Sport einbinden. Bei Awin sind aktuell 1 für Deutschland sichtbare Aktion dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "automationState": "ready-for-review"
-    },
-    {
-      "brand": "Takko DE",
-      "network": "Awin",
-      "advertiserId": 110230,
-      "status": "notjoined",
-      "category": "Mode & Sport",
-      "score": 51,
-      "priority": "mittel",
-      "activeDiscoveryOffers": 1,
-      "offerExamples": [
-        "Der Grinch ist zurück – mit Styles ab 4,99 €"
-      ],
-      "productFeed": false,
-      "siteCategoryCoverage": 0,
-      "metrics": {
-        "awinIndex": null,
-        "epc": null,
-        "conversionRate": null,
-        "approvalPercentage": null,
-        "validationDays": null,
-        "averagePaymentTime": null,
-        "commissionMin": null,
-        "commissionMax": null,
-        "commissionTypes": []
-      },
-      "reasons": [
-        "passt zu Mode & Sport",
-        "Sortimentslücke: erst 0 veröffentlichte Angebote in Mode & Sport",
-        "1 aktive DE-Aktion"
-      ],
-      "applicationRequired": true,
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Takko DE redaktionell passend im Bereich Mode & Sport einbinden. Bei Awin sind aktuell 1 für Deutschland sichtbare Aktion dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
       "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
       "automationState": "ready-for-review"
     },
@@ -1701,28 +1631,251 @@
       "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten 4Walls Escape - Online Escape Games DE redaktionell passend im Bereich Gaming einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
       "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
       "automationState": "ready-for-review"
+    },
+    {
+      "brand": "50 ml DE",
+      "network": "Awin",
+      "advertiserId": 85743,
+      "status": "notjoined",
+      "category": "Gesundheit & Wellness",
+      "score": 45,
+      "priority": "mittel",
+      "activeDiscoveryOffers": 0,
+      "offerExamples": [],
+      "productFeed": false,
+      "siteCategoryCoverage": 0,
+      "metrics": {
+        "awinIndex": null,
+        "epc": null,
+        "conversionRate": null,
+        "approvalPercentage": null,
+        "validationDays": null,
+        "averagePaymentTime": null,
+        "commissionMin": null,
+        "commissionMax": null,
+        "commissionTypes": []
+      },
+      "reasons": [
+        "passt zu Gesundheit & Wellness",
+        "Sortimentslücke: erst 0 veröffentlichte Angebote in Gesundheit & Wellness"
+      ],
+      "applicationRequired": true,
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten 50 ml DE redaktionell passend im Bereich Gesundheit & Wellness einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "automationState": "ready-for-review"
+    },
+    {
+      "brand": "7days DE",
+      "network": "Awin",
+      "advertiserId": 122900,
+      "status": "notjoined",
+      "category": "Mode & Sport",
+      "score": 45,
+      "priority": "mittel",
+      "activeDiscoveryOffers": 0,
+      "offerExamples": [],
+      "productFeed": false,
+      "siteCategoryCoverage": 0,
+      "metrics": {
+        "awinIndex": null,
+        "epc": null,
+        "conversionRate": null,
+        "approvalPercentage": null,
+        "validationDays": null,
+        "averagePaymentTime": null,
+        "commissionMin": null,
+        "commissionMax": null,
+        "commissionTypes": []
+      },
+      "reasons": [
+        "passt zu Mode & Sport",
+        "Sortimentslücke: erst 0 veröffentlichte Angebote in Mode & Sport"
+      ],
+      "applicationRequired": true,
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten 7days DE redaktionell passend im Bereich Mode & Sport einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "automationState": "ready-for-review"
     }
   ],
   "impact": {
-    "status": "disabled",
-    "joinedPrograms": 0,
-    "opportunities": [],
-    "marketplaceSearches": [
+    "status": "ok",
+    "joinedPrograms": 6,
+    "opportunities": [
       {
+        "brand": "Martinic - martinic",
+        "campaign": "Martinic Audio",
+        "advertiserId": "255547",
+        "campaignId": "4482",
         "category": "Audio & Creator",
-        "siteOffers": 57,
-        "joinedPrograms": 0,
-        "gapScore": 57,
-        "searchTerms": [
-          "audio",
-          "music",
-          "headphones",
-          "microphone",
-          "recording",
-          "creator"
+        "score": 39,
+        "priority": "mittel",
+        "assets": {
+          "products": 0,
+          "promotions": 0,
+          "deals": 1,
+          "ads": 0
+        },
+        "capabilities": {
+          "deeplinks": true,
+          "trackingLink": true,
+          "publicTerms": true,
+          "logo": true
+        },
+        "reasons": [
+          "passt zu Audio & Creator",
+          "1 aktiver Deal",
+          "Deeplinks erlaubt",
+          "Trackinglink verfügbar",
+          "öffentliche Programmbedingungen"
         ],
-        "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
+        "nextAction": "Aktuelle Aktionen und Codes prominent einbinden; Produktfeed beim Brand-Team erfragen.",
+        "contactDraft": "Hallo Martinic - martinic-Team, Angebotslotse ist ein deutsches Deal-, Preisvergleichs- und Discovery-Portal. Wir sind über impact.com bereits mit eurem Programm verbunden und möchten die Zusammenarbeit im Bereich Weitere stärker ausbauen. Besonders interessant sind für uns aktuelle Produktkataloge, zeitlich begrenzte Aktionen, Gutscheincodes und offizielle Medien, die wir transparent und mit korrekter Werbekennzeichnung darstellen können. Wenn für Publisher zusätzliche Feeds, Creatives oder aktuelle Kampagnen verfügbar sind, freuen wir uns über einen Hinweis direkt über impact.com."
       },
+      {
+        "brand": "GearUP Portal Pte Ltd",
+        "campaign": "GearUP for Mobile",
+        "advertiserId": "6117213",
+        "campaignId": "53368",
+        "category": "Technik & Computer",
+        "score": 34,
+        "priority": "mittel",
+        "assets": {
+          "products": 0,
+          "promotions": 0,
+          "deals": 0,
+          "ads": 0
+        },
+        "capabilities": {
+          "deeplinks": true,
+          "trackingLink": true,
+          "publicTerms": true,
+          "logo": true
+        },
+        "reasons": [
+          "passt zu Technik & Computer",
+          "Deeplinks erlaubt",
+          "Trackinglink verfügbar",
+          "öffentliche Programmbedingungen"
+        ],
+        "nextAction": "Über impact.com nach Produktfeed, Promotions, Codes und Publisher-Creatives fragen.",
+        "contactDraft": "Hallo GearUP Portal Pte Ltd-Team, Angebotslotse ist ein deutsches Deal-, Preisvergleichs- und Discovery-Portal. Wir sind über impact.com bereits mit eurem Programm verbunden und möchten die Zusammenarbeit im Bereich Weitere stärker ausbauen. Besonders interessant sind für uns aktuelle Produktkataloge, zeitlich begrenzte Aktionen, Gutscheincodes und offizielle Medien, die wir transparent und mit korrekter Werbekennzeichnung darstellen können. Wenn für Publisher zusätzliche Feeds, Creatives oder aktuelle Kampagnen verfügbar sind, freuen wir uns über einen Hinweis direkt über impact.com."
+      },
+      {
+        "brand": "Belkin",
+        "campaign": "Belkin DE",
+        "advertiserId": "165682",
+        "campaignId": "3770",
+        "category": "Weitere",
+        "score": 26,
+        "priority": "niedrig",
+        "assets": {
+          "products": 0,
+          "promotions": 0,
+          "deals": 1,
+          "ads": 1
+        },
+        "capabilities": {
+          "deeplinks": true,
+          "trackingLink": true,
+          "publicTerms": true,
+          "logo": true
+        },
+        "reasons": [
+          "1 aktiver Deal",
+          "1 Creative",
+          "Deeplinks erlaubt",
+          "Trackinglink verfügbar",
+          "öffentliche Programmbedingungen"
+        ],
+        "nextAction": "Aktuelle Aktionen und Codes prominent einbinden; Produktfeed beim Brand-Team erfragen.",
+        "contactDraft": "Hallo Belkin-Team, Angebotslotse ist ein deutsches Deal-, Preisvergleichs- und Discovery-Portal. Wir sind über impact.com bereits mit eurem Programm verbunden und möchten die Zusammenarbeit im Bereich Weitere stärker ausbauen. Besonders interessant sind für uns aktuelle Produktkataloge, zeitlich begrenzte Aktionen, Gutscheincodes und offizielle Medien, die wir transparent und mit korrekter Werbekennzeichnung darstellen können. Wenn für Publisher zusätzliche Feeds, Creatives oder aktuelle Kampagnen verfügbar sind, freuen wir uns über einen Hinweis direkt über impact.com."
+      },
+      {
+        "brand": "GearUP Portal Pte Ltd",
+        "campaign": "GearUP",
+        "advertiserId": "6117213",
+        "campaignId": "40222",
+        "category": "Weitere",
+        "score": 19,
+        "priority": "niedrig",
+        "assets": {
+          "products": 0,
+          "promotions": 0,
+          "deals": 0,
+          "ads": 0
+        },
+        "capabilities": {
+          "deeplinks": true,
+          "trackingLink": true,
+          "publicTerms": true,
+          "logo": true
+        },
+        "reasons": [
+          "Deeplinks erlaubt",
+          "Trackinglink verfügbar",
+          "öffentliche Programmbedingungen"
+        ],
+        "nextAction": "Über impact.com nach Produktfeed, Promotions, Codes und Publisher-Creatives fragen.",
+        "contactDraft": "Hallo GearUP Portal Pte Ltd-Team, Angebotslotse ist ein deutsches Deal-, Preisvergleichs- und Discovery-Portal. Wir sind über impact.com bereits mit eurem Programm verbunden und möchten die Zusammenarbeit im Bereich Weitere stärker ausbauen. Besonders interessant sind für uns aktuelle Produktkataloge, zeitlich begrenzte Aktionen, Gutscheincodes und offizielle Medien, die wir transparent und mit korrekter Werbekennzeichnung darstellen können. Wenn für Publisher zusätzliche Feeds, Creatives oder aktuelle Kampagnen verfügbar sind, freuen wir uns über einen Hinweis direkt über impact.com."
+      },
+      {
+        "brand": "ProtoArc",
+        "campaign": "ProtoArc",
+        "advertiserId": "7605257",
+        "campaignId": "56905",
+        "category": "Weitere",
+        "score": 19,
+        "priority": "niedrig",
+        "assets": {
+          "products": 0,
+          "promotions": 0,
+          "deals": 0,
+          "ads": 0
+        },
+        "capabilities": {
+          "deeplinks": true,
+          "trackingLink": true,
+          "publicTerms": true,
+          "logo": true
+        },
+        "reasons": [
+          "Deeplinks erlaubt",
+          "Trackinglink verfügbar",
+          "öffentliche Programmbedingungen"
+        ],
+        "nextAction": "Über impact.com nach Produktfeed, Promotions, Codes und Publisher-Creatives fragen.",
+        "contactDraft": "Hallo ProtoArc-Team, Angebotslotse ist ein deutsches Deal-, Preisvergleichs- und Discovery-Portal. Wir sind über impact.com bereits mit eurem Programm verbunden und möchten die Zusammenarbeit im Bereich Weitere stärker ausbauen. Besonders interessant sind für uns aktuelle Produktkataloge, zeitlich begrenzte Aktionen, Gutscheincodes und offizielle Medien, die wir transparent und mit korrekter Werbekennzeichnung darstellen können. Wenn für Publisher zusätzliche Feeds, Creatives oder aktuelle Kampagnen verfügbar sind, freuen wir uns über einen Hinweis direkt über impact.com."
+      },
+      {
+        "brand": "Razer (Asia Pacific) Pte Ltd",
+        "campaign": "Razer Affiliate Program",
+        "advertiserId": "1723018",
+        "campaignId": "10229",
+        "category": "Weitere",
+        "score": 19,
+        "priority": "niedrig",
+        "assets": {
+          "products": 0,
+          "promotions": 0,
+          "deals": 0,
+          "ads": 0
+        },
+        "capabilities": {
+          "deeplinks": true,
+          "trackingLink": true,
+          "publicTerms": true,
+          "logo": true
+        },
+        "reasons": [
+          "Deeplinks erlaubt",
+          "Trackinglink verfügbar",
+          "öffentliche Programmbedingungen"
+        ],
+        "nextAction": "Über impact.com nach Produktfeed, Promotions, Codes und Publisher-Creatives fragen.",
+        "contactDraft": "Hallo Razer (Asia Pacific) Pte Ltd-Team, Angebotslotse ist ein deutsches Deal-, Preisvergleichs- und Discovery-Portal. Wir sind über impact.com bereits mit eurem Programm verbunden und möchten die Zusammenarbeit im Bereich Weitere stärker ausbauen. Besonders interessant sind für uns aktuelle Produktkataloge, zeitlich begrenzte Aktionen, Gutscheincodes und offizielle Medien, die wir transparent und mit korrekter Werbekennzeichnung darstellen können. Wenn für Publisher zusätzliche Feeds, Creatives oder aktuelle Kampagnen verfügbar sind, freuen wir uns über einen Hinweis direkt über impact.com."
+      }
+    ],
+    "marketplaceSearches": [
       {
         "category": "Haushalt & Küche",
         "siteOffers": 53,
@@ -1733,6 +1886,21 @@
           "appliances",
           "kitchen",
           "vacuum"
+        ],
+        "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
+      },
+      {
+        "category": "Audio & Creator",
+        "siteOffers": 57,
+        "joinedPrograms": 1,
+        "gapScore": 47,
+        "searchTerms": [
+          "audio",
+          "music",
+          "headphones",
+          "microphone",
+          "recording",
+          "creator"
         ],
         "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
       },
@@ -1752,8 +1920,8 @@
       {
         "category": "Technik & Computer",
         "siteOffers": 45,
-        "joinedPrograms": 0,
-        "gapScore": 45,
+        "joinedPrograms": 1,
+        "gapScore": 35,
         "searchTerms": [
           "electronics",
           "computer",
