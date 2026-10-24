@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-24T12:41:40.194Z",
+  "generatedAt": "2026-10-24T18:49:07.039Z",
   "market": "DE",
   "publisherId": 3045061,
   "awin": {
@@ -393,6 +393,17 @@
         "advertiserId": 12591,
         "name": "Acer DE",
         "primarySector": "Computers",
+        "primaryRegion": {
+          "name": "Germany",
+          "countryCode": "DE"
+        }
+      },
+      {
+        "network": "Awin",
+        "relationship": "notjoined",
+        "advertiserId": 130803,
+        "name": "Advoratise",
+        "primarySector": "Business Services (B2B)",
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
@@ -2197,17 +2208,6 @@
         "advertiserId": 18832,
         "name": "eleonto.com",
         "primarySector": "Electronic Superstore",
-        "primaryRegion": {
-          "name": "Germany",
-          "countryCode": "DE"
-        }
-      },
-      {
-        "network": "Awin",
-        "relationship": "notjoined",
-        "advertiserId": 31962,
-        "name": "Elli DE Wallbox",
-        "primarySector": "Home & Garden",
         "primaryRegion": {
           "name": "Germany",
           "countryCode": "DE"
