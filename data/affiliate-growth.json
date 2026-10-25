@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-25T13:13:06.252Z",
+  "generatedAt": "2026-10-25T18:30:34.213Z",
   "market": "DE",
   "publisherId": 3045061,
   "awin": {
@@ -2591,7 +2591,7 @@
         "category": "Technik & Computer",
         "score": 65,
         "priority": "mittel",
-        "activeDiscoveryOffers": 8,
+        "activeDiscoveryOffers": 7,
         "offerExamples": [
           "Rudis Abstauber der Woche - De'Longhi ECAM 20.116.B Magnifica S schwarz silber Kaffeevollautomat (Kegelmahlwerk, Direktwahltasten, herausneh",
           "Xiaomi Redmi 17 4G 4GB + 128GB Black Smartphone (6,9 Zoll, 50 MP, 7.500-mAh, Octa-Core, Fingerabdrucksensor, Gesichtserkennung) für nur 179,",
@@ -2613,10 +2613,10 @@
         "reasons": [
           "passt zu Technik & Computer",
           "Sortimentslücke: erst 45 veröffentlichte Angebote in Technik & Computer",
-          "8 aktive DE-Aktionen"
+          "7 aktive DE-Aktionen"
         ],
         "applicationRequired": true,
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten expert DE redaktionell passend im Bereich Technik & Computer einbinden. Bei Awin sind aktuell 8 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten expert DE redaktionell passend im Bereich Technik & Computer einbinden. Bei Awin sind aktuell 7 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
         "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
         "automationState": "ready-for-review"
       },
