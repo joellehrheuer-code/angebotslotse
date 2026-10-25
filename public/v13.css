@@ -6625,3 +6625,14 @@ html[data-theme="light"] .comparison-carousel-help{color:#33445b}
  .comparison-carousel-chips{scroll-snap-type:x proximity}
  .comparison-carousel-chips button{scroll-snap-align:center}
 }
+
+
+/* V62 — actionable inventory for all fourteen verified Verivox partner categories */
+.verivox-inventory-grid article>div{display:flex;flex-direction:column;align-items:flex-start;min-width:0;flex:1}
+.verivox-inventory-grid .verivox-inventory-go{display:inline-flex;align-items:center;justify-content:center;min-height:42px;margin-top:auto;padding:10px 14px;border:1px solid #e99139;border-radius:10px;background:#573116;color:#ffdbb3!important;font-size:13px;font-weight:800;text-decoration:none;line-height:1.35}
+.verivox-inventory-grid .verivox-inventory-go:hover{background:#ad5410;color:#fff!important}
+.verivox-inventory-grid .verivox-inventory-go:focus-visible{outline:3px solid #ffc481;outline-offset:2px}
+.verivox-inventory-grid article p{margin-bottom:9px}
+.verivox-inventory-grid article small{margin-bottom:15px}
+html[data-theme="light"] .verivox-inventory-grid .verivox-inventory-go{background:#fff2e4;color:#8b3c0b!important;border-color:#b96e33}
+html[data-theme="light"] .verivox-inventory-grid .verivox-inventory-go:hover{background:#ffe0c3;color:#672d0b!important}
