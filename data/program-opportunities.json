@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-25T19:04:47.061Z",
+  "generatedAt": "2026-10-25T22:34:47.157Z",
   "scope": "Automatisch aus Programminventar, DE-Angebotsabdeckung und verfügbaren Netzwerk-/Feed-Signalen erzeugt.",
   "automation": {
     "discovery": "automatic",
@@ -382,7 +382,7 @@
       "category": "Technik & Computer",
       "score": 65,
       "priority": "mittel",
-      "activeDiscoveryOffers": 7,
+      "activeDiscoveryOffers": 5,
       "offerExamples": [
         "Rudis Abstauber der Woche - De'Longhi ECAM 20.116.B Magnifica S schwarz silber Kaffeevollautomat (Kegelmahlwerk, Direktwahltasten, herausneh",
         "Xiaomi Redmi 17 4G 4GB + 128GB Black Smartphone (6,9 Zoll, 50 MP, 7.500-mAh, Octa-Core, Fingerabdrucksensor, Gesichtserkennung) für nur 179,",
@@ -404,10 +404,10 @@
       "reasons": [
         "passt zu Technik & Computer",
         "Sortimentslücke: erst 45 veröffentlichte Angebote in Technik & Computer",
-        "7 aktive DE-Aktionen"
+        "5 aktive DE-Aktionen"
       ],
       "applicationRequired": true,
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten expert DE redaktionell passend im Bereich Technik & Computer einbinden. Bei Awin sind aktuell 7 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten expert DE redaktionell passend im Bereich Technik & Computer einbinden. Bei Awin sind aktuell 5 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
       "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
       "automationState": "ready-for-review"
     },
