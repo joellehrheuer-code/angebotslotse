@@ -465,7 +465,15 @@ const verivoxInventoryDestinations=[
  "https://www.verivox.de/kfz-versicherung/wechseln/",
  "https://partner.verivox.de/go.cgi?pid=6994&wmid=282&cpid=1&prid=1&subid=&target=Kredit_karussell_LP",
  "https://partner.verivox.de/go.cgi?pid=6994&wmid=78&cpid=1&prid=104&subid=&target=DSL_2019-09",
- ...Array(9).fill("https://www.verivox.de/versicherungen/")
+ "https://www.verivox.de/berufsunfaehigkeitsversicherung/",
+ "https://www.verivox.de/privathaftpflicht/",
+ "https://www.verivox.de/wohngebaeudeversicherung/",
+ "https://www.verivox.de/hausratversicherung/",
+ "https://www.verivox.de/private-krankenversicherung/",
+ "https://www.verivox.de/rechtsschutzversicherung/",
+ "https://www.verivox.de/tierhalterhaftpflicht/",
+ "https://www.verivox.de/unfallversicherung/",
+ "https://www.verivox.de/zahnzusatzversicherung/"
 ];
 const verivoxInventoryTracked=new Set([3,4]);
 const verivoxInventoryMarkup=`<section class="verivox-inventory" id="verivox-weitere-vergleiche" aria-labelledby="verivox-inventory-title"><div class="section-head"><div><span class="eyebrow">Verivox Partnerprogramm</span><h2 id="verivox-inventory-title">Alle 14 Werbemittelbereiche im Überblick</h2><p>Die Zahlen bezeichnen Einträge im Partnerportal, keine verfügbaren Tarife. Zusätzliche Rechner und Banner werden nach Prüfung ihrer Originalcodes aktiviert.</p></div></div><div class="verivox-inventory-grid">${verivoxInventory.map(([name,count,icon,desc],index)=>`<article><span class="verivox-inventory-icon" aria-hidden="true">${icon}</span><div><h3>${esc(name)}</h3><p>${esc(desc)}</p><small>${count} Werbemittel-Einträge im Partnerportal</small><a class="verivox-inventory-go" href="${esc(verivoxInventoryDestinations[index])}" target="_blank" rel="${verivoxInventoryTracked.has(index)?"sponsored noopener noreferrer":"nofollow noopener noreferrer"}" aria-label="${esc(name)} bei Verivox öffnen">Bei Verivox ansehen ↗</a></div></article>`).join("")}</div></section>`;
