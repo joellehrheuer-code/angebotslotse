@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-26T15:13:20.949Z",
+  "generatedAt": "2026-10-26T21:02:32.860Z",
   "scope": "Automatisch aus Programminventar, DE-Angebotsabdeckung und verfügbaren Netzwerk-/Feed-Signalen erzeugt.",
   "automation": {
     "discovery": "automatic",
@@ -17,7 +17,7 @@
       "category": "Technik & Computer",
       "score": 103,
       "priority": "hoch",
-      "activeDiscoveryOffers": 87,
+      "activeDiscoveryOffers": 64,
       "offerExamples": [
         "soundcore Work - €129.99(€30off) w/Code: WS24D3200G21S",
         "soundcore Work - €129.99(€30off) w/Code: WS24D3200G11S",
@@ -40,13 +40,13 @@
         "passt zu Technik & Computer",
         "Sortimentslücke: erst 45 veröffentlichte Angebote in Technik & Computer",
         "strategisch relevante Marke",
-        "87 aktive DE-Aktionen",
+        "64 aktive DE-Aktionen",
         "Awin Index 64.79",
         "Approval 86.22%",
         "EPC 0.99"
       ],
       "applicationRequired": true,
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Anker DE redaktionell passend im Bereich Technik & Computer einbinden. Bei Awin sind aktuell 87 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Anker DE redaktionell passend im Bereich Technik & Computer einbinden. Bei Awin sind aktuell 64 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
       "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
       "automationState": "ready-for-review"
     },
