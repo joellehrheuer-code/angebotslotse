@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-25T22:34:47.157Z",
+  "generatedAt": "2026-10-26T04:47:33.594Z",
   "dailyNewContactLimit": 8,
   "safeguards": {
     "dedupeAgainst": "report/partner-outreach-status.json",
@@ -169,56 +169,9 @@
       "networkApplicationNextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
       "contractualSubmissionAllowed": false,
       "reason": "Routine-Outreach darf nur an verifizierte offizielle Kontakte vorbereitet/versendet werden; Vertragsbedingungen, AGB, Exklusivität oder kostenpflichtige Verpflichtungen werden nicht automatisch akzeptiert."
-    },
-    {
-      "id": "awin-30007",
-      "network": "Awin",
-      "brand": "expert DE",
-      "advertiserId": 30007,
-      "programId": null,
-      "campaignId": null,
-      "category": "Technik & Computer",
-      "priority": "mittel",
-      "score": 65,
-      "networkStatus": "notjoined",
-      "actionType": "application-review",
-      "contact": null,
-      "contactType": null,
-      "contactSource": null,
-      "contactState": "official-contact-research-required",
-      "routineOutreachAllowed": false,
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten expert DE redaktionell passend im Bereich Technik & Computer einbinden. Bei Awin sind aktuell 5 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "networkApplicationNextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "contractualSubmissionAllowed": false,
-      "reason": "Routine-Outreach darf nur an verifizierte offizielle Kontakte vorbereitet/versendet werden; Vertragsbedingungen, AGB, Exklusivität oder kostenpflichtige Verpflichtungen werden nicht automatisch akzeptiert."
     }
   ],
-  "backlog": [
-    {
-      "id": "awin-84955",
-      "network": "Awin",
-      "brand": "bosch Tiernahrung DE",
-      "advertiserId": 84955,
-      "programId": null,
-      "campaignId": null,
-      "category": "Tierbedarf",
-      "priority": "mittel",
-      "score": 60,
-      "networkStatus": "notjoined",
-      "actionType": "application-review",
-      "contact": "info@bosch-tiernahrung.de",
-      "contactType": "official-general",
-      "contactSource": "https://ui.awin.com/merchant-profile-terms/84955",
-      "contactState": "verified-contact-manual-review",
-      "routineOutreachAllowed": false,
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten bosch Tiernahrung DE redaktionell passend im Bereich Tierbedarf einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-      "nextAction": "Official provider address is verified, but no dedicated affiliate contact was found; keep manual/research review before outreach.",
-      "networkApplicationNextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "contractualSubmissionAllowed": false,
-      "reason": "Routine-Outreach darf nur an verifizierte offizielle Kontakte vorbereitet/versendet werden; Vertragsbedingungen, AGB, Exklusivität oder kostenpflichtige Verpflichtungen werden nicht automatisch akzeptiert."
-    }
-  ],
+  "backlog": [],
   "excluded": [
     {
       "brand": "Anker DE",
@@ -233,6 +186,20 @@
       "relatedBrand": null,
       "status": "rejected",
       "lastContactAt": "2026-09-02T19:43:09+02:00"
+    },
+    {
+      "brand": "BSTN DACH",
+      "reason": "existing-status:pending",
+      "relatedBrand": null,
+      "status": "pending",
+      "lastContactAt": "2026-09-30T02:05:00+02:00"
+    },
+    {
+      "brand": "Fressnapf-Online-Shop DE",
+      "reason": "existing-status:contacted",
+      "relatedBrand": null,
+      "status": "contacted",
+      "lastContactAt": "2026-10-08T19:41:00Z"
     }
   ]
 }

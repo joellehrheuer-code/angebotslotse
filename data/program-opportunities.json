@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-25T22:34:47.157Z",
+  "generatedAt": "2026-10-26T04:47:33.594Z",
   "scope": "Automatisch aus Programminventar, DE-Angebotsabdeckung und verfügbaren Netzwerk-/Feed-Signalen erzeugt.",
   "automation": {
     "discovery": "automatic",
@@ -375,21 +375,19 @@
       "automationState": "ready-for-review"
     },
     {
-      "brand": "expert DE",
+      "brand": "BSTN DACH",
       "network": "Awin",
-      "advertiserId": 30007,
+      "advertiserId": 104975,
       "status": "notjoined",
-      "category": "Technik & Computer",
-      "score": 65,
+      "category": "Mode & Sport",
+      "score": 66,
       "priority": "mittel",
-      "activeDiscoveryOffers": 5,
+      "activeDiscoveryOffers": 1,
       "offerExamples": [
-        "Rudis Abstauber der Woche - De'Longhi ECAM 20.116.B Magnifica S schwarz silber Kaffeevollautomat (Kegelmahlwerk, Direktwahltasten, herausneh",
-        "Xiaomi Redmi 17 4G 4GB + 128GB Black Smartphone (6,9 Zoll, 50 MP, 7.500-mAh, Octa-Core, Fingerabdrucksensor, Gesichtserkennung) für nur 179,",
-        "HP Notebook OmniBook 3 17-dp0552ng, Silber, 17,3 Zoll, Full-HD, AMD Ryzen 5 40, 16 GB, 1 TB, Radeon 610M (D49K2EA #ABD) für nur 749,00 EUR"
+        "Halloween Sale"
       ],
       "productFeed": false,
-      "siteCategoryCoverage": 45,
+      "siteCategoryCoverage": 0,
       "metrics": {
         "awinIndex": null,
         "epc": null,
@@ -402,12 +400,49 @@
         "commissionTypes": []
       },
       "reasons": [
-        "passt zu Technik & Computer",
-        "Sortimentslücke: erst 45 veröffentlichte Angebote in Technik & Computer",
-        "5 aktive DE-Aktionen"
+        "passt zu Mode & Sport",
+        "Sortimentslücke: erst 0 veröffentlichte Angebote in Mode & Sport",
+        "strategisch relevante Marke",
+        "1 aktive DE-Aktion"
       ],
       "applicationRequired": true,
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten expert DE redaktionell passend im Bereich Technik & Computer einbinden. Bei Awin sind aktuell 5 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten BSTN DACH redaktionell passend im Bereich Mode & Sport einbinden. Bei Awin sind aktuell 1 für Deutschland sichtbare Aktion dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "automationState": "ready-for-review"
+    },
+    {
+      "brand": "Fressnapf-Online-Shop DE",
+      "network": "Awin",
+      "advertiserId": 14757,
+      "status": "notjoined",
+      "category": "Tierbedarf",
+      "score": 66,
+      "priority": "mittel",
+      "activeDiscoveryOffers": 1,
+      "offerExamples": [
+        "14% Willkommensrabatt"
+      ],
+      "productFeed": false,
+      "siteCategoryCoverage": 0,
+      "metrics": {
+        "awinIndex": null,
+        "epc": null,
+        "conversionRate": null,
+        "approvalPercentage": null,
+        "validationDays": null,
+        "averagePaymentTime": null,
+        "commissionMin": null,
+        "commissionMax": null,
+        "commissionTypes": []
+      },
+      "reasons": [
+        "passt zu Tierbedarf",
+        "Sortimentslücke: erst 0 veröffentlichte Angebote in Tierbedarf",
+        "strategisch relevante Marke",
+        "1 aktive DE-Aktion"
+      ],
+      "applicationRequired": true,
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Fressnapf-Online-Shop DE redaktionell passend im Bereich Tierbedarf einbinden. Bei Awin sind aktuell 1 für Deutschland sichtbare Aktion dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
       "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
       "automationState": "ready-for-review"
     },
@@ -441,39 +476,6 @@
       ],
       "applicationRequired": true,
       "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten bosch Tiernahrung DE redaktionell passend im Bereich Tierbedarf einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "automationState": "ready-for-review"
-    },
-    {
-      "brand": "BSTN DACH",
-      "network": "Awin",
-      "advertiserId": 104975,
-      "status": "notjoined",
-      "category": "Mode & Sport",
-      "score": 60,
-      "priority": "mittel",
-      "activeDiscoveryOffers": 0,
-      "offerExamples": [],
-      "productFeed": false,
-      "siteCategoryCoverage": 0,
-      "metrics": {
-        "awinIndex": null,
-        "epc": null,
-        "conversionRate": null,
-        "approvalPercentage": null,
-        "validationDays": null,
-        "averagePaymentTime": null,
-        "commissionMin": null,
-        "commissionMax": null,
-        "commissionTypes": []
-      },
-      "reasons": [
-        "passt zu Mode & Sport",
-        "Sortimentslücke: erst 0 veröffentlichte Angebote in Mode & Sport",
-        "strategisch relevante Marke"
-      ],
-      "applicationRequired": true,
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten BSTN DACH redaktionell passend im Bereich Mode & Sport einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
       "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
       "automationState": "ready-for-review"
     },
@@ -573,39 +575,6 @@
       ],
       "applicationRequired": true,
       "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Fressnapf AT redaktionell passend im Bereich Tierbedarf einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "automationState": "ready-for-review"
-    },
-    {
-      "brand": "Fressnapf-Online-Shop DE",
-      "network": "Awin",
-      "advertiserId": 14757,
-      "status": "notjoined",
-      "category": "Tierbedarf",
-      "score": 60,
-      "priority": "mittel",
-      "activeDiscoveryOffers": 0,
-      "offerExamples": [],
-      "productFeed": false,
-      "siteCategoryCoverage": 0,
-      "metrics": {
-        "awinIndex": null,
-        "epc": null,
-        "conversionRate": null,
-        "approvalPercentage": null,
-        "validationDays": null,
-        "averagePaymentTime": null,
-        "commissionMin": null,
-        "commissionMax": null,
-        "commissionTypes": []
-      },
-      "reasons": [
-        "passt zu Tierbedarf",
-        "Sortimentslücke: erst 0 veröffentlichte Angebote in Tierbedarf",
-        "strategisch relevante Marke"
-      ],
-      "applicationRequired": true,
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Fressnapf-Online-Shop DE redaktionell passend im Bereich Tierbedarf einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
       "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
       "automationState": "ready-for-review"
     },
@@ -742,6 +711,42 @@
       "automationState": "ready-for-review"
     },
     {
+      "brand": "iScooter DE",
+      "network": "Awin",
+      "advertiserId": 45579,
+      "status": "notjoined",
+      "category": "Mode & Sport",
+      "score": 57,
+      "priority": "mittel",
+      "activeDiscoveryOffers": 2,
+      "offerExamples": [
+        "iK5 Kinder‑E‑Scooter mit Federung und Klappfunktion 188,99 €",
+        "EB5 20″ Elektro‑Mountainbike mit Breitreifen 658,99 €"
+      ],
+      "productFeed": false,
+      "siteCategoryCoverage": 0,
+      "metrics": {
+        "awinIndex": null,
+        "epc": null,
+        "conversionRate": null,
+        "approvalPercentage": null,
+        "validationDays": null,
+        "averagePaymentTime": null,
+        "commissionMin": null,
+        "commissionMax": null,
+        "commissionTypes": []
+      },
+      "reasons": [
+        "passt zu Mode & Sport",
+        "Sortimentslücke: erst 0 veröffentlichte Angebote in Mode & Sport",
+        "2 aktive DE-Aktionen"
+      ],
+      "applicationRequired": true,
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten iScooter DE redaktionell passend im Bereich Mode & Sport einbinden. Bei Awin sind aktuell 2 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "automationState": "ready-for-review"
+    },
+    {
       "brand": "sonnenklar.TV DE/AT",
       "network": "Awin",
       "advertiserId": 14603,
@@ -849,6 +854,41 @@
       "automationState": "ready-for-review"
     },
     {
+      "brand": "Koffer to go DE",
+      "network": "Awin",
+      "advertiserId": 16903,
+      "status": "notjoined",
+      "category": "Mode & Sport",
+      "score": 51,
+      "priority": "mittel",
+      "activeDiscoveryOffers": 1,
+      "offerExamples": [
+        "Halloween Sale 26"
+      ],
+      "productFeed": false,
+      "siteCategoryCoverage": 0,
+      "metrics": {
+        "awinIndex": null,
+        "epc": null,
+        "conversionRate": null,
+        "approvalPercentage": null,
+        "validationDays": null,
+        "averagePaymentTime": null,
+        "commissionMin": null,
+        "commissionMax": null,
+        "commissionTypes": []
+      },
+      "reasons": [
+        "passt zu Mode & Sport",
+        "Sortimentslücke: erst 0 veröffentlichte Angebote in Mode & Sport",
+        "1 aktive DE-Aktion"
+      ],
+      "applicationRequired": true,
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Koffer to go DE redaktionell passend im Bereich Mode & Sport einbinden. Bei Awin sind aktuell 1 für Deutschland sichtbare Aktion dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "automationState": "ready-for-review"
+    },
+    {
       "brand": "OVS DE",
       "network": "Awin",
       "advertiserId": 115899,
@@ -919,41 +959,6 @@
       "automationState": "ready-for-review"
     },
     {
-      "brand": "Regenbogenkreis DE",
-      "network": "Awin",
-      "advertiserId": 128433,
-      "status": "notjoined",
-      "category": "Gesundheit & Wellness",
-      "score": 51,
-      "priority": "mittel",
-      "activeDiscoveryOffers": 1,
-      "offerExamples": [
-        "10% Gutschein für die Newsletter-Anmeldung"
-      ],
-      "productFeed": false,
-      "siteCategoryCoverage": 0,
-      "metrics": {
-        "awinIndex": null,
-        "epc": null,
-        "conversionRate": null,
-        "approvalPercentage": null,
-        "validationDays": null,
-        "averagePaymentTime": null,
-        "commissionMin": null,
-        "commissionMax": null,
-        "commissionTypes": []
-      },
-      "reasons": [
-        "passt zu Gesundheit & Wellness",
-        "Sortimentslücke: erst 0 veröffentlichte Angebote in Gesundheit & Wellness",
-        "1 aktive DE-Aktion"
-      ],
-      "applicationRequired": true,
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Regenbogenkreis DE redaktionell passend im Bereich Gesundheit & Wellness einbinden. Bei Awin sind aktuell 1 für Deutschland sichtbare Aktion dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "automationState": "ready-for-review"
-    },
-    {
       "brand": "Snipes EU",
       "network": "Awin",
       "advertiserId": 122628,
@@ -985,41 +990,6 @@
       ],
       "applicationRequired": true,
       "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Snipes EU redaktionell passend im Bereich Mode & Sport einbinden. Bei Awin sind aktuell 1 für Deutschland sichtbare Aktion dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "automationState": "ready-for-review"
-    },
-    {
-      "brand": "SportScheck DE",
-      "network": "Awin",
-      "advertiserId": 14607,
-      "status": "notjoined",
-      "category": "Mode & Sport",
-      "score": 51,
-      "priority": "mittel",
-      "activeDiscoveryOffers": 1,
-      "offerExamples": [
-        "Gratis Versand ab 75 € Bestellwert"
-      ],
-      "productFeed": false,
-      "siteCategoryCoverage": 0,
-      "metrics": {
-        "awinIndex": null,
-        "epc": null,
-        "conversionRate": null,
-        "approvalPercentage": null,
-        "validationDays": null,
-        "averagePaymentTime": null,
-        "commissionMin": null,
-        "commissionMax": null,
-        "commissionTypes": []
-      },
-      "reasons": [
-        "passt zu Mode & Sport",
-        "Sortimentslücke: erst 0 veröffentlichte Angebote in Mode & Sport",
-        "1 aktive DE-Aktion"
-      ],
-      "applicationRequired": true,
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten SportScheck DE redaktionell passend im Bereich Mode & Sport einbinden. Bei Awin sind aktuell 1 für Deutschland sichtbare Aktion dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
       "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
       "automationState": "ready-for-review"
     },
@@ -1125,41 +1095,6 @@
       ],
       "applicationRequired": true,
       "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten TOM FYFE DE redaktionell passend im Bereich Mode & Sport einbinden. Bei Awin sind aktuell 1 für Deutschland sichtbare Aktion dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "automationState": "ready-for-review"
-    },
-    {
-      "brand": "Tom Tailor DE",
-      "network": "Awin",
-      "advertiserId": 8617,
-      "status": "notjoined",
-      "category": "Mode & Sport",
-      "score": 51,
-      "priority": "mittel",
-      "activeDiscoveryOffers": 1,
-      "offerExamples": [
-        "25% auf alle Styles"
-      ],
-      "productFeed": false,
-      "siteCategoryCoverage": 0,
-      "metrics": {
-        "awinIndex": null,
-        "epc": null,
-        "conversionRate": null,
-        "approvalPercentage": null,
-        "validationDays": null,
-        "averagePaymentTime": null,
-        "commissionMin": null,
-        "commissionMax": null,
-        "commissionTypes": []
-      },
-      "reasons": [
-        "passt zu Mode & Sport",
-        "Sortimentslücke: erst 0 veröffentlichte Angebote in Mode & Sport",
-        "1 aktive DE-Aktion"
-      ],
-      "applicationRequired": true,
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Tom Tailor DE redaktionell passend im Bereich Mode & Sport einbinden. Bei Awin sind aktuell 1 für Deutschland sichtbare Aktion dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
       "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
       "automationState": "ready-for-review"
     },
@@ -1720,28 +1655,251 @@
       "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten 360GradFitness DE redaktionell passend im Bereich Mode & Sport einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
       "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
       "automationState": "ready-for-review"
+    },
+    {
+      "brand": "365Rider DE",
+      "network": "Awin",
+      "advertiserId": 30677,
+      "status": "notjoined",
+      "category": "Mode & Sport",
+      "score": 45,
+      "priority": "mittel",
+      "activeDiscoveryOffers": 0,
+      "offerExamples": [],
+      "productFeed": false,
+      "siteCategoryCoverage": 0,
+      "metrics": {
+        "awinIndex": null,
+        "epc": null,
+        "conversionRate": null,
+        "approvalPercentage": null,
+        "validationDays": null,
+        "averagePaymentTime": null,
+        "commissionMin": null,
+        "commissionMax": null,
+        "commissionTypes": []
+      },
+      "reasons": [
+        "passt zu Mode & Sport",
+        "Sortimentslücke: erst 0 veröffentlichte Angebote in Mode & Sport"
+      ],
+      "applicationRequired": true,
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten 365Rider DE redaktionell passend im Bereich Mode & Sport einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "automationState": "ready-for-review"
+    },
+    {
+      "brand": "4 ELEMENTOS DE",
+      "network": "Awin",
+      "advertiserId": 124832,
+      "status": "notjoined",
+      "category": "Mode & Sport",
+      "score": 45,
+      "priority": "mittel",
+      "activeDiscoveryOffers": 0,
+      "offerExamples": [],
+      "productFeed": false,
+      "siteCategoryCoverage": 0,
+      "metrics": {
+        "awinIndex": null,
+        "epc": null,
+        "conversionRate": null,
+        "approvalPercentage": null,
+        "validationDays": null,
+        "averagePaymentTime": null,
+        "commissionMin": null,
+        "commissionMax": null,
+        "commissionTypes": []
+      },
+      "reasons": [
+        "passt zu Mode & Sport",
+        "Sortimentslücke: erst 0 veröffentlichte Angebote in Mode & Sport"
+      ],
+      "applicationRequired": true,
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten 4 ELEMENTOS DE redaktionell passend im Bereich Mode & Sport einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "automationState": "ready-for-review"
     }
   ],
   "impact": {
-    "status": "disabled",
-    "joinedPrograms": 0,
-    "opportunities": [],
-    "marketplaceSearches": [
+    "status": "ok",
+    "joinedPrograms": 6,
+    "opportunities": [
       {
+        "brand": "Martinic - martinic",
+        "campaign": "Martinic Audio",
+        "advertiserId": "255547",
+        "campaignId": "4482",
         "category": "Audio & Creator",
-        "siteOffers": 57,
-        "joinedPrograms": 0,
-        "gapScore": 57,
-        "searchTerms": [
-          "audio",
-          "music",
-          "headphones",
-          "microphone",
-          "recording",
-          "creator"
+        "score": 39,
+        "priority": "mittel",
+        "assets": {
+          "products": 0,
+          "promotions": 0,
+          "deals": 1,
+          "ads": 0
+        },
+        "capabilities": {
+          "deeplinks": true,
+          "trackingLink": true,
+          "publicTerms": true,
+          "logo": true
+        },
+        "reasons": [
+          "passt zu Audio & Creator",
+          "1 aktiver Deal",
+          "Deeplinks erlaubt",
+          "Trackinglink verfügbar",
+          "öffentliche Programmbedingungen"
         ],
-        "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
+        "nextAction": "Aktuelle Aktionen und Codes prominent einbinden; Produktfeed beim Brand-Team erfragen.",
+        "contactDraft": "Hallo Martinic - martinic-Team, Angebotslotse ist ein deutsches Deal-, Preisvergleichs- und Discovery-Portal. Wir sind über impact.com bereits mit eurem Programm verbunden und möchten die Zusammenarbeit im Bereich Weitere stärker ausbauen. Besonders interessant sind für uns aktuelle Produktkataloge, zeitlich begrenzte Aktionen, Gutscheincodes und offizielle Medien, die wir transparent und mit korrekter Werbekennzeichnung darstellen können. Wenn für Publisher zusätzliche Feeds, Creatives oder aktuelle Kampagnen verfügbar sind, freuen wir uns über einen Hinweis direkt über impact.com."
       },
+      {
+        "brand": "GearUP Portal Pte Ltd",
+        "campaign": "GearUP for Mobile",
+        "advertiserId": "6117213",
+        "campaignId": "53368",
+        "category": "Technik & Computer",
+        "score": 34,
+        "priority": "mittel",
+        "assets": {
+          "products": 0,
+          "promotions": 0,
+          "deals": 0,
+          "ads": 0
+        },
+        "capabilities": {
+          "deeplinks": true,
+          "trackingLink": true,
+          "publicTerms": true,
+          "logo": true
+        },
+        "reasons": [
+          "passt zu Technik & Computer",
+          "Deeplinks erlaubt",
+          "Trackinglink verfügbar",
+          "öffentliche Programmbedingungen"
+        ],
+        "nextAction": "Über impact.com nach Produktfeed, Promotions, Codes und Publisher-Creatives fragen.",
+        "contactDraft": "Hallo GearUP Portal Pte Ltd-Team, Angebotslotse ist ein deutsches Deal-, Preisvergleichs- und Discovery-Portal. Wir sind über impact.com bereits mit eurem Programm verbunden und möchten die Zusammenarbeit im Bereich Weitere stärker ausbauen. Besonders interessant sind für uns aktuelle Produktkataloge, zeitlich begrenzte Aktionen, Gutscheincodes und offizielle Medien, die wir transparent und mit korrekter Werbekennzeichnung darstellen können. Wenn für Publisher zusätzliche Feeds, Creatives oder aktuelle Kampagnen verfügbar sind, freuen wir uns über einen Hinweis direkt über impact.com."
+      },
+      {
+        "brand": "Belkin",
+        "campaign": "Belkin DE",
+        "advertiserId": "165682",
+        "campaignId": "3770",
+        "category": "Weitere",
+        "score": 26,
+        "priority": "niedrig",
+        "assets": {
+          "products": 0,
+          "promotions": 0,
+          "deals": 1,
+          "ads": 1
+        },
+        "capabilities": {
+          "deeplinks": true,
+          "trackingLink": true,
+          "publicTerms": true,
+          "logo": true
+        },
+        "reasons": [
+          "1 aktiver Deal",
+          "1 Creative",
+          "Deeplinks erlaubt",
+          "Trackinglink verfügbar",
+          "öffentliche Programmbedingungen"
+        ],
+        "nextAction": "Aktuelle Aktionen und Codes prominent einbinden; Produktfeed beim Brand-Team erfragen.",
+        "contactDraft": "Hallo Belkin-Team, Angebotslotse ist ein deutsches Deal-, Preisvergleichs- und Discovery-Portal. Wir sind über impact.com bereits mit eurem Programm verbunden und möchten die Zusammenarbeit im Bereich Weitere stärker ausbauen. Besonders interessant sind für uns aktuelle Produktkataloge, zeitlich begrenzte Aktionen, Gutscheincodes und offizielle Medien, die wir transparent und mit korrekter Werbekennzeichnung darstellen können. Wenn für Publisher zusätzliche Feeds, Creatives oder aktuelle Kampagnen verfügbar sind, freuen wir uns über einen Hinweis direkt über impact.com."
+      },
+      {
+        "brand": "GearUP Portal Pte Ltd",
+        "campaign": "GearUP",
+        "advertiserId": "6117213",
+        "campaignId": "40222",
+        "category": "Weitere",
+        "score": 19,
+        "priority": "niedrig",
+        "assets": {
+          "products": 0,
+          "promotions": 0,
+          "deals": 0,
+          "ads": 0
+        },
+        "capabilities": {
+          "deeplinks": true,
+          "trackingLink": true,
+          "publicTerms": true,
+          "logo": true
+        },
+        "reasons": [
+          "Deeplinks erlaubt",
+          "Trackinglink verfügbar",
+          "öffentliche Programmbedingungen"
+        ],
+        "nextAction": "Über impact.com nach Produktfeed, Promotions, Codes und Publisher-Creatives fragen.",
+        "contactDraft": "Hallo GearUP Portal Pte Ltd-Team, Angebotslotse ist ein deutsches Deal-, Preisvergleichs- und Discovery-Portal. Wir sind über impact.com bereits mit eurem Programm verbunden und möchten die Zusammenarbeit im Bereich Weitere stärker ausbauen. Besonders interessant sind für uns aktuelle Produktkataloge, zeitlich begrenzte Aktionen, Gutscheincodes und offizielle Medien, die wir transparent und mit korrekter Werbekennzeichnung darstellen können. Wenn für Publisher zusätzliche Feeds, Creatives oder aktuelle Kampagnen verfügbar sind, freuen wir uns über einen Hinweis direkt über impact.com."
+      },
+      {
+        "brand": "ProtoArc",
+        "campaign": "ProtoArc",
+        "advertiserId": "7605257",
+        "campaignId": "56905",
+        "category": "Weitere",
+        "score": 19,
+        "priority": "niedrig",
+        "assets": {
+          "products": 0,
+          "promotions": 0,
+          "deals": 0,
+          "ads": 0
+        },
+        "capabilities": {
+          "deeplinks": true,
+          "trackingLink": true,
+          "publicTerms": true,
+          "logo": true
+        },
+        "reasons": [
+          "Deeplinks erlaubt",
+          "Trackinglink verfügbar",
+          "öffentliche Programmbedingungen"
+        ],
+        "nextAction": "Über impact.com nach Produktfeed, Promotions, Codes und Publisher-Creatives fragen.",
+        "contactDraft": "Hallo ProtoArc-Team, Angebotslotse ist ein deutsches Deal-, Preisvergleichs- und Discovery-Portal. Wir sind über impact.com bereits mit eurem Programm verbunden und möchten die Zusammenarbeit im Bereich Weitere stärker ausbauen. Besonders interessant sind für uns aktuelle Produktkataloge, zeitlich begrenzte Aktionen, Gutscheincodes und offizielle Medien, die wir transparent und mit korrekter Werbekennzeichnung darstellen können. Wenn für Publisher zusätzliche Feeds, Creatives oder aktuelle Kampagnen verfügbar sind, freuen wir uns über einen Hinweis direkt über impact.com."
+      },
+      {
+        "brand": "Razer (Asia Pacific) Pte Ltd",
+        "campaign": "Razer Affiliate Program",
+        "advertiserId": "1723018",
+        "campaignId": "10229",
+        "category": "Weitere",
+        "score": 19,
+        "priority": "niedrig",
+        "assets": {
+          "products": 0,
+          "promotions": 0,
+          "deals": 0,
+          "ads": 0
+        },
+        "capabilities": {
+          "deeplinks": true,
+          "trackingLink": true,
+          "publicTerms": true,
+          "logo": true
+        },
+        "reasons": [
+          "Deeplinks erlaubt",
+          "Trackinglink verfügbar",
+          "öffentliche Programmbedingungen"
+        ],
+        "nextAction": "Über impact.com nach Produktfeed, Promotions, Codes und Publisher-Creatives fragen.",
+        "contactDraft": "Hallo Razer (Asia Pacific) Pte Ltd-Team, Angebotslotse ist ein deutsches Deal-, Preisvergleichs- und Discovery-Portal. Wir sind über impact.com bereits mit eurem Programm verbunden und möchten die Zusammenarbeit im Bereich Weitere stärker ausbauen. Besonders interessant sind für uns aktuelle Produktkataloge, zeitlich begrenzte Aktionen, Gutscheincodes und offizielle Medien, die wir transparent und mit korrekter Werbekennzeichnung darstellen können. Wenn für Publisher zusätzliche Feeds, Creatives oder aktuelle Kampagnen verfügbar sind, freuen wir uns über einen Hinweis direkt über impact.com."
+      }
+    ],
+    "marketplaceSearches": [
       {
         "category": "Haushalt & Küche",
         "siteOffers": 53,
@@ -1752,6 +1910,21 @@
           "appliances",
           "kitchen",
           "vacuum"
+        ],
+        "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
+      },
+      {
+        "category": "Audio & Creator",
+        "siteOffers": 57,
+        "joinedPrograms": 1,
+        "gapScore": 47,
+        "searchTerms": [
+          "audio",
+          "music",
+          "headphones",
+          "microphone",
+          "recording",
+          "creator"
         ],
         "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
       },
@@ -1771,8 +1944,8 @@
       {
         "category": "Technik & Computer",
         "siteOffers": 45,
-        "joinedPrograms": 0,
-        "gapScore": 45,
+        "joinedPrograms": 1,
+        "gapScore": 35,
         "searchTerms": [
           "electronics",
           "computer",
