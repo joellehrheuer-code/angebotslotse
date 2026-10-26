@@ -1,17 +1,17 @@
 {
-  "generatedAt": "2026-10-26T04:47:33.594Z",
-  "newAwinPrograms": 1,
-  "newImpactPrograms": 6,
+  "generatedAt": "2026-10-26T15:13:20.949Z",
+  "newAwinPrograms": 3,
+  "newImpactPrograms": 0,
   "newDaisyconPrograms": 0,
   "newWebgainsPrograms": 0,
   "activeAwinPrograms": 6,
-  "activeImpactPrograms": 6,
+  "activeImpactPrograms": 0,
   "applicationsSent": 0,
   "pendingApplications": 0,
   "manualApplications": 8,
   "networkReviewActions": 6,
   "awinDiscoveryOffers": 200,
-  "applicationCandidates": 2613,
+  "applicationCandidates": 2610,
   "newMerchants": 0,
   "newProducts": 0,
   "productsWithImage": 201,
@@ -199,7 +199,7 @@
     ]
   },
   "quarantinedRecords": 130,
-  "blockedPublisherPromotions": 5,
+  "blockedPublisherPromotions": 4,
   "dailyDeal": "0218eb3f0ddf604a",
   "dailyHighlights": [
     "0218eb3f0ddf604a",
@@ -211,7 +211,6 @@
   "weekDeals": [
     "836b8f268429f0ab",
     "77f8095abef1454e",
-    "53cc668dd74e2a93",
     "ff91d2f4d8027497"
   ],
   "monthHighlights": [
