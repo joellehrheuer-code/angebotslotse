@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-26T21:02:32.860Z",
-  "newAwinPrograms": 0,
-  "newImpactPrograms": 0,
+  "generatedAt": "2026-10-27T05:04:25.214Z",
+  "newAwinPrograms": 1,
+  "newImpactPrograms": 6,
   "newDaisyconPrograms": 0,
   "newWebgainsPrograms": 0,
   "activeAwinPrograms": 6,
-  "activeImpactPrograms": 0,
+  "activeImpactPrograms": 6,
   "applicationsSent": 0,
   "pendingApplications": 0,
   "manualApplications": 8,
@@ -20,14 +20,14 @@
   "productsWithOldPrice": 0,
   "productsWithDiscount": 0,
   "newCoupons": 0,
-  "coupons": 4,
+  "coupons": 3,
   "priceChanges": 0,
-  "expiredOffers": 0,
-  "expiredCoupons": 0,
+  "expiredOffers": 1,
+  "expiredCoupons": 1,
   "filteredForeignLocale": 0,
-  "totalProducts": 209,
+  "totalProducts": 208,
   "productsBySource": {
-    "Awin": 209
+    "Awin": 208
   },
   "officialImagesBySource": {
     "Awin": 201
@@ -37,7 +37,7 @@
     "Hollyland DE": 97,
     "Outin Germany": 55,
     "ANTHBOT DE": 50,
-    "EMP DE": 5,
+    "EMP DE": 4,
     "Imou DE": 1,
     "PDF Agile": 1
   },
@@ -46,8 +46,8 @@
     "haushalt": 53,
     "garten": 44,
     "zubehoer": 40,
-    "sonstiges": 5,
     "computer": 4,
+    "sonstiges": 4,
     "werkzeug": 3,
     "freizeit": 1,
     "smart-home": 1,
@@ -199,25 +199,24 @@
     ]
   },
   "quarantinedRecords": 130,
-  "blockedPublisherPromotions": 4,
-  "dailyDeal": "0218eb3f0ddf604a",
+  "blockedPublisherPromotions": 5,
+  "dailyDeal": "031577cab5fd476a",
   "dailyHighlights": [
-    "0218eb3f0ddf604a",
-    "2e098dc2ce1b3a7a",
+    "031577cab5fd476a",
+    "77685b2726a733e6",
     "4bccf1aeb97b5a82",
-    "2d494a434af99f92",
-    "134153f06aa7013c"
+    "2d790a677fd6c76e",
+    "2d494a434af99f92"
   ],
   "weekDeals": [
     "836b8f268429f0ab",
-    "77f8095abef1454e",
     "ff91d2f4d8027497"
   ],
   "monthHighlights": [
     "836b8f268429f0ab",
     "4bccf1aeb97b5a82",
     "ca56d808d3c14eb1",
-    "77f8095abef1454e",
+    "53cc668dd74e2a93",
     "77685b2726a733e6"
   ],
   "apiErrors": 0,
