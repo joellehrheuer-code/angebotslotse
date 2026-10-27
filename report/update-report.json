@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-27T14:32:38.473Z",
+  "generatedAt": "2026-10-27T20:43:14.101Z",
   "newAwinPrograms": 2,
   "newImpactPrograms": 0,
   "newDaisyconPrograms": 0,
@@ -11,7 +11,7 @@
   "manualApplications": 8,
   "networkReviewActions": 6,
   "awinDiscoveryOffers": 200,
-  "applicationCandidates": 2611,
+  "applicationCandidates": 2613,
   "newMerchants": 0,
   "newProducts": 0,
   "productsWithImage": 201,
@@ -208,9 +208,7 @@
     "2d790a677fd6c76e",
     "2d494a434af99f92"
   ],
-  "weekDeals": [
-    "836b8f268429f0ab"
-  ],
+  "weekDeals": [],
   "monthHighlights": [
     "836b8f268429f0ab",
     "4bccf1aeb97b5a82",
