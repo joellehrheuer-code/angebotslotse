@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-27T05:04:25.214Z",
+  "generatedAt": "2026-10-27T14:32:38.473Z",
   "dailyNewContactLimit": 8,
   "safeguards": {
     "dedupeAgainst": "report/partner-outreach-status.json",
@@ -51,52 +51,6 @@
       "routineOutreachAllowed": false,
       "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Acer DE redaktionell passend im Bereich Technik & Computer einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
       "nextAction": "Official Awin program verified. Program is relevant for computer/IT sites, but no dedicated German affiliate email was verified. Program terms require review before application.",
-      "networkApplicationNextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "contractualSubmissionAllowed": false,
-      "reason": "Routine-Outreach darf nur an verifizierte offizielle Kontakte vorbereitet/versendet werden; Vertragsbedingungen, AGB, Exklusivität oder kostenpflichtige Verpflichtungen werden nicht automatisch akzeptiert."
-    },
-    {
-      "id": "awin-117833",
-      "network": "Awin",
-      "brand": "ESM Computer DE",
-      "advertiserId": 117833,
-      "programId": null,
-      "campaignId": null,
-      "category": "Technik & Computer",
-      "priority": "mittel",
-      "score": 65,
-      "networkStatus": "notjoined",
-      "actionType": "application-review",
-      "contact": null,
-      "contactType": null,
-      "contactSource": null,
-      "contactState": "official-contact-research-required",
-      "routineOutreachAllowed": false,
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten ESM Computer DE redaktionell passend im Bereich Technik & Computer einbinden. Bei Awin sind aktuell 6 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "networkApplicationNextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "contractualSubmissionAllowed": false,
-      "reason": "Routine-Outreach darf nur an verifizierte offizielle Kontakte vorbereitet/versendet werden; Vertragsbedingungen, AGB, Exklusivität oder kostenpflichtige Verpflichtungen werden nicht automatisch akzeptiert."
-    },
-    {
-      "id": "awin-10092",
-      "network": "Awin",
-      "brand": "Medionshop DE",
-      "advertiserId": 10092,
-      "programId": null,
-      "campaignId": null,
-      "category": "Technik & Computer",
-      "priority": "mittel",
-      "score": 65,
-      "networkStatus": "notjoined",
-      "actionType": "application-review",
-      "contact": null,
-      "contactType": null,
-      "contactSource": null,
-      "contactState": "official-contact-research-required",
-      "routineOutreachAllowed": false,
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Medionshop DE redaktionell passend im Bereich Technik & Computer einbinden. Bei Awin sind aktuell 6 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
       "networkApplicationNextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
       "contractualSubmissionAllowed": false,
       "reason": "Routine-Outreach darf nur an verifizierte offizielle Kontakte vorbereitet/versendet werden; Vertragsbedingungen, AGB, Exklusivität oder kostenpflichtige Verpflichtungen werden nicht automatisch akzeptiert."
@@ -183,6 +137,20 @@
       "reason": "existing-status:rejected",
       "relatedBrand": null,
       "status": "rejected",
+      "lastContactAt": "2026-10-06"
+    },
+    {
+      "brand": "Fressnapf-Online-Shop DE",
+      "reason": "existing-status:contacted",
+      "relatedBrand": null,
+      "status": "contacted",
+      "lastContactAt": "2026-10-08T19:41:00Z"
+    },
+    {
+      "brand": "INTERSPORT DE",
+      "reason": "existing-status:needs-info",
+      "relatedBrand": null,
+      "status": "needs-info",
       "lastContactAt": "2026-10-06"
     }
   ]
