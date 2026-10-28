@@ -1,19 +1,5 @@
 [
   {
-    "code": "15OFF",
-    "discountText": "Von Bandshirts bis Boots: Sichere dir 15% Rabatt auf deinen neuen Look ab 59,99€",
-    "discountPercent": null,
-    "validFrom": "2026-10-20T22:00:00.000Z",
-    "validUntil": "2026-10-27T22:59:00.000Z",
-    "merchant": "EMP DE",
-    "landingUrl": "https://www.awin1.com/cread.php?awinmid=14172&awinaffid=3045061&ued=https%3A%2F%2Fwww.emp.de%2Fbekleidung-accessoires%2F",
-    "terms": "*Nur online. Gilt ab einem Kauf ab mindestens 59,99€. Nach Codeeingabe wird der Rabatt automatisch am Ende der Bestellung abgezogen. Von der Reduzierung ausgeschlossen sind Bücher, Medien, Tickets, Rammstein, (Till) Lindemann, Böhse Onkelz, Broilers, Die Ärzte, Die Toten Hosen, Metality, Gutscheine & Artikel, die einen Spendenbeitrag beinhalten. Nicht mit anderen Aktionscodes kombinierbar. Gültig bis einschließlich 27.10.2026",
-    "source": "awin",
-    "isCommunityExclusive": false,
-    "creatorCode": null,
-    "creatorBenefit": null
-  },
-  {
     "code": "IMOUAFF5",
     "discountText": "only use it once",
     "discountPercent": null,

@@ -1,6 +1,38 @@
 {
-  "updatedAt": "2026-10-27T20:43:14.031Z",
+  "updatedAt": "2026-10-28T05:42:55.369Z",
   "items": [
+    {
+      "id": "53cc668dd74e2a93",
+      "slug": "sichere-dir-herbst-styles-mit-15-rabatt-bei-emp-53cc668d",
+      "title": "Sichere dir Herbst-Styles mit 15% Rabatt bei EMP!",
+      "advertiser": "EMP DE",
+      "source": "awin",
+      "productId": null,
+      "category": "sonstiges",
+      "lastPrice": null,
+      "currency": "EUR",
+      "firstSeen": "2026-10-19T12:11:30.000Z",
+      "lastSeen": "2026-10-27T20:43:13.879Z",
+      "endDate": "2026-10-27T22:59:00.000Z",
+      "archivedAt": "2026-10-28T05:42:55.369Z",
+      "reason": "expired"
+    },
+    {
+      "id": "eb7d93caffb6eb7d",
+      "slug": "extended-deals-deals-deals-eb7d93ca",
+      "title": "Extended: Deals, Deals, Deals!",
+      "advertiser": "EMP DE",
+      "source": "awin",
+      "productId": null,
+      "category": "sonstiges",
+      "lastPrice": null,
+      "currency": "EUR",
+      "firstSeen": "2026-10-06T10:32:39.000Z",
+      "lastSeen": "2026-10-27T20:43:13.879Z",
+      "endDate": "2026-10-27T22:59:00.000Z",
+      "archivedAt": "2026-10-28T05:42:55.369Z",
+      "reason": "expired"
+    },
     {
       "id": "77f8095abef1454e",
       "slug": "affiliate-exklusiv-20-rabatt-auf-dark-season-styles-77f8095a",

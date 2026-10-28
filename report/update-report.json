@@ -1,17 +1,17 @@
 {
-  "generatedAt": "2026-10-27T20:43:14.101Z",
-  "newAwinPrograms": 2,
-  "newImpactPrograms": 0,
+  "generatedAt": "2026-10-28T05:42:55.462Z",
+  "newAwinPrograms": 0,
+  "newImpactPrograms": 6,
   "newDaisyconPrograms": 0,
   "newWebgainsPrograms": 0,
   "activeAwinPrograms": 6,
-  "activeImpactPrograms": 0,
+  "activeImpactPrograms": 6,
   "applicationsSent": 0,
   "pendingApplications": 0,
   "manualApplications": 8,
   "networkReviewActions": 6,
   "awinDiscoveryOffers": 200,
-  "applicationCandidates": 2613,
+  "applicationCandidates": 2616,
   "newMerchants": 0,
   "newProducts": 0,
   "productsWithImage": 201,
@@ -20,14 +20,14 @@
   "productsWithOldPrice": 0,
   "productsWithDiscount": 0,
   "newCoupons": 0,
-  "coupons": 3,
+  "coupons": 2,
   "priceChanges": 0,
-  "expiredOffers": 0,
-  "expiredCoupons": 0,
+  "expiredOffers": 2,
+  "expiredCoupons": 1,
   "filteredForeignLocale": 0,
-  "totalProducts": 208,
+  "totalProducts": 206,
   "productsBySource": {
-    "Awin": 208
+    "Awin": 206
   },
   "officialImagesBySource": {
     "Awin": 201
@@ -37,7 +37,7 @@
     "Hollyland DE": 97,
     "Outin Germany": 55,
     "ANTHBOT DE": 50,
-    "EMP DE": 4,
+    "EMP DE": 2,
     "Imou DE": 1,
     "PDF Agile": 1
   },
@@ -47,8 +47,8 @@
     "garten": 44,
     "zubehoer": 40,
     "computer": 4,
-    "sonstiges": 4,
     "werkzeug": 3,
+    "sonstiges": 2,
     "freizeit": 1,
     "smart-home": 1,
     "technik": 1
@@ -199,21 +199,21 @@
     ]
   },
   "quarantinedRecords": 130,
-  "blockedPublisherPromotions": 4,
-  "dailyDeal": "031577cab5fd476a",
+  "blockedPublisherPromotions": 5,
+  "dailyDeal": "836b8f268429f0ab",
   "dailyHighlights": [
-    "031577cab5fd476a",
-    "77685b2726a733e6",
+    "836b8f268429f0ab",
+    "0a432f17c1a1c534",
     "4bccf1aeb97b5a82",
-    "2d790a677fd6c76e",
-    "2d494a434af99f92"
+    "23d19c80f036edb6",
+    "ca56d808d3c14eb1"
   ],
   "weekDeals": [],
   "monthHighlights": [
     "836b8f268429f0ab",
     "4bccf1aeb97b5a82",
     "ca56d808d3c14eb1",
-    "53cc668dd74e2a93",
+    "ff91d2f4d8027497",
     "77685b2726a733e6"
   ],
   "apiErrors": 0,

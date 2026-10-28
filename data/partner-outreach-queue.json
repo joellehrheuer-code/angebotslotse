@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-27T20:43:14.101Z",
+  "generatedAt": "2026-10-28T05:42:55.462Z",
   "dailyNewContactLimit": 8,
   "safeguards": {
     "dedupeAgainst": "report/partner-outreach-status.json",
@@ -51,6 +51,29 @@
       "routineOutreachAllowed": false,
       "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Acer DE redaktionell passend im Bereich Technik & Computer einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
       "nextAction": "Official Awin program verified. Program is relevant for computer/IT sites, but no dedicated German affiliate email was verified. Program terms require review before application.",
+      "networkApplicationNextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "contractualSubmissionAllowed": false,
+      "reason": "Routine-Outreach darf nur an verifizierte offizielle Kontakte vorbereitet/versendet werden; Vertragsbedingungen, AGB, Exklusivität oder kostenpflichtige Verpflichtungen werden nicht automatisch akzeptiert."
+    },
+    {
+      "id": "awin-76734",
+      "network": "Awin",
+      "brand": "iHerb EUR",
+      "advertiserId": 76734,
+      "programId": null,
+      "campaignId": null,
+      "category": "Gesundheit & Wellness",
+      "priority": "mittel",
+      "score": 63,
+      "networkStatus": "notjoined",
+      "actionType": "application-review",
+      "contact": null,
+      "contactType": "official-program-protected-contact",
+      "contactSource": "https://de.iherb.com/info/affiliates",
+      "contactState": "verified-contact-manual-review",
+      "routineOutreachAllowed": false,
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten iHerb EUR redaktionell passend im Bereich Gesundheit & Wellness einbinden. Bei Awin sind aktuell 3 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "nextAction": "Official iHerb affiliate page explicitly accepts shopping comparison publishers and provides an application/promotions contact, but the address is Cloudflare-protected in public HTML. Do not guess the email; verify interactively before sending.",
       "networkApplicationNextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
       "contractualSubmissionAllowed": false,
       "reason": "Routine-Outreach darf nur an verifizierte offizielle Kontakte vorbereitet/versendet werden; Vertragsbedingungen, AGB, Exklusivität oder kostenpflichtige Verpflichtungen werden nicht automatisch akzeptiert."
@@ -145,13 +168,6 @@
       "relatedBrand": null,
       "status": "contacted",
       "lastContactAt": "2026-10-08T19:41:00Z"
-    },
-    {
-      "brand": "INTERSPORT DE",
-      "reason": "existing-status:needs-info",
-      "relatedBrand": null,
-      "status": "needs-info",
-      "lastContactAt": "2026-10-06"
     }
   ]
 }
