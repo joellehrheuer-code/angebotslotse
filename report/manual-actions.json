@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-28T05:42:55.462Z",
+  "generatedAt": "2026-10-28T15:07:07.285Z",
   "topActions": [
     {
       "rank": 1,
@@ -23,6 +23,25 @@
     {
       "rank": 2,
       "network": "Awin",
+      "brand": "YesStyle DE",
+      "reference": 15443,
+      "advertiserId": 15443,
+      "programId": null,
+      "campaignId": null,
+      "category": "Gesundheit & Wellness",
+      "priority": "hoch",
+      "score": 75,
+      "kind": "application",
+      "status": "notjoined",
+      "actionType": "application-review",
+      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten YesStyle DE redaktionell passend im Bereich Gesundheit & Wellness einbinden. Bei Awin sind aktuell 6 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "submissionReady": false,
+      "humanApprovalRequired": true
+    },
+    {
+      "rank": 3,
+      "network": "Awin",
       "brand": "Anker DE",
       "reference": 30691,
       "advertiserId": 30691,
@@ -40,7 +59,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 3,
+      "rank": 4,
       "network": "Awin",
       "brand": "Alternate DE",
       "reference": 11731,
@@ -59,7 +78,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 4,
+      "rank": 5,
       "network": "Awin",
       "brand": "Acer DE",
       "reference": 12591,
@@ -78,7 +97,7 @@
       "humanApprovalRequired": true
     },
     {
-      "rank": 5,
+      "rank": 6,
       "network": "Awin",
       "brand": "Anker Solix DE",
       "reference": 32623,
@@ -93,25 +112,6 @@
       "actionType": "application-review",
       "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
       "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Anker Solix DE redaktionell passend im Bereich Technik & Computer einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-      "submissionReady": false,
-      "humanApprovalRequired": true
-    },
-    {
-      "rank": 6,
-      "network": "Awin",
-      "brand": "iHerb EUR",
-      "reference": 76734,
-      "advertiserId": 76734,
-      "programId": null,
-      "campaignId": null,
-      "category": "Gesundheit & Wellness",
-      "priority": "mittel",
-      "score": 63,
-      "kind": "application",
-      "status": "notjoined",
-      "actionType": "application-review",
-      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten iHerb EUR redaktionell passend im Bereich Gesundheit & Wellness einbinden. Bei Awin sind aktuell 3 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
       "submissionReady": false,
       "humanApprovalRequired": true
     },
@@ -252,6 +252,25 @@
     },
     {
       "rank": 2,
+      "network": "Daisycon",
+      "brand": "Daisycon Marketplace",
+      "reference": "home, appliances, kitchen, garden, DIY",
+      "advertiserId": null,
+      "programId": null,
+      "campaignId": null,
+      "category": "Haushalt & Alltag",
+      "priority": "hoch",
+      "score": 87,
+      "kind": "marketplace-search",
+      "status": "connection-required",
+      "actionType": "connection-required",
+      "nextAction": "Daisycon-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Haushalt & Alltag priorisieren.",
+      "applicationDraft": null,
+      "submissionReady": false,
+      "humanApprovalRequired": false
+    },
+    {
+      "rank": 3,
       "network": "Tradedoubler",
       "brand": "Tradedoubler Marketplace",
       "reference": "audio, music, headphones, microphone, recording",
@@ -270,7 +289,26 @@
       "humanApprovalRequired": false
     },
     {
-      "rank": 3,
+      "rank": 4,
+      "network": "Tradedoubler",
+      "brand": "Tradedoubler Marketplace",
+      "reference": "home, appliances, kitchen, garden, DIY",
+      "advertiserId": null,
+      "programId": null,
+      "campaignId": null,
+      "category": "Haushalt & Alltag",
+      "priority": "hoch",
+      "score": 87,
+      "kind": "marketplace-search",
+      "status": "connection-required",
+      "actionType": "connection-required",
+      "nextAction": "Tradedoubler-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Haushalt & Alltag priorisieren.",
+      "applicationDraft": null,
+      "submissionReady": false,
+      "humanApprovalRequired": false
+    },
+    {
+      "rank": 5,
       "network": "Webgains",
       "brand": "Webgains Marketplace",
       "reference": "audio, music, headphones, microphone, recording",
@@ -289,44 +327,6 @@
       "humanApprovalRequired": false
     },
     {
-      "rank": 4,
-      "network": "Daisycon",
-      "brand": "Daisycon Marketplace",
-      "reference": "home, appliances, kitchen, garden, DIY",
-      "advertiserId": null,
-      "programId": null,
-      "campaignId": null,
-      "category": "Haushalt & Alltag",
-      "priority": "hoch",
-      "score": 86,
-      "kind": "marketplace-search",
-      "status": "connection-required",
-      "actionType": "connection-required",
-      "nextAction": "Daisycon-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Haushalt & Alltag priorisieren.",
-      "applicationDraft": null,
-      "submissionReady": false,
-      "humanApprovalRequired": false
-    },
-    {
-      "rank": 5,
-      "network": "Tradedoubler",
-      "brand": "Tradedoubler Marketplace",
-      "reference": "home, appliances, kitchen, garden, DIY",
-      "advertiserId": null,
-      "programId": null,
-      "campaignId": null,
-      "category": "Haushalt & Alltag",
-      "priority": "hoch",
-      "score": 86,
-      "kind": "marketplace-search",
-      "status": "connection-required",
-      "actionType": "connection-required",
-      "nextAction": "Tradedoubler-Publisherzugang/API bzw. offiziellen Feed freischalten; danach Programme für Haushalt & Alltag priorisieren.",
-      "applicationDraft": null,
-      "submissionReady": false,
-      "humanApprovalRequired": false
-    },
-    {
       "rank": 6,
       "network": "Webgains",
       "brand": "Webgains Marketplace",
@@ -336,7 +336,7 @@
       "campaignId": null,
       "category": "Haushalt & Alltag",
       "priority": "hoch",
-      "score": 86,
+      "score": 87,
       "kind": "marketplace-search",
       "status": "connection-required",
       "actionType": "connection-required",
@@ -476,29 +476,8 @@
     {
       "id": "impact-marketplace-review",
       "platform": "Impact",
-      "action": "Impact Marketplace zuerst nach passenden Brands für Haushalt & Küche durchsuchen (home, appliances, kitchen, vacuum).",
-      "reason": "Automatisch erkannte Abdeckungslücke: 53 Angebotslotse-Angebote stehen 0 zugeordneten Impact-Programmen gegenüber. Vertragsbedingungen vor Bewerbung prüfen."
-    },
-    {
-      "id": "impact-contact-4482",
-      "platform": "Impact",
-      "action": "Aktuelle Aktionen und Codes prominent einbinden; Produktfeed beim Brand-Team erfragen.",
-      "reason": "Bestehende Partnerschaft automatisch priorisiert (39 Punkte): passt zu Audio & Creator, 1 aktiver Deal, Deeplinks erlaubt, Trackinglink verfügbar, öffentliche Programmbedingungen.",
-      "contactDraft": "Hallo Martinic - martinic-Team, Angebotslotse ist ein deutsches Deal-, Preisvergleichs- und Discovery-Portal. Wir sind über impact.com bereits mit eurem Programm verbunden und möchten die Zusammenarbeit im Bereich Weitere stärker ausbauen. Besonders interessant sind für uns aktuelle Produktkataloge, zeitlich begrenzte Aktionen, Gutscheincodes und offizielle Medien, die wir transparent und mit korrekter Werbekennzeichnung darstellen können. Wenn für Publisher zusätzliche Feeds, Creatives oder aktuelle Kampagnen verfügbar sind, freuen wir uns über einen Hinweis direkt über impact.com."
-    },
-    {
-      "id": "impact-contact-53368",
-      "platform": "Impact",
-      "action": "Über impact.com nach Produktfeed, Promotions, Codes und Publisher-Creatives fragen.",
-      "reason": "Bestehende Partnerschaft automatisch priorisiert (34 Punkte): passt zu Technik & Computer, Deeplinks erlaubt, Trackinglink verfügbar, öffentliche Programmbedingungen.",
-      "contactDraft": "Hallo GearUP Portal Pte Ltd-Team, Angebotslotse ist ein deutsches Deal-, Preisvergleichs- und Discovery-Portal. Wir sind über impact.com bereits mit eurem Programm verbunden und möchten die Zusammenarbeit im Bereich Weitere stärker ausbauen. Besonders interessant sind für uns aktuelle Produktkataloge, zeitlich begrenzte Aktionen, Gutscheincodes und offizielle Medien, die wir transparent und mit korrekter Werbekennzeichnung darstellen können. Wenn für Publisher zusätzliche Feeds, Creatives oder aktuelle Kampagnen verfügbar sind, freuen wir uns über einen Hinweis direkt über impact.com."
-    },
-    {
-      "id": "impact-contact-3770",
-      "platform": "Impact",
-      "action": "Aktuelle Aktionen und Codes prominent einbinden; Produktfeed beim Brand-Team erfragen.",
-      "reason": "Bestehende Partnerschaft automatisch priorisiert (26 Punkte): 1 aktiver Deal, 1 Creative, Deeplinks erlaubt, Trackinglink verfügbar, öffentliche Programmbedingungen.",
-      "contactDraft": "Hallo Belkin-Team, Angebotslotse ist ein deutsches Deal-, Preisvergleichs- und Discovery-Portal. Wir sind über impact.com bereits mit eurem Programm verbunden und möchten die Zusammenarbeit im Bereich Weitere stärker ausbauen. Besonders interessant sind für uns aktuelle Produktkataloge, zeitlich begrenzte Aktionen, Gutscheincodes und offizielle Medien, die wir transparent und mit korrekter Werbekennzeichnung darstellen können. Wenn für Publisher zusätzliche Feeds, Creatives oder aktuelle Kampagnen verfügbar sind, freuen wir uns über einen Hinweis direkt über impact.com."
+      "action": "Impact Marketplace zuerst nach passenden Brands für Audio & Creator durchsuchen (audio, music, headphones, microphone, recording, creator).",
+      "reason": "Automatisch erkannte Abdeckungslücke: 57 Angebotslotse-Angebote stehen 0 zugeordneten Impact-Programmen gegenüber. Vertragsbedingungen vor Bewerbung prüfen."
     },
     {
       "id": "awin-apply-77004",
@@ -506,6 +485,13 @@
       "action": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
       "reason": "Automatisch priorisiert (81 Punkte): passt zu Mode & Sport, Sortimentslücke: erst 0 veröffentlichte Angebote in Mode & Sport, strategisch relevante Marke, Awin Index 54.53, Approval 84.74%, EPC 0.25. Keine automatische Zustimmung zu Vertragsbedingungen.",
       "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten adidas DE redaktionell passend im Bereich Mode & Sport einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung."
+    },
+    {
+      "id": "awin-apply-15443",
+      "platform": "Awin",
+      "action": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "reason": "Automatisch priorisiert (75 Punkte): passt zu Gesundheit & Wellness, Sortimentslücke: erst 0 veröffentlichte Angebote in Gesundheit & Wellness, 6 aktive DE-Aktionen. Keine automatische Zustimmung zu Vertragsbedingungen.",
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten YesStyle DE redaktionell passend im Bereich Gesundheit & Wellness einbinden. Bei Awin sind aktuell 6 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung."
     },
     {
       "id": "awin-apply-30691",
@@ -534,13 +520,6 @@
       "action": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
       "reason": "Automatisch priorisiert (68 Punkte): passt zu Technik & Computer, Sortimentslücke: erst 45 veröffentlichte Angebote in Technik & Computer, strategisch relevante Marke, Awin Index 42.07, Approval 89.87%, EPC 0.78. Keine automatische Zustimmung zu Vertragsbedingungen.",
       "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Anker Solix DE redaktionell passend im Bereich Technik & Computer einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung."
-    },
-    {
-      "id": "awin-apply-76734",
-      "platform": "Awin",
-      "action": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "reason": "Automatisch priorisiert (63 Punkte): passt zu Gesundheit & Wellness, Sortimentslücke: erst 0 veröffentlichte Angebote in Gesundheit & Wellness, 3 aktive DE-Aktionen. Keine automatische Zustimmung zu Vertragsbedingungen.",
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten iHerb EUR redaktionell passend im Bereich Gesundheit & Wellness einbinden. Bei Awin sind aktuell 3 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung."
     },
     {
       "id": "awin-apply-84955",

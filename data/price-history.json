@@ -86142,5 +86142,13 @@
     "timestamp": "2026-10-28T05:42:55.391Z",
     "price": 326.36,
     "currency": "EUR"
+  },
+  {
+    "offerId": "8923043d2081d550",
+    "productId": "OTST-MOFE-01-MG",
+    "merchant": "Outin Germany",
+    "timestamp": "2026-10-28T15:07:07.234Z",
+    "price": 279.99,
+    "currency": "EUR"
   }
 ]
