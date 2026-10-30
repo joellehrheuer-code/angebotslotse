@@ -89382,5 +89382,45 @@
     "timestamp": "2026-10-30T05:47:14.176Z",
     "price": 326.36,
     "currency": "EUR"
+  },
+  {
+    "offerId": "7ef060096558128a",
+    "productId": "51296699023673",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-10-30T15:04:12.324Z",
+    "price": 105,
+    "currency": "EUR"
+  },
+  {
+    "offerId": "5b14e9eb90d1539f",
+    "productId": "51296699056441",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-10-30T15:04:12.324Z",
+    "price": 330,
+    "currency": "EUR"
+  },
+  {
+    "offerId": "557662267012fa01",
+    "productId": "51440656974137",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-10-30T15:04:12.324Z",
+    "price": 550,
+    "currency": "EUR"
+  },
+  {
+    "offerId": "efe2e1fe0a6fb96a",
+    "productId": "67879389299001",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-10-30T15:04:12.324Z",
+    "price": 1150,
+    "currency": "EUR"
+  },
+  {
+    "offerId": "8a4647748fa3692d",
+    "productId": "OTST-NOFE-02-SG",
+    "merchant": "Outin Germany",
+    "timestamp": "2026-10-30T15:04:12.324Z",
+    "price": 249.99,
+    "currency": "EUR"
   }
 ]
