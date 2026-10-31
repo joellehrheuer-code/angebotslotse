@@ -1,8 +1,27 @@
 {
-  "generatedAt": "2026-10-31T05:40:35.774Z",
+  "generatedAt": "2026-10-31T14:33:10.787Z",
   "topActions": [
     {
       "rank": 1,
+      "network": "Awin",
+      "brand": "Anker DE",
+      "reference": 30691,
+      "advertiserId": 30691,
+      "programId": null,
+      "campaignId": null,
+      "category": "Technik & Computer",
+      "priority": "hoch",
+      "score": 103,
+      "kind": "application",
+      "status": "notjoined",
+      "actionType": "application-review",
+      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Anker DE redaktionell passend im Bereich Technik & Computer einbinden. Bei Awin sind aktuell 16 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "submissionReady": false,
+      "humanApprovalRequired": true
+    },
+    {
+      "rank": 2,
       "network": "Awin",
       "brand": "adidas DE",
       "reference": 77004,
@@ -17,25 +36,6 @@
       "actionType": "application-review",
       "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
       "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten adidas DE redaktionell passend im Bereich Mode & Sport einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-      "submissionReady": false,
-      "humanApprovalRequired": true
-    },
-    {
-      "rank": 2,
-      "network": "Awin",
-      "brand": "Anker DE",
-      "reference": 30691,
-      "advertiserId": 30691,
-      "programId": null,
-      "campaignId": null,
-      "category": "Technik & Computer",
-      "priority": "hoch",
-      "score": 73,
-      "kind": "application",
-      "status": "notjoined",
-      "actionType": "application-review",
-      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Anker DE redaktionell passend im Bereich Technik & Computer einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
       "submissionReady": false,
       "humanApprovalRequired": true
     },
@@ -480,18 +480,18 @@
       "reason": "Automatisch erkannte Abdeckungslücke: 57 Angebotslotse-Angebote stehen 0 zugeordneten Impact-Programmen gegenüber. Vertragsbedingungen vor Bewerbung prüfen."
     },
     {
+      "id": "awin-apply-30691",
+      "platform": "Awin",
+      "action": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "reason": "Automatisch priorisiert (103 Punkte): passt zu Technik & Computer, Sortimentslücke: erst 45 veröffentlichte Angebote in Technik & Computer, strategisch relevante Marke, 16 aktive DE-Aktionen, Awin Index 64.79, Approval 86.22%, EPC 0.99. Keine automatische Zustimmung zu Vertragsbedingungen.",
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Anker DE redaktionell passend im Bereich Technik & Computer einbinden. Bei Awin sind aktuell 16 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung."
+    },
+    {
       "id": "awin-apply-77004",
       "platform": "Awin",
       "action": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
       "reason": "Automatisch priorisiert (81 Punkte): passt zu Mode & Sport, Sortimentslücke: erst 0 veröffentlichte Angebote in Mode & Sport, strategisch relevante Marke, Awin Index 54.53, Approval 84.74%, EPC 0.25. Keine automatische Zustimmung zu Vertragsbedingungen.",
       "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten adidas DE redaktionell passend im Bereich Mode & Sport einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung."
-    },
-    {
-      "id": "awin-apply-30691",
-      "platform": "Awin",
-      "action": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "reason": "Automatisch priorisiert (73 Punkte): passt zu Technik & Computer, Sortimentslücke: erst 45 veröffentlichte Angebote in Technik & Computer, strategisch relevante Marke, Awin Index 64.79, Approval 86.22%, EPC 0.99. Keine automatische Zustimmung zu Vertragsbedingungen.",
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Anker DE redaktionell passend im Bereich Technik & Computer einbinden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung."
     },
     {
       "id": "awin-apply-11731",
