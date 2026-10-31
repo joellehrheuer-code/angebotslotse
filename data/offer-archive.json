@@ -1,6 +1,22 @@
 {
-  "updatedAt": "2026-10-31T20:00:50.409Z",
+  "updatedAt": "2026-10-31T23:25:46.774Z",
   "items": [
+    {
+      "id": "ff91d2f4d8027497",
+      "slug": "top-100-hoodies-handpicked-by-emp-ff91d2f4",
+      "title": "Top 100 Hoodies- Handpicked by EMP",
+      "advertiser": "EMP DE",
+      "source": "awin",
+      "productId": null,
+      "category": "sonstiges",
+      "lastPrice": null,
+      "currency": "EUR",
+      "firstSeen": "2026-10-20T09:35:16.000Z",
+      "lastSeen": "2026-10-31T20:00:50.292Z",
+      "endDate": "2026-10-31T22:59:00.000Z",
+      "archivedAt": "2026-10-31T23:25:46.774Z",
+      "reason": "expired"
+    },
     {
       "id": "53cc668dd74e2a93",
       "slug": "sichere-dir-herbst-styles-mit-15-rabatt-bei-emp-53cc668d",
