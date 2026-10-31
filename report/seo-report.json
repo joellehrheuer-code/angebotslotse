@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-10-30T20:50:14.895Z",
+  "generatedAt": "2026-10-31T05:41:14.320Z",
   "siteUrl": "https://joellehrheuer-code.github.io/angebotslotse",
   "summary": {
     "htmlPages": 470,
-    "indexableSelfCanonical": 250,
+    "indexableSelfCanonical": 249,
     "canonicalizedDuplicates": 205,
-    "noindexPages": 15,
-    "sitemapUrls": 250,
-    "pagesWithStructuredData": 445,
+    "noindexPages": 16,
+    "sitemapUrls": 249,
+    "pagesWithStructuredData": 444,
     "errors": 0,
     "warnings": 0
   },
