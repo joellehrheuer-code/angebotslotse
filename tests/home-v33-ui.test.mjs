@@ -36,6 +36,9 @@ test("offer discovery appears before the large moderation and review section",()
   assert.match(css,/\.creator-top-dock>\.top-social-links\.creator-dock-links\{/);
   assert.match(css,/\.mobile-social-menu-row>\.top-social-links\.creator-dock-links\{display:none!important\}/);
   assert.match(build,/const creatorDockMarkup=/);
+  assert.match(build,/const creatorDockSocialLinks=/);
+  assert.match(build,/class="creator-social-row"/);
+  assert.match(css,/\.creator-top-dock>\.creator-social-row\{/);
 });
 test("review state never pretends unapproved submissions have public star ratings",()=>{
   const b=build(),app=js();
