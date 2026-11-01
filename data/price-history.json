@@ -92750,5 +92750,61 @@
     "timestamp": "2026-11-01T06:02:19.288Z",
     "price": 326.36,
     "currency": "EUR"
+  },
+  {
+    "offerId": "4eb891e23ca8dcb4",
+    "productId": "M5EU-MGV04-BUNDLE",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-11-01T15:07:47.554Z",
+    "price": 649,
+    "currency": "EUR"
+  },
+  {
+    "offerId": "c67d0ef49f95c87b",
+    "productId": "M5EU-ACC-BUNDLE",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-11-01T15:07:47.554Z",
+    "price": 649,
+    "currency": "EUR"
+  },
+  {
+    "offerId": "6e57c148dab8071f",
+    "productId": "105010080",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-11-01T15:07:47.554Z",
+    "price": 649,
+    "currency": "EUR"
+  },
+  {
+    "offerId": "6f64f4a934449794",
+    "productId": "M9EU-MGV04-BUNDLE",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-11-01T15:07:47.554Z",
+    "price": 699,
+    "currency": "EUR"
+  },
+  {
+    "offerId": "bf22357424d770b0",
+    "productId": "M9EU-ACC-BUNDLE",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-11-01T15:07:47.554Z",
+    "price": 699,
+    "currency": "EUR"
+  },
+  {
+    "offerId": "e5ba678a66412730",
+    "productId": "M5PRO-MGV04-EU",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-11-01T15:07:47.554Z",
+    "price": 1168,
+    "currency": "EUR"
+  },
+  {
+    "offerId": "e1e33b35070b2aa5",
+    "productId": "M9PRO-MGV04-EU",
+    "merchant": "ANTHBOT DE",
+    "timestamp": "2026-11-01T15:07:47.554Z",
+    "price": 1468,
+    "currency": "EUR"
   }
 ]

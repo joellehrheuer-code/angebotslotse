@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-11-01T06:02:19.353Z",
+  "generatedAt": "2026-11-01T15:07:47.608Z",
   "total": 62,
   "highPriority": 12,
   "byNetwork": {
-    "Awin": 50,
     "Daisycon": 4,
     "Tradedoubler": 4,
-    "Webgains": 4
+    "Webgains": 4,
+    "Awin": 50
   },
   "reviewQueue": [
     {
@@ -19,12 +19,12 @@
       "campaignId": null,
       "category": "Tierbedarf",
       "priority": "hoch",
-      "score": 90,
+      "score": 84,
       "kind": "application",
       "status": "notjoined",
       "actionType": "application-review",
       "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Fressnapf-Online-Shop DE redaktionell passend im Bereich Tierbedarf einbinden. Bei Awin sind aktuell 8 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Fressnapf-Online-Shop DE redaktionell passend im Bereich Tierbedarf einbinden. Bei Awin sind aktuell 4 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
       "submissionReady": false,
       "humanApprovalRequired": true
     },
@@ -401,12 +401,12 @@
       "campaignId": null,
       "category": "Tierbedarf",
       "priority": "hoch",
-      "score": 90,
+      "score": 84,
       "kind": "application",
       "status": "notjoined",
       "actionType": "application-review",
       "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Fressnapf-Online-Shop DE redaktionell passend im Bereich Tierbedarf einbinden. Bei Awin sind aktuell 8 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Fressnapf-Online-Shop DE redaktionell passend im Bereich Tierbedarf einbinden. Bei Awin sind aktuell 4 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
       "submissionReady": false,
       "humanApprovalRequired": true
     },
@@ -860,24 +860,6 @@
   },
   "opportunities": [
     {
-      "network": "Awin",
-      "brand": "Fressnapf-Online-Shop DE",
-      "category": "Tierbedarf",
-      "priority": "hoch",
-      "score": 90,
-      "status": "notjoined",
-      "kind": "application",
-      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Fressnapf-Online-Shop DE redaktionell passend im Bereich Tierbedarf einbinden. Bei Awin sind aktuell 8 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
-      "reason": "passt zu Tierbedarf, Sortimentslücke: erst 0 veröffentlichte Angebote in Tierbedarf, strategisch relevante Marke, 8 aktive DE-Aktionen",
-      "reference": 14757,
-      "advertiserId": 14757,
-      "programId": null,
-      "campaignId": null,
-      "submissionReady": false,
-      "humanApprovalRequired": true
-    },
-    {
       "network": "Daisycon",
       "brand": "Daisycon Marketplace",
       "category": "Haushalt & Alltag",
@@ -984,6 +966,24 @@
       "campaignId": null,
       "submissionReady": false,
       "humanApprovalRequired": false
+    },
+    {
+      "network": "Awin",
+      "brand": "Fressnapf-Online-Shop DE",
+      "category": "Tierbedarf",
+      "priority": "hoch",
+      "score": 84,
+      "status": "notjoined",
+      "kind": "application",
+      "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Fressnapf-Online-Shop DE redaktionell passend im Bereich Tierbedarf einbinden. Bei Awin sind aktuell 4 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "reason": "passt zu Tierbedarf, Sortimentslücke: erst 0 veröffentlichte Angebote in Tierbedarf, strategisch relevante Marke, 4 aktive DE-Aktionen",
+      "reference": 14757,
+      "advertiserId": 14757,
+      "programId": null,
+      "campaignId": null,
+      "submissionReady": false,
+      "humanApprovalRequired": true
     },
     {
       "network": "Awin",

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-01T06:02:19.353Z",
+  "generatedAt": "2026-11-01T15:07:47.608Z",
   "topActions": [
     {
       "rank": 1,
@@ -11,12 +11,12 @@
       "campaignId": null,
       "category": "Tierbedarf",
       "priority": "hoch",
-      "score": 90,
+      "score": 84,
       "kind": "application",
       "status": "notjoined",
       "actionType": "application-review",
       "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Fressnapf-Online-Shop DE redaktionell passend im Bereich Tierbedarf einbinden. Bei Awin sind aktuell 8 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Fressnapf-Online-Shop DE redaktionell passend im Bereich Tierbedarf einbinden. Bei Awin sind aktuell 4 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
       "submissionReady": false,
       "humanApprovalRequired": true
     },
@@ -483,8 +483,8 @@
       "id": "awin-apply-14757",
       "platform": "Awin",
       "action": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
-      "reason": "Automatisch priorisiert (90 Punkte): passt zu Tierbedarf, Sortimentslücke: erst 0 veröffentlichte Angebote in Tierbedarf, strategisch relevante Marke, 8 aktive DE-Aktionen. Keine automatische Zustimmung zu Vertragsbedingungen.",
-      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Fressnapf-Online-Shop DE redaktionell passend im Bereich Tierbedarf einbinden. Bei Awin sind aktuell 8 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung."
+      "reason": "Automatisch priorisiert (84 Punkte): passt zu Tierbedarf, Sortimentslücke: erst 0 veröffentlichte Angebote in Tierbedarf, strategisch relevante Marke, 4 aktive DE-Aktionen. Keine automatische Zustimmung zu Vertragsbedingungen.",
+      "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Fressnapf-Online-Shop DE redaktionell passend im Bereich Tierbedarf einbinden. Bei Awin sind aktuell 4 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung."
     },
     {
       "id": "awin-apply-11330",

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-01T06:02:19.374Z",
+  "generatedAt": "2026-11-01T15:07:47.625Z",
   "market": "DE",
   "publisherId": 3045061,
   "awin": {
@@ -2224,9 +2224,9 @@
         "advertiserId": 14757,
         "status": "notjoined",
         "category": "Tierbedarf",
-        "score": 90,
+        "score": 84,
         "priority": "hoch",
-        "activeDiscoveryOffers": 8,
+        "activeDiscoveryOffers": 4,
         "offerExamples": [
           "Black Days: Jetzt sind die Preise fellig!",
           "-15% auf PREMIERE Tender Stripes für Katzen",
@@ -2249,10 +2249,10 @@
           "passt zu Tierbedarf",
           "Sortimentslücke: erst 0 veröffentlichte Angebote in Tierbedarf",
           "strategisch relevante Marke",
-          "8 aktive DE-Aktionen"
+          "4 aktive DE-Aktionen"
         ],
         "applicationRequired": true,
-        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Fressnapf-Online-Shop DE redaktionell passend im Bereich Tierbedarf einbinden. Bei Awin sind aktuell 8 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
+        "applicationDraft": "Angebotslotse ist ein unabhängiges deutsches Deal-, Preis- und Discovery-Portal. Wir möchten Fressnapf-Online-Shop DE redaktionell passend im Bereich Tierbedarf einbinden. Bei Awin sind aktuell 4 für Deutschland sichtbare Aktionen dieses Programms vorhanden. Wir verwenden ausschließlich freigegebene Produkt-, Preis-, Medien- und Aktionsdaten und kennzeichnen Affiliate-Links transparent als Werbung. Preisvorteile werden nur aus belegbaren Quelldaten dargestellt; Reichweitenangaben werden nicht erfunden. Wir freuen uns über die Prüfung unserer Bewerbung.",
         "nextAction": "Bedingungen prüfen und Bewerbung im Awin-Dashboard bestätigen.",
         "automationState": "ready-for-review"
       },
@@ -2312,7 +2312,7 @@
           "conversionRate": 3.04,
           "approvalPercentage": 84.74,
           "validationDays": 40,
-          "averagePaymentTime": "60",
+          "averagePaymentTime": "62",
           "commissionMin": null,
           "commissionMax": null,
           "commissionTypes": []
@@ -2350,7 +2350,7 @@
           "conversionRate": 3.23,
           "approvalPercentage": 86.22,
           "validationDays": 26,
-          "averagePaymentTime": "73",
+          "averagePaymentTime": "83",
           "commissionMin": null,
           "commissionMax": null,
           "commissionTypes": []
@@ -2387,7 +2387,7 @@
           "conversionRate": 0.52,
           "approvalPercentage": 90.26,
           "validationDays": 61,
-          "averagePaymentTime": "82",
+          "averagePaymentTime": "83",
           "commissionMin": null,
           "commissionMax": null,
           "commissionTypes": []
