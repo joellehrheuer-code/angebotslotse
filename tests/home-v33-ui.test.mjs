@@ -24,6 +24,16 @@ test("startpage shows swipeable top deals, creator videos and Instant Gaming bef
   assert.match(b, /homeMixedUnique,12,"\/suche\.html"\)/);
   assert.match(css(),/scroll-snap-type:x mandatory/);
 });
+test("offer discovery appears before the large moderation and review section",()=>{
+  const build=fs.readFileSync("scripts/build.mjs","utf8");
+  const css=fs.readFileSync("public/v13.css","utf8");
+  const pos=build.indexOf("const homeBody=");
+  const home=build.slice(pos,build.indexOf("const homeBodyForValidation",pos));
+  assert.ok(home.indexOf("${heroModule}")<home.indexOf("${communityModule}"));
+  assert.ok(home.indexOf('${offerSection("aktuelle-deals"')<home.indexOf("${communityModule}"));
+  assert.match(css,/\.site-header \.top-social-links\.creator-dock-links\{display:none!important\}/);
+  assert.match(build,/const creatorDockMarkup=/);
+});
 test("review state never pretends unapproved submissions have public star ratings",()=>{
   const b=build(),app=js();
   assert.match(b,/Noch keine Freigabe/);
