@@ -32,6 +32,7 @@ test("offer discovery appears before the large moderation and review section",()
   assert.ok(home.indexOf("${heroModule}")<home.indexOf("${communityModule}"));
   assert.ok(home.indexOf('${offerSection("aktuelle-deals"')<home.indexOf("${communityModule}"));
   assert.match(css,/\.site-header \.top-social-links\.creator-dock-links\{display:none!important\}/);
+  assert.match(css,/\.top-social-links\.creator-dock-links\{display:none!important\}/);
   assert.match(build,/const creatorDockMarkup=/);
 });
 test("review state never pretends unapproved submissions have public star ratings",()=>{
