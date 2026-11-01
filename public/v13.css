@@ -6664,3 +6664,10 @@ html[data-theme="black"] .savings-transparency{background:#0c1017!important;bord
 
 /* V61: global top-social override; top row lives outside the site-header element. */
 .top-social-links.creator-dock-links{display:none!important}
+
+/* V62: show full social dock below search; only duplicate header copy stays hidden. */
+.creator-top-dock>.top-social-links.creator-dock-links{
+  display:flex!important;flex-wrap:wrap!important;justify-content:center!important;align-items:center!important;gap:6px!important;
+  overflow:visible!important;max-width:100%!important;
+}
+.mobile-social-menu-row>.top-social-links.creator-dock-links{display:none!important}
