@@ -8,6 +8,6 @@ test("home hero remains compact so product cards appear early",()=>{
  assert.match(css,/\.portal-hero\{\s*min-height:0!important/);
  assert.match(css,/#aktuelle-deals\{padding-top:20px!important\}/);
  const home=build.match(/const homeBody=`([^\n]+)`;/)?.[1]||"";
- assert.ok(home.indexOf("${communityModule}")<home.indexOf("${heroModule}"));
+ assert.ok(home.indexOf("${heroModule}")<home.indexOf("${communityModule}"));
  assert.ok(home.indexOf("${heroModule}")<home.indexOf('offerSection("aktuelle-deals"'));
 });
