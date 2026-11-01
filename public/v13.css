@@ -6661,3 +6661,6 @@ html[data-theme="black"] .savings-transparency{background:#0c1017!important;bord
  .site-header .header-row{gap:8px!important}
  .site-header .creator-dock-links{max-width:100%!important}
 }
+
+/* V61: global top-social override; top row lives outside the site-header element. */
+.top-social-links.creator-dock-links{display:none!important}
