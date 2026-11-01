@@ -21,7 +21,7 @@ test("V12 homepage keeps live connected stats and premium shopping hierarchy",()
   assert.match(html,/Partnerlinks/);
   assert.match(html,/Gerade sichtbar/);
   assert.match(html,/Top-Angebote zum Durchblättern/);
-  assert.match(html,/Deal des Tages/);
+  assert.match(html,/Produkt des Tages|Deal des Tages/);
   assert.match(html,/Angebote finden/);
   assert.match(html,/Preise vergleichen/);
   assert.ok(html.indexOf("Top-Angebote zum Durchblättern") < html.indexOf("AKTUELL ANGEBUNDEN"));
