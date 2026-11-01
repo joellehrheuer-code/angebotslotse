@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-01T16:59:31.051Z",
+  "generatedAt": "2026-11-01T20:32:10.581Z",
   "dailyNewContactLimit": 8,
   "safeguards": {
     "dedupeAgainst": "report/partner-outreach-status.json",
@@ -41,7 +41,7 @@
       "campaignId": null,
       "category": "Technik & Computer",
       "priority": "hoch",
-      "score": 70,
+      "score": 71,
       "networkStatus": "notjoined",
       "actionType": "application-review",
       "contact": null,
@@ -119,18 +119,18 @@
       "lastContactAt": "2026-09-29T13:25:00+02:00"
     },
     {
-      "brand": "Fressnapf-Online-Shop DE",
-      "reason": "existing-status:contacted",
-      "relatedBrand": null,
-      "status": "contacted",
-      "lastContactAt": "2026-10-08T19:41:00Z"
-    },
-    {
       "brand": "Alternate DE",
       "reason": "existing-status:rejected",
       "relatedBrand": null,
       "status": "rejected",
       "lastContactAt": "2026-09-02T19:43:09+02:00"
+    },
+    {
+      "brand": "Fressnapf-Online-Shop DE",
+      "reason": "existing-status:contacted",
+      "relatedBrand": null,
+      "status": "contacted",
+      "lastContactAt": "2026-10-08T19:41:00Z"
     },
     {
       "brand": "BSTN DACH",
