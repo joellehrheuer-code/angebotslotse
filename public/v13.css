@@ -6650,3 +6650,14 @@ html[data-theme="light"] .savings-transparency p{color:#40536d!important}
 html[data-theme="light"] .savings-transparency a{color:#84215a!important}
 html[data-theme="black"] .savings-transparency{background:#0c1017!important;border-color:#39465a!important}
 @media(max-width:600px){.savings-transparency{padding:11px 12px!important;gap:8px!important;margin:8px 0 15px!important}.savings-transparency strong{font-size:13px!important}.savings-transparency p{font-size:11px!important}}
+
+/* V60: avoid duplicate clipped social links in the desktop header.
+   The full accessible creator social navigation remains below the search bar. */
+.site-header .top-social-links.creator-dock-links{display:none!important}
+.site-header .header-row{min-width:0!important;max-width:100%!important}
+.site-header .header-row>*{min-width:0}
+.site-header .creator-dock{max-width:100%!important}
+@media(max-width:620px){
+ .site-header .header-row{gap:8px!important}
+ .site-header .creator-dock-links{max-width:100%!important}
+}
