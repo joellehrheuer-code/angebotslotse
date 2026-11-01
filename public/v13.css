@@ -6671,3 +6671,21 @@ html[data-theme="black"] .savings-transparency{background:#0c1017!important;bord
   overflow:visible!important;max-width:100%!important;
 }
 .mobile-social-menu-row>.top-social-links.creator-dock-links{display:none!important}
+
+/* V63: independent creator social row, never shares the hidden header's CSS */
+.creator-top-dock>.creator-social-row{
+  display:flex!important;flex-wrap:wrap!important;justify-content:center!important;align-items:center!important;
+  gap:6px!important;width:100%!important;max-width:100%!important;min-width:0!important;margin-top:4px!important;
+}
+.creator-social-row>a{
+  display:inline-flex!important;align-items:center!important;justify-content:center!important;gap:5px!important;
+  min-width:0!important;padding:6px 10px!important;border:1px solid #354157!important;border-radius:9px!important;
+  background:#141a27!important;color:#e9edf6!important;font-size:11px!important;font-weight:700!important;
+  text-decoration:none!important;line-height:1.25!important;white-space:nowrap!important
+}
+.creator-social-row>a img{display:block!important;width:17px!important;height:17px!important;object-fit:contain!important}
+.creator-social-row>a:hover{border-color:#de7bbd!important;background:#242036!important}
+.creator-social-row>a:focus-visible{outline:2px solid #f39ad1!important;outline-offset:2px!important}
+html[data-theme="light"] .creator-social-row>a{background:#fff!important;color:#243249!important;border-color:#c0cbdb!important}
+html[data-theme="black"] .creator-social-row>a{background:#080b13!important;color:#edf2fb!important;border-color:#303c51!important}
+@media(max-width:620px){.creator-social-row{gap:5px!important}.creator-social-row>a{padding:6px 7px!important;font-size:10px!important}}
