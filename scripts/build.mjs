@@ -158,7 +158,8 @@ const navGroups = [
 ];
 const socialHeaderEntries=headerSocialEntries.filter(c=>socialIconByName[c.name.toLowerCase()]);
 const topSocialMarkup=socialHeaderEntries.length?`<nav class="top-social-links creator-dock-links" aria-label="Joel271997 / J0JOEL Social Media">${socialHeaderEntries.map(c=>`<a href="${esc(c.url)}" rel="me noopener" target="_blank" aria-label="${esc(c.name)}" title="${esc(c.name)}" class="social-${esc(c.name.toLowerCase())}"><img src="${url(`/social/${socialIconByName[c.name.toLowerCase()]}`)}" alt="" width="24" height="24"><span>${esc(c.name)}</span></a>`).join("")}</nav>`:"";
-const creatorDockMarkup=topSocialMarkup?`<div class="creator-top-dock"><a class="creator-dock-label" href="${url("/#projekte")}"><span>J0JOEL</span><b>Creator · Community</b></a>${topSocialMarkup}</div>`:"";
+const creatorDockSocialLinks=socialHeaderEntries.map(c=>`<a href="${esc(c.url)}" rel="me noopener" target="_blank" aria-label="${esc(c.name)}" title="${esc(c.name)}"><img src="${url(`/social/${socialIconByName[c.name.toLowerCase()]}`)}" alt="" width="20" height="20"><span>${esc(c.name)}</span></a>`).join("");
+const creatorDockMarkup=creatorDockSocialLinks?`<div class="creator-top-dock"><a class="creator-dock-label" href="${url("/#projekte")}"><span>J0JOEL</span><b>Creator · Community</b></a><nav class="creator-social-row" aria-label="Alle Social-Media-Kanäle von J0JOEL">${creatorDockSocialLinks}</nav></div>`:"";
 const searchSuggestionValues=[...new Set([
   ...categories.map(category=>labels[category]).filter(Boolean),
   ...offers.map(o=>o.brand).filter(Boolean),
