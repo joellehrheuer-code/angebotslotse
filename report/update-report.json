@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-11-01T20:32:10.581Z",
-  "newAwinPrograms": 0,
-  "newImpactPrograms": 6,
+  "generatedAt": "2026-11-02T06:01:21.867Z",
+  "newAwinPrograms": 1,
+  "newImpactPrograms": 0,
   "newDaisyconPrograms": 0,
   "newWebgainsPrograms": 0,
   "activeAwinPrograms": 6,
-  "activeImpactPrograms": 6,
+  "activeImpactPrograms": 0,
   "applicationsSent": 0,
   "pendingApplications": 0,
   "manualApplications": 8,
@@ -199,12 +199,12 @@
     ]
   },
   "quarantinedRecords": 130,
-  "blockedPublisherPromotions": 5,
-  "dailyDeal": "3546e8355f2ac80c",
+  "blockedPublisherPromotions": 4,
+  "dailyDeal": "94699f59e07a9712",
   "dailyHighlights": [
-    "3546e8355f2ac80c",
-    "836b8f268429f0ab",
-    "04ff84cbe32769ee",
+    "94699f59e07a9712",
+    "052fe5582f93e7a5",
+    "25abff877f76766e",
     "0a432f17c1a1c534",
     "ca56d808d3c14eb1"
   ],

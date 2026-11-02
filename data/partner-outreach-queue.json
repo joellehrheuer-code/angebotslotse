@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-01T20:32:10.581Z",
+  "generatedAt": "2026-11-02T06:01:21.867Z",
   "dailyNewContactLimit": 8,
   "safeguards": {
     "dedupeAgainst": "report/partner-outreach-status.json",
@@ -119,18 +119,18 @@
       "lastContactAt": "2026-09-29T13:25:00+02:00"
     },
     {
-      "brand": "Alternate DE",
-      "reason": "existing-status:rejected",
-      "relatedBrand": null,
-      "status": "rejected",
-      "lastContactAt": "2026-09-02T19:43:09+02:00"
-    },
-    {
       "brand": "Fressnapf-Online-Shop DE",
       "reason": "existing-status:contacted",
       "relatedBrand": null,
       "status": "contacted",
       "lastContactAt": "2026-10-08T19:41:00Z"
+    },
+    {
+      "brand": "Alternate DE",
+      "reason": "existing-status:rejected",
+      "relatedBrand": null,
+      "status": "rejected",
+      "lastContactAt": "2026-09-02T19:43:09+02:00"
     },
     {
       "brand": "BSTN DACH",
