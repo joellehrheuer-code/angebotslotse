@@ -1,3 +1,4 @@
+import { validatePublishedOffersState } from "./lib/live-smoke-offer-state.mjs";
 const base=(process.env.SITE_URL||"https://joellehrheuer-code.github.io/angebotslotse").replace(/\/$/,"");
 const attempts=Math.min(8,Math.max(1,Number(process.env.SMOKE_ATTEMPTS)||5));
 const retryDelay=Math.max(1000,Number(process.env.SMOKE_RETRY_DELAY_MS)||4000);
@@ -43,7 +44,7 @@ const readLiveState=async()=>{
 
 const validateState=({report,statusHtml,urls,homeHtml})=>{
   const errors=[];
-  if(!Number.isInteger(report.offers)||report.offers<=0)errors.push(`build-report offers ungültig: ${report.offers}`);
+  errors.push(...validatePublishedOffersState({report,statusHtml,homeHtml}));
   if(!Number.isInteger(report.rawRecords)||report.rawRecords<report.offers)errors.push(`build-report rawRecords ungültig: ${report.rawRecords}`);
   if(!Number.isInteger(report.sitemapUrls)||report.sitemapUrls!==urls.length)errors.push(`Sitemap-Anzahl ${urls.length} stimmt nicht mit build-report ${report.sitemapUrls} überein`);
   if(urls.length===0)errors.push("Sitemap enthält keine URLs");
