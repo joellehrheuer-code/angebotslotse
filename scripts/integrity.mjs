@@ -8,7 +8,10 @@ const quarantined = offer => (policy.quarantinedAdvertisers ?? []).some(rule => 
 const seen = new Set(); const errors = [];
 const snapshotTime = new Date(status.lastSuccessfulUpdate);
 const integrityTime = Number.isFinite(snapshotTime.valueOf()) ? snapshotTime : new Date();
-if (!status.lastSuccessfulUpdate || Date.now() - new Date(status.lastSuccessfulUpdate).getTime() > config.staleAfterHours * 3600000) errors.push("Angebotsdaten sind veraltet.");
+// Productive integrity remains strict; source freshness is tested separately
+// from structural code checks on branches and in the quality loop.
+const structuralOnly = process.argv.includes("--structural");
+if (!structuralOnly && (!status.lastSuccessfulUpdate || Date.now() - new Date(status.lastSuccessfulUpdate).getTime() > config.staleAfterHours * 3600000)) errors.push("Angebotsdaten sind veraltet.");
 for (const o of offers) {
   if (!o.id || !o.title || !o.trackingUrl) errors.push(`Unvollständig: ${o.id ?? "ohne ID"}`);
   if (seen.has(o.id)) errors.push(`Doppelte ID: ${o.id}`); seen.add(o.id);

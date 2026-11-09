@@ -16,7 +16,8 @@
     "report": "node scripts/report.mjs",
     "test": "node --test --test-concurrency=1",
     "cashback:sync": "node scripts/cashback-sync.mjs",
-    "quality:backlog": "node scripts/generate-quality-backlog.mjs"
+    "quality:backlog": "node scripts/generate-quality-backlog.mjs",
+    "check:structural": "node scripts/integrity.mjs --structural"
   },
   "engines": {
     "node": ">=22"

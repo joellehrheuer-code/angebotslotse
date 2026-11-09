@@ -120,7 +120,10 @@ try {
   const publishableOfferCount = offers.filter(offer => !isQuarantinedByPolicy(offer) && isPublicationReady(offer)).length;
   const awaitingMediaOffers = offers.filter(offer => !isQuarantinedByPolicy(offer) && isAwaitingMediaOffer(offer));
   const blockedPublisherPromotions = offers.filter(offer => !offer.isStale && !isQuarantinedByPolicy(offer) && isPublisherPromotion(offer));
-  const degraded = failed.size > 0 || creatorFeedState.state === "stale";
+  // If previously verified offers vanish, signal degraded even when APIs report OK.
+  // Expired or unverified deals must still remain hidden from visitors.
+  const lostVerifiedInventory = publishableOfferCount === 0 && Number(oldStatus.publishableOffers ?? oldStatus.activeOffers ?? 0) > 0;
+  const degraded = failed.size > 0 || creatorFeedState.state === "stale" || lostVerifiedInventory;
   status = { state: degraded ? "degraded" : "ok", lastSuccessfulUpdate: updateAt, activeOffers: publishableOfferCount,
     storedOffers: storedOfferCount, publishableOffers: publishableOfferCount,
     awaitingMedia: awaitingMediaOffers.length, blockedPublisherPromotions: blockedPublisherPromotions.length, quarantined: quarantinedOfferCount,
@@ -130,7 +133,7 @@ try {
     invalidLinks: 0, apiErrors: failed.size, sources: Object.fromEntries(sources.map(s => [s.name, { state: s.state, count: s.rows.length, error: s.error ?? null, audit: s.audit ?? null }])),
     creatorFeed: creatorFeedState,
     stale: staleOfferCount,
-    message: degraded ? "Aktualisierung teilweise eingeschränkt; bestehende geprüfte Daten bleiben geschützt." : sources.some(s => s.state === "disabled") ? "Aktualisierung mit geschützten Bestandsdaten abgeschlossen." : "Aktualisierung erfolgreich." };
+    message: lostVerifiedInventory ? "Keine aktuell verifizierten Angebote verfügbar. Veraltete oder ungeprüfte Deals bleiben ausgeblendet." : degraded ? "Aktualisierung teilweise eingeschränkt; bestehende geprüfte Daten bleiben geschützt." : sources.some(s => s.state === "disabled") ? "Aktualisierung mit geschützten Bestandsdaten abgeschlossen." : "Aktualisierung erfolgreich." };
   await fs.writeFile("data/offers.json", `${JSON.stringify(offers, null, 2)}\n`);
   await fs.writeFile("data/offer-archive.json", `${JSON.stringify(archive, null, 2)}\n`);
   const priceHistoryOffers = offers.filter(offer => !isQuarantinedByPolicy(offer));
