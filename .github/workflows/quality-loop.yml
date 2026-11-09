@@ -7,13 +7,13 @@ on:
       - ".github/workflows/quality-loop.yml"
       - "src/**"
       - "public/**"
-      - "scripts/build.mjs"
+      - "scripts/**"
       - "scripts/generate-quality-backlog.mjs"
       - "tests/**"
       - "data/quality-progress.json"
       - "docs/COMPLETION-CHECKLIST.md"
   schedule:
-    - cron: "47 */6 * * *"
+    - cron: "47 11 * * *"
   workflow_dispatch:
 
 permissions:
@@ -44,7 +44,7 @@ jobs:
         run: npm test
 
       - name: Integrität
-        run: npm run check
+        run: npm run check:structural
 
       - name: Build
         run: npm run build

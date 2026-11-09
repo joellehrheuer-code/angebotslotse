@@ -2,24 +2,20 @@ name: Angebote aktualisieren
 on:
   push:
     branches: [main]
-    paths-ignore:
-      - "data/offers.json"
-      - "data/offer-archive.json"
-      - "data/status.json"
-      - "data/price-history.json"
-      - "data/coupons.json"
-      - "data/affiliate-growth.json"
-      - "data/program-opportunities.json"
-      - "data/impact-opportunities.json"
-      - "data/affiliate-opportunities.json"
-      - "data/partner-outreach-queue.json"
-      - "data/creator-feed.json"
-      - "data/creator-videos.json"
-      - "report/program-inventory.json"
-      - "report/manual-actions.json"
-      - "report/update-report.json"
-      - "report/seo-report.json"
-      - "report/partner-outreach-status.json"
+    paths:
+      - ".github/workflows/update.yml"
+      - "config.json"
+      - "package.json"
+      - "package-lock.json"
+      - "scripts/**"
+      - "src/**"
+      - "public/**"
+      - "data/direct-partners.json"
+      - "data/amazon-products.json"
+      - "data/impact-link-policy.json"
+      - "data/partner-lifecycle.json"
+      - "data/partner-contact-directory.json"
+      - "data/creators.json"
   schedule:
     - cron: "17 */4 * * *"
   workflow_dispatch:
@@ -27,7 +23,7 @@ permissions:
   contents: read
 concurrency:
   group: angebotslotse-update-${{ github.ref }}
-  cancel-in-progress: true
+  cancel-in-progress: false
 jobs:
   update:
     runs-on: ubuntu-latest
@@ -64,6 +60,8 @@ jobs:
           WEBGAINS_FEED_URLS: ${{ secrets.WEBGAINS_FEED_URLS }}
           CREATOR_SOCIAL_FEED_URL: ${{ vars.CREATOR_SOCIAL_FEED_URL }}
           CREATOR_VIDEO_FEED_URL: ${{ vars.CREATOR_VIDEO_FEED_URL }}
+      - name: Quellenstatus ohne Zugangsdaten
+        run: node scripts/source-health-summary.mjs
       - run: npm run check && npm run build && npm run validate && npm run seo && npm run security
         env:
           SITE_URL: https://joellehrheuer-code.github.io/angebotslotse

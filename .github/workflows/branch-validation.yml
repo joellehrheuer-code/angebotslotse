@@ -29,7 +29,7 @@ jobs:
       - name: Tests
         run: npm test
       - name: Build + quality gates
-        run: npm run check && npm run build && npm run validate && npm run seo && npm run security
+        run: npm run check:structural && npm run build && npm run validate && npm run seo && npm run security
         env:
           SITE_URL: https://joellehrheuer-code.github.io/angebotslotse
           CONTACT_EMAIL: joellehrheuer@gmail.com
