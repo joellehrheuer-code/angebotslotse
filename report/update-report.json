@@ -1,227 +1,52 @@
 {
-  "generatedAt": "2026-11-03T02:21:19.097Z",
+  "generatedAt": "2026-11-09T16:00:03.959Z",
   "newAwinPrograms": 0,
-  "newImpactPrograms": 6,
+  "newImpactPrograms": 0,
   "newDaisyconPrograms": 0,
   "newWebgainsPrograms": 0,
-  "activeAwinPrograms": 6,
+  "activeAwinPrograms": 0,
   "activeImpactPrograms": 6,
   "applicationsSent": 0,
   "pendingApplications": 0,
-  "manualApplications": 8,
+  "manualApplications": 0,
   "networkReviewActions": 6,
-  "awinDiscoveryOffers": 200,
-  "applicationCandidates": 2613,
+  "awinDiscoveryOffers": 0,
+  "applicationCandidates": 0,
   "newMerchants": 0,
   "newProducts": 0,
-  "productsWithImage": 207,
+  "productsWithImage": 0,
   "productsWithVideo": 0,
-  "productsWithPrice": 207,
+  "productsWithPrice": 0,
   "productsWithOldPrice": 0,
   "productsWithDiscount": 0,
   "newCoupons": 0,
-  "coupons": 3,
+  "coupons": 0,
   "priceChanges": 0,
-  "expiredOffers": 0,
-  "expiredCoupons": 0,
+  "expiredOffers": 2,
+  "expiredCoupons": 1,
   "filteredForeignLocale": 0,
-  "totalProducts": 213,
-  "productsBySource": {
-    "Awin": 213
-  },
-  "officialImagesBySource": {
-    "Awin": 207
-  },
+  "totalProducts": 0,
+  "productsBySource": {},
+  "officialImagesBySource": {},
   "missingMediaBySource": {},
-  "productsByMerchant": {
-    "Hollyland DE": 97,
-    "Outin Germany": 57,
-    "ANTHBOT DE": 54,
-    "EMP DE": 3,
-    "Imou DE": 1,
-    "PDF Agile": 1
-  },
-  "productsByCategory": {
-    "audio-musik": 57,
-    "haushalt": 55,
-    "garten": 48,
-    "zubehoer": 40,
-    "computer": 4,
-    "sonstiges": 3,
-    "werkzeug": 3,
-    "freizeit": 1,
-    "smart-home": 1,
-    "technik": 1
-  },
-  "awinEnhancedFeeds": [
-    {
-      "advertiserId": 14172,
-      "advertiserName": "EMP DE",
-      "locale": "de_DE",
-      "state": "not-found"
-    },
-    {
-      "advertiserId": 14172,
-      "advertiserName": "EMP DE",
-      "locale": "en_DE",
-      "state": "not-found"
-    },
-    {
-      "advertiserId": 14336,
-      "advertiserName": "OTTO DE",
-      "locale": "de_DE",
-      "state": "not-found"
-    },
-    {
-      "advertiserId": 14336,
-      "advertiserName": "OTTO DE",
-      "locale": "en_DE",
-      "state": "not-found"
-    },
-    {
-      "advertiserId": 125144,
-      "advertiserName": "ANTHBOT DE",
-      "locale": "de_DE",
-      "state": "available",
-      "products": 156,
-      "rawProducts": 156,
-      "validProducts": 156,
-      "withPrice": 156,
-      "withImage": 156,
-      "withTracking": 156,
-      "rejected": 0,
-      "rejectionReasons": {}
-    },
-    {
-      "advertiserId": 125816,
-      "advertiserName": "Imou DE",
-      "locale": "de_DE",
-      "state": "not-found"
-    },
-    {
-      "advertiserId": 125816,
-      "advertiserName": "Imou DE",
-      "locale": "en_DE",
-      "state": "not-found"
-    },
-    {
-      "advertiserId": 127821,
-      "advertiserName": "Outin Germany",
-      "locale": "de_DE",
-      "state": "available",
-      "products": 58,
-      "rawProducts": 58,
-      "validProducts": 58,
-      "withPrice": 58,
-      "withImage": 58,
-      "withTracking": 58,
-      "rejected": 0,
-      "rejectionReasons": {}
-    },
-    {
-      "advertiserId": 128051,
-      "advertiserName": "Hollyland DE",
-      "locale": "de_DE",
-      "state": "not-found"
-    },
-    {
-      "advertiserId": 128051,
-      "advertiserName": "Hollyland DE",
-      "locale": "en_DE",
-      "state": "available",
-      "products": 200,
-      "rawProducts": 366,
-      "validProducts": 200,
-      "withPrice": 200,
-      "withImage": 200,
-      "withTracking": 200,
-      "rejected": 0,
-      "rejectionReasons": {}
-    }
-  ],
+  "productsByMerchant": {},
+  "productsByCategory": {},
+  "awinEnhancedFeeds": [],
   "awinEnhancedDedupe": {
-    "inputRows": 414,
-    "normalizedRows": 212,
-    "filteredBeforeDedupe": 202,
-    "outputOffers": 207,
-    "dedupedRows": 5,
-    "collapsedRows": 207,
-    "byMerchant": [
-      {
-        "merchant": "ANTHBOT DE",
-        "inputRows": 156,
-        "normalizedRows": 54,
-        "filteredBeforeDedupe": 102,
-        "outputOffers": 54,
-        "dedupedRows": 0,
-        "collapsedRows": 102,
-        "rowsWithGtin": 3,
-        "duplicateGtinExtras": 0,
-        "rowsWithMpn": 151,
-        "duplicateMpnExtras": 105,
-        "duplicateSourceIdExtras": 0,
-        "rejectionReasons": {
-          "blocked-non-merchandise": 102
-        }
-      },
-      {
-        "merchant": "Hollyland DE",
-        "inputRows": 200,
-        "normalizedRows": 100,
-        "filteredBeforeDedupe": 100,
-        "outputOffers": 96,
-        "dedupedRows": 4,
-        "collapsedRows": 104,
-        "rowsWithGtin": 95,
-        "duplicateGtinExtras": 4,
-        "rowsWithMpn": 200,
-        "duplicateMpnExtras": 99,
-        "duplicateSourceIdExtras": 0,
-        "rejectionReasons": {
-          "blocked-non-merchandise": 100
-        }
-      },
-      {
-        "merchant": "Outin Germany",
-        "inputRows": 58,
-        "normalizedRows": 58,
-        "filteredBeforeDedupe": 0,
-        "outputOffers": 57,
-        "dedupedRows": 1,
-        "collapsedRows": 1,
-        "rowsWithGtin": 10,
-        "duplicateGtinExtras": 1,
-        "rowsWithMpn": 58,
-        "duplicateMpnExtras": 0,
-        "duplicateSourceIdExtras": 0,
-        "rejectionReasons": {}
-      }
-    ]
+    "inputRows": 0,
+    "normalizedRows": 0,
+    "filteredBeforeDedupe": 0,
+    "outputOffers": 0,
+    "dedupedRows": 0,
+    "collapsedRows": 0,
+    "byMerchant": []
   },
   "quarantinedRecords": 130,
-  "blockedPublisherPromotions": 5,
-  "dailyDeal": "efe2e1fe0a6fb96a",
-  "dailyHighlights": [
-    "efe2e1fe0a6fb96a",
-    "1b895aba6a169e65",
-    "031577cab5fd476a",
-    "ca56d808d3c14eb1",
-    "0a432f17c1a1c534"
-  ],
-  "weekDeals": [
-    "3546e8355f2ac80c",
-    "8a4647748fa3692d",
-    "6c46f5eb0400cc10",
-    "59fc67b515d38cad",
-    "8387a6286a00e7ab"
-  ],
-  "monthHighlights": [
-    "3546e8355f2ac80c",
-    "8a4647748fa3692d",
-    "6c46f5eb0400cc10",
-    "59fc67b515d38cad",
-    "8387a6286a00e7ab"
-  ],
-  "apiErrors": 0,
+  "blockedPublisherPromotions": 1,
+  "dailyDeal": null,
+  "dailyHighlights": [],
+  "weekDeals": [],
+  "monthHighlights": [],
+  "apiErrors": 2,
   "affiliateLinkErrors": 0
 }

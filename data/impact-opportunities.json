@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-03T02:21:19.097Z",
+  "generatedAt": "2026-11-09T16:00:03.959Z",
   "status": "ok",
   "joinedPrograms": 6,
   "automation": {
@@ -183,87 +183,5 @@
       "contactDraft": "Hallo Razer (Asia Pacific) Pte Ltd-Team, Angebotslotse ist ein deutsches Deal-, Preisvergleichs- und Discovery-Portal. Wir sind über impact.com bereits mit eurem Programm verbunden und möchten die Zusammenarbeit im Bereich Weitere stärker ausbauen. Besonders interessant sind für uns aktuelle Produktkataloge, zeitlich begrenzte Aktionen, Gutscheincodes und offizielle Medien, die wir transparent und mit korrekter Werbekennzeichnung darstellen können. Wenn für Publisher zusätzliche Feeds, Creatives oder aktuelle Kampagnen verfügbar sind, freuen wir uns über einen Hinweis direkt über impact.com."
     }
   ],
-  "marketplaceSearches": [
-    {
-      "category": "Haushalt & Küche",
-      "siteOffers": 55,
-      "joinedPrograms": 0,
-      "gapScore": 55,
-      "searchTerms": [
-        "home",
-        "appliances",
-        "kitchen",
-        "vacuum"
-      ],
-      "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
-    },
-    {
-      "category": "Garten & Werkzeug",
-      "siteOffers": 51,
-      "joinedPrograms": 0,
-      "gapScore": 51,
-      "searchTerms": [
-        "garden",
-        "mower",
-        "tools",
-        "DIY"
-      ],
-      "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
-    },
-    {
-      "category": "Audio & Creator",
-      "siteOffers": 57,
-      "joinedPrograms": 1,
-      "gapScore": 47,
-      "searchTerms": [
-        "audio",
-        "music",
-        "headphones",
-        "microphone",
-        "recording",
-        "creator"
-      ],
-      "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
-    },
-    {
-      "category": "Technik & Computer",
-      "siteOffers": 45,
-      "joinedPrograms": 1,
-      "gapScore": 35,
-      "searchTerms": [
-        "electronics",
-        "computer",
-        "hardware",
-        "mobile",
-        "smart home"
-      ],
-      "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
-    },
-    {
-      "category": "Smart Home",
-      "siteOffers": 1,
-      "joinedPrograms": 0,
-      "gapScore": 1,
-      "searchTerms": [
-        "smart home",
-        "security camera",
-        "robot vacuum",
-        "home automation"
-      ],
-      "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
-    },
-    {
-      "category": "Freizeit & Reisen",
-      "siteOffers": 1,
-      "joinedPrograms": 0,
-      "gapScore": 1,
-      "searchTerms": [
-        "travel",
-        "outdoor",
-        "hobby",
-        "tickets"
-      ],
-      "action": "Impact Marketplace nach qualifizierten Brands filtern; Vertragsbedingungen vor Bewerbung prüfen."
-    }
-  ]
+  "marketplaceSearches": []
 }

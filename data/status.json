@@ -1,117 +1,32 @@
 {
-  "state": "ok",
-  "lastSuccessfulUpdate": "2026-11-03T02:21:18.998Z",
-  "activeOffers": 213,
-  "storedOffers": 490,
-  "publishableOffers": 213,
+  "state": "degraded",
+  "lastSuccessfulUpdate": "2026-11-09T16:00:03.908Z",
+  "activeOffers": 0,
+  "storedOffers": 488,
+  "publishableOffers": 0,
   "awaitingMedia": 0,
-  "blockedPublisherPromotions": 5,
+  "blockedPublisherPromotions": 1,
   "quarantined": 130,
   "added": 0,
-  "removed": 0,
-  "archivedThisRun": 0,
-  "archivedTotal": 354,
+  "removed": 2,
+  "archivedThisRun": 2,
+  "archivedTotal": 356,
   "filteredForeignLocale": 0,
   "invalidLinks": 0,
-  "apiErrors": 0,
+  "apiErrors": 2,
   "sources": {
     "awin": {
-      "state": "ok",
-      "count": 10,
-      "error": null,
+      "state": "error",
+      "count": 0,
+      "error": "Awin Offers API: HTTP 401",
       "audit": null
     },
     "awin-enhanced-feeds": {
-      "state": "ok",
-      "count": 414,
-      "error": null,
+      "state": "error",
+      "count": 0,
+      "error": "Awin programme discovery failed: Awin Programs API (joined): HTTP 401",
       "audit": {
-        "feeds": [
-          {
-            "advertiserId": 14172,
-            "advertiserName": "EMP DE",
-            "locale": "de_DE",
-            "state": "not-found"
-          },
-          {
-            "advertiserId": 14172,
-            "advertiserName": "EMP DE",
-            "locale": "en_DE",
-            "state": "not-found"
-          },
-          {
-            "advertiserId": 14336,
-            "advertiserName": "OTTO DE",
-            "locale": "de_DE",
-            "state": "not-found"
-          },
-          {
-            "advertiserId": 14336,
-            "advertiserName": "OTTO DE",
-            "locale": "en_DE",
-            "state": "not-found"
-          },
-          {
-            "advertiserId": 125144,
-            "advertiserName": "ANTHBOT DE",
-            "locale": "de_DE",
-            "state": "available",
-            "products": 156,
-            "rawProducts": 156,
-            "validProducts": 156,
-            "withPrice": 156,
-            "withImage": 156,
-            "withTracking": 156,
-            "rejected": 0,
-            "rejectionReasons": {}
-          },
-          {
-            "advertiserId": 125816,
-            "advertiserName": "Imou DE",
-            "locale": "de_DE",
-            "state": "not-found"
-          },
-          {
-            "advertiserId": 125816,
-            "advertiserName": "Imou DE",
-            "locale": "en_DE",
-            "state": "not-found"
-          },
-          {
-            "advertiserId": 127821,
-            "advertiserName": "Outin Germany",
-            "locale": "de_DE",
-            "state": "available",
-            "products": 58,
-            "rawProducts": 58,
-            "validProducts": 58,
-            "withPrice": 58,
-            "withImage": 58,
-            "withTracking": 58,
-            "rejected": 0,
-            "rejectionReasons": {}
-          },
-          {
-            "advertiserId": 128051,
-            "advertiserName": "Hollyland DE",
-            "locale": "de_DE",
-            "state": "not-found"
-          },
-          {
-            "advertiserId": 128051,
-            "advertiserName": "Hollyland DE",
-            "locale": "en_DE",
-            "state": "available",
-            "products": 200,
-            "rawProducts": 366,
-            "validProducts": 200,
-            "withPrice": 200,
-            "withImage": 200,
-            "withTracking": 200,
-            "rejected": 0,
-            "rejectionReasons": {}
-          }
-        ]
+        "reason": "Awin programme discovery failed: Awin Programs API (joined): HTTP 401"
       }
     },
     "awin-product-feeds": {
@@ -146,7 +61,7 @@
         "ads": 300,
         "promotions": 0,
         "deals": 2,
-        "products": 300,
+        "products": 200,
         "catalogs": 17,
         "stores": "unavailable",
         "errors": {},
@@ -1268,7 +1183,7 @@
           ],
           "missingApprovedProgram": 0,
           "matchedViaCatalog": 0,
-          "missingTrackingLink": 300,
+          "missingTrackingLink": 200,
           "deeplinkFromApprovedProgram": 0,
           "missingName": 0,
           "outOfStock": 0,
@@ -1402,6 +1317,6 @@
     "error": null,
     "mode": "social"
   },
-  "stale": 254,
-  "message": "Aktualisierung mit geschützten Bestandsdaten abgeschlossen."
+  "stale": 469,
+  "message": "Keine aktuell verifizierten Angebote verfügbar. Veraltete oder ungeprüfte Deals bleiben ausgeblendet."
 }

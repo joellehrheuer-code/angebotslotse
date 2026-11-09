@@ -1,6 +1,38 @@
 {
-  "updatedAt": "2026-11-03T02:21:18.998Z",
+  "updatedAt": "2026-11-09T16:00:03.908Z",
   "items": [
+    {
+      "id": "d1730dab0bc32829",
+      "slug": "extended-deals-deals-deals-d1730dab",
+      "title": "Extended: Deals, Deals, Deals!",
+      "advertiser": "EMP DE",
+      "source": "awin",
+      "productId": null,
+      "category": "sonstiges",
+      "lastPrice": null,
+      "currency": "EUR",
+      "firstSeen": "2026-10-28T09:26:52.000Z",
+      "lastSeen": "2026-11-03T02:21:18.792Z",
+      "endDate": "2026-11-03T22:59:00.000Z",
+      "archivedAt": "2026-11-09T16:00:03.908Z",
+      "reason": "expired"
+    },
+    {
+      "id": "6c46f5eb0400cc10",
+      "slug": "20-auf-fast-alles-6c46f5eb",
+      "title": "20% auf (fast) ALLES!",
+      "advertiser": "EMP DE",
+      "source": "awin",
+      "productId": null,
+      "category": "sonstiges",
+      "lastPrice": null,
+      "currency": "EUR",
+      "firstSeen": "2026-10-28T09:22:40.000Z",
+      "lastSeen": "2026-11-03T02:21:18.792Z",
+      "endDate": "2026-11-03T22:59:00.000Z",
+      "archivedAt": "2026-11-09T16:00:03.908Z",
+      "reason": "expired"
+    },
     {
       "id": "ff91d2f4d8027497",
       "slug": "top-100-hoodies-handpicked-by-emp-ff91d2f4",
