@@ -23,7 +23,7 @@ permissions:
   contents: read
 concurrency:
   group: angebotslotse-update-${{ github.ref }}
-  cancel-in-progress: false
+  cancel-in-progress: true
 jobs:
   update:
     runs-on: ubuntu-latest
@@ -35,7 +35,8 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
-      - run: npm test
+      - name: Structural integrity before refresh
+        run: npm run check:structural
       - run: npm run update
         env:
           AWIN_PUBLISHER_ID: ${{ secrets.AWIN_PUBLISHER_ID || vars.AWIN_PUBLISHER_ID }}
@@ -61,7 +62,12 @@ jobs:
           CREATOR_SOCIAL_FEED_URL: ${{ vars.CREATOR_SOCIAL_FEED_URL }}
           CREATOR_VIDEO_FEED_URL: ${{ vars.CREATOR_VIDEO_FEED_URL }}
       - name: Quellenstatus ohne Zugangsdaten
+        if: always()
         run: node scripts/source-health-summary.mjs
+      - name: Verified offer catalogue required
+        run: npm run catalog:health
+      - name: Full tests after source refresh
+        run: npm test
       - run: npm run check && npm run build && npm run validate && npm run seo && npm run security
         env:
           SITE_URL: https://joellehrheuer-code.github.io/angebotslotse
@@ -97,6 +103,18 @@ jobs:
             report/manual-actions.json
             report/update-report.json
             report/seo-report.json
+
+      - name: Preserve source diagnostics on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: update-diagnostics-${{ github.run_id }}
+          retention-days: 7
+          if-no-files-found: warn
+          path: |
+            data/status.json
+            report/update-report.json
+            report/manual-actions.json
 
   commit:
     needs: update

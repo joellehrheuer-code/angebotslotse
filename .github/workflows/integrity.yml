@@ -3,6 +3,11 @@ on:
   schedule:
     - cron: "43 2 * * *"
   workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: angebotslotse-integrity-${{ github.ref }}
+  cancel-in-progress: true
 jobs:
   integrity:
     runs-on: ubuntu-latest
@@ -13,6 +18,10 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
+      - name: Quellenstatus ohne Zugangsdaten
+        run: node scripts/source-health-summary.mjs
+      - name: Verified offer catalogue required
+        run: npm run catalog:health
       - run: npm test
       - run: npm run check
       - run: npm run build && npm run validate && npm run seo && npm run security
@@ -26,3 +35,12 @@ jobs:
         env:
           AWIN_PUBLISHER_ID: ${{ vars.AWIN_PUBLISHER_ID }}
           AWIN_API_TOKEN: ${{ secrets.AWIN_API_TOKEN }}
+
+      - name: Preserve status diagnostics on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: integrity-diagnostics-${{ github.run_id }}
+          retention-days: 7
+          if-no-files-found: warn
+          path: data/status.json

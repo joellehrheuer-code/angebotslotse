@@ -13,6 +13,7 @@
     "indexnow": "node scripts/indexnow.mjs",
     "seo": "node scripts/seo-audit.mjs",
     "check": "node scripts/integrity.mjs",
+    "catalog:health": "node scripts/catalog-health.mjs",
     "report": "node scripts/report.mjs",
     "test": "node --test --test-concurrency=1",
     "cashback:sync": "node scripts/cashback-sync.mjs",
