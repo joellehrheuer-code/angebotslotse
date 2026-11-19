@@ -8,7 +8,7 @@
 
 `[████████░░░░░░░░░░░░] 40 %`
 
-**Produktionsbereitschaft: NICHT ERREICHT.** Letzter geprüfter echter Import-Workflow: 44537707144. Erstmals **6 verifizierte, veröffentlichungsfähige Impact-Angebote** (Martinic) und `catalog:health` erfolgreich. Die nachfolgenden 398 Tests enden jedoch mit **6 Fehlern**, deshalb wurden Commit, Deploy, Smoke und IndexNow übersprungen. Website-Release ist **nicht** bestätigt.
+**Produktionsbereitschaft: NICHT ERREICHT.** Letzter geprüfter echter Import-Workflow: 44539900999. Erstmals **6 verifizierte, veröffentlichungsfähige Impact-Angebote** (Martinic) und `catalog:health` erfolgreich. Die nachfolgenden 401 Tests enden jedoch mit **4 Fehlern**, deshalb wurden Commit, Deploy, Smoke und IndexNow übersprungen. Website-Release ist **nicht** bestätigt.
 
 | # | Bereich | Fortschritt | Abnahmekriterium | Nächste Aktion |
 |---|---|---|---|---|
@@ -87,6 +87,20 @@
 - **Die 6 verbliebenen Integrationstests:** (1) Rabattcodes-JSON-LD mit echten verifizierten Coupon-Zielen, (2) Lighthouse-Test verlangt ein tatsächlich vorhandenes optimiertes Shopify-Produktbild, (3) SEO-Audit verlangt über 200 indexierbare echte Seiten, (4) drei vollständige Awin-Hero-Produkte aus verschiedenen genehmigten Händlern, (5) datenreiche Premium-Startseiten-Hero-Module, (6) Produktalternativen mit echten verknüpften Angeboten. Die sechs Martinic-Produkte alleine erfüllen diese derzeit nicht. **Kein Ersetzen durch Fake-Angebote, keine Deaktivierung dieser Tests.**
 - **Meilensteinfortschritt bleibt 40 %:** CI-Qualitäts-Meilenstein #8 ist erst bei vollständig bestandener realer Test-/Build-/SEO-/Security-/Validate-Kette erfüllt. Release/Commit/Live-Smoke/IndexNow noch offen.
 
+## Optimierungsrunde 19.11.2026 – PR #79 und #80 (40 %)
+
+- **PR #79, sachlich korrekte Gutscheindaten:** Wenn **0 freigegebene Rabattcodes** vorliegen, erstellt der Build jetzt eine gültige `CollectionPage` mit `BreadcrumbList` und leerer `ItemList`; die Seite bleibt `noindex,follow`, ohne Fake-Gutschein- oder Produktlinks. Bei echten bestätigten Coupons verlangt der Test dagegen nur interne Links zu den tatsächlich erzeugten Angebotsseiten. Der zuvor fehlgeschlagene Structured-Data-Test ist im echten Lauf **44538436981** bestanden. CI **393/398**, 5 Restfehler.
+- **PR #80, sichere Bildoptimierung und tatsächlicher Produktbestand:** Die Shopify-HTTPS-Image-Width-Optimierung ist separat getestet und gilt jetzt auch für Hero-Produkte mit Zielbreite 420 px; andere Bildhosts und unverifizierte Inhalte werden nicht verändert. Drei Bildtests und der vollständige bestehende Lighthouse-/Accessibility-Test wurden bestanden. Die Performanceprüfung verlangt für real vorhandene Hero-Produktbilder echtes HTTPS-Medium, für einen nachweislich leeren Branch-Katalog dagegen die explizite unverifizierte-Angebote-Meldung. Im echten Lauf **44539900999**: **397/401 Tests bestanden, vier Fehler**.
+- **Quellen- und Veröffentlichungssperre weiterhin aktiv:** Lauf 44539900999: `catalog:health` erfolgreich bei **6 verifizierten Martinic-Angeboten** (temporäre Update-Dateien), Awin weiterhin `authorization`/HTTP 401, Awin Enhanced Feeds ebenfalls Autorisierungsfehler, Awin Legacy-Produktfeeds ohne genehmigte URLs `disabled`. Die nachfolgenden vier Tests verhinderten **Commit, Deploy, Live-Smoke und IndexNow**; keine neuen Daten veröffentlicht.
+- **Verbleibende vier Testfehler (44539900999):**
+  1. `seo-audit.test.mjs`: fordert **mehr als 200** indexierbare Self-Canonical-Seiten mit echten Inhalten, derzeit nicht genügend geprüfte Angebote.
+  2. `storefront-curation.test.mjs`: fordert **3 echte, vollständige Awin-Produkte von unterschiedlichen genehmigten Händlern** als Hero; ohne Awin API/PAT und freigegebene Feedlinks nicht erreichbar.
+  3. `v12-nightmarket.test.mjs`: `Top-Angebote zum Durchblättern` wird wegen zu kleinem tatsächlich geeigneten Sortiment nicht gerendert. Keine Fake-Karten verwenden.
+  4. `v7-design.test.mjs`: keine tatsächlich passenden Produktalternativen aus unabhängigen freigegebenen Produkten verfügbar. Keine beliebigen Produkte künstlich als Alternativen verlinken.
+- **Awin-Authentifizierung anhand offizieller Dokumentation verifiziert (17.11.2026):** PAT oder Classic Token auf Legacy-API `https://api.awin.com` mit `Authorization: Bearer`; HTTP 401 = fehlender, ungültiger oder abgelaufener Token, HTTP 403 = unzureichende Rechte. Quelle: https://help.awin.com/apis/apidocs/api-authentication. Publisher-Nutzerzugriff und Ablaufdatum prüfen; gültigen PAT **nur im bestehenden GitHub-Secret** `AWIN_API_TOKEN` ersetzen, keine Credentials ins Repository/Chat/Logs. Klassische Awin-Produktfeed-URLs erst bei belegter Programmberechtigung unter `AWIN_FEED_LIST_URL` oder `AWIN_LEGACY_FEED_URLS` hinterlegen.
+- **Impact/Belkin:** weiterhin **123** Kataloglinks ohne nachgewiesenes genehmigtes Deeplink-Ziel. Die öffentliche Belkin-Domain alleine gilt ausdrücklich **nicht** als Deeplink-Freigabe. Razer-Quarantäne bleibt unverändert.
+- **Meilensteinstand bleibt 40 %.** Die vier aus echten Daten noch nicht erfüllten CI-/Inhalts-Abnahmen werden nicht gestrichen oder künstlich erfüllt. Nächster sinnvoller Schritt: tatsächliche Awin-Konto-PAT-Berechtigung und genehmigte Händlerfeed-URLs, dann die vollständigen Tests erneut mit realem Sortiment prüfen.
+
 ## Fortsetzungsprotokoll (jedes Mal aktualisieren)
 
 | Datum | Änderung | Nachweis | Phase |
@@ -116,5 +130,8 @@
 | 19.11.2026 | PR #73–77: Asset-Cache, Facebook-Seite, Impact-Hersteller, echter Bildfallback und präzisierter Social-Test | Runs 44535543762, 44536059828, 44536437076, 44536814411: von 14 auf 8 Live-Testfehler; PR #77 Branch 44537011533 Navigationstest erfolgreich | gemergt, echter Gesamt-CI weiterhin rot; 40 % unverändert |
 
 | 19.11.2026 | PR #78 Single-Merchant-Filter (echte Händlerauswahl) | Branch Validation 44537580284: Regressionstest bestanden. Echter Update-Lauf 44537707144: 392/398 Tests, 6 Restfehler, 6 echte Impact-Produkte, Awin-Autorisierung weiter fehlgeschlagen | gemergt und live im Workflow bestätigt, Release weiter blockiert; Fortschritt 40 % |
+
+| 19.11.2026 | PR #79: wahrheitsgemäßer leerer Rabattcode-Hub und intakte Structured Data | Live-Run 44538436981: 393/398 Tests, 5 Restfehler | gemergt; keine Fake-Gutscheine; 40 % |
+| 19.11.2026 | PR #80: sichere Herstellerbildoptimierung auch für Hero + belastbarer Performance-Test | Live-Run 44539900999: 397/401 Tests bestanden, 4 Restfehler, 6 Martinic-Produkte, Awin weiterhin 401 | gemergt; Commit/Deploy übersprungen, 40 % |
 
 **100 %** erst, wenn alle zehn Abnahmekriterien **mit Nachweisen** erreicht sind. Neue Feature-Ideen kommen auf eine separate Wunschliste und ändern die Messlatte nicht heimlich.
