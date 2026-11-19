@@ -1,0 +1,26 @@
+name: Awin isolated authentication diagnostic
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/awin-auth-diagnostic.yml"
+permissions:
+  contents: read
+concurrency:
+  group: angebotslotse-awin-auth-check
+  cancel-in-progress: true
+jobs:
+  awin-auth-check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Isolated read-only PAT authentication and format check
+        run: node scripts/diagnose-awin-auth.mjs
+        env:
+          AWIN_PUBLISHER_ID: ${{ secrets.AWIN_PUBLISHER_ID || vars.AWIN_PUBLISHER_ID }}
+          AWIN_API_TOKEN: ${{ secrets.AWIN_API_TOKEN }}
