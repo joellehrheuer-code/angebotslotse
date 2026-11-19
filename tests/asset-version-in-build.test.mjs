@@ -10,7 +10,7 @@ test("build resolves CSS and browser-JS cache versions rather than outputting li
     env: { ...process.env, SITE_URL: "https://joellehrheuer-code.github.io/angebotslotse" }
   });
   const html=fs.readFileSync("dist/index.html","utf8");
-  assert.doesNotMatch(html,/\\$\\{assetVersion\\}/);
-  assert.match(html,/site\\.css\\?v=55-[0-9]+/);
-  assert.match(html,/app\\.js\\?v=28-[0-9]+/);
+  assert.equal(html.includes("${assetVersion}"),false);
+  assert.match(html,new RegExp("site[.]css[?]v=55-[0-9]+"));
+  assert.match(html,new RegExp("app[.]js[?]v=28-[0-9]+"));
 });
