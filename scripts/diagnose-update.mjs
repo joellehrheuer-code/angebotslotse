@@ -27,6 +27,28 @@ export function diagnostic(status, inventory) {
     const n = Number(source?.count);
     rows.push(`| ${safe} | ${state} | ${Number.isSafeInteger(n) && n >= 0 ? n : 0} | ${reason} |`);
   }
+  // Only known machine-generated categories and bounded integer counters may enter the summary.
+  // Never interpolate arbitrary API responses, URLs, product names or credential values.
+  const impactReasons = sources.impact?.audit?.productDiagnostics?.linkFailureReasons;
+  const knownImpactReasons = [
+    ["product-link-not-allowed", "Produkt-Trackinglink nicht erlaubt"],
+    ["deeplinking-not-approved", "Deeplinking nicht freigegeben"],
+    ["invalid-product-url", "Produkt-Zieladresse ungültig"],
+    ["unverified-merchant-domain", "Händlerdomain nicht bestätigt"],
+    ["program-link-not-allowed", "Programm-Trackinglink nicht erlaubt"],
+    ["program-link-already-deeplinked", "Programm-Link enthält bereits Deeplink"],
+    ["unresolved-link", "Trackinglink anderweitig ungeklärt"]
+  ];
+  if (impactReasons && typeof impactReasons === "object" && !Array.isArray(impactReasons)) {
+    const impactRows = knownImpactReasons
+      .map(([key, label]) => ({label, count: Number(impactReasons[key])}))
+      .filter(item => Number.isSafeInteger(item.count) && item.count > 0 && item.count <= 1_000_000);
+    if (impactRows.length) {
+      rows.push("", "### Impact: Produkt-Trackinglinks (aggregierte Ablehnungsgründe)", "");
+      for (const item of impactRows) rows.push(`- ${item.label}: **${item.count}**`);
+      rows.push("- Nur durch offiziell freigegebene Produktlinks oder erlaubtes Händler-Deeplinking beheben; niemals durch ungetrackte Shoplinks ersetzen.");
+    }
+  }
   rows.push("", "### Nächste Schritte", "");
   if (authAwin) {
     rows.push("- **Awin-Autorisierung:** Den bestehenden API-Zugang im Awin-Publisherkonto prüfen/erneuern und `AWIN_API_TOKEN` in GitHub → Settings → Secrets and variables → Actions aktualisieren. Token niemals in Chat/Logs/Issues veröffentlichen.");
