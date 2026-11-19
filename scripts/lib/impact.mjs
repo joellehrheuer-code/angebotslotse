@@ -352,6 +352,7 @@ export async function fetchImpactOffers({ accountSid, authToken, fetchImpl = fet
       additionalImageUrls: list(product.AdditionalImageUrls?.ImageUrl ?? product.AdditionalImageUrls),
       imageAlt: product.Name,
       imageSource: "Impact Catalog API",
+      manufacturer: product.Manufacturer,
       imageRightsNote: "Vom freigegebenen Advertiser im Impact-Produktkatalog bereitgestellt.",
       mediaType: "image",
       currentPrice: product.CurrentPrice ?? product.Price ?? product.SalePrice,
