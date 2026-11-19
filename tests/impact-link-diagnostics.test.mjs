@@ -73,6 +73,6 @@ test("Impact reports only host-level domain review candidates without auto-appro
     count: 1
   }]);
   const audit = JSON.stringify(rows.audit.productDiagnostics);
-  assert.doesNotMatch(audit, /DO_NOT_EXPOSE|private\\/path|https?:\\/\\//);
+  for (const forbidden of ["DO_NOT_EXPOSE", "private/path", "https://", "http://"]) assert.equal(audit.includes(forbidden), false);
   assert.equal(rows.some(row => row.id === "product-100-1"), false);
 });
