@@ -104,6 +104,12 @@ jobs:
             report/update-report.json
             report/seo-report.json
 
+      - name: Explain blocked source refresh (no credentials)
+        if: failure()
+        run: |
+          node scripts/diagnose-update.mjs
+          node scripts/test-diagnose-update.mjs
+
       - name: Preserve source diagnostics on failure
         if: failure()
         uses: actions/upload-artifact@v4
