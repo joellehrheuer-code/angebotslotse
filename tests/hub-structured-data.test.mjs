@@ -74,6 +74,7 @@ test("Hub-Indizes und Rabattcodes verlinken in strukturierten Daten nur interne 
           assert.ok(item.name);
         }
       }
+    }
   }
 });
 
