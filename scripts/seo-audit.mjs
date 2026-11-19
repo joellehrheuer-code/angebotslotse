@@ -83,6 +83,19 @@ for (const page of pages) {
   }
 }
 
+// Every submitted sitemap URL must resolve to an actual indexable, self-canonical
+// HTML page. The existing page-to-sitemap check alone misses stale or invented
+// sitemap entries, especially when a stale entry replaces an otherwise valid URL.
+const indexableCanonicalUrls = new Set(
+  pages.filter(page => page.indexable && page.selfCanonical && page.relative !== "404.html")
+    .map(page => page.pageUrl)
+);
+for (const sitemapUrl of sitemapUrls) {
+  if (!indexableCanonicalUrls.has(sitemapUrl)) {
+    errors.push({ type: "sitemap-url-without-indexable-self-canonical-page", page: sitemapUrl });
+  }
+}
+
 const canonicalOwners = new Map();
 for (const page of pages.filter(page => page.indexable && page.selfCanonical)) {
   const existing = canonicalOwners.get(page.canonical);
