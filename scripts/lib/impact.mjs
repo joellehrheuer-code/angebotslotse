@@ -96,7 +96,7 @@ const catalogTrackingIdentityReason = (product, program, policy) => {
   const officialUrl = validWebsiteUrl(program.TrackingLink);
   if (!productUrl) return "invalid-catalog-url";
   if (!officialUrl) return "invalid-program-tracking-url";
-  const identity = path => /^\\/c\\/(\\d+)\\/(\\d+)\\/(\\d+)\\/?$/.exec(path);
+  const identity = path => new RegExp("^/c/([0-9]+)/([0-9]+)/([0-9]+)/?$").exec(path);
   const actual = identity(productUrl.pathname);
   const expected = identity(officialUrl.pathname);
   if (!actual) return "catalog-link-not-full-identity";
