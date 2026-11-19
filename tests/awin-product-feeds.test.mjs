@@ -8,7 +8,7 @@ test("importiert nur beigetretene deutsche Awin-Feeds mit offiziellen Medien",as
   const list='Advertiser ID,Advertiser Name,Primary Region,Membership Status,Feed ID,Feed Name,Language,Vertical,Last Imported,URL\n1,Shop,DE,Joined,9,Default,German,,2026-09-01,https://datafeed.api.productserve.com/datafeed/download/apikey/fixture-token/fid/9/format/csv';
   const products='aw_deep_link,merchant_deep_link,product_name,merchant_name,merchant_id,search_price,currency,large_image,aw_product_id,brand_name\nhttps://awin.example/t,https://shop.example/p,Kopfhörer,Shop,1,99.95,EUR,https://img.example/p.jpg,P1,Marke';
   const fetchImpl=async url=>({ok:true,text:async()=>list,arrayBuffer:async()=>Buffer.from(products)});
-  const rows=await fetchAwinProductFeeds({apiKey:"secret",fetchImpl});
+  const rows=await fetchAwinProductFeeds({apiKey:"secret",joinedAdvertiserIds:["1"],fetchImpl});
   assert.equal(rows.length,1);assert.equal(rows[0].imageSource,"Awin Product Feed");assert.equal(rows[0].currentPrice,"99.95");
 });
 
@@ -32,7 +32,7 @@ test("bevorzugt Awins offiziellen Bild-Cache vor Merchant-Bildern",async()=>{
   const list='Advertiser ID,Advertiser Name,Primary Region,Membership Status,Feed ID,Feed Name,Language,Vertical,Last Imported,URL\n1,Shop,DE,Joined,9,Default,German,,2026-09-01,https://datafeed.api.productserve.com/datafeed/download/apikey/fixture-token/fid/9/format/csv';
   const products='aw_deep_link,merchant_deep_link,product_name,merchant_name,merchant_id,search_price,currency,aw_image_url,large_image,merchant_image_url,aw_product_id\nhttps://awin.example/t,https://shop.example/p,Monitor,Shop,1,199.95,EUR,https://images.awin.com/cache.jpg,https://merchant.example/large.jpg,https://merchant.example/raw.jpg,P2';
   const fetchImpl=async()=>({ok:true,text:async()=>list,arrayBuffer:async()=>Buffer.from(products)});
-  const rows=await fetchAwinProductFeeds({apiKey:"secret",fetchImpl});
+  const rows=await fetchAwinProductFeeds({apiKey:"secret",joinedAdvertiserIds:["1"],fetchImpl});
   assert.equal(rows[0].imageUrl,"https://images.awin.com/cache.jpg");
   assert.equal(rows[0].imageSource,"Awin Image Resize & Caching");
 });
@@ -54,4 +54,24 @@ test("Enhanced-Feed-Parser vermischt Shipping- oder Checkout-Nebenobjekte nicht 
   assert.equal(result.products[0].currentPrice,"999.00");
   assert.equal(result.products[0].brand,"ANTHBOT");
   assert.equal(result.products[0].mpn,"GENIE-1000");
+});
+
+
+test("Awin legacy feed never downloads or publishes without confirmed joined programmes",async()=>{
+  let calls=0;
+  const fetchImpl=async()=>{calls+=1;throw new Error("unapproved feed must not be fetched");};
+  const result=await fetchAwinProductFeeds({apiKey:"mock-datafeed-key",feedListUrl:"https://productdata.awin.com/datafeed/list/apikey/mock-key",joinedAdvertiserIds:[],fetchImpl});
+  assert.deepEqual(result,[]);
+  assert.equal(calls,0);
+});
+
+test("Awin legacy feed list and products stay confined to joined advertiser IDs",async()=>{
+  const list='Advertiser ID,Advertiser Name,Primary Region,Membership Status,Feed ID,Feed Name,Language,URL\n1,Approved,DE,Joined,9,Products,German,https://datafeed.api.productserve.com/datafeed/download/apikey/mock-key/fid/9/format/csv\n2,NotJoined,DE,Joined,10,Products,German,https://datafeed.api.productserve.com/datafeed/download/apikey/mock-key/fid/10/format/csv';
+  const data='aw_deep_link,merchant_deep_link,product_name,merchant_name,merchant_id,search_price,aw_product_id\nhttps://awin.example/approved,https://shop.example/item,Valid product,Approved,1,20,P1\nhttps://awin.example/unapproved,https://unapproved.example/item,Unapproved product,NotJoined,2,30,P2';
+  const urls=[];
+  const fetchImpl=async(url)=>{urls.push(String(url));return String(url).includes("/list/")?{ok:true,text:async()=>list}:{ok:true,arrayBuffer:async()=>Buffer.from(data)};};
+  const result=await fetchAwinProductFeeds({apiKey:"mock-key",joinedAdvertiserIds:["1"],fetchImpl});
+  assert.equal(urls.length,2,"only approved advertiser feed is downloaded");
+  assert.equal(result.length,1);
+  assert.equal(result[0].advertiserId,"1");
 });
