@@ -45,7 +45,8 @@ test("Lighthouse-Fixes reduzieren Hero-Asset und benennen Creator-Links", () => 
     const width=Number(imageUrl.searchParams.get("width"));
     assert.ok(Number.isSafeInteger(width) && width>0 && width<=640,"Shopify image must request bounded width");
   }
-  assert.match(home,/<a class="hero-product-card[^"]*"[^>]*><img src="https:\\/\\//);
+  const heroProductHtml=home.match(/<a class="hero-product-card[^"]*"[^>]*><img[^>]*>/)?.[0]||"";
+  assert.ok(heroProductHtml.includes('src="https://'),"Hero must display genuine HTTPS product media");
 });
 
 test("Brand-Links und Instant-Gaming-Loader bleiben zugänglich", () => {
