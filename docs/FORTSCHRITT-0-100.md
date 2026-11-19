@@ -8,7 +8,7 @@
 
 `[████████░░░░░░░░░░░░] 40 %`
 
-**Produktionsbereitschaft: NICHT ERREICHT.** Letzter geprüfter Workflow: 44535543762. Erstmals **6 verifizierte, veröffentlichungsfähige Impact-Angebote** (Martinic) und `catalog:health` erfolgreich. Die nachfolgenden 394 Tests enden jedoch mit **14 Fehlern**, deshalb wurden Commit, Deploy, Smoke und IndexNow übersprungen. Website-Release ist **nicht** bestätigt.
+**Produktionsbereitschaft: NICHT ERREICHT.** Letzter geprüfter echter Import-Workflow: 44536814411. Erstmals **6 verifizierte, veröffentlichungsfähige Impact-Angebote** (Martinic) und `catalog:health` erfolgreich. Die nachfolgenden 397 Tests enden jedoch mit **8 Fehlern**, deshalb wurden Commit, Deploy, Smoke und IndexNow übersprungen. Website-Release ist **nicht** bestätigt.
 
 | # | Bereich | Fortschritt | Abnahmekriterium | Nächste Aktion |
 |---|---|---|---|---|
@@ -60,6 +60,24 @@
 - **Awin weiterhin blockiert:** `AWIN_API_TOKEN` wird im Update-Job verwendet, liefert aber 401. Bestehenden PAT im offiziellen Awin-Publisherkonto prüfen/erneuern und ausschließlich als GitHub Actions Secret eintragen. Keine Tokenwerte im Chat, Commit oder Issue verwenden.
 - **Nächste Arbeit:** Eine belegte Facebook-URL beschaffen, konkrete unabhängige Build-/Schemafehler mit Tests beheben, Awin 401 verifizieren, danach die 14 verbliebenen Testfehler anhand frischer Händlerangebote nochmals prüfen. Erst nach vollständiger Abnahme Meilenstein #8 und Fortschritt erhöhen.
 
+## Optimierungsrunde 19.11.2026: PR #73–77 (40 % unverändert)
+
+- **PR #73, Produktions-Bug behoben:** Die CSS- und JavaScript-Adressen enthielten im Build zuvor den wörtlichen Platzhalter `\${assetVersion}`. Echtes Hash-Cache-Busting repariert, neuer Buildtest bestanden. Live-Update **44535543762**: 6 geprüfte Angebote, **380/394 Tests**, 14 Fehler; kein Deploy.
+- **PR #74, Social-Navigation repariert:** Die bereits verbundene Metricool-Marke `joel27.1997` (Brand 6407125) liefert die Facebook-Seiten-ID **1256178084247228**. Die permanente numerische Seiten-URL steht jetzt in `data/creators.json`. Metricool wird **nicht** als Publisher genutzt. Echte Prüfung **44536059828**: 6 Angebote, **383/395 Tests**, **12 Fehler**; die beiden V12/V13-Facebook-Tests bestanden.
+- **PR #75, Impact-Herstellerinformation repariert:** `Catalogs/ItemSearch.Manufacturer` wird jetzt an die vorhandene Marken-Normalisierung weitergeleitet. Neuer E2E-Test `Impact → brand` bestanden. Echter Lauf **44536437076**: 6 Angebote, **388/396 Tests**, **8 Fehler**. Vorher fehlende Marken- und Collection-Hub-Tests bestanden dadurch.
+- **PR #76, Creator-Bild-Fallback:** Das dauerhafte Creator-Profilbild nutzt die bereits existierende Medienfehlerbehandlung mit dem gebündelten Ersatz `og.png`. Neuer Buildtest bestanden, echter Lauf **44536814411**: 6 Angebote, **389/397 Tests**, **8 Fehler**.
+- **PR #77, Social-Testvertragskorrektur:** Der aktive Navigationstest verlangt statt einem möglicherweise fehlenden Facebook-Reel die **exakte verbundene, dauerhafte Facebook-Seite**. Alle anderen Assertions im Test bleiben aktiv. Branch Validation **44537011533**: Navigationstest bestanden; eine neue `update.yml`-Ausführung auf diesem Commit gab es noch nicht, da dieser PR nur Tests verändert. **Kein Erfolg des gesamten Live-Workflows behauptet.**
+
+### Verbleibende Ursachen nach echtem Lauf 44536814411
+
+1. Nicht genug echte Händler-/Produktvielfalt für Such- und Kategoriefilter, moderne Hero-Module sowie Produktalternativen.
+2. `rabattcodes/index.html`: Der Test verlangt verifizierte Produkt-/Angebotsreferenzen in JSON-LD; ohne reale Gutscheinangebote keine Datensätze oder Links erfinden.
+3. Technischer SEO-Audit verlangt deutlich mehr indexierbare, tatsächlich inhaltsreiche Seiten. Bei nur 6 echten Angeboten nicht durch leere Seiten vortäuschen.
+4. Awin-Hero-Test benötigt drei echte, vollständige Produkte von unterschiedlichen **freigegebenen Awin-Händlern**. Awin API weiterhin **HTTP 401**, Awin-Feed-URL-Secrets bisher leer. Zugang nur über gültigen PAT und GitHub Actions Secrets, keine Tokens im Chat.
+5. Belkin 123 Produkte: Impact-Trackingidentität vorhanden, aber Deeplink-Ziel-Hostname nicht im freigegebenen Programm bestätigt. Razer 171 Produkte weiterhin quarantänisiert. Keine globale Domainfreigabe.
+
+**Nächste Aktion:** Awin PAT im bestehenden Konto verifizieren und das GitHub Secret sicher erneuern; danach offizielle Awin-Programme/Produktfeeds testen. Parallel nur nachweisbare neue Händlerdomain-Freigaben prüfen. Anschließend die vollständigen acht verbleibenden Tests erneut ausführen, ohne sie abzuschalten. Meilenstein #8 erst dann als erledigt markieren, wenn Build, sämtliche Tests, SEO, Security und Validate erfolgreich sind.
+
 ## Fortsetzungsprotokoll (jedes Mal aktualisieren)
 
 | Datum | Änderung | Nachweis | Phase |
@@ -85,5 +103,7 @@
 | 19.11.2026 | PR #72 Build vor datenabhängigen Integrationstests, ohne Gates auszulassen | Actions 44534745582: Reihenfolge-Test bestanden. Live-Run 44534878063: Build bestanden, 6 Impact-Angebote, 379/393 Tests, 14 Fehler | gemergt; keine Veröffentlichung, Fortschritt bleibt bei 40 % |
 
 | 19.11.2026 | PR #73: CSS-/JS-Asset-Hash wird nun tatsächlich interpoliert | Branch Validation 44535417562 und echter Run 44535543762: neuer Regressionstest bestanden, 380/394 Tests nach echtem Import, 14 Fehler | in main gemergt, kein Deploy, 40 % unverändert |
+
+| 19.11.2026 | PR #73–77: Asset-Cache, Facebook-Seite, Impact-Hersteller, echter Bildfallback und präzisierter Social-Test | Runs 44535543762, 44536059828, 44536437076, 44536814411: von 14 auf 8 Live-Testfehler; PR #77 Branch 44537011533 Navigationstest erfolgreich | gemergt, echter Gesamt-CI weiterhin rot; 40 % unverändert |
 
 **100 %** erst, wenn alle zehn Abnahmekriterien **mit Nachweisen** erreicht sind. Neue Feature-Ideen kommen auf eine separate Wunschliste und ändern die Messlatte nicht heimlich.
