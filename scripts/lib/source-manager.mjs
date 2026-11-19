@@ -190,7 +190,7 @@ export async function collectSources(env = process.env) {
   const definitions = [
     ["awin", () => fetchAwinOffers({ publisherId: env.AWIN_PUBLISHER_ID, token: env.AWIN_API_TOKEN })],
     ["awin-enhanced-feeds", async()=>{const result=await fetchAwinEnhancedFeeds({publisherId:env.AWIN_PUBLISHER_ID,token:env.AWIN_API_TOKEN,advertisers:joined,maxProducts:1200});const rows=result.products;Object.defineProperty(rows,"audit",{value:{feeds:result.feeds},enumerable:false});return rows;}],
-    ["awin-product-feeds", () => fetchAwinProductFeeds({ apiKey: env.AWIN_DATAFEED_API_KEY, feedListUrl:env.AWIN_FEED_LIST_URL, feedUrls:env.AWIN_LEGACY_FEED_URLS, joinedAdvertiserIds:joined.map(program=>program.id), maxProducts: 1000 })],
+    ["awin-product-feeds", () => fetchAwinProductFeeds({ apiKey: env.AWIN_DATAFEED_API_KEY, publisherId: env.AWIN_PUBLISHER_ID, feedListUrl:env.AWIN_FEED_LIST_URL, feedUrls:env.AWIN_LEGACY_FEED_URLS, joinedAdvertiserIds:joined.map(program=>program.id), maxProducts: 1000 })],
     ["direct", () => fetchDirectOffers()],
     ["amazon", () => fetchAmazonCreatorItems({ credentialId: env.AMAZON_CREATORS_CREDENTIAL_ID, credentialSecret: env.AMAZON_CREATORS_CREDENTIAL_SECRET, partnerTag: env.AMAZON_PARTNER_TAG, definitions: amazonDefinitions.items ?? [] })],
     ["impact", () => fetchImpactOffers({ accountSid: env.IMPACT_ACCOUNT_SID, authToken: env.IMPACT_AUTH_TOKEN, linkPolicy: impactLinkPolicy })],
