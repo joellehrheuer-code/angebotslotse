@@ -20,7 +20,8 @@ test("Header nutzt echte lokale Social-PNGs und mobile Hamburger-Suche", () => {
   }
   assert.ok(fs.existsSync("dist/social/facebook.svg"), "Fehlendes Facebook-Icon");
   assert.match(html, /social\/facebook\.svg/);
-  assert.match(html, /facebook\.com\/reel\//);
+  // A stable, connected Facebook page link is required; a recent public Reel is optional.
+  assert.ok(html.includes("https://www.facebook.com/1256178084247228"));
   assert.match(html, /class="[^"]*top-social-links[^"]*"/);
   assert.match(html, /data-live-sort="deals"/);
   assert.match(html, /data-live-sort="az"/);
