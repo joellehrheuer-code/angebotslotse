@@ -57,6 +57,7 @@ export async function fetchAwinProgramDetails({ publisherId, token, advertiserId
 }
 
 export async function fetchAwinTransactions({ publisherId, token, startDate, endDate, fetchImpl = fetch }) {
+  if (!publisherId || !token) throw new Error("AWIN_PUBLISHER_ID und AWIN_API_TOKEN sind erforderlich.");
   const query = new URLSearchParams({ startDate, endDate, timezone: "Europe/Berlin" });
   const response = await timedFetch(fetchImpl, `${API}/publishers/${encodeURIComponent(publisherId)}/transactions/?${query}`, { headers: { Authorization: `Bearer ${token}` } });
   if (!response.ok) throw new Error(`Awin Transactions API: HTTP ${response.status}`);
