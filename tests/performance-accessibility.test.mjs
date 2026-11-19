@@ -16,15 +16,15 @@ test("Lighthouse-Fixes reduzieren Hero-Asset und benennen Creator-Links", () => 
   const sourceCss = `${fs.readFileSync("public/styles.css", "utf8")}\n\n${fs.readFileSync("public/enhancements.css", "utf8")}\n\n${fs.readFileSync("public/v13.css", "utf8")}`;
   const sourceApp = fs.readFileSync("public/app.js", "utf8");
   const privacy = fs.readFileSync("dist/datenschutz.html", "utf8");
-  const largeOgUsedAsSource=[...home.matchAll(new RegExp("<img[^>]+>", "g"))]
-    .some(([tag])=>tag.split(/\s+/).some(part=>part.startsWith('src="') && part.includes("/og.png")));
-  assert.equal(largeOgUsedAsSource,false,"Do not load the large og.png as a normal homepage image");
+  assert.doesNotMatch(home, /hero-logo-stage[^>]*>[\s\S]*?brand-hero\.jpg/);
   assert.match(home, /hero-logo-stage/);
   assert.match(home, /joel-logo\.svg\?v=4/);
   assert.match(home, /header-brand-picture/);
   assert.match(home, /creator-profile-image/);
   assert.doesNotMatch(home, /hero-logo-stage[^>]*>[\s\S]*?width="720" height="378"/);
-  assert.doesNotMatch(home, /<img[^>]*\\ssrc="[^"]*\\/og\\.png"/);
+  const largeOgUsedAsSource=[...home.matchAll(new RegExp("<img[^>]+>", "g"))]
+    .some(([tag])=>tag.split(/\s+/).some(part=>part.startsWith('src="') && part.includes("/og.png")));
+  assert.equal(largeOgUsedAsSource,false,"Do not load the large og.png as a normal homepage image");
   assert.match(home, /creator-video-media[^>]+aria-label=/);
   assert.match(home, /data-ig-banner-load/);
   assert.doesNotMatch(home, /<script[^>]+instant-gaming\.com\/api\/banner\/partner\/loader\.js/);
