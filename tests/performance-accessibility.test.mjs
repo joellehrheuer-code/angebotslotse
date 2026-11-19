@@ -22,7 +22,7 @@ test("Lighthouse-Fixes reduzieren Hero-Asset und benennen Creator-Links", () => 
   assert.match(home, /header-brand-picture/);
   assert.match(home, /creator-profile-image/);
   assert.doesNotMatch(home, /hero-logo-stage[^>]*>[\s\S]*?width="720" height="378"/);
-  assert.doesNotMatch(home, /<img[^>]+src="[^"]*\/og\.png"/);
+  assert.doesNotMatch(home, /<img[^>]*\\ssrc="[^"]*\\/og\\.png"/);
   assert.match(home, /creator-video-media[^>]+aria-label=/);
   assert.match(home, /data-ig-banner-load/);
   assert.doesNotMatch(home, /<script[^>]+instant-gaming\.com\/api\/banner\/partner\/loader\.js/);
