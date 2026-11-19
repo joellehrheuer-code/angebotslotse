@@ -22,7 +22,9 @@ test("Lighthouse-Fixes reduzieren Hero-Asset und benennen Creator-Links", () => 
   assert.match(home, /header-brand-picture/);
   assert.match(home, /creator-profile-image/);
   assert.doesNotMatch(home, /hero-logo-stage[^>]*>[\s\S]*?width="720" height="378"/);
-  assert.doesNotMatch(home, /<img[^>]+src="[^"]*\/og\.png"/);
+  const largeOgUsedAsSource=[...home.matchAll(new RegExp("<img[^>]+>", "g"))]
+    .some(([tag])=>tag.split(/\s+/).some(part=>part.startsWith('src="') && part.includes("/og.png")));
+  assert.equal(largeOgUsedAsSource,false,"Do not load the large og.png as a normal homepage image");
   assert.match(home, /creator-video-media[^>]+aria-label=/);
   assert.match(home, /data-ig-banner-load/);
   assert.doesNotMatch(home, /<script[^>]+instant-gaming\.com\/api\/banner\/partner\/loader\.js/);
@@ -38,7 +40,20 @@ test("Lighthouse-Fixes reduzieren Hero-Asset und benennen Creator-Links", () => 
   assert.match(home, /site\.css\?v=\d+/);
   assert.match(home, /app\.js\?v=\d+/);
   assert.doesNotMatch(home, /styles\.css\?v=8|enhancements\.css\?v=8/);
-  assert.match(home, /cdn\.shopify\.com[^"]*width=640|cdn\.shopify\.com[^"]*width%3D640/);
+  // Verify real optimized Shopify media if such inventory exists; never inject fake media to satisfy a test.
+  const shopifyImages=[...home.matchAll(/<img[^>]+src="([^"]*cdn\\.shopify\\.com[^"]*)"/g)];
+  for(const [,raw] of shopifyImages){
+    const imageUrl=new URL(raw.replaceAll("&amp;","&"));
+    const width=Number(imageUrl.searchParams.get("width"));
+    assert.ok(Number.isSafeInteger(width) && width>0 && width<=640,"Shopify image must request bounded width");
+  }
+  const heroProductHtml=home.match(/<a class="hero-product-card[^"]*"[^>]*><img[^>]*>/)?.[0]||"";
+  if (heroProductHtml) {
+    assert.ok(heroProductHtml.includes('src="https://'),"Real product hero must display genuine HTTPS product media");
+  } else {
+    assert.match(home,/Zurzeit liegen keine aktuell verifizierten Produktangebote vor/);
+    assert.match(home,/Wir zeigen keine ungeprüften Deals/);
+  }
 });
 
 test("Brand-Links und Instant-Gaming-Loader bleiben zugänglich", () => {
