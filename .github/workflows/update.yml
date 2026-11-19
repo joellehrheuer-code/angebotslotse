@@ -42,6 +42,8 @@ jobs:
           AWIN_PUBLISHER_ID: ${{ secrets.AWIN_PUBLISHER_ID || vars.AWIN_PUBLISHER_ID }}
           AWIN_API_TOKEN: ${{ secrets.AWIN_API_TOKEN }}
           AWIN_DATAFEED_API_KEY: ${{ secrets.AWIN_DATAFEED_API_KEY }}
+          AWIN_FEED_LIST_URL: ${{ secrets.AWIN_FEED_LIST_URL }}
+          AWIN_LEGACY_FEED_URLS: ${{ secrets.AWIN_LEGACY_FEED_URLS }}
           IMPACT_ACCOUNT_SID: ${{ secrets.IMPACT_ACCOUNT_SID || vars.IMPACT_ACCOUNT_SID }}
           IMPACT_AUTH_TOKEN: ${{ secrets.IMPACT_AUTH_TOKEN }}
           IMPACT_SYNC_ENABLED: "1"
