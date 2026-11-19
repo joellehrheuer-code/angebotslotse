@@ -57,3 +57,22 @@ test("Impact accepts approved merchant deeplinks without weakening source checks
   assert.deepEqual(rows.audit.productDiagnostics.linkFailureReasons, {});
   assert.equal(rows.audit.productDiagnostics.deeplinkFromApprovedProgram, 1);
 });
+
+test("Impact reports only host-level domain review candidates without auto-approving them", async () => {
+  const rows = await runProductCheck({
+    allowsDeeplinking: true,
+    productUrl: "https://unrelated.example/private/path?token=DO_NOT_EXPOSE"
+  });
+  assert.equal(rows.audit.productDiagnostics.missingTrackingLink, 1);
+  assert.equal(rows.audit.productDiagnostics.domainReviewCount, 1);
+  assert.deepEqual(rows.audit.productDiagnostics.domainReviewCandidates, [{
+    campaignId: "42",
+    advertiserId: "7",
+    productHost: "unrelated.example",
+    expectedHosts: ["shop.example"],
+    count: 1
+  }]);
+  const audit = JSON.stringify(rows.audit.productDiagnostics);
+  assert.doesNotMatch(audit, /DO_NOT_EXPOSE|private\\/path|https?:\\/\\//);
+  assert.equal(rows.some(row => row.id === "product-100-1"), false);
+});
