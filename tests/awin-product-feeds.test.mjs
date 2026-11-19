@@ -78,13 +78,12 @@ test("Awin legacy feed list and products stay confined to joined advertiser IDs"
 
 
 test("Awin legacy product limit counts only accepted joined-advertiser products",async()=>{
-  const list="Advertiser ID,Advertiser Name,Primary Region,Membership Status,Feed ID,Feed Name,Language,URL\\n1,Approved,DE,Joined,9,Products,German,https://datafeed.api.productserve.com/datafeed/download/apikey/mock/fid/9/format/csv".replaceAll("\\\\n","\\n");
-  const rows=[
-    "aw_deep_link,merchant_deep_link,product_name,merchant_name,merchant_id,search_price,aw_product_id",
-    "https://awin.example/unapproved,https://shop.example/foreign,Foreign,Foreign,2,25,foreign",
-    "https://awin.example/approved,https://shop.example/approved,Allowed,Approved,1,30,approved",
-    "https://awin.example/second,https://shop.example/second,Second,Approved,1,35,second"
-  ].join("\\n");
+  const list=`Advertiser ID,Advertiser Name,Primary Region,Membership Status,Feed ID,Feed Name,Language,URL
+1,Approved,DE,Joined,9,Products,German,https://datafeed.api.productserve.com/datafeed/download/apikey/mock/fid/9/format/csv`;
+  const rows=`aw_deep_link,merchant_deep_link,product_name,merchant_name,merchant_id,search_price,aw_product_id
+https://awin.example/unapproved,https://shop.example/foreign,Foreign,Foreign,2,25,foreign
+https://awin.example/approved,https://shop.example/approved,Allowed,Approved,1,30,approved
+https://awin.example/second,https://shop.example/second,Second,Approved,1,35,second`;
   const fetchImpl=async url=>String(url).includes("/list/")
     ?{ok:true,text:async()=>list}
     :{ok:true,arrayBuffer:async()=>Buffer.from(rows)};
