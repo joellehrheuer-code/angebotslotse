@@ -8,7 +8,7 @@
 
 `[████████░░░░░░░░░░░░] 40 %`
 
-**Produktionsbereitschaft: NICHT ERREICHT.** Letzter geprüfter echter Import-Workflow: 44539900999. Erstmals **6 verifizierte, veröffentlichungsfähige Impact-Angebote** (Martinic) und `catalog:health` erfolgreich. Die nachfolgenden 401 Tests enden jedoch mit **4 Fehlern**, deshalb wurden Commit, Deploy, Smoke und IndexNow übersprungen. Website-Release ist **nicht** bestätigt.
+**Produktionsbereitschaft: NICHT ERREICHT.** Letzter geprüfter echter Import-Workflow: 44542425678. Erstmals **6 verifizierte, veröffentlichungsfähige Impact-Angebote** (Martinic) und `catalog:health` erfolgreich. Die nachfolgenden 403 Tests enden jedoch mit **3 Fehlern**, deshalb wurden Commit, Deploy, Smoke und IndexNow übersprungen. Website-Release ist **nicht** bestätigt.
 
 | # | Bereich | Fortschritt | Abnahmekriterium | Nächste Aktion |
 |---|---|---|---|---|
@@ -101,6 +101,20 @@
 - **Impact/Belkin:** weiterhin **123** Kataloglinks ohne nachgewiesenes genehmigtes Deeplink-Ziel. Die öffentliche Belkin-Domain alleine gilt ausdrücklich **nicht** als Deeplink-Freigabe. Razer-Quarantäne bleibt unverändert.
 - **Meilensteinstand bleibt 40 %.** Die vier aus echten Daten noch nicht erfüllten CI-/Inhalts-Abnahmen werden nicht gestrichen oder künstlich erfüllt. Nächster sinnvoller Schritt: tatsächliche Awin-Konto-PAT-Berechtigung und genehmigte Händlerfeed-URLs, dann die vollständigen Tests erneut mit realem Sortiment prüfen.
 
+## Optimierungsrunde 19.11.2026 – PR #81–82, verbleiben drei Integrationsfehler
+
+- **PR #81, echter Sicherheitsfehler bei Awin behoben:** Die vier Legacy-API-Funktionen `fetchAwinOffers`, `fetchAwinPrograms`, `fetchAwinProgramDetails`, `fetchAwinTransactions` versendeten den `AWIN_API_TOKEN` bislang doppelt: per Bearer-Header und per `accessToken` URL-Query-Parameter. Offizielle Awin-API-Dokumentation (17.11.2026): https://help.awin.com/apis/apidocs/api-authentication beschreibt für Legacy-APIs auf `api.awin.com` einen **Bearer-Header**. Der Token ist jetzt nur im Header, nicht in URL oder Body. Regressionstest mit acht simulierten Requests **bestanden** in Branch Validation **44541696211**; PR **gemergt**. Live-Run **44541862153**: Awin weiterhin `authorization` bei unbekannter Token-/Rechte-Gültigkeit; keine falsche Erfolgsbehauptung.
+- **PR #82, echte Angebotsleiste statt leeren Hardware-Spotlights:** Der strenge `selectSpotlightProducts`-Filter ist bewusst auf bestimmte klassische Vollprodukte beschränkt; bei verifizierten Martinic-Audioprodukten blieb deshalb die allgemeine Leiste `Top-Angebote zum Durchblättern` unnötig leer. Der Build nutzt nun ausschließlich im Fall eines leeren Spotlights die bereits bestehende, aus echten `offers` zusammengestellte `homepageMixed`-Auswahl für diese **allgemeine** Deal-Leiste. Premium-Spotlight, Sicherheits- und Vielfaltregeln bleiben unverändert. Bestehender UI-Test plus neuer Herkunfts-/Leerzustands-Test in Branch Validation **44542240494 bestanden**; PR **gemergt**. Im echten Lauf **44542425678** ist nun auch der zuvor fehlgeschlagene V12-Startseiten-Test erfolgreich.
+- **Bestätigter Stand aus dem echten GitHub-Main-Lauf 44542425678:** **400/403 Tests bestanden, 3 Fehler**; Katalogprüfung mit **6** verifizierten Martinic-Angeboten, weiterhin `state=degraded`. Awin und Awin Enhanced Feeds `authorization`; klassischer Awin-Feed `disabled` ohne genehmigte Feed-URL. Workflow fehlgeschlagen; **kein Commit, Deploy, Live-Smoke oder IndexNow**.
+- **Restfehler (nicht durch erfundene Inhalte beheben):**
+  1. `seo-audit.test.mjs`: über **200** tatsächlich inhaltsreiche, indexierbare Self-Canonical-Seiten erforderlich.
+  2. `storefront-curation.test.mjs`: mindestens **3 vollständige echte Awin-Hero-Produkte aus 3 verschiedenen freigegebenen Händlern**.
+  3. `v7-design.test.mjs`: markenübergreifende, wirklich **vergleichbare** Angebote für das Modul `Ähnliche Angebote`. Bei sechs Produkten einer einzigen Marke darf das Modul keine fremden Marken vortäuschen.
+- **Awin-Zugriff ist die zentrale externe Abhängigkeit:** Bestehender Token/Publisher-Berechtigung kann aus GitHub Actions nicht sicher ausgelesen oder geändert werden. Im offiziellen Awin-Konto Publisher 3045061 die User-Permissions, PAT-Ablaufzeit und gegebenenfalls neuen PAT prüfen; ausschließlich das bereits vorhandene GitHub Actions Secret `AWIN_API_TOKEN` aktualisieren. Awin meldet HTTP 401 bei fehlendem/ungültigem/abgelaufenem Token, 403 bei fehlenden Rechten. Ein neuer echter Live-Lauf muss den Erfolg erst bestätigen.
+- **Produktfeeds:** `AWIN_FEED_LIST_URL` oder `AWIN_LEGACY_FEED_URLS` dürfen nur mit tatsächlich genehmigten, aus Awin verfügbaren Feedlinks befüllt werden. Keine Feedlinks oder Händlerfreigaben raten; kein zusätzlicher Publisher.
+- **Impact/Belkin:** Weiterhin **123** Produktlinks ohne nachweislich zugelassene HTTPS-Deeplink-Zielhost-Zuordnung. Bereits vorhandene Link-Identity-Checks und Razer-Quarantäne bleiben aktiv; bis zur offiziellen Programm-/Publisherfreigabe keine Änderung.
+- **Fortschritt unverändert 40 %** (4/10 abgeschlossene Meilensteine), weil die durchgängige CI und Veröffentlichung noch rot sind. Keine kostenpflichtigen Tools erforderlich.
+
 ## Fortsetzungsprotokoll (jedes Mal aktualisieren)
 
 | Datum | Änderung | Nachweis | Phase |
@@ -133,5 +147,8 @@
 
 | 19.11.2026 | PR #79: wahrheitsgemäßer leerer Rabattcode-Hub und intakte Structured Data | Live-Run 44538436981: 393/398 Tests, 5 Restfehler | gemergt; keine Fake-Gutscheine; 40 % |
 | 19.11.2026 | PR #80: sichere Herstellerbildoptimierung auch für Hero + belastbarer Performance-Test | Live-Run 44539900999: 397/401 Tests bestanden, 4 Restfehler, 6 Martinic-Produkte, Awin weiterhin 401 | gemergt; Commit/Deploy übersprungen, 40 % |
+
+| 19.11.2026 | PR #81 Awin-Token aus URLs entfernt, Bearer-Header weiterhin aktiv | Branch 44541696211: 8-Request-Regressionsprüfung bestanden; echter Lauf 44541862153 weiter Awin 401 | gemergt; Tokenwechsel extern nötig, 40 % |
+| 19.11.2026 | PR #82 ehrliche Angebotsleiste aus bereits verifizierten Martinic-Produkten | Branch 44542240494: UI-/Datenherkunftstests bestanden. Main 44542425678: **400/403 Tests**, 3 Restfehler, Startseitenprüfung grün | gemergt und echter Import bestätigt; keine Veröffentlichung, 40 % |
 
 **100 %** erst, wenn alle zehn Abnahmekriterien **mit Nachweisen** erreicht sind. Neue Feature-Ideen kommen auf eine separate Wunschliste und ändern die Messlatte nicht heimlich.
