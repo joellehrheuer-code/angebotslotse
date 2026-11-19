@@ -49,6 +49,28 @@ export function diagnostic(status, inventory) {
       rows.push("- Nur durch offiziell freigegebene Produktlinks oder erlaubtes Händler-Deeplinking beheben; niemals durch ungetrackte Shoplinks ersetzen.");
     }
   }
+  const trackingReasons=sources.impact?.audit?.productDiagnostics?.catalogIdentityReasons;
+  const knownTrackingReasons=[
+    ["invalid-catalog-url","Katalog-Link ungültig"],
+    ["invalid-program-tracking-url","Offizieller Programm-Link ungültig"],
+    ["catalog-link-not-full-identity","Kataloglink ohne vollständige Tracking-ID"],
+    ["program-link-not-full-identity","Programm-Link ohne vollständige Tracking-ID"],
+    ["publisher-id-mismatch","Publisher-ID nicht identisch"],
+    ["campaign-id-mismatch","Kampagnen-ID nicht identisch"],
+    ["tracking-host-mismatch","Trackingdomain unterschiedlich"],
+    ["blocked-tracking-host","Trackingdomain durch Sicherheitsregel gesperrt"],
+    ["catalog-destination-override","Nicht bestätigte Ziel-Weiterleitung"],
+    ["other-unverified-link","Link trotz Identität nicht bestätigt"]
+  ];
+  if(trackingReasons && typeof trackingReasons==="object" && !Array.isArray(trackingReasons)){
+    const visible=knownTrackingReasons.map(([reason,label])=>({label,count:Number(trackingReasons[reason])}))
+      .filter(x=>Number.isSafeInteger(x.count)&&x.count>0&&x.count<=1_000_000);
+    if(visible.length){
+      rows.push("","### Impact: Warum Produkt- und Programm-Tracking nicht übereinstimmen","");
+      for(const item of visible)rows.push(`- ${item.label}: **${item.count}**`);
+      rows.push("- Keine automatische Freigabe: offizielle Partnerlink-Identität oder Freigabe separat nachweisen.");
+    }
+  }
   rows.push("", "### Nächste Schritte", "");
   if (authAwin) {
     rows.push("- **Awin-Autorisierung:** Den bestehenden API-Zugang im Awin-Publisherkonto prüfen/erneuern und `AWIN_API_TOKEN` in GitHub → Settings → Secrets and variables → Actions aktualisieren. Token niemals in Chat/Logs/Issues veröffentlichen.");
