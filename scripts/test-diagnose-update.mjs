@@ -34,8 +34,8 @@ const impactStatus = {
   }
 };
 const impactReport = diagnostic(impactStatus, []);
-assert.match(impactReport, /Deeplinking nicht freigegeben: \\*\\*180\\*\\*/);
-assert.match(impactReport, /Händlerdomain nicht bestätigt: \\*\\*20\\*\\*/);
+assert.ok(impactReport.includes("Deeplinking nicht freigegeben: **180**"));
+assert.ok(impactReport.includes("Händlerdomain nicht bestätigt: **20**"));
 assert.doesNotMatch(impactReport, /SECRET_TOKEN|private\\.example|untrusted-token-value/);
 assert.doesNotMatch(impactReport, /Programm-Trackinglink nicht erlaubt/);
 console.log("Source diagnostic tests passed");
