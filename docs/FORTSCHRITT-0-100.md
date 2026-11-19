@@ -8,7 +8,7 @@
 
 `[████████░░░░░░░░░░░░] 40 %`
 
-**Produktionsbereitschaft: NICHT ERREICHT.** Letzter geprüfter Workflow: 44534445077. Erstmals **6 verifizierte, veröffentlichungsfähige Impact-Angebote** (Martinic) und `catalog:health` erfolgreich. Die nachfolgenden 392 Tests enden jedoch mit **14 Fehlern**, deshalb wurden Commit, Deploy, Smoke und IndexNow übersprungen. Website-Release ist **nicht** bestätigt.
+**Produktionsbereitschaft: NICHT ERREICHT.** Letzter geprüfter Workflow: 44534878063. Erstmals **6 verifizierte, veröffentlichungsfähige Impact-Angebote** (Martinic) und `catalog:health` erfolgreich. Die nachfolgenden 393 Tests enden jedoch mit **14 Fehlern**, deshalb wurden Commit, Deploy, Smoke und IndexNow übersprungen. Website-Release ist **nicht** bestätigt.
 
 | # | Bereich | Fortschritt | Abnahmekriterium | Nächste Aktion |
 |---|---|---|---|---|
@@ -46,8 +46,8 @@
 - Lauf **44534060496**: Impact 300 Produkte; **171** Razer durch bestehende Tracking-Quarantäne gesperrt, **129** mit `u`-Deeplink und noch ungeprüfter Zieladresse. Awin HTTP 401.
 - PR **#70** klassifiziert Tracking-Identitätsfehler ohne URLs oder Tokens. CI **361/389** bestanden, 28 bestehende Fehlschläge; gemergt.
 - PR **#71** erlaubt Impact-`u` nur bei passender, offiziell verfügbarer Programm-Trackingidentität, zugelassenem Deeplinking und bestätigter HTTPS-Händlerdomain. Es gibt **keine** generelle Domainfreigabe. CI **364/392** bestanden, 28 bestehende Fehlschläge; gemergt.
-- Neuer echter Lauf **44534445077**: Impact 300 Produkte, 6 angenommene und veröffentlichungsfähige Martinic-Produkte, 294 weiter abgelehnt (171 gesperrte Razer-Links, 123 Belkin mit nicht bestätigtem Ziel). `catalog:health` passiert. **378/392 Tests** nach dem Quellenimport bestanden, 14 Fehlschläge, daher kein Datencommit und kein Deploy.
-- **Nächster Schwerpunkt:** Fehlerursachen der 14 verbleibenden Tests mit echtem Impact-Inventar beheben, ohne Tests zu überspringen. Parallel Awin PAT/Kontoberechtigung für Publisher 3045061 im sicheren GitHub-Secret korrigieren; Feed-URL-Secrets nur für genehmigte Programme. Belkin bleibt bis bestätigter Händlerdomain blockiert.
+- Neuer echter Lauf **44534445077**: Impact 300 Produkte, 6 angenommene und veröffentlichungsfähige Martinic-Produkte, 294 weiter abgelehnt (171 gesperrte Razer-Links, 123 Belkin mit nicht bestätigtem Ziel). `catalog:health` passiert. **378/392 Tests** nach dem Quellenimport bestanden, 14 Fehlschläge; mit PR #72 (Website-Build vor Tests) **379/393 Tests**, weiterhin 14 Fehlschläge, daher kein Datencommit und kein Deploy.
+- **Nächster Schwerpunkt:** Fehlerursachen der 14 verbleibenden Tests mit echtem Impact-Inventar beheben, ohne Tests zu überspringen. PR #72 wurde gemergt, Build vor Tests: echter Lauf 44534878063 bestätigt 6 Impact-Produkte, erfolgreichen Build und weiterhin 14 fehlschlagende Testfälle. Fehlen weiterer Händlerangebote (vor allem Awin) sowie Content-/Hub-Anforderungen getrennt untersuchen. Parallel Awin PAT/Kontoberechtigung für Publisher 3045061 im sicheren GitHub-Secret korrigieren; Feed-URL-Secrets nur für genehmigte Programme. Belkin bleibt bis bestätigter Händlerdomain blockiert.
 
 ## Fortsetzungsprotokoll (jedes Mal aktualisieren)
 
@@ -70,5 +70,7 @@
 
 | 19.11.2026 | PR #70–71: Identity-Audit und offiziell freigegebene Impact-Deeplinks | Runs 44533928950, 44534321795: neue Tests bestanden | beide gemergt; keine ungeprüften Freigaben |
 | 19.11.2026 | Martinic-Import freigegeben: 6 reale veröffentlichungsfähige Produkte | Run 44534445077: `catalog:health` bestanden, 6 Produkte, 378/392 Tests | Meilenstein #6 erfüllt; Veröffentlichung wegen 14 Testfehlern noch blockiert |
+
+| 19.11.2026 | PR #72 Build vor datenabhängigen Integrationstests, ohne Gates auszulassen | Actions 44534745582: Reihenfolge-Test bestanden. Live-Run 44534878063: Build bestanden, 6 Impact-Angebote, 379/393 Tests, 14 Fehler | gemergt; keine Veröffentlichung, Fortschritt bleibt bei 40 % |
 
 **100 %** erst, wenn alle zehn Abnahmekriterien **mit Nachweisen** erreicht sind. Neue Feature-Ideen kommen auf eine separate Wunschliste und ändern die Messlatte nicht heimlich.
