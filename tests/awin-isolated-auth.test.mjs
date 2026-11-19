@@ -21,7 +21,7 @@ test("isolated Awin auth probe tests modern and legacy endpoints without leaking
 });
 
 test("isolated probe never sends malformed GitHub secret values", async () => {
-  for (const raw of [" secret ", "Bearer secret", '"secret"', "secret\\nline"]) {
+  for (const raw of [" secret ", "Bearer secret", '"secret"', "secret\nline"]) {
     let requests=0;
     const result = await probeAwinAuth({token:raw,publisherId:"3045061",fetchImpl:async()=>{requests++;throw Error("not expected")}});
     assert.equal(result.status,"secret-format-invalid");
