@@ -37,7 +37,7 @@
 
 - Awin: API 401/403 trotz vorhandenem GitHub Secret; Browseranmeldung allein ist kein API-Nachweis.
 - Awin Legacy: URL-Secrets beim letzten geprüften Lauf noch leer; Import deaktiviert.
-- Impact: 200 katalogisierte Produkte im vorherigen gespeicherten Audit, 200 ohne freigegebenen Produkt-Trackinglink. Neue Linkdiagnose ist auf `main`; PR #66 gibt im Fehlerfall nur freigegebene, aggregierte Ablehnungsgründe im GitHub Job Summary aus. Der echte Folgelauf 44527004164 zählt **300** Ablehnungen der Kategorie `unverified-merchant-domain`. PR #67 ergänzt eine auf 40 Kombinationen begrenzte Hostnamen-Prüfliste im temporären Actions-Diagnose-Artefakt (ohne Pfade, Querystrings oder Freigaben). Die Zuordnung der abweichenden Produktdomains muss weiterhin anhand offiziell bestätigter Impact-Programmbedingungen geprüft werden.
+- Impact: 200 katalogisierte Produkte im vorherigen gespeicherten Audit, 200 ohne freigegebenen Produkt-Trackinglink. Neue Linkdiagnose ist auf `main`; PR #66 gibt im Fehlerfall nur freigegebene, aggregierte Ablehnungsgründe im GitHub Job Summary aus. Der echte Folgelauf 44527004164 zählt **300** Ablehnungen der Kategorie `unverified-merchant-domain`. PR #67 ergänzt eine auf 40 Kombinationen begrenzte Hostnamen-Prüfliste im temporären Actions-Diagnose-Artefakt (ohne Pfade, Querystrings oder Freigaben). Die Zuordnung der abweichenden Produktdomains muss weiterhin anhand offiziell bestätigter Impact-Programmbedingungen geprüft werden. Der erste Folgelauf 44528653702 hat Impact nach 90 Sekunden abgebrochen; Domainprüfung noch nicht auswertbar. PR #68 begrenzt aufwendige zusätzliche Anzeigen-Trackinglink-Prüfungen auf 12 pro Lauf, übersprungene Anzeigen bleiben gesperrt; Erfolg im nächsten echten Lauf ist erst zu bestätigen.
 - 28 bestehende Tests im Branch-Validation-Lauf fehlgeschlagen. Drei neue Impact-Diagnosetests bestanden.
 - 0 veröffentlichungsfähige Angebote; aktuelle Website-Veröffentlichung nach neuester Änderung nicht bestätigt.
 
@@ -53,5 +53,7 @@
 | 19.11.2026 | Reale Impact-Fehlerursache: 300 Produkte mit nicht bestätigter Händlerdomain | Actions 44527004164; Awin weiter Autorisierungsfehler, `publishable=0` | offen: freigegebene Händlerdomains abgleichen, keine Filterlockerung |
 
 | 19.11.2026 | PR #67 Impact-Domain-Prüfliste ohne automatische Zulassung | Actions 44528528152: neuer Test bestanden; 354/382 Tests, 28 bestehende Fehler | gemergt; echte Domain-Prüfliste aus Folgelauf auswerten |
+
+| 19.11.2026 | PR #68 dedizierte Impact-Anzeigenprüfungen begrenzt (12 je Lauf) | Actions 44529268381: neuer Regressionstest bestanden; 355/383 Tests, 28 bestehende Fehler | gemergt, tatsächliche Timeout-Wirkung offen |
 
 **100 %** erst, wenn alle zehn Abnahmekriterien **mit Nachweisen** erreicht sind. Neue Feature-Ideen kommen auf eine separate Wunschliste und ändern die Messlatte nicht heimlich.
