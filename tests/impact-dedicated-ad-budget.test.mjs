@@ -6,7 +6,7 @@ test("many quarantined ads never exhaust source timeout with unbounded verificat
   let dedicatedRequests = 0;
   const ads = Array.from({length: 35}, (_,i) => ({
     Id: String(i+1), CampaignId: "42", AdvertiserId: "7",
-    Name: "Ad " + i, TrackingLink: "https://ads.example/c/" + i,
+    Name: "Ad " + i, TrackingLink: "https://ads.example/c/" + (i+1),
     LandingPageUrl: "https://shop.example/deal/" + i
   }));
   const fetchImpl = async url => {
