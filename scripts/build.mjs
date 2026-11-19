@@ -516,7 +516,7 @@ const listingControlsFor=(category,rows)=>{
   return `<button class="filter-mobile-toggle" type="button" data-filter-mobile-toggle aria-expanded="false" aria-controls="listing-filters"><span>Filter & Sortierung</span><b data-filter-mobile-count>${rows.length} Angebote</b></button><div id="listing-filters" class="listing-tools listing-filters" data-listing-filters>
     <label class="listing-search">${searchLabel}<input type="search" data-offer-search placeholder="Produkt, Marke oder Anbieter" autocomplete="off"></label>
     ${brands.length>1?`<label>Marke<select data-filter-brand><option value="">Alle Marken</option>${brands.map(name=>`<option value="${esc(name.toLowerCase())}">${esc(name)}</option>`).join("")}</select></label>`:""}
-    ${merchants.length>1?`<label>Händler<select data-filter-merchant><option value="">Alle Händler</option>${merchants.map(name=>`<option value="${esc(name.toLowerCase())}">${esc(name)}</option>`).join("")}</select></label>`:""}
+    ${merchants.length>0?`<label>Händler<select data-filter-merchant><option value="">Alle Händler</option>${merchants.map(name=>`<option value="${esc(name.toLowerCase())}">${esc(name)}</option>`).join("")}</select></label>`:""}
     ${rows.some(hasPrice)?'<label>Max. Preis<input type="number" data-filter-max-price min="0" step="0.01" inputmode="decimal" placeholder="kein Limit"></label>':""}
     ${rows.some(o=>discount(o))?'<label class="filter-check"><input type="checkbox" data-filter-discount> Nur Rabatt</label>':""}
     ${rows.length>1?`<label>Sortieren<select data-offer-sort>${sortOptions}</select></label>`:""}
