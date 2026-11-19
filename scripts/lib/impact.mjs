@@ -89,6 +89,27 @@ const impactLinkFailureReason = (product, program, policy) => {
   return "unresolved-link";
 };
 
+// Audit-only classification. Never persist URL paths, query strings, tokens, or IDs
+// from an untrusted product link. Only these fixed reason codes leave this function.
+const catalogTrackingIdentityReason = (product, program, policy) => {
+  const productUrl = validWebsiteUrl(product.Url);
+  const officialUrl = validWebsiteUrl(program.TrackingLink);
+  if (!productUrl) return "invalid-catalog-url";
+  if (!officialUrl) return "invalid-program-tracking-url";
+  const identity = path => /^\\/c\\/(\\d+)\\/(\\d+)\\/(\\d+)\\/?$/.exec(path);
+  const actual = identity(productUrl.pathname);
+  const expected = identity(officialUrl.pathname);
+  if (!actual) return "catalog-link-not-full-identity";
+  if (!expected) return "program-link-not-full-identity";
+  if (actual[1] !== expected[1]) return "publisher-id-mismatch";
+  if (actual[3] !== expected[3] || actual[3] !== String(program.CampaignId)) return "campaign-id-mismatch";
+  if (productUrl.hostname !== officialUrl.hostname) return "tracking-host-mismatch";
+  const rule = quarantineFor(program, policy);
+  if (!trackingUrlAllowed(productUrl.href, policy, rule) || !trackingUrlAllowed(officialUrl.href, policy, rule)) return "blocked-tracking-host";
+  if (productUrl.searchParams.has("u")) return "catalog-destination-override";
+  return "other-unverified-link";
+};
+
 // Official Impact tracking link identity: same first-party tracking host,
 // same publisher account number and campaign number, plus existing quarantine.
 // A catalog URL is never accepted merely because its hostname looks like a tracker.
@@ -278,7 +299,7 @@ export async function fetchImpactOffers({ accountSid, authToken, fetchImpl = fet
   const domainReviewCounts = new Map();
   audit.productDiagnostics={
     fields:products[0]&&typeof products[0]==="object"?Object.keys(products[0]).slice(0,35):[],
-    missingApprovedProgram:0,matchedViaCatalog:0,missingTrackingLink:0,linkFailureReasons:{},verifiedCatalogTrackingLinks:0,deeplinkFromApprovedProgram:0,missingName:0,outOfStock:0,accepted:0
+    missingApprovedProgram:0,matchedViaCatalog:0,missingTrackingLink:0,linkFailureReasons:{},catalogIdentityReasons:{},verifiedCatalogTrackingLinks:0,deeplinkFromApprovedProgram:0,missingName:0,outOfStock:0,accepted:0
   };
   for (const product of products) {
     const directProgram=byCampaign.get(String(product.CampaignId)) ||
@@ -292,6 +313,8 @@ export async function fetchImpactOffers({ accountSid, authToken, fetchImpl = fet
       const reason=impactLinkFailureReason(product,program,policy);
       audit.productDiagnostics.linkFailureReasons[reason]=(audit.productDiagnostics.linkFailureReasons[reason]||0)+1;
       if(reason==="unverified-merchant-domain"){
+        const identityReason=catalogTrackingIdentityReason(product,program,policy);
+        audit.productDiagnostics.catalogIdentityReasons[identityReason]=(audit.productDiagnostics.catalogIdentityReasons[identityReason]||0)+1;
         const productHost=validWebsiteUrl(product.Url || product.MobileUrl)?.hostname;
         const expectedHosts=[program.AdvertiserUrl,program.CampaignUrl]
           .map(value=>validWebsiteUrl(value)?.hostname).filter(Boolean);
