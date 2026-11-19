@@ -21,7 +21,8 @@ test("startpage shows swipeable top deals, creator videos and Instant Gaming bef
   assert.equal(home.split("${instantGamingModule}").length-1,1);
   assert.match(css(),/#aktuelle-deals \.deal-rail\{/);
   assert.match(b, /\["Alle Angebote","\/suche\.html"\]/);
-  assert.match(b, /homeMixedUnique,12,"\/suche\.html"\)/);
+  assert.match(b, /homeVerifiedRail,12,"\/suche\.html"\)/);
+  assert.match(b, /homeVerifiedRail=homeMixedUnique\.length\?homeMixedUnique:homepageMixed/);
   assert.match(css(),/scroll-snap-type:x mandatory/);
 });
 test("offer discovery appears before the large moderation and review section",()=>{
