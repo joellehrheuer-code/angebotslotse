@@ -8,7 +8,7 @@
 
 `[████████░░░░░░░░░░░░] 40 %`
 
-**Produktionsbereitschaft: NICHT ERREICHT.** Letzter geprüfter echter Import-Workflow: 44536814411. Erstmals **6 verifizierte, veröffentlichungsfähige Impact-Angebote** (Martinic) und `catalog:health` erfolgreich. Die nachfolgenden 397 Tests enden jedoch mit **8 Fehlern**, deshalb wurden Commit, Deploy, Smoke und IndexNow übersprungen. Website-Release ist **nicht** bestätigt.
+**Produktionsbereitschaft: NICHT ERREICHT.** Letzter geprüfter echter Import-Workflow: 44537707144. Erstmals **6 verifizierte, veröffentlichungsfähige Impact-Angebote** (Martinic) und `catalog:health` erfolgreich. Die nachfolgenden 398 Tests enden jedoch mit **6 Fehlern**, deshalb wurden Commit, Deploy, Smoke und IndexNow übersprungen. Website-Release ist **nicht** bestätigt.
 
 | # | Bereich | Fortschritt | Abnahmekriterium | Nächste Aktion |
 |---|---|---|---|---|
@@ -78,6 +78,15 @@
 
 **Nächste Aktion:** Awin PAT im bestehenden Konto verifizieren und das GitHub Secret sicher erneuern; danach offizielle Awin-Programme/Produktfeeds testen. Parallel nur nachweisbare neue Händlerdomain-Freigaben prüfen. Anschließend die vollständigen acht verbleibenden Tests erneut ausführen, ohne sie abzuschalten. Meilenstein #8 erst dann als erledigt markieren, wenn Build, sämtliche Tests, SEO, Security und Validate erfolgreich sind.
 
+## Optimierungsrunde 19.11.2026 – PR #78
+
+- **PR #78, nachgewiesener Single-Merchant-Filter-Bug:** In `scripts/build.mjs` wurde das Händler-Dropdown nur bei mindestens zwei unterschiedlichen Händlern gerendert. Das echte geprüfte Angebotssortiment enthält derzeit 6 Martinic-Produkte von einem Händler. Die Auswahl ist nun auch für genau einen tatsächlich aus dem Katalog stammenden Händler verfügbar; keine erfundenen Optionen. Neuer Regressionstest bestand in Branch Validation **44537580284**.
+- **Realer Nachweis in GitHub-main, Lauf 44537707144:** `catalog:health` erfolgreich mit **6 veröffentlichungsfähigen Impact-Angeboten**; der vorher fehlgeschlagene Test **„Kategorie- und Suchseiten bieten kombinierbare Deal-Filter“** besteht. `npm test`: **392/398 bestanden, 6 Fehler** (vorher 8). Keine Abschaltung von Tests, `validate`, SEO, Security oder Veröffentlichungssperren.
+- **Awin-API:** Quellendiagnose weiterhin `awin=AUTHORIZATION`, `awin-enhanced-feeds=AUTHORIZATION`; klassischer Produktfeed `disabled` mangels genehmigter URL-Secrets. Bearer-Header in `scripts/lib/awin.mjs` ist vorhanden, aber bestehendes `AWIN_API_TOKEN` im GitHub Workflow kann keinen erfolgreichen API-Aufruf nachweisen. Gültigen Personal Access Token **nur in GitHub Actions Secrets** hinterlegen; niemals Chat/Commit/Issue/Logs.
+- **Impact-Belkin:** Die 123 Belkin-Produktlinks bleiben wegen nicht bestätigter Händler-Zieladresse abgelehnt. Die bestehende Razer-Quarantäne bleibt unverändert. Öffentliche Händlerwebsites sind **kein** Beleg für Deeplink-Berechtigungen; keine automatische Domainfreigabe.
+- **Die 6 verbliebenen Integrationstests:** (1) Rabattcodes-JSON-LD mit echten verifizierten Coupon-Zielen, (2) Lighthouse-Test verlangt ein tatsächlich vorhandenes optimiertes Shopify-Produktbild, (3) SEO-Audit verlangt über 200 indexierbare echte Seiten, (4) drei vollständige Awin-Hero-Produkte aus verschiedenen genehmigten Händlern, (5) datenreiche Premium-Startseiten-Hero-Module, (6) Produktalternativen mit echten verknüpften Angeboten. Die sechs Martinic-Produkte alleine erfüllen diese derzeit nicht. **Kein Ersetzen durch Fake-Angebote, keine Deaktivierung dieser Tests.**
+- **Meilensteinfortschritt bleibt 40 %:** CI-Qualitäts-Meilenstein #8 ist erst bei vollständig bestandener realer Test-/Build-/SEO-/Security-/Validate-Kette erfüllt. Release/Commit/Live-Smoke/IndexNow noch offen.
+
 ## Fortsetzungsprotokoll (jedes Mal aktualisieren)
 
 | Datum | Änderung | Nachweis | Phase |
@@ -105,5 +114,7 @@
 | 19.11.2026 | PR #73: CSS-/JS-Asset-Hash wird nun tatsächlich interpoliert | Branch Validation 44535417562 und echter Run 44535543762: neuer Regressionstest bestanden, 380/394 Tests nach echtem Import, 14 Fehler | in main gemergt, kein Deploy, 40 % unverändert |
 
 | 19.11.2026 | PR #73–77: Asset-Cache, Facebook-Seite, Impact-Hersteller, echter Bildfallback und präzisierter Social-Test | Runs 44535543762, 44536059828, 44536437076, 44536814411: von 14 auf 8 Live-Testfehler; PR #77 Branch 44537011533 Navigationstest erfolgreich | gemergt, echter Gesamt-CI weiterhin rot; 40 % unverändert |
+
+| 19.11.2026 | PR #78 Single-Merchant-Filter (echte Händlerauswahl) | Branch Validation 44537580284: Regressionstest bestanden. Echter Update-Lauf 44537707144: 392/398 Tests, 6 Restfehler, 6 echte Impact-Produkte, Awin-Autorisierung weiter fehlgeschlagen | gemergt und live im Workflow bestätigt, Release weiter blockiert; Fortschritt 40 % |
 
 **100 %** erst, wenn alle zehn Abnahmekriterien **mit Nachweisen** erreicht sind. Neue Feature-Ideen kommen auf eine separate Wunschliste und ändern die Messlatte nicht heimlich.
