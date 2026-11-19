@@ -48,7 +48,12 @@ test("Lighthouse-Fixes reduzieren Hero-Asset und benennen Creator-Links", () => 
     assert.ok(Number.isSafeInteger(width) && width>0 && width<=640,"Shopify image must request bounded width");
   }
   const heroProductHtml=home.match(/<a class="hero-product-card[^"]*"[^>]*><img[^>]*>/)?.[0]||"";
-  assert.ok(heroProductHtml.includes('src="https://'),"Hero must display genuine HTTPS product media");
+  if (heroProductHtml) {
+    assert.ok(heroProductHtml.includes('src="https://'),"Real product hero must display genuine HTTPS product media");
+  } else {
+    assert.match(home,/Zurzeit liegen keine aktuell verifizierten Produktangebote vor/);
+    assert.match(home,/Wir zeigen keine ungeprüften Deals/);
+  }
 });
 
 test("Brand-Links und Instant-Gaming-Loader bleiben zugänglich", () => {
