@@ -65,7 +65,8 @@ export async function fetchAwinProductFeeds({ apiKey, feedListUrl, feedUrls, joi
     if(!response.ok)continue;
     const bytes=Buffer.from(await response.arrayBuffer());
     let text; try{text=gunzipSync(bytes).toString("utf8");}catch{text=bytes.toString("utf8");}
-    for(const row of parseCsv(text).slice(0,maxProducts-products.length)){
+    for(const row of parseCsv(text)){
+      if(products.length>=maxProducts)break;
       if(!authorizedIds.has(String(pick(row,"merchant_id","Advertiser ID","advertiser_id"))))continue;
       const tracking=pick(row,"aw_deep_link","deep_link"); const destination=pick(row,"merchant_deep_link","deep_link", "aw_deep_link");
       if(!tracking||!destination)continue;
