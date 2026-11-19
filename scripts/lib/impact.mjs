@@ -240,6 +240,8 @@ export async function fetchImpactOffers({ accountSid, authToken, fetchImpl = fet
       byCampaign.get(String(catalog.CampaignId)) || byAdvertiser.get(String(catalog.AdvertiserId))])
     .filter(([id,program])=>id!=="undefined" && Boolean(program)));
   audit.products=products.length;
+  // Review-only candidate domains. No querystrings, paths, credentials or automatic approvals.
+  const domainReviewCounts = new Map();
   audit.productDiagnostics={
     fields:products[0]&&typeof products[0]==="object"?Object.keys(products[0]).slice(0,35):[],
     missingApprovedProgram:0,matchedViaCatalog:0,missingTrackingLink:0,linkFailureReasons:{},deeplinkFromApprovedProgram:0,missingName:0,outOfStock:0,accepted:0
@@ -255,6 +257,16 @@ export async function fetchImpactOffers({ accountSid, authToken, fetchImpl = fet
       audit.productDiagnostics.missingTrackingLink+=1;
       const reason=impactLinkFailureReason(product,program,policy);
       audit.productDiagnostics.linkFailureReasons[reason]=(audit.productDiagnostics.linkFailureReasons[reason]||0)+1;
+      if(reason==="unverified-merchant-domain"){
+        const productHost=validWebsiteUrl(product.Url || product.MobileUrl)?.hostname;
+        const expectedHosts=[program.AdvertiserUrl,program.CampaignUrl]
+          .map(value=>validWebsiteUrl(value)?.hostname).filter(Boolean);
+        // Cap the investigation data and include only domain-level evidence.
+        if(productHost && domainReviewCounts.size<40) {
+          const key=JSON.stringify([String(program.CampaignId),String(program.AdvertiserId),productHost,...expectedHosts]);
+          domainReviewCounts.set(key,(domainReviewCounts.get(key)||0)+1);
+        }
+      }
       continue;
     }
     const trackingUrl=resolvedTracking.url;
@@ -276,6 +288,13 @@ export async function fetchImpactOffers({ accountSid, authToken, fetchImpl = fet
       currency: product.Currency || product.CurrencyCode,
       productId: product.Gtin ?? product.GTIN ?? product.Ean ?? product.EAN ?? product.Mpn ?? product.CatalogItemId });
   }
+
+  audit.productDiagnostics.domainReviewCandidates=[...domainReviewCounts]
+    .map(([key,count])=>{
+      const [campaignId,advertiserId,productHost,...expectedHosts]=JSON.parse(key);
+      return {campaignId,advertiserId,productHost,expectedHosts,count};
+    }).sort((a,b)=>b.count-a.count).slice(0,40);
+  audit.productDiagnostics.domainReviewCount=domainReviewCounts.size;
 
   for(const [key,pathname,names] of [["stores",`/Mediapartners/${account}/Stores`,["Stores"]]]){
     try{audit[key]=(await api.pages(pathname,names)).length;}catch{audit[key]="unavailable";}
