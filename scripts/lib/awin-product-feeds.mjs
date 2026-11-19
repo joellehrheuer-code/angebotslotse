@@ -17,14 +17,22 @@ const pick=(row,...names)=>names.map(name=>row[name]).find(value=>String(value??
 const joined=row=>/^(?:joined|active|beigetreten)$/i.test(String(pick(row,"Membership Status","membership_status")||"").trim());
 const german=row=>/^(de|germany|deutschland)$/i.test(pick(row,"Primary Region","primary_region")||"")||/german|deutsch/i.test(pick(row,"Language","language")||"");
 
-const allowedAwinFeedUrl=(value,mode="download")=>{
+const allowedAwinFeedUrl=(value,mode="download",publisherId="")=>{
   try{
     const url=new URL(value);
-    if(url.protocol!=="https:"||url.username||url.password)return null;
+    if(url.protocol!=="https:"||url.username||url.password||url.port||url.hash)return null;
     const path=url.pathname.toLowerCase();
-    if(mode==="list")return url.hostname==="productdata.awin.com"
-      && path.startsWith("/datafeed/list/apikey/")
-      && path.length>"/datafeed/list/apikey/".length?url.href:null;
+    if(mode==="list"){
+      // Awin's documented 2026 Create-a-Feed feed-list URL lives on ui.awin.com.
+      // Do not accept any other ui.awin.com path or another publisher account.
+      if(url.hostname==="ui.awin.com"){
+        const m=/^\/productdata-darwin-download\/publisher\/([0-9]+)\/([^/]+)\/1\/feedlist$/i.exec(url.pathname);
+        return m && publisherId && m[1]===String(publisherId) && !url.search ? url.href : null;
+      }
+      return url.hostname==="productdata.awin.com"
+        && path.startsWith("/datafeed/list/apikey/")
+        && path.length>"/datafeed/list/apikey/".length?url.href:null;
+    }
     return ["datafeed.api.productserve.com","productdata.awin.com"].includes(url.hostname)
       && path.startsWith("/datafeed/download/apikey/")
       && path.length>"/datafeed/download/apikey/".length?url.href:null;
@@ -35,7 +43,7 @@ const parseConfiguredUrls=value=>String(value||"").split(";").map(x=>x.trim()).f
 
 // Awin confirmed classic/legacy feeds must be downloaded by complete account
 // URLs from Toolbox > Create-a-Feed, NOT with the Enhanced Feed API token.
-export async function fetchAwinProductFeeds({ apiKey, feedListUrl, feedUrls, joinedAdvertiserIds=[], fetchImpl=fetch, maxFeeds=6, maxProducts=500 }) {
+export async function fetchAwinProductFeeds({ apiKey, publisherId, feedListUrl, feedUrls, joinedAdvertiserIds=[], fetchImpl=fetch, maxFeeds=6, maxProducts=500 }) {
   const explicit=parseConfiguredUrls(feedUrls);
   if(explicit.length>0 && explicit.some(url=>!allowedAwinFeedUrl(url)))
     throw new Error("Untrusted Awin legacy download host or path");
@@ -49,9 +57,9 @@ export async function fetchAwinProductFeeds({ apiKey, feedListUrl, feedUrls, joi
     if(authorizedIds.size===0)return[];
     feedRows=explicit.slice(0,maxFeeds).map((url,index)=>({URL:url,"Feed ID":`direct-${index+1}`}));
   }else{
-    const listUrl=feedListUrl?allowedAwinFeedUrl(feedListUrl,"list"):apiKey?`${FEED_LIST}/${encodeURIComponent(apiKey)}`:null;
+    const listUrl=feedListUrl?allowedAwinFeedUrl(feedListUrl,"list",publisherId):apiKey?`${FEED_LIST}/${encodeURIComponent(apiKey)}`:null;
     if(!listUrl) { if(feedListUrl)throw new Error("Untrusted Awin feed-list URL"); return []; }
-    const listResponse=await timedFetch(fetchImpl,listUrl);
+    const listResponse=await timedFetch(fetchImpl,listUrl,{redirect:"error"});
     if(!listResponse.ok)throw new Error(`Awin Product Feed List: HTTP ${listResponse.status}`);
     feedRows=parseCsv(await listResponse.text())
       .filter(row=>joined(row)&&german(row)&&allowedAwinFeedUrl(pick(row,"URL","url")))
@@ -61,7 +69,7 @@ export async function fetchAwinProductFeeds({ apiKey, feedListUrl, feedUrls, joi
   const products=[];
   for(const feed of feedRows){
     if(products.length>=maxProducts)break;
-    const response=await timedFetch(fetchImpl, pick(feed,"URL","url"));
+    const response=await timedFetch(fetchImpl, pick(feed,"URL","url"),{redirect:"error"});
     if(!response.ok)continue;
     const bytes=Buffer.from(await response.arrayBuffer());
     let text; try{text=gunzipSync(bytes).toString("utf8");}catch{text=bytes.toString("utf8");}
