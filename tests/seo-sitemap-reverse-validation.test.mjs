@@ -46,3 +46,12 @@ test("SEO audit blocks a nonexistent URL included alongside a valid page", () =>
     error.page === extraUrl
   ));
 });
+
+test("SEO audit rejects a duplicate loc even when it resolves to a valid canonical page", () => {
+  const { status, report } = runAudit([home]);
+  assert.equal(status, 1);
+  assert.equal(report.summary.sitemapUrls, 1, "unique URL count must not disguise duplicate entries");
+  assert.ok(report.errors.some(error =>
+    error.type === "duplicate-sitemap-url" && error.page === home
+  ));
+});
