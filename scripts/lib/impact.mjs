@@ -193,9 +193,21 @@ export async function fetchImpactOffers({ accountSid, authToken, fetchImpl = fet
   ]);
 
   audit.ads=ads.length;
+  // Dedicated verification can require an extra network call per ad.
+  // Bound this cost so a large quarantined-ad export cannot time out
+  // the independent product catalog sync. Unchecked ads are NOT accepted.
+  const dedicatedAdCheckLimit=12;
+  let dedicatedAdChecks=0;
+  let dedicatedAdChecksSkipped=0;
   for (const ad of ads) {
     const program = byCampaign.get(String(ad.CampaignId));
     if (!program || !ad.Name) continue;
+    const rule=quarantineFor(program,policy);
+    const requiresDedicatedCheck=(policy.reviewSourceIds??[]).includes(`ad-${ad.Id}`) || Boolean(rule?.requireDedicatedAdLink);
+    if(requiresDedicatedCheck) {
+      if(dedicatedAdChecks>=dedicatedAdCheckLimit) {dedicatedAdChecksSkipped+=1;continue;}
+      dedicatedAdChecks+=1;
+    }
     const trackingUrl = await resolveAdTrackingLink(ad, program, api, policy);
     if (!trackingUrl) continue;
     bump(program, "ads");
@@ -205,6 +217,7 @@ export async function fetchImpactOffers({ accountSid, authToken, fetchImpl = fet
       voucher: ad.DealDefaultPromoCode ? { code: ad.DealDefaultPromoCode } : undefined });
   }
 
+  audit.dedicatedAdVerification={limit:dedicatedAdCheckLimit,attempted:dedicatedAdChecks,skipped:dedicatedAdChecksSkipped};
   audit.promotions=promotions.length;
   for (const promotion of promotions) {
     const program = byAdvertiser.get(String(promotion.AdvertiserId));
