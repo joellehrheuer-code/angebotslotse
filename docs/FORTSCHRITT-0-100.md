@@ -8,7 +8,7 @@
 
 `[██████░░░░░░░░░░░░░░] 30 %`
 
-**Produktionsbereitschaft: NICHT ERREICHT.** Letzter geprüfter Workflow: 44522498373, `catalog:health` stoppt bei 0 verifizierten Angeboten; Commit, Deploy, Smoke, IndexNow wurden übersprungen.
+**Produktionsbereitschaft: NICHT ERREICHT.** Letzter geprüfter Workflow: 44527004164, `catalog:health` stoppt bei 0 verifizierten Angeboten; Commit, Deploy, Smoke, IndexNow wurden übersprungen.
 
 | # | Bereich | Fortschritt | Abnahmekriterium | Nächste Aktion |
 |---|---|---|---|---|
@@ -37,7 +37,7 @@
 
 - Awin: API 401/403 trotz vorhandenem GitHub Secret; Browseranmeldung allein ist kein API-Nachweis.
 - Awin Legacy: URL-Secrets beim letzten geprüften Lauf noch leer; Import deaktiviert.
-- Impact: 200 katalogisierte Produkte im vorherigen gespeicherten Audit, 200 ohne freigegebenen Produkt-Trackinglink. Neue Linkdiagnose ist auf `main`; PR #66 gibt im Fehlerfall nur freigegebene, aggregierte Ablehnungsgründe im GitHub Job Summary aus. Deren echter Folgebericht muss erst verifiziert werden.
+- Impact: 200 katalogisierte Produkte im vorherigen gespeicherten Audit, 200 ohne freigegebenen Produkt-Trackinglink. Neue Linkdiagnose ist auf `main`; PR #66 gibt im Fehlerfall nur freigegebene, aggregierte Ablehnungsgründe im GitHub Job Summary aus. Der echte Folgelauf 44527004164 zählt **300** Ablehnungen der Kategorie `unverified-merchant-domain`. Die Zuordnung der abweichenden Produktdomains muss anhand offiziell bestätigter Impact-Programmbedingungen geprüft werden.
 - 28 bestehende Tests im Branch-Validation-Lauf fehlgeschlagen. Drei neue Impact-Diagnosetests bestanden.
 - 0 veröffentlichungsfähige Angebote; aktuelle Website-Veröffentlichung nach neuester Änderung nicht bestätigt.
 
@@ -49,6 +49,7 @@
 | 19.11.2026 | PR #64 Awin Legacy-Secret-Verdrahtung | Test bestanden; Actions 44522279794 | gemergt; noch keine Feedlinks |
 | 19.11.2026 | PR #65 Impact-Linkdiagnose | Drei Tests bestanden; Actions 44522386921 | gemergt; neuer echter Ergebnisbericht offen |
 | 19.11.2026 | 0 valide Angebote, Deploy gesperrt | Actions 44522498373 | bestätigter Blocker |
-| 19.11.2026 | PR #66 Impact-Ablehnungsgründe in sicherer Actions-Zusammenfassung | Actions 44526857253: Regressionstest bestanden; 353/381 Tests, 28 bekannte Fehlschläge | gemergt; neuer echter Quellenlauf offen |
+| 19.11.2026 | PR #66 Impact-Ablehnungsgründe in sicherer Actions-Zusammenfassung | Actions 44526857253: Regressionstest bestanden; 353/381 Tests, 28 bekannte Fehlschläge | gemergt; Diagnose im Live-Update bestätigt |
+| 19.11.2026 | Reale Impact-Fehlerursache: 300 Produkte mit nicht bestätigter Händlerdomain | Actions 44527004164; Awin weiter Autorisierungsfehler, `publishable=0` | offen: freigegebene Händlerdomains abgleichen, keine Filterlockerung |
 
 **100 %** erst, wenn alle zehn Abnahmekriterien **mit Nachweisen** erreicht sind. Neue Feature-Ideen kommen auf eine separate Wunschliste und ändern die Messlatte nicht heimlich.
