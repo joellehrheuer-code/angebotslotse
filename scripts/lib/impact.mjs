@@ -75,6 +75,20 @@ const sameMerchantHost = (productUrl, program) => {
     || productUrl.hostname.endsWith("." + site.hostname)
     || site.hostname.endsWith("." + productUrl.hostname));
 };
+// Internal, aggregated reason codes only. Never include URLs or credentials in diagnostics.
+const impactLinkFailureReason = (product, program, policy) => {
+  const rule = quarantineFor(program, policy);
+  const direct = product.TrackingLink || product.TrackingURL || product.UrlTracking;
+  if (direct && !trackingUrlAllowed(direct, policy, rule)) return "product-link-not-allowed";
+  if (!allowsDeeplinking(program.AllowsDeeplinking)) return "deeplinking-not-approved";
+  const target = validWebsiteUrl(product.Url || product.MobileUrl);
+  if (!target) return "invalid-product-url";
+  if (!sameMerchantHost(target, program)) return "unverified-merchant-domain";
+  if (!trackingUrlAllowed(program.TrackingLink, policy, rule)) return "program-link-not-allowed";
+  if (new URL(program.TrackingLink).searchParams.has("u")) return "program-link-already-deeplinked";
+  return "unresolved-link";
+};
+
 const approvedProductTrackingLink = (product, program, policy) => {
   const rule = quarantineFor(program, policy);
   const direct = product.TrackingLink || product.TrackingURL || product.UrlTracking;
@@ -228,7 +242,7 @@ export async function fetchImpactOffers({ accountSid, authToken, fetchImpl = fet
   audit.products=products.length;
   audit.productDiagnostics={
     fields:products[0]&&typeof products[0]==="object"?Object.keys(products[0]).slice(0,35):[],
-    missingApprovedProgram:0,matchedViaCatalog:0,missingTrackingLink:0,deeplinkFromApprovedProgram:0,missingName:0,outOfStock:0,accepted:0
+    missingApprovedProgram:0,matchedViaCatalog:0,missingTrackingLink:0,linkFailureReasons:{},deeplinkFromApprovedProgram:0,missingName:0,outOfStock:0,accepted:0
   };
   for (const product of products) {
     const directProgram=byCampaign.get(String(product.CampaignId)) ||
@@ -237,7 +251,12 @@ export async function fetchImpactOffers({ accountSid, authToken, fetchImpl = fet
     if(program && !directProgram)audit.productDiagnostics.matchedViaCatalog+=1;
     if(!program){audit.productDiagnostics.missingApprovedProgram+=1;continue;}
     const resolvedTracking=approvedProductTrackingLink(product,program,policy);
-    if(!resolvedTracking){audit.productDiagnostics.missingTrackingLink+=1;continue;}
+    if(!resolvedTracking){
+      audit.productDiagnostics.missingTrackingLink+=1;
+      const reason=impactLinkFailureReason(product,program,policy);
+      audit.productDiagnostics.linkFailureReasons[reason]=(audit.productDiagnostics.linkFailureReasons[reason]||0)+1;
+      continue;
+    }
     const trackingUrl=resolvedTracking.url;
     if(resolvedTracking.origin==="approved-deeplink")audit.productDiagnostics.deeplinkFromApprovedProgram+=1;
     if(!product.Name){audit.productDiagnostics.missingName+=1;continue;}
