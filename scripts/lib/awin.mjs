@@ -10,8 +10,8 @@ export async function fetchAwinOffers({ publisherId, token, membership = "joined
   const collected = [];
   let page = 1;
   for (;;) {
-    const query = new URLSearchParams({ accessToken: token });
-    const response = await timedFetch(fetchImpl, `${API}/publisher/${encodeURIComponent(publisherId)}/promotions?${query}`, {
+    const query = new URLSearchParams();
+    const response = await timedFetch(fetchImpl, `${API}/publisher/${encodeURIComponent(publisherId)}/promotions`, {
       method: "POST",
       headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" },
       body: JSON.stringify({ filters: { membership, regionCodes: ["DE"], status: "active", type: "all" }, pagination: { page, pageSize: 200 } })
@@ -33,7 +33,7 @@ export async function fetchAwinPrograms({ publisherId, token, fetchImpl = fetch,
   const relationships = ["joined", "pending", "suspended", "rejected", "notjoined"];
   const inventory = {};
   for (const relationship of relationships) {
-    const query = new URLSearchParams({ accessToken: token, relationship, countryCode });
+    const query = new URLSearchParams({ relationship, countryCode });
     const response = await timedFetch(fetchImpl, `${API}/publishers/${encodeURIComponent(publisherId)}/programmes?${query}`, {
       headers: { Authorization: `Bearer ${token}` }
     });
@@ -48,7 +48,7 @@ export async function fetchAwinProgramDetails({ publisherId, token, advertiserId
   if (!publisherId || !token || !advertiserId) throw new Error("AWIN_PUBLISHER_ID, AWIN_API_TOKEN und advertiserId sind erforderlich.");
   const allowed = new Set(["joined", "pending", "suspended", "rejected", "notjoined", "any"]);
   if (!allowed.has(String(relationship).toLowerCase())) throw new Error("Ungültiger Awin-Beziehungsstatus.");
-  const query = new URLSearchParams({ accessToken: token, advertiserId: String(advertiserId), relationship: String(relationship).toLowerCase() });
+  const query = new URLSearchParams({ advertiserId: String(advertiserId), relationship: String(relationship).toLowerCase() });
   const response = await timedFetch(fetchImpl, `${API}/publishers/${encodeURIComponent(publisherId)}/programmedetails?${query}`, {
     headers: { Authorization: `Bearer ${token}` }
   });
@@ -57,7 +57,7 @@ export async function fetchAwinProgramDetails({ publisherId, token, advertiserId
 }
 
 export async function fetchAwinTransactions({ publisherId, token, startDate, endDate, fetchImpl = fetch }) {
-  const query = new URLSearchParams({ accessToken: token, startDate, endDate, timezone: "Europe/Berlin" });
+  const query = new URLSearchParams({ startDate, endDate, timezone: "Europe/Berlin" });
   const response = await timedFetch(fetchImpl, `${API}/publishers/${encodeURIComponent(publisherId)}/transactions/?${query}`, { headers: { Authorization: `Bearer ${token}` } });
   if (!response.ok) throw new Error(`Awin Transactions API: HTTP ${response.status}`);
   return response.json();
