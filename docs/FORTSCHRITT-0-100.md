@@ -8,7 +8,7 @@
 
 `[████████░░░░░░░░░░░░] 40 %`
 
-**Produktionsbereitschaft: NICHT ERREICHT.** Letzter geprüfter Workflow: 44534878063. Erstmals **6 verifizierte, veröffentlichungsfähige Impact-Angebote** (Martinic) und `catalog:health` erfolgreich. Die nachfolgenden 393 Tests enden jedoch mit **14 Fehlern**, deshalb wurden Commit, Deploy, Smoke und IndexNow übersprungen. Website-Release ist **nicht** bestätigt.
+**Produktionsbereitschaft: NICHT ERREICHT.** Letzter geprüfter Workflow: 44535543762. Erstmals **6 verifizierte, veröffentlichungsfähige Impact-Angebote** (Martinic) und `catalog:health` erfolgreich. Die nachfolgenden 394 Tests enden jedoch mit **14 Fehlern**, deshalb wurden Commit, Deploy, Smoke und IndexNow übersprungen. Website-Release ist **nicht** bestätigt.
 
 | # | Bereich | Fortschritt | Abnahmekriterium | Nächste Aktion |
 |---|---|---|---|---|
@@ -49,6 +49,17 @@
 - Neuer echter Lauf **44534445077**: Impact 300 Produkte, 6 angenommene und veröffentlichungsfähige Martinic-Produkte, 294 weiter abgelehnt (171 gesperrte Razer-Links, 123 Belkin mit nicht bestätigtem Ziel). `catalog:health` passiert. **378/392 Tests** nach dem Quellenimport bestanden, 14 Fehlschläge; mit PR #72 (Website-Build vor Tests) **379/393 Tests**, weiterhin 14 Fehlschläge, daher kein Datencommit und kein Deploy.
 - **Nächster Schwerpunkt:** Fehlerursachen der 14 verbleibenden Tests mit echtem Impact-Inventar beheben, ohne Tests zu überspringen. PR #72 wurde gemergt, Build vor Tests: echter Lauf 44534878063 bestätigt 6 Impact-Produkte, erfolgreichen Build und weiterhin 14 fehlschlagende Testfälle. Fehlen weiterer Händlerangebote (vor allem Awin) sowie Content-/Hub-Anforderungen getrennt untersuchen. Parallel Awin PAT/Kontoberechtigung für Publisher 3045061 im sicheren GitHub-Secret korrigieren; Feed-URL-Secrets nur für genehmigte Programme. Belkin bleibt bis bestätigter Händlerdomain blockiert.
 
+## Audit nach Lauf 44535543762 (PR #73)
+
+- **Code-Fix gemergt:** PR #73 korrigiert einen nachweisbaren Produktionsbuild-Fehler. In `scripts/build.mjs` wurden die Variablen für die CSS- und JavaScript-Cache-Version zuvor wörtlich als `${assetVersion}` ausgegeben; neue Build-Regressionstest in Actions 44535417562 **bestanden**, im echten Update 44535543762 erneut bestanden. Keine zusätzlichen Abhängigkeiten.
+- **Realer Update-Nachweis:** 6 veröffentlichungsfähige Angebote nach `catalog:health`, `impact=ok(14)`, Awin weiterhin Authentifizierungsfehler (HTTP 401). `npm test`: **380/394 bestanden, 14 fehlgeschlagen**. Der Deploy wurde zu Recht ausgelassen.
+- **Testfehler mit zu kleinem verifizierten Angebotsspektrum:** Marken-Hubs benötigen ≥5 relevante Angebote je Marke; CollectionPage-/Directory-Tests benötigen gefüllte Hubs; Angebotsfilter, Hero-Bereiche, Produktalternativen und SEO-Zahlen sind von ausreichender echter Vielfalt abhängig. Der Awin-Hero-Test verlangt explizit drei vollständige reale Awin-Produkte. Keine Test- oder Datenfälschung, um diese Kriterien zu erfüllen.
+- **Eigenständige UI-Lücke:** Facebook fehlt in der oberen Creator-Leiste, weil `data/creators.json` keine Facebook-URL enthält und der dynamische Creator-Feed keine bestätigte öffentliche Facebook-URL liefert. **Keinen Link raten**; erst eine nachprüfbare Profil-/Seiten-URL eintragen und im Build testen. Dieser Punkt erklärt die Facebook-Fehler in Navigation/V12/V13.
+- **Weitere mögliche unabhängige Fehler:** Ohne tatsächlich generierte Coupon-Einträge fehlt JSON-LD in `dist/rabattcodes/index.html`. Bei einem vollständigen Katalog gezielt auf korrekte Structured-Data-Erzeugung prüfen; keine Gutscheine erfinden.
+- **Belkin weiterhin blockiert:** 123 Kataloglinks haben zwar eine zuordenbare Impact-Trackingidentität, aber kein nachweisbares HTTPS-Händlerziel aus den freigegebenen Programmdaten. Die 171 Razer-Links bleiben quarantänisiert. Keine automatische Freigabe.
+- **Awin weiterhin blockiert:** `AWIN_API_TOKEN` wird im Update-Job verwendet, liefert aber 401. Bestehenden PAT im offiziellen Awin-Publisherkonto prüfen/erneuern und ausschließlich als GitHub Actions Secret eintragen. Keine Tokenwerte im Chat, Commit oder Issue verwenden.
+- **Nächste Arbeit:** Eine belegte Facebook-URL beschaffen, konkrete unabhängige Build-/Schemafehler mit Tests beheben, Awin 401 verifizieren, danach die 14 verbliebenen Testfehler anhand frischer Händlerangebote nochmals prüfen. Erst nach vollständiger Abnahme Meilenstein #8 und Fortschritt erhöhen.
+
 ## Fortsetzungsprotokoll (jedes Mal aktualisieren)
 
 | Datum | Änderung | Nachweis | Phase |
@@ -72,5 +83,7 @@
 | 19.11.2026 | Martinic-Import freigegeben: 6 reale veröffentlichungsfähige Produkte | Run 44534445077: `catalog:health` bestanden, 6 Produkte, 378/392 Tests | Meilenstein #6 erfüllt; Veröffentlichung wegen 14 Testfehlern noch blockiert |
 
 | 19.11.2026 | PR #72 Build vor datenabhängigen Integrationstests, ohne Gates auszulassen | Actions 44534745582: Reihenfolge-Test bestanden. Live-Run 44534878063: Build bestanden, 6 Impact-Angebote, 379/393 Tests, 14 Fehler | gemergt; keine Veröffentlichung, Fortschritt bleibt bei 40 % |
+
+| 19.11.2026 | PR #73: CSS-/JS-Asset-Hash wird nun tatsächlich interpoliert | Branch Validation 44535417562 und echter Run 44535543762: neuer Regressionstest bestanden, 380/394 Tests nach echtem Import, 14 Fehler | in main gemergt, kein Deploy, 40 % unverändert |
 
 **100 %** erst, wenn alle zehn Abnahmekriterien **mit Nachweisen** erreicht sind. Neue Feature-Ideen kommen auf eine separate Wunschliste und ändern die Messlatte nicht heimlich.
