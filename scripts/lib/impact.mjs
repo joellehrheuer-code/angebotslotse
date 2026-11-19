@@ -106,7 +106,13 @@ const catalogTrackingIdentityReason = (product, program, policy) => {
   if (productUrl.hostname !== officialUrl.hostname) return "tracking-host-mismatch";
   const rule = quarantineFor(program, policy);
   if (!trackingUrlAllowed(productUrl.href, policy, rule) || !trackingUrlAllowed(officialUrl.href, policy, rule)) return "blocked-tracking-host";
-  if (productUrl.searchParams.has("u")) return "catalog-destination-override";
+  if (productUrl.searchParams.has("u")) {
+    if (!allowsDeeplinking(program.AllowsDeeplinking)) return "deeplink-not-permitted";
+    const targets=productUrl.searchParams.getAll("u");
+    const target=targets.length===1 ? validWebsiteUrl(targets[0]) : null;
+    if (!target || !sameMerchantHost(target,program)) return "deeplink-destination-unverified";
+    return "other-unverified-link";
+  }
   return "other-unverified-link";
 };
 
@@ -124,8 +130,15 @@ const verifiedCatalogTrackingLink = (product, program, policy) => {
   const a=identity(url.pathname),b=identity(official.pathname);
   if(!a || !b || a[1]!==b[1] || a[3]!==b[3]
     || a[3]!==String(program.CampaignId)) return null;
-  // User-controlled destination overrides would require separate merchant-domain verification.
-  if(url.searchParams.has("u")) return null;
+  // Brand-controlled deep links must target a verified merchant host.
+  // Never trust an arbitrary redirect merely because the tracking identity matches.
+  if(url.searchParams.has("u")){
+    if(!allowsDeeplinking(program.AllowsDeeplinking))return null;
+    const targets=url.searchParams.getAll("u");
+    if(targets.length!==1)return null;
+    const target=validWebsiteUrl(targets[0]);
+    if(!target || !sameMerchantHost(target,program))return null;
+  }
   return {url:url.href,origin:"verified-catalog-tracking"};
 };
 

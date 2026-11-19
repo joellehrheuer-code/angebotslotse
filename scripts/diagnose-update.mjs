@@ -59,7 +59,8 @@ export function diagnostic(status, inventory) {
     ["campaign-id-mismatch","Kampagnen-ID nicht identisch"],
     ["tracking-host-mismatch","Trackingdomain unterschiedlich"],
     ["blocked-tracking-host","Trackingdomain durch Sicherheitsregel gesperrt"],
-    ["catalog-destination-override","Nicht bestätigte Ziel-Weiterleitung"],
+    ["deeplink-not-permitted","Deeplinking vom Partner nicht erlaubt"],
+    ["deeplink-destination-unverified","Deeplink-Zieladresse nicht als Händlerdomain bestätigt"],
     ["other-unverified-link","Link trotz Identität nicht bestätigt"]
   ];
   if(trackingReasons && typeof trackingReasons==="object" && !Array.isArray(trackingReasons)){
