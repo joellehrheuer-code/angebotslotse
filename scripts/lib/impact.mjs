@@ -89,10 +89,31 @@ const impactLinkFailureReason = (product, program, policy) => {
   return "unresolved-link";
 };
 
+// Official Impact tracking link identity: same first-party tracking host,
+// same publisher account number and campaign number, plus existing quarantine.
+// A catalog URL is never accepted merely because its hostname looks like a tracker.
+const verifiedCatalogTrackingLink = (product, program, policy) => {
+  const url=validWebsiteUrl(product.Url);
+  const official=validWebsiteUrl(program.TrackingLink);
+  const rule=quarantineFor(program,policy);
+  if(!url || !official || url.hostname!==official.hostname
+    || !trackingUrlAllowed(url.href,policy,rule)
+    || !trackingUrlAllowed(official.href,policy,rule)) return null;
+  const identity=path=>path.match(/^\\/c\\/(\\d+)\\/(\\d+)\\/(\\d+)\\/?$/);
+  const a=identity(url.pathname),b=identity(official.pathname);
+  if(!a || !b || a[1]!==b[1] || a[3]!==b[3]
+    || a[3]!==String(program.CampaignId)) return null;
+  // User-controlled destination overrides would require separate merchant-domain verification.
+  if(url.searchParams.has("u")) return null;
+  return {url:url.href,origin:"verified-catalog-tracking"};
+};
+
 const approvedProductTrackingLink = (product, program, policy) => {
   const rule = quarantineFor(program, policy);
   const direct = product.TrackingLink || product.TrackingURL || product.UrlTracking;
   if (trackingUrlAllowed(direct,policy,rule)) return { url:direct, origin:"product" };
+  const catalogTracking=verifiedCatalogTrackingLink(product,program,policy);
+  if(catalogTracking)return catalogTracking;
   const target = validWebsiteUrl(product.Url || product.MobileUrl);
   if (!allowsDeeplinking(program.AllowsDeeplinking)
     || !target || !sameMerchantHost(target,program)
@@ -257,7 +278,7 @@ export async function fetchImpactOffers({ accountSid, authToken, fetchImpl = fet
   const domainReviewCounts = new Map();
   audit.productDiagnostics={
     fields:products[0]&&typeof products[0]==="object"?Object.keys(products[0]).slice(0,35):[],
-    missingApprovedProgram:0,matchedViaCatalog:0,missingTrackingLink:0,linkFailureReasons:{},deeplinkFromApprovedProgram:0,missingName:0,outOfStock:0,accepted:0
+    missingApprovedProgram:0,matchedViaCatalog:0,missingTrackingLink:0,linkFailureReasons:{},verifiedCatalogTrackingLinks:0,deeplinkFromApprovedProgram:0,missingName:0,outOfStock:0,accepted:0
   };
   for (const product of products) {
     const directProgram=byCampaign.get(String(product.CampaignId)) ||
@@ -284,6 +305,7 @@ export async function fetchImpactOffers({ accountSid, authToken, fetchImpl = fet
     }
     const trackingUrl=resolvedTracking.url;
     if(resolvedTracking.origin==="approved-deeplink")audit.productDiagnostics.deeplinkFromApprovedProgram+=1;
+    if(resolvedTracking.origin==="verified-catalog-tracking")audit.productDiagnostics.verifiedCatalogTrackingLinks+=1;
     if(!product.Name){audit.productDiagnostics.missingName+=1;continue;}
     if(String(product.StockAvailability).toLowerCase()==="outofstock"){audit.productDiagnostics.outOfStock+=1;continue;}
     audit.productDiagnostics.accepted+=1;
