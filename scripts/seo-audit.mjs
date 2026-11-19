@@ -72,7 +72,15 @@ walk(dist);
 const sitemapPath = path.join(dist, "sitemap.xml");
 if (!fs.existsSync(sitemapPath)) errors.push({ type: "missing-sitemap", page: "sitemap.xml" });
 const sitemap = fs.existsSync(sitemapPath) ? fs.readFileSync(sitemapPath, "utf8") : "";
-const sitemapUrls = new Set([...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(match => decode(match[1])));
+const sitemapEntries = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(match => decode(match[1]));
+const sitemapUrls = new Set(sitemapEntries);
+const seenSitemapUrls = new Set();
+for (const sitemapUrl of sitemapEntries) {
+  if (seenSitemapUrls.has(sitemapUrl)) {
+    errors.push({ type: "duplicate-sitemap-url", page: sitemapUrl });
+  }
+  seenSitemapUrls.add(sitemapUrl);
+}
 
 for (const page of pages) {
   if (page.indexable && page.selfCanonical && page.relative !== "404.html" && !sitemapUrls.has(page.pageUrl)) {
