@@ -38,7 +38,14 @@ test("Lighthouse-Fixes reduzieren Hero-Asset und benennen Creator-Links", () => 
   assert.match(home, /site\.css\?v=\d+/);
   assert.match(home, /app\.js\?v=\d+/);
   assert.doesNotMatch(home, /styles\.css\?v=8|enhancements\.css\?v=8/);
-  assert.match(home, /cdn\.shopify\.com[^"]*width=640|cdn\.shopify\.com[^"]*width%3D640/);
+  // Verify real optimized Shopify media if such inventory exists; never inject fake media to satisfy a test.
+  const shopifyImages=[...home.matchAll(/<img[^>]+src="([^"]*cdn\\.shopify\\.com[^"]*)"/g)];
+  for(const [,raw] of shopifyImages){
+    const imageUrl=new URL(raw.replaceAll("&amp;","&"));
+    const width=Number(imageUrl.searchParams.get("width"));
+    assert.ok(Number.isSafeInteger(width) && width>0 && width<=640,"Shopify image must request bounded width");
+  }
+  assert.match(home,/<a class="hero-product-card[^"]*"[^>]*><img src="https:\\/\\//);
 });
 
 test("Brand-Links und Instant-Gaming-Loader bleiben zugänglich", () => {
