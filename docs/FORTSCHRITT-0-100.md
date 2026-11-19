@@ -151,4 +151,12 @@
 | 19.11.2026 | PR #81 Awin-Token aus URLs entfernt, Bearer-Header weiterhin aktiv | Branch 44541696211: 8-Request-Regressionsprüfung bestanden; echter Lauf 44541862153 weiter Awin 401 | gemergt; Tokenwechsel extern nötig, 40 % |
 | 19.11.2026 | PR #82 ehrliche Angebotsleiste aus bereits verifizierten Martinic-Produkten | Branch 44542240494: UI-/Datenherkunftstests bestanden. Main 44542425678: **400/403 Tests**, 3 Restfehler, Startseitenprüfung grün | gemergt und echter Import bestätigt; keine Veröffentlichung, 40 % |
 
+## Optimierungsrunde 19.11.2026 – PR #83 (gezielter Awin-Guard)
+
+- **Belegter unabhängiger Codefehler:** `fetchAwinTransactions` in `scripts/lib/awin.mjs` prüfte im Gegensatz zu den übrigen Awin-API-Funktionen fehlende `publisherId`/`token` nicht vor dem Fetch; dadurch konnte ein Request mit `Authorization: Bearer undefined` gesendet werden. Nur diese Pflichtfeldprüfung wurde ergänzt, ohne gültige Requests oder Programm-/Quellenfreigaben zu verändern.
+- **Neue Regressionstests:** Ohne Publisher-ID oder PAT werden **0 Netzwerkrequests** ausgelöst; gültige Testparameter behalten den `Authorization: Bearer`-Header und tragen kein Token in der URL. Beide Tests in PR #83, Branch Validation **44544503518**, **bestanden**.
+- **Grenze des Nachweises:** Branch Validation **44544503518**: **380/405 Tests bestanden, 25 fehlgeschlagen**, kompletter Job **rot**; der Branch hatte keine vorherige echte Quellaktualisierung. Keine vollständige CI-Freigabe und kein Beleg für behobenen Live-401. Im letzten bestätigten echten main-Update **44542425678** weiterhin **400/403, 3 Restfehler** (SEO >200 echte Seiten, 3 freigegebene Awin-Händler-Heros, echte markenübergreifende Alternativen), 6 Martinic-Produkte und blockierte Veröffentlichung.
+- **Externe Grenzen unverändert:** Awin PAT-/Publisher-Berechtigungen nicht verifizierbar, Awin Legacy-Feed-URLs nicht genehmigt/eingerichtet; **123** Belkin-Produktlinks ohne offiziell bestätigte HTTPS-Deeplink-Zielzuordnung weiterhin gesperrt, Razer-Quarantäne aktiv. Keine Freigaben vermutet.
+- **Gesamtfortschritt bleibt 40 %**, da kein zusätzlicher vollständiger Meilenstein nachgewiesen wurde. PR-/Merge- und echter Update-Folgelauf gesondert prüfen, nicht als abgeschlossen deklarieren.
+
 **100 %** erst, wenn alle zehn Abnahmekriterien **mit Nachweisen** erreicht sind. Neue Feature-Ideen kommen auf eine separate Wunschliste und ändern die Messlatte nicht heimlich.
