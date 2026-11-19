@@ -38,4 +38,16 @@ assert.ok(impactReport.includes("Deeplinking nicht freigegeben: **180**"));
 assert.ok(impactReport.includes("Händlerdomain nicht bestätigt: **20**"));
 assert.doesNotMatch(impactReport, /SECRET_TOKEN|private\\.example|untrusted-token-value/);
 assert.doesNotMatch(impactReport, /Programm-Trackinglink nicht erlaubt/);
+const identityReport=diagnostic({publishableOffers:0,sources:{impact:{
+  state:"ok",count:1,audit:{productDiagnostics:{catalogIdentityReasons:{
+    "publisher-id-mismatch":12,"tracking-host-mismatch":5,
+    "unknown-user-token":secret,"campaign-id-mismatch":"https://private.example/secret"
+  }}}
+}}},[]);
+assert.ok(identityReport.includes("Publisher-ID nicht identisch: **12**"));
+assert.ok(identityReport.includes("Trackingdomain unterschiedlich: **5**"));
+assert.equal(identityReport.includes(secret),false);
+assert.equal(identityReport.includes("private.example"),false);
+assert.equal(identityReport.includes("unknown-user-token"),false);
+assert.equal(identityReport.includes("Kampagnen-ID nicht identisch"),false);
 console.log("Source diagnostic tests passed");
