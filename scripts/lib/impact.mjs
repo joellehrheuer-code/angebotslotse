@@ -99,7 +99,7 @@ const verifiedCatalogTrackingLink = (product, program, policy) => {
   if(!url || !official || url.hostname!==official.hostname
     || !trackingUrlAllowed(url.href,policy,rule)
     || !trackingUrlAllowed(official.href,policy,rule)) return null;
-  const identity=path=>path.match(/^\\/c\\/(\\d+)\\/(\\d+)\\/(\\d+)\\/?$/);
+  const identity=path=>path.match(new RegExp("^/c/([0-9]+)/([0-9]+)/([0-9]+)/?$"));
   const a=identity(url.pathname),b=identity(official.pathname);
   if(!a || !b || a[1]!==b[1] || a[3]!==b[3]
     || a[3]!==String(program.CampaignId)) return null;
