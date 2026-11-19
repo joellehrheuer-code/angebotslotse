@@ -17,7 +17,7 @@ test("Lighthouse-Fixes reduzieren Hero-Asset und benennen Creator-Links", () => 
   const sourceApp = fs.readFileSync("public/app.js", "utf8");
   const privacy = fs.readFileSync("dist/datenschutz.html", "utf8");
   const largeOgUsedAsSource=[...home.matchAll(new RegExp("<img[^>]+>", "g"))]
-    .some(([tag])=>tag.split(/\\s+/).some(part=>part.startsWith('src="') && part.includes("/og.png")));
+    .some(([tag])=>tag.split(/\s+/).some(part=>part.startsWith('src="') && part.includes("/og.png")));
   assert.equal(largeOgUsedAsSource,false,"Do not load the large og.png as a normal homepage image");
   assert.match(home, /hero-logo-stage/);
   assert.match(home, /joel-logo\.svg\?v=4/);
