@@ -57,8 +57,23 @@ test("Hub-Indizes und Rabattcodes verlinken in strukturierten Daten nur interne 
       assert.ok(types.has("CollectionPage"));
       assert.ok(types.has("ItemList"));
     } else {
-      assert.match(joined,/https:\/\/joellehrheuer-code\.github\.io\/angebotslotse\/angebote\//);
-    }
+      const graph=schemaList.find(item=>Array.isArray(item?.["@graph"]));
+      assert.ok(graph,"Rabattcode-CollectionPage fehlt");
+      const collection=graph["@graph"].find(item=>item?.["@type"]==="CollectionPage");
+      const itemList=graph["@graph"].find(item=>item?.["@type"]==="ItemList");
+      assert.ok(collection && itemList,"Rabattcode-Hub braucht CollectionPage und ItemList");
+      assert.equal(itemList.numberOfItems,itemList.itemListElement.length);
+      if (itemList.numberOfItems===0) {
+        assert.match(html,/<meta name="robots" content="noindex,follow/);
+        assert.doesNotMatch(joined,/https:\/\/joellehrheuer-code\.github\.io\/angebotslotse\/angebote\//);
+        assert.match(html,/Aktuell keine bestätigten Codes/);
+      } else {
+        assert.match(html,/<meta name="robots" content="index,follow/);
+        for(const item of itemList.itemListElement) {
+          assert.match(item.url,/^https:\/\/joellehrheuer-code\.github\.io\/angebotslotse\/angebote\/[a-z0-9-]+\.html$/);
+          assert.ok(item.name);
+        }
+      }
   }
 });
 
