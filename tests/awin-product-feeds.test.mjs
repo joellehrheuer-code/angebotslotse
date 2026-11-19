@@ -66,8 +66,8 @@ test("Awin legacy feed never downloads or publishes without confirmed joined pro
 });
 
 test("Awin legacy feed list and products stay confined to joined advertiser IDs",async()=>{
-  const list='Advertiser ID,Advertiser Name,Primary Region,Membership Status,Feed ID,Feed Name,Language,URL\\n1,Approved,DE,Joined,9,Products,German,https://datafeed.api.productserve.com/datafeed/download/apikey/mock-key/fid/9/format/csv\\n2,NotJoined,DE,Joined,10,Products,German,https://datafeed.api.productserve.com/datafeed/download/apikey/mock-key/fid/10/format/csv';
-  const data='aw_deep_link,merchant_deep_link,product_name,merchant_name,merchant_id,search_price,aw_product_id\\nhttps://awin.example/approved,https://shop.example/item,Valid product,Approved,1,20,P1\\nhttps://awin.example/unapproved,https://unapproved.example/item,Unapproved product,NotJoined,2,30,P2';
+  const list='Advertiser ID,Advertiser Name,Primary Region,Membership Status,Feed ID,Feed Name,Language,URL\n1,Approved,DE,Joined,9,Products,German,https://datafeed.api.productserve.com/datafeed/download/apikey/mock-key/fid/9/format/csv\n2,NotJoined,DE,Joined,10,Products,German,https://datafeed.api.productserve.com/datafeed/download/apikey/mock-key/fid/10/format/csv';
+  const data='aw_deep_link,merchant_deep_link,product_name,merchant_name,merchant_id,search_price,aw_product_id\nhttps://awin.example/approved,https://shop.example/item,Valid product,Approved,1,20,P1\nhttps://awin.example/unapproved,https://unapproved.example/item,Unapproved product,NotJoined,2,30,P2';
   const urls=[];
   const fetchImpl=async(url)=>{urls.push(String(url));return String(url).includes("/list/")?{ok:true,text:async()=>list}:{ok:true,arrayBuffer:async()=>Buffer.from(data)};};
   const result=await fetchAwinProductFeeds({apiKey:"mock-key",joinedAdvertiserIds:["1"],fetchImpl});
