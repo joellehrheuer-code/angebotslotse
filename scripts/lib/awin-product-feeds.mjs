@@ -78,20 +78,32 @@ export async function fetchAwinProductFeeds({ apiKey, publisherId, feedListUrl, 
       ...[...feedsByAdvertiser.values()].flat()
     ].slice(0,maxFeeds);
   }
-  const products=[];
+  const batches=[];
   for(const feed of feedRows){
-    if(products.length>=maxProducts)break;
+    const batch=[];
     const response=await timedFetch(fetchImpl, pick(feed,"URL","url"),{redirect:"error"});
     if(!response.ok)continue;
     const bytes=Buffer.from(await response.arrayBuffer());
     let text; try{text=gunzipSync(bytes).toString("utf8");}catch{text=bytes.toString("utf8");}
     for(const row of parseCsv(text)){
-      if(products.length>=maxProducts)break;
+      if(batch.length>=maxProducts)break;
       if(!authorizedIds.has(String(pick(row,"merchant_id","Advertiser ID","advertiser_id"))))continue;
       const tracking=pick(row,"aw_deep_link","deep_link"); const destination=pick(row,"merchant_deep_link","deep_link", "aw_deep_link");
       if(!tracking||!destination)continue;
-      products.push({source:"awin",id:`feed-${pick(feed,"Feed ID","feed_id")}-${pick(row,"aw_product_id","product_id","merchant_product_id")}`,title:pick(row,"product_name","name"),description:pick(row,"product_short_description","description"),url:destination,urlTracking:tracking,advertiserName:pick(row,"merchant_name","Advertiser Name"),advertiserId:pick(row,"merchant_id","Advertiser ID"),regions:{list:[{countryCode:"DE"}]},type:"promotion",imageUrl:pick(row,"aw_image_url","large_image","merchant_image_url","image_url"),imageAlt:pick(row,"product_name","name"),imageSource:pick(row,"aw_image_url")?"Awin Image Resize & Caching":"Awin Product Feed",imageRightsNote:"Vom freigegebenen Advertiser im Awin-Produktfeed bereitgestellt; Awin-Cache wird bevorzugt, wenn verfügbar.",currentPrice:pick(row,"search_price","price"),previousPrice:pick(row,"rrp_price","product_price_old"),currency:pick(row,"currency")||"EUR",brand:pick(row,"brand_name"),productId:pick(row,"product_GTIN","ean","mpn","aw_product_id","product_id"),gtin:pick(row,"product_GTIN"),ean:pick(row,"ean"),mpn:pick(row,"mpn"),availability:pick(row,"stock_status","in_stock"),category:undefined});
+      batch.push({source:"awin",id:`feed-${pick(feed,"Feed ID","feed_id")}-${pick(row,"aw_product_id","product_id","merchant_product_id")}`,title:pick(row,"product_name","name"),description:pick(row,"product_short_description","description"),url:destination,urlTracking:tracking,advertiserName:pick(row,"merchant_name","Advertiser Name"),advertiserId:pick(row,"merchant_id","Advertiser ID"),regions:{list:[{countryCode:"DE"}]},type:"promotion",imageUrl:pick(row,"aw_image_url","large_image","merchant_image_url","image_url"),imageAlt:pick(row,"product_name","name"),imageSource:pick(row,"aw_image_url")?"Awin Image Resize & Caching":"Awin Product Feed",imageRightsNote:"Vom freigegebenen Advertiser im Awin-Produktfeed bereitgestellt; Awin-Cache wird bevorzugt, wenn verfügbar.",currentPrice:pick(row,"search_price","price"),previousPrice:pick(row,"rrp_price","product_price_old"),currency:pick(row,"currency")||"EUR",brand:pick(row,"brand_name"),productId:pick(row,"product_GTIN","ean","mpn","aw_product_id","product_id"),gtin:pick(row,"product_GTIN"),ean:pick(row,"ean"),mpn:pick(row,"mpn"),availability:pick(row,"stock_status","in_stock"),category:undefined});
     }
+    batches.push(batch);
+  }
+  // A large first feed must not exhaust the product cap before other approved
+  // advertisers are represented. Interleave accepted rows without fabricating data.
+  const products=[];
+  for(let index=0;products.length<maxProducts;index++){
+    let added=false;
+    for(const batch of batches){
+      if(products.length>=maxProducts)break;
+      if(index<batch.length){products.push(batch[index]);added=true;}
+    }
+    if(!added)break;
   }
   return products;
 }
