@@ -68,6 +68,18 @@ jobs:
         run: node scripts/source-health-summary.mjs
       - name: Verified offer catalogue required
         run: npm run catalog:health
+      # Preserve real source inventory even when later SEO/UI quality gates fail.
+      # This is a diagnostic artifact only: no main commit or Pages deployment.
+      - name: Preserve verified import snapshot before page-level acceptance
+        uses: actions/upload-artifact@v4
+        with:
+          name: verified-import-snapshot-${{ github.run_id }}
+          retention-days: 7
+          if-no-files-found: error
+          path: |
+            data/offers.json
+            data/status.json
+            data/price-history.json
       - name: Build verified site before page-level tests
         run: npm run check && npm run build
         env:

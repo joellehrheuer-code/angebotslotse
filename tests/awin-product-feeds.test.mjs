@@ -92,3 +92,54 @@ https://awin.example/second,https://shop.example/second,Second,Approved,1,35,sec
   assert.equal(result[0].productId,"approved");
   assert.equal(result[0].advertiserId,"1");
 });
+
+test("unterminated CSV quotes are rejected instead of publishing truncated product rows", () => {
+  assert.throws(
+    () => parseCsv('product_name,price\n"Truncated product,99'),
+    /Malformed Awin CSV: unterminated quoted field/
+  );
+});
+
+test("unquoted CSV fields with stray quotes are rejected instead of misparsing the product feed", () => {
+  assert.throws(
+    () => parseCsv('product_name,price\nBad"quoted product,99'),
+    /Malformed Awin CSV: unexpected quote inside unquoted field/
+  );
+});
+
+test("Awin CSV rejects data after a quoted field instead of changing the product name", () => {
+  assert.throws(
+    () => parseCsv('product_name,price\n"Example"UNEXPECTED,25'),
+    /Malformed Awin CSV: unexpected text after closing quote/
+  );
+  assert.deepEqual(
+    parseCsv('product_name,price\n"Correct name"  ,25'),
+    [{ product_name: "Correct name", price: "25" }]
+  );
+});
+
+test("Awin CSV rejects duplicate or empty headers instead of silently overriding merchant fields", () => {
+  assert.throws(
+    () => parseCsv("merchant_id,merchant_id,product_name\\n999,14172,Product".replace("\\n", "\n")),
+    /Malformed Awin CSV: empty or duplicate column header/
+  );
+  assert.throws(
+    () => parseCsv("merchant_id,,product_name\\n14172,something,Product".replace("\\n", "\n")),
+    /Malformed Awin CSV: empty or duplicate column header/
+  );
+});
+
+test("Awin CSV rejects row width mismatches instead of silently changing prices", () => {
+  assert.throws(
+    () => parseCsv("merchant_id,search_price\\n14172,5,99".replace("\\n", "\n")),
+    /Malformed Awin CSV: inconsistent column count/
+  );
+  assert.throws(
+    () => parseCsv("merchant_id,search_price,product_name\\n14172,5".replace("\\n", "\n")),
+    /Malformed Awin CSV: inconsistent column count/
+  );
+  assert.deepEqual(
+    parseCsv('merchant_id,search_price,product_name\\n14172,"5,99",Product'.replace("\\n", "\n")),
+    [{ merchant_id: "14172", search_price: "5,99", product_name: "Product" }]
+  );
+});

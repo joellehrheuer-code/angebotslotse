@@ -6,11 +6,48 @@ const HTTP_TIMEOUT_MS = Math.min(60_000, Math.max(5_000, Number(process.env.SOUR
 const timedFetch = (fetchImpl, url, options = {}) => fetchImpl(url, { ...options, signal: options.signal ?? AbortSignal.timeout(HTTP_TIMEOUT_MS) });
 
 export function parseCsv(source, delimiter = ",") {
-  const rows=[]; let row=[],field="",quoted=false;
-  for(let i=0;i<source.length;i+=1){const char=source[i],next=source[i+1];if(char==='"'&&quoted&&next==='"'){field+='"';i+=1;}else if(char==='"'){quoted=!quoted;}else if(char===delimiter&&!quoted){row.push(field);field="";}else if((char==='\n'||char==='\r')&&!quoted){if(char==='\r'&&next==='\n')i+=1;row.push(field);if(row.some(Boolean))rows.push(row);row=[];field="";}else field+=char;}
-  if(field||row.length){row.push(field);rows.push(row);} if(rows.length<2)return[];
-  const headers=rows[0].map(value=>value.replace(/^\uFEFF/,"").trim());
-  return rows.slice(1).map(values=>Object.fromEntries(headers.map((header,index)=>[header,values[index]??""])));
+  const rows = [];
+  let row = [], field = "", quoted = false, justClosed = false;
+  const endField = () => { row.push(field); field = ""; justClosed = false; };
+  for (let i = 0; i < source.length; i += 1) {
+    const char = source[i], next = source[i + 1];
+    if (char === '"' && quoted && next === '"') {
+      field += '"';
+      i += 1;
+    } else if (char === '"') {
+      if (quoted) {
+        quoted = false;
+        justClosed = true;
+      } else {
+        if (field.length > 0 || justClosed)
+          throw new Error("Malformed Awin CSV: unexpected quote inside unquoted field");
+        quoted = true;
+      }
+    } else if (!quoted && char === delimiter) {
+      endField();
+    } else if (!quoted && (char === '\n' || char === '\r')) {
+      if (char === '\r' && next === '\n') i += 1;
+      endField();
+      if (row.some(Boolean)) rows.push(row);
+      row = [];
+    } else if (justClosed) {
+      if (char !== " " && char !== "\t")
+        throw new Error("Malformed Awin CSV: unexpected text after closing quote");
+    } else {
+      field += char;
+    }
+  }
+  if (quoted) throw new Error("Malformed Awin CSV: unterminated quoted field");
+  if (field || row.length) { endField(); rows.push(row); }
+  if (rows.length < 2) return [];
+  const headers = rows[0].map(value => value.replace(/^\uFEFF/, "").trim());
+  if (headers.some(header => !header) || new Set(headers).size !== headers.length)
+    throw new Error("Malformed Awin CSV: empty or duplicate column header");
+  return rows.slice(1).map(values => {
+    if (values.length !== headers.length)
+      throw new Error("Malformed Awin CSV: inconsistent column count");
+    return Object.fromEntries(headers.map((header, index) => [header, values[index]]));
+  });
 }
 
 const pick=(row,...names)=>names.map(name=>row[name]).find(value=>String(value??"").trim())||null;
@@ -62,24 +99,52 @@ export async function fetchAwinProductFeeds({ apiKey, publisherId, feedListUrl, 
     const listResponse=await timedFetch(fetchImpl,listUrl,{redirect:"error"});
     if(!listResponse.ok)throw new Error(`Awin Product Feed List: HTTP ${listResponse.status}`);
     feedRows=parseCsv(await listResponse.text())
-      .filter(row=>joined(row)&&german(row)&&allowedAwinFeedUrl(pick(row,"URL","url")))
-      .filter(row=>authorizedIds.has(String(pick(row,"Advertiser ID","advertiser_id","merchant_id"))))
-      .slice(0,maxFeeds);
+      .filter(row=>joined(row)&&german(row)&&/^(?:awin|legacy)?$/i.test(String(pick(row,"Datafeed Format","datafeed_format")||"").trim())&&allowedAwinFeedUrl(pick(row,"URL","url")))
+      .filter(row=>authorizedIds.has(String(pick(row,"Advertiser ID","advertiser_id","merchant_id"))));
+    // Give each joined advertiser one feed before taking extra feeds from the
+    // same advertiser. The official list may contain several feeds per shop.
+    const feedsByAdvertiser=new Map();
+    for(const row of feedRows){
+      const id=String(pick(row,"Advertiser ID","advertiser_id","merchant_id"));
+      if(!feedsByAdvertiser.has(id))feedsByAdvertiser.set(id,[]);
+      feedsByAdvertiser.get(id).push(row);
+    }
+    feedRows=[
+      ...[...feedsByAdvertiser.values()].map(rows=>rows.shift()),
+      ...[...feedsByAdvertiser.values()].flat()
+    ].slice(0,maxFeeds);
   }
-  const products=[];
+  const batches=[];
   for(const feed of feedRows){
-    if(products.length>=maxProducts)break;
+    const batch=[];
     const response=await timedFetch(fetchImpl, pick(feed,"URL","url"),{redirect:"error"});
     if(!response.ok)continue;
     const bytes=Buffer.from(await response.arrayBuffer());
     let text; try{text=gunzipSync(bytes).toString("utf8");}catch{text=bytes.toString("utf8");}
     for(const row of parseCsv(text)){
-      if(products.length>=maxProducts)break;
-      if(!authorizedIds.has(String(pick(row,"merchant_id","Advertiser ID","advertiser_id"))))continue;
+      if(batch.length>=maxProducts)break;
+      const merchantId=String(pick(row,"merchant_id","Advertiser ID","advertiser_id")??"");
+      const listedAdvertiserId=pick(feed,"Advertiser ID","advertiser_id","merchant_id");
+      if(!authorizedIds.has(merchantId))continue;
+      // Even two joined advertisers may not exchange products across feed IDs.
+      // Explicit direct-feed links have no listed advertiser ID; keep the joined check there.
+      if(listedAdvertiserId && String(listedAdvertiserId)!==merchantId)continue;
       const tracking=pick(row,"aw_deep_link","deep_link"); const destination=pick(row,"merchant_deep_link","deep_link", "aw_deep_link");
       if(!tracking||!destination)continue;
-      products.push({source:"awin",id:`feed-${pick(feed,"Feed ID","feed_id")}-${pick(row,"aw_product_id","product_id","merchant_product_id")}`,title:pick(row,"product_name","name"),description:pick(row,"product_short_description","description"),url:destination,urlTracking:tracking,advertiserName:pick(row,"merchant_name","Advertiser Name"),advertiserId:pick(row,"merchant_id","Advertiser ID"),regions:{list:[{countryCode:"DE"}]},type:"promotion",imageUrl:pick(row,"aw_image_url","large_image","merchant_image_url","image_url"),imageAlt:pick(row,"product_name","name"),imageSource:pick(row,"aw_image_url")?"Awin Image Resize & Caching":"Awin Product Feed",imageRightsNote:"Vom freigegebenen Advertiser im Awin-Produktfeed bereitgestellt; Awin-Cache wird bevorzugt, wenn verfügbar.",currentPrice:pick(row,"search_price","price"),previousPrice:pick(row,"rrp_price","product_price_old"),currency:pick(row,"currency")||"EUR",brand:pick(row,"brand_name"),productId:pick(row,"product_GTIN","ean","mpn","aw_product_id","product_id"),gtin:pick(row,"product_GTIN"),ean:pick(row,"ean"),mpn:pick(row,"mpn"),availability:pick(row,"stock_status","in_stock"),category:undefined});
+      batch.push({source:"awin",id:`feed-${pick(feed,"Feed ID","feed_id")}-${pick(row,"aw_product_id","product_id","merchant_product_id")}`,title:pick(row,"product_name","name"),description:pick(row,"product_short_description","description"),url:destination,urlTracking:tracking,advertiserName:pick(row,"merchant_name","Advertiser Name"),advertiserId:pick(row,"merchant_id","Advertiser ID"),regions:{list:[{countryCode:"DE"}]},type:"promotion",imageUrl:pick(row,"aw_image_url","large_image","merchant_image_url","image_url"),imageAlt:pick(row,"product_name","name"),imageSource:pick(row,"aw_image_url")?"Awin Image Resize & Caching":"Awin Product Feed",imageRightsNote:"Vom freigegebenen Advertiser im Awin-Produktfeed bereitgestellt; Awin-Cache wird bevorzugt, wenn verfügbar.",currentPrice:pick(row,"search_price","price"),previousPrice:pick(row,"rrp_price","product_price_old"),currency:pick(row,"currency")||"EUR",brand:pick(row,"brand_name"),productId:pick(row,"product_GTIN","ean","mpn","aw_product_id","product_id"),gtin:pick(row,"product_GTIN"),ean:pick(row,"ean"),mpn:pick(row,"mpn"),availability:pick(row,"stock_status","in_stock"),category:undefined});
     }
+    batches.push(batch);
+  }
+  // A large first feed must not exhaust the product cap before other approved
+  // advertisers are represented. Interleave accepted rows without fabricating data.
+  const products=[];
+  for(let index=0;products.length<maxProducts;index++){
+    let added=false;
+    for(const batch of batches){
+      if(products.length>=maxProducts)break;
+      if(index<batch.length){products.push(batch[index]);added=true;}
+    }
+    if(!added)break;
   }
   return products;
 }
