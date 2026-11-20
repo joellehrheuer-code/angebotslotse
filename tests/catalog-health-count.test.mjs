@@ -48,3 +48,17 @@ test("catalog health keeps empty live catalog blocked even with a consistent cou
   assert.equal(result.status, 1);
   assert.match(result.stderr, /no verified publishable offers/);
 });
+
+test("catalog health refuses an expired offer even when the source reports it as verified", () => {
+  const expired = { ...eligible, endDate: "2020-01-01T00:00:00Z" };
+  const result = run([expired], 1);
+  assert.equal(result.status, 1);
+  assert.match(result.stderr, /no publishable offers remain after the actual site visibility filters/);
+});
+
+test("catalog health refuses blocked adult merchandise before saving the import snapshot", () => {
+  const blocked = { ...eligible, title: "Adult erotic shop vibrator" };
+  const result = run([blocked], 1);
+  assert.equal(result.status, 1);
+  assert.match(result.stderr, /no publishable offers remain after the actual site visibility filters/);
+});
