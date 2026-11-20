@@ -82,3 +82,39 @@ test("official feed list with only Google-format feeds is not downloaded by lega
   assert.equal(calls, 1);
   assert.deepEqual(result, []);
 });
+
+test("six feed slots prioritize six distinct approved advertisers over duplicate shop feeds", async () => {
+  const entries = [
+    ["14172", "9"], ["14172", "10"], ["128051", "11"],
+    ["125144", "12"], ["127821", "13"], ["14336", "14"], ["125816", "15"]
+  ];
+  const feedList = [
+    "Advertiser ID,Advertiser Name,Primary Region,Membership Status,Datafeed Format,Feed ID,Feed Name,Language,URL",
+    ...entries.map(([id, feed]) =>
+      id + ",Approved,DE,Joined,Awin," + feed + ",Products,German,https://productdata.awin.com/datafeed/download/apikey/mock/fid/" + feed + "/format/csv")
+  ].join("\n");
+  const advertiserByFeed = new Map(entries.map(([id, feed]) => [feed, id]));
+  const requests = [];
+  const fetchImpl = async url => {
+    const u = String(url);
+    requests.push(u);
+    if (u === feedListUrl) return { ok: true, status: 200, text: async () => feedList };
+    const feed = /\/fid\/(\d+)\//.exec(u)?.[1];
+    const advertiser = advertiserByFeed.get(feed);
+    assert.ok(advertiser, "unexpected feed");
+    return {
+      ok: true, status: 200,
+      arrayBuffer: async () => Buffer.from([
+        "aw_deep_link,merchant_deep_link,product_name,merchant_name,merchant_id,search_price,currency,large_image,aw_product_id",
+        "https://track.example/" + feed + ",https://shop.example/" + feed + ",Product " + feed + ",Approved," + advertiser + ",25,EUR,https://img.example/" + feed + ".jpg,sku-" + feed
+      ].join("\n"))
+    };
+  };
+  const result = await fetchAwinProductFeeds({
+    publisherId, feedListUrl, joinedAdvertiserIds: [...new Set(entries.map(([id]) => id))],
+    fetchImpl, maxFeeds: 6
+  });
+  assert.deepEqual(requests.slice(1).map(u => /\/fid\/(\d+)\//.exec(u)?.[1]), ["9", "11", "12", "13", "14", "15"]);
+  assert.equal(result.length, 6);
+  assert.equal(new Set(result.map(product => product.advertiserId)).size, 6);
+});
