@@ -6,12 +6,42 @@ const HTTP_TIMEOUT_MS = Math.min(60_000, Math.max(5_000, Number(process.env.SOUR
 const timedFetch = (fetchImpl, url, options = {}) => fetchImpl(url, { ...options, signal: options.signal ?? AbortSignal.timeout(HTTP_TIMEOUT_MS) });
 
 export function parseCsv(source, delimiter = ",") {
-  const rows=[]; let row=[],field="",quoted=false;
-  for(let i=0;i<source.length;i+=1){const char=source[i],next=source[i+1];if(char==='"'&&quoted&&next==='"'){field+='"';i+=1;}else if(char==='"'){if(!quoted&&field.length>0)throw new Error("Malformed Awin CSV: unexpected quote inside unquoted field");quoted=!quoted;}else if(char===delimiter&&!quoted){row.push(field);field="";}else if((char==='\n'||char==='\r')&&!quoted){if(char==='\r'&&next==='\n')i+=1;row.push(field);if(row.some(Boolean))rows.push(row);row=[];field="";}else field+=char;}
-  if(quoted)throw new Error("Malformed Awin CSV: unterminated quoted field");
-  if(field||row.length){row.push(field);rows.push(row);} if(rows.length<2)return[];
-  const headers=rows[0].map(value=>value.replace(/^\uFEFF/,"").trim());
-  return rows.slice(1).map(values=>Object.fromEntries(headers.map((header,index)=>[header,values[index]??""])));
+  const rows = [];
+  let row = [], field = "", quoted = false, justClosed = false;
+  const endField = () => { row.push(field); field = ""; justClosed = false; };
+  for (let i = 0; i < source.length; i += 1) {
+    const char = source[i], next = source[i + 1];
+    if (char === '"' && quoted && next === '"') {
+      field += '"';
+      i += 1;
+    } else if (char === '"') {
+      if (quoted) {
+        quoted = false;
+        justClosed = true;
+      } else {
+        if (field.length > 0 || justClosed)
+          throw new Error("Malformed Awin CSV: unexpected quote inside unquoted field");
+        quoted = true;
+      }
+    } else if (!quoted && char === delimiter) {
+      endField();
+    } else if (!quoted && (char === '\n' || char === '\r')) {
+      if (char === '\r' && next === '\n') i += 1;
+      endField();
+      if (row.some(Boolean)) rows.push(row);
+      row = [];
+    } else if (justClosed) {
+      if (char !== " " && char !== "\t")
+        throw new Error("Malformed Awin CSV: unexpected text after closing quote");
+    } else {
+      field += char;
+    }
+  }
+  if (quoted) throw new Error("Malformed Awin CSV: unterminated quoted field");
+  if (field || row.length) { endField(); rows.push(row); }
+  if (rows.length < 2) return [];
+  const headers = rows[0].map(value => value.replace(/^\uFEFF/, "").trim());
+  return rows.slice(1).map(values => Object.fromEntries(headers.map((header, index) => [header, values[index] ?? ""])));
 }
 
 const pick=(row,...names)=>names.map(name=>row[name]).find(value=>String(value??"").trim())||null;

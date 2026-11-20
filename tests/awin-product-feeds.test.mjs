@@ -106,3 +106,14 @@ test("unquoted CSV fields with stray quotes are rejected instead of misparsing t
     /Malformed Awin CSV: unexpected quote inside unquoted field/
   );
 });
+
+test("Awin CSV rejects data after a quoted field instead of changing the product name", () => {
+  assert.throws(
+    () => parseCsv('product_name,price\n"Example"UNEXPECTED,25'),
+    /Malformed Awin CSV: unexpected text after closing quote/
+  );
+  assert.deepEqual(
+    parseCsv('product_name,price\n"Correct name"  ,25'),
+    [{ product_name: "Correct name", price: "25" }]
+  );
+});
