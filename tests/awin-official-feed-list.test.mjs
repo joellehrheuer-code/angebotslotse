@@ -152,3 +152,28 @@ test("large first advertiser feed cannot exhaust the shared product limit", asyn
   assert.deepEqual(offers.map(item => item.advertiserId), ["14172", "128051", "14172", "14172"]);
   assert.equal(new Set(offers.map(item => item.advertiserId)).size, 2);
 });
+
+test("a feed cannot inject products attributed to another joined advertiser", async () => {
+  const list = [
+    "Advertiser ID,Advertiser Name,Primary Region,Membership Status,Datafeed Format,Feed ID,Feed Name,Language,URL",
+    "14172,Shop A,DE,active,Awin,9,Products,German,https://productdata.awin.com/datafeed/download/apikey/mock/fid/9/format/csv"
+  ].join("\n");
+  const header = "aw_deep_link,merchant_deep_link,product_name,merchant_name,merchant_id,search_price,currency,large_image,aw_product_id";
+  const product = (id, item) => [
+    "https://track.example/" + item, "https://shop.example/" + item,
+    "Verified " + item, "Merchant " + id, id, "25", "EUR",
+    "https://img.example/" + item + ".jpg", item
+  ].join(",");
+  const fetchImpl = async url => String(url) === feedListUrl
+    ? {ok: true, status: 200, text: async () => list}
+    : {ok: true, status: 200, arrayBuffer: async () => Buffer.from([
+        header, product("128051", "foreign-joined"), product("14172", "own")
+      ].join("\n"))};
+  const items = await fetchAwinProductFeeds({
+    publisherId, feedListUrl, joinedAdvertiserIds: ["14172", "128051"],
+    fetchImpl
+  });
+  assert.equal(items.length, 1);
+  assert.equal(items[0].advertiserId, "14172");
+  assert.match(items[0].id, /own$/);
+});
