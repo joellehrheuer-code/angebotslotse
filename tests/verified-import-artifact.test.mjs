@@ -3,7 +3,7 @@ import assert from "node:assert/strict";
 import fs from "node:fs";
 
 test("source-verified catalogue is preserved as artifact before failing page-level gates", () => {
-  const workflow = fs.readFileSync(".github/workflows/update.yml", "utf8");
+  const workflow = fs.readFileSync(".github/workflows/update.yml", "utf8").replace(/\r\n/g, "\n");
   const health = workflow.indexOf("      - name: Verified offer catalogue required\n");
   const snapshot = workflow.indexOf("      - name: Preserve verified import snapshot before page-level acceptance\n");
   const build = workflow.indexOf("      - name: Build verified site before page-level tests\n");
