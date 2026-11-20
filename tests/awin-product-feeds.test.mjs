@@ -117,3 +117,29 @@ test("Awin CSV rejects data after a quoted field instead of changing the product
     [{ product_name: "Correct name", price: "25" }]
   );
 });
+
+test("Awin CSV rejects duplicate or empty headers instead of silently overriding merchant fields", () => {
+  assert.throws(
+    () => parseCsv("merchant_id,merchant_id,product_name\\n999,14172,Product".replace("\\n", "\n")),
+    /Malformed Awin CSV: empty or duplicate column header/
+  );
+  assert.throws(
+    () => parseCsv("merchant_id,,product_name\\n14172,something,Product".replace("\\n", "\n")),
+    /Malformed Awin CSV: empty or duplicate column header/
+  );
+});
+
+test("Awin CSV rejects row width mismatches instead of silently changing prices", () => {
+  assert.throws(
+    () => parseCsv("merchant_id,search_price\\n14172,5,99".replace("\\n", "\n")),
+    /Malformed Awin CSV: inconsistent column count/
+  );
+  assert.throws(
+    () => parseCsv("merchant_id,search_price,product_name\\n14172,5".replace("\\n", "\n")),
+    /Malformed Awin CSV: inconsistent column count/
+  );
+  assert.deepEqual(
+    parseCsv('merchant_id,search_price,product_name\\n14172,"5,99",Product'.replace("\\n", "\n")),
+    [{ merchant_id: "14172", search_price: "5,99", product_name: "Product" }]
+  );
+});

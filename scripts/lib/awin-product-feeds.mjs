@@ -41,7 +41,13 @@ export function parseCsv(source, delimiter = ",") {
   if (field || row.length) { endField(); rows.push(row); }
   if (rows.length < 2) return [];
   const headers = rows[0].map(value => value.replace(/^\uFEFF/, "").trim());
-  return rows.slice(1).map(values => Object.fromEntries(headers.map((header, index) => [header, values[index] ?? ""])));
+  if (headers.some(header => !header) || new Set(headers).size !== headers.length)
+    throw new Error("Malformed Awin CSV: empty or duplicate column header");
+  return rows.slice(1).map(values => {
+    if (values.length !== headers.length)
+      throw new Error("Malformed Awin CSV: inconsistent column count");
+    return Object.fromEntries(headers.map((header, index) => [header, values[index]]));
+  });
 }
 
 const pick=(row,...names)=>names.map(name=>row[name]).find(value=>String(value??"").trim())||null;
