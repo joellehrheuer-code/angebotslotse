@@ -118,3 +118,37 @@ test("six feed slots prioritize six distinct approved advertisers over duplicate
   assert.equal(result.length, 6);
   assert.equal(new Set(result.map(product => product.advertiserId)).size, 6);
 });
+
+test("large first advertiser feed cannot exhaust the shared product limit", async () => {
+  const feedList = [
+    "Advertiser ID,Advertiser Name,Primary Region,Membership Status,Datafeed Format,Feed ID,Feed Name,Language,URL",
+    "14172,First shop,DE,Joined,Awin,9,Products,German,https://productdata.awin.com/datafeed/download/apikey/mock/fid/9/format/csv",
+    "128051,Second shop,DE,Joined,Awin,11,Products,German,https://productdata.awin.com/datafeed/download/apikey/mock/fid/11/format/csv"
+  ].join("\n");
+  const header = "aw_deep_link,merchant_deep_link,product_name,merchant_name,merchant_id,search_price,currency,large_image,aw_product_id";
+  const makeRow = (id, n) => [
+    "https://track.example/" + id + "-" + n,
+    "https://shop.example/" + id + "-" + n,
+    "Product " + id + "-" + n, "Approved", id, "25", "EUR",
+    "https://img.example/" + id + "-" + n + ".jpg", "sku-" + id + "-" + n
+  ].join(",");
+  const requested = [];
+  const fetchImpl = async url => {
+    const value = String(url);
+    requested.push(value);
+    if (value === feedListUrl) return {ok: true, status: 200, text: async () => feedList};
+    const first = value.includes("/fid/9/");
+    const rows = first
+      ? Array.from({length: 6}, (_, index) => makeRow("14172", index + 1))
+      : [makeRow("128051", 1)];
+    return {ok: true, status: 200, arrayBuffer: async () => Buffer.from([header, ...rows].join("\n"))};
+  };
+  const offers = await fetchAwinProductFeeds({
+    publisherId, feedListUrl, joinedAdvertiserIds: ["14172", "128051"],
+    fetchImpl, maxFeeds: 2, maxProducts: 4
+  });
+  assert.equal(requested.length, 3);
+  assert.equal(offers.length, 4);
+  assert.deepEqual(offers.map(item => item.advertiserId), ["14172", "128051", "14172", "14172"]);
+  assert.equal(new Set(offers.map(item => item.advertiserId)).size, 2);
+});
