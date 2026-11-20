@@ -92,3 +92,10 @@ https://awin.example/second,https://shop.example/second,Second,Approved,1,35,sec
   assert.equal(result[0].productId,"approved");
   assert.equal(result[0].advertiserId,"1");
 });
+
+test("unterminated CSV quotes are rejected instead of publishing truncated product rows", () => {
+  assert.throws(
+    () => parseCsv('product_name,price\n"Truncated product,99'),
+    /Malformed Awin CSV: unterminated quoted field/
+  );
+});
