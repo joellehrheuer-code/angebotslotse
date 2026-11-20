@@ -48,3 +48,37 @@ test("feed-list URL with an untrusted redirect host is rejected before network a
   );
   assert.equal(calls, 0);
 });
+
+test("official mixed feed list skips Google-format feeds in legacy CSV importer", async () => {
+  const list = [
+    "Advertiser ID,Advertiser Name,Primary Region,Membership Status,Datafeed Format,Feed ID,Feed Name,Language,URL",
+    "14172,Approved,DE,active,Awin,9,Standard,German,https://productdata.awin.com/datafeed/download/apikey/mock/fid/9/format/csv",
+    "14172,Approved,DE,active,Google,10,Enhanced,German,https://productdata.awin.com/datafeed/download/apikey/mock/fid/10/format/csv"
+  ].join("\n");
+  const requested = [];
+  const fetchImpl = async url => {
+    requested.push(String(url));
+    if (String(url) === feedListUrl) return { ok: true, status: 200, text: async () => list };
+    return { ok: true, status: 200, arrayBuffer: async () => Buffer.from(products) };
+  };
+  const result = await fetchAwinProductFeeds({ publisherId, feedListUrl, joinedAdvertiserIds: ["14172"], fetchImpl });
+  assert.equal(requested.length, 2, "the Google-format URL must never be requested by legacy parser");
+  assert.match(requested[1], /\/fid\/9\//);
+  assert.equal(result.length, 1);
+});
+
+test("official feed list with only Google-format feeds is not downloaded by legacy importer", async () => {
+  const list = [
+    "Advertiser ID,Advertiser Name,Primary Region,Membership Status,Datafeed Format,Feed ID,Feed Name,Language,URL",
+    "14172,Approved,DE,active,Google,10,Enhanced,German,https://productdata.awin.com/datafeed/download/apikey/mock/fid/10/format/csv"
+  ].join("\n");
+  let calls = 0;
+  const fetchImpl = async url => {
+    calls++;
+    if (String(url) === feedListUrl) return { ok: true, status: 200, text: async () => list };
+    throw new Error("Google-format feed must not be read as legacy CSV");
+  };
+  const result = await fetchAwinProductFeeds({ publisherId, feedListUrl, joinedAdvertiserIds: ["14172"], fetchImpl });
+  assert.equal(calls, 1);
+  assert.deepEqual(result, []);
+});
