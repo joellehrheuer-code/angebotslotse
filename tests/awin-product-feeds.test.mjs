@@ -99,3 +99,10 @@ test("unterminated CSV quotes are rejected instead of publishing truncated produ
     /Malformed Awin CSV: unterminated quoted field/
   );
 });
+
+test("unquoted CSV fields with stray quotes are rejected instead of misparsing the product feed", () => {
+  assert.throws(
+    () => parseCsv('product_name,price\nBad"quoted product,99'),
+    /Malformed Awin CSV: unexpected quote inside unquoted field/
+  );
+});
