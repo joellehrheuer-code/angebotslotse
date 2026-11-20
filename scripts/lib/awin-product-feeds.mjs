@@ -64,8 +64,19 @@ export async function fetchAwinProductFeeds({ apiKey, publisherId, feedListUrl, 
     if(!listResponse.ok)throw new Error(`Awin Product Feed List: HTTP ${listResponse.status}`);
     feedRows=parseCsv(await listResponse.text())
       .filter(row=>joined(row)&&german(row)&&/^(?:awin|legacy)?$/i.test(String(pick(row,"Datafeed Format","datafeed_format")||"").trim())&&allowedAwinFeedUrl(pick(row,"URL","url")))
-      .filter(row=>authorizedIds.has(String(pick(row,"Advertiser ID","advertiser_id","merchant_id"))))
-      .slice(0,maxFeeds);
+      .filter(row=>authorizedIds.has(String(pick(row,"Advertiser ID","advertiser_id","merchant_id"))));
+    // Give each joined advertiser one feed before taking extra feeds from the
+    // same advertiser. The official list may contain several feeds per shop.
+    const feedsByAdvertiser=new Map();
+    for(const row of feedRows){
+      const id=String(pick(row,"Advertiser ID","advertiser_id","merchant_id"));
+      if(!feedsByAdvertiser.has(id))feedsByAdvertiser.set(id,[]);
+      feedsByAdvertiser.get(id).push(row);
+    }
+    feedRows=[
+      ...[...feedsByAdvertiser.values()].map(rows=>rows.shift()),
+      ...[...feedsByAdvertiser.values()].flat()
+    ].slice(0,maxFeeds);
   }
   const products=[];
   for(const feed of feedRows){
