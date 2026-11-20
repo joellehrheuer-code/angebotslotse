@@ -7,7 +7,7 @@ const timedFetch = (fetchImpl, url, options = {}) => fetchImpl(url, { ...options
 
 export function parseCsv(source, delimiter = ",") {
   const rows=[]; let row=[],field="",quoted=false;
-  for(let i=0;i<source.length;i+=1){const char=source[i],next=source[i+1];if(char==='"'&&quoted&&next==='"'){field+='"';i+=1;}else if(char==='"'){quoted=!quoted;}else if(char===delimiter&&!quoted){row.push(field);field="";}else if((char==='\n'||char==='\r')&&!quoted){if(char==='\r'&&next==='\n')i+=1;row.push(field);if(row.some(Boolean))rows.push(row);row=[];field="";}else field+=char;}
+  for(let i=0;i<source.length;i+=1){const char=source[i],next=source[i+1];if(char==='"'&&quoted&&next==='"'){field+='"';i+=1;}else if(char==='"'){if(!quoted&&field.length>0)throw new Error("Malformed Awin CSV: unexpected quote inside unquoted field");quoted=!quoted;}else if(char===delimiter&&!quoted){row.push(field);field="";}else if((char==='\n'||char==='\r')&&!quoted){if(char==='\r'&&next==='\n')i+=1;row.push(field);if(row.some(Boolean))rows.push(row);row=[];field="";}else field+=char;}
   if(quoted)throw new Error("Malformed Awin CSV: unterminated quoted field");
   if(field||row.length){row.push(field);rows.push(row);} if(rows.length<2)return[];
   const headers=rows[0].map(value=>value.replace(/^\uFEFF/,"").trim());
