@@ -62,7 +62,7 @@ export async function fetchAwinProductFeeds({ apiKey, publisherId, feedListUrl, 
     const listResponse=await timedFetch(fetchImpl,listUrl,{redirect:"error"});
     if(!listResponse.ok)throw new Error(`Awin Product Feed List: HTTP ${listResponse.status}`);
     feedRows=parseCsv(await listResponse.text())
-      .filter(row=>joined(row)&&german(row)&&allowedAwinFeedUrl(pick(row,"URL","url")))
+      .filter(row=>joined(row)&&german(row)&&/^(?:awin|legacy)?$/i.test(String(pick(row,"Datafeed Format","datafeed_format")||"").trim())&&allowedAwinFeedUrl(pick(row,"URL","url")))
       .filter(row=>authorizedIds.has(String(pick(row,"Advertiser ID","advertiser_id","merchant_id"))))
       .slice(0,maxFeeds);
   }
