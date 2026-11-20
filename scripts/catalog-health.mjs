@@ -1,8 +1,14 @@
 import fs from "node:fs/promises";
+import { isPublicationReady } from "./lib/normalize.mjs";
 
 const status = JSON.parse(await fs.readFile("data/status.json", "utf8"));
 const offers = JSON.parse(await fs.readFile("data/offers.json", "utf8"));
 const publishable = Number(status.publishableOffers ?? status.activeOffers ?? 0);
+const policy = JSON.parse(await fs.readFile("data/impact-link-policy.json", "utf8").catch(() => "{}"));
+const quarantined = offer => (policy.quarantinedAdvertisers ?? []).some(rule =>
+  (rule.advertiserId && String(rule.advertiserId) === String(offer.advertiserId)) ||
+  (rule.advertiserName && String(rule.advertiserName).toLowerCase() === String(offer.advertiser).toLowerCase()));
+const verifiedCount = offers.filter(offer => !quarantined(offer) && isPublicationReady(offer)).length;
 const sourceIssues = Object.entries(status.sources ?? {})
   .filter(([, source]) => source?.state === "error")
   .map(([name, source]) => {
@@ -14,6 +20,10 @@ const sourceIssues = Object.entries(status.sources ?? {})
   });
 
 console.log(`[catalog-health] stored=${offers.length}; publishable=${publishable}; state=${status.state ?? "unknown"}`);
+if (!Number.isInteger(publishable) || publishable !== verifiedCount) {
+  console.error(`[catalog-health] BLOCKED: reported publishable count does not match verified stored offers (reported=${publishable}, actual=${verifiedCount}).`);
+  process.exitCode = 1;
+}
 if (sourceIssues.length) console.warn("[catalog-health] sources: " + sourceIssues.join(", "));
 if (!Number.isFinite(publishable) || publishable < 1) {
   console.error("[catalog-health] BLOCKED: no verified publishable offers. The update and deploy must not silently publish an empty or stale catalogue.");
